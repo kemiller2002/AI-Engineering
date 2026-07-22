@@ -1,6 +1,6 @@
 # Knowledge Platform Deliverables
 
-This directory contains the requested architecture deliverables for the current repository state as of 2026-07-21.
+This directory contains architecture deliverables for the repository state initially assessed on 2026-07-21 and still useful after the 2026-07-22 document-ingestion pass.
 
 Files:
 
@@ -16,9 +16,10 @@ Files:
 
 Current evidence summary:
 
-- 15 repository artifacts under `input-documents/`
-- 14 Markdown files and 1 ZIP archive
-- 3,013 words across Markdown files
+- 50 source files were ingested from `input-documents/` on 2026-07-22
+- handbook, course, governance, mobile, prompt, template, and research artifacts now exist in canonical locations outside `input-documents/`
+- the original migration plan remains relevant for metadata normalization, relationship extraction, and generated-platform work
+- `repository.json`, `repository.csv`, and `knowledge-genome.json` are pre-import generated snapshots and should be regenerated in a later automation pass
 - 0 files with front matter metadata
 - 0 explicit Markdown or wiki links between documents
-- 1 packaged archive that duplicates chapter material in a derived form
+- 1 packaged archive remains preserved as a derived historical artifact
