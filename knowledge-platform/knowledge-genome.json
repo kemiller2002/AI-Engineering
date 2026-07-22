@@ -1,0 +1,297 @@
+{
+  "generated_on": "2026-07-21",
+  "concepts": [
+    {
+      "id": "context-engineering",
+      "label": "Context Engineering",
+      "cluster": "control-systems",
+      "maturity": "mature",
+      "canonical_page": "content/concepts/context-engineering.md",
+      "source_documents": [
+        "input-documents/AI-Engineering-Handbook-Part-05-Token-Economics-and-Context-Engineering.md",
+        "input-documents/AI-Engineering-Handbook-Part-01-Foundations.md",
+        "input-documents/Chapter 1/Lesson.md"
+      ]
+    },
+    {
+      "id": "validated-progress",
+      "label": "Validated Engineering Progress",
+      "cluster": "value-and-measurement",
+      "maturity": "mature",
+      "canonical_page": "content/concepts/validated-engineering-progress.md",
+      "source_documents": [
+        "input-documents/AI-Engineering-Handbook-Part-01-Foundations.md",
+        "input-documents/AI-Engineering-Handbook-Part-05-Token-Economics-and-Context-Engineering.md",
+        "input-documents/AI-Engineering-Handbook-Part-03-Engineering-Workflows.md"
+      ]
+    },
+    {
+      "id": "durable-artifacts",
+      "label": "Durable Artifacts",
+      "cluster": "knowledge-operations",
+      "maturity": "mature",
+      "canonical_page": "content/concepts/durable-artifacts.md",
+      "source_documents": [
+        "input-documents/AI-Engineering-Handbook-Part-01-Foundations.md",
+        "input-documents/Chapter 1/CheatSheet.md",
+        "input-documents/AI-Engineering-Handbook-Part-03-Engineering-Workflows.md"
+      ]
+    },
+    {
+      "id": "research-engineering",
+      "label": "Research Engineering",
+      "cluster": "knowledge-operations",
+      "maturity": "mature",
+      "canonical_page": "content/concepts/research-engineering.md",
+      "source_documents": [
+        "input-documents/AI-Engineering-Handbook-Part-04-Research-Engineering.md",
+        "input-documents/Chapter 1/Research-Package-001.md",
+        "input-documents/Chapter 1/Research.md"
+      ]
+    },
+    {
+      "id": "agent-coordination",
+      "label": "Agent Coordination",
+      "cluster": "control-systems",
+      "maturity": "emerging",
+      "canonical_page": "content/concepts/agent-coordination.md",
+      "source_documents": [
+        "input-documents/AI-Engineering-Handbook-Part-02-Agent-Architecture.md",
+        "input-documents/AI-Engineering-Handbook-Part-03-Engineering-Workflows.md"
+      ]
+    },
+    {
+      "id": "task-contracts",
+      "label": "Task Contracts",
+      "cluster": "control-systems",
+      "maturity": "emerging",
+      "canonical_page": "content/concepts/task-contracts.md",
+      "source_documents": [
+        "input-documents/AI-Engineering-Handbook-Part-02-Agent-Architecture.md",
+        "input-documents/AI-Engineering-Handbook-Part-03-Engineering-Workflows.md",
+        "input-documents/Chapter 1/Workbook.md"
+      ]
+    },
+    {
+      "id": "evidence-hierarchy",
+      "label": "Evidence Hierarchy",
+      "cluster": "knowledge-integrity",
+      "maturity": "emerging",
+      "canonical_page": "content/concepts/evidence-hierarchy.md",
+      "source_documents": [
+        "input-documents/AI-Engineering-Handbook-Part-04-Research-Engineering.md",
+        "input-documents/Chapter 1/Course-Constitution.md",
+        "input-documents/Chapter 1/Research.md"
+      ]
+    },
+    {
+      "id": "token-economics",
+      "label": "Token Economics",
+      "cluster": "value-and-measurement",
+      "maturity": "mature",
+      "canonical_page": "content/concepts/token-economics.md",
+      "source_documents": [
+        "input-documents/AI-Engineering-Handbook-Part-05-Token-Economics-and-Context-Engineering.md",
+        "input-documents/AI-Engineering-Handbook-Part-01-Foundations.md"
+      ]
+    },
+    {
+      "id": "retrieval",
+      "label": "Retrieval",
+      "cluster": "knowledge-operations",
+      "maturity": "emerging",
+      "canonical_page": "content/concepts/retrieval.md",
+      "source_documents": [
+        "input-documents/AI-Engineering-Handbook-Part-01-Foundations.md",
+        "input-documents/AI-Engineering-Handbook-Part-05-Token-Economics-and-Context-Engineering.md",
+        "input-documents/Chapter 1/Research.md"
+      ]
+    },
+    {
+      "id": "course-governance",
+      "label": "Course Governance",
+      "cluster": "knowledge-integrity",
+      "maturity": "mature",
+      "canonical_page": "content/concepts/course-governance.md",
+      "source_documents": [
+        "input-documents/Chapter 1/Course-Constitution.md",
+        "input-documents/Chapter 1/Course-Roadmap.md"
+      ]
+    },
+    {
+      "id": "ai-is-different",
+      "label": "Why AI Engineering Is Different",
+      "cluster": "foundations",
+      "maturity": "mature",
+      "canonical_page": "content/concepts/why-ai-engineering-is-different.md",
+      "source_documents": [
+        "input-documents/Chapter 1/Lesson.md",
+        "input-documents/Chapter 1/Chapter-01-Why-AI-Engineering-Is-Different.zip"
+      ]
+    },
+    {
+      "id": "working-context-vs-memory",
+      "label": "Working Context Versus Durable Memory",
+      "cluster": "foundations",
+      "maturity": "mature",
+      "canonical_page": "content/concepts/working-context-versus-durable-memory.md",
+      "source_documents": [
+        "input-documents/AI-Engineering-Handbook-Part-01-Foundations.md",
+        "input-documents/Chapter 1/Lesson.md",
+        "input-documents/Chapter 1/CheatSheet.md"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "context-engineering",
+      "to": "working-context-vs-memory",
+      "type": "specializes"
+    },
+    {
+      "from": "context-engineering",
+      "to": "retrieval",
+      "type": "depends_on"
+    },
+    {
+      "from": "token-economics",
+      "to": "validated-progress",
+      "type": "supports"
+    },
+    {
+      "from": "durable-artifacts",
+      "to": "validated-progress",
+      "type": "supports"
+    },
+    {
+      "from": "research-engineering",
+      "to": "evidence-hierarchy",
+      "type": "depends_on"
+    },
+    {
+      "from": "agent-coordination",
+      "to": "task-contracts",
+      "type": "depends_on"
+    },
+    {
+      "from": "task-contracts",
+      "to": "durable-artifacts",
+      "type": "derived_from"
+    },
+    {
+      "from": "ai-is-different",
+      "to": "working-context-vs-memory",
+      "type": "supports"
+    },
+    {
+      "from": "ai-is-different",
+      "to": "context-engineering",
+      "type": "motivates"
+    },
+    {
+      "from": "course-governance",
+      "to": "evidence-hierarchy",
+      "type": "supports"
+    },
+    {
+      "from": "retrieval",
+      "to": "durable-artifacts",
+      "type": "depends_on"
+    },
+    {
+      "from": "research-engineering",
+      "to": "validated-progress",
+      "type": "supports"
+    }
+  ],
+  "clusters": [
+    {
+      "id": "foundations",
+      "concepts": [
+        "ai-is-different",
+        "working-context-vs-memory"
+      ],
+      "assessment": "Foundational and already coherent across lesson and handbook material."
+    },
+    {
+      "id": "control-systems",
+      "concepts": [
+        "context-engineering",
+        "agent-coordination",
+        "task-contracts"
+      ],
+      "assessment": "Strong emerging cluster with clear future expansion potential."
+    },
+    {
+      "id": "knowledge-operations",
+      "concepts": [
+        "durable-artifacts",
+        "research-engineering",
+        "retrieval"
+      ],
+      "assessment": "Most important cluster for repository architecture because it drives storage, indexing, and reuse."
+    },
+    {
+      "id": "knowledge-integrity",
+      "concepts": [
+        "evidence-hierarchy",
+        "course-governance"
+      ],
+      "assessment": "Under-modeled in the repository but critical for scientific quality."
+    },
+    {
+      "id": "value-and-measurement",
+      "concepts": [
+        "validated-progress",
+        "token-economics"
+      ],
+      "assessment": "Mature conceptual cluster and likely future decision framework hub."
+    }
+  ],
+  "lineage": [
+    {
+      "concept": "working-context-vs-memory",
+      "timeline": [
+        {
+          "stage": "Initial teaching framing",
+          "source": "input-documents/Chapter 1/Lesson.md"
+        },
+        {
+          "stage": "Formalized as memory layers",
+          "source": "input-documents/AI-Engineering-Handbook-Part-01-Foundations.md"
+        },
+        {
+          "stage": "Operationalized as context compilation",
+          "source": "input-documents/AI-Engineering-Handbook-Part-05-Token-Economics-and-Context-Engineering.md"
+        }
+      ]
+    },
+    {
+      "concept": "research-engineering",
+      "timeline": [
+        {
+          "stage": "Question and hypothesis framing",
+          "source": "input-documents/Chapter 1/Research-Package-001.md"
+        },
+        {
+          "stage": "Evidence and competing explanations",
+          "source": "input-documents/Chapter 1/Research.md"
+        },
+        {
+          "stage": "Generalized method and evidence hierarchy",
+          "source": "input-documents/AI-Engineering-Handbook-Part-04-Research-Engineering.md"
+        }
+      ]
+    }
+  ],
+  "isolated_or_weakly_connected_items": [
+    {
+      "artifact": "input-documents/Chapter 1/Course-Roadmap.md",
+      "reason": "Valuable planning artifact but too thin to reveal strong concept relationships yet."
+    },
+    {
+      "artifact": "input-documents/Chapter 1/Notes.md",
+      "reason": "Support notes are structurally isolated and should either be merged or upgraded with explicit links."
+    }
+  ]
+}

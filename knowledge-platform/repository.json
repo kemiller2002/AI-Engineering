@@ -1,0 +1,448 @@
+{
+  "repository_summary": {
+    "generated_on": "2026-07-21",
+    "root": "input-documents",
+    "description": "Early-stage AI Engineering course and handbook corpus with handbook parts, chapter materials, research notes, and one packaged ZIP archive.",
+    "overall_assessment": "The corpus has promising conceptual coherence but weak operational structure. Canonical ideas exist, yet metadata, internal linking, and artifact boundaries are under-specified.",
+    "confidence": 0.89
+  },
+  "statistics": {
+    "total_files": 15,
+    "markdown_files": 14,
+    "zip_archives": 1,
+    "other_binary_assets": 0,
+    "total_markdown_words": 3013,
+    "folder_depth_distribution": {
+      "1": 5,
+      "2": 10
+    },
+    "largest_folder_by_file_count": [
+      {
+        "path": "input-documents/Chapter 1",
+        "file_count": 10
+      },
+      {
+        "path": "input-documents",
+        "file_count": 5
+      }
+    ],
+    "metadata_completeness": {
+      "files_with_front_matter": 0,
+      "files_missing_front_matter": 14,
+      "coverage_percent": 0.0
+    },
+    "cross_linking": {
+      "explicit_markdown_links": 0,
+      "wiki_links": 0,
+      "backlink_ready_percent": 0.0
+    },
+    "health_flags": {
+      "duplicate_title_groups": 2,
+      "conflicting_filename_title_pairs": 1,
+      "derived_archives": 1,
+      "orphaned_documents": 15
+    }
+  },
+  "repository_health_assessment": {
+    "organizational_quality": {
+      "score": 0.54,
+      "findings": [
+        "Top-level split between handbook parts and chapter materials is understandable but not scalable.",
+        "Project, discipline, document-type, and lifecycle dimensions are mixed into file placement.",
+        "Derived courseware artifacts are stored beside canonical research artifacts without lifecycle boundaries."
+      ]
+    },
+    "naming_consistency": {
+      "score": 0.58,
+      "findings": [
+        "Handbook files use long stable filenames with sequence numbers.",
+        "Chapter files mix generic names like `Lesson.md` and `Research.md` with one numbered package.",
+        "`Lesson 2.md` contains the title `Lesson 1 (Working Draft)`, indicating a likely naming or sequencing defect."
+      ]
+    },
+    "metadata_quality": {
+      "score": 0.05,
+      "findings": [
+        "No Markdown file contains front matter.",
+        "No artifact carries machine-readable discipline, status, evidence level, canonical, or relationship metadata.",
+        "The repository cannot currently support faceted search, reliable lineage, or automatic registries."
+      ]
+    },
+    "duplication_and_fragmentation": {
+      "score": 0.47,
+      "findings": [
+        "Research Package 001 exists as both a brief and a longer notes file with the same title.",
+        "Chapter 1 is present as both loose source artifacts and a packaged ZIP, which should be treated as derived output.",
+        "Handbook, lesson, cheat sheet, and workbook content repeat the same core ideas without explicit canonical references."
+      ]
+    },
+    "relationship_quality": {
+      "score": 0.09,
+      "findings": [
+        "No explicit internal links connect conceptually adjacent artifacts.",
+        "No citation, supersession, or dependency structures exist.",
+        "Knowledge relationships are implicit in headings and filenames rather than encoded."
+      ]
+    }
+  },
+  "catalog": [
+    {
+      "path": "input-documents/AI-Engineering-Handbook-Part-01-Foundations.md",
+      "title": "Part 1 --- Foundations",
+      "discipline": "AI Engineering",
+      "project": "AI Engineering Course",
+      "research_area": "Foundations",
+      "document_type": "handbook-part",
+      "canonical": true,
+      "status": "draft",
+      "parent": null,
+      "children": [],
+      "related_documents": [
+        "input-documents/AI-Engineering-Handbook-Part-02-Agent-Architecture.md",
+        "input-documents/AI-Engineering-Handbook-Part-04-Research-Engineering.md",
+        "input-documents/Chapter 1/Course-Constitution.md"
+      ],
+      "missing_metadata": [
+        "id",
+        "abstract",
+        "author",
+        "date",
+        "tags",
+        "evidence_level",
+        "confidence",
+        "related",
+        "canonical"
+      ],
+      "duplicate_score": 0.18,
+      "authority_score": 0.84,
+      "importance_score": 0.93,
+      "confidence_score": 0.88,
+      "suggested_location": "content/disciplines/ai-engineering/handbook/foundations.md",
+      "recommendation": "move_and_rename"
+    },
+    {
+      "path": "input-documents/AI-Engineering-Handbook-Part-02-Agent-Architecture.md",
+      "title": "Part 2 --- Agent Architecture and Coordination",
+      "discipline": "AI Engineering",
+      "project": "AI Engineering Course",
+      "research_area": "Agent Architecture",
+      "document_type": "handbook-part",
+      "canonical": true,
+      "status": "draft",
+      "related_documents": [
+        "input-documents/AI-Engineering-Handbook-Part-01-Foundations.md",
+        "input-documents/AI-Engineering-Handbook-Part-03-Engineering-Workflows.md",
+        "input-documents/Chapter 1/Research-Package-001.md"
+      ],
+      "duplicate_score": 0.12,
+      "authority_score": 0.83,
+      "importance_score": 0.89,
+      "confidence_score": 0.87,
+      "suggested_location": "content/disciplines/ai-engineering/handbook/agent-architecture-and-coordination.md",
+      "recommendation": "move_and_rename"
+    },
+    {
+      "path": "input-documents/AI-Engineering-Handbook-Part-03-Engineering-Workflows.md",
+      "title": "Part 3 --- Engineering Workflows",
+      "discipline": "AI Engineering",
+      "project": "AI Engineering Course",
+      "research_area": "Engineering Workflows",
+      "document_type": "handbook-part",
+      "canonical": true,
+      "status": "draft",
+      "related_documents": [
+        "input-documents/AI-Engineering-Handbook-Part-01-Foundations.md",
+        "input-documents/AI-Engineering-Handbook-Part-05-Token-Economics-and-Context-Engineering.md",
+        "input-documents/Chapter 1/Lesson.md"
+      ],
+      "duplicate_score": 0.14,
+      "authority_score": 0.83,
+      "importance_score": 0.88,
+      "confidence_score": 0.87,
+      "suggested_location": "content/disciplines/ai-engineering/handbook/engineering-workflows.md",
+      "recommendation": "move_and_rename"
+    },
+    {
+      "path": "input-documents/AI-Engineering-Handbook-Part-04-Research-Engineering.md",
+      "title": "Part 4 --- Research Engineering",
+      "discipline": "AI Engineering",
+      "project": "AI Engineering Course",
+      "research_area": "Research Engineering",
+      "document_type": "handbook-part",
+      "canonical": true,
+      "status": "draft",
+      "related_documents": [
+        "input-documents/AI-Engineering-Handbook-Part-01-Foundations.md",
+        "input-documents/Chapter 1/Research-Package-001.md",
+        "input-documents/Chapter 1/Research.md"
+      ],
+      "duplicate_score": 0.13,
+      "authority_score": 0.85,
+      "importance_score": 0.91,
+      "confidence_score": 0.89,
+      "suggested_location": "content/disciplines/ai-engineering/handbook/research-engineering.md",
+      "recommendation": "move_and_rename"
+    },
+    {
+      "path": "input-documents/AI-Engineering-Handbook-Part-05-Token-Economics-and-Context-Engineering.md",
+      "title": "Part 5 --- Token Economics and Context Engineering",
+      "discipline": "AI Engineering",
+      "project": "AI Engineering Course",
+      "research_area": "Context Engineering",
+      "document_type": "handbook-part",
+      "canonical": true,
+      "status": "draft",
+      "related_documents": [
+        "input-documents/AI-Engineering-Handbook-Part-01-Foundations.md",
+        "input-documents/AI-Engineering-Handbook-Part-03-Engineering-Workflows.md",
+        "input-documents/Chapter 1/CheatSheet.md"
+      ],
+      "duplicate_score": 0.11,
+      "authority_score": 0.86,
+      "importance_score": 0.94,
+      "confidence_score": 0.9,
+      "suggested_location": "content/disciplines/ai-engineering/handbook/token-economics-and-context-engineering.md",
+      "recommendation": "move_and_rename"
+    },
+    {
+      "path": "input-documents/Chapter 1/Course-Constitution.md",
+      "title": "AI Engineering Course Constitution",
+      "discipline": "AI Engineering",
+      "project": "AI Engineering Course",
+      "research_area": "Governance",
+      "document_type": "governance",
+      "canonical": true,
+      "status": "draft",
+      "related_documents": [
+        "input-documents/AI-Engineering-Handbook-Part-01-Foundations.md",
+        "input-documents/AI-Engineering-Handbook-Part-04-Research-Engineering.md",
+        "input-documents/Chapter 1/Course-Roadmap.md"
+      ],
+      "duplicate_score": 0.08,
+      "authority_score": 0.81,
+      "importance_score": 0.87,
+      "confidence_score": 0.88,
+      "suggested_location": "content/projects/ai-engineering-course/governance/course-constitution.md",
+      "recommendation": "move_and_rename"
+    },
+    {
+      "path": "input-documents/Chapter 1/Course-Roadmap.md",
+      "title": "Course Roadmap",
+      "discipline": "AI Engineering",
+      "project": "AI Engineering Course",
+      "research_area": "Planning",
+      "document_type": "roadmap",
+      "canonical": true,
+      "status": "draft",
+      "related_documents": [
+        "input-documents/Chapter 1/Course-Constitution.md",
+        "input-documents/Chapter 1/Lesson.md"
+      ],
+      "duplicate_score": 0.04,
+      "authority_score": 0.61,
+      "importance_score": 0.68,
+      "confidence_score": 0.79,
+      "suggested_location": "content/projects/ai-engineering-course/roadmaps/course-roadmap.md",
+      "recommendation": "move_and_enrich_metadata"
+    },
+    {
+      "path": "input-documents/Chapter 1/Lesson.md",
+      "title": "Lesson 1 --- Why AI Sometimes Feels Like Magic... and Sometimes Feels Completely Useless",
+      "discipline": "AI Engineering",
+      "project": "AI Engineering Course",
+      "research_area": "Courseware",
+      "document_type": "lesson",
+      "canonical": true,
+      "status": "draft",
+      "related_documents": [
+        "input-documents/Chapter 1/CheatSheet.md",
+        "input-documents/Chapter 1/Workbook.md",
+        "input-documents/Chapter 1/Research.md"
+      ],
+      "duplicate_score": 0.21,
+      "authority_score": 0.78,
+      "importance_score": 0.85,
+      "confidence_score": 0.86,
+      "suggested_location": "content/projects/ai-engineering-course/chapter-01/lesson-01-why-ai-sometimes-feels-like-magic-and-sometimes-feels-completely-useless.md",
+      "recommendation": "move_and_rename"
+    },
+    {
+      "path": "input-documents/Chapter 1/Lesson 2.md",
+      "title": "Lesson 1 (Working Draft)",
+      "discipline": "AI Engineering",
+      "project": "AI Engineering Course",
+      "research_area": "Courseware",
+      "document_type": "lesson-draft",
+      "canonical": false,
+      "status": "conflicting",
+      "related_documents": [
+        "input-documents/Chapter 1/Lesson.md",
+        "input-documents/Chapter 1/Course-Roadmap.md"
+      ],
+      "duplicate_score": 0.67,
+      "authority_score": 0.4,
+      "importance_score": 0.56,
+      "confidence_score": 0.73,
+      "suggested_location": "content/projects/ai-engineering-course/chapter-01/drafts/lesson-02-or-rename-needed.md",
+      "recommendation": "rename_or_merge"
+    },
+    {
+      "path": "input-documents/Chapter 1/Research-Package-001.md",
+      "title": "Research Package 001",
+      "discipline": "AI Engineering",
+      "project": "AI Engineering Course",
+      "research_area": "Research",
+      "document_type": "research-brief",
+      "canonical": true,
+      "status": "draft",
+      "related_documents": [
+        "input-documents/Chapter 1/Research.md",
+        "input-documents/AI-Engineering-Handbook-Part-04-Research-Engineering.md",
+        "input-documents/Chapter 1/Lesson.md"
+      ],
+      "duplicate_score": 0.43,
+      "authority_score": 0.76,
+      "importance_score": 0.83,
+      "confidence_score": 0.85,
+      "suggested_location": "content/projects/ai-engineering-course/chapter-01/research/research-package-001-brief.md",
+      "recommendation": "move_and_rename"
+    },
+    {
+      "path": "input-documents/Chapter 1/Research.md",
+      "title": "Research Package 001",
+      "discipline": "AI Engineering",
+      "project": "AI Engineering Course",
+      "research_area": "Research",
+      "document_type": "research-notes",
+      "canonical": true,
+      "status": "draft",
+      "related_documents": [
+        "input-documents/Chapter 1/Research-Package-001.md",
+        "input-documents/AI-Engineering-Handbook-Part-04-Research-Engineering.md",
+        "input-documents/Chapter 1/Lesson.md"
+      ],
+      "duplicate_score": 0.46,
+      "authority_score": 0.79,
+      "importance_score": 0.88,
+      "confidence_score": 0.87,
+      "suggested_location": "content/projects/ai-engineering-course/chapter-01/research/research-package-001-notes.md",
+      "recommendation": "move_and_rename"
+    },
+    {
+      "path": "input-documents/Chapter 1/CheatSheet.md",
+      "title": "Lesson 1 Cheat Sheet",
+      "discipline": "AI Engineering",
+      "project": "AI Engineering Course",
+      "research_area": "Courseware",
+      "document_type": "cheat-sheet",
+      "canonical": false,
+      "status": "draft",
+      "related_documents": [
+        "input-documents/Chapter 1/Lesson.md",
+        "input-documents/Chapter 1/Workbook.md",
+        "input-documents/AI-Engineering-Handbook-Part-05-Token-Economics-and-Context-Engineering.md"
+      ],
+      "duplicate_score": 0.28,
+      "authority_score": 0.58,
+      "importance_score": 0.63,
+      "confidence_score": 0.82,
+      "suggested_location": "content/projects/ai-engineering-course/chapter-01/derived/lesson-01-cheat-sheet.md",
+      "recommendation": "move"
+    },
+    {
+      "path": "input-documents/Chapter 1/Workbook.md",
+      "title": "Lesson 1 Workbook",
+      "discipline": "AI Engineering",
+      "project": "AI Engineering Course",
+      "research_area": "Courseware",
+      "document_type": "workbook",
+      "canonical": false,
+      "status": "draft",
+      "related_documents": [
+        "input-documents/Chapter 1/Lesson.md",
+        "input-documents/Chapter 1/CheatSheet.md"
+      ],
+      "duplicate_score": 0.19,
+      "authority_score": 0.55,
+      "importance_score": 0.61,
+      "confidence_score": 0.81,
+      "suggested_location": "content/projects/ai-engineering-course/chapter-01/derived/lesson-01-workbook.md",
+      "recommendation": "move"
+    },
+    {
+      "path": "input-documents/Chapter 1/Notes.md",
+      "title": "Lesson 1 Notes",
+      "discipline": "AI Engineering",
+      "project": "AI Engineering Course",
+      "research_area": "Courseware",
+      "document_type": "notes",
+      "canonical": false,
+      "status": "draft",
+      "related_documents": [
+        "input-documents/Chapter 1/Lesson.md",
+        "input-documents/Chapter 1/Research.md"
+      ],
+      "duplicate_score": 0.34,
+      "authority_score": 0.43,
+      "importance_score": 0.49,
+      "confidence_score": 0.76,
+      "suggested_location": "content/projects/ai-engineering-course/chapter-01/derived/lesson-01-notes.md",
+      "recommendation": "move_and_merge"
+    },
+    {
+      "path": "input-documents/Chapter 1/Chapter-01-Why-AI-Engineering-Is-Different.zip",
+      "title": "Chapter-01-Why-AI-Engineering-Is-Different",
+      "discipline": "AI Engineering",
+      "project": "AI Engineering Course",
+      "research_area": "Courseware",
+      "document_type": "packaged-archive",
+      "canonical": false,
+      "status": "draft",
+      "children": [
+        "Chapter-01/01-Executive-Summary.md",
+        "Chapter-01/02-Final-Chapter.md",
+        "Chapter-01/03-Research-Log.md",
+        "Chapter-01/04-Suggested-Diagrams.md",
+        "Chapter-01/05-References.md",
+        "Chapter-01/06-Future-Research.md"
+      ],
+      "related_documents": [
+        "input-documents/Chapter 1/Lesson.md",
+        "input-documents/Chapter 1/Research.md",
+        "input-documents/Chapter 1/Course-Roadmap.md"
+      ],
+      "duplicate_score": 0.61,
+      "authority_score": 0.51,
+      "importance_score": 0.74,
+      "confidence_score": 0.8,
+      "suggested_location": "content/archive/packages/ai-engineering-course/chapter-01-why-ai-engineering-is-different.zip",
+      "recommendation": "archive"
+    }
+  ],
+  "migration_recommendations": {
+    "keep": [
+      "All five handbook parts",
+      "Course Constitution",
+      "Course Roadmap",
+      "Lesson",
+      "Research Package 001 brief",
+      "Research Package 001 notes"
+    ],
+    "rename": [
+      "All handbook parts to stable slug-based names",
+      "Lesson.md to lesson-01-why-ai-sometimes-feels-like-magic-and-sometimes-feels-completely-useless.md",
+      "Research.md to research-package-001-notes.md",
+      "Research-Package-001.md to research-package-001-brief.md"
+    ],
+    "merge": [
+      "Fold thin `Notes.md` content into either teaching notes or the research log unless a distinct note-taking workflow is required.",
+      "Resolve `Lesson 2.md` by either reclassifying it as a true second lesson or merging its unique material into the canonical lesson."
+    ],
+    "archive": [
+      "Keep the ZIP archive as a derived publication artifact under an archive path, not beside canonical sources."
+    ],
+    "delete": [
+      "No deletions recommended at this stage because the corpus is small and historical reasoning should be preserved."
+    ]
+  }
+}
