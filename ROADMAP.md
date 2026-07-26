@@ -1,70 +1,29 @@
-# AI-ROS Roadmap
+# Roadmap
 
-## Milestone 0 — Repository Consolidation
+- Repository bootstrap
+- Constitution
+- Specifications
+- Knowledge model
+- Repository generator
+- Website
+- Validation
+- AI agents
 
-- [x] Import bootstrap governance, prompt, mobile, and template artifacts.
-- [x] Normalize handbook and course content into canonical content paths.
-- [x] Preserve provenance with an inventory, decision log, and validation report.
-- [ ] Add metadata and link normalization across imported Markdown files.
+## Research Validation Sequence
 
-## Milestone 1 — Workflow Validation
+1. Long-horizon agent evaluation and verification
+2. Context compilation, state, and memory
+3. Permissions, security, and recovery
+4. Agent orchestration and human escalation
+5. Retrieval and knowledge-platform validation
+6. Model routing and interface-agent evaluation
 
-Run 3–5 real research efforts using the REP and handoff flow.
+See `research/AI-Research-Roadmap.md` for decision gates and deliverables.
 
-**Measure**
+### Evaluation Mission Status
 
-- time from idea to committed question;
-- time needed for a new agent to resume;
-- files commonly omitted or duplicated;
-- steps that create disproportionate friction;
-- artifacts that are never consulted afterward.
-
-**Exit criteria**
-
-The repository structure and artifact model have been revised from observed evidence rather than speculation.
-
-## Milestone 2 — Schema and Validation
-
-Implement machine-readable front matter and validators for:
-
-- required metadata;
-- stable and unique identifiers;
-- broken internal references;
-- unresolved supersession links;
-- orphaned theories and evidence;
-- repository manifest integrity.
-
-## Milestone 3 — Generated Documentation
-
-Generate a static site from canonical Markdown with:
-
-- full-text search;
-- artifact indexes;
-- cross-links;
-- theory and evidence browsers;
-- repository health report.
-
-## Milestone 4 — Agent Execution Layer
-
-Create reusable role prompts and bounded agent workflows for:
-
-- research;
-- engineering;
-- repository curation;
-- synthesis;
-- red-team review;
-- validation.
-
-## Milestone 5 — Knowledge Graph
-
-Add an explicit graph only after relationships in real artifacts justify it. Do not introduce a graph database merely because one may eventually be useful.
-
-## Milestone 6 — AI-ROS v1.0
-
-Release when:
-
-- real projects have validated the workflows;
-- the repository can detect structural failure automatically;
-- another agent can resume without private conversation history;
-- mobile and desktop workflows operate against the same canonical source;
-- the system remains understandable without its original designer.
+- [x] Cycle 001: charter, constructs, task taxonomy, audit protocol, and registries
+- [ ] Cycle 002: integrity pilots for ET-004 and ET-014
+- [ ] Cycle 003: minimum grader calibration
+- [ ] Cycle 004: repeated baseline and variance estimate
+- [ ] Cycle 005: context or system comparison

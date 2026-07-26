@@ -12,3 +12,13 @@
 - Promoted the bootstrap README, roadmap, state, governance, prompts, templates, and mobile docs into the repository structure.
 - Archived the derived Chapter 1 ZIP package and preserved import audit records.
 - Removed the duplicate REP source copy from the bootstrap kit after hash verification.
+
+## Unreleased
+
+- Executed the AI Research Mission Generator and added a current state-of-field REP, knowledge-gap analysis, research roadmap, and priority matrix.
+- Selected long-horizon agent evaluation and verification as the highest-value research mission.
+- Superseded the generator at `prompts/AI-Research-Mission.md` with a ready-to-run empirical research prompt.
+- Recorded the execution and supersession decision under `docs/repository/`.
+- Started the highest-priority research mission and completed Evaluation Research Cycle 001.
+- Added the experimental `research/evaluation/` workspace with a charter, candidate task suite, evaluation specification, evidence/hypothesis/experiment registries, failure taxonomy, immutable cycle report, and next-agent handoff.
+- Recorded the decision to audit task integrity before running capability baselines.
