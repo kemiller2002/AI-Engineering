@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "as_of": "2026-07-28",
+  "analysis_id": "RFA-2026-001",
+  "records": [
+    {"id":"RFR-001","title":"Independent pilot integrity review","status":"open","rank":1,"frontier_score":622},
+    {"id":"RFR-002","title":"Contained repeated exploratory baseline","status":"open","rank":2,"frontier_score":620},
+    {"id":"RFR-003","title":"Grader external-validity study","status":"open","rank":3,"frontier_score":619},
+    {"id":"RFR-004","title":"Representative repository task corpus","status":"open","rank":4,"frontier_score":616},
+    {"id":"RFR-005","title":"Context-policy causal comparison","status":"open","rank":5,"frontier_score":391},
+    {"id":"RFR-006","title":"Total verified-cost measurement","status":"open","rank":6,"frontier_score":390},
+    {"id":"RFR-007","title":"Risk-triggered human escalation study","status":"open","rank":7,"frontier_score":311},
+    {"id":"RFR-008","title":"Evaluation containment validation","status":"open","rank":8,"frontier_score":393},
+    {"id":"RFR-009","title":"Stable identifiers and reference integrity","status":"open","rank":9,"frontier_score":177},
+    {"id":"RFR-010","title":"Knowledge-graph value experiment","status":"open","rank":10,"frontier_score":125}
+  ]
+}

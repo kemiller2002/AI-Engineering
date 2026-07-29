@@ -6,17 +6,18 @@ Validate AI-ROS through evidence-traceable evaluation of long-horizon repository
 
 ## Current Phase
 
-Evaluation research Cycle 001 complete; task-integrity pilots are next.
+Evaluation research Cycles 001–003 complete; independent review and contained baseline are next.
 
 ## Active Work
 
-- Validate candidate tasks before any capability baseline.
-- Instantiate bounded-edit task ET-004 and task-defect task ET-014.
-- Calibrate outcome checks against complete, incomplete, and alternative-correct probe outcomes.
+- Obtain independent reviews of ET-004-P01 and ET-014-P01.
+- Freeze one agent-system configuration for a contained exploratory baseline.
+- Capture final state, actions, runtime, retries, cost, and human intervention.
+- Maintain the research frontier records under `research/frontier/`; RFR-001 and RFR-002 align with Cycle 004.
 
 ## Next Task
 
-Follow `research/evaluation/NEXT-AGENT-START-HERE.md` and execute EX-E002 and EX-E003.
+Follow `research/evaluation/NEXT-AGENT-START-HERE.md`; independently review the pilots, then run contained exploratory baselines if they pass.
 
 ## Risks
 
@@ -25,6 +26,9 @@ Follow `research/evaluation/NEXT-AGENT-START-HERE.md` and execute EX-E002 and EX
 - Human review capacity may constrain evaluator calibration.
 - The current repository is documentation-heavy and may not represent production coding work.
 - Repository-native tasks may inherit hidden context, narrow graders, or answer leakage.
+- Evaluated agents may exploit benchmark or infrastructure exposure.
+- Probe calibration may overfit designer-created outcomes.
+- Additional architecture work now risks replacing empirical learning with speculation.
 
 ## Open Questions
 
@@ -41,11 +45,18 @@ Follow `research/evaluation/NEXT-AGENT-START-HERE.md` and execute EX-E002 and EX
 - Completed Evaluation Research Cycle 001.
 - Defined the evaluation charter, constructs, outcome classes, sixteen candidate task families, audit protocol, and initial registries.
 - Challenged the assumptions that repository-native tasks are inherently valid, more graders are always better, and three runs support stable rankings.
+- Completed task-integrity pilots ET-004-P01 and ET-014-P01.
+- Implemented a dependency-free evaluator and blind fixture exporter.
+- Calibrated seven declared outcome probes and verified two blind exports.
+- Added a decision framework, threat model, evaluation architecture, teaching guide, and research/engineering roadmap v2.
+- Moved containment and runtime monitoring into the evaluation foundation rather than postponing security.
+- Resolved three root case-only Git collisions by retaining the governance-defined uppercase canonical paths and preserving prior variants in Git history.
+- Completed repository frontier analysis RFA-2026-001 with ten traceable open RFRs, document frontiers, health metrics, and a dependency graph.
 
 ## Largest Unknown
 
-Whether the first two candidate tasks survive independent integrity review and whether layered grading adds signal beyond observable outcomes.
+Whether independent reviewers agree with the pilot contracts and how much variance appears in real contained agent runs.
 
 ## Next-Agent Handoff
 
-**Start at `research/evaluation/NEXT-AGENT-START-HERE.md`. No capability baseline has been run.**
+**Start at `research/evaluation/NEXT-AGENT-START-HERE.md`. No capability baseline has been run; current results calibrate fixtures and graders only.**

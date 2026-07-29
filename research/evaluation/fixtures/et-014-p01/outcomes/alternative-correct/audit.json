@@ -1,0 +1,11 @@
+{
+  "outcome_class": "task_defect",
+  "defect_ids": ["TF-001"],
+  "evidence": [
+    "An agent following the visible newest-first instruction would fail the grader.",
+    "The oldest-first requirement is hidden and contradicts the visible task."
+  ],
+  "recommendation": "Revise the visible contract and grader together, then re-audit.",
+  "agent_score": null
+}
+

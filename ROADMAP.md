@@ -23,7 +23,26 @@ See `research/AI-Research-Roadmap.md` for decision gates and deliverables.
 ### Evaluation Mission Status
 
 - [x] Cycle 001: charter, constructs, task taxonomy, audit protocol, and registries
-- [ ] Cycle 002: integrity pilots for ET-004 and ET-014
-- [ ] Cycle 003: minimum grader calibration
-- [ ] Cycle 004: repeated baseline and variance estimate
+- [x] Cycle 002: integrity pilots for ET-004 and ET-014 (provisional pending independent review)
+- [x] Cycle 003: in-sample deterministic grader calibration and blind export
+- [ ] Cycle 004: independent review plus contained repeated baseline and variance estimate
 - [ ] Cycle 005: context or system comparison
+
+Detailed critical path: `research/evaluation/12-research-and-engineering-roadmap.md`.
+
+Containment, telemetry, and rollback now run in parallel with evaluation rather than waiting for a later security phase.
+
+### Repository Fitness
+
+- [x] Remove case-only collisions for root README, current state, and roadmap
+- [x] Add a repeatable Git case-collision audit
+- [ ] Add reference-integrity and stable-identifier fitness checks
+
+### Research Frontier
+
+- [x] Establish the canonical repository frontier and health assessment
+- [ ] RFR-001: obtain independent pilot integrity reviews
+- [ ] RFR-002: run a contained repeated exploratory baseline
+- [ ] RFR-003: validate graders on natural outcomes
+
+See `research/frontier/FRONTIER-MASTER.md` for the ranked backlog and dependency graph.

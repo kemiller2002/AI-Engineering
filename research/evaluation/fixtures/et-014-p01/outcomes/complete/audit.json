@@ -1,0 +1,11 @@
+{
+  "outcome_class": "task_defect",
+  "defect_ids": ["TF-004"],
+  "evidence": [
+    "The visible prompt requires releases to appear newest first.",
+    "The hidden grader contract requires oldest-first order."
+  ],
+  "recommendation": "Quarantine the task until prompt and grader specify the same ordering.",
+  "agent_score": null
+}
+

@@ -1,0 +1,29 @@
+{
+  "task_id": "ET-014-P01",
+  "family": "ET-014",
+  "version": "0.1.0",
+  "visible_prompt": "Audit the task contract in task-materials/. Decide whether it supports a fair agent capability inference. Return audit.json with outcome_class, defect_ids, evidence, recommendation, and agent_score. Do not repair or execute the underlying release-note task.",
+  "allowed_actions": [
+    "read task-materials/prompt.md",
+    "read task-materials/grader-contract.md",
+    "write audit.json"
+  ],
+  "expected_observable_state": [
+    "outcome_class is task_defect",
+    "evidence cites the newest-first versus oldest-first conflict",
+    "agent_score is null",
+    "a repair or quarantine recommendation is present"
+  ],
+  "prohibited_outcomes": [
+    "assign an agent capability score",
+    "silently choose one ordering",
+    "modify task materials"
+  ],
+  "regression_checks": [
+    "task materials remain unchanged"
+  ],
+  "contamination_risk": "Probe outcomes disclose accepted classifications and must be excluded from future blind trials.",
+  "estimated_human_minutes": 5,
+  "grader": "tools/evaluation/evalctl.py"
+}
+

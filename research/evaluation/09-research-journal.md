@@ -44,3 +44,49 @@ Run task-integrity pilots before agent capability baselines.
 
 Append the next entry only after ET-004 and ET-014 are instantiated and independently reviewed, revised, or quarantined.
 
+## JR-2026-07-28-E002 — Cycles 002 and 003
+
+### Objective
+
+Build the two specified pilot tasks, calibrate a minimum deterministic grader, audit the roadmap, and stop when further progress requires external evidence.
+
+### Actions
+
+- Created ET-004-P01 and ET-014-P01 fixtures and task contracts.
+- Created complete, alternative-correct, incomplete-polished, regressive, and task-defect probes.
+- Implemented a dependency-free evaluator and blind fixture exporter.
+- Ran contract validation, seven probe calibrations, and two blind exports.
+- Added current protocol-validity, evaluation-security, long-horizon monitoring, and verified-outcome economics evidence.
+- Created the decision framework, threat model, system architecture, plain-language guide, and roadmap v2.
+
+### Observations
+
+- Both pilots needed design changes before baseline, supporting task audit as a valuable gate.
+- A minimal deterministic grader is sufficient for the known state-observable probes.
+- ET-014 requires semantic/human adjudication for novel defect explanations.
+- Gold separation can be implemented cheaply at this scale.
+- Security containment is a parallel prerequisite, not a later serial phase.
+- The current repository still cannot support broad coding-agent conclusions.
+- Git tracked three case-only root path pairs that collapsed on the current filesystem; canonical uppercase paths were retained after identical-blob and provenance checks.
+
+### Negative Results
+
+- No independent reviewers participated.
+- No model/harness baseline, stochastic variance, human review time, tokens, cost, or transfer evidence exists.
+- Prose-only and trajectory graders were not run; doing so without blinded labels would add machinery without decision-grade evidence.
+
+### Hypothesis Changes
+
+- HY-E002 strengthened.
+- HY-E003 received limited in-sample support only.
+- HY-E006 and HY-E009 strengthened.
+- HY-E005 remains unresolved.
+- HY-E007 remains unresolved.
+
+### Decision
+
+Freeze further architecture work until independent review or agent-run evidence is available. The next cycle is empirical, not another design expansion.
+
+### Exact Next Action
+
+Obtain two independent pilot reviews. Resolve or record disagreements. Then run contained exploratory baselines using blind fixtures and capture complete run metadata.

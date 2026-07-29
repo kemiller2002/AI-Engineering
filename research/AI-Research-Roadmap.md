@@ -1,42 +1,73 @@
 ---
 identifier: RP-2026-07-23-004
 title: AI Research Roadmap
-version: 1.0.0
+version: 2.0.0
 status: active
-as_of: 2026-07-23
+as_of: 2026-07-28
 ---
 
 # AI Research Roadmap
 
 ## Strategy
 
-Build measurement before complexity. Each phase should create evidence that can cancel or reshape later work. Time estimates are agent/research effort, not calendar commitments.
+Build measurement before complexity, while treating containment as a parallel prerequisite rather than a later phase. Each phase should create evidence that can cancel or reshape later work. Time estimates are agent/research effort, not calendar commitments.
 
-## Phase 0 — Baseline and Instrumentation (1–2 weeks)
+The detailed active plan is `research/evaluation/12-research-and-engineering-roadmap.md`.
 
-**Objective:** establish a reproducible task suite and full cost/outcome capture.
+## Phase 0 — Task and Grader Integrity (active)
 
-- Select 12–20 representative repository tasks spanning research, editing, retrieval, validation, and coding.
-- Define success, partial success, regressions, prohibited actions, and human-review criteria.
-- Record model, harness, prompt, tool permissions, context policy, environment, latency, tokens/cost, retries, and intervention time.
-- Run repeated baselines.
+**Objective:** ensure tasks and graders can support a fair inference before measuring agents.
 
-**Exit criteria:** another agent can reproduce runs; graders agree sufficiently; broken or ambiguous tasks are removed or repaired.
+- [x] Define constructs, outcomes, and failure taxonomy.
+- [x] Create sixteen candidate task families.
+- [x] Instantiate ET-004 and ET-014 pilots.
+- [x] Calibrate deterministic grading against seven declared probes.
+- [x] Export blind fixtures without gold/probe outcomes.
+- [ ] Obtain two independent reviews.
+- [ ] Test unseen alternative-correct and incomplete outcomes.
 
-## Phase 1 — Evaluation and Verification (2–4 weeks)
+**Exit criteria:** reviewers agree or disagreements are adjudicated; alternative-correct work passes; incomplete work fails; contamination controls are tested.
+
+## Phase 1 — Contained Exploratory Baseline
 
 **Objective:** determine which measures predict correct repository outcomes.
 
-- Compare final-state tests, rubric grading, trace grading, provenance checks, and human review.
-- Audit task validity using independent reviewers and adversarial attempts.
-- Create failure taxonomy and confidence calibration.
-- Test the prediction that rankings change when cost, regressions, and human effort are included.
+- Freeze one complete agent-system configuration.
+- Run only validated pilots in disposable blind fixtures.
+- Capture final state, actions, runtime, tokens/cost, retries, and human interventions.
+- Repeat at least three times for exploratory variance; choose later sample size from observed variance.
+- Repair task and grader defects before expanding.
 
-**Deliverables:** eval specification, task manifest, baseline REP, evaluation harness, grader audit.
+**Deliverables:** immutable run records, variance estimate, failure analysis, grader revisions.
 
-**Decision gate:** do not automate further if the suite cannot reliably distinguish complete, partial, unsafe, and persuasive-but-wrong work.
+**Decision gate:** do not rank models or architectures from pilot/debugging runs.
 
-## Phase 2 — Context, State, and Memory (2–4 weeks)
+## Parallel Foundation — Containment and Runtime Safety
+
+This work begins before Phase 1 and continues throughout:
+
+- no production credentials;
+- network deny-by-default;
+- disposable state;
+- agent/grader permission separation;
+- timeouts, checkpoints, pause/kill, and rollback;
+- action telemetry and post-run inspection.
+
+This sequencing change follows current evidence that evaluation environments can create real security incidents and that fixed suites do not anticipate every long-horizon failure.
+
+## Phase 2 — External Validity and Representative Suite
+
+**Objective:** establish that graders work on unseen outcomes and that the task mix supports the intended claims.
+
+- calibrate against blinded expert labels;
+- estimate false acceptance/rejection;
+- add one task family at a time;
+- include recovery, provenance, injection, and cross-file state;
+- add genuine code/automation work before coding-agent claims.
+
+**Decision gate:** task-level results and sampling limits must be reported before aggregate claims.
+
+## Phase 3 — Context, State, and Memory
 
 **Objective:** find the lowest-cost policy that preserves reliable completion.
 
@@ -46,7 +77,7 @@ Build measurement before complexity. Each phase should create evidence that can 
 
 **Deliverables:** context policy, memory freshness protocol, state schema, decision framework.
 
-## Phase 3 — Permissions, Security, and Recovery (2–3 weeks)
+## Phase 4 — Permissions, Security, and Recovery
 
 **Objective:** bound agent action without destroying utility.
 
@@ -56,17 +87,18 @@ Build measurement before complexity. Each phase should create evidence that can 
 
 **Deliverables:** threat model, permission matrix, recovery playbook, safety evaluation pack.
 
-## Phase 4 — Orchestration and Human Collaboration (3–5 weeks)
+## Phase 5 — Human Review, Economics, and Orchestration
 
 **Objective:** identify when parallel agents or human intervention create net value.
 
-- Compare single relay, parallel independent, specialist, and coordinator-worker structures.
+- Measure reviewer burden and cost per verified outcome before adding agents.
+- Compare single relay, parallel independent, specialist, and coordinator-worker structures only after a stable single-agent baseline.
 - Measure duplicated work, synthesis loss, latency, verified cost, and reviewer burden.
 - Compare fixed approval gates with risk-triggered escalation.
 
 **Deliverables:** orchestration threshold framework, human-agent operating model, scheduling guidance.
 
-## Phase 5 — Retrieval and Knowledge Platform (3–5 weeks)
+## Phase 6 — Retrieval and Knowledge Platform
 
 **Objective:** validate the minimum knowledge architecture needed for AI-ROS.
 
@@ -77,7 +109,7 @@ Build measurement before complexity. Each phase should create evidence that can 
 
 **Deliverables:** retrieval benchmark, search decision record, knowledge-graph go/no-go.
 
-## Phase 6 — Model Routing and Interface Agents (ongoing)
+## Phase 7 — Model Routing and Interface Agents
 
 **Objective:** optimize verified outcomes across fast-changing models and interfaces.
 
@@ -97,9 +129,13 @@ Build measurement before complexity. Each phase should create evidence that can 
 
 ## Dependency Flow
 
-`evaluation → context/state → security/recovery → orchestration/human factors → retrieval/knowledge platform → routing/interfaces`
+Critical path:
 
-Security threat cases begin in Phase 1 even though the full security program follows context work.
+`task/grader integrity → contained baseline → external validity → representative suite → context/state → human economics → orchestration → retrieval/platform → routing/interfaces`
+
+Parallel prerequisite:
+
+`containment + telemetry + pause/rollback`
 
 ## Stop Conditions
 
@@ -111,3 +147,4 @@ Pause or redirect a stream when:
 - coordination cost exceeds measured benefit;
 - a simpler artifact or test provides equivalent decision value.
 
+Current diminishing-returns boundary: do not add further architecture until independent review or isolated run evidence changes a decision.

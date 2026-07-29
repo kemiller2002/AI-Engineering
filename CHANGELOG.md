@@ -22,3 +22,12 @@
 - Started the highest-priority research mission and completed Evaluation Research Cycle 001.
 - Added the experimental `research/evaluation/` workspace with a charter, candidate task suite, evaluation specification, evidence/hypothesis/experiment registries, failure taxonomy, immutable cycle report, and next-agent handoff.
 - Recorded the decision to audit task integrity before running capability baselines.
+- Completed provisional ET-004 and ET-014 task-integrity pilots with seven versioned calibration probes.
+- Added a dependency-free evaluation CLI that validates contracts, calibrates deterministic graders, and exports blind disposable fixtures.
+- Added current results, a minimum-sufficient-evaluation decision framework, threat model, system architecture, teaching guide, and evaluation roadmap v2.
+- Revised the program roadmap so containment, telemetry, pause, and rollback precede adversarial or long-horizon baselines.
+- Recorded Cycles 002 and 003, including negative results, unresolved hypotheses, and the independent-review blocker.
+- Canonicalized root README, current-state, and roadmap paths by removing identical case-only Git entries while preserving their history.
+- Added a repository fitness check for case-colliding tracked paths.
+- Added the canonical `research/frontier/` analysis with ten evidence-traceable RFRs, document-level frontiers, repository health metrics, and machine-readable index/dependency graph.
+- Recorded the frontier scope and semantic-canonicalization decision under `docs/repository/`.

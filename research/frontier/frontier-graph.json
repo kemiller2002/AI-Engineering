@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "directed": true,
+  "nodes": ["RFR-001","RFR-002","RFR-003","RFR-004","RFR-005","RFR-006","RFR-007","RFR-008","RFR-009","RFR-010"],
+  "edges": [
+    {"from":"RFR-001","to":"RFR-002","type":"prerequisite"},
+    {"from":"RFR-008","to":"RFR-002","type":"prerequisite"},
+    {"from":"RFR-002","to":"RFR-003","type":"produces-natural-outcomes"},
+    {"from":"RFR-003","to":"RFR-004","type":"validates-measurement"},
+    {"from":"RFR-009","to":"RFR-004","type":"supports-provenance"},
+    {"from":"RFR-004","to":"RFR-005","type":"enables-comparison"},
+    {"from":"RFR-004","to":"RFR-006","type":"enables-measurement"},
+    {"from":"RFR-004","to":"RFR-007","type":"enables-comparison"},
+    {"from":"RFR-002","to":"RFR-006","type":"supplies-cost-observations"},
+    {"from":"RFR-008","to":"RFR-007","type":"defines-risk-controls"},
+    {"from":"RFR-004","to":"RFR-010","type":"supplies-corpus"},
+    {"from":"RFR-009","to":"RFR-010","type":"supplies-identifiers"}
+  ]
+}

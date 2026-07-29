@@ -1,0 +1,10 @@
+{
+  "outcome_class": "complete",
+  "defect_ids": [],
+  "evidence": [
+    "The task is professionally written and provides an explicit order."
+  ],
+  "recommendation": "Run the task as written.",
+  "agent_score": 1
+}
+

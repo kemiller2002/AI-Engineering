@@ -69,6 +69,8 @@ This ordering challenges HY-D: trajectory grading is not presumed useful for eve
 - Freeze fixture and grader versions.
 - Record the complete system configuration.
 - Start from a clean, disposable worktree or fixture copy.
+- Give the agent only the visible prompt and allowed fixture state; keep graders, expected outcomes, calibration probes, and secrets outside the agent boundary.
+- Run graders with read-only access to the agent outcome whenever possible.
 - Prevent access to gold answers unless the experiment studies contamination.
 - Run at least three independent trials per stochastic configuration for exploratory results; increase based on observed variance before comparative claims.
 - Preserve final diff/state, grader outputs, interventions, errors, and resource measures.
@@ -97,3 +99,15 @@ The two pilot tasks are ready for baseline only if:
 - at least one alternative correct solution passes;
 - fixture recreation produces identical hashes.
 
+## Containment Requirement
+
+Evaluation infrastructure is an attack surface. A task suite must not be allowed to reach production credentials or services merely because the purpose is “testing.” Long-horizon and adversarial runs require:
+
+- disposable execution state;
+- no production secrets;
+- explicit network policy;
+- least-privilege tools;
+- agent/grader permission separation;
+- action and state telemetry;
+- a kill switch, timeout, and recoverable checkpoint;
+- post-run inspection before artifacts are promoted.

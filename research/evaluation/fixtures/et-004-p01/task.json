@@ -1,0 +1,31 @@
+{
+  "task_id": "ET-004-P01",
+  "family": "ET-004",
+  "version": "0.1.0",
+  "visible_prompt": "Update review-policy.md from draft to reviewed. Under Decision, add one sentence explaining that review decisions must be supported by observable evidence. Preserve the identifier, owner, Scope section, Exceptions section, and all unrelated content. Do not create other files.",
+  "allowed_actions": [
+    "read files in the fixture",
+    "edit review-policy.md"
+  ],
+  "expected_observable_state": [
+    "status is reviewed",
+    "Decision states that review decisions require observable evidence",
+    "identifier and owner are unchanged",
+    "Scope and Exceptions are byte-preserved",
+    "no other file is created"
+  ],
+  "prohibited_outcomes": [
+    "change identifier or owner",
+    "change Scope or Exceptions",
+    "create additional files"
+  ],
+  "regression_checks": [
+    "Scope matches base fixture",
+    "Exceptions matches base fixture",
+    "identifier and owner remain present"
+  ],
+  "contamination_risk": "Probe outcomes are stored beside the task for grader calibration. Real baselines must copy only base/ and the visible prompt to an isolated directory.",
+  "estimated_human_minutes": 3,
+  "grader": "tools/evaluation/evalctl.py"
+}
+
