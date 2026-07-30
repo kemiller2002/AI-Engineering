@@ -36,7 +36,8 @@ Containment, telemetry, and rollback now run in parallel with evaluation rather 
 
 - [x] Remove case-only collisions for root README, current state, and roadmap
 - [x] Add a repeatable Git case-collision audit
-- [ ] Add reference-integrity and stable-identifier fitness checks
+- [x] Add initial reference-integrity and stable-identifier fitness checks
+- [ ] Measure metadata coverage and validate adopted supersession/relationship targets
 
 ### Research Frontier
 
@@ -44,5 +45,6 @@ Containment, telemetry, and rollback now run in parallel with evaluation rather 
 - [ ] RFR-001: obtain independent pilot integrity reviews
 - [ ] RFR-002: run a contained repeated exploratory baseline
 - [ ] RFR-003: validate graders on natural outcomes
+- [ ] RFR-009 (Validation): initial validator calibrated; metadata and semantic provenance coverage remain
 
 See `research/frontier/FRONTIER-MASTER.md` for the ranked backlog and dependency graph.

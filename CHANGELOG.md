@@ -31,3 +31,5 @@
 - Added a repository fitness check for case-colliding tracked paths.
 - Added the canonical `research/frontier/` analysis with ten evidence-traceable RFRs, document-level frontiers, repository health metrics, and machine-readable index/dependency graph.
 - Recorded the frontier scope and semantic-canonicalization decision under `docs/repository/`.
+- Advanced RFR-009 to Validation with a dependency-free stable-identifier, explicit local-link, and frontier graph/index integrity validator.
+- Added four seeded integrity tests, integrated the checks into `evalctl.py repo-audit`, and preserved the first machine-readable inventory under `data/validation/`.

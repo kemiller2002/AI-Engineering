@@ -14,6 +14,7 @@ Evaluation research Cycles 001–003 complete; independent review and contained 
 - Freeze one agent-system configuration for a contained exploratory baseline.
 - Capture final state, actions, runtime, retries, cost, and human intervention.
 - Maintain the research frontier records under `research/frontier/`; RFR-001 and RFR-002 align with Cycle 004.
+- Extend RFR-009 from structural validation to measured metadata and provenance coverage without imposing premature strict migration.
 
 ## Next Task
 
@@ -52,6 +53,7 @@ Follow `research/evaluation/NEXT-AGENT-START-HERE.md`; independently review the 
 - Moved containment and runtime monitoring into the evaluation foundation rather than postponing security.
 - Resolved three root case-only Git collisions by retaining the governance-defined uppercase canonical paths and preserving prior variants in Git history.
 - Completed repository frontier analysis RFA-2026-001 with ten traceable open RFRs, document frontiers, health metrics, and a dependency graph.
+- Advanced RFR-009 to Validation with calibrated stable-identifier, explicit-link, and frontier graph/index checks; the first scoped inventory is clean.
 
 ## Largest Unknown
 
