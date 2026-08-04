@@ -1,6 +1,6 @@
 export default {
   site: {
-    title: "Visual Engineering Research",
+    title: "AI Engineering Research",
     description: "Searchable AI engineering research repository",
     baseUrl: "/",
     language: "en",
@@ -8,7 +8,7 @@ export default {
   } /**/,
   repository: {
     name: "AI Engineering",
-    sourceUrl: "https://github.com/kemiller2002/Visual-Engineering",
+    sourceUrl: "https://github.com/kemiller2002/AI Engineering",
   },
   content: {
     include: ["**/*.md"],
