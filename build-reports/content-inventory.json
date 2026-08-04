@@ -1,0 +1,513 @@
+{
+  "generatedAt": "2026-07-22",
+  "summary": {
+    "publishable source": 123,
+    "ignored": 3
+  },
+  "records": [
+    {
+      "path": "AGENTS.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "ai-prompts/agents/Repository-Ready-Research-Agent.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "ai-prompts/Autonomous-Engineering-Solution-Agent-Prompt.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "ai-prompts/autonomous-research-agent-repo-archi-and-knowledge.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "ai-prompts/bootstrap/AI-ROS-Bootstrap-Agent.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "ai-prompts/Research-Execution-Package-Specification-v2.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "content/disciplines/ai-engineering/handbook/agent-architecture-and-coordination.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "content/disciplines/ai-engineering/handbook/engineering-workflows.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "content/disciplines/ai-engineering/handbook/foundations.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "content/disciplines/ai-engineering/handbook/research-engineering.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "content/disciplines/ai-engineering/handbook/token-economics-and-context-engineering.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "content/disciplines/ai-engineering/research-program.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "content/disciplines/ai-engineering/research-relay-system.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "content/projects/ai-engineering-course/chapter-01/derived/lesson-01-cheat-sheet.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "content/projects/ai-engineering-course/chapter-01/derived/lesson-01-notes.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "content/projects/ai-engineering-course/chapter-01/derived/lesson-01-workbook.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "content/projects/ai-engineering-course/chapter-01/drafts/lesson-01-working-draft.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "content/projects/ai-engineering-course/chapter-01/lesson-01-why-ai-sometimes-feels-like-magic-and-sometimes-feels-completely-useless.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "content/projects/ai-engineering-course/chapter-01/research/research-package-001-brief.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "content/projects/ai-engineering-course/chapter-01/research/research-package-001-notes.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "content/projects/ai-engineering-course/governance/course-constitution.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "content/projects/ai-engineering-course/roadmaps/course-roadmap.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "current-state.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/governance/000-engineering-constitution.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/mobile/ios/setup/apple-shortcuts-setup.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/mobile/ios/setup/working-copy-setup.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/mobile/ios/shortcuts/ai-ros-launcher.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/mobile/ios/shortcuts/capture-research.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/mobile/ios/workflows/mobile-research-cycle.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/repository/2026-07-23-ai-research-mission-execution.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/repository/2026-07-23-evaluation-research-infrastructure.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/repository/2026-07-28-case-collision-canonicalization.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/repository/2026-07-28-evaluation-roadmap-execution.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/repository/2026-07-28-research-frontier-analysis.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/repository/2026-07-30-non-human-experimental-comparative-review.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/repository/2026-07-30-research-integrity-validation.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/repository/bootstrap-ci-placeholder.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/repository/bootstrap-manifest.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/repository/bootstrap-tests-placeholder.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/repository/bootstrap-tools-placeholder.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/repository/bootstrap-website-placeholder.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/repository/codex-run-instructions.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/repository/imports/2026-07-22-input-documents-import/DECISIONS.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/repository/imports/2026-07-22-input-documents-import/INVENTORY.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/repository/imports/2026-07-22-input-documents-import/VALIDATION.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "knowledge-platform/Build-Pipeline.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "knowledge-platform/Metadata-Standard.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "knowledge-platform/Migration-Plan.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "knowledge-platform/README.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "knowledge-platform/Repository-Architecture.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "knowledge-platform/Search-Architecture.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "knowledge-platform/Website-Architecture.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "prompts/AI-Research-Mission.md",
+      "classification": "ignored"
+    },
+    {
+      "path": "prompts/CODEX-Import-Organize-Input-Documents.md",
+      "classification": "ignored"
+    },
+    {
+      "path": "prompts/Non-Human-Experimental-Research-Next-Mission.md",
+      "classification": "ignored"
+    },
+    {
+      "path": "Readme.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/AI-Knowledge-Gap-Analysis.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/AI-Research-Priority-Matrix.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/AI-Research-Roadmap.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/AI-State-of-the-Field-REP.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/analysis/non-human-cumulative-findings.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/analysis/non-human-experimental-comparative-analysis.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/analysis/non-human-experimental-contradictions.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/analysis/non-human-experimental-failure-modes.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/analysis/non-human-experimental-inventory.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/analysis/non-human-experimental-lineage.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/analysis/non-human-next-experiments.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/00-charter.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/01-task-suite-manifest.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/02-evaluation-specification.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/03-evidence-registry.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/04-hypothesis-registry.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/05-experiment-registry.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/06-failure-taxonomy.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/07-results.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/08-decision-framework.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/09-research-journal.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/10-threat-model.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/11-system-architecture.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/12-research-and-engineering-roadmap.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/13-independent-review-protocol.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/cycles/2026-07-23-cycle-001.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/cycles/2026-07-28-cycle-002.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/cycles/2026-07-28-cycle-003.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/fixtures/et-004-p01/base/review-policy.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/fixtures/et-004-p01/integrity-audit.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/fixtures/et-004-p01/outcomes/alternative-correct/review-policy.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/fixtures/et-004-p01/outcomes/complete/review-policy.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/fixtures/et-004-p01/outcomes/incomplete-polished/review-policy.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/fixtures/et-004-p01/outcomes/regressive/review-policy.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/fixtures/et-014-p01/integrity-audit.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/fixtures/et-014-p01/task-materials/expected-behavior.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/fixtures/et-014-p01/task-materials/prompt.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/NEXT-AGENT-START-HERE.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/evaluation/README.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/frontier/document-frontiers/AI-Knowledge-Gap-Analysis-frontier.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/frontier/document-frontiers/AI-Research-Roadmap-frontier.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/frontier/document-frontiers/AI-State-of-the-Field-REP-frontier.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/frontier/document-frontiers/evaluation-architecture-threat-frontier.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/frontier/document-frontiers/evaluation-charter-specification-frontier.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/frontier/document-frontiers/evaluation-registries-frontier.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/frontier/document-frontiers/evaluation-results-cycles-frontier.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/frontier/document-frontiers/knowledge-platform-frontier.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/frontier/FRONTIER-MASTER.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/frontier/investigations/2026-07-30-rfr-009-validation.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/frontier/records/RFR-001.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/frontier/records/RFR-002.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/frontier/records/RFR-003.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/frontier/records/RFR-004.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/frontier/records/RFR-005.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/frontier/records/RFR-006.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/frontier/records/RFR-007.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/frontier/records/RFR-008.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/frontier/records/RFR-009.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/frontier/records/RFR-010.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/frontier/repository-health.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/packages/RP-2026-07-30-NHE-COMPARATIVE-REVIEW.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "roadmap.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "templates/AGENT-HANDOFF.template.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "templates/CURRENT-STATE.template.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "templates/DECISION.template.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "templates/EVIDENCE.template.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "templates/RESEARCH-QUESTION.template.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "templates/THEORY.template.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "tools/evaluation/README.md",
+      "classification": "publishable source"
+    }
+  ]
+}

@@ -6,11 +6,15 @@ Validate AI-ROS through evidence-traceable evaluation of long-horizon repository
 
 ## Current Phase
 
-Evaluation research Cycles 001–003 complete; independent review and contained baseline are next.
+Evaluation research Cycles 001–003 and the historical non-human experimental
+comparative review are complete; independent review plus frozen-grader unseen
+testing are next.
 
 ## Active Work
 
 - Obtain independent reviews of ET-004-P01 and ET-014-P01.
+- Challenge the frozen pilot graders with independently authored, blinded unseen
+  outcomes before promotion.
 - Freeze one agent-system configuration for a contained exploratory baseline.
 - Capture final state, actions, runtime, retries, cost, and human intervention.
 - Maintain the research frontier records under `research/frontier/`; RFR-001 and RFR-002 align with Cycle 004.
@@ -18,7 +22,9 @@ Evaluation research Cycles 001–003 complete; independent review and contained 
 
 ## Next Task
 
-Follow `research/evaluation/NEXT-AGENT-START-HERE.md`; independently review the pilots, then run contained exploratory baselines if they pass.
+Execute `prompts/Non-Human-Experimental-Research-Next-Mission.md`: independently
+review the pilots and challenge the frozen graders with unseen outcomes. Run
+contained exploratory baselines only for pilots that pass.
 
 ## Risks
 
@@ -29,6 +35,8 @@ Follow `research/evaluation/NEXT-AGENT-START-HERE.md`; independently review the 
 - Repository-native tasks may inherit hidden context, narrow graders, or answer leakage.
 - Evaluated agents may exploit benchmark or infrastructure exposure.
 - Probe calibration may overfit designer-created outcomes.
+- The current 7/7 calibration is a dependent regression check, not a grader
+  accuracy estimate or replication count.
 - Additional architecture work now risks replacing empirical learning with speculation.
 
 ## Open Questions
@@ -54,11 +62,21 @@ Follow `research/evaluation/NEXT-AGENT-START-HERE.md`; independently review the 
 - Resolved three root case-only Git collisions by retaining the governance-defined uppercase canonical paths and preserving prior variants in Git history.
 - Completed repository frontier analysis RFA-2026-001 with ten traceable open RFRs, document frontiers, health metrics, and a dependency graph.
 - Advanced RFR-009 to Validation with calibrated stable-identifier, explicit-link, and frontier graph/index checks; the first scoped inventory is clean.
+- Completed a repository-wide comparative review of non-human experimental
+  evidence with a master inventory, machine-readable matrix, lineage,
+  contradictions, failure modes, cumulative findings, and ranked next
+  experiments.
+- Reclassified the evidence boundary: four empirical/preflight activities, one
+  design study, two unexecuted experiments, zero independent replications, and
+  zero agent capability trials.
 
 ## Largest Unknown
 
-Whether independent reviewers agree with the pilot contracts and how much variance appears in real contained agent runs.
+Whether independent reviewers validate the pilot contracts and whether the
+frozen graders survive blinded unseen outcomes.
 
 ## Next-Agent Handoff
 
-**Start at `research/evaluation/NEXT-AGENT-START-HERE.md`. No capability baseline has been run; current results calibrate fixtures and graders only.**
+**Start at `prompts/Non-Human-Experimental-Research-Next-Mission.md`. No
+capability baseline has been run; current results are dependent, in-sample
+fixture and grader preflights only.**

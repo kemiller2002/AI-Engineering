@@ -25,10 +25,16 @@ See `research/AI-Research-Roadmap.md` for decision gates and deliverables.
 - [x] Cycle 001: charter, constructs, task taxonomy, audit protocol, and registries
 - [x] Cycle 002: integrity pilots for ET-004 and ET-014 (provisional pending independent review)
 - [x] Cycle 003: in-sample deterministic grader calibration and blind export
-- [ ] Cycle 004: independent review plus contained repeated baseline and variance estimate
+- [x] Historical non-human experimental inventory, lineage, contradiction, and confidence synthesis
+- [ ] Cycle 004a: independent review plus frozen-grader unseen-outcome challenge
+- [ ] Cycle 004b: contained repeated baseline and exploratory variance estimate
 - [ ] Cycle 005: context or system comparison
 
 Detailed critical path: `research/evaluation/12-research-and-engineering-roadmap.md`.
+
+Comparative evidence boundary and ranked experiments:
+`research/analysis/non-human-experimental-comparative-analysis.md` and
+`research/analysis/non-human-next-experiments.md`.
 
 Containment, telemetry, and rollback now run in parallel with evaluation rather than waiting for a later security phase.
 

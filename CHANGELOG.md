@@ -33,3 +33,15 @@
 - Recorded the frontier scope and semantic-canonicalization decision under `docs/repository/`.
 - Advanced RFR-009 to Validation with a dependency-free stable-identifier, explicit local-link, and frontier graph/index integrity validator.
 - Added four seeded integrity tests, integrated the checks into `evalctl.py repo-audit`, and preserved the first machine-readable inventory under `data/validation/`.
+- Completed the repository-wide non-human experimental evidence review.
+- Added a seven-item master inventory, machine-readable experiment matrix,
+  lineage/dependency graph, comparability and quality analysis, contradiction
+  registry, failure taxonomy, cumulative findings, and ranked research backlog
+  under `research/analysis/`.
+- Added the canonical comparative-review REP and repository structural decision
+  while preserving historical evaluation records unchanged.
+- Recorded that current evidence contains zero independent experimental
+  replications and zero agent capability trials; the 7/7 result is an in-sample
+  regression check over dependent designer probes.
+- Added an executable next mission for independent pilot review and a frozen
+  grader challenge on blinded unseen outcomes.
