@@ -12,6 +12,7 @@ testing are next.
 
 ## Active Work
 
+- Publish the generated research site from `main` through GitHub Actions and GitHub Pages.
 - Obtain independent reviews of ET-004-P01 and ET-014-P01.
 - Challenge the frozen pilot graders with independently authored, blinded unseen
   outcomes before promotion.
@@ -28,6 +29,7 @@ contained exploratory baselines only for pilots that pass.
 
 ## Risks
 
+- Legacy split handbook and course-note documents remain excluded from publishing until they receive unique canonical IDs and URLs.
 - Public benchmark validity may not transfer to repository tasks.
 - Model and harness changes can obsolete baselines.
 - Human review capacity may constrain evaluator calibration.
@@ -48,6 +50,7 @@ contained exploratory baselines only for pilots that pass.
 
 ## Completed Work
 
+- Added a reproducible Node 24 research-publisher dependency and GitHub Pages publishing workflow.
 - Executed the AI Research Mission Generator.
 - Created the 2026-07-23 state-of-field REP, gap analysis, priority matrix, and research roadmap.
 - Selected long-horizon agent evaluation and verification as the highest-ROI next mission.

@@ -9,6 +9,12 @@
 - Validation
 - AI agents
 
+## Publishing
+
+- [x] Add a reproducible research-publisher build and GitHub Pages deployment workflow
+- [ ] Confirm the first successful deployment from the `main` branch
+- [ ] Assign unique canonical IDs and URLs to the excluded legacy split handbook and course-note documents
+
 ## Research Validation Sequence
 
 1. Long-horizon agent evaluation and verification

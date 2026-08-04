@@ -15,6 +15,7 @@
 
 ## Unreleased
 
+- Added a Node 24 research-publisher dependency, reproducible npm scripts, and a GitHub Actions workflow that builds and deploys the research site to GitHub Pages on pushes to `main` or manual dispatch; non-site fixtures, templates, and colliding legacy split documents are excluded from the published corpus.
 - Executed the AI Research Mission Generator and added a current state-of-field REP, knowledge-gap analysis, research roadmap, and priority matrix.
 - Selected long-horizon agent evaluation and verification as the highest-value research mission.
 - Superseded the generator at `prompts/AI-Research-Mission.md` with a ready-to-run empirical research prompt.
