@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "as_of": "2026-07-28",
+  "as_of": "2026-07-30",
   "analysis_id": "RFA-2026-001",
   "records": [
     {"id":"RFR-001","title":"Independent pilot integrity review","status":"open","rank":1,"frontier_score":622},
@@ -11,7 +11,7 @@
     {"id":"RFR-006","title":"Total verified-cost measurement","status":"open","rank":6,"frontier_score":390},
     {"id":"RFR-007","title":"Risk-triggered human escalation study","status":"open","rank":7,"frontier_score":311},
     {"id":"RFR-008","title":"Evaluation containment validation","status":"open","rank":8,"frontier_score":393},
-    {"id":"RFR-009","title":"Stable identifiers and reference integrity","status":"open","rank":9,"frontier_score":177},
+    {"id":"RFR-009","title":"Stable identifiers and reference integrity","status":"active","stage":"validation","rank":9,"frontier_score":177,"confidence":"high-within-implemented-checks","depends_on":[],"artifacts":["research/frontier/investigations/2026-07-30-rfr-009-validation.md","data/validation/research-integrity-inventory.json"],"remaining_uncertainty":"Metadata coverage, bare references, heading fragments, and supersession targets are not yet validated."},
     {"id":"RFR-010","title":"Knowledge-graph value experiment","status":"open","rank":10,"frontier_score":125}
   ]
 }

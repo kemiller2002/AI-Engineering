@@ -1,0 +1,203 @@
+{
+  "broken_local_markdown_links": [],
+  "documents_with_identifiers": [
+    {
+      "id": "EC-000",
+      "path": "docs/governance/000-engineering-constitution.md"
+    },
+    {
+      "id": "RP-2026-07-23-002",
+      "path": "research/AI-Knowledge-Gap-Analysis.md"
+    },
+    {
+      "id": "RP-2026-07-23-003",
+      "path": "research/AI-Research-Priority-Matrix.md"
+    },
+    {
+      "id": "RP-2026-07-23-004",
+      "path": "research/AI-Research-Roadmap.md"
+    },
+    {
+      "id": "RP-2026-07-23-001",
+      "path": "research/AI-State-of-the-Field-REP.md"
+    },
+    {
+      "id": "RP-2026-07-23-EVAL-CHARTER",
+      "path": "research/evaluation/00-charter.md"
+    },
+    {
+      "id": "RP-2026-07-23-EVAL-TASKS",
+      "path": "research/evaluation/01-task-suite-manifest.md"
+    },
+    {
+      "id": "RP-2026-07-23-EVAL-SPEC",
+      "path": "research/evaluation/02-evaluation-specification.md"
+    },
+    {
+      "id": "RP-2026-07-23-EVAL-EVIDENCE",
+      "path": "research/evaluation/03-evidence-registry.md"
+    },
+    {
+      "id": "RP-2026-07-23-EVAL-HYPOTHESES",
+      "path": "research/evaluation/04-hypothesis-registry.md"
+    },
+    {
+      "id": "RP-2026-07-23-EVAL-EXPERIMENTS",
+      "path": "research/evaluation/05-experiment-registry.md"
+    },
+    {
+      "id": "RP-2026-07-23-EVAL-FAILURES",
+      "path": "research/evaluation/06-failure-taxonomy.md"
+    },
+    {
+      "id": "RP-2026-07-28-EVAL-RESULTS",
+      "path": "research/evaluation/07-results.md"
+    },
+    {
+      "id": "DF-2026-0001",
+      "path": "research/evaluation/08-decision-framework.md"
+    },
+    {
+      "id": "RP-2026-07-28-EVAL-THREAT",
+      "path": "research/evaluation/10-threat-model.md"
+    },
+    {
+      "id": "RP-2026-07-28-EVAL-ARCH",
+      "path": "research/evaluation/11-system-architecture.md"
+    },
+    {
+      "id": "RP-2026-07-28-EVAL-ROADMAP",
+      "path": "research/evaluation/12-research-and-engineering-roadmap.md"
+    },
+    {
+      "id": "RP-2026-07-28-EVAL-REVIEW",
+      "path": "research/evaluation/13-independent-review-protocol.md"
+    },
+    {
+      "id": "RP-2026-07-23-EVAL-CYCLE-001",
+      "path": "research/evaluation/cycles/2026-07-23-cycle-001.md"
+    },
+    {
+      "id": "RP-2026-07-28-EVAL-CYCLE-002",
+      "path": "research/evaluation/cycles/2026-07-28-cycle-002.md"
+    },
+    {
+      "id": "RP-2026-07-28-EVAL-CYCLE-003",
+      "path": "research/evaluation/cycles/2026-07-28-cycle-003.md"
+    },
+    {
+      "id": "RFA-2026-001",
+      "path": "research/frontier/FRONTIER-MASTER.md"
+    },
+    {
+      "id": "RFI-2026-001",
+      "path": "research/frontier/investigations/2026-07-30-rfr-009-validation.md"
+    },
+    {
+      "id": "RFR-001",
+      "path": "research/frontier/records/RFR-001.md"
+    },
+    {
+      "id": "RFR-002",
+      "path": "research/frontier/records/RFR-002.md"
+    },
+    {
+      "id": "RFR-003",
+      "path": "research/frontier/records/RFR-003.md"
+    },
+    {
+      "id": "RFR-004",
+      "path": "research/frontier/records/RFR-004.md"
+    },
+    {
+      "id": "RFR-005",
+      "path": "research/frontier/records/RFR-005.md"
+    },
+    {
+      "id": "RFR-006",
+      "path": "research/frontier/records/RFR-006.md"
+    },
+    {
+      "id": "RFR-007",
+      "path": "research/frontier/records/RFR-007.md"
+    },
+    {
+      "id": "RFR-008",
+      "path": "research/frontier/records/RFR-008.md"
+    },
+    {
+      "id": "RFR-009",
+      "path": "research/frontier/records/RFR-009.md"
+    },
+    {
+      "id": "RFR-010",
+      "path": "research/frontier/records/RFR-010.md"
+    },
+    {
+      "id": "RH-2026-001",
+      "path": "research/frontier/repository-health.md"
+    },
+    {
+      "id": "HO-[YYYY]-[NNNN]",
+      "path": "templates/AGENT-HANDOFF.template.md"
+    },
+    {
+      "id": "DF-[YYYY]-[NNNN]",
+      "path": "templates/DECISION.template.md"
+    },
+    {
+      "id": "EV-[YYYY]-[NNNN]",
+      "path": "templates/EVIDENCE.template.md"
+    },
+    {
+      "id": "TH-[YYYY]-[NNNN]",
+      "path": "templates/THEORY.template.md"
+    }
+  ],
+  "duplicate_identifiers": {},
+  "frontier": {
+    "available": true,
+    "graph_node_mismatch": [],
+    "graph_nodes": [
+      "RFR-001",
+      "RFR-002",
+      "RFR-003",
+      "RFR-004",
+      "RFR-005",
+      "RFR-006",
+      "RFR-007",
+      "RFR-008",
+      "RFR-009",
+      "RFR-010"
+    ],
+    "index_ids": [
+      "RFR-001",
+      "RFR-002",
+      "RFR-003",
+      "RFR-004",
+      "RFR-005",
+      "RFR-006",
+      "RFR-007",
+      "RFR-008",
+      "RFR-009",
+      "RFR-010"
+    ],
+    "invalid_edges": [],
+    "missing_from_index": [],
+    "missing_record_files": [],
+    "record_ids": [
+      "RFR-001",
+      "RFR-002",
+      "RFR-003",
+      "RFR-004",
+      "RFR-005",
+      "RFR-006",
+      "RFR-007",
+      "RFR-008",
+      "RFR-009",
+      "RFR-010"
+    ]
+  },
+  "passed": true,
+  "schema_version": "1.0"
+}

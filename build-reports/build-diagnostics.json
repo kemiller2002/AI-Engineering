@@ -1,0 +1,546 @@
+{
+  "schemaVersion": "1.0",
+  "generatedOn": "2026-07-22",
+  "performance": {
+    "documentCount": 123,
+    "parseTimeMs": 431.1875,
+    "renderTimeMs": 1843.2955410000002,
+    "searchIndexTimeMs": 1246.5616250000003,
+    "totalBuildTimeMs": 3557.63375
+  },
+  "summary": {
+    "totalDocuments": 123,
+    "byArtifactType": {
+      "research-document": 87,
+      "decision-framework": 2,
+      "evidence": 1,
+      "research-package": 32,
+      "theory": 1
+    },
+    "byResearchArea": {
+      "General Research": 121,
+      "AI engineering": 1,
+      "AI research systems": 1
+    },
+    "byProject": {},
+    "byPurpose": {}
+  },
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "docs/repository/imports/2026-07-22-input-documents-import/INVENTORY.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "AGENTS.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "content/projects/ai-engineering-course/governance/course-constitution.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "content/disciplines/ai-engineering/handbook/agent-architecture-and-coordination.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "content/disciplines/ai-engineering/handbook/engineering-workflows.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "error",
+      "code": "duplicate-url",
+      "sourcePath": "content/disciplines/ai-engineering/handbook/engineering-workflows.md",
+      "message": "Duplicate output URL /research/ai-engineering-handbook/."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "content/disciplines/ai-engineering/handbook/foundations.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "error",
+      "code": "duplicate-url",
+      "sourcePath": "content/disciplines/ai-engineering/handbook/foundations.md",
+      "message": "Duplicate output URL /research/ai-engineering-handbook/."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "content/disciplines/ai-engineering/handbook/research-engineering.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "error",
+      "code": "duplicate-url",
+      "sourcePath": "content/disciplines/ai-engineering/handbook/research-engineering.md",
+      "message": "Duplicate output URL /research/ai-engineering-handbook/."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "content/disciplines/ai-engineering/handbook/token-economics-and-context-engineering.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "error",
+      "code": "duplicate-url",
+      "sourcePath": "content/disciplines/ai-engineering/handbook/token-economics-and-context-engineering.md",
+      "message": "Duplicate output URL /research/ai-engineering-handbook/."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "content/disciplines/ai-engineering/research-program.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "research/frontier/document-frontiers/AI-Knowledge-Gap-Analysis-frontier.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "docs/repository/2026-07-23-ai-research-mission-execution.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "Readme.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "research/frontier/document-frontiers/AI-Research-Roadmap-frontier.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "research/evaluation/README.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "ai-prompts/bootstrap/AI-ROS-Bootstrap-Agent.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "tools/evaluation/README.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "research/frontier/document-frontiers/AI-State-of-the-Field-REP-frontier.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "docs/mobile/ios/setup/apple-shortcuts-setup.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "ai-prompts/Autonomous-Engineering-Solution-Agent-Prompt.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "ai-prompts/autonomous-research-agent-repo-archi-and-knowledge.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "docs/repository/bootstrap-manifest.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "knowledge-platform/Build-Pipeline.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "CHANGELOG.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "content/projects/ai-engineering-course/roadmaps/course-roadmap.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "current-state.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "templates/CURRENT-STATE.template.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "error",
+      "code": "duplicate-url",
+      "sourcePath": "templates/CURRENT-STATE.template.md",
+      "message": "Duplicate output URL /research/current-state/."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "research/evaluation/fixtures/et-004-p01/integrity-audit.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "research/evaluation/fixtures/et-014-p01/integrity-audit.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "research/frontier/document-frontiers/evaluation-architecture-threat-frontier.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "research/frontier/document-frontiers/evaluation-charter-specification-frontier.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "research/frontier/document-frontiers/evaluation-registries-frontier.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "docs/repository/2026-07-23-evaluation-research-infrastructure.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "research/evaluation/09-research-journal.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "research/frontier/document-frontiers/evaluation-results-cycles-frontier.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "docs/repository/2026-07-28-evaluation-roadmap-execution.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "docs/repository/bootstrap-website-placeholder.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "research/evaluation/fixtures/et-014-p01/task-materials/expected-behavior.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "docs/repository/imports/2026-07-22-input-documents-import/DECISIONS.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "knowledge-platform/README.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "research/frontier/document-frontiers/knowledge-platform-frontier.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "content/projects/ai-engineering-course/chapter-01/derived/lesson-01-cheat-sheet.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "content/projects/ai-engineering-course/chapter-01/derived/lesson-01-notes.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "content/projects/ai-engineering-course/chapter-01/lesson-01-why-ai-sometimes-feels-like-magic-and-sometimes-feels-completely-useless.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "content/projects/ai-engineering-course/chapter-01/derived/lesson-01-workbook.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "content/projects/ai-engineering-course/chapter-01/drafts/lesson-01-working-draft.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "knowledge-platform/Metadata-Standard.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "knowledge-platform/Migration-Plan.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "docs/mobile/ios/workflows/mobile-research-cycle.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "research/evaluation/NEXT-AGENT-START-HERE.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "docs/repository/2026-07-30-non-human-experimental-comparative-review.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "research/evaluation/fixtures/et-014-p01/task-materials/prompt.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "knowledge-platform/Repository-Architecture.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "ai-prompts/agents/Repository-Ready-Research-Agent.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "ai-prompts/Research-Execution-Package-Specification-v2.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "docs/repository/2026-07-28-research-frontier-analysis.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "docs/repository/2026-07-30-research-integrity-validation.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "content/projects/ai-engineering-course/chapter-01/research/research-package-001-brief.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "content/projects/ai-engineering-course/chapter-01/research/research-package-001-notes.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "error",
+      "code": "duplicate-url",
+      "sourcePath": "content/projects/ai-engineering-course/chapter-01/research/research-package-001-notes.md",
+      "message": "Duplicate output URL /research/research-package-001/."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "templates/RESEARCH-QUESTION.template.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "roadmap.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "docs/repository/2026-07-28-case-collision-canonicalization.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "error",
+      "code": "duplicate-id",
+      "sourcePath": "research/evaluation/fixtures/et-004-p01/outcomes/alternative-correct/review-policy.md",
+      "message": "Duplicate identifier RP-PILOT-004."
+    },
+    {
+      "severity": "error",
+      "code": "duplicate-url",
+      "sourcePath": "research/evaluation/fixtures/et-004-p01/outcomes/alternative-correct/review-policy.md",
+      "message": "Duplicate output URL /research/rp-pilot-004-review-policy/."
+    },
+    {
+      "severity": "error",
+      "code": "duplicate-id",
+      "sourcePath": "research/evaluation/fixtures/et-004-p01/outcomes/complete/review-policy.md",
+      "message": "Duplicate identifier RP-PILOT-004."
+    },
+    {
+      "severity": "error",
+      "code": "duplicate-url",
+      "sourcePath": "research/evaluation/fixtures/et-004-p01/outcomes/complete/review-policy.md",
+      "message": "Duplicate output URL /research/rp-pilot-004-review-policy/."
+    },
+    {
+      "severity": "error",
+      "code": "duplicate-id",
+      "sourcePath": "research/evaluation/fixtures/et-004-p01/outcomes/incomplete-polished/review-policy.md",
+      "message": "Duplicate identifier RP-PILOT-004."
+    },
+    {
+      "severity": "error",
+      "code": "duplicate-url",
+      "sourcePath": "research/evaluation/fixtures/et-004-p01/outcomes/incomplete-polished/review-policy.md",
+      "message": "Duplicate output URL /research/rp-pilot-004-review-policy/."
+    },
+    {
+      "severity": "error",
+      "code": "duplicate-id",
+      "sourcePath": "research/evaluation/fixtures/et-004-p01/outcomes/regressive/review-policy.md",
+      "message": "Duplicate identifier RP-PILOT-004."
+    },
+    {
+      "severity": "error",
+      "code": "duplicate-url",
+      "sourcePath": "research/evaluation/fixtures/et-004-p01/outcomes/regressive/review-policy.md",
+      "message": "Duplicate output URL /research/rp-pilot-004-review-policy/."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "docs/repository/codex-run-instructions.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "knowledge-platform/Search-Architecture.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "docs/mobile/ios/shortcuts/ai-ros-launcher.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "docs/mobile/ios/shortcuts/capture-research.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "docs/repository/bootstrap-tests-placeholder.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "content/disciplines/ai-engineering/research-relay-system.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "docs/repository/bootstrap-tools-placeholder.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "docs/repository/imports/2026-07-22-input-documents-import/VALIDATION.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "knowledge-platform/Website-Architecture.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "docs/repository/bootstrap-ci-placeholder.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    },
+    {
+      "severity": "warning",
+      "code": "missing-id",
+      "sourcePath": "docs/mobile/ios/setup/working-copy-setup.md",
+      "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+    }
+  ]
+}

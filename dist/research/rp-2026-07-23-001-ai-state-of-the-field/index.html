@@ -1,0 +1,298 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AI State of the Field | Visual Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">VE</span> <div> <a class="site-title" href="/">Visual Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-package</span> <span data-pagefind-meta="stableId">RP-2026-07-23-001</span> </p> <h1 data-pagefind-meta="title">AI State of the Field</h1>  <dl class="metadata-panel"> <div><dt>Identifier</dt><dd>RP-2026-07-23-001</dd></div> <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">AI engineering</dd></div>    <div><dt>Discipline</dt><dd data-pagefind-meta="discipline">AI engineering</dd></div> <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>1.0.0</dd></div>   <div><dt>Priority</dt><dd>critical</dd></div> <div><dt>Tags</dt><dd data-pagefind-meta="tags">agents, evaluation, context-engineering, governance, research-roadmap</dd></div> <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/AI-State-of-the-Field-REP.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#ai-state-of-the-field">AI State of the Field</a></li><li><a href="#executive-summary">Executive Summary</a></li><li><a href="#research-state-snapshot">Research State Snapshot</a></li><li><a href="#original-objective">Original Objective</a></li><li><a href="#scope-and-method">Scope and Method</a></li><li><a href="#current-understanding">Current Understanding</a></li><li><a href="#areas-that-are-comparatively-well-understood">Areas that are comparatively well understood</a></li><li><a href="#areas-changing-rapidly">Areas changing rapidly</a></li><li><a href="#areas-with-the-greatest-project-impact">Areas with the greatest project impact</a></li><li><a href="#key-discoveries">Key Discoveries</a></li><li><a href="#ev-001-benchmark-validity-is-a-first-order-risk">EV-001 — Benchmark validity is a first-order risk</a></li><li><a href="#ev-002-task-horizon-is-increasing-but-reliability-remains-conditional">EV-002 — Task horizon is increasing but reliability remains conditional</a></li><li><a href="#ev-003-real-deployment-is-moving-toward-longer-autonomous-work">EV-003 — Real deployment is moving toward longer autonomous work</a></li><li><a href="#ev-004-context-policy-can-outperform-raw-context-accumulation">EV-004 — Context policy can outperform raw context accumulation</a></li><li><a href="#ev-005-the-harness-is-part-of-the-system-under-evaluation">EV-005 — The harness is part of the system under evaluation</a></li><li><a href="#ev-006-agent-evaluation-requires-environment-and-trajectory-evidence">EV-006 — Agent evaluation requires environment and trajectory evidence</a></li><li><a href="#ev-007-security-boundaries-are-integral-to-agent-architecture">EV-007 — Security boundaries are integral to agent architecture</a></li><li><a href="#ev-008-protocol-proliferation-creates-integration-and-security-debt">EV-008 — Protocol proliferation creates integration and security debt</a></li><li><a href="#evidence-registry">Evidence Registry</a></li><li><a href="#hypothesis-registry">Hypothesis Registry</a></li><li><a href="#competing-viewpoints-and-contradictory-evidence">Competing Viewpoints and Contradictory Evidence</a></li><li><a href="#failed-or-rejected-assumptions">Failed or Rejected Assumptions</a></li><li><a href="#theory-impact-assessment">Theory Impact Assessment</a></li><li><a href="#recommended-next-research">Recommended Next Research</a></li><li><a href="#research-backlog">Research Backlog</a></li><li><a href="#risks-and-research-debt">Risks and Research Debt</a></li><li><a href="#ai-consumption-notes-and-handoff">AI Consumption Notes and Handoff</a></li><li><a href="#research-journal">Research Journal</a></li><li><a href="#completion-checklist">Completion Checklist</a></li> </ol> </aside> <section class="document-body"><h1 id="ai-state-of-the-field">AI State of the Field</h1>
+<h2 id="executive-summary">Executive Summary</h2>
+<p>AI engineering has moved from optimizing isolated model responses to engineering systems that perform extended, tool-mediated work. Frontier agents can operate for longer periods, manipulate real environments, and increasingly serve non-developer workflows. The highest-value unsolved problem is no longer simply “make the model smarter.” It is determining whether an agent completed the intended work correctly, safely, economically, and reproducibly.</p>
+<p>Four findings dominate:</p>
+<ol>
+<li><strong>Agent capability is rising, but reliability remains horizon-dependent.</strong> METR measures rapidly expanding task-completion horizons, while realistic long-horizon benchmarks still show substantial failure.</li>
+<li><strong>Popular benchmark scores are not dependable proxies for production value.</strong> OpenAI’s 2026 audit estimated that roughly 30% of SWE-Bench Pro tasks were broken. Harness choice can also materially change results.</li>
+<li><strong>Context and state management are active engineering variables.</strong> More context is not uniformly better; selective retention and summarization can improve both performance and cost.</li>
+<li><strong>Autonomy increases the importance of boundaries and verification.</strong> Sandboxing, least privilege, approvals, traceability, state inspection, and human escalation are production architecture rather than optional safety add-ons.</li>
+</ol>
+<p>For AI-ROS, the single highest-ROI next mission is to build and test an <strong>evidence-traceable evaluation and verification framework for long-horizon repository agents</strong>. It is a dependency for credible research, theory formation, orchestration, memory, and automation.</p>
+<h2 id="research-state-snapshot">Research State Snapshot</h2>
+<ul>
+<li><strong>Theory version:</strong> Pre-theory; candidate principles only</li>
+<li><strong>Knowledge base version:</strong> Repository state as of 2026-07-23</li>
+<li><strong>Highest-confidence areas:</strong> artifact-based state, bounded permissions, need for executable evaluation, value of primary-source traceability</li>
+<li><strong>Lowest-confidence areas:</strong> optimal context policy, predictive value of benchmark suites, multi-agent ROI, durable memory architecture</li>
+<li><strong>Largest remaining unknown:</strong> which observable measures best predict successful, safe, economical completion of real repository work</li>
+<li><strong>Active research streams:</strong> AI-ROS bootstrap, research relay, knowledge platform, AI engineering handbook</li>
+<li><strong>Recently invalidated ideas:</strong> benchmark leaderboards alone are sufficient evidence; maximum context retention is a safe default; agent output review can be deferred until the end</li>
+<li><strong>Priority changes:</strong> evaluation/verification moved ahead of broad knowledge-graph and multi-agent implementation</li>
+</ul>
+<h2 id="original-objective">Original Objective</h2>
+<p>Determine what AI-ROS should research next by comparing repository knowledge with the current AI field, identifying gaps, challenging assumptions, and producing an executable mission.</p>
+<h2 id="scope-and-method">Scope and Method</h2>
+<p>The review covered the repository’s constitution, research program, research relay, REP specification, handbook, knowledge-platform architecture, state, and roadmap. External evidence favored primary or first-party technical sources and current benchmark research. Claims about individual vendor systems are treated as evidence about those systems, not universal laws.</p>
+<p>The investigation used repeated passes:</p>
+<ol>
+<li>inventory repository claims;</li>
+<li>survey current agent capability, evaluation, context, protocol, and governance evidence;</li>
+<li>identify contradictions;</li>
+<li>rank topics by decision impact, uncertainty, tractability, dependency value, rate of change, and obsolescence risk;</li>
+<li>choose the mission that unlocks the most downstream work.</li>
+</ol>
+<h2 id="current-understanding">Current Understanding</h2>
+<h3 id="areas-that-are-comparatively-well-understood">Areas that are comparatively well understood</h3>
+<ul>
+<li>LLM outputs are probabilistic and context-dependent.</li>
+<li>Durable external state is more reliable than conversation-only memory.</li>
+<li>Tool use requires explicit schemas, error handling, and observable environment state.</li>
+<li>High-impact actions need constrained authority and escalation paths.</li>
+<li>Retrieval quality depends on corpus quality, metadata, chunking, ranking, and evaluation—not embeddings alone.</li>
+<li>Single-turn prompt optimization cannot substitute for system-level design.</li>
+<li>Production agent quality must include correctness, safety, latency, cost, recoverability, and operator burden.</li>
+</ul>
+<p>These are mature enough to guide provisional engineering, though not all are validated as universal theory.</p>
+<h3 id="areas-changing-rapidly">Areas changing rapidly</h3>
+<ul>
+<li>frontier model reasoning and coding performance;</li>
+<li>autonomous task horizons;</li>
+<li>agent harnesses and computer-use environments;</li>
+<li>context compaction and memory mechanisms;</li>
+<li>agent interoperability protocols;</li>
+<li>evaluation datasets and contamination defenses;</li>
+<li>inference price/performance;</li>
+<li>model-native tool orchestration;</li>
+<li>governance for consequential agent actions;</li>
+<li>multimodal browser and desktop agents.</li>
+</ul>
+<p>Architectures tightly coupled to current model limits or vendor products face high obsolescence risk.</p>
+<h3 id="areas-with-the-greatest-project-impact">Areas with the greatest project impact</h3>
+<ol>
+<li>evaluation and verification;</li>
+<li>long-horizon state and context management;</li>
+<li>agent permissions, security, and auditability;</li>
+<li>research evidence quality and provenance;</li>
+<li>orchestration economics and human escalation;</li>
+<li>retrieval and knowledge architecture;</li>
+<li>observability and failure recovery.</li>
+</ol>
+<h2 id="key-discoveries">Key Discoveries</h2>
+<h3 id="ev-001--benchmark-validity-is-a-first-order-risk">EV-001 — Benchmark validity is a first-order risk</h3>
+<p>OpenAI’s July 2026 audit estimated about 30% of SWE-Bench Pro tasks were broken because of strict tests, underspecified prompts, weak test coverage, or misleading instructions. This is direct evidence that a polished benchmark can produce invalid capability conclusions.</p>
+<p>Source: <a href="https://openai.com/index/separating-signal-from-noise-coding-evaluations/">OpenAI, “Separating signal from noise in coding evaluations”</a></p>
+<h3 id="ev-002--task-horizon-is-increasing-but-reliability-remains-conditional">EV-002 — Task horizon is increasing but reliability remains conditional</h3>
+<p>METR’s task-completion time-horizon work provides a useful capability measure while explicitly grounding it in success probability and human task duration. It does not eliminate the need for domain-specific evaluation.</p>
+<p>Source: <a href="https://metr.org/time-horizons/">METR, “Task-Completion Time Horizons of Frontier AI Models”</a></p>
+<h3 id="ev-003--real-deployment-is-moving-toward-longer-autonomous-work">EV-003 — Real deployment is moving toward longer autonomous work</h3>
+<p>OpenAI reports increasing use of Codex for tasks estimated to represent over an hour of human work and substantial parallel agent runtime. Anthropic reports that the longest Claude Code sessions have increased in autonomous duration. These are first-party observations and may not generalize, but both indicate growing operational relevance.</p>
+<p>Sources:</p>
+<ul>
+<li><a href="https://openai.com/index/how-agents-are-transforming-work/">OpenAI, “How agents are transforming work”</a></li>
+<li><a href="https://www.anthropic.com/research/measuring-agent-autonomy">Anthropic, “Measuring AI agent autonomy in practice”</a></li>
+</ul>
+<h3 id="ev-004--context-policy-can-outperform-raw-context-accumulation">EV-004 — Context policy can outperform raw context accumulation</h3>
+<p>A 2026 enterprise workflow study found that recent-tool retention plus summarization outperformed full-history retention while using substantially fewer tokens. This is a narrow domain result, but it directly challenges the inherited assumption that retaining everything is safest.</p>
+<p>Source: <a href="https://arxiv.org/abs/2606.10209">Lodha et al., “Less Context, Better Agents”</a></p>
+<h3 id="ev-005--the-harness-is-part-of-the-system-under-evaluation">EV-005 — The harness is part of the system under evaluation</h3>
+<p>WildClawBench reports that changing the agent harness shifted a model’s score by as much as 18 points. Therefore “model capability” cannot be cleanly separated from tools, prompts, runtime, context policy, and recovery behavior in applied engineering.</p>
+<p>Source: <a href="https://arxiv.org/abs/2605.10912">Ding et al., “WildClawBench”</a></p>
+<h3 id="ev-006--agent-evaluation-requires-environment-and-trajectory-evidence">EV-006 — Agent evaluation requires environment and trajectory evidence</h3>
+<p>Anthropic’s evaluation guidance emphasizes multi-turn environments, tool traces, outcome grading, and task-specific evaluators. This supports evaluating both final state and execution behavior.</p>
+<p>Source: <a href="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents">Anthropic, “Demystifying evals for AI agents”</a></p>
+<h3 id="ev-007--security-boundaries-are-integral-to-agent-architecture">EV-007 — Security boundaries are integral to agent architecture</h3>
+<p>OpenAI describes sandboxing, approvals, network controls, identity boundaries, managed rules, and audit telemetry for coding agents. Anthropic similarly frames human control, secure interaction, transparency, and privacy as core trustworthy-agent principles.</p>
+<p>Sources:</p>
+<ul>
+<li><a href="https://openai.com/index/running-codex-safely/">OpenAI, “Running Codex safely at OpenAI”</a></li>
+<li><a href="https://www.anthropic.com/research/trustworthy-agents">Anthropic, “Trustworthy agents in practice”</a></li>
+</ul>
+<h3 id="ev-008--protocol-proliferation-creates-integration-and-security-debt">EV-008 — Protocol proliferation creates integration and security debt</h3>
+<p>MCP, A2A, and related protocols are expanding the agent integration surface. MCP’s authorization guidance prohibits token passthrough and requires audience binding in supported flows, demonstrating that interoperability cannot be evaluated separately from identity and authorization.</p>
+<p>Sources:</p>
+<ul>
+<li><a href="https://developers.googleblog.com/developers-guide-to-ai-agent-protocols/">Google, “Developer’s Guide to AI Agent Protocols”</a></li>
+<li><a href="https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization">MCP authorization specification</a></li>
+</ul>
+<h2 id="evidence-registry">Evidence Registry</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Evidence</th>
+<th align="right">Reliability</th>
+<th>Supports</th>
+<th>Limits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EV-001</td>
+<td>SWE-Bench Pro audit</td>
+<td align="right">High</td>
+<td>HY-001</td>
+<td>Vendor-authored; one benchmark family</td>
+</tr>
+<tr>
+<td>EV-002</td>
+<td>METR time horizons</td>
+<td align="right">High</td>
+<td>HY-001, HY-003</td>
+<td>Mostly software tasks</td>
+</tr>
+<tr>
+<td>EV-003</td>
+<td>First-party usage studies</td>
+<td align="right">Medium</td>
+<td>HY-001</td>
+<td>Selection and vendor bias</td>
+</tr>
+<tr>
+<td>EV-004</td>
+<td>Context pruning experiment</td>
+<td align="right">Medium</td>
+<td>HY-002</td>
+<td>Narrow enterprise workflow</td>
+</tr>
+<tr>
+<td>EV-005</td>
+<td>Harness-dependent benchmark results</td>
+<td align="right">Medium</td>
+<td>HY-001, HY-002</td>
+<td>Preprint; limited task set</td>
+</tr>
+<tr>
+<td>EV-006</td>
+<td>Agent eval engineering guidance</td>
+<td align="right">Medium-high</td>
+<td>HY-001</td>
+<td>Practice report, not controlled trial</td>
+</tr>
+<tr>
+<td>EV-007</td>
+<td>Production safety architectures</td>
+<td align="right">Medium-high</td>
+<td>HY-004</td>
+<td>First-party implementation evidence</td>
+</tr>
+<tr>
+<td>EV-008</td>
+<td>Protocol/security specifications</td>
+<td align="right">High for requirements</td>
+<td>HY-004</td>
+<td>Does not prove adoption quality</td>
+</tr>
+</tbody>
+</table>
+<h2 id="hypothesis-registry">Hypothesis Registry</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Hypothesis</th>
+<th>Status</th>
+<th align="right">Confidence</th>
+<th>Falsification condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HY-001</td>
+<td>Repository-specific executable evals predict useful agent performance better than public benchmark rank</td>
+<td>Leading</td>
+<td align="right">Medium-high</td>
+<td>Public ranks consistently predict repository outcomes across models/harnesses</td>
+</tr>
+<tr>
+<td>HY-002</td>
+<td>Selective context compilation beats full-history retention on reliability-adjusted cost</td>
+<td>Active</td>
+<td align="right">Medium</td>
+<td>Full history wins across representative tasks after cost normalization</td>
+</tr>
+<tr>
+<td>HY-003</td>
+<td>Single-agent relay systems outperform multi-agent systems until parallel independence is measurable</td>
+<td>Active</td>
+<td align="right">Medium</td>
+<td>Multi-agent designs show repeatable net gains after coordination cost</td>
+</tr>
+<tr>
+<td>HY-004</td>
+<td>Least-privilege action tiers reduce consequential failure without unacceptable productivity loss</td>
+<td>Active</td>
+<td align="right">Medium-high</td>
+<td>Controls add high cost without reducing observed risk</td>
+</tr>
+<tr>
+<td>HY-005</td>
+<td>Artifact traceability improves research continuity and error detection</td>
+<td>Active</td>
+<td align="right">Medium-high</td>
+<td>Controlled relay experiments show no material improvement</td>
+</tr>
+</tbody>
+</table>
+<h2 id="competing-viewpoints-and-contradictory-evidence">Competing Viewpoints and Contradictory Evidence</h2>
+<ul>
+<li><strong>Capability-first view:</strong> stronger models may erase today’s orchestration problems. Counterpoint: faster models also expand task scope and consequence; benchmark validity and verification remain.</li>
+<li><strong>Maximum-context view:</strong> complete history prevents omission. Counterpoint: stale or verbose context can reduce accuracy and increase cost; the correct policy is task-dependent.</li>
+<li><strong>Multi-agent-by-default view:</strong> specialized agents improve coverage. Counterpoint: the repository’s own relay analysis and long-horizon studies indicate coordination and synthesis costs; independence must be demonstrated.</li>
+<li><strong>Human-review-is-enough view:</strong> people can inspect final outputs. Counterpoint: long traces and high output volume make unaided review economically weak; executable checks and targeted escalation are needed.</li>
+<li><strong>Standard-protocol view:</strong> MCP/A2A solve integration. Counterpoint: protocols standardize transport and discovery, not task correctness, trust, permissions, or ROI.</li>
+</ul>
+<h2 id="failed-or-rejected-assumptions">Failed or Rejected Assumptions</h2>
+<ul>
+<li>A broad state-of-the-field survey should directly trigger implementation across all topics.</li>
+<li>Benchmark pass rate is an objective, stable measure.</li>
+<li>More retained context is always safer.</li>
+<li>A successful final artifact proves a sound process.</li>
+<li>Multi-agent orchestration is necessarily the next maturity step.</li>
+<li>Knowledge graphs should precede evaluation infrastructure.</li>
+</ul>
+<h2 id="theory-impact-assessment">Theory Impact Assessment</h2>
+<ul>
+<li><strong>Affected candidate principles:</strong> Context Dependence, Externalized State, Verification over Trust, Controlled Delegation, Cost-Constrained Computation, Measurable Engineering Outcomes</li>
+<li><strong>New principle candidate:</strong> Harness–Model Coupling — applied capability is a property of the full agent system, not the model alone</li>
+<li><strong>Deprecated principles:</strong> none; “maximum context” rejected as a default tactic</li>
+<li><strong>Confidence changes:</strong> increased confidence in Verification over Trust and Controlled Delegation</li>
+<li><strong>Prediction created:</strong> an evaluation suite combining final-state checks, trace checks, cost, and human intervention will reverse at least one model or architecture ranking produced by success rate alone</li>
+<li><strong>Required registry updates:</strong> formal registries do not yet exist; establish them after the evaluation mission validates a minimal schema</li>
+</ul>
+<h2 id="recommended-next-research">Recommended Next Research</h2>
+<p>Execute the prompt in <code>prompts/AI-Research-Mission.md</code>. It specifies a bounded empirical mission to design and test an AI-ROS evaluation framework using real repository tasks, multiple runs, outcome and trajectory measures, cost accounting, and adversarial cases.</p>
+<h2 id="research-backlog">Research Backlog</h2>
+<ol>
+<li>context compilation policies;</li>
+<li>durable memory and stale-state detection;</li>
+<li>permission tiers and prompt-injection defenses;</li>
+<li>agent observability and failure taxonomy;</li>
+<li>human-agent escalation economics;</li>
+<li>multi-agent coordination ROI;</li>
+<li>retrieval evaluation and knowledge provenance;</li>
+<li>protocol interoperability and identity;</li>
+<li>multimodal/browser-agent reliability;</li>
+<li>model routing and local/cloud tradeoffs.</li>
+</ol>
+<h2 id="risks-and-research-debt">Risks and Research Debt</h2>
+<ul>
+<li>Current evidence is weighted toward software and vendor ecosystems.</li>
+<li>Several 2026 papers are preprints without broad replication.</li>
+<li>The repository lacks formal evidence, hypothesis, experiment, and theory registries.</li>
+<li>No empirical AI-ROS task suite exists yet.</li>
+<li>No baseline cost or human-effort data has been captured.</li>
+<li>Safety, accessibility, organizational psychology, and legal disciplines need deeper coverage.</li>
+</ul>
+<h2 id="ai-consumption-notes-and-handoff">AI Consumption Notes and Handoff</h2>
+<p>Start with the mission prompt. Treat all conclusions here as provisional until tested against repository tasks. Preserve raw run traces, environment state, model/harness versions, costs, intervention points, and failures. Do not promote a framework to accepted theory from a single model or a single run.</p>
+<h2 id="research-journal">Research Journal</h2>
+<ul>
+<li>Pass 1: repository inventory showed strong conceptual coverage but almost no empirical validation.</li>
+<li>Pass 2: external survey identified long-horizon agents, evaluation validity, context policy, and governance as rapidly changing.</li>
+<li>Pass 3: contradictory evidence weakened benchmark-first and maximum-context assumptions.</li>
+<li>Pass 4: dependency analysis placed evaluation/verification ahead of memory, orchestration, and knowledge-graph implementation.</li>
+<li>Termination: additional topic expansion did not change the highest-value mission.</li>
+</ul>
+<h2 id="completion-checklist">Completion Checklist</h2>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" checked disabled> Repository reviewed</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Current primary and technical sources reviewed</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Competing hypotheses recorded</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Contradictory evidence preserved</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Priority selected by dependency value and tractability</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Executable next mission produced</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Research debt and handoff recorded</li>
+</ul></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>Visual Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-04T13:30:12.034Z">Aug 4, 2026, 1:30:12 PM UTC</time> </p> </footer> </body></html>

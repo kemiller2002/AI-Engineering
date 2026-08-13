@@ -2,7 +2,7 @@
 id: RH-2026-001
 title: Repository Research Health
 status: active
-as_of: 2026-07-28
+as_of: 2026-07-30
 ---
 
 # Repository Research Health
@@ -11,20 +11,21 @@ as_of: 2026-07-28
 
 | Metric | Value | Interpretation |
 |---|---:|---|
-| Research files under `research/` | 46 | Includes fixtures and machine-readable contracts |
-| Canonical research/evaluation Markdown artifacts | 25 | Four program artifacts, 14 core evaluation documents, three cycles, handoff, README, and two fixture audits |
+| Research files under `research/` | 62 | Includes fixtures, machine-readable contracts, frontier records, and one investigation |
+| Canonical research/evaluation Markdown artifacts | 26 | Prior 25 artifacts plus the RFR-009 validation investigation |
 | Registered evidence items | 16 | EV-E001–EV-E016 |
 | Active evaluation hypotheses | 10 | HY-E001–HY-E011, with HY-E007 absent/reserved |
 | Candidate task families | 16 | Not validated or baselined |
 | Pilot contracts | 2 | Both provisional pending independent review |
 | Declared calibration probes | 7 | Seven of seven classified as designed; in-sample only |
 | Agent capability runs | 0 | No performance claim is supported |
-| Open frontier records | 10 | All records in this analysis |
+| Open/active frontier records | 10 | Nine open; RFR-009 active in Validation |
 | Critical contradictions/tensions | 2 | Validity of native tasks and validity/cost of layered grading |
 | Semantic duplicate rate | 56% | 23 document-level candidates consolidated to 10 records; approximate |
 | Validation coverage | 0/2 independently reviewed pilots | Executable contract validation is 2/2; independent construct validation is 0/2 |
 | Experiment coverage | 0 capability experiments | Cycles 002–003 are integrity/calibration work |
 | Knowledge graph connectivity | 10 nodes, 12 dependency edges | One main critical path; no orphan records |
+| Identifier/reference fitness | 38 IDs; 0 collisions; 0 broken explicit local links | Clean within declared scope; metadata coverage incomplete |
 
 ## Confidence
 
@@ -53,4 +54,3 @@ Average depth is **structured but pre-empirical**: claims generally include prov
 5. decision-calibrated and self-correcting.
 
 The next maturity gate is independent validation of pilots followed by a contained repeated baseline.
-

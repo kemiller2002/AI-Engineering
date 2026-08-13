@@ -1,0 +1,15 @@
+{
+  "name": "ai-engineering-research",
+  "private": true,
+  "scripts": {
+    "research:build": "research-publisher build --config ./research-publisher.config.mjs",
+    "research:inventory": "research-publisher inventory --config ./research-publisher.config.mjs",
+    "research:validate": "research-publisher validate --config ./research-publisher.config.mjs"
+  },
+  "devDependencies": {
+    "@echelon-foundry/research-publisher": "0.1.0"
+  },
+  "engines": {
+    "node": ">=24 <26"
+  }
+}

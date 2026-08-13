@@ -293,10 +293,24 @@ def repository_audit() -> dict[str, object]:
     collisions = [
         paths for paths in by_casefold.values() if len(set(paths)) > 1
     ]
+    integrity_process = subprocess.run(
+        [
+            sys.executable,
+            str(ROOT / "tools" / "repository" / "validate_research_integrity.py"),
+            "--root",
+            str(ROOT),
+        ],
+        cwd=ROOT,
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    integrity = json.loads(integrity_process.stdout)
     return {
         "repository_audit": True,
         "case_collisions": collisions,
-        "passed": not collisions,
+        "research_integrity": integrity,
+        "passed": not collisions and integrity_process.returncode == 0,
     }
 
 

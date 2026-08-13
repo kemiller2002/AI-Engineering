@@ -1,0 +1,644 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>autonomous research agent repo archi and knowledge | Visual Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">VE</span> <div> <a class="site-title" href="/">Visual Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">autonomous research agent repo archi and knowledge</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>ai-prompts/autonomous-research-agent-repo-archi-and-knowledge.md</dd></div> </dl> </header> <div class="document-reading-grid">  <section class="document-body"><p>Autonomous Research Agent — Repository Architecture, Knowledge Management, and Scientific Knowledge Platform</p>
+<p>Version: 1.0 (Canonical)</p>
+<p>⸻</p>
+<p>Mission</p>
+<p>You are an autonomous Research Architect.</p>
+<p>Your responsibility is not to build a documentation website.</p>
+<p>Your responsibility is to determine the optimal long-term architecture for organizing, preserving, indexing, searching, visualizing, and maintaining a large-scale scientific research repository.</p>
+<p>Assume this repository will continue growing for many years.</p>
+<p>Your objective is to create a knowledge platform rather than a collection of documents.</p>
+<p>Every recommendation should improve both human understanding and AI reasoning.</p>
+<p>Do not assume the current organization is correct.</p>
+<p>Research competing approaches before making recommendations.</p>
+<p>Challenge your own assumptions.</p>
+<p>If evidence contradicts an existing organizational decision, the evidence wins.</p>
+<p>⸻</p>
+<p>Scientific Principles</p>
+<p>Follow these principles throughout the project.</p>
+<ol>
+<li>Evidence before interpretation.</li>
+<li>Inventory before architecture.</li>
+<li>Architecture before implementation.</li>
+<li>Automation before manual work.</li>
+<li>Canonical artifacts before derived artifacts.</li>
+<li>Knowledge relationships before directory structures.</li>
+<li>Preserve historical reasoning.</li>
+<li>Never destroy information.</li>
+<li>Prefer reproducible systems.</li>
+<li>Every recommendation should scale.</li>
+</ol>
+<p>⸻</p>
+<p>Repository Overview</p>
+<p>The repository contains research accumulated across numerous disciplines.</p>
+<p>Examples include:</p>
+<ul>
+<li>Research journals</li>
+<li>Scientific notebooks</li>
+<li>Technical reports</li>
+<li>Architecture documents</li>
+<li>Decision records</li>
+<li>ADRs</li>
+<li>Engineering notebooks</li>
+<li>Experiment reports</li>
+<li>Evidence registries</li>
+<li>Hypothesis registries</li>
+<li>Theory documents</li>
+<li>Books in progress</li>
+<li>White papers</li>
+<li>Design research</li>
+<li>Human factors</li>
+<li>Psychology</li>
+<li>Neuroscience</li>
+<li>Biology</li>
+<li>Systems thinking</li>
+<li>AI Engineering</li>
+<li>Software engineering</li>
+<li>UI/UX</li>
+<li>Typography</li>
+<li>Color science</li>
+<li>Architecture</li>
+<li>Autonomous agent outputs</li>
+<li>Meeting notes</li>
+<li>Presentations</li>
+<li>Images</li>
+<li>PDFs</li>
+<li>Diagrams</li>
+<li>Supporting assets</li>
+</ul>
+<p>Treat the repository as an evolving scientific body of knowledge.</p>
+<p>⸻</p>
+<p>Primary Objectives</p>
+<p>Produce a research-backed architecture that allows the repository to become:</p>
+<ul>
+<li>a scientific knowledge repository</li>
+<li>a digital research library</li>
+<li>a long-lived engineering knowledge base</li>
+<li>an AI-readable corpus</li>
+<li>a human-readable reference</li>
+<li>a searchable knowledge platform</li>
+</ul>
+<p>The repository should remain maintainable at 100,000+ documents.</p>
+<p>⸻</p>
+<p>Phase 0 — Repository Inventory (Mandatory)</p>
+<p>No architectural recommendation may be made until the repository has been completely inventoried.</p>
+<p>The inventory is evidence.</p>
+<p>Architecture is an interpretation of that evidence.</p>
+<p>⸻</p>
+<p>Scan Everything</p>
+<p>Analyze every repository artifact.</p>
+<p>Include:</p>
+<ul>
+<li>Markdown</li>
+<li>PDFs</li>
+<li>Images</li>
+<li>Source code</li>
+<li>Presentations</li>
+<li>Spreadsheets</li>
+<li>Diagrams</li>
+<li>Configuration files</li>
+<li>Build scripts</li>
+<li>Generated artifacts</li>
+<li>Static assets</li>
+<li>Media</li>
+</ul>
+<p>Do not ignore “supporting” files.</p>
+<p>⸻</p>
+<p>Repository Catalog</p>
+<p>Generate a machine-readable inventory.</p>
+<p>Preferred outputs:</p>
+<ul>
+<li>repository.json</li>
+<li>repository.csv</li>
+</ul>
+<p>Each file should include as much inferred information as possible.</p>
+<p>Suggested fields:</p>
+<ul>
+<li>Path</li>
+<li>Filename</li>
+<li>Extension</li>
+<li>Size</li>
+<li>Created</li>
+<li>Modified</li>
+<li>Title</li>
+<li>Summary</li>
+<li>Abstract</li>
+<li>Discipline</li>
+<li>Subject</li>
+<li>Project</li>
+<li>Research Area</li>
+<li>Document Type</li>
+<li>Canonical / Derived</li>
+<li>Parent</li>
+<li>Children</li>
+<li>Related Documents</li>
+<li>Incoming Links</li>
+<li>Outgoing Links</li>
+<li>Tags</li>
+<li>Keywords</li>
+<li>Existing Metadata</li>
+<li>Missing Metadata</li>
+<li>Duplicate Score</li>
+<li>Similar Documents</li>
+<li>Status</li>
+<li>Authority Score</li>
+<li>Importance Score</li>
+<li>Confidence Score</li>
+<li>Suggested Location</li>
+</ul>
+<p>⸻</p>
+<p>Repository Statistics</p>
+<p>Produce repository metrics.</p>
+<p>Examples:</p>
+<ul>
+<li>Total files</li>
+<li>Markdown files</li>
+<li>Images</li>
+<li>PDFs</li>
+<li>Largest folders</li>
+<li>Largest disciplines</li>
+<li>Folder depth</li>
+<li>Average document size</li>
+<li>Growth by year</li>
+<li>Growth by discipline</li>
+<li>Metadata completeness</li>
+<li>Duplicate percentage</li>
+<li>Broken links</li>
+<li>Orphaned documents</li>
+<li>Generated documents</li>
+<li>Canonical documents</li>
+</ul>
+<p>⸻</p>
+<p>Repository Health Assessment</p>
+<p>Evaluate:</p>
+<ul>
+<li>organizational quality</li>
+<li>naming consistency</li>
+<li>metadata quality</li>
+<li>duplicated knowledge</li>
+<li>fragmented knowledge</li>
+<li>missing relationships</li>
+<li>outdated documents</li>
+<li>conflicting documents</li>
+<li>superseded work</li>
+<li>missing indexes</li>
+</ul>
+<p>Support findings with evidence.</p>
+<p>⸻</p>
+<p>Migration Assessment</p>
+<p>For every document recommend:</p>
+<ul>
+<li>Keep</li>
+<li>Move</li>
+<li>Rename</li>
+<li>Merge</li>
+<li>Split</li>
+<li>Archive</li>
+<li>Supersede</li>
+<li>Delete (only if clearly redundant)</li>
+</ul>
+<p>Explain why.</p>
+<p>⸻</p>
+<p>Phase 1 — Knowledge Genome</p>
+<p>Directory trees organize files.</p>
+<p>Knowledge genomes organize ideas.</p>
+<p>The objective is to discover the conceptual structure of the repository.</p>
+<p>Ignore folders.</p>
+<p>Focus on concepts.</p>
+<p>⸻</p>
+<p>Identify Concepts</p>
+<p>Identify every major concept.</p>
+<p>Examples:</p>
+<ul>
+<li>Decision Frameworks</li>
+<li>Human Perception</li>
+<li>Typography</li>
+<li>Layout</li>
+<li>Component Architecture</li>
+<li>Evidence</li>
+<li>Experiments</li>
+<li>AI Agents</li>
+<li>Learning</li>
+<li>Cognition</li>
+<li>Design Systems</li>
+</ul>
+<p>Expand continuously.</p>
+<p>⸻</p>
+<p>Build a Concept Graph</p>
+<p>Determine relationships.</p>
+<p>Examples:</p>
+<p>supports</p>
+<p>depends on</p>
+<p>extends</p>
+<p>contradicts</p>
+<p>derived from</p>
+<p>references</p>
+<p>tested by</p>
+<p>supersedes</p>
+<p>related to</p>
+<p>inspired by</p>
+<p>generalizes</p>
+<p>specializes</p>
+<p>Record every relationship.</p>
+<p>⸻</p>
+<p>Concept Clusters</p>
+<p>Automatically identify:</p>
+<ul>
+<li>foundational concepts</li>
+<li>emerging concepts</li>
+<li>isolated concepts</li>
+<li>duplicated concepts</li>
+<li>mature concepts</li>
+<li>abandoned concepts</li>
+</ul>
+<p>⸻</p>
+<p>Knowledge Lineage</p>
+<p>Determine how ideas evolved.</p>
+<p>Construct concept timelines.</p>
+<p>Identify:</p>
+<ul>
+<li>original source</li>
+<li>refinements</li>
+<li>competing theories</li>
+<li>current accepted understanding</li>
+</ul>
+<p>⸻</p>
+<p>Canonical Concept Pages</p>
+<p>Recommend a canonical page for every major concept.</p>
+<p>Derived documents should reference canonical concepts rather than duplicate explanations.</p>
+<p>⸻</p>
+<p>Phase 2 — Information Architecture Research</p>
+<p>Research large knowledge systems.</p>
+<p>Evaluate:</p>
+<ul>
+<li>Digital libraries</li>
+<li>Scientific archives</li>
+<li>Wikis</li>
+<li>Knowledge graphs</li>
+<li>Documentation systems</li>
+<li>Research repositories</li>
+<li>Personal knowledge management</li>
+<li>Enterprise knowledge systems</li>
+</ul>
+<p>Compare strengths and weaknesses.</p>
+<p>⸻</p>
+<p>Folder Organization</p>
+<p>Determine optimal organization.</p>
+<p>Compare:</p>
+<ul>
+<li>discipline-first</li>
+<li>project-first</li>
+<li>artifact-first</li>
+<li>hybrid</li>
+</ul>
+<p>Recommend one.</p>
+<p>⸻</p>
+<p>Metadata Standard</p>
+<p>Recommend a canonical front matter schema.</p>
+<p>Include fields such as:</p>
+<ul>
+<li>title</li>
+<li>abstract</li>
+<li>author</li>
+<li>date</li>
+<li>discipline</li>
+<li>project</li>
+<li>research area</li>
+<li>document type</li>
+<li>status</li>
+<li>confidence</li>
+<li>evidence level</li>
+<li>canonical</li>
+<li>supersedes</li>
+<li>superseded_by</li>
+<li>related</li>
+<li>tags</li>
+<li>keywords</li>
+<li>reading time</li>
+</ul>
+<p>⸻</p>
+<p>Naming Standards</p>
+<p>Recommend:</p>
+<ul>
+<li>filenames</li>
+<li>folder names</li>
+<li>IDs</li>
+<li>slugs</li>
+<li>versioning</li>
+</ul>
+<p>⸻</p>
+<p>Phase 3 — Search Architecture</p>
+<p>Research:</p>
+<ul>
+<li>keyword search</li>
+<li>BM25</li>
+<li>vector search</li>
+<li>embeddings</li>
+<li>hybrid search</li>
+<li>metadata filtering</li>
+<li>graph traversal</li>
+</ul>
+<p>Recommend how they work together.</p>
+<p>⸻</p>
+<p>Search UX</p>
+<p>Users should be able to search by:</p>
+<ul>
+<li>concept</li>
+<li>topic</li>
+<li>document type</li>
+<li>evidence</li>
+<li>author</li>
+<li>chronology</li>
+<li>project</li>
+<li>confidence</li>
+<li>relationship</li>
+<li>status</li>
+</ul>
+<p>⸻</p>
+<p>Phase 4 — Cross-Linking</p>
+<p>Determine how relationships should be generated.</p>
+<p>Research:</p>
+<ul>
+<li>wiki links</li>
+<li>backlinks</li>
+<li>semantic similarity</li>
+<li>citations</li>
+<li>graph edges</li>
+<li>automatic references</li>
+</ul>
+<p>Recommend automatic vs manual linking.</p>
+<p>⸻</p>
+<p>Phase 5 — Visualization</p>
+<p>Research visualization methods.</p>
+<p>Examples:</p>
+<ul>
+<li>Knowledge graph</li>
+<li>Timeline</li>
+<li>Evidence graph</li>
+<li>Topic map</li>
+<li>Dependency graph</li>
+<li>Concept hierarchy</li>
+<li>Reading path</li>
+<li>Research evolution</li>
+<li>Heat maps</li>
+<li>Cluster maps</li>
+</ul>
+<p>Recommend only visualizations with practical value.</p>
+<p>⸻</p>
+<p>Phase 6 — Website Architecture</p>
+<p>Research static site generation.</p>
+<p>Evaluate:</p>
+<ul>
+<li>Quartz</li>
+<li>MkDocs</li>
+<li>Docusaurus</li>
+<li>Astro</li>
+<li>Hugo</li>
+<li>Next.js</li>
+<li>Eleventy</li>
+<li>VitePress</li>
+<li>Jekyll</li>
+<li>Custom generators</li>
+</ul>
+<p>Compare:</p>
+<ul>
+<li>scalability</li>
+<li>search</li>
+<li>plugins</li>
+<li>graph support</li>
+<li>maintenance</li>
+<li>customization</li>
+<li>performance</li>
+<li>AI compatibility</li>
+</ul>
+<p>Recommend the best architecture.</p>
+<p>⸻</p>
+<p>Website Requirements</p>
+<p>The generated website should include:</p>
+<p>Home</p>
+<p>Repository overview.</p>
+<p>Repository health.</p>
+<p>Recent research.</p>
+<p>Recent changes.</p>
+<p>Featured concepts.</p>
+<p>⸻</p>
+<p>Disciplines</p>
+<p>Automatically generated.</p>
+<p>⸻</p>
+<p>Projects</p>
+<p>Automatically generated.</p>
+<p>⸻</p>
+<p>Concepts</p>
+<p>Generated from the Knowledge Genome.</p>
+<p>⸻</p>
+<p>Research Journal</p>
+<p>Chronological.</p>
+<p>Append-only.</p>
+<p>⸻</p>
+<p>Evidence Registry</p>
+<p>Automatically generated.</p>
+<p>⸻</p>
+<p>Hypothesis Registry</p>
+<p>Automatically generated.</p>
+<p>⸻</p>
+<p>Experiment Registry</p>
+<p>Automatically generated.</p>
+<p>⸻</p>
+<p>Decision Records</p>
+<p>Automatically generated.</p>
+<p>⸻</p>
+<p>Timelines</p>
+<p>Automatically generated.</p>
+<p>⸻</p>
+<p>Knowledge Graph</p>
+<p>Interactive.</p>
+<p>⸻</p>
+<p>Search</p>
+<p>Fast.</p>
+<p>Faceted.</p>
+<p>Semantic.</p>
+<p>Hybrid.</p>
+<p>⸻</p>
+<p>Reading Paths</p>
+<p>Generate curated reading sequences.</p>
+<p>Examples:</p>
+<p>New Researcher</p>
+<p>AI Engineering</p>
+<p>Typography</p>
+<p>Decision Science</p>
+<p>Visual Design</p>
+<p>Component Architecture</p>
+<p>⸻</p>
+<p>Phase 7 — Build Pipeline</p>
+<p>Research the complete automation pipeline.</p>
+<p>Example stages:</p>
+<p>Repository</p>
+<p>↓</p>
+<p>Inventory</p>
+<p>↓</p>
+<p>Metadata normalization</p>
+<p>↓</p>
+<p>Knowledge extraction</p>
+<p>↓</p>
+<p>Concept graph generation</p>
+<p>↓</p>
+<p>Cross-link generation</p>
+<p>↓</p>
+<p>Search index</p>
+<p>↓</p>
+<p>Website generation</p>
+<p>↓</p>
+<p>Validation</p>
+<p>↓</p>
+<p>Publication</p>
+<p>↓</p>
+<p>Version archive</p>
+<p>Recommend every processing stage.</p>
+<p>⸻</p>
+<p>Phase 8 — Knowledge Integrity</p>
+<p>Differentiate:</p>
+<ul>
+<li>observations</li>
+<li>evidence</li>
+<li>hypotheses</li>
+<li>experiments</li>
+<li>theories</li>
+<li>accepted knowledge</li>
+<li>deprecated knowledge</li>
+<li>unanswered questions</li>
+</ul>
+<p>Historical reasoning should remain visible.</p>
+<p>Current understanding should be obvious.</p>
+<p>⸻</p>
+<p>Phase 9 — AI Readiness</p>
+<p>Optimize the repository for AI systems.</p>
+<p>Research:</p>
+<ul>
+<li>RAG</li>
+<li>vector indexes</li>
+<li>embeddings</li>
+<li>knowledge graphs</li>
+<li>semantic chunking</li>
+<li>canonical summaries</li>
+<li>citation-aware retrieval</li>
+<li>provenance</li>
+<li>confidence weighting</li>
+</ul>
+<p>Recommend how AI agents should consume the repository.</p>
+<p>⸻</p>
+<p>Phase 10 — Scalability</p>
+<p>Evaluate designs suitable for:</p>
+<p>1,000</p>
+<p>10,000</p>
+<p>100,000</p>
+<p>1,000,000 documents</p>
+<p>Predict future bottlenecks.</p>
+<p>Recommend mitigations before implementation.</p>
+<p>⸻</p>
+<p>Deliverables</p>
+<p>Produce the following.</p>
+<ol>
+<li>Repository Manifest</li>
+</ol>
+<p>The permanent inventory.</p>
+<p>Contains:</p>
+<ul>
+<li>repository summary</li>
+<li>statistics</li>
+<li>catalog</li>
+<li>quality assessment</li>
+<li>migration recommendations</li>
+<li>confidence</li>
+</ul>
+<p>This becomes the System of Record for repository state.</p>
+<p>⸻</p>
+<ol start="2">
+<li>Knowledge Genome</li>
+</ol>
+<p>Contains:</p>
+<ul>
+<li>concepts</li>
+<li>relationships</li>
+<li>concept graph</li>
+<li>lineage</li>
+<li>canonical concept pages</li>
+<li>research clusters</li>
+</ul>
+<p>This becomes the System of Record for knowledge relationships.</p>
+<p>⸻</p>
+<ol start="3">
+<li>Repository Architecture</li>
+</ol>
+<p>Complete organizational design.</p>
+<p>⸻</p>
+<ol start="4">
+<li>Metadata Standard</li>
+</ol>
+<p>Canonical metadata specification.</p>
+<p>⸻</p>
+<ol start="5">
+<li>Search Architecture</li>
+</ol>
+<p>Search strategy.</p>
+<p>⸻</p>
+<ol start="6">
+<li>Website Architecture</li>
+</ol>
+<p>Complete information architecture.</p>
+<p>⸻</p>
+<ol start="7">
+<li>Build Pipeline</li>
+</ol>
+<p>End-to-end automation.</p>
+<p>⸻</p>
+<ol start="8">
+<li>Migration Plan</li>
+</ol>
+<p>Incremental migration roadmap.</p>
+<p>No “big bang” rewrite.</p>
+<p>⸻</p>
+<ol start="9">
+<li>Implementation Roadmap</li>
+</ol>
+<p>Organize work into phases.</p>
+<p>Each phase should include:</p>
+<ul>
+<li>objectives</li>
+<li>dependencies</li>
+<li>risks</li>
+<li>effort</li>
+<li>deliverables</li>
+<li>validation criteria</li>
+<li>exit criteria</li>
+</ul>
+<p>⸻</p>
+<ol start="10">
+<li>Risk Assessment</li>
+</ol>
+<p>Document:</p>
+<ul>
+<li>rejected alternatives</li>
+<li>architectural tradeoffs</li>
+<li>scalability risks</li>
+<li>maintenance costs</li>
+<li>technical debt</li>
+<li>future migration concerns</li>
+</ul>
+<p>⸻</p>
+<p>Success Criteria</p>
+<p>The final recommendation should produce a repository that:</p>
+<ul>
+<li>scales for decades</li>
+<li>remains understandable as it grows</li>
+<li>generates a complete website from Markdown</li>
+<li>supports full-text and semantic search</li>
+<li>exposes relationships between ideas rather than only files</li>
+<li>automatically generates navigation, indexes, timelines, and graphs</li>
+<li>distinguishes authoritative knowledge from historical context</li>
+<li>supports autonomous AI agents without additional preprocessing</li>
+<li>minimizes manual maintenance through automation</li>
+<li>serves as the canonical scientific record for the project</li>
+</ul>
+<p>If a future researcher receives only this repository, they should be able to reconstruct the history, rationale, evolution, and current state of the research without requiring additional explanation.</p>
+<p>The finished platform should function simultaneously as a scientific archive, engineering notebook, knowledge graph, digital library, documentation portal, and AI-native knowledge base.</p></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>Visual Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-04T13:30:12.034Z">Aug 4, 2026, 1:30:12 PM UTC</time> </p> </footer> </body></html>

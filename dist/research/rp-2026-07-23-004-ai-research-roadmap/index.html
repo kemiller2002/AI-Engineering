@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AI Research Roadmap | Visual Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">VE</span> <div> <a class="site-title" href="/">Visual Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-package</span> <span data-pagefind-meta="stableId">RP-2026-07-23-004</span> </p> <h1 data-pagefind-meta="title">AI Research Roadmap</h1>  <dl class="metadata-panel"> <div><dt>Identifier</dt><dd>RP-2026-07-23-004</dd></div> <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">active</dd></div> <div><dt>Version</dt><dd>2.0.0</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/AI-Research-Roadmap.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#ai-research-roadmap">AI Research Roadmap</a></li><li><a href="#strategy">Strategy</a></li><li><a href="#phase-0-task-and-grader-integrity-active-">Phase 0 — Task and Grader Integrity (active)</a></li><li><a href="#phase-1-contained-exploratory-baseline">Phase 1 — Contained Exploratory Baseline</a></li><li><a href="#parallel-foundation-containment-and-runtime-safety">Parallel Foundation — Containment and Runtime Safety</a></li><li><a href="#phase-2-external-validity-and-representative-suite">Phase 2 — External Validity and Representative Suite</a></li><li><a href="#phase-3-context-state-and-memory">Phase 3 — Context, State, and Memory</a></li><li><a href="#phase-4-permissions-security-and-recovery">Phase 4 — Permissions, Security, and Recovery</a></li><li><a href="#phase-5-human-review-economics-and-orchestration">Phase 5 — Human Review, Economics, and Orchestration</a></li><li><a href="#phase-6-retrieval-and-knowledge-platform">Phase 6 — Retrieval and Knowledge Platform</a></li><li><a href="#phase-7-model-routing-and-interface-agents">Phase 7 — Model Routing and Interface Agents</a></li><li><a href="#continuous-research">Continuous Research</a></li><li><a href="#dependency-flow">Dependency Flow</a></li><li><a href="#stop-conditions">Stop Conditions</a></li> </ol> </aside> <section class="document-body"><h1 id="ai-research-roadmap">AI Research Roadmap</h1>
+<h2 id="strategy">Strategy</h2>
+<p>Build measurement before complexity, while treating containment as a parallel prerequisite rather than a later phase. Each phase should create evidence that can cancel or reshape later work. Time estimates are agent/research effort, not calendar commitments.</p>
+<p>The detailed active plan is <code>research/evaluation/12-research-and-engineering-roadmap.md</code>.</p>
+<h2 id="phase-0--task-and-grader-integrity-active">Phase 0 — Task and Grader Integrity (active)</h2>
+<p><strong>Objective:</strong> ensure tasks and graders can support a fair inference before measuring agents.</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" checked disabled> Define constructs, outcomes, and failure taxonomy.</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Create sixteen candidate task families.</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Instantiate ET-004 and ET-014 pilots.</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Calibrate deterministic grading against seven declared probes.</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Export blind fixtures without gold/probe outcomes.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Obtain two independent reviews.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Test unseen alternative-correct and incomplete outcomes.</li>
+</ul>
+<p><strong>Exit criteria:</strong> reviewers agree or disagreements are adjudicated; alternative-correct work passes; incomplete work fails; contamination controls are tested.</p>
+<h2 id="phase-1--contained-exploratory-baseline">Phase 1 — Contained Exploratory Baseline</h2>
+<p><strong>Objective:</strong> determine which measures predict correct repository outcomes.</p>
+<ul>
+<li>Freeze one complete agent-system configuration.</li>
+<li>Run only validated pilots in disposable blind fixtures.</li>
+<li>Capture final state, actions, runtime, tokens/cost, retries, and human interventions.</li>
+<li>Repeat at least three times for exploratory variance; choose later sample size from observed variance.</li>
+<li>Repair task and grader defects before expanding.</li>
+</ul>
+<p><strong>Deliverables:</strong> immutable run records, variance estimate, failure analysis, grader revisions.</p>
+<p><strong>Decision gate:</strong> do not rank models or architectures from pilot/debugging runs.</p>
+<h2 id="parallel-foundation--containment-and-runtime-safety">Parallel Foundation — Containment and Runtime Safety</h2>
+<p>This work begins before Phase 1 and continues throughout:</p>
+<ul>
+<li>no production credentials;</li>
+<li>network deny-by-default;</li>
+<li>disposable state;</li>
+<li>agent/grader permission separation;</li>
+<li>timeouts, checkpoints, pause/kill, and rollback;</li>
+<li>action telemetry and post-run inspection.</li>
+</ul>
+<p>This sequencing change follows current evidence that evaluation environments can create real security incidents and that fixed suites do not anticipate every long-horizon failure.</p>
+<h2 id="phase-2--external-validity-and-representative-suite">Phase 2 — External Validity and Representative Suite</h2>
+<p><strong>Objective:</strong> establish that graders work on unseen outcomes and that the task mix supports the intended claims.</p>
+<ul>
+<li>calibrate against blinded expert labels;</li>
+<li>estimate false acceptance/rejection;</li>
+<li>add one task family at a time;</li>
+<li>include recovery, provenance, injection, and cross-file state;</li>
+<li>add genuine code/automation work before coding-agent claims.</li>
+</ul>
+<p><strong>Decision gate:</strong> task-level results and sampling limits must be reported before aggregate claims.</p>
+<h2 id="phase-3--context-state-and-memory">Phase 3 — Context, State, and Memory</h2>
+<p><strong>Objective:</strong> find the lowest-cost policy that preserves reliable completion.</p>
+<ul>
+<li>Compare full history, recent-window, structured summary, retrieval, and artifact-first state.</li>
+<li>Inject stale, conflicting, and missing state.</li>
+<li>Measure error type, recovery, context cost, and human intervention.</li>
+</ul>
+<p><strong>Deliverables:</strong> context policy, memory freshness protocol, state schema, decision framework.</p>
+<h2 id="phase-4--permissions-security-and-recovery">Phase 4 — Permissions, Security, and Recovery</h2>
+<p><strong>Objective:</strong> bound agent action without destroying utility.</p>
+<ul>
+<li>Define read-only, workspace-write, external-write, and destructive tiers.</li>
+<li>Test prompt injection, schema mutation, secret exposure, confused-deputy, and unintended side effects.</li>
+<li>Evaluate checkpointing, rollback, and escalation.</li>
+</ul>
+<p><strong>Deliverables:</strong> threat model, permission matrix, recovery playbook, safety evaluation pack.</p>
+<h2 id="phase-5--human-review-economics-and-orchestration">Phase 5 — Human Review, Economics, and Orchestration</h2>
+<p><strong>Objective:</strong> identify when parallel agents or human intervention create net value.</p>
+<ul>
+<li>Measure reviewer burden and cost per verified outcome before adding agents.</li>
+<li>Compare single relay, parallel independent, specialist, and coordinator-worker structures only after a stable single-agent baseline.</li>
+<li>Measure duplicated work, synthesis loss, latency, verified cost, and reviewer burden.</li>
+<li>Compare fixed approval gates with risk-triggered escalation.</li>
+</ul>
+<p><strong>Deliverables:</strong> orchestration threshold framework, human-agent operating model, scheduling guidance.</p>
+<h2 id="phase-6--retrieval-and-knowledge-platform">Phase 6 — Retrieval and Knowledge Platform</h2>
+<p><strong>Objective:</strong> validate the minimum knowledge architecture needed for AI-ROS.</p>
+<ul>
+<li>Create repository question/relevance judgments.</li>
+<li>Compare lexical, vector, hybrid, curated context, and graph-assisted retrieval.</li>
+<li>Test freshness, canonical source selection, and provenance.</li>
+<li>Decide whether a knowledge graph earns its maintenance cost.</li>
+</ul>
+<p><strong>Deliverables:</strong> retrieval benchmark, search decision record, knowledge-graph go/no-go.</p>
+<h2 id="phase-7--model-routing-and-interface-agents">Phase 7 — Model Routing and Interface Agents</h2>
+<p><strong>Objective:</strong> optimize verified outcomes across fast-changing models and interfaces.</p>
+<ul>
+<li>Route tasks by complexity, risk, modality, and privacy.</li>
+<li>Evaluate browser, desktop, and multimodal work under perturbations.</li>
+<li>Maintain quarterly local/cloud/open/frontier scorecards.</li>
+</ul>
+<p><strong>Deliverables:</strong> routing policy, deployment scorecard, UI-agent risk profile.</p>
+<h2 id="continuous-research">Continuous Research</h2>
+<ul>
+<li>Quarterly benchmark validity audit</li>
+<li>Monthly model/harness baseline refresh when material releases occur</li>
+<li>Regression suite on every change to prompts, context policy, permissions, or tools</li>
+<li>Append-only preservation of failed hypotheses and task defects</li>
+<li>Annual reprioritization of the matrix</li>
+</ul>
+<h2 id="dependency-flow">Dependency Flow</h2>
+<p>Critical path:</p>
+<p><code>task/grader integrity → contained baseline → external validity → representative suite → context/state → human economics → orchestration → retrieval/platform → routing/interfaces</code></p>
+<p>Parallel prerequisite:</p>
+<p><code>containment + telemetry + pause/rollback</code></p>
+<h2 id="stop-conditions">Stop Conditions</h2>
+<p>Pause or redirect a stream when:</p>
+<ul>
+<li>metrics do not change a decision;</li>
+<li>task ambiguity exceeds agent error;</li>
+<li>model churn invalidates the implementation faster than it can be evaluated;</li>
+<li>coordination cost exceeds measured benefit;</li>
+<li>a simpler artifact or test provides equivalent decision value.</li>
+</ul>
+<p>Current diminishing-returns boundary: do not add further architecture until independent review or isolated run evidence changes a decision.</p></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>Visual Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-04T13:30:12.034Z">Aug 4, 2026, 1:30:12 PM UTC</time> </p> </footer> </body></html>

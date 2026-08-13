@@ -1,0 +1,896 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>The Research Relay System | Visual Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">VE</span> <div> <a class="site-title" href="/">Visual Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">The Research Relay System</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>content/disciplines/ai-engineering/research-relay-system.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#the-research-relay-system">The Research Relay System</a></li><li><a href="#a-practical-operating-model-for-iterative-autonomous-research-agents">A Practical Operating Model for Iterative Autonomous Research Agents</a></li><li><a href="#executive-conclusion">Executive Conclusion</a></li><li><a href="#1-why-ordinary-agent-prompts-fail">1. Why Ordinary Agent Prompts Fail</a></li><li><a href="#1-1-the-conversation-becomes-the-only-memory">1.1 The conversation becomes the only memory</a></li><li><a href="#1-2-the-agent-does-not-know-what-it-may-decide">1.2 The agent does not know what it may decide</a></li><li><a href="#1-3-continue-until-complete-has-no-operational-meaning">1.3 “Continue until complete” has no operational meaning</a></li><li><a href="#1-4-the-deliverable-and-the-working-state-are-mixed-together">1.4 The deliverable and the working state are mixed together</a></li><li><a href="#1-5-self-review-is-too-forgiving">1.5 Self-review is too forgiving</a></li><li><a href="#2-the-recommended-architecture">2. The Recommended Architecture</a></li><li><a href="#layer-1-research-charter">Layer 1: Research Charter</a></li><li><a href="#layer-2-research-journal">Layer 2: Research Journal</a></li><li><a href="#layer-3-current-state">Layer 3: Current State</a></li><li><a href="#layer-4-evidence-registry">Layer 4: Evidence Registry</a></li><li><a href="#layer-5-decision-log">Layer 5: Decision Log</a></li><li><a href="#layer-6-cycle-deliverables">Layer 6: Cycle Deliverables</a></li><li><a href="#3-the-research-relay-loop">3. The Research Relay Loop</a></li><li><a href="#phase-a-rehydrate">Phase A: Rehydrate</a></li><li><a href="#phase-b-select-the-highest-value-uncertainty">Phase B: Select the highest-value uncertainty</a></li><li><a href="#phase-c-plan-a-bounded-research-cycle">Phase C: Plan a bounded research cycle</a></li><li><a href="#phase-d-execute-autonomously">Phase D: Execute autonomously</a></li><li><a href="#phase-e-skeptical-evaluation">Phase E: Skeptical evaluation</a></li><li><a href="#phase-f-persist-state">Phase F: Persist state</a></li><li><a href="#phase-g-return-a-review-packet">Phase G: Return a review packet</a></li><li><a href="#4-decision-authority">4. Decision Authority</a></li><li><a href="#the-agent-may-decide-without-asking">The agent may decide without asking</a></li><li><a href="#the-agent-must-pause-or-flag-for-review">The agent must pause or flag for review</a></li><li><a href="#the-agent-should-not-ask-merely-because">The agent should not ask merely because</a></li><li><a href="#5-checkpoint-policy">5. Checkpoint Policy</a></li><li><a href="#completion-checkpoint">Completion checkpoint</a></li><li><a href="#decision-checkpoint">Decision checkpoint</a></li><li><a href="#review-checkpoint">Review checkpoint</a></li><li><a href="#6-the-continuation-protocol">6. The Continuation Protocol</a></li><li><a href="#approve-the-next-recommendation">Approve the next recommendation</a></li><li><a href="#redirect-priority">Redirect priority</a></li><li><a href="#challenge-a-conclusion">Challenge a conclusion</a></li><li><a href="#expand-depth">Expand depth</a></li><li><a href="#produce-a-synthesis">Produce a synthesis</a></li><li><a href="#reset-context">Reset context</a></li><li><a href="#7-the-bootstrap-prompt">7. The Bootstrap Prompt</a></li><li><a href="#8-the-continuation-prompt">8. The Continuation Prompt</a></li><li><a href="#9-cycle-report-template">9. Cycle Report Template</a></li><li><a href="#10-current-state-template">10. Current-State Template</a></li><li><a href="#11-journal-entry-template">11. Journal Entry Template</a></li><li><a href="#12-practical-interaction-pattern">12. Practical Interaction Pattern</a></li><li><a href="#first-message">First message</a></li><li><a href="#agent-response">Agent response</a></li><li><a href="#your-review">Your review</a></li><li><a href="#your-next-message">Your next message</a></li><li><a href="#agent-response">Agent response</a></li><li><a href="#13-what-to-automate-later">13. What to Automate Later</a></li><li><a href="#14-what-not-to-do">14. What Not to Do</a></li><li><a href="#do-not-rely-on-one-enormous-master-prompt">Do not rely on one enormous master prompt</a></li><li><a href="#do-not-ask-the-model-to-preserve-everything-in-memory">Do not ask the model to preserve everything in memory</a></li><li><a href="#do-not-create-many-agents-immediately">Do not create many agents immediately</a></li><li><a href="#do-not-let-every-run-rewrite-the-final-report">Do not let every run rewrite the final report</a></li><li><a href="#do-not-use-keep-researching-until-done-without-criteria">Do not use “keep researching until done” without criteria</a></li><li><a href="#do-not-make-the-user-approve-routine-research-choices">Do not make the user approve routine research choices</a></li><li><a href="#do-not-accept-self-assigned-confidence-without-falsification">Do not accept self-assigned confidence without falsification</a></li><li><a href="#do-not-produce-files-only-at-the-end">Do not produce files only at the end</a></li><li><a href="#15-recommended-initial-version">15. Recommended Initial Version</a></li><li><a href="#16-final-recommendation">16. Final Recommendation</a></li> </ol> </aside> <section class="document-body"><h1 id="the-research-relay-system">The Research Relay System</h1>
+<h2 id="a-practical-operating-model-for-iterative-autonomous-research-agents">A Practical Operating Model for Iterative Autonomous Research Agents</h2>
+<h2 id="executive-conclusion">Executive Conclusion</h2>
+<p>The right solution is not a single “autonomous research prompt.”</p>
+<p>It is a <strong>research relay system</strong> built around durable artifacts, bounded autonomous work cycles, explicit decision authority, and standardized handoffs.</p>
+<p>The agent should be allowed to independently:</p>
+<ul>
+<li>decompose the assigned objective;</li>
+<li>choose research methods;</li>
+<li>pursue promising leads;</li>
+<li>revise its plan when evidence changes;</li>
+<li>make reversible working decisions;</li>
+<li>create and update project artifacts;</li>
+<li>decide the highest-value next action;</li>
+<li>complete several connected steps without repeatedly asking permission.</li>
+</ul>
+<p>The agent should pause only when:</p>
+<ul>
+<li>a decision would materially change project scope;</li>
+<li>two plausible paths require a value judgment rather than an evidence judgment;</li>
+<li>an action is irreversible, costly, legally sensitive, or externally consequential;</li>
+<li>required information cannot be reasonably inferred;</li>
+<li>the current research cycle has reached a useful review boundary;</li>
+<li>evidence indicates that the original objective itself may be wrong.</li>
+</ul>
+<p>The central design rule is:</p>
+<blockquote>
+<p>The chat is the control surface. The files are the project memory.</p>
+</blockquote>
+<p>Each research run reads the current project state, performs a bounded but meaningful cycle of work, records what happened, updates the project state, creates a reviewable Markdown deliverable, and leaves an exact continuation instruction for the next run.</p>
+<hr>
+<h1 id="1-why-ordinary-agent-prompts-fail">1. Why Ordinary Agent Prompts Fail</h1>
+<p>Most “go research this autonomously” prompts fail for structural reasons rather than model capability.</p>
+<h2 id="11-the-conversation-becomes-the-only-memory">1.1 The conversation becomes the only memory</h2>
+<p>A long chat gradually accumulates:</p>
+<ul>
+<li>outdated assumptions;</li>
+<li>discarded directions;</li>
+<li>duplicated findings;</li>
+<li>unmarked corrections;</li>
+<li>decisions mixed with speculation;</li>
+<li>large amounts of irrelevant context.</li>
+</ul>
+<p>The model must repeatedly reconstruct the true project state from conversational history. Eventually, it either loses coherence or prematurely wraps up.</p>
+<h2 id="12-the-agent-does-not-know-what-it-may-decide">1.2 The agent does not know what it may decide</h2>
+<p>Prompts often say both:</p>
+<ul>
+<li>“work autonomously,” and</li>
+<li>“do not make assumptions.”</li>
+</ul>
+<p>Those instructions conflict.</p>
+<p>Research requires provisional decisions. The agent must choose:</p>
+<ul>
+<li>which uncertainty matters most;</li>
+<li>which sources deserve priority;</li>
+<li>when evidence is sufficient;</li>
+<li>whether a failed hypothesis should be abandoned;</li>
+<li>what to investigate next.</li>
+</ul>
+<p>Without a decision policy, the agent either asks too many questions or silently makes decisions it should have surfaced.</p>
+<h2 id="13-continue-until-complete-has-no-operational-meaning">1.3 “Continue until complete” has no operational meaning</h2>
+<p>Open-ended completion criteria encourage one of two failure modes:</p>
+<ul>
+<li>stopping too early after producing a plausible summary;</li>
+<li>continuing indefinitely without producing reviewable progress.</li>
+</ul>
+<p>The agent needs both:</p>
+<ul>
+<li>a definition of overall completion;</li>
+<li>a definition of a useful cycle boundary.</li>
+</ul>
+<h2 id="14-the-deliverable-and-the-working-state-are-mixed-together">1.4 The deliverable and the working state are mixed together</h2>
+<p>A polished report is not a sufficient handoff artifact.</p>
+<p>A report explains what was learned, but often omits:</p>
+<ul>
+<li>what remains uncertain;</li>
+<li>what was attempted and failed;</li>
+<li>which decisions were provisional;</li>
+<li>what evidence would reverse the conclusion;</li>
+<li>what exact task should happen next.</li>
+</ul>
+<p>The project therefore needs separate artifacts for knowledge, state, history, and presentation.</p>
+<h2 id="15-self-review-is-too-forgiving">1.5 Self-review is too forgiving</h2>
+<p>An agent grading its own work tends to accept weak synthesis, incomplete coverage, and unsupported confidence. A separate skeptical review pass is more effective than simply telling the same agent to “be critical.”</p>
+<hr>
+<h1 id="2-the-recommended-architecture">2. The Recommended Architecture</h1>
+<p>Use a <strong>single research agent with an internal evaluator loop</strong>, supported by durable Markdown artifacts.</p>
+<p>Do not begin with a complicated swarm of specialized agents. Multi-agent systems add coordination cost, duplication, and synthesis problems. Add separate agents only when parallelism or genuine independence produces measurable value.</p>
+<p>The system has six layers.</p>
+<h2 id="layer-1-research-charter">Layer 1: Research Charter</h2>
+<p>Defines the enduring mission, scope, standards, constraints, and authority.</p>
+<p>This should change rarely.</p>
+<p>File:</p>
+<p><code>00-research-charter.md</code></p>
+<h2 id="layer-2-research-journal">Layer 2: Research Journal</h2>
+<p>The append-only scientific record.</p>
+<p>It records:</p>
+<ul>
+<li>observations;</li>
+<li>searches performed;</li>
+<li>evidence found;</li>
+<li>hypotheses considered;</li>
+<li>failures;</li>
+<li>contradictions;</li>
+<li>interpretation changes;</li>
+<li>decisions and their rationale;</li>
+<li>remaining uncertainties.</li>
+</ul>
+<p>File:</p>
+<p><code>01-research-journal.md</code></p>
+<p>The journal is authoritative history. Never rewrite old entries. Add corrections as new entries.</p>
+<h2 id="layer-3-current-state">Layer 3: Current State</h2>
+<p>A compact, replaceable snapshot of the project as it is currently understood.</p>
+<p>It contains:</p>
+<ul>
+<li>current objective;</li>
+<li>accepted findings;</li>
+<li>active hypotheses;</li>
+<li>rejected hypotheses;</li>
+<li>open questions;</li>
+<li>current constraints;</li>
+<li>decisions already made;</li>
+<li>unresolved decisions;</li>
+<li>current work queue;</li>
+<li>recommended next action.</li>
+</ul>
+<p>File:</p>
+<p><code>02-current-state.md</code></p>
+<p>This is the first file a new agent run should read after the charter.</p>
+<h2 id="layer-4-evidence-registry">Layer 4: Evidence Registry</h2>
+<p>A structured index of evidence so the agent does not repeatedly rediscover the same material.</p>
+<p>File:</p>
+<p><code>03-evidence-registry.md</code></p>
+<p>Suggested fields:</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Claim or Question</th>
+<th>Source</th>
+<th>Source Type</th>
+<th>Date</th>
+<th>Finding</th>
+<th>Reliability</th>
+<th>Supports</th>
+<th>Contradicts</th>
+<th>Notes</th>
+</tr>
+</thead>
+</table>
+<h2 id="layer-5-decision-log">Layer 5: Decision Log</h2>
+<p>Records decisions separately from discoveries.</p>
+<p>File:</p>
+<p><code>04-decision-log.md</code></p>
+<p>Suggested fields:</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Decision</th>
+<th>Status</th>
+<th>Basis</th>
+<th>Alternatives</th>
+<th>Reversal Trigger</th>
+<th>Date</th>
+</tr>
+</thead>
+</table>
+<p>Statuses:</p>
+<ul>
+<li>proposed;</li>
+<li>provisional;</li>
+<li>accepted;</li>
+<li>superseded;</li>
+<li>rejected.</li>
+</ul>
+<h2 id="layer-6-cycle-deliverables">Layer 6: Cycle Deliverables</h2>
+<p>Each run creates a self-contained review packet.</p>
+<p>Directory:</p>
+<p><code>cycles/</code></p>
+<p>Examples:</p>
+<ul>
+<li><code>cycles/2026-07-21-cycle-001.md</code></li>
+<li><code>cycles/2026-07-21-cycle-002.md</code></li>
+</ul>
+<p>These are immutable snapshots. They let you download, save, compare, and resume the work even when the conversation changes.</p>
+<hr>
+<h1 id="3-the-research-relay-loop">3. The Research Relay Loop</h1>
+<p>Every run follows the same sequence.</p>
+<h2 id="phase-a-rehydrate">Phase A: Rehydrate</h2>
+<p>The agent reads, in order:</p>
+<ol>
+<li><code>00-research-charter.md</code></li>
+<li><code>02-current-state.md</code></li>
+<li>the most recent cycle report</li>
+<li>relevant sections of the journal</li>
+<li>relevant evidence and decision entries</li>
+</ol>
+<p>It should not reread the entire project blindly. The current-state file tells it what historical material is relevant.</p>
+<h2 id="phase-b-select-the-highest-value-uncertainty">Phase B: Select the highest-value uncertainty</h2>
+<p>The agent identifies the uncertainty whose resolution would most improve the project.</p>
+<p>Use this priority function:</p>
+<blockquote>
+<p>Expected research value = decision impact × uncertainty × tractability × dependency value</p>
+</blockquote>
+<p>Where:</p>
+<ul>
+<li><strong>decision impact</strong> means how much the answer changes what should be done;</li>
+<li><strong>uncertainty</strong> means how weak or conflicting current knowledge is;</li>
+<li><strong>tractability</strong> means whether useful evidence can realistically be obtained;</li>
+<li><strong>dependency value</strong> means how many later questions depend on this answer.</li>
+</ul>
+<p>This prevents the agent from pursuing interesting but low-leverage tangents.</p>
+<h2 id="phase-c-plan-a-bounded-research-cycle">Phase C: Plan a bounded research cycle</h2>
+<p>The agent creates a private or explicit work plan containing:</p>
+<ul>
+<li>target question;</li>
+<li>current hypothesis;</li>
+<li>competing hypotheses;</li>
+<li>evidence needed;</li>
+<li>likely sources;</li>
+<li>falsification attempt;</li>
+<li>stopping condition;</li>
+<li>expected artifact updates.</li>
+</ul>
+<p>A cycle should normally include several connected steps, not just one search.</p>
+<h2 id="phase-d-execute-autonomously">Phase D: Execute autonomously</h2>
+<p>The agent searches, compares, calculates, tests, or analyzes as needed.</p>
+<p>It may change tactics without asking permission when the change is:</p>
+<ul>
+<li>reversible;</li>
+<li>within scope;</li>
+<li>evidence-driven;</li>
+<li>not materially more costly or risky.</li>
+</ul>
+<p>It should maintain a lightweight task queue and update it as evidence changes.</p>
+<h2 id="phase-e-skeptical-evaluation">Phase E: Skeptical evaluation</h2>
+<p>Before reporting, the agent switches roles from researcher to reviewer.</p>
+<p>The evaluator asks:</p>
+<ul>
+<li>Did the work answer the target question?</li>
+<li>Are important claims traceable to evidence?</li>
+<li>Were primary sources used where available?</li>
+<li>Were contradictory sources addressed?</li>
+<li>Was the strongest alternative explanation tested?</li>
+<li>Did the agent confuse absence of evidence with evidence of absence?</li>
+<li>Are confidence levels justified?</li>
+<li>Did the agent stop because the question was answered or because the cycle became long?</li>
+<li>What would a hostile expert criticize?</li>
+<li>What evidence could reverse the conclusion?</li>
+</ul>
+<p>When possible, use a separate model invocation or fresh context for this evaluation.</p>
+<h2 id="phase-f-persist-state">Phase F: Persist state</h2>
+<p>The agent:</p>
+<ol>
+<li>appends a journal entry;</li>
+<li>updates the current-state snapshot;</li>
+<li>adds evidence registry entries;</li>
+<li>adds or updates decision records;</li>
+<li>creates the cycle report;</li>
+<li>identifies the recommended next cycle.</li>
+</ol>
+<h2 id="phase-g-return-a-review-packet">Phase G: Return a review packet</h2>
+<p>The response to you should be compact. The detailed material belongs in the Markdown file.</p>
+<p>The response should state:</p>
+<ul>
+<li>what the agent accomplished;</li>
+<li>what changed;</li>
+<li>the strongest conclusion;</li>
+<li>the largest remaining uncertainty;</li>
+<li>the exact recommended next step;</li>
+<li>what decision, if any, requires you;</li>
+<li>a link to the cycle Markdown file.</li>
+</ul>
+<hr>
+<h1 id="4-decision-authority">4. Decision Authority</h1>
+<p>The agent needs a written authority model.</p>
+<h2 id="the-agent-may-decide-without-asking">The agent may decide without asking</h2>
+<ul>
+<li>search terms and source order;</li>
+<li>decomposition of the research question;</li>
+<li>reversible research methods;</li>
+<li>which hypotheses to test first;</li>
+<li>how to organize working files;</li>
+<li>whether to abandon a disproven hypothesis;</li>
+<li>whether to conduct an additional verification pass;</li>
+<li>whether to follow an evidence-based tangent that remains within scope;</li>
+<li>which next step offers the highest research value;</li>
+<li>how much detail belongs in a cycle report;</li>
+<li>provisional conclusions, clearly labeled as provisional.</li>
+</ul>
+<h2 id="the-agent-must-pause-or-flag-for-review">The agent must pause or flag for review</h2>
+<ul>
+<li>expanding or redefining the project’s objective;</li>
+<li>accepting a conclusion based primarily on values, risk tolerance, or organizational preference;</li>
+<li>spending money or invoking paid resources beyond an established budget;</li>
+<li>communicating externally;</li>
+<li>making legal, medical, financial, security, or production decisions;</li>
+<li>deleting or rewriting authoritative records;</li>
+<li>choosing between materially different strategic directions when evidence does not dominate;</li>
+<li>proceeding when the user’s original objective appears unsafe, impossible, or internally contradictory.</li>
+</ul>
+<h2 id="the-agent-should-not-ask-merely-because">The agent should not ask merely because</h2>
+<ul>
+<li>several reasonable methods exist;</li>
+<li>information is imperfect;</li>
+<li>the next step was not explicitly named;</li>
+<li>a provisional assumption is necessary;</li>
+<li>the work requires multiple searches;</li>
+<li>one source conflicts with another;</li>
+<li>the research plan needs revision.</li>
+</ul>
+<p>Instead, it should choose a reasonable path, state the assumption, and test it.</p>
+<hr>
+<h1 id="5-checkpoint-policy">5. Checkpoint Policy</h1>
+<p>Do not force the agent to stop after every step.</p>
+<p>Use three checkpoint types.</p>
+<h2 id="completion-checkpoint">Completion checkpoint</h2>
+<p>Stop when the assigned objective meets its success criteria.</p>
+<h2 id="decision-checkpoint">Decision checkpoint</h2>
+<p>Stop when progress requires a human value judgment or consequential authorization.</p>
+<h2 id="review-checkpoint">Review checkpoint</h2>
+<p>Stop after a meaningful research unit when:</p>
+<ul>
+<li>the cycle has resolved its target uncertainty;</li>
+<li>the remaining work changes direction;</li>
+<li>a major assumption has been overturned;</li>
+<li>the next cycle would consume substantially more resources;</li>
+<li>a reusable intermediate artifact is complete;</li>
+<li>the user would benefit from reviewing direction before further investment.</li>
+</ul>
+<p>A checkpoint is not “I completed one search.”</p>
+<p>It is “I completed a coherent unit of learning.”</p>
+<hr>
+<h1 id="6-the-continuation-protocol">6. The Continuation Protocol</h1>
+<p>Your follow-up should not require a new long prompt.</p>
+<p>Every cycle report ends with a machine-readable handoff section.</p>
+<pre><code class="language-markdown">## Continuation Handoff
+
+### Project state
+- Current objective:
+- Current phase:
+- Last completed cycle:
+- Most important conclusion:
+- Confidence:
+- Largest unresolved uncertainty:
+
+### Recommended next cycle
+- Objective:
+- Why this is next:
+- Proposed method:
+- Expected output:
+- Stop condition:
+
+### Decisions required from the user
+- None
+</code></pre>
+<p>Then your normal continuation message can be:</p>
+<blockquote>
+<p>Continue with the recommended next cycle. Read the project artifacts first, perform the work autonomously, update all required files, and return the next review packet.</p>
+</blockquote>
+<p>Other useful control commands:</p>
+<h3 id="approve-the-next-recommendation">Approve the next recommendation</h3>
+<blockquote>
+<p>Continue with the recommended next cycle.</p>
+</blockquote>
+<h3 id="redirect-priority">Redirect priority</h3>
+<blockquote>
+<p>Continue, but prioritize <code>[question]</code> before the recommended next cycle. Preserve the current recommendation in the backlog.</p>
+</blockquote>
+<h3 id="challenge-a-conclusion">Challenge a conclusion</h3>
+<blockquote>
+<p>Reopen decision <code>[ID]</code>. Attempt to falsify it using the strongest contrary evidence you can find. Record whether the decision survives.</p>
+</blockquote>
+<h3 id="expand-depth">Expand depth</h3>
+<blockquote>
+<p>Run another cycle on the same question. Focus on evidence gaps, conflicting sources, and reversal conditions rather than repeating the existing summary.</p>
+</blockquote>
+<h3 id="produce-a-synthesis">Produce a synthesis</h3>
+<blockquote>
+<p>Using the journal and current state, produce a consolidated synthesis. Do not conduct new research unless needed to resolve a contradiction discovered during synthesis.</p>
+</blockquote>
+<h3 id="reset-context">Reset context</h3>
+<blockquote>
+<p>Start a fresh run using only the project artifacts as authoritative context. Do not rely on conversational memory.</p>
+</blockquote>
+<hr>
+<h1 id="7-the-bootstrap-prompt">7. The Bootstrap Prompt</h1>
+<p>Use this prompt to start a new research project.</p>
+<pre><code class="language-markdown"># Autonomous Research Relay Agent
+
+You are the research agent for this project.
+
+Your responsibility is to increase reliable understanding of the assigned topic through repeated, evidence-driven research cycles.
+
+You are not merely writing a report. You are maintaining a durable scientific and engineering record that another agent or researcher can continue without access to this conversation.
+
+## Primary objective
+
+[INSERT THE RESEARCH OBJECTIVE]
+
+## Desired outcome
+
+[DESCRIBE THE DECISION, DESIGN, GUIDE, THEORY, OR KNOWLEDGE THE RESEARCH SHOULD ENABLE]
+
+## Constraints
+
+[INSERT IMPORTANT SCOPE, TIME, SOURCE, COST, TECHNICAL, OR AUDIENCE CONSTRAINTS]
+
+## Operating model
+
+Work autonomously within the defined objective.
+
+You may:
+
+- decompose the objective;
+- select research methods;
+- choose source order;
+- create and revise hypotheses;
+- follow evidence-based lines of inquiry;
+- make reversible working decisions;
+- revise the plan when evidence changes;
+- complete multiple connected steps in one cycle;
+- decide the highest-value next action.
+
+Do not ask for permission merely because several reasonable approaches exist.
+
+Choose the approach with the best expected research value, state material assumptions, and test them.
+
+Pause only when:
+
+- the objective or scope must materially change;
+- the next action requires a human value judgment;
+- an action would be irreversible, costly, sensitive, or externally consequential;
+- missing information cannot be safely or reasonably inferred;
+- the current cycle has reached a meaningful review boundary.
+
+## Required project artifacts
+
+Maintain these Markdown files:
+
+1. `00-research-charter.md`
+2. `01-research-journal.md`
+3. `02-current-state.md`
+4. `03-evidence-registry.md`
+5. `04-decision-log.md`
+6. one immutable report per cycle in `cycles/`
+
+If the files do not exist, create them.
+
+The journal is append-only. Never erase prior mistakes or failed hypotheses. Record corrections and why understanding changed.
+
+The current-state file is a concise replaceable snapshot. Keep it accurate enough that a fresh agent can resume the project by reading it.
+
+## Research cycle
+
+For each cycle:
+
+1. Read the charter, current state, latest cycle report, and relevant journal, evidence, and decision entries.
+2. Identify the highest-value unresolved uncertainty.
+3. Define the target question and competing hypotheses.
+4. Specify what evidence would support or contradict each hypothesis.
+5. Conduct several connected research steps.
+6. Prefer primary and authoritative sources.
+7. Compare conflicting evidence.
+8. Attempt to falsify the leading conclusion.
+9. Assess confidence and identify reversal conditions.
+10. Append the research journal.
+11. Update current state, evidence registry, and decision log.
+12. Create a downloadable Markdown cycle report.
+13. Recommend the highest-value next cycle.
+
+## Evidence discipline
+
+Separate:
+
+- observation;
+- source evidence;
+- inference;
+- hypothesis;
+- conclusion;
+- decision.
+
+Do not present inference as directly observed fact.
+
+For important claims, record the source and explain why it is relevant.
+
+Prefer:
+
+- original research;
+- standards;
+- official documentation;
+- government or institutional data;
+- patents;
+- technical books;
+- high-quality systematic reviews;
+- direct measurements or experiments.
+
+Use secondary sources for orientation, not as the only basis for consequential conclusions when primary evidence is available.
+
+Actively look for disconfirming evidence.
+
+## Completion criteria
+
+The project is complete only when:
+
+- the primary objective has been answered at the required level;
+- important claims are supported by traceable evidence;
+- major competing explanations have been considered;
+- the largest material uncertainties are resolved or clearly bounded;
+- remaining unknowns are unlikely to change the practical recommendation;
+- the final recommendation includes confidence and reversal conditions;
+- another researcher can reconstruct the reasoning from the artifacts.
+
+Do not claim completion merely because a polished report exists.
+
+## Review output
+
+At the end of each cycle, return:
+
+1. a brief summary of work completed;
+2. what changed in the project’s understanding;
+3. the strongest current conclusion;
+4. the largest remaining uncertainty;
+5. decisions requiring user input, or `None`;
+6. the recommended next cycle and why;
+7. links to every Markdown file created or updated.
+
+The detailed research belongs in the cycle report and project artifacts, not only in the chat response.
+
+Begin now. Create or read the project artifacts, then complete the first meaningful research cycle.
+</code></pre>
+<hr>
+<h1 id="8-the-continuation-prompt">8. The Continuation Prompt</h1>
+<p>Use this after reviewing any cycle.</p>
+<pre><code class="language-markdown">Continue the research project.
+
+Treat the project artifacts as authoritative. Do not reconstruct state from conversational memory when the files provide it.
+
+Read:
+
+1. `00-research-charter.md`
+2. `02-current-state.md`
+3. the latest cycle report
+4. relevant journal, evidence, and decision entries
+
+Then:
+
+- verify that the recommended next cycle is still the highest-value action;
+- change course without asking if newer evidence makes another in-scope action more valuable;
+- complete a meaningful multi-step research cycle;
+- attempt to falsify the leading conclusion;
+- update every affected project artifact;
+- create the next immutable Markdown cycle report;
+- return a concise review packet with links.
+
+Do not stop after planning. Execute the research.
+
+Do not ask for approval unless a defined decision checkpoint is reached.
+</code></pre>
+<hr>
+<h1 id="9-cycle-report-template">9. Cycle Report Template</h1>
+<pre><code class="language-markdown"># Research Cycle [NUMBER]
+
+- Date:
+- Research objective:
+- Cycle target:
+- Status: Complete | Partial | Blocked
+
+## Executive finding
+
+[The most important result from this cycle.]
+
+## Why this question was selected
+
+[Explain its decision impact, uncertainty, tractability, and dependency value.]
+
+## Starting state
+
+### Existing belief
+
+### Active hypotheses
+
+### Known evidence
+
+### Important uncertainties
+
+## Work performed
+
+[Describe the connected research steps, not merely a list of searches.]
+
+## Evidence collected
+
+### Evidence supporting the leading conclusion
+
+### Evidence contradicting or limiting it
+
+### Source quality assessment
+
+## Falsification attempt
+
+- Strongest competing explanation:
+- Test performed:
+- Result:
+- Did the leading conclusion survive?
+- Remaining weakness:
+
+## Findings
+
+### Observations
+
+### Inferences
+
+### Conclusions
+
+## Changes to project understanding
+
+- Added:
+- Revised:
+- Rejected:
+- Unchanged:
+
+## Decisions
+
+### Decisions made autonomously
+
+### Decisions proposed
+
+### Decisions requiring user input
+
+## Confidence
+
+- Confidence level:
+- Basis:
+- Main uncertainty:
+- Evidence that would reverse the conclusion:
+
+## Artifact updates
+
+- Journal entries:
+- Evidence entries:
+- Decision entries:
+- Current-state changes:
+
+## Recommended next cycle
+
+- Objective:
+- Why it is highest value:
+- Proposed method:
+- Expected artifact:
+- Stop condition:
+
+## Continuation Handoff
+
+### Project state
+- Current objective:
+- Current phase:
+- Last completed cycle:
+- Most important conclusion:
+- Confidence:
+- Largest unresolved uncertainty:
+
+### Recommended next cycle
+- Objective:
+- Why this is next:
+- Proposed method:
+- Expected output:
+- Stop condition:
+
+### Decisions required from the user
+- None
+</code></pre>
+<hr>
+<h1 id="10-current-state-template">10. Current-State Template</h1>
+<pre><code class="language-markdown"># Current Research State
+
+- Last updated:
+- Latest cycle:
+- Project status: Active | Paused | Complete | Blocked
+
+## Primary objective
+
+## Scope
+
+### Included
+
+### Excluded
+
+## Current synthesis
+
+[A compact explanation of what is presently believed.]
+
+## Accepted findings
+
+## Provisional findings
+
+## Active hypotheses
+
+## Rejected hypotheses
+
+## Key evidence
+
+## Important contradictions
+
+## Decisions already made
+
+## Decisions awaiting review
+
+## Open questions
+
+Rank each question:
+
+| Priority | Question | Impact | Uncertainty | Tractability | Dependency Value |
+|---|---|---:|---:|---:|---:|
+
+## Current work queue
+
+1.
+2.
+3.
+
+## Recommended next action
+
+## Completion assessment
+
+- Criteria already satisfied:
+- Criteria not yet satisfied:
+- Why the project is not yet complete:
+</code></pre>
+<hr>
+<h1 id="11-journal-entry-template">11. Journal Entry Template</h1>
+<pre><code class="language-markdown">---
+
+## Journal Entry [ID]
+
+- Date:
+- Cycle:
+- Researcher:
+- Target question:
+
+### Initial understanding
+
+### Hypotheses
+
+### Planned evidence
+
+### Actions taken
+
+### Observations
+
+### Evidence
+
+### Contradictions
+
+### Failed approaches
+
+### Interpretation
+
+### Understanding changes
+
+### Decisions and rationale
+
+### Remaining uncertainty
+
+### Recommended next action
+
+### References
+
+---
+</code></pre>
+<hr>
+<h1 id="12-practical-interaction-pattern">12. Practical Interaction Pattern</h1>
+<p>A productive rhythm is:</p>
+<h2 id="first-message">First message</h2>
+<p>Give the bootstrap prompt and the topic.</p>
+<h2 id="agent-response">Agent response</h2>
+<p>The agent completes Cycle 1 and returns a cycle report plus updated state artifacts.</p>
+<h2 id="your-review">Your review</h2>
+<p>You examine only:</p>
+<ul>
+<li>executive finding;</li>
+<li>changes in understanding;</li>
+<li>decisions requiring input;</li>
+<li>recommended next cycle.</li>
+</ul>
+<p>You do not need to reread every artifact after every cycle.</p>
+<h2 id="your-next-message">Your next message</h2>
+<p>Usually:</p>
+<blockquote>
+<p>Continue with the recommended next cycle.</p>
+</blockquote>
+<p>When needed:</p>
+<blockquote>
+<p>Continue, but first challenge conclusion D-004. I am not convinced the evidence distinguishes familiarity from objective usability.</p>
+</blockquote>
+<h2 id="agent-response-1">Agent response</h2>
+<p>The agent reads the saved state, performs Cycle 2, and generates a new Markdown file.</p>
+<p>This creates a fast control loop:</p>
+<blockquote>
+<p>assign → research → persist → review → redirect → continue</p>
+</blockquote>
+<hr>
+<h1 id="13-what-to-automate-later">13. What to Automate Later</h1>
+<p>Begin manually with Markdown files and standardized prompts. This exposes what the actual workflow needs before software hardens the wrong assumptions.</p>
+<p>After the pattern is stable, automate:</p>
+<ul>
+<li>sequential cycle numbering;</li>
+<li>file naming;</li>
+<li>handoff extraction;</li>
+<li>evidence deduplication;</li>
+<li>citation validation;</li>
+<li>decision status changes;</li>
+<li>current-state regeneration;</li>
+<li>source-quality checks;</li>
+<li>evaluator passes;</li>
+<li>creation of a ZIP or repository snapshot;</li>
+<li>a command such as <code>/continue</code>, <code>/challenge D-004</code>, or <code>/synthesize</code>.</li>
+</ul>
+<p>A lightweight implementation can use:</p>
+<ul>
+<li>a Git repository as the artifact store;</li>
+<li>an <code>AGENTS.md</code> or equivalent operating instruction;</li>
+<li>Markdown templates;</li>
+<li>a script that assembles the minimal context packet;</li>
+<li>one research model call;</li>
+<li>one independent evaluator call;</li>
+<li>a final persistence step.</li>
+</ul>
+<p>Only move to a graph framework when you need reliable pause/resume, branching, retries, parallel workers, or programmatic approval gates.</p>
+<hr>
+<h1 id="14-what-not-to-do">14. What Not to Do</h1>
+<h2 id="do-not-rely-on-one-enormous-master-prompt">Do not rely on one enormous master prompt</h2>
+<p>The prompt defines behavior, but it cannot substitute for externalized state.</p>
+<h2 id="do-not-ask-the-model-to-preserve-everything-in-memory">Do not ask the model to preserve everything in memory</h2>
+<p>Conversation memory is not a controlled scientific record.</p>
+<h2 id="do-not-create-many-agents-immediately">Do not create many agents immediately</h2>
+<p>Several agents can produce five overlapping summaries and no coherent project state.</p>
+<h2 id="do-not-let-every-run-rewrite-the-final-report">Do not let every run rewrite the final report</h2>
+<p>Preserve immutable cycle reports and update a separate current-state file.</p>
+<h2 id="do-not-use-keep-researching-until-done-without-criteria">Do not use “keep researching until done” without criteria</h2>
+<p>Define both completion criteria and checkpoint criteria.</p>
+<h2 id="do-not-make-the-user-approve-routine-research-choices">Do not make the user approve routine research choices</h2>
+<p>Human attention should be spent on values, priorities, risk, and strategic direction—not search query selection.</p>
+<h2 id="do-not-accept-self-assigned-confidence-without-falsification">Do not accept self-assigned confidence without falsification</h2>
+<p>Require competing hypotheses, contrary evidence, and reversal conditions.</p>
+<h2 id="do-not-produce-files-only-at-the-end">Do not produce files only at the end</h2>
+<p>Every meaningful cycle should generate a portable artifact.</p>
+<hr>
+<h1 id="15-recommended-initial-version">15. Recommended Initial Version</h1>
+<p>For your use case, start with the following minimal version:</p>
+<pre><code class="language-text">project/
+├── 00-research-charter.md
+├── 01-research-journal.md
+├── 02-current-state.md
+├── 03-evidence-registry.md
+├── 04-decision-log.md
+└── cycles/
+    ├── cycle-001.md
+    ├── cycle-002.md
+    └── cycle-003.md
+</code></pre>
+<p>Use:</p>
+<ul>
+<li>one primary research agent;</li>
+<li>one skeptical review pass;</li>
+<li>one meaningful cycle per interaction;</li>
+<li>a standard continuation prompt;</li>
+<li>downloadable Markdown files every cycle;</li>
+<li>context reset through artifacts whenever the conversation becomes long.</li>
+</ul>
+<p>This is enough to solve the majority of the problem without building a custom orchestration platform.</p>
+<hr>
+<h1 id="16-final-recommendation">16. Final Recommendation</h1>
+<p>Adopt the Research Relay System as the default operating method for your research agents.</p>
+<p>The key shift is from:</p>
+<blockquote>
+<p>“Give the agent a strong prompt and hope it remembers the project.”</p>
+</blockquote>
+<p>to:</p>
+<blockquote>
+<p>“Give the agent bounded autonomy inside a durable, inspectable research system.”</p>
+</blockquote>
+<p>The agent should own the next tactical decision.</p>
+<p>You should retain control over:</p>
+<ul>
+<li>the objective;</li>
+<li>scope;</li>
+<li>values;</li>
+<li>risk;</li>
+<li>irreversible actions;</li>
+<li>acceptance of major strategic conclusions.</li>
+</ul>
+<p>The artifacts should own continuity.</p>
+<p>That division of responsibility provides autonomy without losing control, fast iteration without conversational drift, and Markdown outputs that remain useful beyond the chat in which they were created.</p></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>Visual Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-04T13:30:12.034Z">Aug 4, 2026, 1:30:12 PM UTC</time> </p> </footer> </body></html>

@@ -2,7 +2,7 @@
 id: RFA-2026-001
 title: Repository Research Frontier
 status: active
-as_of: 2026-07-28
+as_of: 2026-07-30
 confidence: medium-high
 ---
 
@@ -11,6 +11,10 @@ confidence: medium-high
 ## Boundary of knowledge
 
 AI-ROS has a coherent evaluation theory, candidate task taxonomy, two provisional pilot contracts, seven correctly classified designer probes, blind fixture export, and an explicit containment architecture. It does **not** yet have independently validated tasks, agent capability observations, variance estimates, external-validity evidence, or comparative evidence. The current boundary is therefore measurement readiness, not agent performance.
+
+RFR-009 has advanced to Validation: stable-ID, explicit-link, and frontier
+structure checks are implemented and calibrated, but metadata and semantic
+provenance coverage remain incomplete.
 
 ## Method and scope
 
@@ -32,7 +36,7 @@ Scores are prioritization aids, not measurements. Effort and feasibility were ch
 | 6 | RFR-006 | Total verified-cost measurement | 4 | 5 | 5 | 4 | 5 | 5 | 390 |
 | 7 | RFR-007 | Risk-triggered human escalation study | 4 | 5 | 4 | 4 | 5 | 4 | 311 |
 | 8 | RFR-008 | Evaluation containment validation | 4 | 5 | 5 | 4 | 3 | 4 | 393 |
-| 9 | RFR-009 | Stable identifiers and reference integrity | 3 | 4 | 5 | 3 | 1 | 2 | 177 |
+| 9 | RFR-009 | Stable identifiers and reference integrity (Validation) | 3 | 4 | 5 | 3 | 1 | 2 | 177 |
 | 10 | RFR-010 | Knowledge-graph value experiment | 3 | 3 | 5 | 3 | 6 | 4 | 125 |
 
 Ties and near-ties are resolved by prerequisite value: RFR-001 precedes RFR-002, which produces observations needed by RFR-003. RFR-004 is more costly but required before broad claims. RFR-008 shares RFR-005's numeric score but follows it in the research ranking because RFR-008 is also mandatory parallel engineering work.
@@ -75,6 +79,10 @@ Statistics is underrepresented in power analysis, uncertainty intervals, and ran
 `RFR-001 → RFR-002 → RFR-003 → RFR-004 → {RFR-005, RFR-006, RFR-007}`
 
 `RFR-008 → RFR-002` and `RFR-009 → RFR-004 → RFR-010`.
+
+The tooling prerequisite represented by RFR-009 now exists. Its edges remain
+active because metadata adoption and semantic relationship validation are not
+yet sufficient to call the provenance substrate complete.
 
 The machine-readable graph is in `frontier-graph.json`.
 

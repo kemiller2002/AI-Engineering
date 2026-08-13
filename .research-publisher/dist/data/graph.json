@@ -1,0 +1,1105 @@
+{
+  "schemaVersion": "1.0",
+  "nodes": [
+    {
+      "id": "2026-07-22-input-documents-import-inventory",
+      "title": "2026-07-22 Input Documents Import Inventory",
+      "artifactType": "research-document",
+      "url": "/research/2026-07-22-input-documents-import-inventory/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/repository/imports/2026-07-22-input-documents-import/INVENTORY.md"
+    },
+    {
+      "id": "agent-operating-instructions",
+      "title": "Agent Operating Instructions",
+      "artifactType": "research-document",
+      "url": "/research/agent-operating-instructions/",
+      "researchArea": "General Research",
+      "sourcePath": "AGENTS.md"
+    },
+    {
+      "id": "ai-engineering-course-constitution",
+      "title": "AI Engineering Course Constitution",
+      "artifactType": "research-document",
+      "url": "/research/ai-engineering-course-constitution/",
+      "researchArea": "General Research",
+      "sourcePath": "content/projects/ai-engineering-course/governance/course-constitution.md"
+    },
+    {
+      "id": "ai-engineering-handbook",
+      "title": "AI Engineering Handbook",
+      "artifactType": "research-document",
+      "url": "/research/ai-engineering-handbook/",
+      "researchArea": "General Research",
+      "sourcePath": "content/disciplines/ai-engineering/handbook/agent-architecture-and-coordination.md"
+    },
+    {
+      "id": "ai-engineering-handbook",
+      "title": "AI Engineering Handbook",
+      "artifactType": "research-document",
+      "url": "/research/ai-engineering-handbook/",
+      "researchArea": "General Research",
+      "sourcePath": "content/disciplines/ai-engineering/handbook/engineering-workflows.md"
+    },
+    {
+      "id": "ai-engineering-handbook",
+      "title": "AI Engineering Handbook",
+      "artifactType": "research-document",
+      "url": "/research/ai-engineering-handbook/",
+      "researchArea": "General Research",
+      "sourcePath": "content/disciplines/ai-engineering/handbook/foundations.md"
+    },
+    {
+      "id": "ai-engineering-handbook",
+      "title": "AI Engineering Handbook",
+      "artifactType": "research-document",
+      "url": "/research/ai-engineering-handbook/",
+      "researchArea": "General Research",
+      "sourcePath": "content/disciplines/ai-engineering/handbook/research-engineering.md"
+    },
+    {
+      "id": "ai-engineering-handbook",
+      "title": "AI Engineering Handbook",
+      "artifactType": "research-document",
+      "url": "/research/ai-engineering-handbook/",
+      "researchArea": "General Research",
+      "sourcePath": "content/disciplines/ai-engineering/handbook/token-economics-and-context-engineering.md"
+    },
+    {
+      "id": "ai-engineering-research-program",
+      "title": "AI Engineering Research Program",
+      "artifactType": "research-document",
+      "url": "/research/ai-engineering-research-program/",
+      "researchArea": "General Research",
+      "sourcePath": "content/disciplines/ai-engineering/research-program.md"
+    },
+    {
+      "id": "ai-knowledge-gap-analysis-document-frontier",
+      "title": "AI Knowledge Gap Analysis — Document Frontier",
+      "artifactType": "research-document",
+      "url": "/research/ai-knowledge-gap-analysis-document-frontier/",
+      "researchArea": "General Research",
+      "sourcePath": "research/frontier/document-frontiers/AI-Knowledge-Gap-Analysis-frontier.md"
+    },
+    {
+      "id": "ai-research-mission-execution-decision",
+      "title": "AI Research Mission Execution Decision",
+      "artifactType": "research-document",
+      "url": "/research/ai-research-mission-execution-decision/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/repository/2026-07-23-ai-research-mission-execution.md"
+    },
+    {
+      "id": "ai-research-operating-system",
+      "title": "AI Research Operating System",
+      "artifactType": "research-document",
+      "url": "/research/ai-research-operating-system/",
+      "researchArea": "General Research",
+      "sourcePath": "Readme.md"
+    },
+    {
+      "id": "ai-research-roadmap-document-frontier",
+      "title": "AI Research Roadmap — Document Frontier",
+      "artifactType": "research-document",
+      "url": "/research/ai-research-roadmap-document-frontier/",
+      "researchArea": "General Research",
+      "sourcePath": "research/frontier/document-frontiers/AI-Research-Roadmap-frontier.md"
+    },
+    {
+      "id": "ai-ros-agent-evaluation-research",
+      "title": "AI-ROS Agent Evaluation Research",
+      "artifactType": "research-document",
+      "url": "/research/ai-ros-agent-evaluation-research/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/README.md"
+    },
+    {
+      "id": "ai-ros-bootstrap-and-evolution-agent",
+      "title": "AI-ROS Bootstrap and Evolution Agent",
+      "artifactType": "research-document",
+      "url": "/research/ai-ros-bootstrap-and-evolution-agent/",
+      "researchArea": "General Research",
+      "sourcePath": "ai-prompts/bootstrap/AI-ROS-Bootstrap-Agent.md"
+    },
+    {
+      "id": "ai-ros-evaluation-tools",
+      "title": "AI-ROS Evaluation Tools",
+      "artifactType": "research-document",
+      "url": "/research/ai-ros-evaluation-tools/",
+      "researchArea": "General Research",
+      "sourcePath": "tools/evaluation/README.md"
+    },
+    {
+      "id": "ai-state-of-the-field-document-frontier",
+      "title": "AI State of the Field — Document Frontier",
+      "artifactType": "research-document",
+      "url": "/research/ai-state-of-the-field-document-frontier/",
+      "researchArea": "General Research",
+      "sourcePath": "research/frontier/document-frontiers/AI-State-of-the-Field-REP-frontier.md"
+    },
+    {
+      "id": "apple-shortcuts-setup",
+      "title": "Apple Shortcuts Setup",
+      "artifactType": "research-document",
+      "url": "/research/apple-shortcuts-setup/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/mobile/ios/setup/apple-shortcuts-setup.md"
+    },
+    {
+      "id": "autonomous-engineering-solution-agent",
+      "title": "Autonomous Engineering Solution Agent",
+      "artifactType": "research-document",
+      "url": "/research/autonomous-engineering-solution-agent/",
+      "researchArea": "General Research",
+      "sourcePath": "ai-prompts/Autonomous-Engineering-Solution-Agent-Prompt.md"
+    },
+    {
+      "id": "autonomous-research-agent-repo-archi-and-knowledge",
+      "title": "autonomous research agent repo archi and knowledge",
+      "artifactType": "research-document",
+      "url": "/research/autonomous-research-agent-repo-archi-and-knowledge/",
+      "researchArea": "General Research",
+      "sourcePath": "ai-prompts/autonomous-research-agent-repo-archi-and-knowledge.md"
+    },
+    {
+      "id": "bootstrap-manifest",
+      "title": "Bootstrap Manifest",
+      "artifactType": "research-document",
+      "url": "/research/bootstrap-manifest/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/repository/bootstrap-manifest.md"
+    },
+    {
+      "id": "build-pipeline",
+      "title": "Build Pipeline",
+      "artifactType": "research-document",
+      "url": "/research/build-pipeline/",
+      "researchArea": "General Research",
+      "sourcePath": "knowledge-platform/Build-Pipeline.md"
+    },
+    {
+      "id": "changelog",
+      "title": "Changelog",
+      "artifactType": "research-document",
+      "url": "/research/changelog/",
+      "researchArea": "General Research",
+      "sourcePath": "CHANGELOG.md"
+    },
+    {
+      "id": "course-roadmap",
+      "title": "Course Roadmap",
+      "artifactType": "research-document",
+      "url": "/research/course-roadmap/",
+      "researchArea": "General Research",
+      "sourcePath": "content/projects/ai-engineering-course/roadmaps/course-roadmap.md"
+    },
+    {
+      "id": "current-state",
+      "title": "Current State",
+      "artifactType": "research-document",
+      "url": "/research/current-state/",
+      "researchArea": "General Research",
+      "sourcePath": "current-state.md"
+    },
+    {
+      "id": "current-state",
+      "title": "Current State",
+      "artifactType": "research-document",
+      "url": "/research/current-state/",
+      "researchArea": "General Research",
+      "sourcePath": "templates/CURRENT-STATE.template.md"
+    },
+    {
+      "id": "DF-2026-0001",
+      "title": "Minimum Sufficient Agent Evaluation",
+      "artifactType": "decision-framework",
+      "url": "/research/df-2026-0001-minimum-sufficient-agent-evaluation/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/08-decision-framework.md"
+    },
+    {
+      "id": "DF-[YYYY]-[NNNN]",
+      "title": "Decision",
+      "artifactType": "decision-framework",
+      "url": "/research/df-yyyy-nnnn-decision/",
+      "researchArea": "General Research",
+      "sourcePath": "templates/DECISION.template.md"
+    },
+    {
+      "id": "EC-000",
+      "title": "AI-ROS Engineering Constitution",
+      "artifactType": "research-document",
+      "url": "/research/ec-000-ai-ros-engineering-constitution/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/governance/000-engineering-constitution.md"
+    },
+    {
+      "id": "et-004-p01-integrity-audit",
+      "title": "ET-004-P01 Integrity Audit",
+      "artifactType": "research-document",
+      "url": "/research/et-004-p01-integrity-audit/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/fixtures/et-004-p01/integrity-audit.md"
+    },
+    {
+      "id": "et-014-p01-integrity-audit",
+      "title": "ET-014-P01 Integrity Audit",
+      "artifactType": "research-document",
+      "url": "/research/et-014-p01-integrity-audit/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/fixtures/et-014-p01/integrity-audit.md"
+    },
+    {
+      "id": "EV-[YYYY]-[NNNN]",
+      "title": "Evidence Record",
+      "artifactType": "evidence",
+      "url": "/research/ev-yyyy-nnnn-evidence-record/",
+      "researchArea": "General Research",
+      "sourcePath": "templates/EVIDENCE.template.md"
+    },
+    {
+      "id": "evaluation-architecture-and-threat-model-document-frontier",
+      "title": "Evaluation Architecture and Threat Model — Document Frontier",
+      "artifactType": "research-document",
+      "url": "/research/evaluation-architecture-and-threat-model-document-frontier/",
+      "researchArea": "General Research",
+      "sourcePath": "research/frontier/document-frontiers/evaluation-architecture-threat-frontier.md"
+    },
+    {
+      "id": "evaluation-charter-and-specification-document-frontier",
+      "title": "Evaluation Charter and Specification — Document Frontier",
+      "artifactType": "research-document",
+      "url": "/research/evaluation-charter-and-specification-document-frontier/",
+      "researchArea": "General Research",
+      "sourcePath": "research/frontier/document-frontiers/evaluation-charter-specification-frontier.md"
+    },
+    {
+      "id": "evaluation-registries-document-frontier",
+      "title": "Evaluation Registries — Document Frontier",
+      "artifactType": "research-document",
+      "url": "/research/evaluation-registries-document-frontier/",
+      "researchArea": "General Research",
+      "sourcePath": "research/frontier/document-frontiers/evaluation-registries-frontier.md"
+    },
+    {
+      "id": "evaluation-research-infrastructure-decision",
+      "title": "Evaluation Research Infrastructure Decision",
+      "artifactType": "research-document",
+      "url": "/research/evaluation-research-infrastructure-decision/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/repository/2026-07-23-evaluation-research-infrastructure.md"
+    },
+    {
+      "id": "evaluation-research-journal",
+      "title": "Evaluation Research Journal",
+      "artifactType": "research-document",
+      "url": "/research/evaluation-research-journal/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/09-research-journal.md"
+    },
+    {
+      "id": "evaluation-results-and-cycles-document-frontier",
+      "title": "Evaluation Results and Cycles — Document Frontier",
+      "artifactType": "research-document",
+      "url": "/research/evaluation-results-and-cycles-document-frontier/",
+      "researchArea": "General Research",
+      "sourcePath": "research/frontier/document-frontiers/evaluation-results-cycles-frontier.md"
+    },
+    {
+      "id": "evaluation-roadmap-execution-decision",
+      "title": "Evaluation Roadmap Execution Decision",
+      "artifactType": "research-document",
+      "url": "/research/evaluation-roadmap-execution-decision/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/repository/2026-07-28-evaluation-roadmap-execution.md"
+    },
+    {
+      "id": "generated-website",
+      "title": "Generated Website",
+      "artifactType": "research-document",
+      "url": "/research/generated-website/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/repository/bootstrap-website-placeholder.md"
+    },
+    {
+      "id": "hidden-grader-contract",
+      "title": "Hidden Grader Contract",
+      "artifactType": "research-document",
+      "url": "/research/hidden-grader-contract/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/fixtures/et-014-p01/task-materials/expected-behavior.md"
+    },
+    {
+      "id": "HO-[YYYY]-[NNNN]",
+      "title": "Agent Handoff",
+      "artifactType": "research-document",
+      "url": "/research/ho-yyyy-nnnn-agent-handoff/",
+      "researchArea": "General Research",
+      "sourcePath": "templates/AGENT-HANDOFF.template.md"
+    },
+    {
+      "id": "import-decisions",
+      "title": "Import Decisions",
+      "artifactType": "research-document",
+      "url": "/research/import-decisions/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/repository/imports/2026-07-22-input-documents-import/DECISIONS.md"
+    },
+    {
+      "id": "knowledge-platform-deliverables",
+      "title": "Knowledge Platform Deliverables",
+      "artifactType": "research-document",
+      "url": "/research/knowledge-platform-deliverables/",
+      "researchArea": "General Research",
+      "sourcePath": "knowledge-platform/README.md"
+    },
+    {
+      "id": "knowledge-platform-document-frontier",
+      "title": "Knowledge Platform — Document Frontier",
+      "artifactType": "research-document",
+      "url": "/research/knowledge-platform-document-frontier/",
+      "researchArea": "General Research",
+      "sourcePath": "research/frontier/document-frontiers/knowledge-platform-frontier.md"
+    },
+    {
+      "id": "lesson-1-cheat-sheet",
+      "title": "Lesson 1 Cheat Sheet",
+      "artifactType": "research-document",
+      "url": "/research/lesson-1-cheat-sheet/",
+      "researchArea": "General Research",
+      "sourcePath": "content/projects/ai-engineering-course/chapter-01/derived/lesson-01-cheat-sheet.md"
+    },
+    {
+      "id": "lesson-1-notes",
+      "title": "Lesson 1 Notes",
+      "artifactType": "research-document",
+      "url": "/research/lesson-1-notes/",
+      "researchArea": "General Research",
+      "sourcePath": "content/projects/ai-engineering-course/chapter-01/derived/lesson-01-notes.md"
+    },
+    {
+      "id": "lesson-1-why-ai-sometimes-feels-like-magic-and-sometimes-feels-completely-useless",
+      "title": "Lesson 1 --- Why AI Sometimes Feels Like Magic... and Sometimes Feels Completely Useless",
+      "artifactType": "research-document",
+      "url": "/research/lesson-1-why-ai-sometimes-feels-like-magic-and-sometimes-feels-completely-useless/",
+      "researchArea": "General Research",
+      "sourcePath": "content/projects/ai-engineering-course/chapter-01/lesson-01-why-ai-sometimes-feels-like-magic-and-sometimes-feels-completely-useless.md"
+    },
+    {
+      "id": "lesson-1-workbook",
+      "title": "Lesson 1 Workbook",
+      "artifactType": "research-document",
+      "url": "/research/lesson-1-workbook/",
+      "researchArea": "General Research",
+      "sourcePath": "content/projects/ai-engineering-course/chapter-01/derived/lesson-01-workbook.md"
+    },
+    {
+      "id": "lesson-1-working-draft",
+      "title": "Lesson 1 (Working Draft)",
+      "artifactType": "research-document",
+      "url": "/research/lesson-1-working-draft/",
+      "researchArea": "General Research",
+      "sourcePath": "content/projects/ai-engineering-course/chapter-01/drafts/lesson-01-working-draft.md"
+    },
+    {
+      "id": "metadata-standard",
+      "title": "Metadata Standard",
+      "artifactType": "research-document",
+      "url": "/research/metadata-standard/",
+      "researchArea": "General Research",
+      "sourcePath": "knowledge-platform/Metadata-Standard.md"
+    },
+    {
+      "id": "migration-plan",
+      "title": "Migration Plan",
+      "artifactType": "research-document",
+      "url": "/research/migration-plan/",
+      "researchArea": "General Research",
+      "sourcePath": "knowledge-platform/Migration-Plan.md"
+    },
+    {
+      "id": "mobile-research-cycle",
+      "title": "Mobile Research Cycle",
+      "artifactType": "research-document",
+      "url": "/research/mobile-research-cycle/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/mobile/ios/workflows/mobile-research-cycle.md"
+    },
+    {
+      "id": "next-agent-start-here",
+      "title": "NEXT AGENT: START HERE",
+      "artifactType": "research-document",
+      "url": "/research/next-agent-start-here/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/NEXT-AGENT-START-HERE.md"
+    },
+    {
+      "id": "non-human-experimental-comparative-review-decision",
+      "title": "Non-Human Experimental Comparative Review Decision",
+      "artifactType": "research-document",
+      "url": "/research/non-human-experimental-comparative-review-decision/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/repository/2026-07-30-non-human-experimental-comparative-review.md"
+    },
+    {
+      "id": "release-note-task",
+      "title": "Release Note Task",
+      "artifactType": "research-document",
+      "url": "/research/release-note-task/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/fixtures/et-014-p01/task-materials/prompt.md"
+    },
+    {
+      "id": "repository-architecture",
+      "title": "Repository Architecture",
+      "artifactType": "research-document",
+      "url": "/research/repository-architecture/",
+      "researchArea": "General Research",
+      "sourcePath": "knowledge-platform/Repository-Architecture.md"
+    },
+    {
+      "id": "repository-ready-research-agent",
+      "title": "Repository-Ready Research Agent",
+      "artifactType": "research-document",
+      "url": "/research/repository-ready-research-agent/",
+      "researchArea": "General Research",
+      "sourcePath": "ai-prompts/agents/Repository-Ready-Research-Agent.md"
+    },
+    {
+      "id": "research-execution-package-rep-specification",
+      "title": "Research Execution Package (REP) Specification",
+      "artifactType": "research-document",
+      "url": "/research/research-execution-package-rep-specification/",
+      "researchArea": "General Research",
+      "sourcePath": "ai-prompts/Research-Execution-Package-Specification-v2.md"
+    },
+    {
+      "id": "research-frontier-analysis-decision",
+      "title": "Research Frontier Analysis Decision",
+      "artifactType": "research-document",
+      "url": "/research/research-frontier-analysis-decision/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/repository/2026-07-28-research-frontier-analysis.md"
+    },
+    {
+      "id": "research-integrity-validation-decision",
+      "title": "Research Integrity Validation Decision",
+      "artifactType": "research-document",
+      "url": "/research/research-integrity-validation-decision/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/repository/2026-07-30-research-integrity-validation.md"
+    },
+    {
+      "id": "research-package-001",
+      "title": "Research Package 001",
+      "artifactType": "research-document",
+      "url": "/research/research-package-001/",
+      "researchArea": "General Research",
+      "sourcePath": "content/projects/ai-engineering-course/chapter-01/research/research-package-001-brief.md"
+    },
+    {
+      "id": "research-package-001",
+      "title": "Research Package 001",
+      "artifactType": "research-document",
+      "url": "/research/research-package-001/",
+      "researchArea": "General Research",
+      "sourcePath": "content/projects/ai-engineering-course/chapter-01/research/research-package-001-notes.md"
+    },
+    {
+      "id": "research-question",
+      "title": "Research Question",
+      "artifactType": "research-document",
+      "url": "/research/research-question/",
+      "researchArea": "General Research",
+      "sourcePath": "templates/RESEARCH-QUESTION.template.md"
+    },
+    {
+      "id": "RFA-2026-001",
+      "title": "Repository Research Frontier",
+      "artifactType": "research-document",
+      "url": "/research/rfa-2026-001-repository-research-frontier/",
+      "researchArea": "General Research",
+      "sourcePath": "research/frontier/FRONTIER-MASTER.md"
+    },
+    {
+      "id": "RFI-2026-001",
+      "title": "RFR-009 Stable Identifier and Reference Integrity Validation",
+      "artifactType": "research-document",
+      "url": "/research/rfi-2026-001-rfr-009-stable-identifier-and-reference-integrity-validation/",
+      "researchArea": "General Research",
+      "sourcePath": "research/frontier/investigations/2026-07-30-rfr-009-validation.md"
+    },
+    {
+      "id": "RFR-001",
+      "title": "Independent pilot integrity review",
+      "artifactType": "research-document",
+      "url": "/research/rfr-001-independent-pilot-integrity-review/",
+      "researchArea": "General Research",
+      "sourcePath": "research/frontier/records/RFR-001.md"
+    },
+    {
+      "id": "RFR-002",
+      "title": "Contained repeated exploratory baseline",
+      "artifactType": "research-document",
+      "url": "/research/rfr-002-contained-repeated-exploratory-baseline/",
+      "researchArea": "General Research",
+      "sourcePath": "research/frontier/records/RFR-002.md"
+    },
+    {
+      "id": "RFR-003",
+      "title": "Grader external-validity study",
+      "artifactType": "research-document",
+      "url": "/research/rfr-003-grader-external-validity-study/",
+      "researchArea": "General Research",
+      "sourcePath": "research/frontier/records/RFR-003.md"
+    },
+    {
+      "id": "RFR-004",
+      "title": "Representative repository task corpus",
+      "artifactType": "research-document",
+      "url": "/research/rfr-004-representative-repository-task-corpus/",
+      "researchArea": "General Research",
+      "sourcePath": "research/frontier/records/RFR-004.md"
+    },
+    {
+      "id": "RFR-005",
+      "title": "Context-policy causal comparison",
+      "artifactType": "research-document",
+      "url": "/research/rfr-005-context-policy-causal-comparison/",
+      "researchArea": "General Research",
+      "sourcePath": "research/frontier/records/RFR-005.md"
+    },
+    {
+      "id": "RFR-006",
+      "title": "Total verified-cost measurement",
+      "artifactType": "research-document",
+      "url": "/research/rfr-006-total-verified-cost-measurement/",
+      "researchArea": "General Research",
+      "sourcePath": "research/frontier/records/RFR-006.md"
+    },
+    {
+      "id": "RFR-007",
+      "title": "Risk-triggered human escalation study",
+      "artifactType": "research-document",
+      "url": "/research/rfr-007-risk-triggered-human-escalation-study/",
+      "researchArea": "General Research",
+      "sourcePath": "research/frontier/records/RFR-007.md"
+    },
+    {
+      "id": "RFR-008",
+      "title": "Evaluation containment validation",
+      "artifactType": "research-document",
+      "url": "/research/rfr-008-evaluation-containment-validation/",
+      "researchArea": "General Research",
+      "sourcePath": "research/frontier/records/RFR-008.md"
+    },
+    {
+      "id": "RFR-009",
+      "title": "Stable identifiers and reference integrity",
+      "artifactType": "research-document",
+      "url": "/research/rfr-009-stable-identifiers-and-reference-integrity/",
+      "researchArea": "General Research",
+      "sourcePath": "research/frontier/records/RFR-009.md"
+    },
+    {
+      "id": "RFR-010",
+      "title": "Knowledge-graph value experiment",
+      "artifactType": "research-document",
+      "url": "/research/rfr-010-knowledge-graph-value-experiment/",
+      "researchArea": "General Research",
+      "sourcePath": "research/frontier/records/RFR-010.md"
+    },
+    {
+      "id": "RH-2026-001",
+      "title": "Repository Research Health",
+      "artifactType": "research-document",
+      "url": "/research/rh-2026-001-repository-research-health/",
+      "researchArea": "General Research",
+      "sourcePath": "research/frontier/repository-health.md"
+    },
+    {
+      "id": "roadmap",
+      "title": "Roadmap",
+      "artifactType": "research-document",
+      "url": "/research/roadmap/",
+      "researchArea": "General Research",
+      "sourcePath": "roadmap.md"
+    },
+    {
+      "id": "root-case-collision-canonicalization",
+      "title": "Root Case-Collision Canonicalization",
+      "artifactType": "research-document",
+      "url": "/research/root-case-collision-canonicalization/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/repository/2026-07-28-case-collision-canonicalization.md"
+    },
+    {
+      "id": "RP-2026-07-23-001",
+      "title": "AI State of the Field",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-23-001-ai-state-of-the-field/",
+      "researchArea": "AI engineering",
+      "sourcePath": "research/AI-State-of-the-Field-REP.md"
+    },
+    {
+      "id": "RP-2026-07-23-002",
+      "title": "AI Knowledge Gap Analysis",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-23-002-ai-knowledge-gap-analysis/",
+      "researchArea": "General Research",
+      "sourcePath": "research/AI-Knowledge-Gap-Analysis.md"
+    },
+    {
+      "id": "RP-2026-07-23-003",
+      "title": "AI Research Priority Matrix",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-23-003-ai-research-priority-matrix/",
+      "researchArea": "General Research",
+      "sourcePath": "research/AI-Research-Priority-Matrix.md"
+    },
+    {
+      "id": "RP-2026-07-23-004",
+      "title": "AI Research Roadmap",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-23-004-ai-research-roadmap/",
+      "researchArea": "General Research",
+      "sourcePath": "research/AI-Research-Roadmap.md"
+    },
+    {
+      "id": "RP-2026-07-23-EVAL-CHARTER",
+      "title": "AI-ROS Long-Horizon Agent Evaluation Charter",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-23-eval-charter-ai-ros-long-horizon-agent-evaluation-charter/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/00-charter.md"
+    },
+    {
+      "id": "RP-2026-07-23-EVAL-CYCLE-001",
+      "title": "Evaluation Research Cycle 001 — Construct and Task Validity",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-23-eval-cycle-001-evaluation-research-cycle-001-construct-and-task-validity/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/cycles/2026-07-23-cycle-001.md"
+    },
+    {
+      "id": "RP-2026-07-23-EVAL-EVIDENCE",
+      "title": "Agent Evaluation Evidence Registry",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-23-eval-evidence-agent-evaluation-evidence-registry/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/03-evidence-registry.md"
+    },
+    {
+      "id": "RP-2026-07-23-EVAL-EXPERIMENTS",
+      "title": "Agent Evaluation Experiment Registry",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-23-eval-experiments-agent-evaluation-experiment-registry/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/05-experiment-registry.md"
+    },
+    {
+      "id": "RP-2026-07-23-EVAL-FAILURES",
+      "title": "Agent Evaluation Failure Taxonomy",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-23-eval-failures-agent-evaluation-failure-taxonomy/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/06-failure-taxonomy.md"
+    },
+    {
+      "id": "RP-2026-07-23-EVAL-HYPOTHESES",
+      "title": "Agent Evaluation Hypothesis Registry",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-23-eval-hypotheses-agent-evaluation-hypothesis-registry/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/04-hypothesis-registry.md"
+    },
+    {
+      "id": "RP-2026-07-23-EVAL-SPEC",
+      "title": "AI-ROS Agent Evaluation Specification",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-23-eval-spec-ai-ros-agent-evaluation-specification/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/02-evaluation-specification.md"
+    },
+    {
+      "id": "RP-2026-07-23-EVAL-TASKS",
+      "title": "AI-ROS Candidate Task Suite Manifest",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-23-eval-tasks-ai-ros-candidate-task-suite-manifest/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/01-task-suite-manifest.md"
+    },
+    {
+      "id": "RP-2026-07-28-EVAL-ARCH",
+      "title": "AI-ROS Evaluation System Architecture",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-28-eval-arch-ai-ros-evaluation-system-architecture/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/11-system-architecture.md"
+    },
+    {
+      "id": "RP-2026-07-28-EVAL-CYCLE-002",
+      "title": "Evaluation Research Cycle 002 — Task-Integrity Pilots",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-28-eval-cycle-002-evaluation-research-cycle-002-task-integrity-pilots/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/cycles/2026-07-28-cycle-002.md"
+    },
+    {
+      "id": "RP-2026-07-28-EVAL-CYCLE-003",
+      "title": "Evaluation Research Cycle 003 — Grader Calibration and Isolation",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-28-eval-cycle-003-evaluation-research-cycle-003-grader-calibration-and-isolation/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/cycles/2026-07-28-cycle-003.md"
+    },
+    {
+      "id": "RP-2026-07-28-EVAL-RESULTS",
+      "title": "AI-ROS Evaluation Results",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-28-eval-results-ai-ros-evaluation-results/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/07-results.md"
+    },
+    {
+      "id": "RP-2026-07-28-EVAL-REVIEW",
+      "title": "Independent Task-Integrity Review Protocol",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-28-eval-review-independent-task-integrity-review-protocol/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/13-independent-review-protocol.md"
+    },
+    {
+      "id": "RP-2026-07-28-EVAL-ROADMAP",
+      "title": "AI-ROS Evaluation Research and Engineering Roadmap",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-28-eval-roadmap-ai-ros-evaluation-research-and-engineering-roadmap/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/12-research-and-engineering-roadmap.md"
+    },
+    {
+      "id": "RP-2026-07-28-EVAL-THREAT",
+      "title": "Evaluation System Threat Model",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-28-eval-threat-evaluation-system-threat-model/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/10-threat-model.md"
+    },
+    {
+      "id": "RP-2026-07-30-NHE-BACKLOG",
+      "title": "Non-Human Experimental Research Backlog",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-30-nhe-backlog-non-human-experimental-research-backlog/",
+      "researchArea": "General Research",
+      "sourcePath": "research/analysis/non-human-next-experiments.md"
+    },
+    {
+      "id": "RP-2026-07-30-NHE-COMPARATIVE",
+      "title": "Comparative Analysis of Non-Human Experimental Evidence",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-30-nhe-comparative-comparative-analysis-of-non-human-experimental-evidence/",
+      "researchArea": "General Research",
+      "sourcePath": "research/analysis/non-human-experimental-comparative-analysis.md"
+    },
+    {
+      "id": "RP-2026-07-30-NHE-COMPARATIVE-REVIEW",
+      "title": "Non-Human Experimental Evidence Comparative Review",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-30-nhe-comparative-review-non-human-experimental-evidence-comparative-review/",
+      "researchArea": "AI research systems",
+      "sourcePath": "research/packages/RP-2026-07-30-NHE-COMPARATIVE-REVIEW.md"
+    },
+    {
+      "id": "RP-2026-07-30-NHE-CONTRADICTIONS",
+      "title": "Non-Human Experimental Contradiction Registry",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-30-nhe-contradictions-non-human-experimental-contradiction-registry/",
+      "researchArea": "General Research",
+      "sourcePath": "research/analysis/non-human-experimental-contradictions.md"
+    },
+    {
+      "id": "RP-2026-07-30-NHE-FAILURES",
+      "title": "Non-Human Experimental Failure-Mode Taxonomy",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-30-nhe-failures-non-human-experimental-failure-mode-taxonomy/",
+      "researchArea": "General Research",
+      "sourcePath": "research/analysis/non-human-experimental-failure-modes.md"
+    },
+    {
+      "id": "RP-2026-07-30-NHE-FINDINGS",
+      "title": "Non-Human Cumulative Findings and Theory Impact",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-30-nhe-findings-non-human-cumulative-findings-and-theory-impact/",
+      "researchArea": "General Research",
+      "sourcePath": "research/analysis/non-human-cumulative-findings.md"
+    },
+    {
+      "id": "RP-2026-07-30-NHE-INVENTORY",
+      "title": "Non-Human Experimental Inventory",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-30-nhe-inventory-non-human-experimental-inventory/",
+      "researchArea": "General Research",
+      "sourcePath": "research/analysis/non-human-experimental-inventory.md"
+    },
+    {
+      "id": "RP-2026-07-30-NHE-LINEAGE",
+      "title": "Non-Human Experimental Lineage and Dependency Map",
+      "artifactType": "research-package",
+      "url": "/research/rp-2026-07-30-nhe-lineage-non-human-experimental-lineage-and-dependency-map/",
+      "researchArea": "General Research",
+      "sourcePath": "research/analysis/non-human-experimental-lineage.md"
+    },
+    {
+      "id": "RP-PILOT-004",
+      "title": "Review Policy",
+      "artifactType": "research-package",
+      "url": "/research/rp-pilot-004-review-policy/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/fixtures/et-004-p01/base/review-policy.md"
+    },
+    {
+      "id": "RP-PILOT-004",
+      "title": "Review Policy",
+      "artifactType": "research-package",
+      "url": "/research/rp-pilot-004-review-policy/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/fixtures/et-004-p01/outcomes/alternative-correct/review-policy.md"
+    },
+    {
+      "id": "RP-PILOT-004",
+      "title": "Review Policy",
+      "artifactType": "research-package",
+      "url": "/research/rp-pilot-004-review-policy/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/fixtures/et-004-p01/outcomes/complete/review-policy.md"
+    },
+    {
+      "id": "RP-PILOT-004",
+      "title": "Review Policy",
+      "artifactType": "research-package",
+      "url": "/research/rp-pilot-004-review-policy/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/fixtures/et-004-p01/outcomes/incomplete-polished/review-policy.md"
+    },
+    {
+      "id": "RP-PILOT-004",
+      "title": "Review Policy",
+      "artifactType": "research-package",
+      "url": "/research/rp-pilot-004-review-policy/",
+      "researchArea": "General Research",
+      "sourcePath": "research/evaluation/fixtures/et-004-p01/outcomes/regressive/review-policy.md"
+    },
+    {
+      "id": "run-ai-ros-bootstrap-with-codex",
+      "title": "Run AI-ROS Bootstrap with Codex",
+      "artifactType": "research-document",
+      "url": "/research/run-ai-ros-bootstrap-with-codex/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/repository/codex-run-instructions.md"
+    },
+    {
+      "id": "search-architecture",
+      "title": "Search Architecture",
+      "artifactType": "research-document",
+      "url": "/research/search-architecture/",
+      "researchArea": "General Research",
+      "sourcePath": "knowledge-platform/Search-Architecture.md"
+    },
+    {
+      "id": "shortcut-specification-ai-ros-launcher",
+      "title": "Shortcut Specification: AI-ROS Launcher",
+      "artifactType": "research-document",
+      "url": "/research/shortcut-specification-ai-ros-launcher/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/mobile/ios/shortcuts/ai-ros-launcher.md"
+    },
+    {
+      "id": "shortcut-specification-capture-research",
+      "title": "Shortcut Specification: Capture Research",
+      "artifactType": "research-document",
+      "url": "/research/shortcut-specification-capture-research/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/mobile/ios/shortcuts/capture-research.md"
+    },
+    {
+      "id": "tests",
+      "title": "Tests",
+      "artifactType": "research-document",
+      "url": "/research/tests/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/repository/bootstrap-tests-placeholder.md"
+    },
+    {
+      "id": "TH-[YYYY]-[NNNN]",
+      "title": "Theory",
+      "artifactType": "theory",
+      "url": "/research/th-yyyy-nnnn-theory/",
+      "researchArea": "General Research",
+      "sourcePath": "templates/THEORY.template.md"
+    },
+    {
+      "id": "the-research-relay-system",
+      "title": "The Research Relay System",
+      "artifactType": "research-document",
+      "url": "/research/the-research-relay-system/",
+      "researchArea": "General Research",
+      "sourcePath": "content/disciplines/ai-engineering/research-relay-system.md"
+    },
+    {
+      "id": "tools",
+      "title": "Tools",
+      "artifactType": "research-document",
+      "url": "/research/tools/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/repository/bootstrap-tools-placeholder.md"
+    },
+    {
+      "id": "validation-report",
+      "title": "Validation Report",
+      "artifactType": "research-document",
+      "url": "/research/validation-report/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/repository/imports/2026-07-22-input-documents-import/VALIDATION.md"
+    },
+    {
+      "id": "website-architecture",
+      "title": "Website Architecture",
+      "artifactType": "research-document",
+      "url": "/research/website-architecture/",
+      "researchArea": "General Research",
+      "sourcePath": "knowledge-platform/Website-Architecture.md"
+    },
+    {
+      "id": "workflows",
+      "title": "Workflows",
+      "artifactType": "research-document",
+      "url": "/research/workflows/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/repository/bootstrap-ci-placeholder.md"
+    },
+    {
+      "id": "working-copy-setup",
+      "title": "Working Copy Setup",
+      "artifactType": "research-document",
+      "url": "/research/working-copy-setup/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/mobile/ios/setup/working-copy-setup.md"
+    }
+  ],
+  "edges": [],
+  "backlinks": {
+    "2026-07-22-input-documents-import-inventory": [],
+    "agent-operating-instructions": [],
+    "ai-engineering-course-constitution": [],
+    "ai-engineering-handbook": [],
+    "ai-engineering-research-program": [],
+    "ai-knowledge-gap-analysis-document-frontier": [],
+    "ai-research-mission-execution-decision": [],
+    "ai-research-operating-system": [],
+    "ai-research-roadmap-document-frontier": [],
+    "ai-ros-agent-evaluation-research": [],
+    "ai-ros-bootstrap-and-evolution-agent": [],
+    "ai-ros-evaluation-tools": [],
+    "ai-state-of-the-field-document-frontier": [],
+    "apple-shortcuts-setup": [],
+    "autonomous-engineering-solution-agent": [],
+    "autonomous-research-agent-repo-archi-and-knowledge": [],
+    "bootstrap-manifest": [],
+    "build-pipeline": [],
+    "changelog": [],
+    "course-roadmap": [],
+    "current-state": [],
+    "DF-2026-0001": [],
+    "DF-[YYYY]-[NNNN]": [],
+    "EC-000": [],
+    "et-004-p01-integrity-audit": [],
+    "et-014-p01-integrity-audit": [],
+    "EV-[YYYY]-[NNNN]": [],
+    "evaluation-architecture-and-threat-model-document-frontier": [],
+    "evaluation-charter-and-specification-document-frontier": [],
+    "evaluation-registries-document-frontier": [],
+    "evaluation-research-infrastructure-decision": [],
+    "evaluation-research-journal": [],
+    "evaluation-results-and-cycles-document-frontier": [],
+    "evaluation-roadmap-execution-decision": [],
+    "generated-website": [],
+    "hidden-grader-contract": [],
+    "HO-[YYYY]-[NNNN]": [],
+    "import-decisions": [],
+    "knowledge-platform-deliverables": [],
+    "knowledge-platform-document-frontier": [],
+    "lesson-1-cheat-sheet": [],
+    "lesson-1-notes": [],
+    "lesson-1-why-ai-sometimes-feels-like-magic-and-sometimes-feels-completely-useless": [],
+    "lesson-1-workbook": [],
+    "lesson-1-working-draft": [],
+    "metadata-standard": [],
+    "migration-plan": [],
+    "mobile-research-cycle": [],
+    "next-agent-start-here": [],
+    "non-human-experimental-comparative-review-decision": [],
+    "release-note-task": [],
+    "repository-architecture": [],
+    "repository-ready-research-agent": [],
+    "research-execution-package-rep-specification": [],
+    "research-frontier-analysis-decision": [],
+    "research-integrity-validation-decision": [],
+    "research-package-001": [],
+    "research-question": [],
+    "RFA-2026-001": [],
+    "RFI-2026-001": [],
+    "RFR-001": [],
+    "RFR-002": [],
+    "RFR-003": [],
+    "RFR-004": [],
+    "RFR-005": [],
+    "RFR-006": [],
+    "RFR-007": [],
+    "RFR-008": [],
+    "RFR-009": [],
+    "RFR-010": [],
+    "RH-2026-001": [],
+    "roadmap": [],
+    "root-case-collision-canonicalization": [],
+    "RP-2026-07-23-001": [],
+    "RP-2026-07-23-002": [],
+    "RP-2026-07-23-003": [],
+    "RP-2026-07-23-004": [],
+    "RP-2026-07-23-EVAL-CHARTER": [],
+    "RP-2026-07-23-EVAL-CYCLE-001": [],
+    "RP-2026-07-23-EVAL-EVIDENCE": [],
+    "RP-2026-07-23-EVAL-EXPERIMENTS": [],
+    "RP-2026-07-23-EVAL-FAILURES": [],
+    "RP-2026-07-23-EVAL-HYPOTHESES": [],
+    "RP-2026-07-23-EVAL-SPEC": [],
+    "RP-2026-07-23-EVAL-TASKS": [],
+    "RP-2026-07-28-EVAL-ARCH": [],
+    "RP-2026-07-28-EVAL-CYCLE-002": [],
+    "RP-2026-07-28-EVAL-CYCLE-003": [],
+    "RP-2026-07-28-EVAL-RESULTS": [],
+    "RP-2026-07-28-EVAL-REVIEW": [],
+    "RP-2026-07-28-EVAL-ROADMAP": [],
+    "RP-2026-07-28-EVAL-THREAT": [],
+    "RP-2026-07-30-NHE-BACKLOG": [],
+    "RP-2026-07-30-NHE-COMPARATIVE": [],
+    "RP-2026-07-30-NHE-COMPARATIVE-REVIEW": [],
+    "RP-2026-07-30-NHE-CONTRADICTIONS": [],
+    "RP-2026-07-30-NHE-FAILURES": [],
+    "RP-2026-07-30-NHE-FINDINGS": [],
+    "RP-2026-07-30-NHE-INVENTORY": [],
+    "RP-2026-07-30-NHE-LINEAGE": [],
+    "RP-PILOT-004": [],
+    "run-ai-ros-bootstrap-with-codex": [],
+    "search-architecture": [],
+    "shortcut-specification-ai-ros-launcher": [],
+    "shortcut-specification-capture-research": [],
+    "tests": [],
+    "TH-[YYYY]-[NNNN]": [],
+    "the-research-relay-system": [],
+    "tools": [],
+    "validation-report": [],
+    "website-architecture": [],
+    "workflows": [],
+    "working-copy-setup": []
+  }
+}

@@ -9,6 +9,12 @@
 - Validation
 - AI agents
 
+## Publishing
+
+- [x] Add a reproducible research-publisher build and GitHub Pages deployment workflow
+- [ ] Confirm the first successful deployment from the `main` branch
+- [ ] Assign unique canonical IDs and URLs to the excluded legacy split handbook and course-note documents
+
 ## Research Validation Sequence
 
 1. Long-horizon agent evaluation and verification
@@ -25,10 +31,16 @@ See `research/AI-Research-Roadmap.md` for decision gates and deliverables.
 - [x] Cycle 001: charter, constructs, task taxonomy, audit protocol, and registries
 - [x] Cycle 002: integrity pilots for ET-004 and ET-014 (provisional pending independent review)
 - [x] Cycle 003: in-sample deterministic grader calibration and blind export
-- [ ] Cycle 004: independent review plus contained repeated baseline and variance estimate
+- [x] Historical non-human experimental inventory, lineage, contradiction, and confidence synthesis
+- [ ] Cycle 004a: independent review plus frozen-grader unseen-outcome challenge
+- [ ] Cycle 004b: contained repeated baseline and exploratory variance estimate
 - [ ] Cycle 005: context or system comparison
 
 Detailed critical path: `research/evaluation/12-research-and-engineering-roadmap.md`.
+
+Comparative evidence boundary and ranked experiments:
+`research/analysis/non-human-experimental-comparative-analysis.md` and
+`research/analysis/non-human-next-experiments.md`.
 
 Containment, telemetry, and rollback now run in parallel with evaluation rather than waiting for a later security phase.
 
@@ -36,7 +48,8 @@ Containment, telemetry, and rollback now run in parallel with evaluation rather 
 
 - [x] Remove case-only collisions for root README, current state, and roadmap
 - [x] Add a repeatable Git case-collision audit
-- [ ] Add reference-integrity and stable-identifier fitness checks
+- [x] Add initial reference-integrity and stable-identifier fitness checks
+- [ ] Measure metadata coverage and validate adopted supersession/relationship targets
 
 ### Research Frontier
 
@@ -44,5 +57,6 @@ Containment, telemetry, and rollback now run in parallel with evaluation rather 
 - [ ] RFR-001: obtain independent pilot integrity reviews
 - [ ] RFR-002: run a contained repeated exploratory baseline
 - [ ] RFR-003: validate graders on natural outcomes
+- [ ] RFR-009 (Validation): initial validator calibrated; metadata and semantic provenance coverage remain
 
 See `research/frontier/FRONTIER-MASTER.md` for the ranked backlog and dependency graph.

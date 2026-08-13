@@ -1,0 +1,44 @@
+{
+  "site": {
+    "title": "Visual Engineering Research",
+    "description": "Searchable AI engineering research repository",
+    "baseUrl": "/",
+    "language": "en",
+    "siteUrl": "https://ai.echelonfoundry.com/",
+    "branding": {
+      "logo": null,
+      "cssVariables": {}
+    },
+    "buildGeneratedAt": "2026-08-04T13:30:12.034Z"
+  },
+  "repository": {
+    "name": "AI Engineering",
+    "sourceUrl": "https://github.com/kemiller2002/Visual-Engineering"
+  },
+  "features": {
+    "search": true,
+    "filters": true,
+    "relatedDocuments": true,
+    "backlinks": true,
+    "tableOfContents": true,
+    "readingProgress": false,
+    "graphData": true
+  },
+  "summary": {
+    "totalDocuments": 123,
+    "byArtifactType": {
+      "research-document": 87,
+      "decision-framework": 2,
+      "evidence": 1,
+      "research-package": 32,
+      "theory": 1
+    },
+    "byResearchArea": {
+      "General Research": 121,
+      "AI engineering": 1,
+      "AI research systems": 1
+    },
+    "byProject": {},
+    "byPurpose": {}
+  }
+}
