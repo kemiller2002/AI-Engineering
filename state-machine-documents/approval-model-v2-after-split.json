@@ -1,0 +1,212 @@
+{
+  "irSchemaVersion": "0.1",
+  "semanticModelVersion": "2",
+  "semanticHash": "demo-after-split",
+  "subjects": [
+    {
+      "id": "SUBJECT-APPLICATION",
+      "name": "Application"
+    }
+  ],
+  "stateFamilies": [
+    {
+      "id": "SF-APPLICATION-APPROVAL",
+      "name": "ApprovalState",
+      "subject": "SUBJECT-APPLICATION",
+      "consequential": true,
+      "cases": [
+        {
+          "id": "SC-SUBMITTED",
+          "name": "Submitted"
+        },
+        {
+          "id": "SC-CONDITIONALLY-APPROVED",
+          "name": "ConditionallyApproved"
+        },
+        {
+          "id": "SC-FULLY-APPROVED",
+          "name": "FullyApproved"
+        },
+        {
+          "id": "SC-REJECTED",
+          "name": "Rejected"
+        }
+      ]
+    }
+  ],
+  "claims": [],
+  "events": [],
+  "transitions": [
+    {
+      "id": "TRANS-FUND",
+      "name": "FundApplication",
+      "subject": "SUBJECT-APPLICATION",
+      "trigger": {
+        "kind": "request"
+      },
+      "requires": [
+        {
+          "op": "stateEquals",
+          "stateFamily": "SF-APPLICATION-APPROVAL",
+          "case": "SC-FULLY-APPROVED"
+        }
+      ],
+      "produces": [],
+      "authority": "AUTH-FUND"
+    },
+    {
+      "id": "TRANS-SHIP",
+      "name": "ShipApplicationPackage",
+      "subject": "SUBJECT-APPLICATION",
+      "trigger": {
+        "kind": "request"
+      },
+      "requires": [
+        {
+          "op": "stateEquals",
+          "stateFamily": "SF-APPLICATION-APPROVAL",
+          "case": "SC-FULLY-APPROVED"
+        }
+      ],
+      "produces": []
+    }
+  ],
+  "effects": [],
+  "capabilities": [
+    {
+      "id": "CAP-CAN-FUND",
+      "name": "CanFund",
+      "requires": [
+        {
+          "op": "stateEquals",
+          "stateFamily": "SF-APPLICATION-APPROVAL",
+          "case": "SC-FULLY-APPROVED"
+        }
+      ],
+      "binds": [
+        "Application.version",
+        "FundingPolicy.version"
+      ]
+    },
+    {
+      "id": "CAP-CAN-SHIP",
+      "name": "CanShip",
+      "requires": [
+        {
+          "op": "stateEquals",
+          "stateFamily": "SF-APPLICATION-APPROVAL",
+          "case": "SC-FULLY-APPROVED"
+        }
+      ],
+      "binds": [
+        "Application.version",
+        "ShippingPolicy.version"
+      ]
+    }
+  ],
+  "obligations": [
+    {
+      "id": "OBL-RESOLVE-CONDITIONAL-APPROVAL",
+      "name": "ResolveApprovalConditions",
+      "when": {
+        "op": "stateEquals",
+        "stateFamily": "SF-APPLICATION-APPROVAL",
+        "case": "SC-CONDITIONALLY-APPROVED"
+      },
+      "satisfiedWhen": {
+        "op": "or",
+        "args": [
+          {
+            "op": "stateEquals",
+            "stateFamily": "SF-APPLICATION-APPROVAL",
+            "case": "SC-FULLY-APPROVED"
+          },
+          {
+            "op": "stateEquals",
+            "stateFamily": "SF-APPLICATION-APPROVAL",
+            "case": "SC-REJECTED"
+          }
+        ]
+      }
+    }
+  ],
+  "authorities": [
+    {
+      "id": "AUTH-FUND",
+      "name": "FundApplication",
+      "allowedRoles": [
+        "FundingOfficer"
+      ]
+    }
+  ],
+  "relations": [],
+  "policies": [],
+  "migrations": [
+    {
+      "id": "MIG-APPROVAL-SPLIT-001",
+      "kind": "split",
+      "sourceCases": [
+        "SC-APPROVED"
+      ],
+      "targetCases": [
+        "SC-CONDITIONALLY-APPROVED",
+        "SC-FULLY-APPROVED"
+      ],
+      "redistributions": [
+        {
+          "dependencyId": "CAP-CAN-FUND",
+          "targets": [
+            {
+              "case": "SC-CONDITIONALLY-APPROVED",
+              "disposition": "exclude"
+            },
+            {
+              "case": "SC-FULLY-APPROVED",
+              "disposition": "include"
+            }
+          ]
+        },
+        {
+          "dependencyId": "CAP-CAN-SHIP",
+          "targets": [
+            {
+              "case": "SC-CONDITIONALLY-APPROVED",
+              "disposition": "exclude"
+            },
+            {
+              "case": "SC-FULLY-APPROVED",
+              "disposition": "include"
+            }
+          ]
+        },
+        {
+          "dependencyId": "TRANS-FUND",
+          "targets": [
+            {
+              "case": "SC-CONDITIONALLY-APPROVED",
+              "disposition": "exclude"
+            },
+            {
+              "case": "SC-FULLY-APPROVED",
+              "disposition": "include"
+            }
+          ]
+        },
+        {
+          "dependencyId": "TRANS-SHIP",
+          "targets": [
+            {
+              "case": "SC-CONDITIONALLY-APPROVED",
+              "disposition": "exclude"
+            },
+            {
+              "case": "SC-FULLY-APPROVED",
+              "disposition": "include"
+            }
+          ]
+        }
+      ],
+      "reason": "Split generic approval into conditional and full approval so only fully approved applications may fund or ship."
+    }
+  ]
+}

@@ -1,0 +1,3207 @@
+State-Constrained Architecture — Continuation Notes 03
+======================================================
+
+This file continues:
+
+    state-constrained-architecture-continuation-02.txt
+
+It captures the subsequent exploration of:
+
+- cross-domain applicability
+- domains where state-constrained architecture should NOT be used
+- the semantic boundary between exploration and commitment
+- obligation modeling
+- obligation conflicts, satisfaction, batching, and agent work queues
+- planning from obligations and missing prerequisites
+- legal-path generation
+- contingent planning across uncertain effects
+- generation of runtime guards, agent actions, planning graphs, and tests
+- the idea of a semantic compiler
+- the minimum viable semantic DSL
+- separation between semantic specification and arbitrary implementation code
+
+
+PART 1 — Cross-Domain Applicability
+===================================
+
+Core Applicability Question
+---------------------------
+
+A useful test for whether state-constrained architecture applies to a domain is:
+
+    Does the domain contain things whose current condition changes
+    what may legally, safely, or meaningfully happen next?
+
+If yes, the approach is likely relevant.
+
+The architecture appears broadly applicable wherever there is:
+
+- meaningful lifecycle state
+- constrained transitions
+- authority
+- uncertainty
+- evidence
+- irreversible or consequential effects
+- policy
+- multi-actor coordination
+
+
+Initial Domain Examples
+-----------------------
+
+Domains that appear to fit well include:
+
+Healthcare
+    suspected -> supported -> established -> contradicted
+
+Finance
+    pending -> authorized -> settled -> reversed
+
+Insurance
+    filed -> reviewed -> approved/denied -> paid
+
+DevOps
+    built -> tested -> approved -> deployed
+
+Security
+    requested -> authenticated -> authorized -> revoked
+
+Research
+    hypothesis -> supported -> contradicted -> verified
+
+Legal / Compliance
+    draft -> reviewed -> approved -> effective
+
+Manufacturing
+    queued -> assembled -> inspected -> released
+
+Logistics
+    created -> packed -> shipped -> delivered -> returned
+
+Customer Support
+    opened -> triaged -> investigating -> resolved
+
+HR
+    candidate -> interviewed -> offered -> hired
+
+Procurement
+    requested -> approved -> ordered -> received
+
+
+Recurring Primitives
+--------------------
+
+The same primitives repeatedly appeared across domains:
+
+    State
+    Transition
+    Guard
+    Invariant
+    Claim
+    Evidence
+    Capability
+    Effect
+    Event
+    Obligation
+    Provenance
+    Policy
+    Coordinator
+
+
+Applicability Test
+------------------
+
+A domain is a stronger fit as more of these are true:
+
+1. There are identifiable lifecycle states.
+2. Current state affects which actions are valid.
+3. Some transitions are forbidden.
+4. Some transitions are high consequence.
+5. Transitions require evidence.
+6. Authority matters.
+7. Facts can be uncertain or disputed.
+8. External effects can have unknown outcomes.
+9. Multiple actors can conflict.
+10. Rules change over time.
+11. The system must explain why something happened.
+12. Incorrect assumptions can propagate into later work.
+
+A rough diagnostic scale was proposed:
+
+    0–2    Low applicability
+    3–5    Useful selectively
+    6–8    Strong fit
+    9–12   Likely architectural fit
+
+These thresholds are heuristic, not proven.
+
+
+Three Broad Domain Classes
+--------------------------
+
+Transactional domains:
+
+    finance
+    commerce
+    insurance
+    logistics
+    deployment
+
+Knowledge domains:
+
+    medicine
+    research
+    legal reasoning
+    compliance
+    intelligence analysis
+
+Governance domains:
+
+    approvals
+    organizational decisions
+    risk
+    policy
+    security
+
+Different classes emphasize different primitives.
+
+Example:
+
+Payment:
+    State + Effect + Idempotency
+
+HelixNote:
+    Claim + Evidence + Epistemic State + Provenance
+
+Clarity:
+    Decision State + Evidence + Capability + Obligation
+
+DevOps:
+    State + Capability + Invariant + Effect
+
+
+Cross-Domain Stress Test
+------------------------
+
+Five deliberately different domains were modeled using the same primitive set:
+
+1. Healthcare
+2. Finance / Payments
+3. DevOps / Deployment
+4. Manufacturing
+5. Research
+
+The test looked specifically for concepts that would force the introduction
+of fundamentally new primitives.
+
+
+Healthcare
+----------
+
+Example hypothesis lifecycle:
+
+    Unknown
+      ->
+    Suspected
+      ->
+    Supported
+      ->
+    Established
+      ->
+    Contradicted
+
+Supporting concepts:
+
+Claim:
+    Patient has condition X
+
+Evidence:
+    Lab result
+    Imaging
+    Patient report
+    Clinician observation
+
+Capability:
+    Clinician may establish diagnosis
+
+Effect:
+    Order test
+    Prescribe medication
+
+Event:
+    TestResulted
+    MedicationStarted
+
+Obligation:
+    Follow up abnormal result
+    Reassess conflicting evidence
+
+Dominant concepts:
+
+    Claim
+    Evidence
+    Epistemic State
+    Provenance
+    Obligation
+
+The main wrinkle is that medical state is often knowledge ABOUT reality,
+not reality itself.
+
+This reinforces the importance of separating:
+
+    Domain State
+
+from:
+
+    Epistemic State
+
+
+Finance / Payments
+------------------
+
+Example:
+
+    Payment:
+        Created
+        -> Authorized
+        -> Captured
+        -> Settled
+        -> Refunded
+
+Refund execution:
+
+    Idle
+      ->
+    Requested
+      ->
+    Succeeded
+    Failed
+    OutcomeUnknown
+
+Supporting concepts:
+
+Guard:
+    Capture only after authorization
+
+Invariant:
+    Refund amount <= captured amount
+
+Capability:
+    CanCapture
+    CanRefund
+
+Effect:
+    Call payment processor
+
+Event:
+    PaymentAuthorized
+    CaptureSucceeded
+    RefundSucceeded
+
+Coordinator:
+    Prevent mutually incompatible concurrent operations
+
+Obligation:
+    Reconcile unknown payment outcome
+
+Dominant concepts:
+
+    State
+    Transition
+    Effect
+    Coordinator
+    Idempotency
+    Capability
+
+
+DevOps / Deployment
+-------------------
+
+Example:
+
+    Build:
+        Created
+        -> Built
+        -> Tested
+        -> Approved
+        -> Deployable
+        -> Deployed
+
+Claims:
+
+    TestsPassed
+    SecurityScanPassed
+
+Evidence:
+
+    CI result
+    security scan result
+    exact artifact hash
+
+Capability:
+
+    CanDeployProduction
+
+Invariant:
+
+    Production deployment refers to the exact approved artifact
+
+Effect:
+
+    Deploy artifact
+
+Event:
+
+    DeploymentStarted
+    DeploymentSucceeded
+
+Obligation:
+
+    Roll back or investigate failed deployment
+
+Policy versioning fits naturally.
+
+For example:
+
+    DeploymentPolicy@12
+        requires unit tests
+        requires integration tests
+
+Later:
+
+    DeploymentPolicy@13
+        requires unit tests
+        requires integration tests
+        requires security scan
+
+Deployment events retain the policy snapshot under which deployment was legal.
+
+
+Manufacturing
+-------------
+
+Example:
+
+    Part:
+        Raw
+        -> Machined
+        -> Inspected
+        -> Released
+
+Inspection:
+
+    NotInspected
+      ->
+    Passed
+    Failed
+    ConditionalReview
+
+Evidence:
+
+    Measurements
+    Inspection records
+
+Guard:
+
+    Release requires Passed inspection
+
+Capability:
+
+    CanReleasePart
+
+Effect:
+
+    Start machine
+    Move inventory
+    Print shipping label
+
+Event:
+
+    InspectionCompleted
+    PartReleased
+
+Obligation:
+
+    Quarantine failed batch
+    Investigate measurement anomaly
+
+A particularly strong example:
+
+    Calibration evidence invalidated
+        ->
+    inspection claims lose authority
+        ->
+    previously released parts identified
+        ->
+    reassessment obligations generated
+
+This is structurally similar to evidence invalidation in healthcare.
+
+
+Research
+--------
+
+Example:
+
+    Hypothesis:
+        Proposed
+        -> Investigating
+        -> Supported
+        -> Contradicted
+        -> Established
+
+Claim:
+
+    Technique A reduces error rate
+
+Evidence:
+
+    Experiment
+    Paper
+    Dataset
+
+Epistemic State:
+
+    Assumed
+    Inferred
+    Verified
+    Contradicted
+
+Event:
+
+    EvidenceAdded
+    EvidenceInvalidated
+    ClaimReassessed
+
+Obligation:
+
+    Replicate experiment
+    Resolve contradictory evidence
+
+Policy:
+
+    Evidence threshold for "Established"
+
+Dominant concepts:
+
+    Claim
+    Evidence
+    Epistemic State
+    Provenance
+    Obligation
+    Policy
+
+This was important because research is not primarily transactional,
+yet the same architecture still works.
+
+
+Cross-Domain Conclusion
+-----------------------
+
+The same primitives survive across very different domains.
+
+What changes is their relative importance.
+
+This suggests the architecture is more like a semantic grammar than
+a mandatory one-size-fits-all object model.
+
+A domain composes the primitives that carry semantic weight.
+
+The recurring pattern is:
+
+    What do we currently believe/state?
+        ->
+    Why do we believe it?
+        ->
+    What rules apply?
+        ->
+    What may happen next?
+        ->
+    Who may cause it?
+        ->
+    What actually happened?
+        ->
+    What changed?
+        ->
+    What now requires attention?
+
+Mapping:
+
+    State / Claim
+        ->
+    Evidence + Provenance
+        ->
+    Policy
+        ->
+    Capability
+        ->
+    Transition
+        ->
+    Effect
+        ->
+    Event
+        ->
+    New State
+        ->
+    Obligation
+
+
+Possible Missing Concept: Subject
+---------------------------------
+
+One concept repeatedly appeared:
+
+    Subject
+
+Meaning:
+
+    What thing is the state, claim, evidence, or transition about?
+
+Examples:
+
+    Patient P17
+    Payment P92
+    Build B44
+    Part X117
+    Hypothesis H3
+
+Possible model:
+
+    Claim C17
+        about Subject Patient-42
+
+    Evidence E91
+        supports Claim C17
+
+    Transition T12
+        changes Subject Order-81
+
+It is not yet clear whether Subject deserves to be a canonical primitive
+or is simply identity attached to other concepts.
+
+
+PART 2 — Boundary Testing: Where NOT to Use It
+==============================================
+
+The architecture should not be treated as a universal replacement
+for ordinary programming.
+
+The critical boundary is whether correctness depends on:
+
+    what may happen next
+
+versus simply:
+
+    transforming input into output
+
+
+Pure Data Transformation
+------------------------
+
+Examples:
+
+    Image -> Resized Image
+    CSV -> Aggregate Statistics
+
+Adding:
+
+    Unprocessed -> Processed
+
+usually contributes little.
+
+A function such as:
+
+    resize : Image -> Dimensions -> Image
+
+already captures the essential behavior.
+
+There is little meaningful lifecycle, authority, evidence,
+or transition legality.
+
+Rule:
+
+    If output depends primarily on inputs rather than history
+    or lifecycle, a state system is probably unnecessary.
+
+
+Numerical Computation
+---------------------
+
+Examples:
+
+    matrix multiplication
+    statistical calculation
+    signal processing
+    compression
+    encryption
+
+The correctness properties are mathematical,
+not lifecycle-oriented.
+
+The job around a computation may have state:
+
+    Queued
+    Running
+    Completed
+    Failed
+
+but the computation itself often does not need domain state modeling.
+
+
+CRUD Content Systems
+--------------------
+
+A basic editable document with:
+
+    title
+    body
+    author
+
+does not necessarily need state-constrained architecture.
+
+However:
+
+    Draft
+      ->
+    Review
+      ->
+    Approved
+      ->
+    Published
+      ->
+    Retracted
+
+does.
+
+Important distinction:
+
+    Article body
+        ordinary data
+
+    Publishing lifecycle
+        state system
+
+Rule:
+
+    Model the consequential lifecycle,
+    not the entire object.
+
+
+Creative Software
+-----------------
+
+Examples:
+
+    writing
+    drawing
+    music composition
+    image generation
+    brainstorming
+    3D modeling
+
+Creative value may depend on a huge permissive search space.
+
+Trying to define legal next artistic states can be counterproductive.
+
+State systems may still govern surrounding workflows:
+
+    Draft -> Submitted -> Approved
+
+or:
+
+    RenderQueued -> Rendering -> Complete
+
+but not the creative exploration itself.
+
+Rule:
+
+    Constraint should surround creative work,
+    not unnecessarily constrain the creative search space.
+
+
+Exploratory Analytics
+---------------------
+
+During exploration:
+
+    explore
+    hypothesize
+    calculate
+    discard
+    try again
+
+permissiveness is useful.
+
+Once a finding becomes operational:
+
+    InterestingPattern
+        ->
+    Claim
+        ->
+    Evidence evaluated
+        ->
+    Decision input
+
+constraint becomes relevant.
+
+Important boundary:
+
+    Exploration
+        permissive
+
+    Operationalization
+        constrained
+
+
+Machine Learning
+----------------
+
+Training itself is often:
+
+    data -> optimization -> model
+
+and does not require the full semantic architecture.
+
+But surrounding lifecycle does:
+
+    Dataset -> Validated
+    Model -> Evaluated
+    ModelVersion -> Approved
+    Deployment -> Production
+
+Claims such as:
+
+    Model has 93% accuracy
+
+also require evidence and provenance.
+
+
+Games
+-----
+
+Games contain many natural state machines:
+
+    Idle
+    Walking
+    Jumping
+    Falling
+    Dead
+
+But not every world value is semantic state.
+
+For example:
+
+    x = 142
+    y = 918
+
+need not become a distinct state machine.
+
+Important distinction:
+
+    State that affects behavioral legality
+
+versus:
+
+    Data that merely describes the current world
+
+
+UI State
+--------
+
+Ordinary form values:
+
+    FirstName
+    LastName
+    SearchText
+    ScrollPosition
+
+do not need heavy state semantics.
+
+But:
+
+    Editing
+      ->
+    Submitting
+      ->
+    Submitted
+
+or:
+
+    Submitting
+      ->
+    Failed
+
+may.
+
+Rule:
+
+    values != behavioral state
+
+
+Stateless Services
+------------------
+
+Example:
+
+    POST /convert-temperature
+
+    32°F -> 0°C
+
+There is essentially nothing for the architecture to contribute.
+
+This is a useful negative control.
+
+
+Search and Retrieval
+--------------------
+
+Search itself:
+
+    query -> results
+
+usually does not need state-constrained semantics.
+
+But if search results become evidence for:
+
+    medical recommendation
+    financial transaction
+    compliance decision
+
+then the semantic architecture belongs at the downstream decision boundary.
+
+
+Boundary Conclusion
+-------------------
+
+The wrong question is:
+
+    Does this application have state?
+
+Almost every application does.
+
+The better question is:
+
+    Does the current condition determine which future actions are
+    legitimate, and does getting that wrong have semantic consequences?
+
+If no:
+
+    normal typed data and functions
+
+If yes:
+
+    state-constrained modeling becomes valuable
+
+
+Revised Applicability Rule
+--------------------------
+
+A concept deserves state-system treatment when two or more of these are true:
+
+1. Current condition changes legal future behavior.
+2. History matters.
+3. Some transitions are forbidden.
+4. Authority matters.
+5. Evidence matters.
+6. Effects may be irreversible.
+7. External outcomes can be uncertain.
+8. Rules change over time.
+9. Multiple actors can conflict.
+10. The system must explain why something happened.
+
+
+Three-Zone Software Model
+-------------------------
+
+The boundary test suggests a useful software structure:
+
+        PERMISSIVE / COMPUTATIONAL CORE
+        -------------------------------
+        calculations
+        transformations
+        creative exploration
+        model inference
+
+                    |
+                    v
+
+            SEMANTIC BOUNDARY
+
+                    |
+                    v
+
+        STATE-CONSTRAINED DOMAIN
+        ------------------------
+        claims
+        decisions
+        approvals
+        commitments
+        effects
+        transitions
+        obligations
+
+
+Key Principle
+-------------
+
+    Exploration should be permissive.
+
+    Commitment should be constrained.
+
+This is one of the clearest statements of the overall architecture.
+
+AI can have broad freedom to reason, generate, and explore.
+
+Hard constraints become dominant when it attempts consequential operations such as:
+
+    merge code
+    deploy production
+    establish medical claim
+    approve loan
+    send money
+    change policy
+
+State-constrained architecture is therefore not:
+
+    a programming paradigm for everything
+
+It is:
+
+    an architecture for governing consequential transitions.
+
+
+PART 3 — Obligations
+====================
+
+Why Obligations Matter
+----------------------
+
+Capabilities answer:
+
+    What MAY happen?
+
+Obligations answer:
+
+    What MUST be resolved?
+
+Example:
+
+    Evidence invalidated
+        ->
+    Diagnosis support weakened
+
+The system may remove:
+
+    CanTreatAsEstablished
+
+but should also create:
+
+    Obligation:
+        ReassessDiagnosis
+
+Without obligations, the architecture can block unsafe actions
+but still fail to ensure important unresolved conditions are addressed.
+
+
+Working Definition
+------------------
+
+An obligation is:
+
+    A versioned, attributable requirement for some condition
+    to be resolved, satisfied, waived, or escalated because of
+    state, evidence, policy, or an event.
+
+A task says:
+
+    Do this.
+
+An obligation says:
+
+    This condition cannot simply be ignored.
+
+
+Obligation Lifecycle
+--------------------
+
+Possible lifecycle:
+
+    Raised
+      ->
+    Acknowledged
+      ->
+    InProgress
+      ->
+    Satisfied
+
+Alternative transitions:
+
+    Raised -> Waived
+    Raised -> Escalated
+    InProgress -> Blocked
+    Blocked -> Escalated
+    Raised -> Superseded
+
+Caution around Expired:
+
+A missed deadline should not normally erase the obligation.
+
+Better:
+
+    Due
+      ->
+    Overdue
+      ->
+    Escalated
+
+
+Obligation Provenance
+---------------------
+
+An obligation should preserve why it exists.
+
+Example:
+
+    Obligation O-117
+
+    Type:
+        ReassessApplication
+
+    Subject:
+        Application A-42
+
+    CreatedBy:
+        FraudPolicy v13 activation
+
+    Reason:
+        Prior approval relied on FraudPolicy v12
+
+    Evidence:
+        PolicyDiff PD-13
+
+    RaisedAt:
+        2026-08-14
+
+    RequiredResolution:
+        Reevaluate under FraudPolicy v13
+
+
+Derived Obligations
+-------------------
+
+Most obligations should ideally be mechanically derived.
+
+Examples:
+
+Policy change:
+
+    when:
+        Policy changes fraud requirement
+
+    and:
+        Order.State = Approved
+        Funding.State != Funded
+
+    derive:
+        ReassessFraudEligibility
+
+Unknown external effect:
+
+    when:
+        RefundExecution = OutcomeUnknown
+
+    derive:
+        ReconcileRefund
+
+Evidence invalidation:
+
+    when:
+        Evidence E17 invalidated
+
+    and:
+        Claim C42 dependsOn E17
+
+    derive:
+        ReassessClaim C42
+
+
+Forward Consequence Model
+-------------------------
+
+    Event / State Change
+        ->
+    Policy Evaluation
+        ->
+    Capabilities removed or added
+        ->
+    Obligations raised
+
+
+Obligation Severity and Consequence
+-----------------------------------
+
+Not all obligations are equally urgent.
+
+Possible metadata:
+
+    priority
+    consequence
+    deadline
+    reversibility
+    risk
+
+But obligation identity should remain separate from priority.
+
+The obligation defines:
+
+    what condition must be resolved
+
+Priority defines:
+
+    how urgently
+
+
+Kinds of Obligation
+-------------------
+
+At least four kinds appear useful:
+
+1. Remedial
+
+    ReconcileUnknownPayment
+    RepairInvalidState
+    ReassessInvalidatedEvidence
+
+2. Procedural
+
+    ObtainApproval
+    CompleteReview
+    PerformInspection
+
+3. Monitoring
+
+    RecheckFraudStatusBeforeShipping
+    MonitorTreatmentResponse
+
+4. Escalation
+
+    HumanReviewRequired
+    ComplianceEscalation
+    ClinicalReviewRequired
+
+
+Capability vs Obligation
+------------------------
+
+An obligation does NOT automatically grant permission to satisfy it.
+
+Example:
+
+    Obligation:
+        ApproveOrRejectApplication
+
+does not imply:
+
+    CanApprove
+
+Instead:
+
+    Obligation
+        something must be resolved
+
+    Capability
+        an actor may perform a particular transition
+
+Example:
+
+    Obligation:
+        ReassessDiagnosis
+
+    Agent capabilities:
+        CanCollectEvidence
+        CanProposeReassessment
+
+    Clinician capability:
+        CanEstablishDiagnosis
+
+This allows agents to advance work without possessing final authority.
+
+
+Conflicting Obligations
+-----------------------
+
+Conflicting obligations are inevitable.
+
+Example:
+
+    Obligation A:
+        Refund customer immediately
+
+    Obligation B:
+        Do not move funds while fraud investigation is open
+
+Both may be valid.
+
+The system should not silently choose.
+
+Possible representation:
+
+    ObligationConflict {
+        obligations = [A, B]
+        state = Unresolved
+    }
+
+The legal frontier may become:
+
+    CanEscalate
+    CanRequestPolicyResolution
+
+instead of:
+
+    CanRefund
+
+Principle:
+
+    Conflicting obligations create a decision state.
+
+    They do not cancel each other implicitly.
+
+
+Priority Is Not Just a Number
+-----------------------------
+
+Priority should ideally derive from policy,
+not arbitrary numeric ordering.
+
+Example:
+
+    Safety > financial convenience
+    Regulatory deadline > internal SLA
+    Irreversible harm > reversible delay
+
+When policy cannot decide the conflict,
+the system should escalate.
+
+
+Obligations Can Generate Obligations
+------------------------------------
+
+Example:
+
+    Obligation:
+        ReconcileRefund
+
+External provider still cannot determine outcome.
+
+Then:
+
+    Obligation:
+        EscalateRefundInvestigation
+
+This recursion is another reason obligations may need to be first-class stateful objects.
+
+
+Large-Scale Obligation Generation
+---------------------------------
+
+A policy change may affect hundreds of thousands of subjects.
+
+Example:
+
+    Policy v13 activated
+
+    318,271 applications require reassessment
+
+Creating hundreds of thousands of heavyweight workflows immediately
+may be wasteful.
+
+Possible model:
+
+    Obligation Rule
+        ->
+    Affected Population
+        ->
+    Materialized obligations as needed
+
+Example:
+
+    PolicyImpact I-17
+
+    Affected:
+        Approved applications not yet funded
+
+    Count:
+        318,271
+
+    Rule:
+        ReassessFraudEligibility
+
+Obligations can be materialized lazily or in batches.
+
+
+Obligation Groups / Batches
+---------------------------
+
+Example:
+
+    ObligationBatch {
+        source = PolicyChange v13
+        scope = 318,271 applications
+        completed = 71,219
+        blocked = 214
+        remaining = ...
+    }
+
+Individual obligations retain identity.
+
+The batch provides operational visibility.
+
+
+Satisfaction Criteria
+---------------------
+
+An obligation should ideally have machine-checkable satisfaction criteria.
+
+Example:
+
+    Obligation:
+        ReconcileRefund
+
+    Satisfied when:
+        RefundExecution = Succeeded
+        OR
+        RefundExecution = FailedWithVerifiedNoEffect
+
+Or:
+
+    Obligation:
+        ReassessClaim
+
+    Satisfied when:
+        Claim.EpistemicState changed
+        AND
+        reassessment event recorded
+
+This prevents an agent from merely declaring:
+
+    Done
+
+
+Waivers
+-------
+
+Waiving an obligation should itself be a governed transition.
+
+Example:
+
+    Waive requires:
+        WaiverCapability
+        Reason
+        PolicyBasis
+        Actor
+        Timestamp
+
+Not:
+
+    obligation.status = Closed
+
+
+Obligations as Agent Work Queue
+-------------------------------
+
+Instead of telling an agent:
+
+    Inspect everything and decide what needs doing
+
+the runtime can expose:
+
+    Outstanding obligations:
+
+        O-17 Reconcile refund
+        O-18 Obtain fresh fraud status
+        O-19 Reassess approval
+
+Each obligation can expose:
+
+    current state
+    reason
+    required resolution
+    available transitions
+    missing evidence
+    required capability
+    deadline
+
+
+Agent Operating Loop
+--------------------
+
+    Observe obligations
+        ->
+    Choose resolvable obligation
+        ->
+    Inspect legal transitions
+        ->
+    Gather missing evidence
+        ->
+    Propose transition
+        ->
+    System validates
+        ->
+    Obligation satisfied or updated
+
+
+Obligation as Canonical Concept
+-------------------------------
+
+Obligation increasingly appears to deserve canonical status.
+
+The architecture becomes:
+
+    STATE
+        What is true?
+
+    CLAIM / EVIDENCE
+        Why do we believe it?
+
+    POLICY
+        What rules apply?
+
+    CAPABILITY
+        What may happen?
+
+    OBLIGATION
+        What must be resolved?
+
+    TRANSITION
+        How state may change?
+
+    COORDINATOR
+        What mutually exclusive process currently owns action?
+
+    EFFECT
+        What happens outside the system?
+
+    EVENT
+        What actually happened?
+
+    PROVENANCE
+        Why did all of this occur?
+
+Useful duality:
+
+    Capabilities define the legal frontier.
+
+    Obligations define the required frontier.
+
+
+PART 4 — Planning From Obligations
+==================================
+
+Core Idea
+---------
+
+Once obligations and capabilities are both explicit,
+the architecture can derive paths from:
+
+    Something must be resolved
+
+to:
+
+    What must become true before resolution is legal
+
+This turns the state model into a constrained planner.
+
+
+Simple Example
+--------------
+
+Obligation:
+
+    ShipApprovedOrder
+
+Current state:
+
+    Order = Approved
+    Payment = Authorized
+    Customer = Verified
+    Shipment = Ready
+
+CanShip requires:
+
+    Order = Approved
+    Payment = Captured
+    Customer = Verified
+    Shipment = Ready
+
+Missing prerequisite:
+
+    Payment = Captured
+
+What transition can establish it?
+
+    CapturePayment
+
+CanCapture requires:
+
+    Payment = Authorized
+    Customer = Verified
+
+Those requirements are already satisfied.
+
+Derived plan:
+
+    CapturePayment
+        ->
+    ShipOrder
+
+The agent did not infer the workflow from repository code.
+
+The architecture exposed it.
+
+
+Planning as Graph Search
+------------------------
+
+The system can be understood as:
+
+    Current State
+        ->
+    Available Transitions
+        ->
+    Possible Next States
+        ->
+    ...
+        ->
+    Obligation Satisfied
+
+Agent planning becomes:
+
+    Find a legal path from current verified state
+    to a state satisfying the obligation.
+
+The agent does not control which edges exist.
+
+The state/policy system does.
+
+
+Missing Prerequisites
+---------------------
+
+Example obligation:
+
+    ReassessApplication
+
+Satisfaction:
+
+    Application.ReviewState = Reassessed
+
+Reassess requires:
+
+    FreshFraudCheck
+    IdentityVerified
+    ReviewerAssigned
+
+Current state:
+
+    IdentityVerified       yes
+    ReviewerAssigned       yes
+    FraudCheck             stale
+
+Missing prerequisite:
+
+    FreshFraudCheck
+
+Transition that may produce it:
+
+    RequestFraudCheck
+
+
+Plans Must Branch Across Uncertain Effects
+------------------------------------------
+
+RequestFraudCheck has an external uncertain outcome.
+
+The planner must NOT pretend:
+
+    RequestFraudCheck
+      ->
+    Reassess
+
+is guaranteed.
+
+Instead:
+
+    RequestFraudCheck
+        ->
+    WAIT FOR EVENT
+
+Possible outcomes:
+
+                 RequestFraudCheck
+                         |
+                +--------+--------+
+                |                 |
+                v                 v
+             Clear             Flagged
+                |                 |
+                v                 v
+             Reassess          Escalate
+
+Possible timeout:
+
+    Timeout
+      ->
+    Reconcile
+
+Principle:
+
+    Plans must branch at uncertain effects
+    rather than pretending future state is known.
+
+
+Plans Are Graphs, Not Necessarily Sequences
+-------------------------------------------
+
+The plan itself may be contingent.
+
+This is policy-aware contingent planning.
+
+
+Goals vs Actions
+----------------
+
+An obligation should provide a goal,
+not necessarily a hard-coded procedure.
+
+Example:
+
+    Goal:
+        Refund disposition resolved
+
+Possible satisfaction states:
+
+    RefundSucceeded
+    OR
+    VerifiedNoRefundRequired
+    OR
+    WaiverApproved
+
+Therefore:
+
+    Obligation
+        ->
+    Satisfaction Conditions
+
+rather than:
+
+    Obligation
+        ->
+    Fixed Procedure
+
+The planner finds a valid route.
+
+
+Requirement Gap
+---------------
+
+A useful derived concept is:
+
+    Requirement Gap
+
+Example:
+
+    Goal:
+        CanShip
+
+    Missing:
+        PaymentCaptured
+        FreshFraudCheck
+
+For each gap:
+
+    What legal transition can establish this condition?
+
+Possible answers:
+
+    PaymentCaptured
+        <- CapturePayment
+
+    FreshFraudCheck
+        <- RequestFraudCheck
+
+Then recursively analyze their prerequisites.
+
+
+Planning Dependency Chain
+-------------------------
+
+    Obligation
+        ->
+    Satisfaction condition
+        ->
+    Required capability/state
+        ->
+    Missing prerequisites
+        ->
+    Transitions capable of producing them
+        ->
+    Their prerequisites
+
+
+Prompt Compression
+------------------
+
+Today, an agent might be prompted:
+
+    Before shipping, check payment.
+    If not captured, capture it.
+    Make sure fraud status is fresh.
+    If stale, request another check.
+    If customer is blocked, do not ship and escalate.
+
+Instead, the semantic model can say:
+
+    CanShip requires:
+        ApprovedOrder
+        CapturedPayment
+        VerifiedCustomer
+        FreshFraudClearance
+
+The planner discovers the legal dependency path.
+
+This is semantic compression.
+
+
+Dependency Cycles
+-----------------
+
+Potential problem:
+
+    A requires B
+    B requires C
+    C requires A
+
+A naive planner may loop forever.
+
+Need to distinguish:
+
+    Transition graph cycles
+
+from:
+
+    Requirement dependency cycles
+
+The latter may indicate a broken specification
+and should potentially be detected at compile time.
+
+
+Multiple Legal Paths
+--------------------
+
+Example:
+
+    Path A:
+        AutoVerification -> Approve
+
+    Path B:
+        ManualReview -> Approve
+
+    Path C:
+        Waiver -> Approve
+
+All may be legal.
+
+Selecting among them requires more than legality.
+
+Potential optimization attributes:
+
+    cost
+    risk
+    latency
+    reversibility
+    authority
+
+Important separation:
+
+    LEGALITY
+        what is permitted
+
+    PREFERENCE
+        which permitted route is preferred
+
+Policy determines legality.
+
+Optimization ranks legal routes.
+
+
+Protected Prerequisites
+-----------------------
+
+The planner must not manufacture protected prerequisites.
+
+If it needs:
+
+    IdentityVerified
+
+it cannot simply construct:
+
+    IdentityVerified
+
+It must find an authorized transition such as:
+
+    VerifyIdentity
+
+which itself requires proper evidence or an external verifier.
+
+Principle:
+
+    The planner may search for ways to obtain prerequisites,
+    but cannot construct protected prerequisites directly.
+
+
+Unreachable Obligations
+-----------------------
+
+The planner must be able to conclude:
+
+    No currently legal path to satisfaction.
+
+Example:
+
+    Obligation:
+        RefundCustomer
+
+but:
+
+    payment provider permanently unavailable
+    no manual refund capability exists
+
+Then:
+
+    Blocked obligation
+
+    Reason:
+        No valid transition can satisfy prerequisite X
+
+Possible actions:
+
+    Escalate
+    Change policy
+    Introduce manual capability
+
+This is preferable to hallucinating a workaround.
+
+
+Plan Explanations
+-----------------
+
+Instead of:
+
+    Cannot ship
+
+the runtime can explain:
+
+    Cannot ShipOrder.
+
+    CanShip requires:
+        ✓ OrderApproved
+        ✓ CustomerVerified
+        ✗ PaymentCaptured
+        ✗ FraudStatusFresh
+
+    Shortest currently legal path:
+
+        1. CapturePayment
+        2. RequestFraudRefresh
+        3. Wait for FraudCheckCompleted
+        4. Re-evaluate CanShip
+
+
+Possible Agent Interface
+------------------------
+
+A constrained agent runtime may need only a small planning surface:
+
+    get_obligations()
+    get_available_capabilities()
+    explain_blocked_transition()
+    find_legal_paths(goal)
+    request_transition(...)
+
+rather than unrestricted tools like:
+
+    shell
+    database
+    arbitrary APIs
+    entire repository access
+
+
+Safety Consequence
+------------------
+
+Conventional agent thinking:
+
+    I need state X.
+    I'll edit the system until X is true.
+
+State-constrained planning:
+
+    I need X.
+    What legal transition can create X?
+
+If none exists:
+
+    X cannot currently be obtained.
+
+This is fundamentally different.
+
+
+Planning Architecture
+---------------------
+
+                OBLIGATION
+                    |
+                    v
+          SATISFACTION CRITERIA
+                    |
+                    v
+             GOAL CONDITIONS
+                    |
+                    v
+          CURRENT VERIFIED STATE
+                    |
+                    v
+             GAP ANALYSIS
+                    |
+                    v
+      LEGAL TRANSITION GRAPH SEARCH
+                    |
+             +------+------+
+             |             |
+             v             v
+       deterministic    uncertain effect
+         transition          |
+             |               v
+             |          wait/reconcile
+             |               |
+             +-------+-------+
+                     |
+                     v
+               NEW STATE
+                     |
+                     v
+                  REPLAN
+
+Throughout this process:
+
+    Policy
+    Capabilities
+    Authority
+    Versions
+    Evidence
+    Freshness
+
+constrain the graph.
+
+
+Planning Implication
+--------------------
+
+The same specification that prevents illegal actions
+can also generate legal plans.
+
+This makes the architecture more than a guardrail.
+
+It can become the agent's world model.
+
+The deterministic layer answers:
+
+    What exists?
+    What may change?
+    What am I allowed to do?
+    What do I need first?
+    What happens if this fails?
+
+The probabilistic agent focuses on:
+
+    choosing among legitimate alternatives
+    interpreting ambiguous human intent
+    gathering information
+    explaining
+    handling genuinely novel cases
+
+
+PART 5 — One Specification Generating Four Artifacts
+====================================================
+
+Test Goal
+---------
+
+The next test asked whether one declarative specification
+could drive all of:
+
+1. Runtime guards
+2. Agent-visible actions
+3. Planning graph
+4. Generated tests
+
+without embedding four separate interpretations of the same rule.
+
+
+Toy Domain
+----------
+
+State dimensions:
+
+    Order:
+        Draft
+        Approved
+
+    Payment:
+        Authorized
+        Captured
+
+    Fraud:
+        FreshClear
+        Stale
+        Flagged
+
+
+Example Transition
+------------------
+
+    transition CapturePayment
+
+    requires:
+        Order = Approved
+        Payment = Authorized
+
+    produces:
+        Payment = Captured
+
+    effect:
+        payment.capture
+
+
+Shipping Transition
+-------------------
+
+    transition ShipOrder
+
+    requires:
+        Order = Approved
+        Payment = Captured
+        Fraud = FreshClear
+
+    effect:
+        shipping.ship
+
+
+Uncertain Transition
+--------------------
+
+    transition RefreshFraud
+
+    requires:
+        Fraud = Stale
+
+    effect:
+        fraud.refresh
+
+    outcomes:
+
+        FraudClear:
+            Fraud = FreshClear
+
+        FraudFlagged:
+            Fraud = Flagged
+
+
+Artifact 1 — Runtime Guards
+---------------------------
+
+The compiler can generate:
+
+    let canShip state =
+        state.Order = Approved &&
+        state.Payment = Captured &&
+        state.Fraud = FreshClear
+
+No separate human-authored guard logic is needed.
+
+
+Artifact 2 — Agent Action Availability
+--------------------------------------
+
+For:
+
+    Order = Approved
+    Payment = Authorized
+    Fraud = Stale
+
+the agent receives:
+
+    Available:
+        CapturePayment
+        RefreshFraud
+
+    Unavailable:
+        ShipOrder
+
+After capture:
+
+    Order = Approved
+    Payment = Captured
+    Fraud = Stale
+
+the agent receives:
+
+    Available:
+        RefreshFraud
+
+    ShipOrder blocked because:
+        Fraud must be FreshClear
+        Current value: Stale
+
+
+Exhaustive Consistency Check
+----------------------------
+
+The toy model has 12 possible state combinations.
+
+The test compared:
+
+    runtime guard result
+
+against:
+
+    agent action visibility
+
+for every combination.
+
+Result:
+
+    zero disagreements
+
+This worked because both were generated from the same requirement clauses.
+
+Desired property:
+
+    Agent-visible action space
+        =
+    Runtime-accepted action space
+
+
+Artifact 3 — Planning Graph
+---------------------------
+
+Starting state:
+
+    Order = Approved
+    Payment = Authorized
+    Fraud = Stale
+
+Goal:
+
+    Order = Approved
+    Payment = Captured
+    Fraud = FreshClear
+
+The generated graph finds:
+
+    CapturePayment
+        ->
+    RefreshFraud
+
+But RefreshFraud is uncertain.
+
+Therefore the planner must produce:
+
+    1. CapturePayment
+    2. RefreshFraud
+    3. Wait for outcome
+
+    If FraudClear:
+        ShipOrder may become available
+
+    If FraudFlagged:
+        ShipOrder remains unavailable
+        Replan
+
+
+Artifact 4 — Generated Tests
+----------------------------
+
+From:
+
+    ShipOrder requires:
+        Approved
+        Captured
+        FreshClear
+
+the compiler can generate positive tests:
+
+    Approved + Captured + FreshClear
+        => CanShip
+
+and negative tests:
+
+    Draft + Captured + FreshClear
+        => CannotShip
+
+    Approved + Authorized + FreshClear
+        => CannotShip
+
+    Approved + Captured + Stale
+        => CannotShip
+
+    Approved + Captured + Flagged
+        => CannotShip
+
+It can also generate the stronger property:
+
+    For every state:
+
+        Agent exposes ShipOrder
+            IFF
+        Runtime accepts ShipOrder guard
+
+
+Additional Artifacts From the Same Specification
+------------------------------------------------
+
+Documentation:
+
+    Ship Order
+
+    Requirements:
+        Order must be Approved
+        Payment must be Captured
+        Fraud status must be FreshClear
+
+Block explanations:
+
+    Cannot ShipOrder.
+
+    Missing:
+        Payment = Captured
+
+    Current:
+        Payment = Authorized
+
+Dependency graph:
+
+    PaymentCaptured --+
+    OrderApproved -----+--> CanShip --> ShipOrder
+    FraudFreshClear ---+
+
+Agent tool schema:
+
+    ship_order(orderId)
+
+exposed only when legal.
+
+Policy impact analysis:
+
+If shipping policy changes, the compiler can identify:
+
+    CanShip
+    ShipOrder
+    planning paths containing ShipOrder
+    generated tests
+    agent action availability
+
+
+What the Specification Does NOT Generate
+----------------------------------------
+
+The semantic specification does not eliminate ordinary implementation code.
+
+For:
+
+    effect:
+        payment.capture
+
+someone must still implement the integration.
+
+Example conceptual interface:
+
+    PaymentEffects.Capture(
+        PaymentId,
+        OperationId
+    ) -> CaptureOutcome
+
+The generated semantic layer controls:
+
+    when it can be called
+    what operation identity to use
+    what outcomes are possible
+    how outcomes affect state
+
+but not the low-level integration itself.
+
+
+Complex Domain Computation
+--------------------------
+
+A rule like:
+
+    AvailableCredit >= RequestedAmount
+
+may be simple enough for the semantic layer.
+
+A concept like:
+
+    RiskAcceptable
+
+may require complex computation.
+
+Do not duplicate the risk algorithm in the DSL.
+
+Instead:
+
+    Claim:
+        RiskAcceptable
+
+    Provided by:
+        RiskEvaluation
+
+The architecture governs:
+
+    meaning
+    authority
+    freshness
+    evidence
+    use in transitions
+
+The risk engine computes the result.
+
+
+Two-Layer Model
+---------------
+
+Semantic Specification:
+
+    states
+    claims
+    transitions
+    requirements
+    invariants
+    capabilities
+    obligations
+    effects
+    possible outcomes
+    policy dependencies
+    authority
+    freshness
+
+Implementation:
+
+    algorithms
+    database adapters
+    API calls
+    ML models
+    UI
+    external integrations
+    pure computation
+
+
+Semantic Compiler
+-----------------
+
+Input:
+
+    Domain Specification
+
+Compiler performs:
+
+    semantic validation
+    dependency analysis
+    cycle detection
+    reachability analysis
+    policy validation
+
+Potential output:
+
+    Domain types
+    Runtime guards
+    Capability evaluators
+    Obligation evaluators
+    Agent tools
+    Planning graph
+    Property tests
+    Documentation
+    Diagrams
+    Audit metadata
+    Policy dependency graph
+
+
+Drift Reduction
+---------------
+
+If documentation, runtime behavior, tests, and agent tools
+all originate from the same transition definition,
+they cannot drift independently as easily.
+
+This directly attacks:
+
+    documentation says X
+    runtime says Y
+    tests imply Z
+    prompt says something else
+
+Key insight:
+
+    The specification does not merely constrain code.
+
+    It prevents different representations of domain meaning
+    from drifting independently.
+
+
+Emerging Product Concept
+------------------------
+
+The architecture is starting to look like:
+
+    A semantic compiler for agent-operated software.
+
+It takes consequential domain rules and produces
+the deterministic environment within which probabilistic agents operate.
+
+
+PART 6 — Minimum Semantic DSL
+=============================
+
+Language-Design Goal
+--------------------
+
+Find the smallest semantic vocabulary that can express
+the tested domains without turning into a general-purpose programming language.
+
+Core design rule:
+
+    The DSL describes semantics and legality.
+
+    It does not implement arbitrary computation.
+
+
+Candidate Minimal Constructs
+----------------------------
+
+A minimal language may need roughly:
+
+    subject
+    state
+    relation
+
+    claim
+    evidence
+
+    rule
+    policy
+
+    transition
+    requires
+    produces
+
+    effect
+    outcome
+
+    authority
+
+    obligation
+    satisfiedWhen
+
+
+State
+-----
+
+Example:
+
+    state Payment {
+        Authorized
+        Captured
+        Refunded
+    }
+
+States may carry required data:
+
+    state Payment {
+        Authorized {
+            authorizationId
+        }
+
+        Captured {
+            captureId
+            amount
+        }
+    }
+
+Arbitrary methods and computation should remain outside the DSL.
+
+
+Claims
+------
+
+Claims represent propositions whose truth is established elsewhere.
+
+Example:
+
+    claim FraudClear {
+        subject: Customer
+        source: FraudService
+        freshness: 30m
+    }
+
+Or:
+
+    claim IdentityVerified {
+        subject: Customer
+        source: IdentityProvider
+    }
+
+This provides an escape hatch for complex domain logic.
+
+The fraud engine can do arbitrary computation externally.
+
+Its output enters the semantic system as evidence supporting a claim.
+
+
+Transitions
+-----------
+
+Example:
+
+    transition CapturePayment {
+
+        requires:
+            Order = Approved
+            Payment = Authorized
+
+        produces:
+            Payment = Captured
+    }
+
+The `requires` language should be deliberately limited.
+
+Good:
+
+    Payment = Captured
+    FraudClear
+    Amount <= CreditLimit
+    Order.Owner = Actor
+
+Potentially useful:
+
+    all Items satisfy Item.Ready
+
+Dangerous:
+
+    execute arbitrary F# expression
+
+Arbitrary executable expressions would destroy analyzability.
+
+
+Effects
+-------
+
+Example:
+
+    transition CapturePayment {
+
+        requires:
+            Payment = Authorized
+
+        effect:
+            PaymentProvider.Capture
+
+        outcomes:
+            Success -> Payment = Captured
+            Declined -> Payment = Authorized
+            Unknown -> CaptureStatus = OutcomeUnknown
+    }
+
+The actual provider implementation remains external.
+
+The compiler only needs to know:
+
+    this is an effect
+    possible outcomes
+    Unknown may occur
+    idempotency requirements
+
+
+Obligations
+-----------
+
+Example:
+
+    obligation ResolveRefund {
+
+        when:
+            RefundStatus = OutcomeUnknown
+
+        satisfiedWhen:
+            RefundStatus = Succeeded
+            OR
+            RefundStatus = VerifiedFailed
+
+        escalateAfter:
+            24h
+    }
+
+No arbitrary procedural loops are needed in the DSL.
+
+
+Authority
+---------
+
+Example:
+
+    authority EstablishDiagnosis {
+        allowed:
+            LicensedClinician
+    }
+
+Then:
+
+    transition EstablishDiagnosis {
+
+        requires:
+            EvidenceSufficient
+
+        authority:
+            EstablishDiagnosis
+
+        produces:
+            Diagnosis = Established
+    }
+
+An agent may be allowed to propose a diagnosis
+without possessing the final establishment authority.
+
+
+Policy
+------
+
+Policy should be:
+
+    versioned
+    selectable
+    diffable
+    dependency-trackable
+
+Example:
+
+    policy FraudPolicy v13 {
+
+        appliesWhen:
+            jurisdiction = US
+
+        transition ShipOrder adds requirement:
+            FraudClear
+    }
+
+Alternative:
+
+    rule ShippingEligibility {
+        requires:
+            Order = Approved
+            Payment = Captured
+            FraudClear
+    }
+
+    transition ShipOrder {
+        governedBy:
+            ShippingEligibility
+    }
+
+
+What NOT to Include in the DSL
+------------------------------
+
+Avoid general-purpose constructs:
+
+    for
+    while
+    recursion
+    mutable variables
+    arbitrary functions
+    network access
+    filesystem access
+    database access
+    dynamic code execution
+
+If these are added, the semantic DSL becomes another programming language.
+
+
+External Evaluators
+-------------------
+
+Complex computation should remain external.
+
+Example:
+
+    claim Creditworthy {
+        evaluator:
+            CreditRiskEngine
+    }
+
+The evaluator can do arbitrary computation.
+
+Its result enters through a controlled semantic boundary.
+
+Pattern:
+
+    COMPUTATION
+        ->
+    claim/evidence boundary
+        ->
+    SEMANTIC SYSTEM
+
+
+Arithmetic Boundary
+-------------------
+
+Useful:
+
+    Amount <= Limit
+
+Useful:
+
+    RiskScore < MaximumRiskScore
+
+Not desirable:
+
+    calculating RiskScore inside the DSL
+
+Rule:
+
+    DSL expressions may compare already-computed values,
+    but should not perform substantial business computation.
+
+
+Cross-Domain DSL Check
+----------------------
+
+Healthcare:
+
+    state
+    claim
+    evidence
+    transition
+    authority
+    obligation
+    policy
+
+Finance:
+
+    state
+    transition
+    effect
+    outcome
+    claim
+    authority
+    obligation
+
+DevOps:
+
+    claim
+    transition
+    authority
+    effect
+    outcome
+    policy
+
+Manufacturing:
+
+    claim
+    transition
+    evidence
+    authority
+    obligation
+
+Research:
+
+    state
+    claim
+    evidence
+    transition
+    obligation
+    policy
+
+No fundamentally new language feature was required.
+
+
+Relations
+---------
+
+Cross-object rules require typed relationships.
+
+Examples:
+
+    Payment belongsTo Order
+    Shipment fulfills Order
+    Evidence supports Claim
+
+Possible syntax:
+
+    relation Payment.order -> Order
+    relation Shipment.order -> Order
+    relation Evidence supports Claim
+
+The DSL should avoid becoming a general graph-query language.
+
+Prefer:
+
+    typed references
+    bounded traversal
+
+
+Sets and Cardinality
+--------------------
+
+Real rules may require:
+
+    all required approvals exist
+
+or:
+
+    at least two reviewers approved
+
+A tiny quantified expression set may be enough:
+
+    all
+    any
+    none
+    count
+
+Examples:
+
+    all RequiredInspections are Passed
+
+    count Approvals >= 2
+
+Avoid arbitrary iteration.
+
+
+Candidate Condition Grammar
+---------------------------
+
+Possible limited condition language:
+
+    state equality
+    claim present
+    claim absent
+    comparison
+    all condition
+    any condition
+    count comparison
+    AND
+    OR
+    NOT
+
+Potential time-related conditions:
+
+    changedWithin
+    observedWithin
+
+
+Time
+----
+
+Semantic time likely needs first-class concepts such as:
+
+    effective
+    freshness
+    deadline
+    duration
+
+Examples:
+
+    FraudClear within 30m
+
+    Obligation unresolved for 24h
+
+    Policy effective after 2026-10-01
+
+Avoid arbitrary date arithmetic.
+
+
+Static Analysis Enabled by Restriction
+--------------------------------------
+
+Because the DSL is intentionally constrained,
+the compiler can ask questions ordinary application code cannot easily answer.
+
+Can this transition ever occur?
+
+    Unreachable transition?
+
+Can an illegal state be reached?
+
+    Invariant violation?
+
+Are there requirement cycles?
+
+    A requires B
+    B requires A
+
+Is an obligation impossible to satisfy?
+
+    No path reaches satisfaction criteria.
+
+Are there states with no legal exit?
+
+    Deadlock.
+
+Are two transitions mutually conflicting?
+
+    Ship
+    Refund
+
+Can a policy change eliminate all routes to a required obligation?
+
+Are there claims that are required but impossible to establish?
+
+Example:
+
+    CanShip requires FraudClear
+
+but:
+
+    no provider/evidence path can establish FraudClear
+
+
+Three Tiers
+-----------
+
+A strong architecture emerges:
+
+TIER 1 — SEMANTIC SPECIFICATION
+
+    What is meaningful and legal?
+
+TIER 2 — TRUSTED IMPLEMENTATIONS
+
+    How are claims computed and effects executed?
+
+TIER 3 — PROBABILISTIC AGENTS
+
+    What should we attempt next?
+
+Agents should not directly redefine Tier 1.
+
+Agents may invoke Tier 2 only through permissions/capabilities
+generated from Tier 1.
+
+
+Specification Changes
+---------------------
+
+Agents may propose specification changes,
+but that is itself a governed operation.
+
+Example lifecycle:
+
+    DraftSpecChange
+      ->
+    Analyzed
+      ->
+    Tested
+      ->
+    Reviewed
+      ->
+    Approved
+      ->
+    Activated
+
+This prevents agents from solving blocked tasks
+by simply weakening the rules.
+
+
+DSL Inclusion Test
+------------------
+
+Ask:
+
+    Does this define what is allowed/required,
+    or does it explain how to perform computation?
+
+If it defines:
+
+    what is allowed
+    what is required
+    what counts as completion
+    who may act
+    what outcomes can exist
+
+put it in the semantic specification.
+
+If it defines:
+
+    how to calculate
+    how to call an API
+    how to render
+    how to search
+    how to optimize
+
+leave it in ordinary code.
+
+
+Realistic Example
+-----------------
+
+    subject Order
+
+    state OrderLifecycle {
+        Draft
+        Submitted
+        Approved
+        Cancelled
+    }
+
+    state Payment {
+        Authorized
+        Captured
+        Refunded
+    }
+
+    claim FraudClear {
+        source: FraudService
+        freshWithin: 30m
+    }
+
+    transition ApproveOrder {
+
+        from:
+            OrderLifecycle = Submitted
+
+        requires:
+            FraudClear
+
+        authority:
+            OrderApproval
+
+        produces:
+            OrderLifecycle = Approved
+    }
+
+    transition CapturePayment {
+
+        requires:
+            OrderLifecycle = Approved
+            Payment = Authorized
+
+        effect:
+            Payments.Capture
+
+        outcomes:
+
+            success:
+                Payment = Captured
+
+            failure:
+                Payment = Authorized
+
+            unknown:
+                CaptureExecution = OutcomeUnknown
+    }
+
+    obligation FulfillApprovedOrder {
+
+        when:
+            OrderLifecycle = Approved
+
+        satisfiedWhen:
+            Shipment = Shipped
+            OR
+            OrderLifecycle = Cancelled
+    }
+
+
+Semantic Compiler Output
+------------------------
+
+From one semantic source:
+
+    compiler
+        ->
+    runtime guards
+    agent tools
+    planner
+    tests
+    documentation
+    state graph
+    policy dependency graph
+    audit metadata
+
+
+Current Conclusion
+------------------
+
+The promising design is not a new general-purpose programming language.
+
+It is:
+
+    A constrained semantic declaration language
+    with external computation and effect interfaces.
+
+The restriction is a feature.
+
+By sacrificing computational expressiveness,
+the architecture gains:
+
+    static analyzability
+    artifact generation
+    reachability analysis
+    contradiction detection
+    policy diffs
+    consistent agent action spaces
+    generated verification
+    stronger semantic stability
+
+
+Strong Emerging Thesis
+----------------------
+
+A semantic compiler for agent-operated software could provide
+a deterministic world model for probabilistic agents.
+
+The compiler would take:
+
+    domain meaning
+    states
+    transitions
+    requirements
+    authority
+    evidence
+    policy
+    obligations
+    effects
+
+and generate:
+
+    what agents can see
+    what agents can do
+    what paths are legal
+    what tests must hold
+    what runtime enforcement applies
+    how actions can be explained
+
+
+NEXT PROPOSED TEST
+==================
+
+Define a v0.1 grammar/specification and attempt to encode:
+
+1. One HelixNote workflow
+2. One Clarity workflow
+3. One payment workflow
+
+without changing the grammar.
+
+If those three substantially different workflows fit cleanly,
+the idea begins to look less like an architectural philosophy
+and more like an implementable semantic platform/compiler.
+

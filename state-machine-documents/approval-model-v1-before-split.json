@@ -1,0 +1,116 @@
+{
+  "irSchemaVersion": "0.1",
+  "semanticModelVersion": "1",
+  "semanticHash": "demo-before-split",
+  "subjects": [
+    {
+      "id": "SUBJECT-APPLICATION",
+      "name": "Application"
+    }
+  ],
+  "stateFamilies": [
+    {
+      "id": "SF-APPLICATION-APPROVAL",
+      "name": "ApprovalState",
+      "subject": "SUBJECT-APPLICATION",
+      "consequential": true,
+      "cases": [
+        {
+          "id": "SC-SUBMITTED",
+          "name": "Submitted"
+        },
+        {
+          "id": "SC-APPROVED",
+          "name": "Approved"
+        },
+        {
+          "id": "SC-REJECTED",
+          "name": "Rejected"
+        }
+      ]
+    }
+  ],
+  "claims": [],
+  "events": [],
+  "transitions": [
+    {
+      "id": "TRANS-FUND",
+      "name": "FundApplication",
+      "subject": "SUBJECT-APPLICATION",
+      "trigger": {
+        "kind": "request"
+      },
+      "requires": [
+        {
+          "op": "stateEquals",
+          "stateFamily": "SF-APPLICATION-APPROVAL",
+          "case": "SC-APPROVED"
+        }
+      ],
+      "produces": [],
+      "authority": "AUTH-FUND"
+    },
+    {
+      "id": "TRANS-SHIP",
+      "name": "ShipApplicationPackage",
+      "subject": "SUBJECT-APPLICATION",
+      "trigger": {
+        "kind": "request"
+      },
+      "requires": [
+        {
+          "op": "stateEquals",
+          "stateFamily": "SF-APPLICATION-APPROVAL",
+          "case": "SC-APPROVED"
+        }
+      ],
+      "produces": []
+    }
+  ],
+  "effects": [],
+  "capabilities": [
+    {
+      "id": "CAP-CAN-FUND",
+      "name": "CanFund",
+      "requires": [
+        {
+          "op": "stateEquals",
+          "stateFamily": "SF-APPLICATION-APPROVAL",
+          "case": "SC-APPROVED"
+        }
+      ],
+      "binds": [
+        "Application.version",
+        "FundingPolicy.version"
+      ]
+    },
+    {
+      "id": "CAP-CAN-SHIP",
+      "name": "CanShip",
+      "requires": [
+        {
+          "op": "stateEquals",
+          "stateFamily": "SF-APPLICATION-APPROVAL",
+          "case": "SC-APPROVED"
+        }
+      ],
+      "binds": [
+        "Application.version",
+        "ShippingPolicy.version"
+      ]
+    }
+  ],
+  "obligations": [],
+  "authorities": [
+    {
+      "id": "AUTH-FUND",
+      "name": "FundApplication",
+      "allowedRoles": [
+        "FundingOfficer"
+      ]
+    }
+  ],
+  "relations": [],
+  "policies": [],
+  "migrations": []
+}
