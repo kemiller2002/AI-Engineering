@@ -1,0 +1,35 @@
+[
+  {
+    "author_agent": "Codex",
+    "completion": "complete",
+    "confidence": "medium-high",
+    "discipline": "experimental methods and agent evaluation",
+    "id": "RP-2026-07-30-NHE-COMPARATIVE-REVIEW",
+    "keywords": [
+      "lineage",
+      "calibration",
+      "task validity",
+      "grader validity"
+    ],
+    "path": "research/packages/RP-2026-07-30-NHE-COMPARATIVE-REVIEW.md",
+    "priority": "critical",
+    "related_documents": [
+      "research/analysis/non-human-experimental-inventory.md",
+      "research/analysis/non-human-experimental-comparative-analysis.md"
+    ],
+    "related_projects": [
+      "AI-ROS agent evaluation"
+    ],
+    "research_area": "AI research systems",
+    "superseded_by": [],
+    "supersedes": [],
+    "tags": [
+      "experiments",
+      "evidence",
+      "evaluation",
+      "non-human"
+    ],
+    "title": "Non-Human Experimental Evidence Comparative Review",
+    "version": "1.0.0"
+  }
+]

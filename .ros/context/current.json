@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0.0",
+  "repository": "ai-engineering",
+  "workItems": [
+    {
+      "id": "ROS-INSTALL-001",
+      "type": "mechanical",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [],
+      "updatedAt": "2026-08-17T14:51:08.530Z",
+      "completedAt": "2026-08-17T14:51:08.530Z"
+    }
+  ],
+  "protocolVersion": "1.0.0",
+  "actor": "codex",
+  "updatedAt": "2026-08-17T14:51:08.530Z",
+  "startedAt": "2026-08-17T14:50:39.081Z",
+  "baselineDirtyPaths": []
+}
