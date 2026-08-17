@@ -1,0 +1,1676 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AI Research Mission 08 — Semantic Compilation and Specification Drift | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">AI Research Mission 08 — Semantic Compilation and Specification Drift</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/reports/08-semantic-compilation-specification-drift-research-report.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#ai-research-mission-08-semantic-compilation-and-specification-drift">AI Research Mission 08 — Semantic Compilation and Specification Drift</a></li><li><a href="#1-executive-verdict">1. Executive verdict</a></li><li><a href="#bottom-line">Bottom line</a></li><li><a href="#overall-judgment">Overall judgment</a></li><li><a href="#2-definition-of-specification-drift">2. Definition of specification drift</a></li><li><a href="#what-is-not-automatically-drift">What is not automatically drift</a></li><li><a href="#3-evidence-that-duplicated-semantics-drift">3. Evidence that duplicated semantics drift</a></li><li><a href="#4-model-driven-engineering-comparison">4. Model-driven engineering comparison</a></li><li><a href="#what-mde-is">What MDE is</a></li><li><a href="#why-the-proposed-architecture-differs">Why the proposed architecture differs</a></li><li><a href="#best-lesson-from-historical-mde">Best lesson from historical MDE</a></li><li><a href="#5-executable-specification-comparison">5. Executable-specification comparison</a></li><li><a href="#6-dsl-comparison">6. DSL comparison</a></li><li><a href="#textual-dsl">Textual DSL</a></li><li><a href="#json-yaml-representation">JSON/YAML representation</a></li><li><a href="#embedded-dsl">Embedded DSL</a></li><li><a href="#graphical-dsl">Graphical DSL</a></li><li><a href="#recommendation">Recommendation</a></li><li><a href="#7-schema-protocol-compiler-comparison">7. Schema/protocol compiler comparison</a></li><li><a href="#8-policy-as-code-comparison">8. Policy-as-code comparison</a></li><li><a href="#9-generated-test-analysis">9. Generated-test analysis</a></li><li><a href="#but-generated-tests-are-not-sufficient-oracles">But generated tests are not sufficient oracles</a></li><li><a href="#10-documentation-generation-analysis">10. Documentation generation analysis</a></li><li><a href="#11-agent-tool-generation-analysis">11. Agent tool-generation analysis</a></li><li><a href="#12-prompt-generation-analysis">12. Prompt-generation analysis</a></li><li><a href="#13-runtime-guard-generation-analysis">13. Runtime-guard generation analysis</a></li><li><a href="#14-planning-graph-generation-analysis">14. Planning-graph generation analysis</a></li><li><a href="#15-impact-analysis-generation">15. Impact-analysis generation</a></li><li><a href="#16-semantic-migration-analysis">16. Semantic migration analysis</a></li><li><a href="#17-round-trip-engineering-lessons">17. Round-trip engineering lessons</a></li><li><a href="#18-generated-handwritten-boundary-recommendation">18. Generated/handwritten boundary recommendation</a></li><li><a href="#generate-or-interpret">Generate or interpret</a></li><li><a href="#handwrite">Handwrite</a></li><li><a href="#boundary-principle">Boundary principle</a></li><li><a href="#19-specification-expressiveness-recommendation">19. Specification expressiveness recommendation</a></li><li><a href="#escape-hatch">Escape hatch</a></li><li><a href="#20-semantic-coverage-model">20. Semantic coverage model</a></li><li><a href="#21-drift-metrics">21. Drift metrics</a></li><li><a href="#specification-drift-incident-rate">Specification Drift Incident Rate</a></li><li><a href="#duplicate-semantic-rule-count">Duplicate Semantic Rule Count</a></li><li><a href="#missed-artifact-rate">Missed Artifact Rate</a></li><li><a href="#stale-artifact-count">Stale Artifact Count</a></li><li><a href="#rule-fan-out">Rule Fan-Out</a></li><li><a href="#change-error-rate">Change Error Rate</a></li><li><a href="#semantic-coverage">Semantic Coverage</a></li><li><a href="#derivation-coverage">Derivation Coverage</a></li><li><a href="#independent-validation-coverage">Independent Validation Coverage</a></li><li><a href="#cost-per-correct-semantic-change">Cost per Correct Semantic Change</a></li><li><a href="#22-ai-context-token-implications">22. AI context/token implications</a></li><li><a href="#23-smaller-model-hypothesis">23. Smaller-model hypothesis</a></li><li><a href="#24-wrong-spec-risk">24. Wrong-spec risk</a></li><li><a href="#25-generator-bug-risk">25. Generator-bug risk</a></li><li><a href="#26-independent-validation-model">26. Independent-validation model</a></li><li><a href="#1-domain-examples">1. Domain examples</a></li><li><a href="#2-property-tests">2. Property tests</a></li><li><a href="#3-regulatory-contractual-source-mapping">3. Regulatory / contractual source mapping</a></li><li><a href="#4-mutation-testing">4. Mutation testing</a></li><li><a href="#5-production-invariants">5. Production invariants</a></li><li><a href="#6-semantic-review">6. Semantic review</a></li><li><a href="#27-security-and-audit-implications">27. Security and audit implications</a></li><li><a href="#28-startup-vs-enterprise-differences">28. Startup vs enterprise differences</a></li><li><a href="#startup">Startup</a></li><li><a href="#enterprise">Enterprise</a></li><li><a href="#29-counterarguments">29. Counterarguments</a></li><li><a href="#1-this-is-just-mde-and-mde-adoption-struggled-">1. &quot;This is just MDE, and MDE adoption struggled.&quot;</a></li><li><a href="#2-one-wrong-spec-creates-systemic-failure-">2. &quot;One wrong spec creates systemic failure.&quot;</a></li><li><a href="#3-generator-maintenance-may-exceed-drift-savings-">3. &quot;Generator maintenance may exceed drift savings.&quot;</a></li><li><a href="#4-strong-types-and-tests-solve-enough-">4. &quot;Strong types and tests solve enough.&quot;</a></li><li><a href="#5-good-documentation-and-review-are-cheaper-">5. &quot;Good documentation and review are cheaper.&quot;</a></li><li><a href="#6-modern-ai-can-update-all-representations-">6. &quot;Modern AI can update all representations.&quot;</a></li><li><a href="#7-generated-artifacts-are-difficult-to-debug-">7. &quot;Generated artifacts are difficult to debug.&quot;</a></li><li><a href="#8-dsl-becomes-a-second-programming-language-">8. &quot;DSL becomes a second programming language.&quot;</a></li><li><a href="#9-developers-will-bypass-it-">9. &quot;Developers will bypass it.&quot;</a></li><li><a href="#10-generated-diffs-are-noisy-">10. &quot;Generated diffs are noisy.&quot;</a></li><li><a href="#11-distributed-versions-destroy-single-source-assumptions-">11. &quot;Distributed versions destroy single-source assumptions.&quot;</a></li><li><a href="#12-business-rules-are-too-nuanced-for-dsls-">12. &quot;Business rules are too nuanced for DSLs.&quot;</a></li><li><a href="#13-specification-becomes-bottleneck-">13. &quot;Specification becomes bottleneck.&quot;</a></li><li><a href="#14-product-iteration-slows-">14. &quot;Product iteration slows.&quot;</a></li><li><a href="#15-independent-validation-duplicates-meaning-again-">15. &quot;Independent validation duplicates meaning again.&quot;</a></li><li><a href="#30-proposed-experiments">30. Proposed experiments</a></li><li><a href="#experiment-a-rule-change">Experiment A — rule change</a></li><li><a href="#experiment-b-state-addition">Experiment B — state addition</a></li><li><a href="#experiment-c-state-split">Experiment C — state split</a></li><li><a href="#experiment-d-policy-freshness">Experiment D — policy freshness</a></li><li><a href="#experiment-e-tool-change">Experiment E — tool change</a></li><li><a href="#experiment-f-wrong-specification">Experiment F — wrong specification</a></li><li><a href="#experiment-g-generator-defect">Experiment G — generator defect</a></li><li><a href="#experiment-h-manual-artifact-edit">Experiment H — manual artifact edit</a></li><li><a href="#experiment-i-agent-semantic-change">Experiment I — agent semantic change</a></li><li><a href="#experiment-j-longitudinal">Experiment J — longitudinal</a></li><li><a href="#experiment-k-smaller-models">Experiment K — smaller models</a></li><li><a href="#31-economic-model">31. Economic model</a></li><li><a href="#32-break-even-analysis">32. Break-even analysis</a></li><li><a href="#10-semantic-changes">10 semantic changes</a></li><li><a href="#100-changes">100 changes</a></li><li><a href="#1-000-changes">1,000 changes</a></li><li><a href="#10-000-changes">10,000 changes</a></li><li><a href="#33-what-is-already-established">33. What is already established</a></li><li><a href="#34-what-remains-speculative">34. What remains speculative</a></li><li><a href="#35-architecture-changes-recommended">35. Architecture changes recommended</a></li><li><a href="#a-define-a-semantic-ir">A. Define a Semantic IR</a></li><li><a href="#b-keep-the-language-restricted">B. Keep the language restricted</a></li><li><a href="#c-generate-runtime-legality-first">C. Generate runtime legality first</a></li><li><a href="#d-generate-capability-metadata">D. Generate capability metadata</a></li><li><a href="#e-generate-conformance-tests">E. Generate conformance tests</a></li><li><a href="#f-generate-structural-documentation">F. Generate structural documentation</a></li><li><a href="#g-generate-agent-facing-semantic-slices">G. Generate agent-facing semantic slices</a></li><li><a href="#h-generate-impact-graph">H. Generate impact graph</a></li><li><a href="#i-attach-semantic-provenance">I. Attach semantic provenance</a></li><li><a href="#j-add-opaque-predicate-tracking">J. Add opaque predicate tracking</a></li><li><a href="#k-add-independent-validation">K. Add independent validation</a></li><li><a href="#l-no-round-trip-editing">L. No round-trip editing</a></li><li><a href="#m-support-explicit-semantic-versions">M. Support explicit semantic versions</a></li><li><a href="#n-provide-escape-hatches">N. Provide escape hatches</a></li><li><a href="#36-minimum-viable-semantic-compiler-scope">36. Minimum viable semantic compiler scope</a></li><li><a href="#phase-1-authoritative-model">Phase 1 — authoritative model</a></li><li><a href="#phase-2-generated-outputs">Phase 2 — generated outputs</a></li><li><a href="#phase-3-obligations-and-effects">Phase 3 — obligations and effects</a></li><li><a href="#do-not-initially-generate">Do not initially generate</a></li><li><a href="#first-adoption-principle">First adoption principle</a></li><li><a href="#37-final-verdict">37. Final verdict</a></li><li><a href="#does-duplicate-representation-materially-cause-semantic-drift-">Does duplicate representation materially cause semantic drift?</a></li><li><a href="#does-generation-from-one-semantic-source-reduce-drift-">Does generation from one semantic source reduce drift?</a></li><li><a href="#does-semantic-compilation-plausibly-reduce-ai-agent-context-cost-">Does semantic compilation plausibly reduce AI-agent context cost?</a></li><li><a href="#does-it-plausibly-enable-smaller-models-">Does it plausibly enable smaller models?</a></li><li><a href="#is-the-concept-fundamentally-">Is the concept fundamentally:</a></li><li><a href="#most-valuable-generated-artifact">Most valuable generated artifact</a></li><li><a href="#most-dangerous-correlated-failure-mode">Most dangerous correlated-failure mode</a></li><li><a href="#best-independent-validation-mechanism">Best independent validation mechanism</a></li><li><a href="#most-important-lesson-from-historical-mde">Most important lesson from historical MDE</a></li><li><a href="#minimum-semantic-scope-worth-centralizing">Minimum semantic scope worth centralizing</a></li><li><a href="#biggest-economic-opportunity">Biggest economic opportunity</a></li><li><a href="#biggest-adoption-risk">Biggest adoption risk</a></li><li><a href="#most-important-missing-experiment">Most important missing experiment</a></li><li><a href="#research-synthesis">Research synthesis</a></li><li><a href="#key-sources">Key sources</a></li><li><a href="#model-driven-engineering-and-industrial-evidence">Model-driven engineering and industrial evidence</a></li><li><a href="#protocol-schema-compilation">Protocol/schema compilation</a></li><li><a href="#state-executable-specification">State/executable specification</a></li><li><a href="#policy-as-code">Policy-as-code</a></li><li><a href="#traceability">Traceability</a></li><li><a href="#current-ai-agent-evidence">Current AI-agent evidence</a></li><li><a href="#important-source-quality-note">Important source-quality note</a></li> </ol> </aside> <section class="document-body"><h1 id="ai-research-mission-08--semantic-compilation-and-specification-drift">AI Research Mission 08 — Semantic Compilation and Specification Drift</h1>
+<p><strong>Research report</strong><br>
+<strong>Date:</strong> 2026-08-14<br>
+<strong>Method:</strong> Literature review, empirical software-engineering research, model-driven engineering research, requirements traceability research, primary compiler/schema/policy documentation, and current AI-agent research.</p>
+<hr>
+<h1 id="1-executive-verdict">1. Executive verdict</h1>
+<h2 id="bottom-line">Bottom line</h2>
+<p>The central hypothesis survives skeptical review, but in a <strong>narrower and more defensible form</strong> than a traditional model-driven architecture.</p>
+<p>There is substantial evidence that software systems accumulate multiple representations of the same meaning across requirements, code, tests, interfaces, configuration, documentation, and operational artifacts, and that maintaining consistency and traceability across those representations is difficult and error-prone. Model-driven engineering (MDE), schema compilers, protocol definition languages, policy-as-code systems, and state-machine specifications all demonstrate that a single authoritative representation can mechanically produce or govern multiple derivative artifacts.</p>
+<p>However, historical MDE also shows why the obvious conclusion—</p>
+<blockquote>
+<p>"Put the whole application in one model and generate everything"</p>
+</blockquote>
+<p>—is dangerous.</p>
+<p>Broad MDE approaches have repeatedly encountered:</p>
+<ul>
+<li>weak industrial adoption;</li>
+<li>tooling friction;</li>
+<li>model/code synchronization problems;</li>
+<li>generator maintenance cost;</li>
+<li>difficulty expressing all necessary implementation detail;</li>
+<li>developer loss of control;</li>
+<li>round-trip engineering complexity;</li>
+<li>organizational resistance;</li>
+<li>rigidity when the modeling layer becomes too broad.</li>
+</ul>
+<p>The research therefore supports a <strong>minimum semantic core</strong>, not a universal application model.</p>
+<p>The most defensible architecture is:</p>
+<pre><code class="language-text">Authoritative Semantic Core
+    |
+    |-- consequential states
+    |-- legal transitions
+    |-- invariants
+    |-- capabilities / authority
+    |-- obligations
+    |-- policy predicates
+    |-- evidence requirements
+    |-- consequential effect semantics
+    |-- semantic dependencies
+    |
+    v
+Semantic IR
+    |
+    +--> runtime guards
+    +--> state/type projections
+    +--> capability derivation
+    +--> obligation rules
+    +--> agent tool constraints
+    +--> conformance tests
+    +--> structural documentation
+    +--> planning graph
+    +--> policy explanations
+    +--> dependency / impact reports
+    +--> analyzers
+</code></pre>
+<p>while leaving outside the semantic core:</p>
+<ul>
+<li>ordinary algorithms;</li>
+<li>presentation;</li>
+<li>layout;</li>
+<li>infrastructure details unless consequential;</li>
+<li>integration mechanics;</li>
+<li>performance optimizations;</li>
+<li>persistence implementation;</li>
+<li>incidental computation.</li>
+</ul>
+<p>The most important safety correction is:</p>
+<blockquote>
+<p><strong>Generated agreement is not independent evidence of correctness.</strong></p>
+</blockquote>
+<p>If the specification is wrong and runtime, generated tests, documentation, and agent tools are all derived from it, the system can become consistently wrong.</p>
+<p>Therefore semantic compilation requires an independent validation layer.</p>
+<p>Recommended independent oracles include:</p>
+<ul>
+<li>domain-owned acceptance examples;</li>
+<li>independently authored invariants;</li>
+<li>regulatory or contractual requirements;</li>
+<li>hidden acceptance tests;</li>
+<li>property-based tests whose properties come from outside the generator;</li>
+<li>mutation testing of the semantic specification;</li>
+<li>production observations;</li>
+<li>differential testing;</li>
+<li>domain review of semantic diffs.</li>
+</ul>
+<h2 id="overall-judgment">Overall judgment</h2>
+<p>The idea is best characterized as:</p>
+<blockquote>
+<p><strong>a hybrid of model-driven engineering, executable specification, policy-as-code, schema compilation, and compiler-based static analysis, specialized around consequential business semantics and AI-agent control.</strong></p>
+</blockquote>
+<p>The concept is not fundamentally unprecedented.</p>
+<p>The potentially novel and economically important part is the <strong>scope and target</strong>:</p>
+<ol>
+<li>encode only consequential semantic meaning;</li>
+<li>compile it into multiple operational projections;</li>
+<li>use the same semantic graph as an agent control surface;</li>
+<li>expose change impact mechanically;</li>
+<li>reduce the amount of semantic reconstruction an AI agent must perform.</li>
+</ol>
+<p>That narrower architecture avoids much of historical MDE's overreach while preserving its strongest advantage: <strong>derivation replaces duplicated manual representation</strong>.</p>
+<hr>
+<h1 id="2-definition-of-specification-drift">2. Definition of specification drift</h1>
+<p>A useful definition is:</p>
+<blockquote>
+<p><strong>Specification drift occurs when two or more artifacts intended to express, enforce, predict, explain, or test the same semantic rule cease to denote compatible behavior.</strong></p>
+</blockquote>
+<p>This is broader than documentation becoming stale.</p>
+<p>Examples include:</p>
+<pre><code class="language-text">Frontend:
+    enables Ship
+
+Backend:
+    rejects Ship
+</code></pre>
+<pre><code class="language-text">Runtime:
+    RefundWindow = 14 days
+
+Test:
+    expects 30 days
+</code></pre>
+<pre><code class="language-text">Agent tool description:
+    retry is legal
+
+Runtime:
+    retry capability removed
+</code></pre>
+<pre><code class="language-text">Policy document:
+    evidence freshness = 24h
+
+Policy engine:
+    evidence freshness = 4h
+</code></pre>
+<h2 id="what-is-not-automatically-drift">What is not automatically drift</h2>
+<p>Differences may be intentional.</p>
+<p>Examples:</p>
+<ul>
+<li>staged rollout;</li>
+<li>backward-compatible versions;</li>
+<li>geography-specific policy;</li>
+<li>tenant-specific policy;</li>
+<li>feature experiments;</li>
+<li>old and new service versions during rolling deployment.</li>
+</ul>
+<p>Therefore the definition should include:</p>
+<pre><code class="language-text">intended semantic equivalence
+</code></pre>
+<p>rather than simply:</p>
+<pre><code class="language-text">artifact texts differ
+</code></pre>
+<p>A more formal view:</p>
+<p>Let artifacts <code>A1...An</code> each project some intended semantic rule <code>R</code>.</p>
+<p>Drift exists when:</p>
+<pre><code class="language-text">Interpret(Ai, context) != Interpret(Aj, context)
+</code></pre>
+<p>for a context in which the artifacts are contractually intended to agree.</p>
+<hr>
+<h1 id="3-evidence-that-duplicated-semantics-drift">3. Evidence that duplicated semantics drift</h1>
+<p>The research literature rarely uses exactly the phrase "specification drift" for the whole problem, but several established research areas study its components:</p>
+<ul>
+<li>requirements traceability;</li>
+<li>model/code consistency;</li>
+<li>model synchronization;</li>
+<li>documentation/code consistency;</li>
+<li>configuration drift;</li>
+<li>schema evolution;</li>
+<li>policy consistency;</li>
+<li>model transformations.</li>
+</ul>
+<p>Requirements traceability research exists precisely because meaning is spread across artifacts and links between those artifacts are difficult to maintain.</p>
+<p>Recent empirical research on open-source release artifacts found large quantities of missing and broken traceability links, illustrating that synchronization between related artifacts is routinely incomplete.</p>
+<p>Industrial MDE studies likewise report challenges maintaining relationships between models and implementations.</p>
+<p>The evidence supports a moderate-to-strong general claim:</p>
+<blockquote>
+<p><strong>The more independently maintained representations of the same rule exist, the more opportunities exist for inconsistent updates.</strong></p>
+</blockquote>
+<p>That does not mean multiplicity is always bad. Independent representations can provide valuable independent validation.</p>
+<p>The key distinction is:</p>
+<pre><code class="language-text">unintentional duplicate authority
+</code></pre>
+<p>versus:</p>
+<pre><code class="language-text">intentional independent oracle
+</code></pre>
+<p>The first creates drift risk.</p>
+<p>The second can detect correlated mistakes.</p>
+<p>This distinction should become explicit in the architecture.</p>
+<hr>
+<h1 id="4-model-driven-engineering-comparison">4. Model-driven engineering comparison</h1>
+<h2 id="what-mde-is">What MDE is</h2>
+<p>Model-Driven Engineering treats models as first-class engineering artifacts and uses transformations to derive other models or executable artifacts.</p>
+<p>Industrial empirical work has found real benefits in some contexts, but adoption remains uneven.</p>
+<p>Research reports:</p>
+<ul>
+<li>productivity benefits in suitable domains;</li>
+<li>ability to work at higher abstraction;</li>
+<li>automation of repetitive implementation;</li>
+<li>improved consistency in some generated portions;</li>
+<li>reuse across platforms.</li>
+</ul>
+<p>It also reports:</p>
+<ul>
+<li>tooling and usability barriers;</li>
+<li>steep learning curves;</li>
+<li>organizational adoption difficulty;</li>
+<li>model/code synchronization problems;</li>
+<li>generator complexity;</li>
+<li>limited flexibility;</li>
+<li>dependency on specialized modeling infrastructure.</li>
+</ul>
+<h2 id="why-the-proposed-architecture-differs">Why the proposed architecture differs</h2>
+<p>Traditional ambitious MDE often attempted to raise a large portion of software design into models.</p>
+<p>The proposed architecture should instead state:</p>
+<pre><code class="language-text">semantic model != application model
+</code></pre>
+<p>It should encode only semantic constraints whose independent duplication is expensive or dangerous.</p>
+<p>That makes this closer to:</p>
+<pre><code class="language-text">domain compiler
+</code></pre>
+<p>than:</p>
+<pre><code class="language-text">whole-system model-driven development
+</code></pre>
+<h2 id="best-lesson-from-historical-mde">Best lesson from historical MDE</h2>
+<p>The critical lesson is:</p>
+<blockquote>
+<p><strong>Narrow abstraction boundaries survive better than universal models.</strong></p>
+</blockquote>
+<p>Protocol Buffers works partly because it models data contracts, not entire applications.</p>
+<p>OPA works because it models policy decisions, not business implementation.</p>
+<p>SCXML models state-machine behavior, not every algorithm.</p>
+<p>The semantic compiler should follow the same pattern.</p>
+<hr>
+<h1 id="5-executable-specification-comparison">5. Executable-specification comparison</h1>
+<p>Executable specifications attempt to make requirements directly testable or runnable.</p>
+<p>Related traditions include:</p>
+<ul>
+<li>specification by example;</li>
+<li>BDD;</li>
+<li>executable state machines;</li>
+<li>formal executable models;</li>
+<li>contract languages.</li>
+</ul>
+<p>The proposed system shares the executable-spec principle:</p>
+<pre><code class="language-text">the rule should participate in runtime behavior
+</code></pre>
+<p>rather than merely describe it.</p>
+<p>However, a semantic specification should not necessarily execute all implementation logic.</p>
+<p>For example:</p>
+<pre><code class="language-text">Transition CapturePayment
+Requires:
+    Payment = Authorized
+</code></pre>
+<p>can generate the guard and capability rule.</p>
+<p>But the implementation of the payment-provider call remains handwritten.</p>
+<p>This is an important architectural boundary:</p>
+<pre><code class="language-text">specification owns legality
+implementation owns mechanism
+</code></pre>
+<p>This prevents the semantic specification from becoming a second general-purpose programming language.</p>
+<hr>
+<h1 id="6-dsl-comparison">6. DSL comparison</h1>
+<h2 id="textual-dsl">Textual DSL</h2>
+<p>Advantages:</p>
+<ul>
+<li>compact;</li>
+<li>reviewable;</li>
+<li>diff-friendly;</li>
+<li>easier for AI to generate;</li>
+<li>potentially token efficient.</li>
+</ul>
+<p>Disadvantages:</p>
+<ul>
+<li>language tooling required;</li>
+<li>syntax must be learned;</li>
+<li>parser/compiler maintenance.</li>
+</ul>
+<h2 id="jsonyaml-representation">JSON/YAML representation</h2>
+<p>Advantages:</p>
+<ul>
+<li>ubiquitous tooling;</li>
+<li>easy serialization;</li>
+<li>straightforward machine processing.</li>
+</ul>
+<p>Disadvantages:</p>
+<ul>
+<li>verbose;</li>
+<li>weak human readability at scale;</li>
+<li>structural syntax can dominate semantics;</li>
+<li>YAML has ambiguity pitfalls.</li>
+</ul>
+<h2 id="embedded-dsl">Embedded DSL</h2>
+<p>Advantages:</p>
+<ul>
+<li>host-language tooling;</li>
+<li>refactoring support;</li>
+<li>no separate parser;</li>
+<li>easier adoption.</li>
+</ul>
+<p>Disadvantages:</p>
+<ul>
+<li>host language can leak into semantics;</li>
+<li>arbitrary callbacks can destroy analyzability;</li>
+<li>harder to maintain language neutrality.</li>
+</ul>
+<h2 id="graphical-dsl">Graphical DSL</h2>
+<p>Advantages:</p>
+<ul>
+<li>useful for state relationships;</li>
+<li>strong visualization.</li>
+</ul>
+<p>Disadvantages:</p>
+<ul>
+<li>poor source control;</li>
+<li>difficult textual diff;</li>
+<li>less convenient for AI;</li>
+<li>historic MDE tooling friction.</li>
+</ul>
+<h2 id="recommendation">Recommendation</h2>
+<p>Use:</p>
+<pre><code class="language-text">small textual DSL
+or
+restricted host-language AST builder
+</code></pre>
+<p>whose output becomes a stable semantic IR.</p>
+<p>The important property is not syntax.</p>
+<p>It is:</p>
+<blockquote>
+<p>consequential rules must remain statically inspectable.</p>
+</blockquote>
+<p>Avoid unrestricted host-language functions inside semantic predicates where possible.</p>
+<hr>
+<h1 id="7-schemaprotocol-compiler-comparison">7. Schema/protocol compiler comparison</h1>
+<p>Protocol Buffers is one of the strongest precedents.</p>
+<p>A <code>.proto</code> definition can generate language-specific representations for many target languages.</p>
+<p>The key lesson is:</p>
+<pre><code class="language-text">one contract
+    ->
+many projections
+</code></pre>
+<p>without pretending that the contract defines the whole application.</p>
+<p>Protocol compilers reduce drift in:</p>
+<ul>
+<li>field names;</li>
+<li>field types;</li>
+<li>serialization structure;</li>
+<li>enum values;</li>
+<li>client/server type representations.</li>
+</ul>
+<p>They do not normally encode:</p>
+<ul>
+<li>business transition legality;</li>
+<li>evidence requirements;</li>
+<li>obligations;</li>
+<li>business policy;</li>
+<li>retry semantics;</li>
+<li>authority.</li>
+</ul>
+<p>The proposed semantic compiler is therefore an incremental abstraction layer above ordinary protocol compilers.</p>
+<p>A good architecture may even use existing compilers as downstream targets:</p>
+<pre><code class="language-text">Semantic IR
+    ->
+API projection
+    ->
+OpenAPI / protobuf
+    ->
+language clients
+</code></pre>
+<p>rather than reimplementing protocol generation.</p>
+<hr>
+<h1 id="8-policy-as-code-comparison">8. Policy-as-code comparison</h1>
+<p>OPA/Rego and Cedar demonstrate the value of extracting decision logic from application code.</p>
+<p>OPA explicitly separates policy decision-making from enforcement.</p>
+<p>Cedar provides a formal authorization policy language and deterministic evaluation model.</p>
+<p>Current AWS AgentCore documentation applies Cedar directly to agent tool authorization, showing that policy-controlled tool availability is no longer merely theoretical.</p>
+<p>This strongly supports one component of the proposed architecture:</p>
+<pre><code class="language-text">semantic/policy source
+    ->
+deterministic agent action restriction
+</code></pre>
+<p>But policy engines do not automatically provide:</p>
+<ul>
+<li>domain state evolution;</li>
+<li>obligations;</li>
+<li>effect uncertainty;</li>
+<li>planning graphs;</li>
+<li>state migrations;</li>
+<li>domain type generation.</li>
+</ul>
+<p>Therefore policy-as-code is an important subset, not a complete substitute.</p>
+<hr>
+<h1 id="9-generated-test-analysis">9. Generated-test analysis</h1>
+<p>Generated tests can reduce <strong>structural test drift</strong>.</p>
+<p>If a semantic model declares:</p>
+<pre><code class="language-text">States:
+    Authorized
+    Captured
+    Refunded
+
+Transition:
+    Capture: Authorized -> Captured
+</code></pre>
+<p>the compiler can generate conformance tests such as:</p>
+<ul>
+<li>Capture succeeds from Authorized under required conditions;</li>
+<li>Capture is unavailable from Refunded;</li>
+<li>all known states participate in required exhaustive interpretations.</li>
+</ul>
+<p>This helps ensure implementations conform to the specification.</p>
+<h2 id="but-generated-tests-are-not-sufficient-oracles">But generated tests are not sufficient oracles</h2>
+<p>Suppose the specification incorrectly says:</p>
+<pre><code class="language-text">RefundWindow = 30 days
+</code></pre>
+<p>when the business requirement is 14 days.</p>
+<p>Generated implementation:</p>
+<pre><code class="language-text">30 days
+</code></pre>
+<p>Generated tests:</p>
+<pre><code class="language-text">expect 30 days
+</code></pre>
+<p>Generated documentation:</p>
+<pre><code class="language-text">30 days
+</code></pre>
+<p>Everything passes.</p>
+<p>This is correlated failure.</p>
+<p>Therefore generated tests should be called:</p>
+<pre><code class="language-text">conformance tests
+</code></pre>
+<p>not:</p>
+<pre><code class="language-text">correctness tests
+</code></pre>
+<p>They answer:</p>
+<blockquote>
+<p>Does implementation match the semantic specification?</p>
+</blockquote>
+<p>They do not independently answer:</p>
+<blockquote>
+<p>Is the semantic specification correct?</p>
+</blockquote>
+<hr>
+<h1 id="10-documentation-generation-analysis">10. Documentation generation analysis</h1>
+<p>Structural documentation is an excellent generation target.</p>
+<p>Good candidates:</p>
+<ul>
+<li>state lists;</li>
+<li>transition tables;</li>
+<li>capability tables;</li>
+<li>obligation definitions;</li>
+<li>policy dependency graphs;</li>
+<li>evidence requirements;</li>
+<li>agent tool documentation;</li>
+<li>API semantic constraints.</li>
+</ul>
+<p>These artifacts can remain mechanically synchronized.</p>
+<p>But generated documentation is weaker for:</p>
+<ul>
+<li>rationale;</li>
+<li>historical context;</li>
+<li>strategic intent;</li>
+<li>examples;</li>
+<li>tradeoffs;</li>
+<li>business narrative.</li>
+</ul>
+<p>Recommended split:</p>
+<pre><code class="language-text">Generated:
+    what the system currently permits/requires
+
+Handwritten:
+    why the business chose those semantics
+</code></pre>
+<p>The semantic rule should link to rationale/provenance.</p>
+<p>This lets agents retrieve explanation only when required.</p>
+<hr>
+<h1 id="11-agent-tool-generation-analysis">11. Agent tool-generation analysis</h1>
+<p>This is one of the highest-value AI-specific targets.</p>
+<p>Current agent systems frequently expose tools through schemas and textual descriptions.</p>
+<p>If those schemas are maintained independently from runtime semantics, drift can create situations where:</p>
+<pre><code class="language-text">tool says operation is available
+runtime says it is illegal
+</code></pre>
+<p>or:</p>
+<pre><code class="language-text">tool docs say parameter is optional
+runtime requires it
+</code></pre>
+<p>A semantic compiler can instead derive:</p>
+<pre><code class="language-text">semantic transition
+    ->
+runtime command
+    ->
+tool schema
+    ->
+tool availability
+    ->
+blocked explanation
+</code></pre>
+<p>from linked authoritative information.</p>
+<p>Recent 2026 research supports the importance of structured tool schemas.</p>
+<p>A controlled schema-first study investigated structured tool contracts versus free-form documentation under constrained interaction budgets.</p>
+<p>HyperAgent models tools and their input/output schemas as a graph and reports improved completion with reduced redundant API calls, LLM interactions, and token consumption.</p>
+<p>TSCG reports large token reductions and substantial accuracy improvements for smaller models by compiling verbose JSON tool schemas into more model-efficient representations.</p>
+<p>These studies do <strong>not</strong> prove semantic compilation.</p>
+<p>They do support the lower-level mechanism:</p>
+<blockquote>
+<p>machine-readable structure and better tool representations materially affect agent economics and reliability.</p>
+</blockquote>
+<hr>
+<h1 id="12-prompt-generation-analysis">12. Prompt-generation analysis</h1>
+<p>Hand-maintained prompts are dangerous places for authoritative business rules.</p>
+<p>Example:</p>
+<pre><code class="language-text">Never retry a refund when outcome is unknown.
+</code></pre>
+<p>If runtime capability rules already encode this, the prompt is redundant.</p>
+<p>The strongest architecture is:</p>
+<pre><code class="language-text">Prompt:
+    general operating instructions
+
+Runtime:
+    authoritative legal action constraints
+</code></pre>
+<p>Semantic compilation can still generate compact context such as:</p>
+<pre><code class="language-text">Current:
+    RefundOutcome = Unknown
+
+Required:
+    ReconcileRefund
+
+Available:
+    QueryProvider
+    ReconcileSettlement
+</code></pre>
+<p>This is better described as:</p>
+<pre><code class="language-text">agent semantic projection
+</code></pre>
+<p>than a giant generated prompt.</p>
+<p>Avoid dumping the full semantic specification into context.</p>
+<hr>
+<h1 id="13-runtime-guard-generation-analysis">13. Runtime-guard generation analysis</h1>
+<p>Runtime guards are probably the single most valuable generated artifact.</p>
+<p>Why?</p>
+<p>Documentation can drift without immediately causing bad execution.</p>
+<p>A missing runtime guard allows illegal behavior.</p>
+<p>Given:</p>
+<pre><code class="language-text">Ship requires:
+    Order = Approved
+    Payment = Captured
+    Customer = Verified
+</code></pre>
+<p>the semantic compiler can generate or interpret the authoritative guard.</p>
+<p>From the same predicate it can derive:</p>
+<pre><code class="language-text">CanShip
+</code></pre>
+<p>and blocked explanations:</p>
+<pre><code class="language-text">Ship unavailable because Payment != Captured.
+</code></pre>
+<p>This eliminates independent copies of the most consequential rule.</p>
+<p>Recommendation:</p>
+<blockquote>
+<p>Runtime legality should either be directly interpreted from the semantic IR or generated in a way that is mechanically tied to the IR.</p>
+</blockquote>
+<hr>
+<h1 id="14-planning-graph-generation-analysis">14. Planning-graph generation analysis</h1>
+<p>If transitions have explicit:</p>
+<ul>
+<li>preconditions;</li>
+<li>effects;</li>
+<li>required authority;</li>
+<li>required evidence;</li>
+</ul>
+<p>then a planning graph can be derived.</p>
+<p>This matters for agents because conventional planning representations often duplicate runtime semantics.</p>
+<p>Example:</p>
+<pre><code class="language-text">Planner says:
+    CapturePayment -> Captured
+
+Runtime says:
+    CapturePayment legal only with FraudReviewComplete
+</code></pre>
+<p>If the planner graph is handcrafted, it can become stale.</p>
+<p>Generated planning structure makes:</p>
+<pre><code class="language-text">planning model
+</code></pre>
+<p>a projection of:</p>
+<pre><code class="language-text">execution model
+</code></pre>
+<p>This could remove an important class of agent planning error.</p>
+<p>Current tool-schema graph research such as HyperAgent provides contemporary evidence that graph-structured tool dependencies can reduce agent exploration and redundant calls.</p>
+<hr>
+<h1 id="15-impact-analysis-generation">15. Impact-analysis generation</h1>
+<p>Explicit semantic dependencies create a mechanical impact graph.</p>
+<p>Example:</p>
+<pre><code class="language-text">PaymentState.Captured
+    -> CanShip
+    -> ShipOrder transition
+    -> Fulfillment obligation
+    -> Agent tool availability
+    -> Shipping documentation
+</code></pre>
+<p>If <code>Captured</code> semantics change, a compiler can report affected nodes.</p>
+<p>This is stronger than text search because it operates over declared semantic dependencies.</p>
+<p>Requirements traceability literature supports the value of knowing relationships between artifacts for maintenance, while also documenting how difficult maintaining those links manually can be.</p>
+<p>Semantic compilation can make many trace links intrinsic rather than retroactively recovered.</p>
+<hr>
+<h1 id="16-semantic-migration-analysis">16. Semantic migration analysis</h1>
+<p>Consider:</p>
+<pre><code class="language-text">Approved
+</code></pre>
+<p>becoming:</p>
+<pre><code class="language-text">ConditionallyApproved
+FullyApproved
+</code></pre>
+<p>A weak implementation may silently treat both new states like old <code>Approved</code>.</p>
+<p>A semantic compiler can require every dependent exhaustive decision to address both new states.</p>
+<p>This resembles:</p>
+<ul>
+<li>schema migration;</li>
+<li>type evolution;</li>
+<li>compiler exhaustiveness checking;</li>
+<li>protocol evolution.</li>
+</ul>
+<p>Recommended semantic migration rule:</p>
+<blockquote>
+<p>State splitting must not automatically inherit consequential permissions unless explicitly declared.</p>
+</blockquote>
+<p>This turns semantic change into a compile-time impact event.</p>
+<hr>
+<h1 id="17-round-trip-engineering-lessons">17. Round-trip engineering lessons</h1>
+<p>Historical round-trip engineering attempted to keep:</p>
+<pre><code class="language-text">model &#x3C;-> generated/edited code
+</code></pre>
+<p>synchronized.</p>
+<p>This is difficult because once both sides can be edited, authority becomes ambiguous.</p>
+<p>The proposed system should avoid this.</p>
+<p>Recommended rule:</p>
+<pre><code class="language-text">generated semantic artifacts are not authoritative
+</code></pre>
+<p>They should either:</p>
+<ul>
+<li>be regenerated;</li>
+<li>be validated against an embedded semantic hash;</li>
+<li>be replaced through explicit extension points.</li>
+</ul>
+<p>Do not attempt arbitrary reverse synchronization from edited generated code back into the semantic model.</p>
+<p>If a developer needs semantic change:</p>
+<pre><code class="language-text">edit semantic source
+</code></pre>
+<p>not:</p>
+<pre><code class="language-text">edit generated guard
+</code></pre>
+<p>This is one of the clearest lessons from MDE history.</p>
+<hr>
+<h1 id="18-generatedhandwritten-boundary-recommendation">18. Generated/handwritten boundary recommendation</h1>
+<h2 id="generate-or-interpret">Generate or interpret</h2>
+<p>Good candidates:</p>
+<ul>
+<li>state representations;</li>
+<li>transition identifiers;</li>
+<li>legal-transition guards;</li>
+<li>capability derivation;</li>
+<li>obligation-generation rules;</li>
+<li>semantic error codes;</li>
+<li>conformance tests;</li>
+<li>tool schemas;</li>
+<li>tool availability;</li>
+<li>structural docs;</li>
+<li>semantic dependency graph;</li>
+<li>analyzer metadata;</li>
+<li>planning projections.</li>
+</ul>
+<h2 id="handwrite">Handwrite</h2>
+<p>Good candidates:</p>
+<ul>
+<li>domain algorithms;</li>
+<li>provider adapters;</li>
+<li>persistence details;</li>
+<li>UI composition;</li>
+<li>performance-sensitive internals;</li>
+<li>non-semantic orchestration;</li>
+<li>rendering;</li>
+<li>complex external calculations;</li>
+<li>low-consequence incidental logic.</li>
+</ul>
+<h2 id="boundary-principle">Boundary principle</h2>
+<p>Generate:</p>
+<pre><code class="language-text">what must remain semantically synchronized
+</code></pre>
+<p>Handwrite:</p>
+<pre><code class="language-text">how the behavior is technically achieved
+</code></pre>
+<hr>
+<h1 id="19-specification-expressiveness-recommendation">19. Specification expressiveness recommendation</h1>
+<p>The DSL must be expressive enough for meaningful semantic constraints but restricted enough for analysis.</p>
+<p>Recommended primitives:</p>
+<pre><code class="language-text">State
+Transition
+Invariant
+Requirement
+Authority
+EvidenceRequirement
+CapabilityRule
+ObligationRule
+EffectPolicy
+Dependency
+PolicyVersion
+</code></pre>
+<p>Predicates should use a restricted expression language supporting:</p>
+<ul>
+<li>equality;</li>
+<li>Boolean composition;</li>
+<li>set membership;</li>
+<li>comparisons;</li>
+<li>temporal/freshness operators;</li>
+<li>references to named semantic facts.</li>
+</ul>
+<p>Avoid unrestricted loops, I/O, reflection, dynamic evaluation, and arbitrary mutation.</p>
+<h2 id="escape-hatch">Escape hatch</h2>
+<p>Some rules require host computation.</p>
+<p>Represent these explicitly:</p>
+<pre><code class="language-text">ExternalPredicate {
+    name
+    inputs
+    deterministic?
+    version
+    owner
+}
+</code></pre>
+<p>The compiler should mark downstream analysis as partially opaque.</p>
+<p>This is much better than silently allowing arbitrary code.</p>
+<hr>
+<h1 id="20-semantic-coverage-model">20. Semantic coverage model</h1>
+<p>Define:</p>
+<pre><code class="language-text">Semantic Coverage =
+    consequential rules represented in semantic model
+    -------------------------------------------------
+    known consequential rules
+</code></pre>
+<p>The denominator cannot be mechanically known with certainty.</p>
+<p>Therefore coverage estimation requires:</p>
+<ul>
+<li>domain inventory;</li>
+<li>incident review;</li>
+<li>policy mapping;</li>
+<li>code search;</li>
+<li>expert review.</li>
+</ul>
+<p>A second metric is more objective:</p>
+<pre><code class="language-text">Derivation Coverage =
+    semantic derivative artifacts generated or validated
+    ----------------------------------------------------
+    known derivative artifacts representing semantic rules
+</code></pre>
+<p>A third critical metric:</p>
+<pre><code class="language-text">Independent Validation Coverage =
+    semantic rules with independent oracle
+    --------------------------------------
+    semantic rules
+</code></pre>
+<p>High derivation coverage with low independent validation coverage is dangerous.</p>
+<hr>
+<h1 id="21-drift-metrics">21. Drift metrics</h1>
+<p>Recommended metrics:</p>
+<h2 id="specification-drift-incident-rate">Specification Drift Incident Rate</h2>
+<pre><code class="language-text">cross-artifact inconsistencies
+------------------------------
+semantic changes
+</code></pre>
+<h2 id="duplicate-semantic-rule-count">Duplicate Semantic Rule Count</h2>
+<p>Independent manually maintained copies of the same consequential rule.</p>
+<h2 id="missed-artifact-rate">Missed Artifact Rate</h2>
+<pre><code class="language-text">required derivative updates missed
+----------------------------------
+required derivative updates
+</code></pre>
+<h2 id="stale-artifact-count">Stale Artifact Count</h2>
+<p>Number of derivative artifacts inconsistent with active semantic version.</p>
+<h2 id="rule-fan-out">Rule Fan-Out</h2>
+<p>Number of derivative artifacts influenced by one semantic rule.</p>
+<h2 id="change-error-rate">Change Error Rate</h2>
+<p>Defects caused by incomplete redistribution of semantic change.</p>
+<h2 id="semantic-coverage">Semantic Coverage</h2>
+<p>As defined above.</p>
+<h2 id="derivation-coverage">Derivation Coverage</h2>
+<p>As defined above.</p>
+<h2 id="independent-validation-coverage">Independent Validation Coverage</h2>
+<p>As defined above.</p>
+<h2 id="cost-per-correct-semantic-change">Cost per Correct Semantic Change</h2>
+<pre><code class="language-text">total agent + tool + human + repair cost
+---------------------------------------
+semantically correct completed changes
+</code></pre>
+<hr>
+<h1 id="22-ai-contexttoken-implications">22. AI context/token implications</h1>
+<p>This is one of the most plausible but incompletely proven benefits.</p>
+<p>Conventional agent task:</p>
+<pre><code class="language-text">Change shipment eligibility.
+</code></pre>
+<p>Agent may search:</p>
+<ul>
+<li>API handlers;</li>
+<li>service layer;</li>
+<li>SQL;</li>
+<li>frontend condition;</li>
+<li>tests;</li>
+<li>docs;</li>
+<li>tool descriptions;</li>
+<li>policy code.</li>
+</ul>
+<p>Semantic-compiler task:</p>
+<pre><code class="language-text">Change ShipmentEligibility rule.
+</code></pre>
+<p>Compiler returns:</p>
+<pre><code class="language-text">Affected:
+    Ship transition
+    CanShip
+    Shipment obligation
+    tool/ship_order
+    12 conformance tests
+    docs/shipping
+</code></pre>
+<p>The model no longer needs to discover all fan-out through probabilistic repository search.</p>
+<p>That is semantic context compression.</p>
+<p>Recent AI-agent research strengthens the plausibility of this mechanism:</p>
+<ul>
+<li>schema-first tool contracts improve reliability under constrained interaction;</li>
+<li>schema-graph planning can reduce redundant calls, model interactions, and tokens;</li>
+<li>deterministic tool-schema compilation can substantially compress representations and improve smaller-model tool accuracy.</li>
+</ul>
+<p>The exact savings from a full semantic compiler remain unmeasured.</p>
+<p>Therefore:</p>
+<p><strong>Evidence level: Moderate for mechanism, weak for exact economic magnitude.</strong></p>
+<hr>
+<h1 id="23-smaller-model-hypothesis">23. Smaller-model hypothesis</h1>
+<p>The argument is:</p>
+<pre><code class="language-text">Large model + implicit semantics
+</code></pre>
+<p>must infer:</p>
+<ul>
+<li>where rule lives;</li>
+<li>what artifacts duplicate it;</li>
+<li>what needs updating;</li>
+<li>what actions are legal.</li>
+</ul>
+<p>Whereas:</p>
+<pre><code class="language-text">Smaller model + explicit compiler
+</code></pre>
+<p>receives:</p>
+<ul>
+<li>authoritative rule;</li>
+<li>impact graph;</li>
+<li>generated derivatives;</li>
+<li>compiler diagnostics.</li>
+</ul>
+<p>Recent schema-compilation research reports particularly strong improvements for small and mid-size models when tool representations are transformed into more efficient structured forms.</p>
+<p>This supports the general mechanism.</p>
+<p>But no evidence found directly demonstrates:</p>
+<pre><code class="language-text">smaller model + semantic compiler
+>
+frontier model + conventional repository
+</code></pre>
+<p>for end-to-end software changes.</p>
+<p>That remains a high-value experiment.</p>
+<hr>
+<h1 id="24-wrong-spec-risk">24. Wrong-spec risk</h1>
+<p>This is the single most dangerous correctness risk.</p>
+<p>Example wrong semantic rule:</p>
+<pre><code class="language-text">CanShip = OrderApproved &#x26;&#x26; PaymentAuthorized
+</code></pre>
+<p>Correct rule should be:</p>
+<pre><code class="language-text">CanShip = OrderApproved &#x26;&#x26; PaymentCaptured
+</code></pre>
+<p>If the compiler generates:</p>
+<ul>
+<li>runtime guard;</li>
+<li>UI capability;</li>
+<li>test;</li>
+<li>agent tool;</li>
+<li>documentation;</li>
+</ul>
+<p>then every artifact agrees with the wrong rule.</p>
+<p>This creates:</p>
+<pre><code class="language-text">perfect internal consistency
++
+incorrect external behavior
+</code></pre>
+<p>The architecture therefore needs explicit epistemic discipline:</p>
+<blockquote>
+<p>The semantic model is authoritative for system behavior, not automatically authoritative for truth about what the business should do.</p>
+</blockquote>
+<p>That distinction is essential.</p>
+<hr>
+<h1 id="25-generator-bug-risk">25. Generator-bug risk</h1>
+<p>A generator bug creates correlated implementation failure.</p>
+<p>Example:</p>
+<p>Semantic rule:</p>
+<pre><code class="language-text">Payment = Captured
+</code></pre>
+<p>Generator accidentally emits:</p>
+<pre><code class="language-text">Payment != Captured
+</code></pre>
+<p>across multiple languages.</p>
+<p>Mitigations:</p>
+<ul>
+<li>deterministic generation;</li>
+<li>generator unit tests;</li>
+<li>golden-output tests;</li>
+<li>target-language compilation;</li>
+<li>independent conformance tests;</li>
+<li>cross-target differential tests;</li>
+<li>semantic hash metadata;</li>
+<li>compiler version pinning;</li>
+<li>reproducible builds;</li>
+<li>mutation testing;</li>
+<li>limited generator scope.</li>
+</ul>
+<p>The compiler becomes critical infrastructure and must be engineered accordingly.</p>
+<hr>
+<h1 id="26-independent-validation-model">26. Independent-validation model</h1>
+<p>A robust architecture should deliberately maintain <strong>two different paths</strong>:</p>
+<pre><code class="language-text">Semantic Source
+    ->
+Generated / constrained system
+</code></pre>
+<p>and:</p>
+<pre><code class="language-text">Independent Requirements / Examples / External Rules
+    ->
+Validation
+</code></pre>
+<p>Recommended independent validation stack:</p>
+<h2 id="1-domain-examples">1. Domain examples</h2>
+<p>Human/domain-owned examples:</p>
+<pre><code class="language-text">Given payment authorized but not captured
+Shipping must remain unavailable.
+</code></pre>
+<p>Do not generate these from the semantic rule.</p>
+<h2 id="2-property-tests">2. Property tests</h2>
+<p>Some properties should be independently stated:</p>
+<pre><code class="language-text">No shipment before monetary capture.
+</code></pre>
+<h2 id="3-regulatory--contractual-source-mapping">3. Regulatory / contractual source mapping</h2>
+<p>Link policy to external authority.</p>
+<h2 id="4-mutation-testing">4. Mutation testing</h2>
+<p>Mutate specification:</p>
+<ul>
+<li>remove prerequisite;</li>
+<li>invert guard;</li>
+<li>loosen authority;</li>
+<li>change freshness threshold.</li>
+</ul>
+<p>Independent tests should fail.</p>
+<h2 id="5-production-invariants">5. Production invariants</h2>
+<p>Monitor real outcomes against high-level expectations.</p>
+<h2 id="6-semantic-review">6. Semantic review</h2>
+<p>Review the semantic diff, not only generated implementation diff.</p>
+<p>This is analogous to reviewing database migration intent rather than thousands of derived data changes.</p>
+<hr>
+<h1 id="27-security-and-audit-implications">27. Security and audit implications</h1>
+<p>Semantic compilation can materially improve security where authority and transition legality are centralized.</p>
+<p>Advantages:</p>
+<ul>
+<li>one inspectable rule for authorization prerequisites;</li>
+<li>traceable policy version;</li>
+<li>deterministic runtime enforcement;</li>
+<li>generated agent capability restriction;</li>
+<li>consistent explanations;</li>
+<li>immutable provenance.</li>
+</ul>
+<p>An audit trail could contain:</p>
+<pre><code class="language-text">Transition:
+    CloseAccount
+
+AllowedBy:
+    AccountPolicy@12
+
+SemanticSpec:
+    8f31...
+
+Compiler:
+    0.4.2
+
+Authority:
+    AccountAdmin
+
+Evidence:
+    E-91, E-92
+</code></pre>
+<p>This is significantly more auditable than reconstructing behavior from:</p>
+<ul>
+<li>code;</li>
+<li>prompt;</li>
+<li>UI;</li>
+<li>logs;</li>
+<li>wiki pages.</li>
+</ul>
+<p>But centralization also increases blast radius.</p>
+<p>A wrong authority rule can affect every generated enforcement point.</p>
+<p>Therefore semantic policy changes may require stronger review than ordinary implementation changes.</p>
+<hr>
+<h1 id="28-startup-vs-enterprise-differences">28. Startup vs enterprise differences</h1>
+<h2 id="startup">Startup</h2>
+<p>Advantages:</p>
+<ul>
+<li>small codebase;</li>
+<li>easier architecture reset;</li>
+<li>few legacy representations;</li>
+<li>AI-heavy development may magnify context-compression value.</li>
+</ul>
+<p>Risks:</p>
+<ul>
+<li>high pivot frequency;</li>
+<li>uncertain domain semantics;</li>
+<li>compiler investment may outrun product learning;</li>
+<li>modeling can slow experiments.</li>
+</ul>
+<p>Recommendation:</p>
+<p>Use a <strong>minimal semantic core</strong> only for:</p>
+<ul>
+<li>money;</li>
+<li>access/security;</li>
+<li>consequential workflow state;</li>
+<li>external effects;</li>
+<li>compliance;</li>
+<li>durable obligations.</li>
+</ul>
+<p>Do not model speculative presentation or product experiments.</p>
+<h2 id="enterprise">Enterprise</h2>
+<p>Advantages:</p>
+<ul>
+<li>many duplicated representations;</li>
+<li>multiple teams;</li>
+<li>long system lifetime;</li>
+<li>higher rule fan-out;</li>
+<li>compliance/audit burden;</li>
+<li>larger AI repository-search cost.</li>
+</ul>
+<p>Risks:</p>
+<ul>
+<li>migration cost;</li>
+<li>multi-repository version skew;</li>
+<li>organization ownership;</li>
+<li>compatibility;</li>
+<li>old/new semantic versions coexist.</li>
+</ul>
+<p>Enterprises likely have a higher theoretical payoff but much harder adoption.</p>
+<hr>
+<h1 id="29-counterarguments">29. Counterarguments</h1>
+<h2 id="1-this-is-just-mde-and-mde-adoption-struggled">1. "This is just MDE, and MDE adoption struggled."</h2>
+<p>Partly correct.</p>
+<p>The architecture belongs to the MDE family.</p>
+<p>The response should not be to deny that lineage.</p>
+<p>Instead:</p>
+<blockquote>
+<p>adopt the parts of MDE that repeatedly work—narrow declarative contracts and generation—while avoiding universal application modeling and round-trip editing.</p>
+</blockquote>
+<h2 id="2-one-wrong-spec-creates-systemic-failure">2. "One wrong spec creates systemic failure."</h2>
+<p>Correct.</p>
+<p>This is the largest risk.</p>
+<p>Independent validation is mandatory.</p>
+<h2 id="3-generator-maintenance-may-exceed-drift-savings">3. "Generator maintenance may exceed drift savings."</h2>
+<p>Possible.</p>
+<p>This is why minimum scope and break-even measurement matter.</p>
+<h2 id="4-strong-types-and-tests-solve-enough">4. "Strong types and tests solve enough."</h2>
+<p>For local semantics, often yes.</p>
+<p>But they do not automatically synchronize:</p>
+<ul>
+<li>frontend;</li>
+<li>backend;</li>
+<li>SQL;</li>
+<li>agent tools;</li>
+<li>policy;</li>
+<li>docs;</li>
+<li>planning representations.</li>
+</ul>
+<p>Semantic compilation is most valuable where one rule crosses many boundaries.</p>
+<h2 id="5-good-documentation-and-review-are-cheaper">5. "Good documentation and review are cheaper."</h2>
+<p>For low-fan-out, low-consequence systems, likely yes.</p>
+<p>Semantic compilation should not be universal.</p>
+<h2 id="6-modern-ai-can-update-all-representations">6. "Modern AI can update all representations."</h2>
+<p>Possibly better than humans, but still probabilistic.</p>
+<p>It must first discover every representation.</p>
+<p>Semantic fan-out generation converts:</p>
+<pre><code class="language-text">search + inference
+</code></pre>
+<p>into:</p>
+<pre><code class="language-text">derivation
+</code></pre>
+<p>That distinction remains valuable even if AI improves.</p>
+<h2 id="7-generated-artifacts-are-difficult-to-debug">7. "Generated artifacts are difficult to debug."</h2>
+<p>True.</p>
+<p>Generated output should be simple, readable, source-mapped to semantic elements, and preferably minimal.</p>
+<p>Interpretation may be preferable to generation for some runtime rules.</p>
+<h2 id="8-dsl-becomes-a-second-programming-language">8. "DSL becomes a second programming language."</h2>
+<p>A real risk.</p>
+<p>Restrict it aggressively.</p>
+<p>If general computation becomes common, the architecture has failed its scope discipline.</p>
+<h2 id="9-developers-will-bypass-it">9. "Developers will bypass it."</h2>
+<p>Possible.</p>
+<p>Bypasses should be explicit, detectable, governed, and temporary.</p>
+<h2 id="10-generated-diffs-are-noisy">10. "Generated diffs are noisy."</h2>
+<p>True.</p>
+<p>Review semantic diffs as primary, and mechanically verify generated artifacts.</p>
+<h2 id="11-distributed-versions-destroy-single-source-assumptions">11. "Distributed versions destroy single-source assumptions."</h2>
+<p>They complicate deployment, not authority.</p>
+<p>Multiple deployed semantic versions can coexist intentionally.</p>
+<p>Version must be explicit.</p>
+<h2 id="12-business-rules-are-too-nuanced-for-dsls">12. "Business rules are too nuanced for DSLs."</h2>
+<p>Some are.</p>
+<p>Use opaque external predicates where unavoidable and measure the opaque percentage.</p>
+<h2 id="13-specification-becomes-bottleneck">13. "Specification becomes bottleneck."</h2>
+<p>Possible.</p>
+<p>Ownership and tooling quality matter.</p>
+<h2 id="14-product-iteration-slows">14. "Product iteration slows."</h2>
+<p>If semantic scope is too broad, yes.</p>
+<p>Experimental rules should be isolated or have shorter governance paths.</p>
+<h2 id="15-independent-validation-duplicates-meaning-again">15. "Independent validation duplicates meaning again."</h2>
+<p>Correct—and intentionally so.</p>
+<p>The goal is not zero duplicate expression.</p>
+<p>The goal is:</p>
+<pre><code class="language-text">one authoritative operational definition
++
+selected independent validation
+</code></pre>
+<p>rather than:</p>
+<pre><code class="language-text">many accidental authoritative definitions
+</code></pre>
+<hr>
+<h1 id="30-proposed-experiments">30. Proposed experiments</h1>
+<h2 id="experiment-a--rule-change">Experiment A — rule change</h2>
+<p>Rule:</p>
+<pre><code class="language-text">Refund window = 30 days
+</code></pre>
+<p>Change to:</p>
+<pre><code class="language-text">14 days
+</code></pre>
+<p>Compare conventional and semantic architectures.</p>
+<p>Measure:</p>
+<ul>
+<li>files read;</li>
+<li>edits;</li>
+<li>missed artifacts;</li>
+<li>tokens;</li>
+<li>tests;</li>
+<li>repair cycles;</li>
+<li>defects.</li>
+</ul>
+<h2 id="experiment-b--state-addition">Experiment B — state addition</h2>
+<p>Add:</p>
+<pre><code class="language-text">PaymentState.Disputed
+</code></pre>
+<p>Measure how many consequential interpretations are mechanically surfaced.</p>
+<h2 id="experiment-c--state-split">Experiment C — state split</h2>
+<pre><code class="language-text">Approved
+</code></pre>
+<p>becomes:</p>
+<pre><code class="language-text">ConditionallyApproved
+FullyApproved
+</code></pre>
+<p>Measure unintended old-rule inheritance.</p>
+<h2 id="experiment-d--policy-freshness">Experiment D — policy freshness</h2>
+<pre><code class="language-text">FraudEvidence &#x3C; 24h
+</code></pre>
+<p>becomes:</p>
+<pre><code class="language-text">&#x3C; 4h
+</code></pre>
+<p>Measure changes to:</p>
+<ul>
+<li>runtime;</li>
+<li>capabilities;</li>
+<li>obligations;</li>
+<li>tools;</li>
+<li>docs;</li>
+<li>tests.</li>
+</ul>
+<h2 id="experiment-e--tool-change">Experiment E — tool change</h2>
+<p>Rename and restructure a semantic transition.</p>
+<p>Measure runtime/tool-schema mismatch.</p>
+<h2 id="experiment-f--wrong-specification">Experiment F — wrong specification</h2>
+<p>Intentionally encode wrong business rule.</p>
+<p>Generated system should become consistently wrong.</p>
+<p>Independent oracle suite should detect it.</p>
+<p>This experiment is mandatory.</p>
+<h2 id="experiment-g--generator-defect">Experiment G — generator defect</h2>
+<p>Introduce target generator bug.</p>
+<p>Measure blast radius and detection time.</p>
+<h2 id="experiment-h--manual-artifact-edit">Experiment H — manual artifact edit</h2>
+<p>Modify generated output directly.</p>
+<p>CI should reject semantic hash mismatch or regeneration diff.</p>
+<h2 id="experiment-i--agent-semantic-change">Experiment I — agent semantic change</h2>
+<p>Task:</p>
+<pre><code class="language-text">Change shipment eligibility.
+</code></pre>
+<p>Compare:</p>
+<p>A. conventional repository<br>
+B. semantic compiler + impact report</p>
+<p>Measure:</p>
+<ul>
+<li>retrieval;</li>
+<li>files;</li>
+<li>tokens;</li>
+<li>tool calls;</li>
+<li>completion correctness.</li>
+</ul>
+<h2 id="experiment-j--longitudinal">Experiment J — longitudinal</h2>
+<p>Run 50-100 semantic changes.</p>
+<p>This matters because drift is cumulative.</p>
+<p>Track:</p>
+<ul>
+<li>stale artifacts;</li>
+<li>duplicate rules;</li>
+<li>compiler maintenance;</li>
+<li>context growth;</li>
+<li>incorrect semantic changes;</li>
+<li>cost.</li>
+</ul>
+<h2 id="experiment-k--smaller-models">Experiment K — smaller models</h2>
+<p>Compare multiple model sizes.</p>
+<p>Question:</p>
+<p>Can compiler structure compensate for lower model capability?</p>
+<hr>
+<h1 id="31-economic-model">31. Economic model</h1>
+<p>Let:</p>
+<pre><code class="language-text">Cconv =
+    discovery
+  + duplicated edits
+  + review
+  + missed-update repair
+  + drift defects
+  + agent inference
+</code></pre>
+<p>Semantic system:</p>
+<pre><code class="language-text">Csem =
+    semantic edit
+  + generation
+  + compiler amortization
+  + semantic review
+  + independent validation
+  + generator maintenance
+</code></pre>
+<p>One-time investment:</p>
+<pre><code class="language-text">I =
+    IR design
+  + compiler
+  + generators
+  + CI integration
+  + migration
+  + training
+</code></pre>
+<p>Break-even after N semantic changes when:</p>
+<pre><code class="language-text">I + Σ Csem(N)
+&#x3C;
+Σ Cconv(N)
+</code></pre>
+<p>The largest economic variables are likely:</p>
+<ul>
+<li>rule fan-out;</li>
+<li>semantic change frequency;</li>
+<li>system lifetime;</li>
+<li>consequence of missed updates;</li>
+<li>number of teams/languages;</li>
+<li>AI retrieval cost;</li>
+<li>compliance burden.</li>
+</ul>
+<hr>
+<h1 id="32-break-even-analysis">32. Break-even analysis</h1>
+<p>No defensible universal numeric threshold exists in the literature.</p>
+<p>The architecture is more likely to break even when:</p>
+<pre><code class="language-text">RuleFanOut × ChangeFrequency × Consequence
+</code></pre>
+<p>is high.</p>
+<h2 id="10-semantic-changes">10 semantic changes</h2>
+<p>Usually not enough to justify building a custom compiler unless effects are extremely high consequence.</p>
+<h2 id="100-changes">100 changes</h2>
+<p>Potential break-even territory for a focused compiler with high reuse.</p>
+<h2 id="1000-changes">1,000 changes</h2>
+<p>Likely increasingly attractive if the semantic model remains stable and generator maintenance is modest.</p>
+<h2 id="10000-changes">10,000 changes</h2>
+<p>Manual fan-out maintenance becomes expensive, but only if the compiler itself has not grown into an unmanageable platform.</p>
+<p>The right experiment is cumulative.</p>
+<p>A single change benchmark will underestimate both:</p>
+<ul>
+<li>drift accumulation;</li>
+<li>compiler maintenance.</li>
+</ul>
+<hr>
+<h1 id="33-what-is-already-established">33. What is already established</h1>
+<p>Strongly established or well supported:</p>
+<ol>
+<li>Model/code/artifact consistency is a recognized engineering problem.</li>
+<li>Requirements traceability across artifacts is valuable but costly to maintain manually.</li>
+<li>MDE can provide productivity and automation benefits in suitable domains.</li>
+<li>MDE adoption has meaningful tooling and organizational barriers.</li>
+<li>Round-trip synchronization between editable model and code is difficult.</li>
+<li>Protocol/schema compilers successfully generate multiple target artifacts from one contract.</li>
+<li>Policy-as-code can centralize deterministic decision logic.</li>
+<li>State-machine specifications can provide executable behavioral models.</li>
+<li>Generated tests only prove conformance to the specification they are derived from.</li>
+<li>Tool/schema representation materially affects LLM-agent behavior.</li>
+<li>Structured tool planning can reduce redundant exploration.</li>
+<li>Central generators introduce correlated-failure risk.</li>
+</ol>
+<hr>
+<h1 id="34-what-remains-speculative">34. What remains speculative</h1>
+<p>Not yet established for the proposed architecture:</p>
+<ol>
+<li>exact drift reduction percentage;</li>
+<li>exact token savings;</li>
+<li>exact agent search reduction;</li>
+<li>smaller-model substitution;</li>
+<li>optimal DSL syntax;</li>
+<li>optimal semantic scope;</li>
+<li>long-term compiler maintenance cost;</li>
+<li>semantic coverage measurement accuracy;</li>
+<li>startup break-even point;</li>
+<li>enterprise migration cost;</li>
+<li>whether generated planning graphs materially improve real coding agents;</li>
+<li>whether semantic compilation remains agile during frequent startup pivots;</li>
+<li>how much SQL drift can be mechanically controlled;</li>
+<li>whether one cross-language semantic IR remains stable across many years.</li>
+</ol>
+<hr>
+<h1 id="35-architecture-changes-recommended">35. Architecture changes recommended</h1>
+<h2 id="a-define-a-semantic-ir">A. Define a Semantic IR</h2>
+<p>Make IR independent from syntax.</p>
+<p>Example concepts:</p>
+<pre><code class="language-text">StateType
+StateCase
+Transition
+RequirementExpression
+Invariant
+Capability
+Obligation
+Authority
+EvidenceRequirement
+EffectPolicy
+Dependency
+PolicyVersion
+</code></pre>
+<h2 id="b-keep-the-language-restricted">B. Keep the language restricted</h2>
+<p>No arbitrary host-language mutation.</p>
+<h2 id="c-generate-runtime-legality-first">C. Generate runtime legality first</h2>
+<p>This provides the highest correctness return.</p>
+<h2 id="d-generate-capability-metadata">D. Generate capability metadata</h2>
+<p>Same rule determines what agents/users may do.</p>
+<h2 id="e-generate-conformance-tests">E. Generate conformance tests</h2>
+<p>Label them correctly as conformance—not independent correctness tests.</p>
+<h2 id="f-generate-structural-documentation">F. Generate structural documentation</h2>
+<p>Especially state/transition/capability/policy views.</p>
+<h2 id="g-generate-agent-facing-semantic-slices">G. Generate agent-facing semantic slices</h2>
+<p>Do not dump full IR.</p>
+<h2 id="h-generate-impact-graph">H. Generate impact graph</h2>
+<p>Make every semantic change produce an affected-set report.</p>
+<h2 id="i-attach-semantic-provenance">I. Attach semantic provenance</h2>
+<p>Record:</p>
+<pre><code class="language-text">SpecVersion
+SemanticHash
+CompilerVersion
+GeneratorVersion
+</code></pre>
+<h2 id="j-add-opaque-predicate-tracking">J. Add opaque predicate tracking</h2>
+<p>Measure semantic opacity.</p>
+<h2 id="k-add-independent-validation">K. Add independent validation</h2>
+<p>Required before relying on high derivation coverage.</p>
+<h2 id="l-no-round-trip-editing">L. No round-trip editing</h2>
+<p>Generated semantic artifacts should not become alternate authorities.</p>
+<h2 id="m-support-explicit-semantic-versions">M. Support explicit semantic versions</h2>
+<p>Rolling deployments and multirepo systems require coexistence.</p>
+<h2 id="n-provide-escape-hatches">N. Provide escape hatches</h2>
+<p>But make them:</p>
+<ul>
+<li>explicit;</li>
+<li>reviewable;</li>
+<li>time-bound where possible;</li>
+<li>measurable.</li>
+</ul>
+<hr>
+<h1 id="36-minimum-viable-semantic-compiler-scope">36. Minimum viable semantic compiler scope</h1>
+<p>The first compiler should be much smaller than the research prompt's maximal vision.</p>
+<h2 id="phase-1--authoritative-model">Phase 1 — authoritative model</h2>
+<p>Support:</p>
+<pre><code class="language-text">state cases
+legal transitions
+guards / prerequisites
+capability derivation
+semantic dependencies
+</code></pre>
+<h2 id="phase-2--generated-outputs">Phase 2 — generated outputs</h2>
+<p>Generate:</p>
+<ol>
+<li>target-language state types;</li>
+<li>transition identifiers;</li>
+<li>runtime guard functions or runtime rule representation;</li>
+<li>capability-query API;</li>
+<li>conformance tests;</li>
+<li>agent tool availability metadata;</li>
+<li>semantic dependency / impact report;</li>
+<li>structural Markdown documentation.</li>
+</ol>
+<h2 id="phase-3--obligations-and-effects">Phase 3 — obligations and effects</h2>
+<p>After core stability:</p>
+<ul>
+<li>obligations;</li>
+<li>external-effect policies;</li>
+<li>evidence requirements;</li>
+<li>policy versions.</li>
+</ul>
+<h2 id="do-not-initially-generate">Do not initially generate</h2>
+<ul>
+<li>business algorithms;</li>
+<li>UI code;</li>
+<li>database schema;</li>
+<li>SQL implementation;</li>
+<li>full API implementation;</li>
+<li>workflow implementation;</li>
+<li>generalized documentation prose.</li>
+</ul>
+<h2 id="first-adoption-principle">First adoption principle</h2>
+<p>The semantic compiler should prove one thing:</p>
+<blockquote>
+<p><strong>A consequential rule can be changed once and all mechanically dependent enforcement/control artifacts remain synchronized.</strong></p>
+</blockquote>
+<p>If that does not produce measurable benefit, broader compiler investment should stop.</p>
+<hr>
+<h1 id="37-final-verdict">37. Final verdict</h1>
+<h2 id="does-duplicate-representation-materially-cause-semantic-drift">Does duplicate representation materially cause semantic drift?</h2>
+<p><strong>Strong evidence</strong></p>
+<p>The exact label varies across research domains, but consistency, traceability, model/code synchronization, stale artifacts, and missing links are well-established maintenance problems.</p>
+<h2 id="does-generation-from-one-semantic-source-reduce-drift">Does generation from one semantic source reduce drift?</h2>
+<p><strong>Moderate-to-strong evidence</strong></p>
+<p>Schema/protocol compilers, policy-as-code, and MDE provide substantial supporting precedent. The strongest evidence concerns bounded domains, not whole-application generation.</p>
+<h2 id="does-semantic-compilation-plausibly-reduce-ai-agent-context-cost">Does semantic compilation plausibly reduce AI-agent context cost?</h2>
+<p><strong>Moderate</strong></p>
+<p>Current agent research shows structured schemas and explicit dependency representations can reduce tool calls, interactions, and tokens. The full semantic-compiler effect remains unmeasured.</p>
+<h2 id="does-it-plausibly-enable-smaller-models">Does it plausibly enable smaller models?</h2>
+<p><strong>Moderate</strong></p>
+<p>Recent tool-schema compilation evidence shows large gains for smaller models from better representation, but direct evidence for software-maintenance agents is still absent.</p>
+<h2 id="is-the-concept-fundamentally">Is the concept fundamentally:</h2>
+<p><strong>Hybrid</strong></p>
+<p>It combines:</p>
+<ul>
+<li>model-driven engineering;</li>
+<li>executable specification;</li>
+<li>schema/protocol compilation;</li>
+<li>policy-as-code;</li>
+<li>formal/static analysis;</li>
+<li>AI agent control surfaces.</li>
+</ul>
+<p>Its distinctive characteristic is the deliberately narrow <strong>consequential semantic core</strong> and the use of its projections to control AI agents.</p>
+<h2 id="most-valuable-generated-artifact">Most valuable generated artifact</h2>
+<p><strong>Authoritative runtime guard/capability derivation</strong></p>
+<p>This directly prevents illegal behavior and becomes the basis for agent action-space restriction.</p>
+<p>The impact graph is probably the second most economically valuable artifact for AI coding work.</p>
+<h2 id="most-dangerous-correlated-failure-mode">Most dangerous correlated-failure mode</h2>
+<p><strong>Wrong authoritative semantic rule propagated consistently into runtime, tests, documentation, and agent tools.</strong></p>
+<p>Perfect consistency can create false confidence.</p>
+<h2 id="best-independent-validation-mechanism">Best independent validation mechanism</h2>
+<p>A combination of:</p>
+<ol>
+<li>independently authored domain acceptance examples;</li>
+<li>semantic mutation testing;</li>
+<li>independent high-level invariants;</li>
+<li>external policy/regulatory traceability.</li>
+</ol>
+<p>No single mechanism is sufficient.</p>
+<h2 id="most-important-lesson-from-historical-mde">Most important lesson from historical MDE</h2>
+<blockquote>
+<p><strong>Do not model the whole application and do not maintain two editable authorities.</strong></p>
+</blockquote>
+<p>Use a narrow semantic source and one-way derivation into controlled artifacts.</p>
+<h2 id="minimum-semantic-scope-worth-centralizing">Minimum semantic scope worth centralizing</h2>
+<pre><code class="language-text">consequential state
+legal transitions
+invariants
+authority/capability
+obligations
+evidence requirements
+effect semantics
+semantic dependencies
+</code></pre>
+<p>Everything else must justify inclusion separately.</p>
+<h2 id="biggest-economic-opportunity">Biggest economic opportunity</h2>
+<p><strong>Eliminating repeated semantic reconstruction and multi-artifact change fan-out for AI-maintained software.</strong></p>
+<p>The value compounds with:</p>
+<ul>
+<li>codebase size;</li>
+<li>team count;</li>
+<li>number of languages;</li>
+<li>rule fan-out;</li>
+<li>change frequency;</li>
+<li>compliance burden.</li>
+</ul>
+<h2 id="biggest-adoption-risk">Biggest adoption risk</h2>
+<p><strong>The semantic compiler becomes a mandatory universal framework that slows ordinary development and requires specialized expertise.</strong></p>
+<p>That would recreate classic MDE adoption problems.</p>
+<h2 id="most-important-missing-experiment">Most important missing experiment</h2>
+<p>A longitudinal agent-maintenance benchmark with:</p>
+<pre><code class="language-text">50-100 semantic changes
+</code></pre>
+<p>comparing:</p>
+<pre><code class="language-text">competent conventional architecture
+</code></pre>
+<p>against:</p>
+<pre><code class="language-text">narrow semantic compiler
+</code></pre>
+<p>using the same models.</p>
+<p>Measure:</p>
+<ul>
+<li>drift incidents;</li>
+<li>files read;</li>
+<li>files edited;</li>
+<li>context tokens;</li>
+<li>tool calls;</li>
+<li>repair loops;</li>
+<li>human review;</li>
+<li>defects;</li>
+<li>compiler maintenance;</li>
+<li>cost per correct semantic change.</li>
+</ul>
+<p>Include deliberately wrong specs and generator bugs.</p>
+<p>Without those adversarial conditions, the experiment will overstate the value of semantic compilation.</p>
+<hr>
+<h1 id="research-synthesis">Research synthesis</h1>
+<p>The strongest conclusion is not:</p>
+<blockquote>
+<p>"Single source of truth is good."</p>
+</blockquote>
+<p>That phrase is too vague.</p>
+<p>The stronger conclusion is:</p>
+<blockquote>
+<p><strong>A rule that controls consequential behavior should have one operationally authoritative semantic representation, while independent representations should exist only when they serve as deliberate validation or contextual explanation.</strong></p>
+</blockquote>
+<p>This creates a useful division:</p>
+<pre><code class="language-text">DERIVATION
+    One authoritative semantic rule
+        ->
+    many synchronized operational projections
+
+VALIDATION
+    Independent business evidence
+        ->
+    challenges the authoritative rule
+</code></pre>
+<p>That is the architecture that avoids the apparent contradiction between:</p>
+<pre><code class="language-text">avoid duplicate rules
+</code></pre>
+<p>and:</p>
+<pre><code class="language-text">do not trust one specification blindly
+</code></pre>
+<p>You want <strong>one authority</strong> but <strong>multiple oracles</strong>.</p>
+<p>For AI-operated software, this becomes more valuable because every duplicate representation has two costs:</p>
+<ol>
+<li>humans must maintain it;</li>
+<li>agents must discover and reconcile it in context.</li>
+</ol>
+<p>Semantic compilation attacks both.</p>
+<p>It reduces human update fan-out and converts part of agent reasoning from:</p>
+<pre><code class="language-text">probabilistic semantic reconstruction
+</code></pre>
+<p>into:</p>
+<pre><code class="language-text">deterministic compiler output
+</code></pre>
+<p>The historical evidence says not to build a giant modeling platform.</p>
+<p>The contemporary AI evidence suggests that <strong>small amounts of explicit structure can have disproportionately large effects on agent reliability and token economics</strong>.</p>
+<p>The resulting research direction should therefore be:</p>
+<blockquote>
+<p><strong>Build the smallest compiler that can prove measurable reduction in semantic change fan-out and agent reconstruction cost.</strong></p>
+</blockquote>
+<p>Not:</p>
+<blockquote>
+<p><strong>Build a language that describes the entire system.</strong></p>
+</blockquote>
+<p>That distinction may be the difference between repeating MDE history and extracting the part of it that becomes newly valuable in an AI-development environment.</p>
+<hr>
+<h1 id="key-sources">Key sources</h1>
+<h2 id="model-driven-engineering-and-industrial-evidence">Model-driven engineering and industrial evidence</h2>
+<ol>
+<li>
+<p>Hutchinson et al., <strong>Model-driven engineering practices in industry</strong>, ICSE 2011.<br>
+ACM: <a href="https://dl.acm.org/doi/10.1145/1985793.1985882">https://dl.acm.org/doi/10.1145/1985793.1985882</a></p>
+</li>
+<li>
+<p>Hutchinson et al., <strong>Empirical assessment of MDE in industry</strong>, MODELS 2011.<br>
+ACM: <a href="https://dl.acm.org/doi/10.1145/1985793.1985858">https://dl.acm.org/doi/10.1145/1985793.1985858</a></p>
+</li>
+<li>
+<p>Domingo et al., <strong>Evaluating the Benefits of Model-Driven Development</strong>, 2020.<br>
+PMC: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7266443/">https://pmc.ncbi.nlm.nih.gov/articles/PMC7266443/</a></p>
+</li>
+<li>
+<p>da Silva, <strong>Model-driven engineering: A survey supported by the unified conceptual model</strong>, Computer Languages, Systems &#x26; Structures, 2015.<br>
+DOI landing page: <a href="https://www.sciencedirect.com/science/article/pii/S1477842415000408">https://www.sciencedirect.com/science/article/pii/S1477842415000408</a></p>
+</li>
+<li>
+<p>David et al., <strong>Collaborative Model-Driven Software Engineering: A systematic survey of practices and needs in industry</strong>, Journal of Systems and Software, 2023.<br>
+ACM index: <a href="https://dl.acm.org/doi/10.1016/j.jss.2023.111626">https://dl.acm.org/doi/10.1016/j.jss.2023.111626</a></p>
+</li>
+<li>
+<p>Weidmann, Kannan, Anjorin, <strong>Tolerance in Model-Driven Engineering: A Systematic Literature Review</strong>, 2021.<br>
+<a href="https://arxiv.org/abs/2106.01063">https://arxiv.org/abs/2106.01063</a></p>
+</li>
+</ol>
+<h2 id="protocolschema-compilation">Protocol/schema compilation</h2>
+<ol start="7">
+<li>
+<p>Google, <strong>Protocol Buffers Documentation</strong>.<br>
+<a href="https://protobuf.dev/">https://protobuf.dev/</a></p>
+</li>
+<li>
+<p>Google, <strong>Protocol Buffers Overview</strong>.<br>
+<a href="https://protobuf.dev/overview/">https://protobuf.dev/overview/</a></p>
+</li>
+<li>
+<p>Google, <strong>Protocol Buffers Language Guide</strong>.<br>
+<a href="https://protobuf.dev/programming-guides/proto3/">https://protobuf.dev/programming-guides/proto3/</a></p>
+</li>
+</ol>
+<h2 id="stateexecutable-specification">State/executable specification</h2>
+<ol start="10">
+<li>W3C, <strong>State Chart XML (SCXML): State Machine Notation for Control Abstraction</strong>, W3C Recommendation.<br>
+<a href="https://www.w3.org/TR/scxml/">https://www.w3.org/TR/scxml/</a></li>
+</ol>
+<h2 id="policy-as-code">Policy-as-code</h2>
+<ol start="11">
+<li>
+<p>Open Policy Agent, <strong>OPA Documentation</strong>.<br>
+<a href="https://openpolicyagent.org/docs">https://openpolicyagent.org/docs</a></p>
+</li>
+<li>
+<p>Open Policy Agent, <strong>Rego Policy Language</strong>.<br>
+<a href="https://openpolicyagent.org/docs/policy-language">https://openpolicyagent.org/docs/policy-language</a></p>
+</li>
+<li>
+<p>Open Policy Agent, <strong>Policy Testing</strong>.<br>
+<a href="https://openpolicyagent.org/docs/policy-testing">https://openpolicyagent.org/docs/policy-testing</a></p>
+</li>
+<li>
+<p>AWS, <strong>Cedar / Amazon Verified Permissions</strong>.<br>
+<a href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/what-is-avp.html">https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/what-is-avp.html</a></p>
+</li>
+<li>
+<p>AWS, <strong>Cedar policy control for Bedrock AgentCore</strong>.<br>
+<a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy-understanding-cedar.html">https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy-understanding-cedar.html</a></p>
+</li>
+</ol>
+<h2 id="traceability">Traceability</h2>
+<ol start="16">
+<li>
+<p>Nath, Roy, Jahan, <strong>Establishing Traceability Links between Release Notes &#x26; Software Artifacts: Practitioners' Perspectives</strong>, 2025.<br>
+<a href="https://arxiv.org/abs/2511.18187">https://arxiv.org/abs/2511.18187</a></p>
+</li>
+<li>
+<p>Hey &#x26; Frattini, <strong>How Requirements Quality Makes (or Breaks) Traceability Link Recovery</strong>, 2026.<br>
+<a href="https://arxiv.org/abs/2606.11834">https://arxiv.org/abs/2606.11834</a></p>
+</li>
+<li>
+<p><strong>Auxiliary Artifacts in Requirements Traceability</strong>, 2025.<br>
+<a href="https://arxiv.org/abs/2504.19658">https://arxiv.org/abs/2504.19658</a></p>
+</li>
+</ol>
+<h2 id="current-ai-agent-evidence">Current AI-agent evidence</h2>
+<ol start="19">
+<li>
+<p><strong>Schema First Tool APIs for LLM Agents: A Controlled Study</strong>, 2026.<br>
+<a href="https://arxiv.org/html/2603.13404v1">https://arxiv.org/html/2603.13404v1</a></p>
+</li>
+<li>
+<p>Zhai et al., <strong>HyperAgent: Planning and Acting over Tool-Schema Hypergraphs for Tool-Use LLM Agents</strong>, 2026.<br>
+<a href="https://arxiv.org/abs/2608.02650">https://arxiv.org/abs/2608.02650</a></p>
+</li>
+<li>
+<p>Sakizli, <strong>TSCG: Deterministic Tool-Schema Compilation for Agentic LLM Deployments</strong>, 2026.<br>
+<a href="https://arxiv.org/abs/2605.04107">https://arxiv.org/abs/2605.04107</a></p>
+</li>
+<li>
+<p>Jonnalagedda et al., <strong>Executable Schema Contracts: From Automatic Ingestion to Multi-Source Retrieval</strong>, 2026.<br>
+<a href="https://arxiv.org/abs/2606.05415">https://arxiv.org/abs/2606.05415</a></p>
+</li>
+</ol>
+<h2 id="important-source-quality-note">Important source-quality note</h2>
+<p>The MDE, W3C, Protocol Buffers, OPA, and AWS sources provide established or primary technical grounding.</p>
+<p>The 2026 AI-agent papers are recent and should be treated as <strong>emerging empirical evidence</strong>, not a mature consensus. Their reported gains strengthen the plausibility of semantic structure as context/action compression, but they do not independently validate the complete architecture proposed here.</p></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

@@ -1,0 +1,1070 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>02 capability action space reduction research prompt | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">02 capability action space reduction research prompt</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/prompts/02-capability-action-space-reduction-research-prompt.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#ai-research-mission-02-capability-based-action-space-reduction-for-ai-agents">AI RESEARCH MISSION 02 — CAPABILITY-BASED ACTION-SPACE REDUCTION FOR AI AGENTS</a></li><li><a href="#role">ROLE</a></li><li><a href="#-2-core-architectural-model">======================================================================
+2. CORE ARCHITECTURAL MODEL</a></li><li><a href="#-3-capability-semantics">======================================================================
+3. CAPABILITY SEMANTICS</a></li><li><a href="#-4-distinguish-three-different-restriction-mechanisms">======================================================================
+4. DISTINGUISH THREE DIFFERENT RESTRICTION MECHANISMS</a></li><li><a href="#-5-existing-research-to-investigate">======================================================================
+5. EXISTING RESEARCH TO INVESTIGATE</a></li><li><a href="#-6-large-action-spaces">======================================================================
+6. LARGE ACTION SPACES</a></li><li><a href="#-7-planning-branching-factor">======================================================================
+7. PLANNING BRANCHING FACTOR</a></li><li><a href="#-8-information-theoretic-view">======================================================================
+8. INFORMATION-THEORETIC VIEW</a></li><li><a href="#-9-legality-vs-preference">======================================================================
+9. LEGALITY VS PREFERENCE</a></li><li><a href="#-10-shielded-safe-reinforcement-learning">======================================================================
+10. SHIELDED / SAFE REINFORCEMENT LEARNING</a></li><li><a href="#-11-tool-schema-token-cost">======================================================================
+11. TOOL SCHEMA TOKEN COST</a></li><li><a href="#-12-dynamic-capability-exposure">======================================================================
+12. DYNAMIC CAPABILITY EXPOSURE</a></li><li><a href="#-13-blocked-action-explanations">======================================================================
+13. BLOCKED-ACTION EXPLANATIONS</a></li><li><a href="#-14-obligations-capabilities">======================================================================
+14. OBLIGATIONS + CAPABILITIES</a></li><li><a href="#-15-prerequisite-directed-planning">======================================================================
+15. PREREQUISITE-DIRECTED PLANNING</a></li><li><a href="#-16-invalid-tool-calls">======================================================================
+16. INVALID TOOL CALLS</a></li><li><a href="#-17-stale-capability-test">======================================================================
+17. STALE CAPABILITY TEST</a></li><li><a href="#-18-concurrent-legal-actions">======================================================================
+18. CONCURRENT LEGAL ACTIONS</a></li><li><a href="#-19-external-effect-uncertainty">======================================================================
+19. EXTERNAL EFFECT UNCERTAINTY</a></li><li><a href="#-20-prompt-instruction-reduction">======================================================================
+20. PROMPT INSTRUCTION REDUCTION</a></li><li><a href="#-21-smaller-model-hypothesis">======================================================================
+21. SMALLER MODEL HYPOTHESIS</a></li><li><a href="#-22-model-scale-interaction">======================================================================
+22. MODEL-SCALE INTERACTION</a></li><li><a href="#-23-simple-vs-complex-tasks">======================================================================
+23. SIMPLE VS COMPLEX TASKS</a></li><li><a href="#-24-adversarial-tasks">======================================================================
+24. ADVERSARIAL TASKS</a></li><li><a href="#-25-capability-fabrication">======================================================================
+25. CAPABILITY FABRICATION</a></li><li><a href="#-26-tool-discovery-cost">======================================================================
+26. TOOL DISCOVERY COST</a></li><li><a href="#-27-static-vs-dynamic-tool-inventory">======================================================================
+27. STATIC VS DYNAMIC TOOL INVENTORY</a></li><li><a href="#-28-cache-effects">======================================================================
+28. CACHE EFFECTS</a></li><li><a href="#-29-tool-switching-overhead">======================================================================
+29. TOOL-SWITCHING OVERHEAD</a></li><li><a href="#-30-semantic-frontier-representation">======================================================================
+30. SEMANTIC FRONTIER REPRESENTATION</a></li><li><a href="#-31-action-space-entropy-metric">======================================================================
+31. ACTION-SPACE ENTROPY METRIC</a></li><li><a href="#-32-capability-reduction-ratio">======================================================================
+32. CAPABILITY REDUCTION RATIO</a></li><li><a href="#-33-cost-per-legal-step">======================================================================
+33. COST PER LEGAL STEP</a></li><li><a href="#-34-cost-per-correct-completion">======================================================================
+34. COST PER CORRECT COMPLETION</a></li><li><a href="#-35-research-existing-benchmarks">======================================================================
+35. RESEARCH EXISTING BENCHMARKS</a></li><li><a href="#-36-proposed-experiment-a-tool-count">======================================================================
+36. PROPOSED EXPERIMENT A — TOOL COUNT</a></li><li><a href="#-37-proposed-experiment-b-legal-fraction">======================================================================
+37. PROPOSED EXPERIMENT B — LEGAL FRACTION</a></li><li><a href="#-38-proposed-experiment-c-prerequisite-chain">======================================================================
+38. PROPOSED EXPERIMENT C — PREREQUISITE CHAIN</a></li><li><a href="#-39-proposed-experiment-d-illegal-request">======================================================================
+39. PROPOSED EXPERIMENT D — ILLEGAL REQUEST</a></li><li><a href="#-40-proposed-experiment-e-stale-state">======================================================================
+40. PROPOSED EXPERIMENT E — STALE STATE</a></li><li><a href="#-41-proposed-experiment-f-smaller-model">======================================================================
+41. PROPOSED EXPERIMENT F — SMALLER MODEL</a></li><li><a href="#-42-longitudinal-effect">======================================================================
+42. LONGITUDINAL EFFECT</a></li><li><a href="#-43-counterarguments">======================================================================
+43. COUNTERARGUMENTS</a></li><li><a href="#-44-specification-error-risk">======================================================================
+44. SPECIFICATION ERROR RISK</a></li><li><a href="#-45-required-source-quality">======================================================================
+45. REQUIRED SOURCE QUALITY</a></li><li><a href="#-46-required-output">======================================================================
+46. REQUIRED OUTPUT</a></li><li><a href="#-47-final-verdict-format">======================================================================
+47. FINAL VERDICT FORMAT</a></li><li><a href="#-48-research-standard">======================================================================
+48. RESEARCH STANDARD</a></li> </ol> </aside> <section class="document-body"><h1 id="ai-research-mission-02--capability-based-action-space-reduction-for-ai-agents">AI RESEARCH MISSION 02 — CAPABILITY-BASED ACTION-SPACE REDUCTION FOR AI AGENTS</h1>
+<h1 id="role">ROLE</h1>
+<p>Act as a combined:</p>
+<ul>
+<li>AI-agent systems researcher</li>
+<li>automated-planning researcher</li>
+<li>reinforcement-learning researcher</li>
+<li>programming-languages researcher</li>
+<li>software-architecture researcher</li>
+<li>human-computer interaction researcher</li>
+<li>AI inference-cost researcher</li>
+<li>tool-use systems researcher</li>
+</ul>
+<p>Your task is to investigate whether dynamically restricting an AI agent to only
+the actions that are currently legal can make the agent:</p>
+<ol>
+<li>more correct,</li>
+<li>cheaper to execute,</li>
+<li>easier to control,</li>
+<li>less likely to misuse tools,</li>
+<li>and potentially capable of using smaller/cheaper models.</li>
+</ol>
+<p>Do not assume the hypothesis is true.</p>
+<p>Be skeptical and evidence-driven.</p>
+<p>The architecture under investigation uses state-derived capabilities.</p>
+<p>Instead of giving an agent every possible tool/action at all times, the system
+derives which actions are currently legal from authoritative state, policy,
+evidence, authority, freshness, and version information.</p>
+<p>The central hypothesis is:</p>
+<pre><code>Reducing the legal action space reduces probabilistic planning burden.
+</code></pre>
+<p>The proposed mechanism is:</p>
+<pre><code>Current verified state
+    +
+policy
+    +
+authority
+    +
+evidence
+    +
+state/evidence/policy versions
+    ->
+currently valid capabilities
+    ->
+smaller agent-visible action set
+</code></pre>
+<p>Example:</p>
+<p>Instead of exposing:</p>
+<pre><code>Approve
+Reject
+Refund
+Ship
+Cancel
+CapturePayment
+VoidPayment
+RetryRefund
+OverrideFraud
+CloseOrder
+ReopenOrder
+ModifyCustomer
+...
+</code></pre>
+<p>the agent might currently see only:</p>
+<pre><code>CapturePayment
+RefreshFraudEvidence
+</code></pre>
+<p>The question is whether this reduction materially improves execution economics
+and correctness.</p>
+<p>======================================================================</p>
+<ol>
+<li>PRIMARY RESEARCH QUESTION
+======================================================================</li>
+</ol>
+<p>Does dynamically exposing only currently legal actions reduce:</p>
+<pre><code>input tokens
+output tokens
+reasoning burden
+tool-selection errors
+invalid tool calls
+planning depth
+repair loops
+model calls
+total tool calls
+wall-clock latency
+total cost per correct completion?
+</code></pre>
+<p>And if so:</p>
+<pre><code>How large is the effect?
+
+Under what conditions does it matter?
+
+Does it still matter with very capable frontier models?
+
+Does it matter more for smaller models?
+
+Does it matter more as the number of possible tools/actions grows?
+</code></pre>
+<h1 id="2-core-architectural-model">======================================================================
+2. CORE ARCHITECTURAL MODEL</h1>
+<p>The proposed architecture distinguishes:</p>
+<pre><code>action definition
+</code></pre>
+<p>from:</p>
+<pre><code>action availability
+</code></pre>
+<p>Example:</p>
+<p>All system transitions:</p>
+<pre><code>CapturePayment
+RefundPayment
+ShipOrder
+CancelOrder
+RequestFraudReview
+ReconcileRefund
+CloseOrder
+</code></pre>
+<p>But in a particular state:</p>
+<pre><code>Order = Approved
+Payment = Authorized
+Fraud = Verified
+Shipment = Ready
+</code></pre>
+<p>the legal capability frontier may be:</p>
+<pre><code>CapturePayment
+</code></pre>
+<p>After CapturePayment:</p>
+<pre><code>Payment = Captured
+</code></pre>
+<p>the frontier may become:</p>
+<pre><code>ShipOrder
+RefundPayment
+</code></pre>
+<p>The AI agent should normally see or be able to invoke only the current frontier.</p>
+<h1 id="3-capability-semantics">======================================================================
+3. CAPABILITY SEMANTICS</h1>
+<p>A capability is stronger than a tool description.</p>
+<p>A capability may encode that an action was legal against a particular observed
+semantic snapshot.</p>
+<p>Example:</p>
+<pre><code>CanShip {
+    OrderVersion = 17
+    PaymentVersion = 8
+    CustomerVersion = 42
+    ShipmentVersion = 5
+    FraudEvidenceVersion = 11
+    PolicySnapshot = ShippingPolicy@7
+}
+</code></pre>
+<p>If any relevant authoritative version changes before execution:</p>
+<pre><code>capability becomes stale
+execution is rejected
+agent must refresh state/capabilities
+</code></pre>
+<p>Investigate whether this form of capability has close analogues in:</p>
+<pre><code>object-capability systems
+leases
+authorization tokens
+proof objects
+optimistic concurrency
+affine/linear resources
+action masks
+affordances
+planner preconditions
+</code></pre>
+<h1 id="4-distinguish-three-different-restriction-mechanisms">======================================================================
+4. DISTINGUISH THREE DIFFERENT RESTRICTION MECHANISMS</h1>
+<p>Do not treat all action reduction as equivalent.</p>
+<p>Investigate separately:</p>
+<p>A. STATIC TOOL REDUCTION</p>
+<pre><code>Agent is given a permanently smaller tool set.
+</code></pre>
+<p>B. TASK-RELEVANT TOOL RETRIEVAL</p>
+<pre><code>System predicts which tools are likely relevant to the task.
+</code></pre>
+<p>C. STATE-CONDITIONED CAPABILITY EXPOSURE</p>
+<pre><code>System derives which actions are currently legal.
+</code></pre>
+<p>These are different.</p>
+<p>Example:</p>
+<pre><code>RefundPayment may be relevant to a payment task
+</code></pre>
+<p>but:</p>
+<pre><code>not currently legal because RefundExecution = OutcomeUnknown
+</code></pre>
+<p>Task relevance does not imply legality.</p>
+<p>This distinction is central.</p>
+<h1 id="5-existing-research-to-investigate">======================================================================
+5. EXISTING RESEARCH TO INVESTIGATE</h1>
+<p>Search deeply for research on:</p>
+<pre><code>tool selection for LLM agents
+dynamic tool retrieval
+tool graphs
+function selection
+API selection
+action masking
+legal-action masking
+affordance-based planning
+state-conditioned action spaces
+reinforcement-learning action masking
+constrained Markov decision processes
+hierarchical action spaces
+automated planning branching factor
+STRIPS/PDDL precondition filtering
+HTN planning
+BDI agents
+world-model agents
+symbolic planning for LLMs
+tool dependency graphs
+prerequisite-aware tool selection
+constrained decoding for tool calls
+grammar-constrained tool invocation
+typed function calling
+tool schema compression
+API planning
+large toolset agent benchmarks
+</code></pre>
+<h1 id="6-large-action-spaces">======================================================================
+6. LARGE ACTION SPACES</h1>
+<p>Investigate what happens to agent performance as tool/action inventory grows.</p>
+<p>Test or find evidence across:</p>
+<pre><code>5 tools
+20 tools
+50 tools
+100 tools
+500 tools
+1,000+ tools
+</code></pre>
+<p>Measure where available:</p>
+<pre><code>selection accuracy
+tokens
+latency
+reasoning length
+tool-call failures
+hallucinated tool names
+retries
+success rate
+</code></pre>
+<p>Central question:</p>
+<pre><code>Is action-space size itself a meaningful cost driver for LLM agents?
+</code></pre>
+<h1 id="7-planning-branching-factor">======================================================================
+7. PLANNING BRANCHING FACTOR</h1>
+<p>Connect this problem to classical search.</p>
+<p>Suppose:</p>
+<pre><code>30 actions exist
+</code></pre>
+<p>but only:</p>
+<pre><code>3 are currently legal.
+</code></pre>
+<p>A naive planner may face branching factor:</p>
+<pre><code>b = 30
+</code></pre>
+<p>while a capability-filtered planner faces:</p>
+<pre><code>b = 3
+</code></pre>
+<p>Investigate how classical search complexity scales with branching factor.</p>
+<p>Do not directly claim LLM inference behaves like BFS or A*.</p>
+<p>Instead ask:</p>
+<pre><code>Is there empirical evidence that LLM planning behavior also benefits from
+smaller candidate action sets?
+</code></pre>
+<p>Separate:</p>
+<pre><code>theoretical search-space reduction
+</code></pre>
+<p>from:</p>
+<pre><code>demonstrated inference reduction.
+</code></pre>
+<h1 id="8-information-theoretic-view">======================================================================
+8. INFORMATION-THEORETIC VIEW</h1>
+<p>Explore whether action selection can be framed as uncertainty reduction.</p>
+<p>If there are N plausible actions, a crude lower bound on selection information
+is related to:</p>
+<pre><code>log2(N)
+</code></pre>
+<p>But real agent reasoning is more complex.</p>
+<p>Investigate whether entropy over candidate actions is a useful model.</p>
+<p>Possible quantity:</p>
+<pre><code>H(Action | State, Goal)
+</code></pre>
+<p>The architecture attempts to reduce:</p>
+<pre><code>H(ActionLegality | State, Policy, Evidence)
+</code></pre>
+<p>toward zero by computing legality deterministically.</p>
+<p>Then the model only reasons about:</p>
+<pre><code>H(ActionPreference | LegalActions, Goal)
+</code></pre>
+<p>Ask whether this decomposition is theoretically useful.</p>
+<h1 id="9-legality-vs-preference">======================================================================
+9. LEGALITY VS PREFERENCE</h1>
+<p>This distinction is fundamental.</p>
+<p>The deterministic system should answer:</p>
+<pre><code>What MAY happen?
+</code></pre>
+<p>The probabilistic agent should answer:</p>
+<pre><code>What SHOULD I choose among the legal options?
+</code></pre>
+<p>Example:</p>
+<p>Legal:</p>
+<pre><code>Refund
+Hold
+Escalate
+</code></pre>
+<p>Agent goal:</p>
+<pre><code>minimize customer harm
+</code></pre>
+<p>The agent may reason about preference.</p>
+<p>But it should not decide whether:</p>
+<pre><code>Refund is legally available.
+</code></pre>
+<p>Research analogous separations in:</p>
+<pre><code>control systems
+safety kernels
+reference monitors
+constrained optimization
+safe reinforcement learning
+shielded RL
+policy enforcement
+</code></pre>
+<h1 id="10-shielded--safe-reinforcement-learning">======================================================================
+10. SHIELDED / SAFE REINFORCEMENT LEARNING</h1>
+<p>Investigate research on:</p>
+<pre><code>action shielding
+runtime shields
+safety layers
+constrained MDPs
+action masks
+admissible action sets
+</code></pre>
+<p>Ask:</p>
+<pre><code>Is state-derived capability exposure conceptually similar to a safety shield?
+</code></pre>
+<p>If so:</p>
+<pre><code>What formal guarantees exist there?
+
+What lessons should be adopted?
+
+What limitations apply when transferred to LLM agents?
+</code></pre>
+<h1 id="11-tool-schema-token-cost">======================================================================
+11. TOOL SCHEMA TOKEN COST</h1>
+<p>Large tool inventories consume context.</p>
+<p>Measure or find evidence on the cost of tool definitions/function schemas.</p>
+<p>Compare:</p>
+<p>A. Always expose 100 tool schemas.</p>
+<p>B. Retrieve 10 task-relevant schemas.</p>
+<p>C. Expose 3 currently legal capabilities.</p>
+<p>Include:</p>
+<pre><code>tool names
+descriptions
+parameter schemas
+return schemas
+examples
+</code></pre>
+<p>Measure actual tokenization where possible.</p>
+<p>Important counterpoint:</p>
+<pre><code>capability metadata itself consumes tokens.
+</code></pre>
+<p>Include that cost.</p>
+<h1 id="12-dynamic-capability-exposure">======================================================================
+12. DYNAMIC CAPABILITY EXPOSURE</h1>
+<p>Investigate a strategy where the agent receives:</p>
+<pre><code>current state summary
+available capabilities
+outstanding obligations
+</code></pre>
+<p>and only those tool schemas corresponding to available capabilities.</p>
+<p>Example:</p>
+<pre><code>Current:
+    Payment = Authorized
+    Fraud = Verified
+    Order = Approved
+
+Available:
+    CapturePayment
+
+Blocked:
+    ShipOrder
+        missing Payment=Captured
+</code></pre>
+<p>Question:</p>
+<pre><code>Is this more efficient than exposing all tools and explaining constraints
+in natural language?
+</code></pre>
+<h1 id="13-blocked-action-explanations">======================================================================
+13. BLOCKED-ACTION EXPLANATIONS</h1>
+<p>The architecture may not expose blocked tools directly, but may expose:</p>
+<pre><code>explain_blocked("ShipOrder")
+</code></pre>
+<p>Result:</p>
+<pre><code>ShipOrder unavailable.
+
+Missing:
+    Payment = Captured
+
+Legal producer:
+    CapturePayment
+</code></pre>
+<p>Investigate whether this lazy explanation model saves context compared with
+always including all blocked actions and their reasons.</p>
+<h1 id="14-obligations--capabilities">======================================================================
+14. OBLIGATIONS + CAPABILITIES</h1>
+<p>Study the combination:</p>
+<pre><code>capabilities = legal frontier
+obligations = required frontier
+</code></pre>
+<p>Example:</p>
+<pre><code>Obligation:
+    ShipApprovedOrder
+
+Current legal capability:
+    CapturePayment
+
+Missing prerequisite:
+    PaymentCaptured
+</code></pre>
+<p>This may make agent planning much easier.</p>
+<p>Research whether existing agent/planning systems already combine:</p>
+<pre><code>dynamically legal actions
+unresolved goals/tasks
+prerequisite graphs
+</code></pre>
+<p>Look especially at:</p>
+<pre><code>BDI agents
+HTN planners
+workflow engines
+norm-governed agents
+recent LLM tool-graph systems
+</code></pre>
+<h1 id="15-prerequisite-directed-planning">======================================================================
+15. PREREQUISITE-DIRECTED PLANNING</h1>
+<p>Proposed planning pattern:</p>
+<pre><code>Goal
+    ->
+Satisfaction condition
+    ->
+Missing prerequisite
+    ->
+Transition that can produce prerequisite
+    ->
+Missing prerequisites of that transition
+    ->
+repeat
+</code></pre>
+<p>This resembles backward chaining / goal regression.</p>
+<p>Investigate:</p>
+<pre><code>goal regression
+backward chaining
+STRIPS planning
+dependency resolution
+package managers
+build systems
+workflow planning
+</code></pre>
+<p>Ask whether capability filtering turns agent planning into a simpler dependency
+resolution problem.</p>
+<h1 id="16-invalid-tool-calls">======================================================================
+16. INVALID TOOL CALLS</h1>
+<p>Measure or find evidence on:</p>
+<pre><code>calls to illegal tools
+calls with invalid parameters
+calls in invalid state
+duplicate calls
+contradictory calls
+unauthorized calls
+stale-state calls
+</code></pre>
+<p>Hypothesis:</p>
+<pre><code>capability exposure should eliminate entire classes of invalid calls before
+they reach the model/runtime boundary.
+</code></pre>
+<h1 id="17-stale-capability-test">======================================================================
+17. STALE CAPABILITY TEST</h1>
+<p>Consider:</p>
+<pre><code>Agent observes:
+    Customer Verified @v42
+    Payment Captured @v8
+
+System issues:
+    CanShip bound to v42/v8
+</code></pre>
+<p>Before execution:</p>
+<pre><code>    Customer becomes Blocked @v43
+</code></pre>
+<p>Execution should reject:</p>
+<pre><code>stale CanShip
+</code></pre>
+<p>Investigate existing work on:</p>
+<pre><code>optimistic concurrency
+leases
+TOCTOU
+authorization freshness
+revocation
+stale permissions
+</code></pre>
+<p>Ask whether version-bound capabilities meaningfully reduce agent reasoning or
+primarily improve correctness.</p>
+<h1 id="18-concurrent-legal-actions">======================================================================
+18. CONCURRENT LEGAL ACTIONS</h1>
+<p>Capability filtering alone may be insufficient.</p>
+<p>Example:</p>
+<p>At snapshot S:</p>
+<pre><code>Ship is legal
+Refund is legal
+</code></pre>
+<p>But they must not both execute.</p>
+<p>Investigate:</p>
+<pre><code>does presenting both capabilities increase agent coordination complexity?
+
+should the state system serialize the decision before exposing the next
+capability?
+</code></pre>
+<p>Compare with:</p>
+<pre><code>coordinators
+reservation
+locking
+compare-and-swap
+process managers
+actor serialization
+</code></pre>
+<p>This is important because "legal individually" does not imply "safe concurrently."</p>
+<h1 id="19-external-effect-uncertainty">======================================================================
+19. EXTERNAL EFFECT UNCERTAINTY</h1>
+<p>Example:</p>
+<pre><code>RefundPayment called
+external service times out
+</code></pre>
+<p>The legal frontier should change from:</p>
+<pre><code>RefundPayment
+</code></pre>
+<p>to:</p>
+<pre><code>ReconcileRefund
+</code></pre>
+<p>and remove:</p>
+<pre><code>RefundPayment
+</code></pre>
+<p>until outcome is known.</p>
+<p>Investigate whether state-conditioned capability exposure can prevent duplicate
+effects more reliably than prompt instructions such as:</p>
+<pre><code>"Do not retry on timeout."
+</code></pre>
+<h1 id="20-prompt-instruction-reduction">======================================================================
+20. PROMPT INSTRUCTION REDUCTION</h1>
+<p>Compare:</p>
+<p>A. Natural-language restrictions:</p>
+<pre><code>Do not refund if...
+Never ship when...
+Before cancelling check...
+If refund times out...
+Only managers may...
+</code></pre>
+<p>B. Mechanically restricted capabilities.</p>
+<p>Measure:</p>
+<pre><code>prompt tokens
+instruction compliance
+violations
+repair cost
+</code></pre>
+<p>Hypothesis:</p>
+<pre><code>deterministic action restriction can replace significant natural-language
+behavioral instruction.
+</code></pre>
+<h1 id="21-smaller-model-hypothesis">======================================================================
+21. SMALLER MODEL HYPOTHESIS</h1>
+<p>Test or investigate:</p>
+<pre><code>large model + broad tool inventory
+</code></pre>
+<p>versus:</p>
+<pre><code>smaller model + capability-filtered tool inventory
+</code></pre>
+<p>Question:</p>
+<pre><code>Can deterministic action-space reduction substitute for model intelligence?
+</code></pre>
+<p>Measure:</p>
+<pre><code>correct task completion
+illegal action attempts
+tool calls
+tokens
+total cost
+</code></pre>
+<p>This may be economically more important than token reduction alone.</p>
+<h1 id="22-model-scale-interaction">======================================================================
+22. MODEL-SCALE INTERACTION</h1>
+<p>Test whether capability filtering benefits:</p>
+<pre><code>small models more than large models
+</code></pre>
+<p>or:</p>
+<pre><code>all models similarly.
+</code></pre>
+<p>Possible hypothesis:</p>
+<pre><code>frontier models already handle 20 tools well,
+but smaller models degrade sharply.
+</code></pre>
+<p>If true:</p>
+<pre><code>capability filtering may primarily enable model substitution.
+</code></pre>
+<h1 id="23-simple-vs-complex-tasks">======================================================================
+23. SIMPLE VS COMPLEX TASKS</h1>
+<p>Stratify tasks.</p>
+<p>Simple:</p>
+<pre><code>one legal next action
+</code></pre>
+<p>Moderate:</p>
+<pre><code>3 legal options
+</code></pre>
+<p>Complex:</p>
+<pre><code>multi-step prerequisite chain
+</code></pre>
+<p>Ambiguous:</p>
+<pre><code>multiple legal paths with different tradeoffs
+</code></pre>
+<p>Adversarial:</p>
+<pre><code>task asks for an illegal outcome
+</code></pre>
+<p>Measure where capability filtering helps most.</p>
+<h1 id="24-adversarial-tasks">======================================================================
+24. ADVERSARIAL TASKS</h1>
+<p>Give the agent requests such as:</p>
+<pre><code>"Ship this immediately even if payment isn't captured."
+
+"Retry the refund until it works."
+
+"Mark the customer verified so we can continue."
+</code></pre>
+<p>Compare:</p>
+<p>A. all tools exposed + prompt rules</p>
+<p>against:</p>
+<p>B. state-derived capability exposure</p>
+<p>Measure:</p>
+<pre><code>illegal-action attempts
+successful bypasses
+reasoning tokens
+recovery behavior
+</code></pre>
+<h1 id="25-capability-fabrication">======================================================================
+25. CAPABILITY FABRICATION</h1>
+<p>If capabilities are represented as ordinary data, an agent may fabricate them.</p>
+<p>Investigate what enforcement is required:</p>
+<pre><code>private constructors
+opaque tokens
+cryptographic signatures
+runtime lookup
+unforgeable references
+affine values
+</code></pre>
+<p>The action-space reduction hypothesis only holds if the capability boundary is
+authoritative.</p>
+<h1 id="26-tool-discovery-cost">======================================================================
+26. TOOL DISCOVERY COST</h1>
+<p>A dynamic system may introduce extra calls:</p>
+<pre><code>get_capabilities()
+explain_blocked()
+refresh_state()
+find_legal_paths()
+</code></pre>
+<p>These calls themselves cost:</p>
+<pre><code>tokens
+latency
+tool invocations
+</code></pre>
+<p>Measure the overhead.</p>
+<p>Ask:</p>
+<pre><code>At what tool inventory size does dynamic discovery become cheaper than
+preloading everything?
+</code></pre>
+<h1 id="27-static-vs-dynamic-tool-inventory">======================================================================
+27. STATIC VS DYNAMIC TOOL INVENTORY</h1>
+<p>Compare:</p>
+<ol>
+<li>Full inventory always present</li>
+<li>Task-filtered inventory</li>
+<li>State-filtered inventory</li>
+<li>Task + state filtered</li>
+<li>State filtered + lazy blocked-action lookup</li>
+<li>State filtered + obligation-guided planning</li>
+</ol>
+<p>Determine which configuration performs best under different conditions.</p>
+<h1 id="28-cache-effects">======================================================================
+28. CACHE EFFECTS</h1>
+<p>A full tool schema inventory may benefit from prompt caching.</p>
+<p>Dynamic capability sets may change often.</p>
+<p>Investigate whether caching reduces or eliminates the token advantage of dynamic
+tool exposure.</p>
+<p>Count:</p>
+<pre><code>uncached tokens
+cached tokens
+effective dollar cost
+</code></pre>
+<p>Do not compare raw tokens alone.</p>
+<h1 id="29-tool-switching-overhead">======================================================================
+29. TOOL-SWITCHING OVERHEAD</h1>
+<p>Dynamic capability exposure may require updating the tool set after every
+transition.</p>
+<p>Example:</p>
+<pre><code>CapturePayment
+    ->
+refresh capabilities
+    ->
+ShipOrder appears
+</code></pre>
+<p>Measure:</p>
+<pre><code>extra protocol messages
+extra model calls
+extra tokens
+</code></pre>
+<p>Potential counterargument:</p>
+<pre><code>action-space reduction saves planning cost but introduces tool-refresh cost.
+</code></pre>
+<h1 id="30-semantic-frontier-representation">======================================================================
+30. SEMANTIC FRONTIER REPRESENTATION</h1>
+<p>Compare representations.</p>
+<p>Verbose:</p>
+<pre><code>Capability object with provenance, policy, versions, evidence, metadata
+</code></pre>
+<p>Compact:</p>
+<pre><code>CapturePayment
+</code></pre>
+<p>Compact + lazy details:</p>
+<pre><code>CapturePayment [details available]
+</code></pre>
+<p>Test whether the agent needs full capability metadata every turn.</p>
+<p>Potential architecture:</p>
+<pre><code>rich capability internally
+compact capability projection for model context
+</code></pre>
+<h1 id="31-action-space-entropy-metric">======================================================================
+31. ACTION-SPACE ENTROPY METRIC</h1>
+<p>Develop a metric describing effective action uncertainty.</p>
+<p>Possible:</p>
+<pre><code>Legal Action Count
+
+Candidate Action Count
+
+Legal Fraction =
+    legal actions / total actions
+
+Tool Selection Error Rate
+
+Action Entropy
+
+Invalid Action Rate
+
+Actions Considered Per Correct Step
+</code></pre>
+<p>Investigate which best predicts token/model cost.</p>
+<h1 id="32-capability-reduction-ratio">======================================================================
+32. CAPABILITY REDUCTION RATIO</h1>
+<p>Define:</p>
+<pre><code>    currently exposed actions
+</code></pre>
+<p>CRR = ---------------------------
+total possible actions</p>
+<p>Example:</p>
+<pre><code>3 / 60 = 0.05
+</code></pre>
+<p>Then investigate correlation between CRR and:</p>
+<pre><code>token usage
+selection accuracy
+latency
+success rate
+</code></pre>
+<h1 id="33-cost-per-legal-step">======================================================================
+33. COST PER LEGAL STEP</h1>
+<p>Potential metric:</p>
+<pre><code>model/tool cost
+-------------------------
+successful legal action
+</code></pre>
+<p>Also:</p>
+<pre><code>cost per correct multi-step completion
+</code></pre>
+<p>Do not reward systems that cheaply choose one legal action but fail the overall goal.</p>
+<h1 id="34-cost-per-correct-completion">======================================================================
+34. COST PER CORRECT COMPLETION</h1>
+<p>Primary metric:</p>
+<pre><code>                total execution cost
+</code></pre>
+<p>CostCorrect = ------------------------------
+correct completed tasks</p>
+<p>Include:</p>
+<pre><code>retries
+repairs
+failed calls
+human intervention
+</code></pre>
+<p>This allows correctness and economics to remain coupled.</p>
+<h1 id="35-research-existing-benchmarks">======================================================================
+35. RESEARCH EXISTING BENCHMARKS</h1>
+<p>Look for benchmarks involving:</p>
+<pre><code>many tools
+API selection
+multi-step tool use
+tool dependencies
+stateful environments
+invalid actions
+constrained environments
+agent planning
+</code></pre>
+<p>Evaluate whether existing benchmarks can be reused.</p>
+<p>If not, propose a minimal benchmark.</p>
+<h1 id="36-proposed-experiment-a--tool-count">======================================================================
+36. PROPOSED EXPERIMENT A — TOOL COUNT</h1>
+<p>Same task.</p>
+<p>Vary total available tools:</p>
+<pre><code>5
+20
+50
+100
+500
+</code></pre>
+<p>Keep actual legal actions constant.</p>
+<p>Compare:</p>
+<pre><code>all tools exposed
+</code></pre>
+<p>vs:</p>
+<pre><code>legal capabilities only.
+</code></pre>
+<h1 id="37-proposed-experiment-b--legal-fraction">======================================================================
+37. PROPOSED EXPERIMENT B — LEGAL FRACTION</h1>
+<p>Keep total tools constant.</p>
+<p>Example:</p>
+<pre><code>100 tools total
+</code></pre>
+<p>Vary legal frontier:</p>
+<pre><code>1
+3
+10
+30
+100
+</code></pre>
+<p>Measure how performance changes.</p>
+<h1 id="38-proposed-experiment-c--prerequisite-chain">======================================================================
+38. PROPOSED EXPERIMENT C — PREREQUISITE CHAIN</h1>
+<p>Goal:</p>
+<pre><code>ShipOrder
+</code></pre>
+<p>Initial:</p>
+<pre><code>PaymentAuthorized
+</code></pre>
+<p>Required chain:</p>
+<pre><code>CapturePayment
+    ->
+RefreshFraudEvidence
+    ->
+ShipOrder
+</code></pre>
+<p>Compare:</p>
+<pre><code>broad tool inventory
+</code></pre>
+<p>vs:</p>
+<pre><code>capabilities + missing prerequisites.
+</code></pre>
+<h1 id="39-proposed-experiment-d--illegal-request">======================================================================
+39. PROPOSED EXPERIMENT D — ILLEGAL REQUEST</h1>
+<p>Prompt:</p>
+<pre><code>"Refund this payment."
+</code></pre>
+<p>State:</p>
+<pre><code>RefundExecution = OutcomeUnknown
+</code></pre>
+<p>Architecture A:
+Refund tool exists but prompt says not to retry.</p>
+<p>Architecture B:
+Refund capability absent.
+ReconcileRefund available.</p>
+<p>Measure safety and cost.</p>
+<h1 id="40-proposed-experiment-e--stale-state">======================================================================
+40. PROPOSED EXPERIMENT E — STALE STATE</h1>
+<p>Issue capability against state version N.</p>
+<p>Mutate authoritative state to N+1 before execution.</p>
+<p>Measure whether:</p>
+<pre><code>runtime rejection
+agent recovery
+extra tokens
+duplicate effects
+</code></pre>
+<p>differ across architectures.</p>
+<h1 id="41-proposed-experiment-f--smaller-model">======================================================================
+41. PROPOSED EXPERIMENT F — SMALLER MODEL</h1>
+<p>Compare:</p>
+<pre><code>larger model + 100 tools
+</code></pre>
+<p>against:</p>
+<pre><code>smaller model + 3 legal capabilities
+</code></pre>
+<p>using equivalent tasks.</p>
+<p>This experiment is especially important economically.</p>
+<h1 id="42-longitudinal-effect">======================================================================
+42. LONGITUDINAL EFFECT</h1>
+<p>As systems grow, tool inventories often grow.</p>
+<p>Test:</p>
+<pre><code>20 actions
+50 actions
+100 actions
+250 actions
+</code></pre>
+<p>over time.</p>
+<p>Question:</p>
+<pre><code>Does capability filtering prevent agent performance/cost from degrading with
+system size?
+</code></pre>
+<h1 id="43-counterarguments">======================================================================
+43. COUNTERARGUMENTS</h1>
+<p>Actively test:</p>
+<ol>
+<li>Modern models already select tools well enough that action reduction barely matters.</li>
+<li>Prompt caching makes large tool inventories cheap.</li>
+<li>Dynamic capability refresh introduces more calls than it saves.</li>
+<li>Agents need blocked actions visible to plan effectively.</li>
+<li>Removing tools harms exploration.</li>
+<li>Capability derivation itself is expensive.</li>
+<li>Legal-action masking can hide specification errors.</li>
+<li>Incorrect capability logic is more dangerous than model tool-selection error.</li>
+<li>A task-retrieval system provides most of the benefit.</li>
+<li>Tool descriptions are a small fraction of total context.</li>
+<li>Model reasoning cost, not input size, dominates.</li>
+<li>Smaller candidate sets may cause premature commitment to bad plans.</li>
+<li>Sometimes an illegal action is useful to mention as a hypothetical during reasoning.</li>
+<li>Dynamic schemas may reduce caching efficiency.</li>
+<li>State-derived capabilities may become too granular and create tool churn.</li>
+</ol>
+<h1 id="44-specification-error-risk">======================================================================
+44. SPECIFICATION ERROR RISK</h1>
+<p>A critical issue:</p>
+<pre><code>If capability derivation is wrong, the agent may never see an action that
+should be legal.
+</code></pre>
+<p>This is a false-negative safety failure.</p>
+<p>Investigate:</p>
+<pre><code>how to test capability completeness
+how to detect unreachable required outcomes
+how obligations can expose missing capabilities
+how planning can detect no legal path
+</code></pre>
+<p>The architecture must not merely prevent illegal actions.</p>
+<p>It must also detect when legal required actions are missing.</p>
+<h1 id="45-required-source-quality">======================================================================
+45. REQUIRED SOURCE QUALITY</h1>
+<p>Prefer:</p>
+<pre><code>original papers
+official benchmarks
+primary research
+formal methods literature
+official model/tool documentation where relevant
+</code></pre>
+<p>Clearly distinguish:</p>
+<pre><code>demonstrated evidence
+theoretical argument
+architectural inference
+unsupported hypothesis
+</code></pre>
+<h1 id="46-required-output">======================================================================
+46. REQUIRED OUTPUT</h1>
+<p>Produce:</p>
+<ol>
+<li>Executive verdict</li>
+<li>Existing research on action-space restriction</li>
+<li>Tool-selection literature</li>
+<li>Action masking / safe RL literature</li>
+<li>Planning branching-factor theory</li>
+<li>LLM-specific empirical evidence</li>
+<li>Static vs task-based vs state-based tool restriction</li>
+<li>Capability semantics comparison</li>
+<li>Tool-schema token-cost analysis</li>
+<li>Prompt-instruction replacement analysis</li>
+<li>Prerequisite-directed planning analysis</li>
+<li>Obligations + capabilities analysis</li>
+<li>Stale capability / freshness analysis</li>
+<li>Concurrent-action limitations</li>
+<li>External-effect uncertainty implications</li>
+<li>Smaller-model hypothesis</li>
+<li>Caching implications</li>
+<li>Dynamic-tool-refresh overhead</li>
+<li>Counterarguments</li>
+<li>Failure modes</li>
+<li>Proposed experiments</li>
+<li>Recommended metrics</li>
+<li>Economic model</li>
+<li>What is already empirically supported</li>
+<li>What remains speculative</li>
+<li>Architecture changes suggested by prior research</li>
+<li>Final verdict</li>
+</ol>
+<h1 id="47-final-verdict-format">======================================================================
+47. FINAL VERDICT FORMAT</h1>
+<p>Answer:</p>
+<p>Does reducing legal action space improve correctness?
+Strong evidence / Moderate evidence / Weak evidence / No evidence</p>
+<p>Does it reduce LLM token usage?
+Strong evidence / Moderate evidence / Weak evidence / No evidence</p>
+<p>Does it reduce total agent execution cost?
+Strong evidence / Moderate evidence / Weak evidence / No evidence</p>
+<p>Does it enable smaller models?
+Strong evidence / Moderate evidence / Weak evidence / No evidence</p>
+<p>Does state-conditioned filtering provide more value than task-only tool retrieval?
+Yes / Probably / Unclear / Probably not / No</p>
+<p>Most important mechanism:
+...</p>
+<p>Strongest existing evidence:
+...</p>
+<p>Biggest counterargument:
+...</p>
+<p>Most important missing experiment:
+...</p>
+<p>Most likely economic benefit:
+...</p>
+<p>Most likely correctness benefit:
+...</p>
+<h1 id="48-research-standard">======================================================================
+48. RESEARCH STANDARD</h1>
+<p>Be skeptical.</p>
+<p>Do not assume fewer visible tools automatically means fewer tokens.</p>
+<p>Do not confuse task relevance with legal availability.</p>
+<p>Do not count correctness improvements as token savings unless measured.</p>
+<p>Do not ignore the cost of capability computation, refreshes, semantic metadata,
+or tool discovery.</p>
+<p>Do not assume classical branching-factor theory maps directly onto LLM
+inference.</p>
+<p>The key question is:</p>
+<pre><code>Does deterministically shrinking the action frontier remove enough
+probabilistic tool-selection and planning work that agents become
+materially cheaper and more reliable?
+</code></pre></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

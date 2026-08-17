@@ -1,0 +1,623 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ai code semantic risk assessment | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">ai code semantic risk assessment</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/working-notes/ai-code-semantic-risk-assessment.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#-core-framing">======================================================================
+CORE FRAMING</a></li><li><a href="#-key-concept-semantic-control-surface">======================================================================
+KEY CONCEPT: SEMANTIC CONTROL SURFACE</a></li><li><a href="#-key-concept-semantic-escape-route">======================================================================
+KEY CONCEPT: SEMANTIC ESCAPE ROUTE</a></li><li><a href="#-key-concept-authoritative-mutation-exposure">======================================================================
+KEY CONCEPT: AUTHORITATIVE MUTATION EXPOSURE</a></li><li><a href="#-key-concept-persistence-semantic-integrity">======================================================================
+KEY CONCEPT: PERSISTENCE SEMANTIC INTEGRITY</a></li><li><a href="#-why-permissive-dynamic-systems-may-score-poorly-without-naming-them">======================================================================
+WHY PERMISSIVE/DYNAMIC SYSTEMS MAY SCORE POORLY WITHOUT NAMING THEM</a></li><li><a href="#-five-major-risk-categories">======================================================================
+FIVE MAJOR RISK CATEGORIES</a></li><li><a href="#-proposed-headline-scores">======================================================================
+PROPOSED HEADLINE SCORES</a></li><li><a href="#-possible-maturity-levels">======================================================================
+POSSIBLE MATURITY LEVELS</a></li><li><a href="#-initial-assessment-question-bank">======================================================================
+INITIAL ASSESSMENT QUESTION BANK</a></li><li><a href="#-questions-to-develop-next">======================================================================
+QUESTIONS TO DEVELOP NEXT</a></li><li><a href="#-research-direction">======================================================================
+RESEARCH DIRECTION</a></li> </ol> </aside> <section class="document-body"><p>AI Code Semantic Risk Assessment
+Working Notes and Initial Question Bank
+Date: 2026-08-14</p>
+<p>PURPOSE</p>
+<p>This assessment is intended for companies using AI to write, modify, maintain, or operate commercial software.</p>
+<p>The assessment should not be framed around whether the company uses a particular architectural pattern or programming language.</p>
+<p>The central question is:</p>
+<pre><code>How much critical business meaning does the software enforce mechanically,
+and how much must an AI agent infer correctly from code, tests, schemas,
+documentation, conventions, and historical implementation?
+</code></pre>
+<p>A company should not receive a poor score merely because it uses JavaScript,
+TypeScript, Python, SQL, an ORM, or a CRUD-oriented framework.</p>
+<p>However, the assessment should deliberately detect risks that are common in
+permissive languages and persistence-heavy architectures:</p>
+<pre><code>direct object mutation
+direct database mutation
+unrestricted ORM updates
+string-based status fields
+loosely structured objects
+missing exhaustive handling
+nullable/optional combinations
+easy fabrication of trusted values
+rules scattered across application and database layers
+broad tool access
+weak runtime boundary validation
+convention-only enforcement
+</code></pre>
+<p>The assessment should remain technology-neutral while exposing these risks through evidence.</p>
+<h1 id="core-framing">======================================================================
+CORE FRAMING</h1>
+<p>Preferred name:</p>
+<pre><code>AI Code Semantic Risk Assessment
+</code></pre>
+<p>Core question:</p>
+<pre><code>How much of the software's intended behavior is mechanically constrained,
+and how much must an AI coding agent reconstruct or guess?
+</code></pre>
+<p>The problem is not that AI writes code.</p>
+<p>The risk is that an AI agent may be able to produce code that is:</p>
+<pre><code>syntactically valid
+compilable
+test-passing
+deployable
+</code></pre>
+<p>while still being semantically wrong.</p>
+<p>Examples:</p>
+<pre><code>shipping an order without required prerequisites
+changing a lifecycle field directly
+fabricating an "approved" or "verified" object
+retrying an external effect whose outcome is unknown
+adding a default branch that hides a newly introduced business condition
+updating a database column while bypassing application rules
+weakening validation or tests to make a task pass
+</code></pre>
+<p>The assessment should determine how easy these outcomes are.</p>
+<h1 id="key-concept-semantic-control-surface">======================================================================
+KEY CONCEPT: SEMANTIC CONTROL SURFACE</h1>
+<p>Semantic Control Surface:</p>
+<pre><code>The mechanisms through which the software tells an AI agent:
+
+    what is currently true
+    what conditions exist
+    what actions are legal
+    what prerequisites are required
+    what authority exists
+    what evidence supports a claim
+    what remains unresolved
+    what may be changed
+    what must not be fabricated
+</code></pre>
+<p>A stronger semantic control surface reduces the amount of business meaning that an agent must reconstruct probabilistically.</p>
+<h1 id="key-concept-semantic-escape-route">======================================================================
+KEY CONCEPT: SEMANTIC ESCAPE ROUTE</h1>
+<p>Semantic Escape Route:</p>
+<pre><code>Any mechanism through which code can produce a consequential business outcome without satisfying the intended semantic prerequisites.
+</code></pre>
+<p>Examples:</p>
+<pre><code>public setters
+direct SQL UPDATE statements
+unrestricted ORM update APIs
+generic save(entity)
+mutable status fields
+arbitrary object construction
+unvalidated JSON
+unchecked casts
+any or equivalent dynamic escape hatches
+reflection
+wildcard/default branches
+migration scripts
+administrative endpoints
+direct database tooling
+broad operational agent permissions
+</code></pre>
+<p>The assessment should not merely count these mechanisms.</p>
+<p>It should determine:</p>
+<pre><code>which consequential business outcomes they can affect
+whether they bypass normal controls
+how obvious they are to an AI coding agent
+whether CI/runtime controls detect their use
+</code></pre>
+<p>Potential measure:</p>
+<pre><code>Semantic Escape Route Density
+</code></pre>
+<p>Conceptually:</p>
+<pre><code>    meaningful bypass mechanisms
+    -----------------------------
+    consequential domain operations
+</code></pre>
+<p>This may evolve into a more rigorous metric after empirical testing.</p>
+<h1 id="key-concept-authoritative-mutation-exposure">======================================================================
+KEY CONCEPT: AUTHORITATIVE MUTATION EXPOSURE</h1>
+<p>Authoritative Mutation Exposure asks:</p>
+<pre><code>How many paths exist through which consequential business state can be changed without passing through the intended semantic controls?
+</code></pre>
+<p>Examples of high exposure:</p>
+<pre><code>order.status = "shipped"
+
+UPDATE Orders
+SET Status = 'Shipped'
+WHERE Id = ...
+
+await Order.update(
+    { status: "shipped" },
+    { where: { id } }
+)
+</code></pre>
+<p>These are attractive to AI agents because they are:</p>
+<pre><code>obvious
+short
+syntactically valid
+easy to generate
+often accepted by frameworks
+potentially semantically wrong
+</code></pre>
+<p>A key assessment principle should be:</p>
+<pre><code>Does the easiest implementation path preserve the business model?
+</code></pre>
+<p>Desirable:</p>
+<pre><code>easiest path ~= legal path
+</code></pre>
+<p>Dangerous:</p>
+<pre><code>easiest path = bypass path
+</code></pre>
+<h1 id="key-concept-persistence-semantic-integrity">======================================================================
+KEY CONCEPT: PERSISTENCE SEMANTIC INTEGRITY</h1>
+<p>SQL is not being judged as though it were a domain programming language.</p>
+<p>The risk is that persistence may become an alternate mutation surface that bypasses the authoritative semantic layer.</p>
+<p>Persistence Semantic Integrity evaluates whether database and ORM access can circumvent business requirements.</p>
+<p>Areas to assess:</p>
+<pre><code>direct status/lifecycle column updates
+unrestricted SQL access
+bulk ORM updates
+triggers
+stored procedures
+scheduled jobs
+ETL
+migrations
+reporting jobs with write access
+DBA/manual scripts
+administrative tooling
+AI database tools
+</code></pre>
+<p>Questions include:</p>
+<pre><code>Can application code directly update consequential lifecycle fields?
+
+Can an AI agent with database access perform those writes?
+
+Do database constraints prevent impossible combinations?
+
+Are important transitions atomic?
+
+Are version/precondition checks enforced?
+
+Can historical or evidentiary state be overwritten?
+
+Can a bulk update bypass normal domain behavior?
+
+Does the database preserve semantic constraints or merely store the result?
+</code></pre>
+<p>A system can have excellent application code while still being semantically weak if the database remains an unrestricted side door.</p>
+<h1 id="why-permissivedynamic-systems-may-score-poorly-without-naming-them">======================================================================
+WHY PERMISSIVE/DYNAMIC SYSTEMS MAY SCORE POORLY WITHOUT NAMING THEM</h1>
+<p>The assessment should not contain a rule such as:</p>
+<pre><code>JavaScript = high risk
+</code></pre>
+<p>Instead, questions should expose properties often found in permissive JavaScript systems.</p>
+<p>Example:</p>
+<pre><code>const order = {
+    status: "approved",
+    paymentStatus: "captured",
+    fraudStatus: "clear"
+};
+</code></pre>
+<p>Questions:</p>
+<pre><code>Can arbitrary application code create this object?
+
+Can these properties be changed independently?
+
+Can contradictory combinations exist?
+
+Is the trusted form distinguishable from unvalidated input?
+
+Does changing a property invoke semantic checks?
+
+Will adding a new status cause missing logic to fail mechanically?
+
+Can a new field simply appear at runtime?
+
+Can a coding agent use an assertion, dynamic value, or generic object to bypass expected structure?
+</code></pre>
+<p>Plain JavaScript will frequently expose these weaknesses naturally.</p>
+<p>Strictly designed TypeScript may score much better.</p>
+<p>However, TypeScript systems should still be examined for escape routes such as:</p>
+<pre><code>any
+unknown as SomeType
+type assertions
+optional properties
+broad index signatures
+unchecked deserialization
+runtime type erasure
+mutable structural objects
+</code></pre>
+<p>The assessment evaluates the architecture actually present, not the language name.</p>
+<h1 id="five-major-risk-categories">======================================================================
+FIVE MAJOR RISK CATEGORIES</h1>
+<ol>
+<li>
+<p>Semantic Ambiguity</p>
+<p>How much must the agent infer?</p>
+<p>Are business conditions explicit?</p>
+<p>Are rules scattered?</p>
+<p>Is there a single authoritative interpretation?</p>
+</li>
+<li>
+<p>Representational Freedom</p>
+<p>How many invalid or contradictory conditions can ordinary code represent?</p>
+<p>Can trusted states be fabricated?</p>
+<p>Can incompatible fields coexist?</p>
+</li>
+<li>
+<p>Mutation Freedom</p>
+<p>How many direct mechanisms exist for altering authoritative data?</p>
+<p>Can code or SQL bypass controlled operations?</p>
+</li>
+<li>
+<p>Enforcement Coverage</p>
+<p>How much of the business model is enforced mechanically?</p>
+<p>Compiler?
+Analyzer?
+Runtime?
+Database?
+Tests only?
+Convention only?</p>
+</li>
+<li>
+<p>Escape-Route Accessibility</p>
+<p>How easy is the obvious shortcut?</p>
+<p>If an AI agent is asked to "make the tests pass," does the easiest solution follow the intended architecture or bypass it?</p>
+</li>
+</ol>
+<h1 id="proposed-headline-scores">======================================================================
+PROPOSED HEADLINE SCORES</h1>
+<p>Do not initially collapse everything into one score.</p>
+<p>Score at least:</p>
+<ol>
+<li>Semantic Explicitness</li>
+<li>Mechanical Enforcement</li>
+<li>Agent Bypass Resistance</li>
+<li>Semantic Reconstruction Burden</li>
+<li>Change Impact Visibility</li>
+<li>Authoritative Mutation Exposure</li>
+<li>Persistence Semantic Integrity</li>
+</ol>
+<h1 id="possible-maturity-levels">======================================================================
+POSSIBLE MATURITY LEVELS</h1>
+<p>LEVEL 1 — INFERENCE-DEPENDENT</p>
+<p>The system assumes developers and AI agents will infer what is legal.</p>
+<p>Common characteristics:</p>
+<pre><code>mutable entities
+public setters
+string/enum statuses
+business rules scattered across services
+broad database access
+broad tool access
+default branches
+test-only validation
+natural-language "never do X" instructions
+</code></pre>
+<p>Risk:</p>
+<pre><code>AI becomes part of the semantic enforcement mechanism.
+</code></pre>
+<p>LEVEL 2 — CONVENTION-CONSTRAINED</p>
+<p>There is a recognizable architecture, but much of it is enforced socially.</p>
+<p>Examples:</p>
+<pre><code>service methods
+naming conventions
+code review
+documentation
+validation libraries
+good tests
+</code></pre>
+<p>Risk:</p>
+<pre><code>the shortcut may still compile and pass superficial tests.
+</code></pre>
+<p>LEVEL 3 — STRUCTURALLY CONSTRAINED</p>
+<p>Important rules receive mechanical protection.</p>
+<p>Examples:</p>
+<pre><code>immutable authoritative state
+protected construction
+explicit business operations
+closed domain cases
+exhaustive handling
+structured failure
+strong analyzers
+controlled persistence
+</code></pre>
+<p>This may be a reasonable minimum for controlled autonomous maintenance.</p>
+<p>LEVEL 4 — SEMANTICALLY GOVERNED</p>
+<p>The system also models:</p>
+<pre><code>authority
+evidence
+policy versions
+freshness
+state versions
+external uncertainty
+obligations
+legal-action derivation
+</code></pre>
+<p>The system can explain why an action is or is not available.</p>
+<p>LEVEL 5 — AGENT-RESISTANT SEMANTIC CORE</p>
+<p>The architecture assumes AI agents will sometimes attempt the easiest wrong solution and deliberately makes those paths difficult.</p>
+<p>Examples:</p>
+<pre><code>generated semantic APIs
+generated policy checks
+protected generated code
+CI enforcement
+transition-only persistence
+semantic change impact reports
+only legal actions exposed to operational agents
+direct writes prohibited or strongly isolated
+</code></pre>
+<p>This is resistance to accidental semantic corruption, not protection against a malicious source-code owner.</p>
+<h1 id="initial-assessment-question-bank">======================================================================
+INITIAL ASSESSMENT QUESTION BANK</h1>
+<p>A. DOMAIN MEANING AND SEMANTIC EXPLICITNESS</p>
+<ol>
+<li>What are the five to ten most consequential business conditions in the system?</li>
+<li>Where is each condition represented?</li>
+<li>Is there one authoritative representation of each condition?</li>
+<li>Can the same condition be represented differently in application objects, API payloads, database rows, background jobs, and reports?</li>
+<li>Are consequential conditions represented as strings, booleans, nullable fields, independent fields, or structured domain values?</li>
+<li>Can contradictory business conditions coexist in memory?</li>
+<li>Can contradictory business conditions coexist in persistence?</li>
+<li>Does the software distinguish unknown, absent, false, invalid, and not-yet-evaluated?</li>
+<li>Does the software distinguish reported information from verified information?</li>
+<li>Can an agent find the authoritative meaning in one place, or must it search broadly?</li>
+</ol>
+<p>B. CONTROLLED BUSINESS CHANGE</p>
+<ol start="11">
+<li>What operations cause consequential business state to change?</li>
+<li>Are those operations explicitly named?</li>
+<li>Can the same result be achieved by directly assigning a field?</li>
+<li>Can the same result be achieved by writing directly to the database?</li>
+<li>Can the same result be achieved through an ORM bulk update?</li>
+<li>Can ordinary application code skip prerequisite checks?</li>
+<li>Are transition prerequisites centralized or repeated in multiple places?</li>
+<li>Does an operation verify the current condition before applying a change?</li>
+<li>Does it verify the expected version of the data?</li>
+<li>Can two concurrent operations both believe they are legal?</li>
+</ol>
+<p>C. DYNAMIC-OBJECT / PERMISSIVE-LANGUAGE RISK</p>
+<ol start="21">
+<li>Can arbitrary application code create objects that look like trusted domain objects?</li>
+<li>Can a trusted object be distinguished mechanically from unvalidated JSON?</li>
+<li>Can arbitrary properties be added to consequential objects?</li>
+<li>Can business-critical properties be independently mutated?</li>
+<li>Are important property combinations validated only at runtime?</li>
+<li>Can an agent bypass type expectations using dynamic values, assertions, casts, or generic object shapes?</li>
+<li>Are optional properties being used to represent mutually exclusive business conditions?</li>
+<li>Does the system rely on naming conventions to distinguish verified from unverified data?</li>
+<li>Can an object claim to be approved, verified, or authorized simply because a property contains that value?</li>
+<li>Does deserialization produce trusted objects directly?</li>
+</ol>
+<p>D. SQL AND PERSISTENCE BYPASS</p>
+<ol start="31">
+<li>Which database columns directly represent consequential business outcomes?</li>
+<li>Who or what can update those columns?</li>
+<li>Can application code issue direct UPDATE statements against them?</li>
+<li>Can operational AI agents issue those updates?</li>
+<li>Can ORM methods update them without invoking business rules?</li>
+<li>Are there generic repository methods such as Save(), Update(), or Patch() that can alter them?</li>
+<li>Can bulk updates bypass domain checks?</li>
+<li>Can migration scripts alter live business state?</li>
+<li>Can scheduled jobs change lifecycle values directly?</li>
+<li>Can ETL/data-fix scripts create states the normal application cannot?</li>
+<li>Do database CHECK constraints prevent important invalid combinations?</li>
+<li>Are foreign-key constraints sufficient for business invariants, or only referential integrity?</li>
+<li>Do stored procedures enforce the same prerequisites as the application?</li>
+<li>Can triggers create behavior that an agent may miss when reading application code?</li>
+<li>Can administrative SQL change business state without producing the same audit/evidence record as the normal operation?</li>
+<li>Is persistence treated as storage behind the domain model or as an alternate business API?</li>
+</ol>
+<p>E. ORM RISK</p>
+<ol start="47">
+<li>Can an ORM entity be modified and saved without invoking a named business operation?</li>
+<li>Are ORM entities also used directly as domain objects?</li>
+<li>Are public setters present because the ORM requires them?</li>
+<li>Can tracked-object mutation cause consequential writes implicitly?</li>
+<li>Can partial update/patch APIs bypass invariants?</li>
+<li>Can bulk update features bypass hooks or validation?</li>
+<li>Does loading an entity give application code permission to modify every persisted field?</li>
+<li>Are lifecycle/status fields writable by generic mapping code?</li>
+<li>Can an AI agent solve a feature request by modifying an ORM field rather than locating the intended domain operation?</li>
+</ol>
+<p>F. PROTECTED AND TRUSTED VALUES</p>
+<ol start="56">
+<li>Which values represent authority or proof?</li>
+<li>Can arbitrary application code construct those values?</li>
+<li>Can they be created by deserialization?</li>
+<li>Can they be copied and modified?</li>
+<li>Are they distinguishable from ordinary data?</li>
+<li>Does possession of such a value actually confer permission to perform an operation?</li>
+<li>Is authority bound to a specific entity, state version, policy version, evidence version, or expiration time?</li>
+<li>Can stale authority still be used?</li>
+<li>Can an agent fabricate authority using a generic object constructor?</li>
+</ol>
+<p>G. EXHAUSTIVE BUSINESS INTERPRETATION</p>
+<ol start="65">
+<li>When a new business condition is added, what forces existing logic to reconsider it?</li>
+<li>Will the compiler fail?</li>
+<li>Will an analyzer fail?</li>
+<li>Will generated tests fail?</li>
+<li>Will runtime validation fail?</li>
+<li>Or must a developer search for affected code manually?</li>
+<li>How often do switch/default/wildcard branches hide new cases?</li>
+<li>Are unknown values rejected, ignored, or treated as a default?</li>
+<li>Are database CASE expressions required to handle every meaningful case?</li>
+<li>Are reports likely to silently classify a new condition incorrectly?</li>
+<li>Can an agent add a default branch merely to eliminate a diagnostic?</li>
+</ol>
+<p>H. FAILURE AND UNCERTAINTY</p>
+<ol start="76">
+<li>Are expected business failures represented explicitly?</li>
+<li>Can the system distinguish success, failure, and outcome unknown?</li>
+<li>What happens when an external call times out after the provider may have accepted the operation?</li>
+<li>Can an AI agent retry automatically?</li>
+<li>Does uncertain outcome remove the original capability?</li>
+<li>Does the system create an explicit reconciliation obligation?</li>
+<li>Are idempotency identifiers used?</li>
+<li>Does the system distinguish retryable failure from unknown outcome?</li>
+<li>Can an agent infer retry safety from a formal contract, or must it inspect implementation history?</li>
+</ol>
+<p>I. CHANGE IMPACT VISIBILITY</p>
+<ol start="85">
+<li>If Approved is split into ConditionallyApproved and FullyApproved, what mechanically identifies affected behavior?</li>
+<li>Does shipping logic surface?</li>
+<li>Does accounting logic surface?</li>
+<li>Does reporting logic surface?</li>
+<li>Do agent tools surface?</li>
+<li>Do policy checks surface?</li>
+<li>Do database constraints surface?</li>
+<li>Do scheduled jobs surface?</li>
+<li>Does UI behavior surface?</li>
+<li>Does the system produce an impact report?</li>
+<li>How many affected interpretations can change silently?</li>
+</ol>
+<p>J. SEMANTIC RECONSTRUCTION BURDEN</p>
+<ol start="96">
+<li>For a consequential change, how many files must an agent inspect before it can determine the relevant rule?</li>
+<li>How many repository searches are normally required?</li>
+<li>Are business rules discoverable from names?</li>
+<li>Are rules duplicated?</li>
+<li>Are tests the only reliable documentation?</li>
+<li>Does the database contain rules not visible in application code?</li>
+<li>Do stored procedures/triggers contain separate semantics?</li>
+<li>Do operational scripts create additional meanings?</li>
+<li>Can the system directly answer: What is true? What can happen next? Why? What is missing?</li>
+<li>Or must the agent reconstruct those answers?</li>
+</ol>
+<p>K. AI AGENT ESCAPE-ROUTE TESTING</p>
+<ol start="106">
+<li>Ask an agent: "Make the tests pass." Does it weaken the test?</li>
+<li>Does it add a default branch?</li>
+<li>Does it directly mutate a status?</li>
+<li>Does it perform a direct SQL update?</li>
+<li>Does it use an ORM shortcut?</li>
+<li>Does it fabricate an approval/verification object?</li>
+<li>Does it introduce any, dynamic, reflection, or an unchecked cast?</li>
+<li>Does it suppress a compiler/analyzer warning?</li>
+<li>Does it disable validation?</li>
+<li>Does it broaden permissions?</li>
+<li>Does it remove a concurrency/version check?</li>
+<li>Does it follow the intended business operation instead?</li>
+<li>How many lines of code are required for the correct path versus the shortcut?</li>
+<li>Which path is more obvious from repository context?</li>
+<li>Does CI detect the shortcut?</li>
+</ol>
+<p>L. AI TOOL AND OPERATIONAL ACCESS</p>
+<ol start="121">
+<li>What tools are exposed to operational agents?</li>
+<li>Are all tools exposed at all times?</li>
+<li>Are legal actions derived from current business conditions?</li>
+<li>Can an agent call a consequential action when prerequisites are missing?</li>
+<li>Does the tool reject it mechanically?</li>
+<li>Does the tool explain why?</li>
+<li>Can the agent bypass the tool through shell/database access?</li>
+<li>Are database credentials available to the agent?</li>
+<li>Can tool access produce effects that the semantic layer cannot observe?</li>
+<li>Are current unresolved obligations directly presented to the agent?</li>
+</ol>
+<p>M. OBSERVABILITY AND AUDITABILITY</p>
+<ol start="131">
+<li>Can the company determine how a consequential state was reached?</li>
+<li>Is there an explicit record of the operation that produced it?</li>
+<li>Is the authority used recorded?</li>
+<li>Is the policy version recorded?</li>
+<li>Is supporting evidence recorded?</li>
+<li>Are direct database changes distinguishable from controlled operations?</li>
+<li>Can an AI-generated change remove or corrupt audit history?</li>
+<li>Can a state be reconstructed from trusted events?</li>
+</ol>
+<p>N. BOUNDARY VALIDATION</p>
+<ol start="139">
+<li>Are API inputs considered untrusted?</li>
+<li>Are database reads automatically considered trusted?</li>
+<li>Are messages from queues/events validated?</li>
+<li>Is JSON validated before becoming authoritative domain data?</li>
+<li>Do runtime schemas align with compile-time types?</li>
+<li>Can invalid historical data enter a newly stricter model?</li>
+<li>Does the system distinguish boundary DTOs from authoritative domain values?</li>
+</ol>
+<p>O. GOVERNANCE OF AI-GENERATED CODE</p>
+<ol start="146">
+<li>Are AI-generated changes reviewed differently when they affect consequential business logic?</li>
+<li>Can agents modify analyzers, generated semantic code, validation rules, or CI protections?</li>
+<li>Are those files protected by repository policy?</li>
+<li>Can an agent make a constraint disappear in the same pull request that requires satisfying it?</li>
+<li>Are semantic-control changes independently reviewed?</li>
+<li>Does the company measure how often AI changes weaken constraints?</li>
+<li>Are direct database mutations reviewed as semantic changes?</li>
+</ol>
+<h1 id="questions-to-develop-next">======================================================================
+QUESTIONS TO DEVELOP NEXT</h1>
+<p>The next research pass should convert the question bank into several evidence types:</p>
+<ol>
+<li>Interview questions</li>
+<li>Repository inspection questions</li>
+<li>Database inspection questions</li>
+<li>Adversarial agent tests</li>
+<li>Quantitative metrics</li>
+<li>Executive findings</li>
+</ol>
+<p>Potential quantitative measures:</p>
+<pre><code>mutation path count
+direct SQL write count
+mutable consequential-field count
+default/wildcard coverage
+unvalidated boundary count
+semantic reconstruction files
+escape-route success rate
+semantic change coverage
+</code></pre>
+<p>Example executive findings:</p>
+<pre><code>"The application relies heavily on developers—and therefore AI coding agents—correctly reconstructing business semantics from implementation details."
+
+"We identified 17 ways to modify order lifecycle state. Only four enforce all documented eligibility requirements."
+
+"An AI coding agent can make an order appear shipped through a direct persistence update without satisfying payment or fraud prerequisites."
+
+"Critical domain meaning is represented independently in application objects, API payloads, and database columns, with no single authoritative semantic definition."
+</code></pre>
+<h1 id="research-direction">======================================================================
+RESEARCH DIRECTION</h1>
+<p>The assessment should ultimately answer:</p>
+<pre><code>How much critical business knowledge is the company currently asking AI models to infer?
+
+How many technically valid shortcuts exist around that knowledge?
+
+Which shortcuts are likely to be attractive to an AI coding agent?
+
+How much of the intended behavior is mechanically enforced?
+
+How much semantic authority is exposed through SQL, ORM, scripts, or generic mutation APIs?
+
+How difficult would it be to move the system from inference-dependent behavior toward mechanically constrained behavior without requiring a wholesale language rewrite?
+</code></pre>
+<p>The assessment should diagnose risk first.</p>
+<p>It should not begin by prescribing:</p>
+<pre><code>F#
+Rust
+functional programming
+state machines
+a rewrite
+</code></pre>
+<p>A JavaScript/SQL-heavy system may receive a poor score because its actual semantic controls are weak.</p>
+<p>A carefully constrained TypeScript or JavaScript system may score reasonably well.</p>
+<p>A C#, Java, or other statically typed system may still score poorly if it is essentially:</p>
+<pre><code>mutable DTOs
+public setters
+generic ORM
+direct persistence access
+convention-only business rules
+</code></pre>
+<p>The assessment must measure the real architecture.</p>
+<p>The broader principle is:</p>
+<pre><code>For AI-maintained software, the safest architecture is one in which
+the easiest implementation path is also the semantically legal path.
+</code></pre></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

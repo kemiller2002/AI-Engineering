@@ -1,0 +1,2166 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AI Research Mission 10 — Semantic Modularity vs Ordinary Modularity for AI Agents | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">AI Research Mission 10 — Semantic Modularity vs Ordinary Modularity for AI Agents</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/reports/10-semantic-modularity-vs-ordinary-modularity-ai-agents-research-report.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#ai-research-mission-10-semantic-modularity-vs-ordinary-modularity-for-ai-agents">AI Research Mission 10 — Semantic Modularity vs Ordinary Modularity for AI Agents</a></li><li><a href="#central-question">Central question</a></li><li><a href="#1-executive-verdict">1. Executive verdict</a></li><li><a href="#2-fair-definition-of-competent-conventional-modularity">2. Fair definition of competent conventional modularity</a></li><li><a href="#structural-organization">Structural organization</a></li><li><a href="#domain-modeling">Domain modeling</a></li><li><a href="#type-safety">Type safety</a></li><li><a href="#dependency-control">Dependency control</a></li><li><a href="#persistence-discipline">Persistence discipline</a></li><li><a href="#documentation">Documentation</a></li><li><a href="#ai-context-tooling">AI context tooling</a></li><li><a href="#3-definition-of-semantic-modularity">3. Definition of semantic modularity</a></li><li><a href="#4-structural-modularity-vs-semantic-modularity">4. Structural modularity vs semantic modularity</a></li><li><a href="#structural-modularity">Structural modularity</a></li><li><a href="#semantic-modularity">Semantic modularity</a></li><li><a href="#5-information-hiding-comparison">5. Information hiding comparison</a></li><li><a href="#6-ddd-bounded-context-comparison">6. DDD bounded-context comparison</a></li><li><a href="#7-aggregate-comparison">7. Aggregate comparison</a></li><li><a href="#8-actor-model-comparison">8. Actor-model comparison</a></li><li><a href="#9-ports-and-adapters-comparison">9. Ports and adapters comparison</a></li><li><a href="#10-clean-architecture-comparison">10. Clean Architecture comparison</a></li><li><a href="#11-modular-monolith-comparison">11. Modular-monolith comparison</a></li><li><a href="#12-strong-type-comparison">12. Strong-type comparison</a></li><li><a href="#f-">F#</a></li><li><a href="#rust">Rust</a></li><li><a href="#kotlin">Kotlin</a></li><li><a href="#c-">C#</a></li><li><a href="#typescript">TypeScript</a></li><li><a href="#javascript-python">JavaScript/Python</a></li><li><a href="#13-what-strong-types-do-not-naturally-solve">13. What strong types do not naturally solve</a></li><li><a href="#14-architecture-test-comparison">14. Architecture-test comparison</a></li><li><a href="#15-static-dependency-graphs">15. Static dependency graphs</a></li><li><a href="#16-program-slicing-comparison">16. Program slicing comparison</a></li><li><a href="#17-modern-repository-retrieval-comparison">17. Modern repository retrieval comparison</a></li><li><a href="#contextbench">ContextBench</a></li><li><a href="#swe-explore">SWE-Explore</a></li><li><a href="#agent-retrieval-bench">Agent Retrieval Bench</a></li><li><a href="#18-structural-indices-and-graphs">18. Structural indices and graphs</a></li><li><a href="#19-documentation-baseline">19. Documentation baseline</a></li><li><a href="#20-ai-generated-summary-baseline">20. AI-generated summary baseline</a></li><li><a href="#21-executable-contract-baseline">21. Executable-contract baseline</a></li><li><a href="#22-ordinary-api-contract-vs-explicit-state-model">22. Ordinary API contract vs explicit state model</a></li><li><a href="#23-semantic-ownership-incremental-value">23. Semantic ownership incremental value</a></li><li><a href="#24-capability-frontier-incremental-value">24. Capability-frontier incremental value</a></li><li><a href="#25-obligations-incremental-value">25. Obligations incremental value</a></li><li><a href="#26-epistemic-state-incremental-value">26. Epistemic-state incremental value</a></li><li><a href="#27-outcomeunknown-incremental-value">27. OutcomeUnknown incremental value</a></li><li><a href="#28-dependency-closure-incremental-value">28. Dependency-closure incremental value</a></li><li><a href="#29-semantic-migration-incremental-value">29. Semantic-migration incremental value</a></li><li><a href="#30-pivotability-comparison">30. Pivotability comparison</a></li><li><a href="#31-token-context-comparison">31. Token/context comparison</a></li><li><a href="#32-minimum-sufficient-context">32. Minimum sufficient context</a></li><li><a href="#33-module-contract-overhead">33. Module contract overhead</a></li><li><a href="#34-lazy-detail-retrieval">34. Lazy detail retrieval</a></li><li><a href="#35-model-size-interaction">35. Model-size interaction</a></li><li><a href="#36-language-interaction">36. Language interaction</a></li><li><a href="#strong-language-conventional">Strong-language conventional</a></li><li><a href="#mainstream-moderate">Mainstream moderate</a></li><li><a href="#weaker-semantic-enforcement">Weaker semantic enforcement</a></li><li><a href="#37-strong-language-baseline">37. Strong-language baseline</a></li><li><a href="#38-weak-language-baseline">38. Weak-language baseline</a></li><li><a href="#39-longitudinal-drift-interaction">39. Longitudinal drift interaction</a></li><li><a href="#40-architecture-self-defense">40. Architecture self-defense</a></li><li><a href="#41-maintenance-burden">41. Maintenance burden</a></li><li><a href="#42-toolchain-complexity">42. Toolchain complexity</a></li><li><a href="#43-debugging-risk">43. Debugging risk</a></li><li><a href="#44-incremental-adoption">44. Incremental adoption</a></li><li><a href="#45-semantic-islands">45. Semantic islands</a></li><li><a href="#46-domain-selection">46. Domain selection</a></li><li><a href="#high-incremental-value-likely">High incremental value likely</a></li><li><a href="#moderate">Moderate</a></li><li><a href="#low">Low</a></li><li><a href="#47-crud-counterexample">47. CRUD counterexample</a></li><li><a href="#48-pure-function-counterexample">48. Pure-function counterexample</a></li><li><a href="#49-high-consequence-example">49. High-consequence example</a></li><li><a href="#50-cross-module-change-example">50. Cross-module change example</a></li><li><a href="#51-local-refactor-example">51. Local refactor example</a></li><li><a href="#52-state-addition-example">52. State addition example</a></li><li><a href="#53-state-split-example">53. State split example</a></li><li><a href="#54-policy-change-example">54. Policy-change example</a></li><li><a href="#55-ablation-ladder">55. Ablation ladder</a></li><li><a href="#a-conventional">A — Conventional</a></li><li><a href="#b-excellent-docs">B — + excellent docs</a></li><li><a href="#c-strong-types">C — + strong types</a></li><li><a href="#d-architecture-tests">D — + architecture tests</a></li><li><a href="#e-executable-contracts">E — + executable contracts</a></li><li><a href="#f-semantic-state-transition-model">F — + semantic state/transition model</a></li><li><a href="#g-capability-frontier">G — + capability frontier</a></li><li><a href="#h-obligations">H — + obligations</a></li><li><a href="#i-semantic-dependency-closure">I — + semantic dependency closure</a></li><li><a href="#j-semantic-migration">J — + semantic migration</a></li><li><a href="#56-expected-marginal-value-curve">56. Expected marginal value curve</a></li><li><a href="#57-semantic-modularity-index">57. Semantic Modularity Index</a></li><li><a href="#ownership-closure">Ownership Closure</a></li><li><a href="#transition-closure">Transition Closure</a></li><li><a href="#authority-closure">Authority Closure</a></li><li><a href="#dependency-closure">Dependency Closure</a></li><li><a href="#obligation-exposure">Obligation Exposure</a></li><li><a href="#58-metrics">58. Metrics</a></li><li><a href="#context-tokens-per-correct-completion">Context Tokens per Correct Completion</a></li><li><a href="#files-read">Files Read</a></li><li><a href="#search-tool-calls">Search/Tool Calls</a></li><li><a href="#module-escape-rate">Module Escape Rate</a></li><li><a href="#implementation-exposure-ratio">Implementation Exposure Ratio</a></li><li><a href="#dependency-recall">Dependency Recall</a></li><li><a href="#dependency-precision">Dependency Precision</a></li><li><a href="#illegal-mutation-rate">Illegal Mutation Rate</a></li><li><a href="#semantic-error-rate">Semantic Error Rate</a></li><li><a href="#repair-loops">Repair Loops</a></li><li><a href="#human-review-minutes">Human Review Minutes</a></li><li><a href="#semantic-retention">Semantic Retention</a></li><li><a href="#cost-per-correct-completion">Cost per Correct Completion</a></li><li><a href="#59-economic-model">59. Economic model</a></li><li><a href="#60-startup-implications">60. Startup implications</a></li><li><a href="#61-enterprise-implications">61. Enterprise implications</a></li><li><a href="#62-legacy-adoption-strategy">62. Legacy adoption strategy</a></li><li><a href="#63-agent-only-semantic-layer">63. Agent-only semantic layer</a></li><li><a href="#64-runtime-only-semantic-layer">64. Runtime-only semantic layer</a></li><li><a href="#65-which-benefit-comes-from-what">65. Which benefit comes from what</a></li><li><a href="#modularity-benefit">Modularity benefit</a></li><li><a href="#typing-benefit">Typing benefit</a></li><li><a href="#runtime-enforcement-benefit">Runtime enforcement benefit</a></li><li><a href="#agent-context-benefit">Agent-context benefit</a></li><li><a href="#planning-benefit">Planning benefit</a></li><li><a href="#migration-benefit">Migration benefit</a></li><li><a href="#66-strongest-counter-hypothesis-good-modularity-retrieval-is-enough">66. Strongest counter-hypothesis: good modularity + retrieval is enough</a></li><li><a href="#67-second-counter-hypothesis-strong-types-solve-most-of-it">67. Second counter-hypothesis: strong types solve most of it</a></li><li><a href="#68-third-counter-hypothesis-capabilities-obligations-matter-semantic-compiler-does-not">68. Third counter-hypothesis: capabilities/obligations matter, semantic compiler does not</a></li><li><a href="#69-fourth-counter-hypothesis-the-real-benefit-is-action-control">69. Fourth counter-hypothesis: the real benefit is action control</a></li><li><a href="#70-fifth-counter-hypothesis-semantic-dependency-closure-is-the-unique-valuable-piece">70. Fifth counter-hypothesis: semantic dependency closure is the unique valuable piece</a></li><li><a href="#71-proposed-experiment-suite">71. Proposed experiment suite</a></li><li><a href="#experiment-1-local-adapter-refactor">Experiment 1 — local adapter refactor</a></li><li><a href="#experiment-2-state-addition">Experiment 2 — state addition</a></li><li><a href="#experiment-3-state-split">Experiment 3 — state split</a></li><li><a href="#experiment-4-cross-module-eligibility-rule">Experiment 4 — cross-module eligibility rule</a></li><li><a href="#experiment-5-policy-freshness-change">Experiment 5 — policy freshness change</a></li><li><a href="#experiment-6-outcomeunknown-refund">Experiment 6 — OutcomeUnknown refund</a></li><li><a href="#experiment-7-product-pivot">Experiment 7 — product pivot</a></li><li><a href="#experiment-8-50-task-longitudinal-sequence">Experiment 8 — 50-task longitudinal sequence</a></li><li><a href="#72-context-experiment-design">72. Context experiment design</a></li><li><a href="#73-model-tier-experiment">73. Model-tier experiment</a></li><li><a href="#74-language-experiment">74. Language experiment</a></li><li><a href="#75-human-review-experiment">75. Human-review experiment</a></li><li><a href="#conventional">Conventional</a></li><li><a href="#semantic">Semantic</a></li><li><a href="#76-what-ordinary-modularity-already-solves">76. What ordinary modularity already solves</a></li><li><a href="#77-what-remains-uniquely-unsolved">77. What remains uniquely unsolved</a></li><li><a href="#1-current-legal-action-frontier">1. Current legal action frontier</a></li><li><a href="#2-meaning-level-dependency-closure">2. Meaning-level dependency closure</a></li><li><a href="#3-semantic-migration">3. Semantic migration</a></li><li><a href="#4-machine-authoritative-provenance">4. Machine-authoritative provenance</a></li><li><a href="#5-epistemic-action-requirements">5. Epistemic action requirements</a></li><li><a href="#78-minimum-semantic-layer-worth-building">78. Minimum semantic layer worth building</a></li><li><a href="#core-1-semantic-ids">Core 1 — Semantic IDs</a></li><li><a href="#core-2-explicit-transitions">Core 2 — Explicit transitions</a></li><li><a href="#core-3-capability-derivation">Core 3 — Capability derivation</a></li><li><a href="#core-4-semantic-dependency-registration">Core 4 — Semantic dependency registration</a></li><li><a href="#core-5-migration-checker">Core 5 — Migration checker</a></li><li><a href="#79-recommended-implementation-posture">79. Recommended implementation posture</a></li><li><a href="#80-final-verdict">80. Final verdict</a></li><li><a href="#does-competent-conventional-modularity-reduce-ai-context-substantially-">Does competent conventional modularity reduce AI context substantially?</a></li><li><a href="#does-semantic-modularity-add-material-context-reduction-beyond-that-">Does semantic modularity add material context reduction beyond that?</a></li><li><a href="#does-semantic-modularity-add-material-correctness-benefit-">Does semantic modularity add material correctness benefit?</a></li><li><a href="#does-semantic-dependency-closure-provide-unique-value-">Does semantic dependency closure provide unique value?</a></li><li><a href="#does-semantic-migration-provide-unique-value-">Does semantic migration provide unique value?</a></li><li><a href="#are-capabilities-obligations-separable-from-modularity-benefits-">Are capabilities/obligations separable from modularity benefits?</a></li><li><a href="#can-strong-languages-ordinary-architecture-capture-most-benefit-">Can strong languages + ordinary architecture capture most benefit?</a></li><li><a href="#most-valuable-incremental-semantic-mechanism">Most valuable incremental semantic mechanism</a></li><li><a href="#least-valuable-most-redundant-mechanism">Least valuable / most redundant mechanism</a></li><li><a href="#strongest-conventional-competitor">Strongest conventional competitor</a></li><li><a href="#best-minimal-architecture">Best minimal architecture</a></li><li><a href="#biggest-over-engineering-risk">Biggest over-engineering risk</a></li><li><a href="#best-first-experiment">Best first experiment</a></li><li><a href="#most-important-architecture-change-suggested-by-research">Most important architecture change suggested by research</a></li><li><a href="#81-bottom-line-interpretation">81. Bottom-line interpretation</a></li><li><a href="#82-key-sources">82. Key sources</a></li><li><a href="#foundational-modularity">Foundational modularity</a></li><li><a href="#repository-context-and-retrieval">Repository context and retrieval</a></li><li><a href="#long-horizon-context-relevance">Long-horizon context relevance</a></li><li><a href="#conventional-architecture-families-used-in-comparison">Conventional architecture families used in comparison</a></li><li><a href="#83-evidence-grading-summary">83. Evidence grading summary</a></li><li><a href="#84-research-decision">84. Research decision</a></li> </ol> </aside> <section class="document-body"><h1 id="ai-research-mission-10--semantic-modularity-vs-ordinary-modularity-for-ai-agents">AI Research Mission 10 — Semantic Modularity vs Ordinary Modularity for AI Agents</h1>
+<h2 id="central-question">Central question</h2>
+<p><strong>After giving conventional software the best reasonable modularity, typing, documentation, dependency tooling, and AI retrieval available, what meaningful benefit—if any—remains from making consequential state, legal transitions, capabilities, obligations, semantic dependencies, and migrations explicit and machine-authoritative?</strong></p>
+<hr>
+<h1 id="1-executive-verdict">1. Executive verdict</h1>
+<p>The strongest skeptical conclusion is:</p>
+<blockquote>
+<p><strong>Good conventional modularity already captures a large fraction of the benefits that might otherwise be attributed to semantic modularity.</strong></p>
+</blockquote>
+<p>That is not a weakness in the research program. It significantly sharpens it.</p>
+<p>A competent conventional architecture can already provide:</p>
+<ul>
+<li>information hiding,</li>
+<li>strong module boundaries,</li>
+<li>data ownership,</li>
+<li>aggregate-level invariant protection,</li>
+<li>typed APIs,</li>
+<li>closed types and exhaustive handling in stronger languages,</li>
+<li>dependency rules,</li>
+<li>architecture tests,</li>
+<li>ports and adapters,</li>
+<li>contract tests,</li>
+<li>domain events,</li>
+<li>policy engines,</li>
+<li>workflow engines,</li>
+<li>task queues,</li>
+<li>repository maps,</li>
+<li>static dependency graphs,</li>
+<li>code search,</li>
+<li>graph-based retrieval,</li>
+<li>AI-generated module summaries.</li>
+</ul>
+<p>Modern repository-retrieval work also shows that agent context acquisition is becoming increasingly sophisticated. ContextBench, SWE-Explore, Agent Retrieval Bench, CORE-Bench, structural repository indices, program-slicing approaches, and graph-based exploration all attack the same broad problem:</p>
+<blockquote>
+<p>finding the minimum code context needed to act correctly.</p>
+</blockquote>
+<p>Therefore the proposed architecture should <strong>not</strong> claim:</p>
+<blockquote>
+<p>"Ordinary modules are insufficient for AI."</p>
+</blockquote>
+<p>That is not supported.</p>
+<p>A more defensible conclusion is:</p>
+<blockquote>
+<p><strong>Semantic modularity may provide incremental value specifically where ordinary modularity exposes structure but not authoritative meaning.</strong></p>
+</blockquote>
+<p>The most promising incremental mechanisms are:</p>
+<ol>
+<li>
+<p><strong>Dynamic legal-action frontier</strong></p>
+<ul>
+<li>the agent sees what can be done <em>now</em>, not merely what methods exist.</li>
+</ul>
+</li>
+<li>
+<p><strong>Semantic dependency closure</strong></p>
+<ul>
+<li>dependencies such as "RefundEligibility depends on interpretation of PaymentState.Captured" are explicit even when normal import/call graphs do not capture them.</li>
+</ul>
+</li>
+<li>
+<p><strong>Semantic migration</strong></p>
+<ul>
+<li>a state split, merge, or meaning change forces explicit redistribution of consequential interpretations.</li>
+</ul>
+</li>
+<li>
+<p><strong>Machine-enforced semantic authority</strong></p>
+<ul>
+<li>surviving code/tests/schema do not silently redefine domain meaning.</li>
+</ul>
+</li>
+<li>
+<p><strong>Obligations</strong></p>
+<ul>
+<li>unresolved semantic work becomes first-class rather than requiring open-ended discovery.</li>
+</ul>
+</li>
+<li>
+<p><strong>Epistemic requirements</strong></p>
+<ul>
+<li>actions can depend on evidence quality/authority rather than only structural state.</li>
+</ul>
+</li>
+</ol>
+<p>However, several proposed mechanisms appear largely <strong>separable from modularity</strong>:</p>
+<ul>
+<li>capabilities,</li>
+<li>obligations,</li>
+<li>epistemic state,</li>
+<li>outcome-unknown handling.</li>
+</ul>
+<p>These may be valuable even if the underlying architecture remains conventionally modular.</p>
+<p>That produces an important correction to the thesis:</p>
+<blockquote>
+<p><strong>The architecture's strongest value may not be "better modularity." It may be a semantic control layer placed on top of already-good modularity.</strong></p>
+</blockquote>
+<p>The research therefore favors:</p>
+<pre><code class="language-text">strong ordinary modular architecture
+    +
+small semantic control layer around consequential state
+</code></pre>
+<p>rather than:</p>
+<pre><code class="language-text">replace ordinary architecture with a universal semantic architecture
+</code></pre>
+<p>The biggest over-engineering risk is building a custom semantic compiler that recreates:</p>
+<ul>
+<li>DDD,</li>
+<li>design by contract,</li>
+<li>workflow,</li>
+<li>policy engines,</li>
+<li>code graphs,</li>
+<li>architecture tests,</li>
+</ul>
+<p>without producing measurable incremental correctness or context savings.</p>
+<p>The best first experiment is an ablation ladder comparing:</p>
+<pre><code class="language-text">Conventional
++ docs
++ strong types
++ architecture tests
++ executable contracts
++ semantic state/transition model
++ capability frontier
++ dependency closure
++ semantic migration
+</code></pre>
+<p>on the <strong>same tasks</strong>.</p>
+<p>The decisive result is not whether the full semantic architecture wins.</p>
+<p>It is:</p>
+<blockquote>
+<p><strong>Where does marginal value actually appear?</strong></p>
+</blockquote>
+<hr>
+<h1 id="2-fair-definition-of-competent-conventional-modularity">2. Fair definition of competent conventional modularity</h1>
+<p>The conventional baseline must be strong.</p>
+<p>A fair Architecture A includes:</p>
+<h2 id="structural-organization">Structural organization</h2>
+<ul>
+<li>modular monolith or well-structured services,</li>
+<li>clear bounded contexts,</li>
+<li>explicit module APIs,</li>
+<li>internal implementation hiding,</li>
+<li>separate infrastructure adapters.</li>
+</ul>
+<h2 id="domain-modeling">Domain modeling</h2>
+<ul>
+<li>DDD-style entities/value objects where useful,</li>
+<li>aggregate roots,</li>
+<li>invariants protected through methods,</li>
+<li>domain services,</li>
+<li>domain events.</li>
+</ul>
+<h2 id="type-safety">Type safety</h2>
+<p>Where language permits:</p>
+<ul>
+<li>closed enums/unions,</li>
+<li>nullability controls,</li>
+<li>exhaustive matching,</li>
+<li>immutable value objects,</li>
+<li>private constructors.</li>
+</ul>
+<h2 id="dependency-control">Dependency control</h2>
+<ul>
+<li>architecture tests,</li>
+<li>package/module visibility,</li>
+<li>dependency rules,</li>
+<li>static analysis.</li>
+</ul>
+<h2 id="persistence-discipline">Persistence discipline</h2>
+<ul>
+<li>module data ownership,</li>
+<li>no shared direct writes,</li>
+<li>repositories/read models.</li>
+</ul>
+<h2 id="documentation">Documentation</h2>
+<ul>
+<li>module contracts,</li>
+<li>ADRs,</li>
+<li>domain terminology,</li>
+<li>public API semantics.</li>
+</ul>
+<h2 id="ai-context-tooling">AI context tooling</h2>
+<ul>
+<li>code search,</li>
+<li>symbol index,</li>
+<li>repository map,</li>
+<li>embeddings,</li>
+<li>graph retrieval,</li>
+<li>generated summaries.</li>
+</ul>
+<p>This baseline is already excellent software architecture.</p>
+<p>Any semantic architecture that only beats poor CRUD code proves very little.</p>
+<hr>
+<h1 id="3-definition-of-semantic-modularity">3. Definition of semantic modularity</h1>
+<p>A semantic module can be defined as:</p>
+<blockquote>
+<p><strong>A module that owns authoritative consequential domain state and permits authoritative semantic change only through declared, machine-visible transitions whose legality and dependencies are explicit enough to be checked or derived.</strong></p>
+</blockquote>
+<p>Potential contract:</p>
+<pre><code class="language-text">SemanticModule Payment {
+    owns:
+        PaymentState
+
+    transitions:
+        Authorize
+        Capture
+        Refund
+        Dispute
+
+    capabilities:
+        CanCapture
+        CanRefund
+
+    obligations:
+        ReconcileUnknownEffect
+
+    policies:
+        RefundPolicy
+
+    evidence:
+        FraudAssessment
+
+    effects:
+        ProcessorCharge
+        ProcessorRefund
+
+    dependencies:
+        RefundEligibility
+        ShipmentEligibility
+}
+</code></pre>
+<p>Other modules may:</p>
+<ul>
+<li>observe state,</li>
+<li>consume trusted views/events,</li>
+<li>request transitions,</li>
+<li>depend on semantic interpretations.</li>
+</ul>
+<p>They may not:</p>
+<ul>
+<li>directly mutate authoritative state,</li>
+<li>silently redefine the semantics of owned concepts.</li>
+</ul>
+<hr>
+<h1 id="4-structural-modularity-vs-semantic-modularity">4. Structural modularity vs semantic modularity</h1>
+<p>The cleanest distinction is:</p>
+<h2 id="structural-modularity">Structural modularity</h2>
+<p>Answers:</p>
+<blockquote>
+<p><strong>What code may depend on what?</strong></p>
+</blockquote>
+<p>Examples:</p>
+<ul>
+<li>UI depends on application layer.</li>
+<li>Payment module cannot access Shipping internals.</li>
+<li>Infrastructure depends inward.</li>
+</ul>
+<h2 id="semantic-modularity">Semantic modularity</h2>
+<p>Answers:</p>
+<blockquote>
+<p><strong>Who owns this meaning, what changes it legally, and what semantic consequences must be reconsidered when it changes?</strong></p>
+</blockquote>
+<p>Example:</p>
+<p>Structural graph:</p>
+<pre><code class="language-text">Shipping -> Payment API
+</code></pre>
+<p>Semantic graph:</p>
+<pre><code class="language-text">ShipmentEligibility
+depends on
+PaymentState.Captured
+under
+ShippingPolicy@7
+</code></pre>
+<p>The second relationship may not correspond to one static import.</p>
+<p>This is the core incremental claim.</p>
+<hr>
+<h1 id="5-information-hiding-comparison">5. Information hiding comparison</h1>
+<p>Parnas's information-hiding principle is a formidable competitor.</p>
+<p>Classic modularity already says:</p>
+<blockquote>
+<p>hide design decisions likely to change behind stable interfaces.</p>
+</blockquote>
+<p>This directly provides:</p>
+<ul>
+<li>reduced change propagation,</li>
+<li>lower cognitive load,</li>
+<li>local reasoning,</li>
+<li>implementation substitution.</li>
+</ul>
+<p>A well-designed Payment interface may hide:</p>
+<ul>
+<li>gateway,</li>
+<li>storage,</li>
+<li>internal state representation.</li>
+</ul>
+<p>Semantic modularity is <strong>not</strong> a replacement for this.</p>
+<p>Its claimed extension is:</p>
+<blockquote>
+<p>make not only the implementation boundary explicit, but the <strong>meaning-change boundary</strong>.</p>
+</blockquote>
+<p>An interface such as:</p>
+<pre><code class="language-text">Refund(paymentId)
+</code></pre>
+<p>hides implementation.</p>
+<p>It does not necessarily make explicit:</p>
+<ul>
+<li>in which states refund is legal,</li>
+<li>which authority is required,</li>
+<li>what evidence must be fresh,</li>
+<li>whether a prior external outcome is unknown,</li>
+<li>which other semantic interpretations become stale after a state split.</li>
+</ul>
+<p>Those can be documented or implemented conventionally.</p>
+<p>The semantic approach's value is only incremental if making them machine-authoritative changes agent behavior or maintenance cost measurably.</p>
+<p>Verdict:</p>
+<p><strong>Semantic modularity extends information hiding rather than superseding it.</strong></p>
+<hr>
+<h1 id="6-ddd-bounded-context-comparison">6. DDD bounded-context comparison</h1>
+<p>DDD bounded contexts already provide explicit semantic locality.</p>
+<p>A bounded context says:</p>
+<blockquote>
+<p>this model and language have coherent meaning within this boundary.</p>
+</blockquote>
+<p>That is extremely close to semantic ownership.</p>
+<p>DDD also acknowledges that the same term may have different meaning in different contexts.</p>
+<p>Therefore claims that semantic modularity uniquely introduces "semantic boundaries" would be inaccurate.</p>
+<p>The incremental differences are more specific:</p>
+<p>DDD bounded contexts do not inherently require:</p>
+<ul>
+<li>machine-readable legal transition closure,</li>
+<li>dynamic capability exposure,</li>
+<li>epistemic requirements,</li>
+<li>obligation exposure,</li>
+<li>semantic dependency closure,</li>
+<li>migration completeness.</li>
+</ul>
+<p>They <em>can</em> implement all of them.</p>
+<p>But they are not intrinsic requirements of bounded-context design.</p>
+<p>Verdict:</p>
+<p><strong>Bounded contexts solve semantic namespace and model ownership very well. Semantic modularity adds stronger executable evolution/control semantics.</strong></p>
+<hr>
+<h1 id="7-aggregate-comparison">7. Aggregate comparison</h1>
+<p>DDD aggregates may be the closest conventional analogue.</p>
+<p>An aggregate:</p>
+<ul>
+<li>owns a consistency boundary,</li>
+<li>protects invariants,</li>
+<li>controls mutation through aggregate-root behavior.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">payment.Refund(...)
+</code></pre>
+<p>can validate:</p>
+<ul>
+<li>current state,</li>
+<li>amount,</li>
+<li>domain rules.</li>
+</ul>
+<p>This already captures:</p>
+<pre><code class="language-text">state ownership
++
+legal mutation boundary
++
+invariants
+</code></pre>
+<p>Therefore:</p>
+<blockquote>
+<p>explicit semantic transitions are in large part a stricter, more analyzable form of aggregate discipline.</p>
+</blockquote>
+<p>The incremental benefit comes if transitions become first-class data for:</p>
+<ul>
+<li>agent capability generation,</li>
+<li>migration checking,</li>
+<li>dependency analysis,</li>
+<li>tool exposure.</li>
+</ul>
+<p>Without those downstream uses, the distinction may be mostly stylistic.</p>
+<hr>
+<h1 id="8-actor-model-comparison">8. Actor-model comparison</h1>
+<p>Actors provide:</p>
+<ul>
+<li>state ownership,</li>
+<li>message-mediated mutation,</li>
+<li>isolation,</li>
+<li>serialized handling.</li>
+</ul>
+<p>This is strongly analogous to:</p>
+<pre><code class="language-text">semantic owner
++
+transition request
+</code></pre>
+<p>An actor can reject invalid messages.</p>
+<p>What the actor model does <strong>not</strong> automatically provide is:</p>
+<ul>
+<li>declared exhaustive transition legality,</li>
+<li>machine-readable capability frontier,</li>
+<li>semantic dependency closure,</li>
+<li>epistemic requirements,</li>
+<li>migration semantics.</li>
+</ul>
+<p>So:</p>
+<blockquote>
+<p>actor ownership is a strong implementation mechanism for semantic ownership, but not a complete semantic contract.</p>
+</blockquote>
+<hr>
+<h1 id="9-ports-and-adapters-comparison">9. Ports and adapters comparison</h1>
+<p>Ports and adapters isolate domain logic from infrastructure.</p>
+<p>For tasks such as:</p>
+<blockquote>
+<p>replace Stripe with Adyen</p>
+</blockquote>
+<p>ordinary ports/adapters should perform nearly optimally.</p>
+<p>Semantic modularity should not claim meaningful additional value.</p>
+<p>The semantic layer becomes relevant when the requested change affects:</p>
+<ul>
+<li>domain meaning,</li>
+<li>state legality,</li>
+<li>effect semantics,</li>
+<li>authority,</li>
+<li>cross-module semantic dependencies.</li>
+</ul>
+<p>Verdict:</p>
+<p><strong>Infrastructure pivotability is primarily an ordinary modularity benefit.</strong></p>
+<hr>
+<h1 id="10-clean-architecture-comparison">10. Clean Architecture comparison</h1>
+<p>Clean Architecture's dependency direction:</p>
+<pre><code class="language-text">outer details -> inner business rules
+</code></pre>
+<p>already protects durable semantics from volatile infrastructure.</p>
+<p>The proposed:</p>
+<pre><code class="language-text">product hypothesis
+    -> orchestration
+        -> durable semantics
+</code></pre>
+<p>is structurally similar.</p>
+<p>The new element is not inward dependency.</p>
+<p>It is the machine-readable contract around:</p>
+<ul>
+<li>what semantic state exists,</li>
+<li>how it may change,</li>
+<li>what consequences depend on it.</li>
+</ul>
+<p>Therefore semantic modularity should be presented as an <strong>enforcement/representation extension</strong>, not as a new discovery that durable business rules should be isolated.</p>
+<hr>
+<h1 id="11-modular-monolith-comparison">11. Modular-monolith comparison</h1>
+<p>Modern modular monoliths can provide:</p>
+<ul>
+<li>module isolation,</li>
+<li>data ownership,</li>
+<li>public interfaces,</li>
+<li>domain events,</li>
+<li>architecture tests,</li>
+<li>explicit dependency direction.</li>
+</ul>
+<p>This captures much of the proposed ownership model cheaply.</p>
+<p>A strong modular monolith may already prevent:</p>
+<pre><code class="language-text">Shipping directly updates Payment tables
+</code></pre>
+<p>using:</p>
+<ul>
+<li>database permissions,</li>
+<li>schema ownership,</li>
+<li>architectural conventions,</li>
+<li>tests.</li>
+</ul>
+<p>Semantic modularity's incremental claim is:</p>
+<pre><code class="language-text">Shipping can request CapturePayment
+only when the semantic transition is valid
+and the agent sees that capability dynamically
+</code></pre>
+<p>That is action semantics rather than deployment structure.</p>
+<hr>
+<h1 id="12-strong-type-comparison">12. Strong-type comparison</h1>
+<p>Strong languages already provide some of the most valuable semantic guarantees.</p>
+<h2 id="f">F#</h2>
+<p>Can naturally express:</p>
+<ul>
+<li>discriminated unions,</li>
+<li>exhaustive pattern matching,</li>
+<li>private representations,</li>
+<li>immutable data,</li>
+<li>typed results.</li>
+</ul>
+<h2 id="rust">Rust</h2>
+<p>Provides:</p>
+<ul>
+<li>enums,</li>
+<li>exhaustive matching,</li>
+<li>ownership,</li>
+<li>strong encapsulation,</li>
+<li>typestate patterns.</li>
+</ul>
+<h2 id="kotlin">Kotlin</h2>
+<p>Provides:</p>
+<ul>
+<li>sealed classes/interfaces,</li>
+<li>exhaustive <code>when</code>,</li>
+<li>null safety,</li>
+<li>visibility controls.</li>
+</ul>
+<h2 id="c">C#</h2>
+<p>Increasingly supports:</p>
+<ul>
+<li>records,</li>
+<li>pattern matching,</li>
+<li>required members,</li>
+<li>nullability,</li>
+<li>strong encapsulation,</li>
+</ul>
+<p>though algebraic data modeling is less direct than F#/Rust.</p>
+<h2 id="typescript">TypeScript</h2>
+<p>Can support:</p>
+<ul>
+<li>discriminated unions,</li>
+<li><code>never</code> exhaustiveness,</li>
+<li>readonly structures,</li>
+</ul>
+<p>but structural typing and escape hatches weaken enforcement.</p>
+<h2 id="javascriptpython">JavaScript/Python</h2>
+<p>Require much more convention/runtime checking.</p>
+<p>A strong-language baseline may capture:</p>
+<ul>
+<li>illegal-state prevention,</li>
+<li>exhaustive state interpretation,</li>
+<li>transition encapsulation.</li>
+</ul>
+<p>This substantially narrows the semantic compiler's unique value.</p>
+<hr>
+<h1 id="13-what-strong-types-do-not-naturally-solve">13. What strong types do not naturally solve</h1>
+<p>Even strong types do not automatically encode:</p>
+<ul>
+<li>policy provenance,</li>
+<li>evidence freshness,</li>
+<li>authority,</li>
+<li>cross-service semantic dependency,</li>
+<li>outstanding obligation,</li>
+<li>historical semantic identity,</li>
+<li>migration rationale,</li>
+<li>agent tool frontier.</li>
+</ul>
+<p>You <em>can</em> model these in types.</p>
+<p>The question becomes economic:</p>
+<blockquote>
+<p>at what point does ordinary language-level modeling become awkward enough that a semantic IR is worthwhile?</p>
+</blockquote>
+<p>This is an experiment, not a philosophical answer.</p>
+<hr>
+<h1 id="14-architecture-test-comparison">14. Architecture-test comparison</h1>
+<p>Architecture tests can enforce:</p>
+<pre><code class="language-text">Module A cannot depend on Module B internals.
+Infrastructure may not be referenced from Domain.
+Shipping cannot access Payment persistence.
+</code></pre>
+<p>Tools such as:</p>
+<ul>
+<li>ArchUnit,</li>
+<li>NetArchTest,</li>
+<li>dependency-cruiser,</li>
+<li>custom Roslyn analyzers,</li>
+</ul>
+<p>can make ordinary architecture mechanically self-defending.</p>
+<p>This weakens any claim that a semantic compiler is required merely to enforce module ownership.</p>
+<p>Architecture tests are likely an excellent low-cost baseline.</p>
+<p>Where they become less natural:</p>
+<pre><code class="language-text">Every consumer of semantic interpretation SC-APPROVED
+must be explicitly migrated after SC-APPROVED splits.
+</code></pre>
+<p>That requires semantic identity and meaning-level dependency metadata.</p>
+<hr>
+<h1 id="15-static-dependency-graphs">15. Static dependency graphs</h1>
+<p>Static graphs expose:</p>
+<ul>
+<li>imports,</li>
+<li>calls,</li>
+<li>inheritance,</li>
+<li>data flow,</li>
+<li>symbol references.</li>
+</ul>
+<p>These are increasingly valuable for agents.</p>
+<p>Recent work shows that structured repository graphs can improve navigation/context acquisition.</p>
+<p>But static graphs generally answer:</p>
+<blockquote>
+<p>what code structurally depends on this code?</p>
+</blockquote>
+<p>They do not necessarily answer:</p>
+<blockquote>
+<p>what semantic conclusion depends on this domain meaning?</p>
+</blockquote>
+<p>Example:</p>
+<pre><code class="language-text">CanShip
+</code></pre>
+<p>may be derived through:</p>
+<pre><code class="language-text">EligibilityService
+ -> PolicyResolver
+ -> PaymentProjection
+</code></pre>
+<p>The relationship to:</p>
+<pre><code class="language-text">PaymentState.Captured
+</code></pre>
+<p>may be structurally discoverable through dataflow, but not necessarily explicit or stable.</p>
+<p>Semantic graphs trade:</p>
+<ul>
+<li>modeling cost,</li>
+</ul>
+<p>for:</p>
+<ul>
+<li>higher intended-meaning precision.</li>
+</ul>
+<p>Whether that trade pays off must be measured.</p>
+<hr>
+<h1 id="16-program-slicing-comparison">16. Program slicing comparison</h1>
+<p>Program slicing is a strong conventional/analysis competitor.</p>
+<p>A slice can answer:</p>
+<blockquote>
+<p>which statements influence value X?</p>
+</blockquote>
+<p>This can produce highly relevant code context.</p>
+<p>Recent 2026 work such as ARISE and other code-property-graph approaches explicitly explores exposing structured slices to agents.</p>
+<p>This means a semantic graph must beat not merely grep, but:</p>
+<ul>
+<li>data-flow slicing,</li>
+<li>code-property graphs,</li>
+<li>symbol graphs,</li>
+<li>structural indices.</li>
+</ul>
+<p>Potential difference:</p>
+<p>Program slice:</p>
+<pre><code class="language-text">what code causally influences this result?
+</code></pre>
+<p>Semantic slice:</p>
+<pre><code class="language-text">what declared domain meanings are affected by this semantic change?
+</code></pre>
+<p>They overlap but are not identical.</p>
+<hr>
+<h1 id="17-modern-repository-retrieval-comparison">17. Modern repository retrieval comparison</h1>
+<p>Current retrieval research significantly strengthens the conventional baseline.</p>
+<h2 id="contextbench">ContextBench</h2>
+<p>1,136 issue-resolution tasks across 66 repositories.</p>
+<p>Findings include:</p>
+<ul>
+<li>agents tend to favor recall over precision,</li>
+<li>sophisticated scaffolding gives only marginal retrieval gains in some settings,</li>
+<li>explored context and actually useful context differ materially.</li>
+</ul>
+<p>This demonstrates that context selection is still an unsolved bottleneck.</p>
+<h2 id="swe-explore">SWE-Explore</h2>
+<p>848 issues across 203 repositories.</p>
+<p>It isolates repository exploration and finds:</p>
+<ul>
+<li>exploration quality strongly tracks downstream repair behavior,</li>
+<li>file-level localization is increasingly strong,</li>
+<li>line-level coverage and context efficiency remain differentiators.</li>
+</ul>
+<h2 id="agent-retrieval-bench">Agent Retrieval Bench</h2>
+<p>427 samples across 25 repositories, nearly 400K files and millions of chunks.</p>
+<p>Important results:</p>
+<ul>
+<li>no single retrieval family dominates,</li>
+<li>RepoMap performs strongly under budget constraints,</li>
+<li>embedding methods vary by task,</li>
+<li>logged trajectories can miss every gold file on a substantial fraction of cases.</li>
+</ul>
+<p>This is a strong warning against claiming "modern retrieval already solves context."</p>
+<p>It does not.</p>
+<p>But it also shows the competitor is improving quickly.</p>
+<hr>
+<h1 id="18-structural-indices-and-graphs">18. Structural indices and graphs</h1>
+<p>Research in 2026 increasingly explores:</p>
+<ul>
+<li>structural repository indices,</li>
+<li>code-property graphs,</li>
+<li>repository graphs,</li>
+<li>lexical + structural retrieval.</li>
+</ul>
+<p>This supports the counter-hypothesis:</p>
+<blockquote>
+<p><strong>A significant fraction of the proposed context-compression benefit may come from better structural retrieval rather than semantic modeling.</strong></p>
+</blockquote>
+<p>The semantic architecture must therefore show incremental performance beyond:</p>
+<pre><code class="language-text">excellent repository index
++
+strong types
++
+module boundaries
+</code></pre>
+<hr>
+<h1 id="19-documentation-baseline">19. Documentation baseline</h1>
+<p>Excellent documentation is a serious competitor.</p>
+<p>A module contract could say:</p>
+<pre><code class="language-text">Payment states:
+    Authorized
+    Captured
+    Refunded
+
+Refund:
+    only after Captured
+    requires refund authority
+    cannot retry if processor outcome unknown
+</code></pre>
+<p>That gives the agent much of the desired context.</p>
+<p>Advantages:</p>
+<ul>
+<li>cheap,</li>
+<li>familiar,</li>
+<li>flexible.</li>
+</ul>
+<p>Weaknesses:</p>
+<ul>
+<li>can go stale,</li>
+<li>not necessarily executable,</li>
+<li>agent may ignore it,</li>
+<li>cannot automatically force migration.</li>
+</ul>
+<p>Therefore explicit semantics and machine enforcement must be separated experimentally.</p>
+<hr>
+<h1 id="20-ai-generated-summary-baseline">20. AI-generated summary baseline</h1>
+<p>AI-generated module summaries may compress repositories very effectively.</p>
+<p>But they create two risks:</p>
+<ol>
+<li>stale summaries,</li>
+<li>summaries that infer accidental implementation behavior as intended meaning.</li>
+</ol>
+<p>This makes a useful three-way comparison:</p>
+<pre><code class="language-text">A. raw module
+B. AI-generated summary
+C. authoritative generated semantic contract
+</code></pre>
+<p>If B performs nearly as well as C, a semantic compiler may not justify its cost.</p>
+<hr>
+<h1 id="21-executable-contract-baseline">21. Executable-contract baseline</h1>
+<p>Design by contract can encode:</p>
+<pre><code class="language-text">requires
+ensures
+invariants
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-text">Refund requires:
+    state == Captured
+    amount &#x3C;= refundableAmount
+</code></pre>
+<p>This may capture much transition legality without introducing a semantic IR.</p>
+<p>Therefore a fair ablation must compare:</p>
+<pre><code class="language-text">strong types
++
+DbC
++
+module boundaries
+</code></pre>
+<p>against semantic transitions.</p>
+<p>The semantic model adds value only if its first-class representation enables further capabilities such as:</p>
+<ul>
+<li>dependency closure,</li>
+<li>tool derivation,</li>
+<li>migration.</li>
+</ul>
+<hr>
+<h1 id="22-ordinary-api-contract-vs-explicit-state-model">22. Ordinary API contract vs explicit state model</h1>
+<p>Consider:</p>
+<pre><code class="language-text">interface Payment {
+    Capture()
+    Refund()
+    GetStatus()
+}
+</code></pre>
+<p>This API can be perfectly adequate for humans.</p>
+<p>Why might an agent need more?</p>
+<p>Because method existence does not reveal:</p>
+<pre><code class="language-text">Refund exists
+</code></pre>
+<p>vs:</p>
+<pre><code class="language-text">Refund is legal now
+</code></pre>
+<p>An ordinary API describes possible operations.</p>
+<p>A capability frontier describes currently executable operations.</p>
+<p>This distinction is one of the strongest incremental mechanisms.</p>
+<hr>
+<h1 id="23-semantic-ownership-incremental-value">23. Semantic ownership incremental value</h1>
+<p>Ordinary architecture already supports ownership through:</p>
+<ul>
+<li>private state,</li>
+<li>aggregate root,</li>
+<li>service ownership,</li>
+<li>actor state,</li>
+<li>database permissions.</li>
+</ul>
+<p>Therefore the semantic architecture should not claim ownership itself as unique.</p>
+<p>The incremental value is:</p>
+<blockquote>
+<p><strong>ownership is connected to an explicit model of semantic change and agent-visible authority.</strong></p>
+</blockquote>
+<p>Evidence grade:</p>
+<p><strong>Moderate incremental value; largely achievable conventionally.</strong></p>
+<hr>
+<h1 id="24-capability-frontier-incremental-value">24. Capability-frontier incremental value</h1>
+<p>This appears more unique.</p>
+<p>Conventional modules commonly expose:</p>
+<pre><code class="language-text">Capture
+Refund
+Cancel
+Dispute
+</code></pre>
+<p>regardless of current state.</p>
+<p>Agent must determine legality.</p>
+<p>Capability frontier:</p>
+<pre><code class="language-text">Current:
+    Capture
+    Cancel
+
+Blocked:
+    Refund
+        reason: PaymentNotCaptured
+</code></pre>
+<p>This reduces action-space uncertainty.</p>
+<p>A workflow engine or policy engine can also provide this.</p>
+<p>Therefore the unique value may be <strong>integration</strong>, not novelty.</p>
+<p>Evidence grade:</p>
+<p><strong>Strong conceptual incremental value for agents; direct cost evidence still limited.</strong></p>
+<hr>
+<h1 id="25-obligations-incremental-value">25. Obligations incremental value</h1>
+<p>Ordinary modules usually expose:</p>
+<ul>
+<li>state,</li>
+<li>events.</li>
+</ul>
+<p>They do not always expose:</p>
+<blockquote>
+<p>what unresolved semantic work remains.</p>
+</blockquote>
+<p>Workflow/task systems already provide this concept.</p>
+<p>So obligations are not unique to semantic modularity.</p>
+<p>Incremental value exists if obligations are <strong>derived automatically from state/evidence/policy transitions</strong>.</p>
+<p>Example:</p>
+<pre><code class="language-text">Evidence expired
+    ->
+ReverifyClaim obligation
+</code></pre>
+<p>Evidence grade:</p>
+<p><strong>Useful but separable from modularity.</strong></p>
+<hr>
+<h1 id="26-epistemic-state-incremental-value">26. Epistemic-state incremental value</h1>
+<p>Ordinary modularity generally does not model:</p>
+<ul>
+<li>reported,</li>
+<li>inferred,</li>
+<li>supported,</li>
+<li>verification policy,</li>
+<li>provenance.</li>
+</ul>
+<p>But most software does not need this.</p>
+<p>Epistemic modeling is valuable only where consequential decisions depend on evidence authority.</p>
+<p>Therefore it is a <strong>domain-specific semantic extension</strong>, not a general modularity improvement.</p>
+<p>Evidence grade:</p>
+<p><strong>High incremental value in evidence-sensitive domains; low value elsewhere.</strong></p>
+<hr>
+<h1 id="27-outcomeunknown-incremental-value">27. OutcomeUnknown incremental value</h1>
+<p>Outcome-unknown handling is important for external effects.</p>
+<p>But ordinary architecture can model:</p>
+<pre><code class="language-text">Result =
+    Success
+    Failure
+    OutcomeUnknown
+</code></pre>
+<p>using a normal sum type.</p>
+<p>A semantic compiler is unnecessary for the primitive itself.</p>
+<p>Potential incremental value:</p>
+<ul>
+<li>enforce that all protected effects use it consistently,</li>
+<li>link unknown outcomes to obligations/capabilities.</li>
+</ul>
+<p>Verdict:</p>
+<p><strong>The primitive is mostly ordinary type modeling; integration is the semantic value.</strong></p>
+<hr>
+<h1 id="28-dependency-closure-incremental-value">28. Dependency-closure incremental value</h1>
+<p>This may be the strongest unique component.</p>
+<p>Ordinary structural dependency:</p>
+<pre><code class="language-text">A imports B
+</code></pre>
+<p>Semantic dependency:</p>
+<pre><code class="language-text">ShipmentEligibility
+depends on interpretation:
+    Payment.Captured means financially committed
+</code></pre>
+<p>When:</p>
+<pre><code class="language-text">Captured
+</code></pre>
+<p>splits into:</p>
+<pre><code class="language-text">Settled
+AuthorizedButPendingSettlement
+</code></pre>
+<p>the structural graph may not know which interpretation must be revisited.</p>
+<p>The semantic dependency graph can.</p>
+<p>The key challenge:</p>
+<blockquote>
+<p>semantic edges must be created and maintained correctly.</p>
+</blockquote>
+<p>A graph that misses edges produces false confidence.</p>
+<p>Verdict:</p>
+<p><strong>Potentially strong unique value, but expensive to establish and currently lacking direct empirical validation.</strong></p>
+<hr>
+<h1 id="29-semantic-migration-incremental-value">29. Semantic-migration incremental value</h1>
+<p>Semantic migration is probably the clearest differentiator.</p>
+<p>Type-system migration catches:</p>
+<pre><code class="language-text">new enum case not handled
+</code></pre>
+<p>Semantic migration asks:</p>
+<pre><code class="language-text">what did old concept mean in every consequential dependency,
+and where does each meaning go now?
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-text">Approved
+    ↓ split
+ConditionalApproval
+FullApproval
+</code></pre>
+<p>A normal compiler may catch direct exhaustive matches.</p>
+<p>It may not catch:</p>
+<pre><code class="language-text">CanFund depends on an indirectly derived "approved enough" interpretation.
+</code></pre>
+<p>A semantic migration requires explicit disposition.</p>
+<p>Verdict:</p>
+<p><strong>Strongest candidate for genuinely unique value.</strong></p>
+<hr>
+<h1 id="30-pivotability-comparison">30. Pivotability comparison</h1>
+<p>Clean architecture, ports/adapters, bounded contexts, and information hiding already provide strong pivotability.</p>
+<p>Example:</p>
+<pre><code class="language-text">replace provider
+</code></pre>
+<p>ordinary architecture wins easily.</p>
+<p>Semantic modularity may help when the pivot changes domain meaning:</p>
+<pre><code class="language-text">self-service approval
+    ->
+advisor-assisted conditional approval
+</code></pre>
+<p>because obsolete semantic dependencies can be surfaced.</p>
+<p>But over-modeling can make pivots harder.</p>
+<p>Therefore:</p>
+<blockquote>
+<p>semantic modularity likely improves <strong>semantic pivot correctness</strong>, not necessarily raw pivot speed.</p>
+</blockquote>
+<hr>
+<h1 id="31-tokencontext-comparison">31. Token/context comparison</h1>
+<p>The hypothesis is not:</p>
+<pre><code class="language-text">semantic contract always smaller than code
+</code></pre>
+<p>It may not be.</p>
+<p>Semantic contracts add:</p>
+<ul>
+<li>IDs,</li>
+<li>states,</li>
+<li>transitions,</li>
+<li>policies,</li>
+<li>dependencies,</li>
+<li>evidence.</li>
+</ul>
+<p>The correct measure is:</p>
+<pre><code class="language-text">total context required for correct completion
+</code></pre>
+<p>not contract size.</p>
+<p>A 2,000-token contract could be economically superior to:</p>
+<pre><code class="language-text">500-token interface
++
+9,000 tokens of implementation/tests
+</code></pre>
+<p>But a high-quality conventional summary may provide:</p>
+<pre><code class="language-text">1,500 tokens
+</code></pre>
+<p>and perform equally well.</p>
+<p>This must be benchmarked.</p>
+<hr>
+<h1 id="32-minimum-sufficient-context">32. Minimum sufficient context</h1>
+<p>Define:</p>
+<blockquote>
+<p><strong>Minimum Sufficient Context is the smallest context set under which the agent reaches the target semantic correctness with acceptable reliability.</strong></p>
+</blockquote>
+<p>For each architecture, search context budget downward.</p>
+<p>Compare:</p>
+<pre><code class="language-text">tokens
+files
+semantic facts
+tool calls
+</code></pre>
+<p>This is more meaningful than raw repository size.</p>
+<hr>
+<h1 id="33-module-contract-overhead">33. Module contract overhead</h1>
+<p>Measure:</p>
+<pre><code class="language-text">ContractTokens
+</code></pre>
+<p>separately.</p>
+<p>Also:</p>
+<pre><code class="language-text">ImplementationExposureRatio =
+implementation tokens loaded from outside target module
+/
+total task tokens
+</code></pre>
+<p>A good modular system should already drive this down.</p>
+<p>Semantic modularity must improve it further to justify context claims.</p>
+<hr>
+<h1 id="34-lazy-detail-retrieval">34. Lazy detail retrieval</h1>
+<p>Both architectures can use lazy retrieval.</p>
+<p>Conventional:</p>
+<pre><code class="language-text">module summary
+-> fetch implementation
+</code></pre>
+<p>Semantic:</p>
+<pre><code class="language-text">semantic contract
+-> fetch evidence/dependency/implementation
+</code></pre>
+<p>Therefore lazy retrieval itself is not a unique benefit.</p>
+<p>The question is whether semantic metadata yields <strong>better first-hop selection</strong>.</p>
+<hr>
+<h1 id="35-model-size-interaction">35. Model-size interaction</h1>
+<p>Prediction:</p>
+<p>Frontier models may infer hidden semantics from strong conventional modules well enough that incremental gains are modest.</p>
+<p>Smaller models may benefit disproportionately from:</p>
+<ul>
+<li>explicit legal frontier,</li>
+<li>explicit dependency graph,</li>
+<li>semantic migration checklist.</li>
+</ul>
+<p>This should be treated as an interaction:</p>
+<pre><code class="language-text">benefit = f(model capability, environment strength)
+</code></pre>
+<p>Do not generalize one model tier.</p>
+<hr>
+<h1 id="36-language-interaction">36. Language interaction</h1>
+<p>The architecture may be compensating for weak languages.</p>
+<p>Test:</p>
+<h2 id="strong-language-conventional">Strong-language conventional</h2>
+<ul>
+<li>F#,</li>
+<li>Rust,</li>
+<li>Kotlin.</li>
+</ul>
+<h2 id="mainstream-moderate">Mainstream moderate</h2>
+<ul>
+<li>C#,</li>
+<li>Java.</li>
+</ul>
+<h2 id="weaker-semantic-enforcement">Weaker semantic enforcement</h2>
+<ul>
+<li>TypeScript,</li>
+<li>Python,</li>
+<li>JavaScript.</li>
+</ul>
+<p>Hypothesis:</p>
+<pre><code class="language-text">incremental semantic-compiler benefit
+is larger
+as native language semantic enforcement decreases
+</code></pre>
+<p>But capabilities/dependency closure may remain valuable even in F# or Rust.</p>
+<hr>
+<h1 id="37-strong-language-baseline">37. Strong-language baseline</h1>
+<p>A particularly important benchmark:</p>
+<pre><code class="language-text">F#
++
+DUs
++
+private constructors
++
+exhaustive matching
++
+good modules
++
+architecture tests
+</code></pre>
+<p>versus:</p>
+<pre><code class="language-text">same
++
+semantic layer
+</code></pre>
+<p>If semantic architecture produces little additional value here, the product may be primarily:</p>
+<blockquote>
+<p>a semantic-strengthening layer for mainstream/weak ecosystems.</p>
+</blockquote>
+<p>That would materially change startup positioning.</p>
+<hr>
+<h1 id="38-weak-language-baseline">38. Weak-language baseline</h1>
+<p>TypeScript/Python may show larger gains because:</p>
+<ul>
+<li>runtime invalid states are easier to construct,</li>
+<li>encapsulation is easier to bypass,</li>
+<li>exhaustiveness is weaker or optional,</li>
+<li>structural conventions dominate.</li>
+</ul>
+<p>But comparing only against weak languages would overstate the architecture's fundamental novelty.</p>
+<hr>
+<h1 id="39-longitudinal-drift-interaction">39. Longitudinal drift interaction</h1>
+<p>Ordinary modularity already reduces drift by localizing changes.</p>
+<p>Semantic modularity may add:</p>
+<ul>
+<li>explicit authority,</li>
+<li>semantic provenance,</li>
+<li>migration completeness.</li>
+</ul>
+<p>Track over 50 sequential changes:</p>
+<pre><code class="language-text">ModuleEscapeRate
+SemanticRetention
+AssumptionSurvival
+DependencyMissRate
+</code></pre>
+<p>The architecture's strongest long-term case is if good conventional boundaries remain structurally clean but semantic meaning still drifts.</p>
+<hr>
+<h1 id="40-architecture-self-defense">40. Architecture self-defense</h1>
+<p>Conventional architecture can defend itself through:</p>
+<ul>
+<li>module visibility,</li>
+<li>architecture tests,</li>
+<li>database permissions,</li>
+<li>static analyzers.</li>
+</ul>
+<p>Semantic architecture can additionally reject:</p>
+<ul>
+<li>illegal transition,</li>
+<li>stale capability,</li>
+<li>unresolved semantic migration.</li>
+</ul>
+<p>Measure <strong>bypass cost</strong>.</p>
+<p>Example agent shortcuts:</p>
+<pre><code class="language-text">direct DB write
+public constructor
+wildcard default
+skip policy engine
+call effect directly
+</code></pre>
+<p>If ordinary tests already block nearly all of these, semantic enforcement adds little.</p>
+<hr>
+<h1 id="41-maintenance-burden">41. Maintenance burden</h1>
+<p>Semantic architecture adds artifacts:</p>
+<ul>
+<li>model,</li>
+<li>semantic IDs,</li>
+<li>dependency metadata,</li>
+<li>migration declarations,</li>
+<li>generator/compiler,</li>
+<li>runtime.</li>
+</ul>
+<p>These create:</p>
+<ul>
+<li>tooling maintenance,</li>
+<li>debugging complexity,</li>
+<li>onboarding cost,</li>
+<li>version upgrades.</li>
+</ul>
+<p>This is the largest economic counterweight.</p>
+<p>The architecture should not be evaluated only on runtime task cost.</p>
+<hr>
+<h1 id="42-toolchain-complexity">42. Toolchain complexity</h1>
+<p>A custom compiler/IR introduces adoption risk.</p>
+<p>Companies already understand:</p>
+<ul>
+<li>TypeScript compiler,</li>
+<li>Java compiler,</li>
+<li>.NET tooling,</li>
+<li>IDEs,</li>
+<li>standard debuggers.</li>
+</ul>
+<p>A semantic compiler may require:</p>
+<ul>
+<li>new build steps,</li>
+<li>custom diagnostics,</li>
+<li>generated code,</li>
+<li>plugins,</li>
+<li>schema evolution.</li>
+</ul>
+<p>This increases failure surface.</p>
+<p>Therefore start with:</p>
+<pre><code class="language-text">library + analyzer + generated metadata
+</code></pre>
+<p>before:</p>
+<pre><code class="language-text">new language/toolchain
+</code></pre>
+<p>unless evidence demands the latter.</p>
+<hr>
+<h1 id="43-debugging-risk">43. Debugging risk</h1>
+<p>Model-driven/generated layers can obscure execution.</p>
+<p>Lessons from model-driven engineering suggest generated abstractions can create debugging distance between:</p>
+<pre><code class="language-text">declared model
+</code></pre>
+<p>and:</p>
+<pre><code class="language-text">runtime behavior
+</code></pre>
+<p>Mitigation:</p>
+<ul>
+<li>transparent generated code,</li>
+<li>stable semantic IDs,</li>
+<li>traceable diagnostics,</li>
+<li>no hidden magic,</li>
+<li>inspectable transition logs.</li>
+</ul>
+<hr>
+<h1 id="44-incremental-adoption">44. Incremental adoption</h1>
+<p>The strongest commercial architecture is likely:</p>
+<pre><code class="language-text">ordinary modular application
+    +
+semantic islands around consequential state
+</code></pre>
+<p>Examples:</p>
+<ul>
+<li>payment,</li>
+<li>identity,</li>
+<li>approval,</li>
+<li>deployment,</li>
+<li>healthcare claim verification.</li>
+</ul>
+<p>Rendering/content/reporting remain ordinary code.</p>
+<p>This sharply reduces adoption cost.</p>
+<hr>
+<h1 id="45-semantic-islands">45. Semantic islands</h1>
+<p>A semantic island should expose a standard boundary:</p>
+<pre><code class="language-text">observe
+request transition
+get capabilities
+get obligations
+explain blocked
+</code></pre>
+<p>Outside modules can remain:</p>
+<ul>
+<li>ordinary TypeScript,</li>
+<li>C#,</li>
+<li>Java,</li>
+<li>Python.</li>
+</ul>
+<p>This enables migration without rewrite.</p>
+<hr>
+<h1 id="46-domain-selection">46. Domain selection</h1>
+<h2 id="high-incremental-value-likely">High incremental value likely</h2>
+<ul>
+<li>payments,</li>
+<li>approval workflows,</li>
+<li>compliance,</li>
+<li>healthcare evidence,</li>
+<li>security authorization,</li>
+<li>deployment,</li>
+<li>logistics state,</li>
+<li>regulated workflows.</li>
+</ul>
+<h2 id="moderate">Moderate</h2>
+<ul>
+<li>complex subscriptions,</li>
+<li>order lifecycle,</li>
+<li>fulfillment,</li>
+<li>customer eligibility.</li>
+</ul>
+<h2 id="low">Low</h2>
+<ul>
+<li>rendering,</li>
+<li>CMS content,</li>
+<li>simple CRUD,</li>
+<li>analytics formatting,</li>
+<li>pure transformations.</li>
+</ul>
+<p>This should be action-driven rather than industry-driven.</p>
+<hr>
+<h1 id="47-crud-counterexample">47. CRUD counterexample</h1>
+<p>Consider:</p>
+<pre><code class="language-text">AdminNote {
+    id
+    text
+}
+</code></pre>
+<p>Operations:</p>
+<pre><code class="language-text">create
+edit
+delete
+</code></pre>
+<p>No complex authority or lifecycle.</p>
+<p>A semantic compiler likely adds negative ROI.</p>
+<p>This is an important falsification case.</p>
+<hr>
+<h1 id="48-pure-function-counterexample">48. Pure-function counterexample</h1>
+<p>Example:</p>
+<pre><code class="language-text">resizeImage(input, width, height)
+</code></pre>
+<p>Ordinary:</p>
+<ul>
+<li>type signature,</li>
+<li>tests,</li>
+<li>module interface</li>
+</ul>
+<p>is enough.</p>
+<p>There is little meaningful state authority or transition semantics.</p>
+<p>Again:</p>
+<p><strong>semantic modularity is not universally better architecture.</strong></p>
+<hr>
+<h1 id="49-high-consequence-example">49. High-consequence example</h1>
+<p>Refunds expose the full incremental set:</p>
+<ul>
+<li>state-dependent legality,</li>
+<li>authorization,</li>
+<li>policy,</li>
+<li>amount limits,</li>
+<li>external-effect uncertainty,</li>
+<li>idempotency,</li>
+<li>obligations after unknown outcome.</li>
+</ul>
+<p>This is an ideal target domain.</p>
+<hr>
+<h1 id="50-cross-module-change-example">50. Cross-module change example</h1>
+<p>Task:</p>
+<blockquote>
+<p>Customer risk block added after payment capture must prevent shipment.</p>
+</blockquote>
+<p>Conventional strong modules:</p>
+<p>Agent may need:</p>
+<ul>
+<li>Customer risk API,</li>
+<li>Payment state API,</li>
+<li>Shipping eligibility,</li>
+<li>tests.</li>
+</ul>
+<p>Semantic system:</p>
+<pre><code class="language-text">ShippingEligibility depends on:
+    CustomerRiskClear
+    PaymentCaptured
+
+Policy change affects:
+    CanShip
+</code></pre>
+<p>This tests semantic dependency discovery.</p>
+<hr>
+<h1 id="51-local-refactor-example">51. Local refactor example</h1>
+<p>Task:</p>
+<blockquote>
+<p>replace payment gateway adapter.</p>
+</blockquote>
+<p>Ports/adapters should let conventional architecture solve with almost no domain context.</p>
+<p>Expected semantic incremental value:</p>
+<p><strong>near zero.</strong></p>
+<p>If benchmark shows otherwise, likely baseline is unfair.</p>
+<hr>
+<h1 id="52-state-addition-example">52. State addition example</h1>
+<p>Task:</p>
+<pre><code class="language-text">add Payment.Disputed
+</code></pre>
+<p>Strong language + exhaustive matching may catch most direct consequences.</p>
+<p>Semantic graph must show additional value through:</p>
+<ul>
+<li>indirect dependencies,</li>
+<li>capabilities,</li>
+<li>obligations,</li>
+<li>cross-language consumers.</li>
+</ul>
+<p>This is an excellent ablation.</p>
+<hr>
+<h1 id="53-state-split-example">53. State split example</h1>
+<p>Task:</p>
+<pre><code class="language-text">Approved
+    ->
+Conditional
+FullyApproved
+</code></pre>
+<p>This is likely the best semantic-migration test.</p>
+<p>Conventional compiler:</p>
+<ul>
+<li>catches direct exhaustive use.</li>
+</ul>
+<p>Semantic migration:</p>
+<ul>
+<li>surfaces all registered meaning dependencies,</li>
+<li>requires redistribution.</li>
+</ul>
+<p>This may be the strongest differentiator.</p>
+<hr>
+<h1 id="54-policy-change-example">54. Policy-change example</h1>
+<p>Task:</p>
+<pre><code class="language-text">evidence freshness 24h -> 4h
+</code></pre>
+<p>Ordinary:</p>
+<pre><code class="language-text">policy engine
+</code></pre>
+<p>may solve perfectly.</p>
+<p>If so, semantic architecture should concede no unique benefit.</p>
+<p>Potential incremental value:</p>
+<ul>
+<li>dependency impact,</li>
+<li>capability regeneration,</li>
+<li>obligations for existing claims.</li>
+</ul>
+<hr>
+<h1 id="55-ablation-ladder">55. Ablation ladder</h1>
+<p>The benchmark should compare:</p>
+<h2 id="a--conventional">A — Conventional</h2>
+<p>Good modules, tests.</p>
+<h2 id="b---excellent-docs">B — + excellent docs</h2>
+<p>Explicit states/rules in Markdown.</p>
+<h2 id="c---strong-types">C — + strong types</h2>
+<p>Closed state, private constructors, exhaustiveness.</p>
+<h2 id="d---architecture-tests">D — + architecture tests</h2>
+<p>Boundary enforcement.</p>
+<h2 id="e---executable-contracts">E — + executable contracts</h2>
+<p>Pre/postconditions/invariants.</p>
+<h2 id="f---semantic-statetransition-model">F — + semantic state/transition model</h2>
+<p>First-class transition metadata.</p>
+<h2 id="g---capability-frontier">G — + capability frontier</h2>
+<p>Dynamic legal actions.</p>
+<h2 id="h---obligations">H — + obligations</h2>
+<p>Unresolved work.</p>
+<h2 id="i---semantic-dependency-closure">I — + semantic dependency closure</h2>
+<p>Meaning-level graph.</p>
+<h2 id="j---semantic-migration">J — + semantic migration</h2>
+<p>Explicit redistribution after change.</p>
+<p>This ladder is more scientifically useful than A vs J.</p>
+<hr>
+<h1 id="56-expected-marginal-value-curve">56. Expected marginal value curve</h1>
+<p>A plausible prior:</p>
+<pre><code class="language-text">A -> C:
+large correctness gain
+
+C -> D:
+moderate boundary gain
+
+D -> E:
+moderate legality gain
+
+E -> F:
+small-to-moderate
+
+F -> G:
+large agent-operational gain
+
+G -> H:
+domain-dependent
+
+H -> I:
+potentially large cross-module gain
+
+I -> J:
+potentially large evolution gain
+</code></pre>
+<p>This is a hypothesis.</p>
+<p>The experiment must be allowed to contradict it.</p>
+<hr>
+<h1 id="57-semantic-modularity-index">57. Semantic Modularity Index</h1>
+<p>Avoid one subjective score.</p>
+<p>Track dimensions:</p>
+<h2 id="ownership-closure">Ownership Closure</h2>
+<p>Percent of consequential state with one enforced write owner.</p>
+<h2 id="transition-closure">Transition Closure</h2>
+<p>Percent of consequential mutations represented by declared transitions.</p>
+<h2 id="authority-closure">Authority Closure</h2>
+<p>Percent of protected actions with explicit authority requirements.</p>
+<h2 id="dependency-closure">Dependency Closure</h2>
+<p>Percent of affected semantic dependencies mechanically surfaced.</p>
+<h2 id="obligation-exposure">Obligation Exposure</h2>
+<p>Percent of unresolved semantic work represented explicitly.</p>
+<p>These can characterize an architecture without saying:</p>
+<pre><code class="language-text">semantic modularity = 8.2/10
+</code></pre>
+<hr>
+<h1 id="58-metrics">58. Metrics</h1>
+<h2 id="context-tokens-per-correct-completion">Context Tokens per Correct Completion</h2>
+<h2 id="files-read">Files Read</h2>
+<h2 id="searchtool-calls">Search/Tool Calls</h2>
+<h2 id="module-escape-rate">Module Escape Rate</h2>
+<pre><code class="language-text">tasks expected local
+that require unexpected outside context
+/
+local tasks
+</code></pre>
+<h2 id="implementation-exposure-ratio">Implementation Exposure Ratio</h2>
+<pre><code class="language-text">external implementation tokens loaded
+/
+total context
+</code></pre>
+<h2 id="dependency-recall">Dependency Recall</h2>
+<pre><code class="language-text">relevant dependencies surfaced
+/
+all relevant dependencies
+</code></pre>
+<h2 id="dependency-precision">Dependency Precision</h2>
+<pre><code class="language-text">relevant surfaced dependencies
+/
+all surfaced
+</code></pre>
+<h2 id="illegal-mutation-rate">Illegal Mutation Rate</h2>
+<h2 id="semantic-error-rate">Semantic Error Rate</h2>
+<h2 id="repair-loops">Repair Loops</h2>
+<h2 id="human-review-minutes">Human Review Minutes</h2>
+<h2 id="semantic-retention">Semantic Retention</h2>
+<p>Longitudinal.</p>
+<h2 id="cost-per-correct-completion">Cost per Correct Completion</h2>
+<p>Include semantic tooling amortization.</p>
+<hr>
+<h1 id="59-economic-model">59. Economic model</h1>
+<p>Let:</p>
+<pre><code class="language-text">TotalCostSemantic(N)
+=
+BuildSemanticLayer
++ MaintainSemanticLayer(N)
++ AgentCostSemantic(N)
++ ReviewSemantic(N)
++ DefectCostSemantic(N)
+</code></pre>
+<p>Conventional:</p>
+<pre><code class="language-text">TotalCostConventional(N)
+=
+ArchitectureCost
++ RetrievalTooling
++ AgentCostConventional(N)
++ ReviewConventional(N)
++ DefectCostConventional(N)
+</code></pre>
+<p>Break-even requires:</p>
+<pre><code class="language-text">saved agent/review/defect cost
+>
+semantic modeling/tooling cost
+</code></pre>
+<p>The full architecture likely breaks even earliest when:</p>
+<ul>
+<li>high consequence,</li>
+<li>high agent task volume,</li>
+<li>long system life,</li>
+<li>repeated cross-module semantic changes,</li>
+<li>high rule fan-out.</li>
+</ul>
+<hr>
+<h1 id="60-startup-implications">60. Startup implications</h1>
+<p>Startups are especially sensitive to fixed modeling/tooling cost.</p>
+<p>Recommendation:</p>
+<blockquote>
+<p><strong>Do not require semantic modeling of the entire product.</strong></p>
+</blockquote>
+<p>Use it only around:</p>
+<ul>
+<li>irreversible money,</li>
+<li>identity,</li>
+<li>compliance,</li>
+<li>core workflow state.</li>
+</ul>
+<p>Keep experimental product surface ordinary and flexible.</p>
+<p>This preserves pivot speed.</p>
+<hr>
+<h1 id="61-enterprise-implications">61. Enterprise implications</h1>
+<p>Enterprise conditions favor semantic investment:</p>
+<ul>
+<li>long-lived systems,</li>
+<li>many teams,</li>
+<li>compliance,</li>
+<li>cross-system policies,</li>
+<li>high agent volume,</li>
+<li>high context reconstruction cost.</li>
+</ul>
+<p>But enterprises also impose:</p>
+<ul>
+<li>tooling approval,</li>
+<li>training,</li>
+<li>integration,</li>
+<li>legacy constraints.</li>
+</ul>
+<p>Therefore incremental adoption is crucial.</p>
+<hr>
+<h1 id="62-legacy-adoption-strategy">62. Legacy adoption strategy</h1>
+<p>Do not rewrite a legacy module first.</p>
+<p>Possible path:</p>
+<pre><code class="language-text">Legacy Payment System
+        ↓
+Semantic Wrapper
+    - canonical state view
+    - transition requests
+    - policy checks
+    - effect guards
+        ↓
+Legacy implementation
+</code></pre>
+<p>The wrapper can gradually become authoritative.</p>
+<p>This tests value before expensive migration.</p>
+<hr>
+<h1 id="63-agent-only-semantic-layer">63. Agent-only semantic layer</h1>
+<p>A descriptive semantic map could exist only for agents.</p>
+<p>Benefits:</p>
+<ul>
+<li>context compression,</li>
+<li>dependency navigation.</li>
+</ul>
+<p>No runtime enforcement.</p>
+<p>This is a valuable ablation because it separates:</p>
+<pre><code class="language-text">agent-context benefit
+</code></pre>
+<p>from:</p>
+<pre><code class="language-text">control benefit
+</code></pre>
+<p>Risk:</p>
+<p>the map drifts from implementation.</p>
+<hr>
+<h1 id="64-runtime-only-semantic-layer">64. Runtime-only semantic layer</h1>
+<p>The inverse experiment:</p>
+<ul>
+<li>enforce transitions/capabilities,</li>
+<li>provide no special context to agent.</li>
+</ul>
+<p>Measure:</p>
+<ul>
+<li>correctness,</li>
+<li>illegal actions,</li>
+<li>token usage.</li>
+</ul>
+<p>This separates enforcement from context compression.</p>
+<hr>
+<h1 id="65-which-benefit-comes-from-what">65. Which benefit comes from what</h1>
+<p>The architecture should explicitly decompose:</p>
+<h2 id="modularity-benefit">Modularity benefit</h2>
+<p>Information hiding and local change.</p>
+<h2 id="typing-benefit">Typing benefit</h2>
+<p>Invalid-state reduction and exhaustiveness.</p>
+<h2 id="runtime-enforcement-benefit">Runtime enforcement benefit</h2>
+<p>Illegal action prevention.</p>
+<h2 id="agent-context-benefit">Agent-context benefit</h2>
+<p>Smaller/relevant context.</p>
+<h2 id="planning-benefit">Planning benefit</h2>
+<p>Capabilities/obligations/prerequisites.</p>
+<h2 id="migration-benefit">Migration benefit</h2>
+<p>Change completeness.</p>
+<p>Without this decomposition, every improvement risks being incorrectly attributed to "semantic modularity."</p>
+<hr>
+<h1 id="66-strongest-counter-hypothesis-good-modularity--retrieval-is-enough">66. Strongest counter-hypothesis: good modularity + retrieval is enough</h1>
+<p>Evidence supporting this:</p>
+<ul>
+<li>classic modularity already reduces cognitive context,</li>
+<li>modern retrieval increasingly finds relevant files/symbols efficiently,</li>
+<li>program slicing can provide precise dynamic/static dependencies,</li>
+<li>good module docs can explicitly state state/rules,</li>
+<li>strong types encode many invariants.</li>
+</ul>
+<p>This counter-hypothesis should win on:</p>
+<ul>
+<li>local refactors,</li>
+<li>infrastructure substitutions,</li>
+<li>simple feature additions,</li>
+<li>CRUD,</li>
+<li>strongly typed local state changes.</li>
+</ul>
+<p>If semantic architecture claims broad superiority here, the benchmark design is likely biased.</p>
+<hr>
+<h1 id="67-second-counter-hypothesis-strong-types-solve-most-of-it">67. Second counter-hypothesis: strong types solve most of it</h1>
+<p>This may be true for:</p>
+<ul>
+<li>state enumeration,</li>
+<li>exhaustiveness,</li>
+<li>invalid construction,</li>
+<li>local transition APIs.</li>
+</ul>
+<p>It is less likely to solve economically:</p>
+<ul>
+<li>cross-module semantic dependency,</li>
+<li>provenance,</li>
+<li>policy version,</li>
+<li>obligations,</li>
+<li>agent tool frontier.</li>
+</ul>
+<p>The experiment should determine whether those residuals justify a semantic layer.</p>
+<hr>
+<h1 id="68-third-counter-hypothesis-capabilitiesobligations-matter-semantic-compiler-does-not">68. Third counter-hypothesis: capabilities/obligations matter, semantic compiler does not</h1>
+<p>This is highly plausible.</p>
+<p>A company could build:</p>
+<pre><code class="language-text">good DDD modules
++
+capability API
++
+work queue
+</code></pre>
+<p>without a semantic compiler.</p>
+<p>If that captures most operational-agent benefit, the product should narrow accordingly.</p>
+<p>This is a critical falsification condition.</p>
+<hr>
+<h1 id="69-fourth-counter-hypothesis-the-real-benefit-is-action-control">69. Fourth counter-hypothesis: the real benefit is action control</h1>
+<p>Also plausible.</p>
+<p>Research mission 09 strongly supports deterministic commitment boundaries.</p>
+<p>It is possible that:</p>
+<pre><code class="language-text">semantic modularity
+</code></pre>
+<p>adds little,</p>
+<p>while:</p>
+<pre><code class="language-text">runtime capability gating
+</code></pre>
+<p>adds substantial safety.</p>
+<p>If true, the architecture should stop claiming a general modularity revolution.</p>
+<hr>
+<h1 id="70-fifth-counter-hypothesis-semantic-dependency-closure-is-the-unique-valuable-piece">70. Fifth counter-hypothesis: semantic dependency closure is the unique valuable piece</h1>
+<p>This may prove correct.</p>
+<p>Ordinary architecture handles:</p>
+<ul>
+<li>ownership,</li>
+<li>APIs,</li>
+<li>typing.</li>
+</ul>
+<p>The truly missing component may be:</p>
+<blockquote>
+<p>a machine-readable graph of domain-meaning dependencies.</p>
+</blockquote>
+<p>If so, the startup could focus on:</p>
+<pre><code class="language-text">semantic change impact
++
+agent context generation
+</code></pre>
+<p>instead of building a complete execution platform.</p>
+<hr>
+<h1 id="71-proposed-experiment-suite">71. Proposed experiment suite</h1>
+<h2 id="experiment-1--local-adapter-refactor">Experiment 1 — local adapter refactor</h2>
+<p>Expected:
+conventional ≈ semantic.</p>
+<h2 id="experiment-2--state-addition">Experiment 2 — state addition</h2>
+<p>Compare:
+strong type exhaustiveness vs semantic dependency.</p>
+<h2 id="experiment-3--state-split">Experiment 3 — state split</h2>
+<p>Primary semantic-migration test.</p>
+<h2 id="experiment-4--cross-module-eligibility-rule">Experiment 4 — cross-module eligibility rule</h2>
+<p>Dependency-discovery test.</p>
+<h2 id="experiment-5--policy-freshness-change">Experiment 5 — policy freshness change</h2>
+<p>Policy-engine competitor.</p>
+<h2 id="experiment-6--outcomeunknown-refund">Experiment 6 — OutcomeUnknown refund</h2>
+<p>Type-system vs integrated obligation/capability.</p>
+<h2 id="experiment-7--product-pivot">Experiment 7 — product pivot</h2>
+<p>Clean architecture vs semantic retention.</p>
+<h2 id="experiment-8--50-task-longitudinal-sequence">Experiment 8 — 50-task longitudinal sequence</h2>
+<p>Drift/context-growth comparison.</p>
+<hr>
+<h1 id="72-context-experiment-design">72. Context experiment design</h1>
+<p>For each task, give Architecture A:</p>
+<ul>
+<li>module interface,</li>
+<li>docs,</li>
+<li>repository tools,</li>
+<li>structural graph,</li>
+<li>full search.</li>
+</ul>
+<p>Architecture B:</p>
+<p>same tools
++
+semantic contract.</p>
+<p>Do <strong>not</strong> remove conventional tooling from B.</p>
+<p>Measure:</p>
+<ul>
+<li>tokens before correct edit,</li>
+<li>files opened,</li>
+<li>search calls,</li>
+<li>dependency misses.</li>
+</ul>
+<p>This isolates incremental semantic information.</p>
+<hr>
+<h1 id="73-model-tier-experiment">73. Model-tier experiment</h1>
+<p>Run:</p>
+<ul>
+<li>small,</li>
+<li>medium,</li>
+<li>frontier.</li>
+</ul>
+<p>Hypothesis:</p>
+<pre><code class="language-text">semantic explicitness benefit
+is inversely related to model capability
+</code></pre>
+<p>If only small models benefit, that is still economically important.</p>
+<p>If frontier models benefit equally, stronger general case.</p>
+<hr>
+<h1 id="74-language-experiment">74. Language experiment</h1>
+<p>At minimum:</p>
+<pre><code class="language-text">F# or Rust
+C#
+TypeScript
+</code></pre>
+<p>Task suite identical in semantic shape.</p>
+<p>This tests whether semantic tooling:</p>
+<ul>
+<li>complements strong language,</li>
+<li>or compensates for weaker one.</li>
+</ul>
+<p>This is strategically important for adoption.</p>
+<hr>
+<h1 id="75-human-review-experiment">75. Human-review experiment</h1>
+<p>Provide reviewers:</p>
+<h2 id="conventional">Conventional</h2>
+<p>git diff + tests.</p>
+<h2 id="semantic">Semantic</h2>
+<p>git diff + semantic diff + impact report.</p>
+<p>Measure:</p>
+<ul>
+<li>review time,</li>
+<li>missed semantic issue,</li>
+<li>confidence calibration.</li>
+</ul>
+<p>If semantic diff materially improves human review, the value extends beyond agents.</p>
+<hr>
+<h1 id="76-what-ordinary-modularity-already-solves">76. What ordinary modularity already solves</h1>
+<p>A competent conventional architecture already solves much of:</p>
+<ul>
+<li>local reasoning,</li>
+<li>implementation hiding,</li>
+<li>data ownership,</li>
+<li>dependency direction,</li>
+<li>infrastructure substitution,</li>
+<li>aggregate invariants,</li>
+<li>module boundaries,</li>
+<li>structural change containment,</li>
+<li>testability,</li>
+<li>architectural conformance.</li>
+</ul>
+<p>These benefits should never be rebranded as semantic-layer innovation.</p>
+<hr>
+<h1 id="77-what-remains-uniquely-unsolved">77. What remains uniquely unsolved</h1>
+<p>The strongest residual problems are:</p>
+<h2 id="1-current-legal-action-frontier">1. Current legal action frontier</h2>
+<p>Normal APIs describe operations, not necessarily current legality.</p>
+<h2 id="2-meaning-level-dependency-closure">2. Meaning-level dependency closure</h2>
+<p>Static graph knows code relation, not necessarily domain interpretation.</p>
+<h2 id="3-semantic-migration">3. Semantic migration</h2>
+<p>Normal refactoring catches syntax/type breakage, not all meaning redistribution.</p>
+<h2 id="4-machine-authoritative-provenance">4. Machine-authoritative provenance</h2>
+<p>Why does this domain rule exist?</p>
+<h2 id="5-epistemic-action-requirements">5. Epistemic action requirements</h2>
+<p>Is the evidence authoritative enough to permit the action?</p>
+<p>These are the best candidates for incremental innovation.</p>
+<hr>
+<h1 id="78-minimum-semantic-layer-worth-building">78. Minimum semantic layer worth building</h1>
+<p>The research favors a much smaller v0.1 than a full semantic compiler.</p>
+<h2 id="core-1--semantic-ids">Core 1 — Semantic IDs</h2>
+<p>Stable identity for consequential concepts.</p>
+<h2 id="core-2--explicit-transitions">Core 2 — Explicit transitions</h2>
+<p>Only for consequential state.</p>
+<h2 id="core-3--capability-derivation">Core 3 — Capability derivation</h2>
+<p>Current legal action frontier.</p>
+<h2 id="core-4--semantic-dependency-registration">Core 4 — Semantic dependency registration</h2>
+<p>Only for high-value cross-module interpretations.</p>
+<h2 id="core-5--migration-checker">Core 5 — Migration checker</h2>
+<p>State split/merge/removal requires disposition.</p>
+<p>Everything else can initially use ordinary architecture:</p>
+<ul>
+<li>module system,</li>
+<li>language types,</li>
+<li>tests,</li>
+<li>docs,</li>
+<li>policy engine,</li>
+<li>queue,</li>
+<li>persistence.</li>
+</ul>
+<p>Add obligations/epistemics only where domain needs them.</p>
+<hr>
+<h1 id="79-recommended-implementation-posture">79. Recommended implementation posture</h1>
+<p>Do not create a new programming language.</p>
+<p>Prefer:</p>
+<pre><code class="language-text">native language
++
+small declarative semantic metadata
++
+compiler/analyzer
++
+runtime library
+</code></pre>
+<p>Example:</p>
+<ul>
+<li>F#/C# attributes/types,</li>
+<li>TypeScript declarations,</li>
+<li>generated JSON/IR,</li>
+<li>analyzers.</li>
+</ul>
+<p>This reduces adoption friction and lets the architecture coexist with ordinary tooling.</p>
+<hr>
+<h1 id="80-final-verdict">80. Final verdict</h1>
+<h2 id="does-competent-conventional-modularity-reduce-ai-context-substantially">Does competent conventional modularity reduce AI context substantially?</h2>
+<p><strong>Moderate-to-strong evidence.</strong></p>
+<p>Classic modularity reduces the amount of implementation knowledge needed for local change, and modern repository-retrieval research shows strong gains from structural/context tooling.</p>
+<p>Direct controlled AI studies of modularity itself are still limited, so "strong evidence" should be used cautiously.</p>
+<h2 id="does-semantic-modularity-add-material-context-reduction-beyond-that">Does semantic modularity add material context reduction beyond that?</h2>
+<p><strong>Unclear to moderate.</strong></p>
+<p>The mechanism is plausible, especially for legal-action and cross-module semantic context, but modern retrieval is a strong competitor and direct head-to-head evidence is missing.</p>
+<h2 id="does-semantic-modularity-add-material-correctness-benefit">Does semantic modularity add material correctness benefit?</h2>
+<p><strong>Moderate.</strong></p>
+<p>Strongest where:</p>
+<ul>
+<li>legality,</li>
+<li>migration,</li>
+<li>authority,</li>
+<li>semantic dependencies</li>
+</ul>
+<p>are explicit.</p>
+<p>Much local correctness is already captured by strong types/contracts.</p>
+<h2 id="does-semantic-dependency-closure-provide-unique-value">Does semantic dependency closure provide unique value?</h2>
+<p><strong>Moderate to strong potential.</strong></p>
+<p>It targets dependencies not naturally represented by structural graphs, but modeling completeness is the unresolved risk.</p>
+<h2 id="does-semantic-migration-provide-unique-value">Does semantic migration provide unique value?</h2>
+<p><strong>Strong potential.</strong></p>
+<p>It is the clearest mechanism beyond ordinary refactoring/type exhaustiveness.</p>
+<h2 id="are-capabilitiesobligations-separable-from-modularity-benefits">Are capabilities/obligations separable from modularity benefits?</h2>
+<p><strong>Yes, mostly.</strong></p>
+<p>They are agent-operational primitives that can sit on conventional modules.</p>
+<h2 id="can-strong-languages--ordinary-architecture-capture-most-benefit">Can strong languages + ordinary architecture capture most benefit?</h2>
+<p><strong>Probably for local state integrity and modularity.</strong></p>
+<p>Probably not for:</p>
+<ul>
+<li>semantic dependency closure,</li>
+<li>agent action frontier,</li>
+<li>semantic migration,</li>
+<li>epistemic authority.</li>
+</ul>
+<h2 id="most-valuable-incremental-semantic-mechanism">Most valuable incremental semantic mechanism</h2>
+<p><strong>Semantic migration backed by meaning-level dependency closure.</strong></p>
+<p>This directly addresses changes where syntax/types remain valid while business interpretation becomes stale.</p>
+<h2 id="least-valuable--most-redundant-mechanism">Least valuable / most redundant mechanism</h2>
+<p><strong>Basic state ownership and encapsulated mutation</strong>, if already implemented with strong DDD aggregates/actors/module ownership.</p>
+<p>Those are well-established conventional patterns.</p>
+<h2 id="strongest-conventional-competitor">Strongest conventional competitor</h2>
+<p><strong>Strongly typed DDD modular monolith + architecture tests + executable contracts + modern structural repository retrieval.</strong></p>
+<p>That should be the benchmark baseline.</p>
+<h2 id="best-minimal-architecture">Best minimal architecture</h2>
+<pre><code class="language-text">Strong ordinary modularity
++
+semantic IDs
++
+explicit consequential transitions
++
+dynamic capability frontier
++
+semantic dependency graph
++
+semantic migration checker
+</code></pre>
+<p>Add:</p>
+<ul>
+<li>obligations,</li>
+<li>epistemics,</li>
+<li>effect uncertainty</li>
+</ul>
+<p>only where the domain requires them.</p>
+<h2 id="biggest-over-engineering-risk">Biggest over-engineering risk</h2>
+<p><strong>Building a semantic compiler that reproduces capabilities already available from strong types, DDD, architecture tests, policy/workflow engines, and modern repository retrieval.</strong></p>
+<h2 id="best-first-experiment">Best first experiment</h2>
+<p><strong>State-split benchmark with ablation ladder.</strong></p>
+<p>Example:</p>
+<pre><code class="language-text">Approved
+->
+ConditionalApproval
+FullyApproved
+</code></pre>
+<p>Compare:</p>
+<ul>
+<li>strong conventional,</li>
+<li>strong types,</li>
+<li>docs,</li>
+<li>executable contracts,</li>
+<li>semantic dependencies,</li>
+<li>semantic migration.</li>
+</ul>
+<p>Measure:</p>
+<ul>
+<li>dependencies missed,</li>
+<li>tokens,</li>
+<li>files read,</li>
+<li>semantic defects,</li>
+<li>cost.</li>
+</ul>
+<h2 id="most-important-architecture-change-suggested-by-research">Most important architecture change suggested by research</h2>
+<p><strong>Stop treating “semantic modularity” as an all-or-nothing replacement for conventional architecture. Treat it as a narrow semantic control/evolution layer that must earn its complexity mechanism by mechanism.</strong></p>
+<hr>
+<h1 id="81-bottom-line-interpretation">81. Bottom-line interpretation</h1>
+<p>This research is valuable because the strongest counter-hypothesis is credible.</p>
+<p>Good software architecture has been reducing cognitive load for decades.</p>
+<p>Parnas, DDD, aggregates, actors, ports/adapters, strong types, dependency rules, and modern repository retrieval already solve substantial parts of the problem.</p>
+<p>The proposed architecture should not compete with those.</p>
+<p>It should build on them.</p>
+<p>The real question is not:</p>
+<blockquote>
+<p>"Are semantic modules better than normal modules?"</p>
+</blockquote>
+<p>That framing is too broad.</p>
+<p>The useful question is:</p>
+<blockquote>
+<p><strong>What domain meaning is still invisible after we have already built an excellent normal module?</strong></p>
+</blockquote>
+<p>The research suggests four especially important answers:</p>
+<pre><code class="language-text">What is legal right now?
+What unresolved work exists?
+What semantic meaning depends on this concept?
+What must be explicitly reconsidered when that meaning changes?
+</code></pre>
+<p>Those are areas where ordinary structural modularity is weaker.</p>
+<p>If experiments confirm that these four forms of explicitness:</p>
+<ul>
+<li>lower agent context,</li>
+<li>catch semantic omissions,</li>
+<li>reduce long-term drift,</li>
+<li>or allow cheaper models,</li>
+</ul>
+<p>then the architecture has a real incremental contribution.</p>
+<p>If not, the correct response is not to defend the larger design.</p>
+<p>It is to remove the redundant layers and keep the pieces that actually work.</p>
+<p>That produces a stronger startup strategy:</p>
+<blockquote>
+<p><strong>Start with excellent conventional architecture. Add semantic machinery only where the compiler, module system, contracts, and retrieval layer cannot reliably tell the agent what the system means.</strong></p>
+</blockquote>
+<p>That principle also protects the project from becoming the kind of over-engineered framework it is explicitly trying to avoid.</p>
+<hr>
+<h1 id="82-key-sources">82. Key sources</h1>
+<h2 id="foundational-modularity">Foundational modularity</h2>
+<ol>
+<li>Parnas, D. L. (1972). <strong>On the Criteria To Be Used in Decomposing Systems into Modules.</strong> Communications of the ACM, 15(12), 1053–1058.</li>
+</ol>
+<p>Foundational information-hiding result: systems should be decomposed around design decisions likely to change, rather than merely procedural execution steps.</p>
+<h2 id="repository-context-and-retrieval">Repository context and retrieval</h2>
+<ol start="2">
+<li>
+<p>Li, H. et al. (2026). <strong>ContextBench: A Benchmark for Context Retrieval in Coding Agents.</strong> arXiv:2602.05892.</p>
+</li>
+<li>
+<p>Zhang, S. et al. (2026). <strong>SWE-Explore: Benchmarking How Coding Agents Explore Repositories.</strong> arXiv:2606.07297.</p>
+</li>
+<li>
+<p>Qin, B., Xie, Y. (2026). <strong>Agent Retrieval Bench: Evaluating Repository Context Retrieval for Coding Agents.</strong> arXiv:2607.24882.</p>
+</li>
+<li>
+<p>Zhang, F. et al. (2026). <strong>CORE-Bench: A Comprehensive Benchmark for Code Retrieval in the Era of Agentic Coding.</strong> arXiv:2606.11864.</p>
+</li>
+<li>
+<p><strong>How Much Static Structure Do Code Agents Need?</strong> 2026. arXiv:2606.26979.</p>
+</li>
+<li>
+<p><strong>Code Isn’t Memory: A Structural Codebase Index Inside a Coding Agent.</strong> 2026. arXiv:2606.22417.</p>
+</li>
+<li>
+<p><strong>ARISE: A Repository-level Graph Representation and Interactive Slicing Environment for Agents.</strong> 2026. arXiv:2605.03117.</p>
+</li>
+<li>
+<p><strong>Lexically Anchored Repository Graph Exploration and Localization.</strong> 2026. arXiv:2605.16352.</p>
+</li>
+<li>
+<p><strong>LLM Agents Can See Code Repositories.</strong> 2026. arXiv:2606.14061.</p>
+</li>
+</ol>
+<h2 id="long-horizon-context-relevance">Long-horizon context relevance</h2>
+<ol start="11">
+<li><strong>SWE-EVO: Benchmarking Coding Agents in Long-Horizon Software Evolution Scenarios.</strong> 2025/2026. arXiv:2512.18470.</li>
+</ol>
+<h2 id="conventional-architecture-families-used-in-comparison">Conventional architecture families used in comparison</h2>
+<ol start="12">
+<li>
+<p>Domain-Driven Design literature on bounded contexts and aggregates.</p>
+</li>
+<li>
+<p>Ports-and-adapters / hexagonal architecture literature.</p>
+</li>
+<li>
+<p>Clean Architecture and dependency inversion traditions.</p>
+</li>
+<li>
+<p>Actor-model literature on state ownership/message-mediated mutation.</p>
+</li>
+<li>
+<p>Design-by-contract literature on preconditions, postconditions, and invariants.</p>
+</li>
+<li>
+<p>Architecture conformance/testing tools such as ArchUnit, NetArchTest, and dependency-cruiser.</p>
+</li>
+</ol>
+<hr>
+<h1 id="83-evidence-grading-summary">83. Evidence grading summary</h1>
+<table>
+<thead>
+<tr>
+<th>Proposition</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Good modularity reduces cognitive/change scope</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>Information hiding already protects likely-change decisions</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>DDD aggregates already support state ownership/invariant protection</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>Strong types can provide closed states/exhaustiveness</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>Architecture tests can mechanically enforce structural boundaries</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>Repository retrieval remains a major agent bottleneck</td>
+<td>Strong current evidence</td>
+</tr>
+<tr>
+<td>Structural graphs improve agent context/navigation</td>
+<td>Strong emerging evidence</td>
+</tr>
+<tr>
+<td>Modern retrieval completely solves context acquisition</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Dynamic capability frontier adds value beyond ordinary API</td>
+<td>Moderate/strong conceptual</td>
+</tr>
+<tr>
+<td>Obligations are unique to semantic modularity</td>
+<td>No</td>
+</tr>
+<tr>
+<td>OutcomeUnknown requires semantic compiler</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Epistemic state is a general modularity requirement</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Semantic dependency closure adds unique value</td>
+<td>Moderate, plausible</td>
+</tr>
+<tr>
+<td>Semantic migration adds unique value</td>
+<td>Strongest plausible incremental mechanism</td>
+</tr>
+<tr>
+<td>Semantic metadata necessarily reduces tokens</td>
+<td>No direct evidence</td>
+</tr>
+<tr>
+<td>Strong languages eliminate all semantic-layer value</td>
+<td>Unclear/probably no</td>
+</tr>
+<tr>
+<td>Full semantic compiler is necessary</td>
+<td>No evidence</td>
+</tr>
+<tr>
+<td>Semantic islands around consequential domains are viable</td>
+<td>Strong architectural plausibility</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="84-research-decision">84. Research decision</h1>
+<p><strong>Proceed, but narrow the architecture.</strong></p>
+<p>This research does not justify building a universal semantic modularity platform.</p>
+<p>It justifies testing a much more specific thesis:</p>
+<blockquote>
+<p><strong>After ordinary modularity, strong typing, contracts, and repository retrieval have done their work, explicit semantic dependency and migration information may still capture consequential meaning that structural code organization cannot reliably expose.</strong></p>
+</blockquote>
+<p>The next experiment should therefore target exactly that residual.</p>
+<p>Do not test:</p>
+<pre><code class="language-text">bad architecture
+vs
+semantic architecture
+</code></pre>
+<p>Test:</p>
+<pre><code class="language-text">excellent conventional architecture
+vs
+excellent conventional architecture
++
+one semantic mechanism at a time
+</code></pre>
+<p>If:</p>
+<pre><code class="language-text">semantic dependency closure
++
+semantic migration
+</code></pre>
+<p>does not materially improve the state-split/cross-module-change tasks, the broader semantic compiler thesis should be reduced sharply.</p>
+<p>If it does, the architecture becomes much simpler and much stronger:</p>
+<blockquote>
+<p><strong>ordinary modules for software structure; semantic contracts only for meaning that must survive change.</strong></p>
+</blockquote></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

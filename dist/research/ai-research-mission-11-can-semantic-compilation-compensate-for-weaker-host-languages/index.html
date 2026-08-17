@@ -1,0 +1,1981 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AI Research Mission 11 — Can Semantic Compilation Compensate for Weaker Host Languages? | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">AI Research Mission 11 — Can Semantic Compilation Compensate for Weaker Host Languages?</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/reports/11-semantic-compilation-weaker-host-languages-research-report.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#ai-research-mission-11-can-semantic-compilation-compensate-for-weaker-host-languages-">AI Research Mission 11 — Can Semantic Compilation Compensate for Weaker Host Languages?</a></li><li><a href="#1-executive-verdict">1. Executive verdict</a></li><li><a href="#bottom-line">Bottom line</a></li><li><a href="#practical-verdict">Practical verdict</a></li><li><a href="#2-precise-definition-of-language-strength-dimensions">2. Precise definition of language-strength dimensions</a></li><li><a href="#2-1-closed-state-representation">2.1 Closed-state representation</a></li><li><a href="#2-2-exhaustive-interpretation">2.2 Exhaustive interpretation</a></li><li><a href="#2-3-construction-control">2.3 Construction control</a></li><li><a href="#2-4-immutability">2.4 Immutability</a></li><li><a href="#2-5-transition-closure">2.5 Transition closure</a></li><li><a href="#2-6-authority-closure">2.6 Authority closure</a></li><li><a href="#2-7-dependency-closure">2.7 Dependency closure</a></li><li><a href="#2-8-escape-hatch-strength">2.8 Escape-hatch strength</a></li><li><a href="#2-9-analyzer-extensibility">2.9 Analyzer extensibility</a></li><li><a href="#2-10-runtime-integrity">2.10 Runtime integrity</a></li><li><a href="#3-guarantee-taxonomy">3. Guarantee taxonomy</a></li><li><a href="#compile-time-native-guarantees">Compile-time-native guarantees</a></li><li><a href="#build-time-semantic-guarantees">Build-time semantic guarantees</a></li><li><a href="#runtime-guarantees">Runtime guarantees</a></li><li><a href="#persistence-operational-guarantees">Persistence/operational guarantees</a></li><li><a href="#4-compile-time-runtime-build-time-responsibility-matrix">4. Compile-time / runtime / build-time responsibility matrix</a></li><li><a href="#5-f-baseline">5. F# baseline</a></li><li><a href="#strengths">Strengths</a></li><li><a href="#important-limitation">Important limitation</a></li><li><a href="#profile">Profile</a></li><li><a href="#6-rust-baseline">6. Rust baseline</a></li><li><a href="#strengths">Strengths</a></li><li><a href="#residual-limits">Residual limits</a></li><li><a href="#profile">Profile</a></li><li><a href="#7-kotlin-baseline">7. Kotlin baseline</a></li><li><a href="#strengths">Strengths</a></li><li><a href="#limits">Limits</a></li><li><a href="#profile">Profile</a></li><li><a href="#8-java-analysis">8. Java analysis</a></li><li><a href="#generated-semantic-model">Generated semantic model</a></li><li><a href="#strengths">Strengths</a></li><li><a href="#weaknesses">Weaknesses</a></li><li><a href="#verdict">Verdict</a></li><li><a href="#9-c-analysis">9. C# analysis</a></li><li><a href="#existing-c-strengths">Existing C# strengths</a></li><li><a href="#new-union-significance">New union significance</a></li><li><a href="#profile">Profile</a></li><li><a href="#verdict">Verdict</a></li><li><a href="#10-typescript-analysis">10. TypeScript analysis</a></li><li><a href="#strengths">Strengths</a></li><li><a href="#weaknesses">Weaknesses</a></li><li><a href="#structural-typing">Structural typing</a></li><li><a href="#any">any</a></li><li><a href="#assertions">Assertions</a></li><li><a href="#runtime-erasure">Runtime erasure</a></li><li><a href="#mutation">Mutation</a></li><li><a href="#can-generation-compensate-">Can generation compensate?</a></li><li><a href="#critical-rule">Critical rule</a></li><li><a href="#verdict">Verdict</a></li><li><a href="#11-javascript-analysis">11. JavaScript analysis</a></li><li><a href="#available-mechanisms">Available mechanisms</a></li><li><a href="#core-problem">Core problem</a></li><li><a href="#where-javascript-can-work">Where JavaScript can work</a></li><li><a href="#verdict">Verdict</a></li><li><a href="#12-python-analysis">12. Python analysis</a></li><li><a href="#available-mechanisms">Available mechanisms</a></li><li><a href="#weaknesses">Weaknesses</a></li><li><a href="#generated-python-strategy">Generated Python strategy</a></li><li><a href="#verdict">Verdict</a></li><li><a href="#13-sql-analysis">13. SQL analysis</a></li><li><a href="#sql-strengths">SQL strengths</a></li><li><a href="#risks">Risks</a></li><li><a href="#recommended-architecture">Recommended architecture</a></li><li><a href="#trigger-caution">Trigger caution</a></li><li><a href="#verdict">Verdict</a></li><li><a href="#14-go-analysis">14. Go analysis</a></li><li><a href="#strengths">Strengths</a></li><li><a href="#weaknesses">Weaknesses</a></li><li><a href="#compensation">Compensation</a></li><li><a href="#verdict">Verdict</a></li><li><a href="#15-swift-scala-haskell-comparison">15. Swift / Scala / Haskell comparison</a></li><li><a href="#swift">Swift</a></li><li><a href="#scala-3">Scala 3</a></li><li><a href="#haskell">Haskell</a></li><li><a href="#16-construction-closure-comparison">16. Construction-closure comparison</a></li><li><a href="#strong-native">Strong native</a></li><li><a href="#strong-with-generated-conventions">Strong with generated conventions</a></li><li><a href="#primarily-runtime">Primarily runtime</a></li><li><a href="#17-transition-closure-comparison">17. Transition-closure comparison</a></li><li><a href="#18-interpretation-closure-comparison">18. Interpretation-closure comparison</a></li><li><a href="#very-strong-native">Very strong native</a></li><li><a href="#achievable-with-discipline">Achievable with discipline</a></li><li><a href="#analyzer-dependent">Analyzer-dependent</a></li><li><a href="#runtime-generator-dependent">Runtime/generator-dependent</a></li><li><a href="#19-authority-closure-comparison">19. Authority-closure comparison</a></li><li><a href="#20-dependency-closure-comparison">20. Dependency-closure comparison</a></li><li><a href="#21-source-generator-and-analyzer-feasibility">21. Source-generator and analyzer feasibility</a></li><li><a href="#c-">C#</a></li><li><a href="#java">Java</a></li><li><a href="#kotlin">Kotlin</a></li><li><a href="#typescript">TypeScript</a></li><li><a href="#rust">Rust</a></li><li><a href="#go">Go</a></li><li><a href="#python">Python</a></li><li><a href="#javascript">JavaScript</a></li><li><a href="#22-runtime-kernel-requirements">22. Runtime-kernel requirements</a></li><li><a href="#23-database-and-persistence-boundary-requirements">23. Database and persistence boundary requirements</a></li><li><a href="#orm-concerns">ORM concerns</a></li><li><a href="#ef-core-hibernate">EF Core / Hibernate</a></li><li><a href="#sequelize-sqlalchemy">Sequelize / SQLAlchemy</a></li><li><a href="#recommendation">Recommendation</a></li><li><a href="#24-sql-bypass-analysis">24. SQL bypass analysis</a></li><li><a href="#25-capability-representation-analysis">25. Capability-representation analysis</a></li><li><a href="#strong-local-languages">Strong local languages</a></li><li><a href="#mainstream-languages">Mainstream languages</a></li><li><a href="#distributed-recommendation">Distributed recommendation</a></li><li><a href="#26-strong-target-vs-generated-weak-target-comparison">26. Strong target vs generated weak target comparison</a></li><li><a href="#f-advantage">F# advantage</a></li><li><a href="#generated-typescript-advantage">Generated TypeScript advantage</a></li><li><a href="#likely-result">Likely result</a></li><li><a href="#27-ai-agent-bypass-behavior-risks">27. AI-agent bypass behavior risks</a></li><li><a href="#28-diagnostic-requirements">28. Diagnostic requirements</a></li><li><a href="#29-adoption-economics">29. Adoption economics</a></li><li><a href="#new-language-strategy">New-language strategy</a></li><li><a href="#semantic-compiler-strategy">Semantic-compiler strategy</a></li><li><a href="#30-toolchain-maintenance-economics">30. Toolchain-maintenance economics</a></li><li><a href="#31-multi-target-conformance-strategy">31. Multi-target conformance strategy</a></li><li><a href="#32-experiment-design">32. Experiment design</a></li><li><a href="#experiment-a-state-addition">Experiment A — state addition</a></li><li><a href="#experiment-b-direct-mutation">Experiment B — direct mutation</a></li><li><a href="#experiment-c-fake-capability">Experiment C — fake capability</a></li><li><a href="#experiment-d-stale-capability">Experiment D — stale capability</a></li><li><a href="#experiment-e-state-split">Experiment E — state split</a></li><li><a href="#experiment-f-sql-bypass">Experiment F — SQL bypass</a></li><li><a href="#experiment-g-analyzer-suppression">Experiment G — analyzer suppression</a></li><li><a href="#experiment-h-same-domain-multiple-targets">Experiment H — same domain, multiple targets</a></li><li><a href="#experiment-i-smaller-model">Experiment I — smaller model</a></li><li><a href="#experiment-j-native-strong-vs-generated-weak">Experiment J — native strong vs generated weak</a></li><li><a href="#33-metrics">33. Metrics</a></li><li><a href="#build-time-semantic-error-detection">Build-Time Semantic Error Detection</a></li><li><a href="#runtime-semantic-violation-detection">Runtime Semantic Violation Detection</a></li><li><a href="#total-semantic-escape-rate">Total Semantic Escape Rate</a></li><li><a href="#agent-bypass-attempt-rate">Agent Bypass Attempt Rate</a></li><li><a href="#analyzer-suppression-attempt-rate">Analyzer Suppression Attempt Rate</a></li><li><a href="#tokens-per-correct-change">Tokens per Correct Change</a></li><li><a href="#repair-loops">Repair Loops</a></li><li><a href="#generated-loc">Generated LOC</a></li><li><a href="#semantic-contract-tokens">Semantic Contract Tokens</a></li><li><a href="#runtime-overhead">Runtime Overhead</a></li><li><a href="#human-review-time">Human Review Time</a></li><li><a href="#cost-per-correct-completion">Cost per Correct Completion</a></li><li><a href="#guarantee-gap">Guarantee Gap</a></li><li><a href="#34-counterarguments">34. Counterarguments</a></li><li><a href="#1-just-use-f-rust-kotlin-">1. &quot;Just use F#/Rust/Kotlin.&quot;</a></li><li><a href="#2-a-custom-compiler-is-more-complex-than-a-new-language-">2. &quot;A custom compiler is more complex than a new language.&quot;</a></li><li><a href="#3-generated-typescript-creates-false-confidence-">3. &quot;Generated TypeScript creates false confidence.&quot;</a></li><li><a href="#4-runtime-catches-errors-too-late-">4. &quot;Runtime catches errors too late.&quot;</a></li><li><a href="#5-analyzers-are-easy-to-suppress-">5. &quot;Analyzers are easy to suppress.&quot;</a></li><li><a href="#6-typescript-python-are-unsound-">6. &quot;TypeScript/Python are unsound.&quot;</a></li><li><a href="#7-sql-undermines-everything-">7. &quot;SQL undermines everything.&quot;</a></li><li><a href="#8-supporting-many-languages-is-too-expensive-">8. &quot;Supporting many languages is too expensive.&quot;</a></li><li><a href="#9-generated-code-is-hard-to-debug-">9. &quot;Generated code is hard to debug.&quot;</a></li><li><a href="#10-native-strong-language-ergonomics-remain-better-">10. &quot;Native strong-language ergonomics remain better.&quot;</a></li><li><a href="#11-enterprise-teams-may-hate-a-dsl-more-than-a-language-">11. &quot;Enterprise teams may hate a DSL more than a language.&quot;</a></li><li><a href="#12-frameworks-bypass-generated-semantics-">12. &quot;Frameworks bypass generated semantics.&quot;</a></li><li><a href="#13-runtime-does-most-work-so-why-generate-types-">13. &quot;Runtime does most work, so why generate types?&quot;</a></li><li><a href="#14-good-conventional-c-java-is-sufficient-">14. &quot;Good conventional C#/Java is sufficient.&quot;</a></li><li><a href="#15-agents-may-understand-native-idioms-better-than-custom-generated-patterns-">15. &quot;Agents may understand native idioms better than custom generated patterns.&quot;</a></li><li><a href="#35-what-can-genuinely-be-made-language-independent">35. What can genuinely be made language-independent</a></li><li><a href="#36-what-cannot-be-made-language-independent">36. What cannot be made language-independent</a></li><li><a href="#37-minimum-language-requirements">37. Minimum language requirements</a></li><li><a href="#38-recommended-support-tiers">38. Recommended support tiers</a></li><li><a href="#tier-a-native-semantic-targets">Tier A — Native semantic targets</a></li><li><a href="#tier-b-generated-analyzer-targets">Tier B — Generated + analyzer targets</a></li><li><a href="#tier-c-runtime-enforced-targets">Tier C — Runtime-enforced targets</a></li><li><a href="#tier-d-peripheral-untrusted">Tier D — Peripheral / untrusted</a></li><li><a href="#39-architecture-changes-recommended">39. Architecture changes recommended</a></li><li><a href="#1-stop-treating-language-choice-as-the-only-safety-boundary">1. Stop treating language choice as the only safety boundary</a></li><li><a href="#2-define-canonical-semantic-ir">2. Define canonical semantic IR</a></li><li><a href="#3-generate-idiomatic-target-representations">3. Generate idiomatic target representations</a></li><li><a href="#4-publish-a-guarantee-profile-per-target">4. Publish a guarantee profile per target</a></li><li><a href="#5-mark-semantic-modules">5. Mark semantic modules</a></li><li><a href="#6-prohibit-escape-hatches-in-semantic-modules">6. Prohibit escape hatches in semantic modules</a></li><li><a href="#7-make-semantic-diagnostics-ci-errors">7. Make semantic diagnostics CI errors</a></li><li><a href="#8-build-a-tiny-trusted-runtime-kernel">8. Build a tiny trusted runtime kernel</a></li><li><a href="#9-treat-persistence-as-untrusted-input">9. Treat persistence as untrusted input</a></li><li><a href="#10-restrict-db-semantic-writes">10. Restrict DB semantic writes</a></li><li><a href="#11-bind-capabilities-to-state-version-policy">11. Bind capabilities to state/version/policy</a></li><li><a href="#12-exclude-generated-code-from-normal-agent-context">12. Exclude generated code from normal agent context</a></li><li><a href="#13-provide-source-mapping">13. Provide source mapping</a></li><li><a href="#14-run-cross-target-conformance-tests">14. Run cross-target conformance tests</a></li><li><a href="#15-run-adversarial-target-escape-tests">15. Run adversarial target escape tests</a></li><li><a href="#40-final-verdict">40. Final verdict</a></li><li><a href="#can-semantic-compilation-compensate-for-lack-of-native-discriminated-unions-">Can semantic compilation compensate for lack of native discriminated unions?</a></li><li><a href="#can-it-compensate-for-lack-of-exhaustive-pattern-matching-">Can it compensate for lack of exhaustive pattern matching?</a></li><li><a href="#can-it-compensate-for-weak-immutability-">Can it compensate for weak immutability?</a></li><li><a href="#can-it-compensate-for-weak-authority-capability-typing-">Can it compensate for weak authority/capability typing?</a></li><li><a href="#can-runtime-enforcement-equalize-authoritative-correctness-across-languages-">Can runtime enforcement equalize authoritative correctness across languages?</a></li><li><a href="#can-typescript-be-a-credible-semantic-core-target-">Can TypeScript be a credible semantic-core target?</a></li><li><a href="#can-plain-javascript-be-a-credible-semantic-core-target-">Can plain JavaScript be a credible semantic-core target?</a></li><li><a href="#can-python-be-a-credible-semantic-core-target-">Can Python be a credible semantic-core target?</a></li><li><a href="#can-c-achieve-near-f-semantic-safety-with-generation-analyzers-">Can C# achieve near-F# semantic safety with generation/analyzers?</a></li><li><a href="#can-java-achieve-near-kotlin-f-semantic-safety-with-generation-analyzers-">Can Java achieve near-Kotlin/F# semantic safety with generation/analyzers?</a></li><li><a href="#is-sql-a-major-independent-semantic-bypass-risk-">Is SQL a major independent semantic bypass risk?</a></li><li><a href="#best-mainstream-enterprise-target">Best mainstream enterprise target</a></li><li><a href="#strongest-native-target">Strongest native target</a></li><li><a href="#largest-residual-guarantee-gap">Largest residual guarantee gap</a></li><li><a href="#most-important-runtime-enforcement">Most important runtime enforcement</a></li><li><a href="#most-important-analyzer">Most important analyzer</a></li><li><a href="#best-adoption-strategy">Best adoption strategy</a></li><li><a href="#most-important-experiment">Most important experiment</a></li><li><a href="#most-important-architecture-change-suggested-by-research">Most important architecture change suggested by research</a></li><li><a href="#required-guarantee-matrix">Required guarantee matrix</a></li><li><a href="#evidence-classification">Evidence classification</a></li><li><a href="#strongly-established">Strongly established</a></li><li><a href="#strong-architectural-inference">Strong architectural inference</a></li><li><a href="#emerging-incomplete-empirical-support">Emerging / incomplete empirical support</a></li><li><a href="#still-speculative">Still speculative</a></li><li><a href="#key-sources">Key sources</a></li><li><a href="#f-">F#</a></li><li><a href="#rust">Rust</a></li><li><a href="#kotlin">Kotlin</a></li><li><a href="#java">Java</a></li><li><a href="#c-">C#</a></li><li><a href="#typescript">TypeScript</a></li><li><a href="#python">Python</a></li><li><a href="#go">Go</a></li><li><a href="#swift">Swift</a></li><li><a href="#scala">Scala</a></li><li><a href="#haskell">Haskell</a></li><li><a href="#final-research-synthesis">Final research synthesis</a></li> </ol> </aside> <section class="document-body"><h1 id="ai-research-mission-11--can-semantic-compilation-compensate-for-weaker-host-languages">AI Research Mission 11 — Can Semantic Compilation Compensate for Weaker Host Languages?</h1>
+<p><strong>Research report</strong><br>
+<strong>Date:</strong> 2026-08-14<br>
+<strong>Method:</strong> Official language/compiler documentation, programming-language research, source-generation/analyzer documentation, database/persistence analysis, empirical software-engineering literature, and current AI-coding research.</p>
+<hr>
+<h1 id="1-executive-verdict">1. Executive verdict</h1>
+<h2 id="bottom-line">Bottom line</h2>
+<p>The hypothesis is <strong>mostly supported</strong>, but only if the claim is stated precisely.</p>
+<p>A semantic compiler cannot make JavaScript "become Rust" or TypeScript "become F#." Native language semantics still matter for:</p>
+<ul>
+<li>compile-time exhaustiveness;</li>
+<li>local construction control;</li>
+<li>immutability;</li>
+<li>ownership/affine guarantees;</li>
+<li>local capability forgery resistance;</li>
+<li>type-level modeling ergonomics;</li>
+<li>quality and immediacy of compiler feedback.</li>
+</ul>
+<p>However, many of the guarantees that matter most for <strong>authoritative business correctness</strong> are not fundamentally host-language guarantees at all.</p>
+<p>They depend on:</p>
+<ul>
+<li>one authoritative semantic model;</li>
+<li>generated legal construction paths;</li>
+<li>build-time analyzers;</li>
+<li>CI enforcement;</li>
+<li>runtime state/version checks;</li>
+<li>capability validation;</li>
+<li>database ownership;</li>
+<li>serialization validation;</li>
+<li>tool permissions;</li>
+<li>external-effect handling.</li>
+</ul>
+<p>That means a sufficiently strong architecture can make C#, Java, TypeScript, and even Python behave <strong>far more like a semantically closed system</strong> than ordinary idiomatic code in those languages.</p>
+<p>The strongest conclusion is:</p>
+<blockquote>
+<p><strong>Semantic compilation can largely equalize authoritative runtime correctness across mainstream languages, but it cannot fully equalize compile-time ergonomics, local proof strength, or resistance to deliberate bypass.</strong></p>
+</blockquote>
+<p>The practical architecture is therefore layered:</p>
+<pre><code class="language-text">Semantic IR
+    |
+    +--> native target types
+    +--> generated transition API
+    +--> analyzers / CI diagnostics
+    +--> generated conformance tests
+    +--> agent semantic view
+    |
+    v
+Trusted Runtime Semantic Kernel
+    |
+    +--> current state/version validation
+    +--> authority validation
+    +--> evidence/policy validation
+    +--> capability validation
+    +--> obligation generation
+    +--> effect semantics
+    |
+    v
+Authoritative Persistence Boundary
+</code></pre>
+<p>The host language becomes one enforcement layer rather than the entire safety model.</p>
+<h2 id="practical-verdict">Practical verdict</h2>
+<ul>
+<li><strong>F#/Rust/Swift/Kotlin/Scala/Haskell</strong> remain stronger native semantic targets.</li>
+<li><strong>C# and Java</strong> can achieve near-strong-language behavior for consequential domain code with generation, analyzers, disciplined module boundaries, and runtime enforcement.</li>
+<li><strong>TypeScript</strong> is credible as a semantic-core target <strong>with restrictions</strong>.</li>
+<li><strong>Python</strong> is credible <strong>with restrictions and mandatory runtime validation</strong>, but its compile-time closure remains weaker.</li>
+<li><strong>Plain JavaScript</strong> should generally be <strong>peripheral or runtime-enforced only</strong>, not the preferred authoritative semantic implementation.</li>
+<li><strong>SQL is a major independent bypass risk regardless of application language</strong>.</li>
+</ul>
+<p>The most important architectural finding is therefore not:</p>
+<pre><code class="language-text">choose the strongest language
+</code></pre>
+<p>but:</p>
+<pre><code class="language-text">put the strongest guarantees at the authority boundary
+</code></pre>
+<p>while exploiting native host-language guarantees wherever they exist.</p>
+<hr>
+<h1 id="2-precise-definition-of-language-strength-dimensions">2. Precise definition of language-strength dimensions</h1>
+<p>"Strong" and "weak" are too vague to be useful.</p>
+<p>For this research, language capability is evaluated by dimensions.</p>
+<h2 id="21-closed-state-representation">2.1 Closed-state representation</h2>
+<p>Can the language express a type whose valid cases are known and closed?</p>
+<p>Examples:</p>
+<ul>
+<li>F# discriminated union</li>
+<li>Rust enum</li>
+<li>Swift enum</li>
+<li>Kotlin sealed hierarchy</li>
+<li>Java sealed hierarchy</li>
+<li>C# 15 union</li>
+<li>TypeScript tagged union</li>
+</ul>
+<h2 id="22-exhaustive-interpretation">2.2 Exhaustive interpretation</h2>
+<p>Can the compiler force consequential pattern matching to account for every current case?</p>
+<p>Important distinction:</p>
+<pre><code class="language-text">compiler-enforced exhaustiveness
+</code></pre>
+<p>versus:</p>
+<pre><code class="language-text">a coding convention that calls assertNever()
+</code></pre>
+<h2 id="23-construction-control">2.3 Construction control</h2>
+<p>Can code outside the semantic boundary create arbitrary values?</p>
+<p>Mechanisms include:</p>
+<ul>
+<li>private constructors;</li>
+<li>module visibility;</li>
+<li>opaque representations;</li>
+<li>package-private types;</li>
+<li>generated factories;</li>
+<li>runtime validation.</li>
+</ul>
+<h2 id="24-immutability">2.4 Immutability</h2>
+<p>Can authoritative values be prevented from uncontrolled mutation?</p>
+<p>This includes:</p>
+<ul>
+<li>top-level immutability;</li>
+<li>deep immutability;</li>
+<li>copy-on-write/value semantics;</li>
+<li>ownership.</li>
+</ul>
+<h2 id="25-transition-closure">2.5 Transition closure</h2>
+<p>Can authoritative state change only through declared transitions?</p>
+<p>This usually requires architecture beyond the language.</p>
+<h2 id="26-authority-closure">2.6 Authority closure</h2>
+<p>Can capabilities/evidence/authority objects be protected against fabrication?</p>
+<p>Local type safety and distributed security are different problems.</p>
+<h2 id="27-dependency-closure">2.7 Dependency closure</h2>
+<p>Can the system know every semantic dependency affected by a state/policy change?</p>
+<p>This usually requires semantic IR regardless of host language.</p>
+<h2 id="28-escape-hatch-strength">2.8 Escape-hatch strength</h2>
+<p>How easy is it to bypass guarantees?</p>
+<p>Examples:</p>
+<ul>
+<li><code>any</code></li>
+<li>unsafe casts</li>
+<li>reflection</li>
+<li>direct mutation</li>
+<li>raw SQL</li>
+<li>monkey patching</li>
+<li>unsafe code.</li>
+</ul>
+<h2 id="29-analyzer-extensibility">2.9 Analyzer extensibility</h2>
+<p>Can custom static checks be integrated into normal builds and IDEs?</p>
+<h2 id="210-runtime-integrity">2.10 Runtime integrity</h2>
+<p>Can the host reliably call a trusted semantic runtime that revalidates authoritative actions?</p>
+<hr>
+<h1 id="3-guarantee-taxonomy">3. Guarantee taxonomy</h1>
+<p>The core mistake would be to demand every guarantee from one layer.</p>
+<p>A better taxonomy is:</p>
+<h2 id="compile-time-native-guarantees">Compile-time-native guarantees</h2>
+<p>Best handled by host compiler when available:</p>
+<ul>
+<li>state-family closure;</li>
+<li>exhaustive interpretation;</li>
+<li>local constructor visibility;</li>
+<li>nullability;</li>
+<li>some immutability;</li>
+<li>ownership/borrowing;</li>
+<li>affine consumption.</li>
+</ul>
+<h2 id="build-time-semantic-guarantees">Build-time semantic guarantees</h2>
+<p>Best handled by semantic compiler/analyzers:</p>
+<ul>
+<li>dependency completeness;</li>
+<li>no wildcard/default in consequential matches;</li>
+<li>no direct semantic-field mutation;</li>
+<li>generated-artifact freshness;</li>
+<li>state migration completeness;</li>
+<li>semantic escape-hatch detection;</li>
+<li>analyzer suppression detection.</li>
+</ul>
+<h2 id="runtime-guarantees">Runtime guarantees</h2>
+<p>Must be runtime regardless of language:</p>
+<ul>
+<li>current state;</li>
+<li>state version;</li>
+<li>policy version;</li>
+<li>evidence freshness;</li>
+<li>authority;</li>
+<li>capability validity;</li>
+<li>distributed concurrency;</li>
+<li>external effect outcome;</li>
+<li>obligation lifecycle.</li>
+</ul>
+<h2 id="persistenceoperational-guarantees">Persistence/operational guarantees</h2>
+<p>Require architecture beyond ordinary language typing:</p>
+<ul>
+<li>no unauthorized direct DB mutation;</li>
+<li>serialization validation;</li>
+<li>ORM reconstruction;</li>
+<li>tool permissions;</li>
+<li>agent SQL restrictions;</li>
+<li>durable state integrity.</li>
+</ul>
+<p>This division is central.</p>
+<hr>
+<h1 id="4-compile-time--runtime--build-time-responsibility-matrix">4. Compile-time / runtime / build-time responsibility matrix</h1>
+<table>
+<thead>
+<tr>
+<th>Semantic property</th>
+<th>Host compiler</th>
+<th>Semantic build/analyzer</th>
+<th>Runtime kernel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Closed state family</td>
+<td>Preferred</td>
+<td>Can generate</td>
+<td>Validate deserialized values</td>
+</tr>
+<tr>
+<td>Exhaustive interpretation</td>
+<td>Preferred</td>
+<td>Can enforce where host cannot</td>
+<td>Fallback validation</td>
+</tr>
+<tr>
+<td>Protected construction</td>
+<td>Helpful</td>
+<td>Detect bypass</td>
+<td>Validate authoritative creation</td>
+</tr>
+<tr>
+<td>Transition closure</td>
+<td>Partial</td>
+<td>Detect direct writes</td>
+<td><strong>Required</strong></td>
+</tr>
+<tr>
+<td>Authority closure</td>
+<td>Partial/local</td>
+<td>Detect fabrication paths</td>
+<td><strong>Required</strong></td>
+</tr>
+<tr>
+<td>Dependency closure</td>
+<td>No</td>
+<td><strong>Required</strong></td>
+<td>Uses compiled graph</td>
+</tr>
+<tr>
+<td>Version-bound capabilities</td>
+<td>No</td>
+<td>Schema checks</td>
+<td><strong>Required</strong></td>
+</tr>
+<tr>
+<td>Evidence freshness</td>
+<td>No</td>
+<td>Rule generation</td>
+<td><strong>Required</strong></td>
+</tr>
+<tr>
+<td>Obligation semantics</td>
+<td>No</td>
+<td>Generate rules</td>
+<td><strong>Required</strong></td>
+</tr>
+<tr>
+<td>OutcomeUnknown effects</td>
+<td>Type representation only</td>
+<td>Generate contracts</td>
+<td><strong>Required</strong></td>
+</tr>
+<tr>
+<td>Semantic migrations</td>
+<td>Compiler helps locally</td>
+<td><strong>Required</strong></td>
+<td>Version compatibility</td>
+</tr>
+<tr>
+<td>SQL bypass prevention</td>
+<td>No</td>
+<td>Detect some access</td>
+<td>DB/service boundary required</td>
+</tr>
+</tbody>
+</table>
+<p>The matrix shows why the architecture can compensate for host-language differences.</p>
+<p>Several of the most important guarantees are language-independent by nature.</p>
+<hr>
+<h1 id="5-f-baseline">5. F# baseline</h1>
+<p>F# remains an excellent baseline for business-domain semantic modeling.</p>
+<p>Official F# documentation describes discriminated unions as types whose values can be one of a set of named cases. Pattern matching naturally operates over those cases.</p>
+<h2 id="strengths">Strengths</h2>
+<ul>
+<li>native discriminated unions;</li>
+<li>associated data per case;</li>
+<li>strong pattern matching;</li>
+<li>compiler warnings for incomplete matches;</li>
+<li>immutable-by-default functional style;</li>
+<li>option types;</li>
+<li>module/private representation;</li>
+<li>succinct domain modeling.</li>
+</ul>
+<h2 id="important-limitation">Important limitation</h2>
+<p>F# does <strong>not</strong> solve the entire architecture.</p>
+<p>F# values can still cross:</p>
+<ul>
+<li>JSON;</li>
+<li>SQL;</li>
+<li>mutable .NET libraries;</li>
+<li>reflection;</li>
+<li>ORM/persistence;</li>
+<li>remote APIs.</li>
+</ul>
+<p>A direct database write can invalidate a perfectly modeled F# domain.</p>
+<p>Therefore F# provides excellent <strong>local semantic pressure</strong>, but authoritative correctness still needs runtime/persistence enforcement.</p>
+<h2 id="profile">Profile</h2>
+<p>Construction: <strong>Strong</strong><br>
+Transition: <strong>Strong when encapsulated; runtime still required</strong><br>
+Interpretation: <strong>Strong</strong><br>
+Authority: <strong>Medium locally; runtime required when distributed</strong><br>
+Dependency: <strong>Semantic compiler required</strong><br>
+Enterprise adoption: <strong>Moderate; excellent for .NET domain modules but organizational adoption varies</strong></p>
+<hr>
+<h1 id="6-rust-baseline">6. Rust baseline</h1>
+<p>Rust provides one of the strongest local guarantee profiles.</p>
+<p>Official Rust documentation provides:</p>
+<ul>
+<li>enums;</li>
+<li>exhaustive <code>match</code>;</li>
+<li>ownership;</li>
+<li>borrowing;</li>
+<li>visibility;</li>
+<li><code>Option</code>;</li>
+<li><code>Result</code>.</li>
+</ul>
+<h2 id="strengths-1">Strengths</h2>
+<ul>
+<li>closed enum families;</li>
+<li>exhaustive matching;</li>
+<li>strong construction control;</li>
+<li>ownership and borrowing;</li>
+<li>affine-like resource semantics;</li>
+<li>strong mutation control;</li>
+<li>strong local capability modeling.</li>
+</ul>
+<p>Rust is uniquely useful when capability/state safety overlaps resource ownership.</p>
+<p>For example, a single-use local capability can potentially be represented through move semantics.</p>
+<h2 id="residual-limits">Residual limits</h2>
+<p>Serialization destroys many purely local guarantees.</p>
+<p>Once a token crosses a network:</p>
+<pre><code class="language-text">Rust move semantics
+</code></pre>
+<p>becomes:</p>
+<pre><code class="language-text">protocol validation
+</code></pre>
+<p>Similarly, database state must be reconstructed and validated.</p>
+<p>Unsafe Rust also creates explicit escape hatches.</p>
+<h2 id="profile-1">Profile</h2>
+<p>Construction: <strong>Very strong</strong><br>
+Transition: <strong>Very strong locally</strong><br>
+Interpretation: <strong>Very strong</strong><br>
+Authority: <strong>Strong locally</strong><br>
+Dependency: <strong>Generated semantic model required</strong><br>
+Enterprise adoption: <strong>Lower than Java/C#/TypeScript for general business stacks</strong><br>
+Learning/tooling cost: <strong>High relative to mainstream enterprise languages</strong></p>
+<hr>
+<h1 id="7-kotlin-baseline">7. Kotlin baseline</h1>
+<p>Kotlin is an especially useful JVM baseline.</p>
+<p>Official Kotlin documentation states that <code>when</code> over sealed classes can be exhaustively checked by the compiler without requiring <code>else</code>.</p>
+<h2 id="strengths-2">Strengths</h2>
+<ul>
+<li>sealed classes/interfaces;</li>
+<li>exhaustive <code>when</code>;</li>
+<li>null safety;</li>
+<li>data classes;</li>
+<li>strong visibility;</li>
+<li>concise modeling;</li>
+<li>Kotlin Symbol Processing (KSP).</li>
+</ul>
+<p>KSP officially supports source generation and is designed as a lightweight compiler-processing mechanism.</p>
+<h2 id="limits">Limits</h2>
+<p>JVM interoperability creates bypass possibilities.</p>
+<p>Java code, reflection, serializers, and persistence frameworks can circumvent purely Kotlin-level assumptions.</p>
+<h2 id="profile-2">Profile</h2>
+<p>Construction: <strong>Strong</strong><br>
+Transition: <strong>Strong with encapsulation</strong><br>
+Interpretation: <strong>Strong</strong><br>
+Authority: <strong>Medium-strong locally</strong><br>
+Dependency: <strong>Semantic compiler required</strong><br>
+Enterprise adoption: <strong>High in JVM organizations willing to use Kotlin</strong></p>
+<hr>
+<h1 id="8-java-analysis">8. Java analysis</h1>
+<p>Modern Java is substantially stronger for closed domain modeling than older Java.</p>
+<p>Official Java features include:</p>
+<ul>
+<li>sealed classes/interfaces;</li>
+<li>records;</li>
+<li>pattern matching for switch;</li>
+<li>compile-time exhaustiveness over sealed hierarchies.</li>
+</ul>
+<p>Java 17 established sealed classes, while later pattern-matching support makes exhaustive interpretation increasingly natural.</p>
+<h2 id="generated-semantic-model">Generated semantic model</h2>
+<p>A semantic compiler can generate:</p>
+<pre><code class="language-text">sealed interface PaymentState
+permits Authorized, Captured, Refunded, Disputed
+</code></pre>
+<p>and records for cases.</p>
+<p>It can also generate exhaustive switch projections and prohibit <code>default</code> via analysis.</p>
+<h2 id="strengths-3">Strengths</h2>
+<ul>
+<li>closed hierarchy support;</li>
+<li>records;</li>
+<li>modules/packages;</li>
+<li>mature annotation processing;</li>
+<li>mature CI/IDE ecosystem;</li>
+<li>strong enterprise adoption.</li>
+</ul>
+<h2 id="weaknesses">Weaknesses</h2>
+<ul>
+<li>more verbose than F#/Kotlin;</li>
+<li>mutation remains ordinary;</li>
+<li>reflection is powerful;</li>
+<li>ORM conventions often favor mutable entities;</li>
+<li>direct persistence can bypass domain rules.</li>
+</ul>
+<h2 id="verdict">Verdict</h2>
+<p>Java can achieve <strong>near-Kotlin/F# authoritative safety</strong> when:</p>
+<ul>
+<li>domain states are sealed;</li>
+<li>default branches are prohibited in consequential switches;</li>
+<li>construction is generated/private;</li>
+<li>semantic writes go through transition APIs;</li>
+<li>runtime kernel revalidates state/version/authority;</li>
+<li>DB access is constrained.</li>
+</ul>
+<p>The remaining gap is mostly ergonomics and local expressiveness rather than runtime authority.</p>
+<hr>
+<h1 id="9-c-analysis">9. C# analysis</h1>
+<p>This area changed materially in 2026.</p>
+<p>Microsoft's April 2026 .NET/C# announcement states that <strong>C# 15 introduces union types in preview</strong> with compiler-enforced exhaustive pattern matching.</p>
+<p>That significantly reduces one historical difference between C# and F#.</p>
+<h2 id="existing-c-strengths">Existing C# strengths</h2>
+<ul>
+<li>records;</li>
+<li>pattern matching;</li>
+<li>sealed classes;</li>
+<li>private constructors;</li>
+<li>nullable reference analysis;</li>
+<li>Roslyn analyzers;</li>
+<li>source generators;</li>
+<li>required members;</li>
+<li>excellent .NET tooling.</li>
+</ul>
+<p>The Roslyn SDK officially supports semantic analyzers, code fixes, and source generators.</p>
+<h2 id="new-union-significance">New union significance</h2>
+<p>With C# 15 union support:</p>
+<pre><code class="language-text">union PaymentState
+{
+    Authorized;
+    Captured;
+    Refunded;
+    Disputed;
+}
+</code></pre>
+<p>can represent a genuinely closed family with exhaustive pattern matching.</p>
+<p>This changes the research answer:</p>
+<blockquote>
+<p>The need to introduce F# solely to obtain discriminated-union-style state closure is materially weaker than it was before C# 15.</p>
+</blockquote>
+<p>F# still has advantages:</p>
+<ul>
+<li>immutability culture/defaults;</li>
+<li>terser ADT syntax;</li>
+<li>functional decomposition;</li>
+<li>option/result idioms;</li>
+<li>fewer object-oriented escape tendencies.</li>
+</ul>
+<p>But C# + unions + Roslyn analyzers + source generation + runtime enforcement can plausibly reach very high semantic safety.</p>
+<h2 id="profile-3">Profile</h2>
+<p>Construction: <strong>Strong</strong><br>
+Transition: <strong>Strong with architecture</strong><br>
+Interpretation: <strong>Strong with C# 15 unions; otherwise medium-strong</strong><br>
+Authority: <strong>Medium locally; runtime required</strong><br>
+Dependency: <strong>Semantic compiler required</strong><br>
+Enterprise adoption: <strong>Very high in .NET organizations</strong></p>
+<h2 id="verdict-1">Verdict</h2>
+<p>C# can achieve <strong>near-F# semantic safety</strong> for the proposed architecture.</p>
+<hr>
+<h1 id="10-typescript-analysis">10. TypeScript analysis</h1>
+<p>TypeScript is much more capable than plain JavaScript but remains structurally different from languages with runtime-retained nominal types.</p>
+<p>Official TypeScript documentation supports discriminated unions and the use of <code>never</code> for exhaustiveness checking.</p>
+<h2 id="strengths-4">Strengths</h2>
+<ul>
+<li>tagged unions;</li>
+<li>literal types;</li>
+<li>control-flow narrowing;</li>
+<li><code>never</code>;</li>
+<li><code>readonly</code>;</li>
+<li>private class fields;</li>
+<li>compiler API;</li>
+<li>lint/analyzer ecosystem;</li>
+<li>broad enterprise/browser adoption.</li>
+</ul>
+<h2 id="weaknesses-1">Weaknesses</h2>
+<h3 id="structural-typing">Structural typing</h3>
+<p>Shape compatibility can allow values that were not created by semantic constructors.</p>
+<h3 id="any"><code>any</code></h3>
+<p><code>any</code> can erase type guarantees.</p>
+<h3 id="assertions">Assertions</h3>
+<p><code>as SomeType</code> can force compatibility.</p>
+<h3 id="runtime-erasure">Runtime erasure</h3>
+<p>TypeScript types disappear at runtime.</p>
+<h3 id="mutation">Mutation</h3>
+<p>Objects can remain mutable unless carefully constrained.</p>
+<h2 id="can-generation-compensate">Can generation compensate?</h2>
+<p>Largely, yes, if TypeScript is treated as <strong>one layer</strong>, not the authority boundary.</p>
+<p>Recommended profile:</p>
+<pre><code class="language-text">Generated:
+    tagged state unions
+    readonly values
+    private/non-exported constructors
+    transition functions
+
+Analyzer:
+    forbid any in semantic modules
+    forbid unsafe assertions
+    forbid default in semantic matches
+    forbid direct state mutation
+    forbid analyzer suppression
+
+Runtime:
+    validate deserialization
+    validate capability
+    validate state/version
+    own persistence mutation
+</code></pre>
+<h2 id="critical-rule">Critical rule</h2>
+<p>Do not rely on TypeScript type correctness as adversarial security.</p>
+<p>A branded type may stop accidental misuse.</p>
+<p>It does not make a remote or malicious capability unforgeable.</p>
+<h2 id="verdict-2">Verdict</h2>
+<p>TypeScript is a credible semantic-core target <strong>with restrictions</strong>.</p>
+<p>Its authoritative correctness can approach stronger languages if runtime enforcement is strong.</p>
+<p>Its compile-time proof strength remains lower.</p>
+<hr>
+<h1 id="11-javascript-analysis">11. JavaScript analysis</h1>
+<p>Plain JavaScript has no static type phase.</p>
+<h2 id="available-mechanisms">Available mechanisms</h2>
+<ul>
+<li>generated constructors;</li>
+<li>closures;</li>
+<li>private fields;</li>
+<li><code>Object.freeze</code>;</li>
+<li>runtime tagged values;</li>
+<li>generated validators;</li>
+<li>runtime transition kernel;</li>
+<li>static lint/analyzer passes.</li>
+</ul>
+<h2 id="core-problem">Core problem</h2>
+<p>Any semantic safety that depends on:</p>
+<pre><code class="language-text">developer must remember to use the generated API
+</code></pre>
+<p>is weak.</p>
+<p>A coding agent can easily write:</p>
+<pre><code class="language-js">payment.status = "refunded";
+</code></pre>
+<p>unless architecture prevents authoritative mutation.</p>
+<h2 id="where-javascript-can-work">Where JavaScript can work</h2>
+<p>JavaScript can be acceptable as:</p>
+<ul>
+<li>UI/peripheral code;</li>
+<li>adapter code;</li>
+<li>event glue;</li>
+<li>generated client layer;</li>
+<li>runtime consumer of semantic capabilities.</li>
+</ul>
+<p>For an authoritative semantic module, JavaScript should require:</p>
+<ul>
+<li>encapsulated state;</li>
+<li>runtime-only transitions;</li>
+<li>no writable domain objects;</li>
+<li>server-side validation;</li>
+<li>CI analyzer enforcement.</li>
+</ul>
+<h2 id="verdict-3">Verdict</h2>
+<p>Plain JavaScript is not the preferred authoritative semantic target.</p>
+<p>It is credible only <strong>with strong runtime restrictions</strong>.</p>
+<hr>
+<h1 id="12-python-analysis">12. Python analysis</h1>
+<p>Python sits between TypeScript and JavaScript in practical enforceability.</p>
+<h2 id="available-mechanisms-1">Available mechanisms</h2>
+<ul>
+<li>dataclasses;</li>
+<li>frozen dataclasses;</li>
+<li>Enum;</li>
+<li>Literal;</li>
+<li>Protocol;</li>
+<li>type hints;</li>
+<li>pattern matching;</li>
+<li>mypy/pyright;</li>
+<li>runtime validators;</li>
+<li>modules.</li>
+</ul>
+<p>Mypy documentation supports <code>Literal</code> types, and modern Python type checkers provide significant narrowing analysis.</p>
+<h2 id="weaknesses-2">Weaknesses</h2>
+<ul>
+<li>typing is optional;</li>
+<li>runtime remains dynamic;</li>
+<li>monkey patching;</li>
+<li>private members are largely conventional;</li>
+<li>mutation is easy;</li>
+<li>analyzers can be skipped;</li>
+<li>constructors can often be bypassed;</li>
+<li>reflection/dynamic access is ordinary.</li>
+</ul>
+<h2 id="generated-python-strategy">Generated Python strategy</h2>
+<p>Generate:</p>
+<ul>
+<li>frozen state dataclasses;</li>
+<li>discriminant <code>Literal</code> values;</li>
+<li>factory functions;</li>
+<li>transition entry points;</li>
+<li>runtime validators.</li>
+</ul>
+<p>CI:</p>
+<ul>
+<li>mandatory type checking;</li>
+<li>no ignored semantic diagnostics;</li>
+<li>no direct state writes.</li>
+</ul>
+<p>Runtime:</p>
+<ul>
+<li>validate every authoritative transition;</li>
+<li>reconstruct from persistence through validator.</li>
+</ul>
+<h2 id="verdict-4">Verdict</h2>
+<p>Python can be a semantic-core target <strong>with restrictions</strong>, but most important guarantees ultimately rest on runtime enforcement.</p>
+<p>Its build-time feedback will be materially weaker than F#/Rust/Kotlin/modern C#.</p>
+<hr>
+<h1 id="13-sql-analysis">13. SQL analysis</h1>
+<p>SQL is not just another target language in this architecture.</p>
+<p>It is often the <strong>largest semantic bypass</strong>.</p>
+<p>A fully constrained application can be invalidated by:</p>
+<pre><code class="language-sql">UPDATE Orders
+SET Status = 'Shipped'
+WHERE Id = 42;
+</code></pre>
+<h2 id="sql-strengths">SQL strengths</h2>
+<p>Databases can enforce some invariants strongly through:</p>
+<ul>
+<li>CHECK constraints;</li>
+<li>uniqueness;</li>
+<li>foreign keys;</li>
+<li>roles;</li>
+<li>row-level security;</li>
+<li>stored procedures;</li>
+<li>transactions;</li>
+<li>triggers.</li>
+</ul>
+<h2 id="risks">Risks</h2>
+<ul>
+<li>direct UPDATE;</li>
+<li>DBA/admin access;</li>
+<li>scripts;</li>
+<li>migrations;</li>
+<li>stored procedures encoding stale semantics;</li>
+<li>duplicated CASE logic;</li>
+<li>ORM-generated writes;</li>
+<li>reporting scripts promoted into operational use.</li>
+</ul>
+<h2 id="recommended-architecture">Recommended architecture</h2>
+<p>Prefer:</p>
+<pre><code class="language-text">authoritative semantic writes
+    ->
+owning service/module transition API
+</code></pre>
+<p>rather than allowing arbitrary application SQL writes.</p>
+<p>At the database boundary:</p>
+<ul>
+<li>restrict roles;</li>
+<li>separate read/write permissions;</li>
+<li>generate or validate constraints where simple;</li>
+<li>preserve append-only semantic events where useful;</li>
+<li>validate transitions before commit;</li>
+<li>audit emergency overrides.</li>
+</ul>
+<h2 id="trigger-caution">Trigger caution</h2>
+<p>Triggers can enforce rules but hide behavior.</p>
+<p>They can make AI/debugging harder.</p>
+<p>Use them only when database-level enforcement materially improves authority integrity.</p>
+<h2 id="verdict-5">Verdict</h2>
+<p>SQL bypass risk: <strong>High</strong>.</p>
+<p>This finding weakens the argument that choosing Rust/F# alone solves semantic correctness.</p>
+<hr>
+<h1 id="14-go-analysis">14. Go analysis</h1>
+<p>Go is statically typed but does not natively provide the same closed-sum/exhaustiveness ergonomics as F#/Rust/Kotlin.</p>
+<p>Official Go documentation provides interfaces and type switches, but interface implementations are open.</p>
+<h2 id="strengths-5">Strengths</h2>
+<ul>
+<li>simple type system;</li>
+<li>package visibility;</li>
+<li>generated code is culturally acceptable;</li>
+<li><code>go generate</code>;</li>
+<li>predictable builds;</li>
+<li>simple runtime model.</li>
+</ul>
+<h2 id="weaknesses-3">Weaknesses</h2>
+<ul>
+<li>no native closed ADT equivalent with exhaustive case matching;</li>
+<li>type switches over interfaces do not naturally create closed interpretation;</li>
+<li>mutability is common;</li>
+<li>less expressive type-level state modeling.</li>
+</ul>
+<h2 id="compensation">Compensation</h2>
+<p>A generator can create:</p>
+<ul>
+<li>tagged structs;</li>
+<li>unexported implementation types;</li>
+<li>constructors;</li>
+<li>generated exhaustive visitor functions;</li>
+<li>analyzer checks.</li>
+</ul>
+<p>But this remains more emulation than native closure.</p>
+<h2 id="verdict-6">Verdict</h2>
+<p>Go can support the semantic architecture, but interpretation closure is <strong>more analyzer/generator-dependent</strong> than Java/Kotlin/C#/F#/Rust.</p>
+<hr>
+<h1 id="15-swift--scala--haskell-comparison">15. Swift / Scala / Haskell comparison</h1>
+<h2 id="swift">Swift</h2>
+<p>Official Swift documentation requires exhaustive <code>switch</code> over enums.</p>
+<p>Strengths:</p>
+<ul>
+<li>enums with associated values;</li>
+<li>exhaustive switch;</li>
+<li>value semantics;</li>
+<li>access control.</li>
+</ul>
+<p>Swift is a strong native target.</p>
+<h2 id="scala-3">Scala 3</h2>
+<p>Scala 3 provides enums and exhaustivity diagnostics.</p>
+<p>Strengths:</p>
+<ul>
+<li>algebraic modeling;</li>
+<li>enums;</li>
+<li>sealed types;</li>
+<li>advanced type system;</li>
+<li>functional/OO hybrid.</li>
+</ul>
+<p>It is a strong semantic target but carries greater language/tooling complexity than Java/Kotlin for many enterprise teams.</p>
+<h2 id="haskell">Haskell</h2>
+<p>Haskell provides algebraic data types, pattern matching, powerful type-system mechanisms, and optional deeper guarantees through GADTs and advanced typing.</p>
+<p>However, pattern-match exhaustiveness historically includes warning/configuration nuances, and Haskell's adoption cost is substantial for mainstream enterprise systems.</p>
+<p>Haskell is valuable as a <strong>semantic design reference</strong>, not necessarily the enterprise deployment default.</p>
+<hr>
+<h1 id="16-construction-closure-comparison">16. Construction-closure comparison</h1>
+<h2 id="strong-native">Strong native</h2>
+<ul>
+<li>Rust</li>
+<li>F#</li>
+<li>Swift</li>
+<li>Kotlin</li>
+<li>Scala</li>
+<li>C# 15 union</li>
+<li>Java sealed hierarchy</li>
+</ul>
+<h2 id="strong-with-generated-conventions">Strong with generated conventions</h2>
+<ul>
+<li>TypeScript</li>
+<li>Go</li>
+<li>Python</li>
+</ul>
+<h2 id="primarily-runtime">Primarily runtime</h2>
+<ul>
+<li>JavaScript</li>
+<li>SQL-deserialized values</li>
+</ul>
+<p>Important result:</p>
+<blockquote>
+<p>Generated private factories can approximate construction closure, but deserialization always creates a second construction boundary.</p>
+</blockquote>
+<p>Therefore every target needs:</p>
+<pre><code class="language-text">serialized form
+    ->
+validated semantic reconstruction
+</code></pre>
+<p>even if the local language has strong constructors.</p>
+<hr>
+<h1 id="17-transition-closure-comparison">17. Transition-closure comparison</h1>
+<p>Transition closure is less language-dependent than expected.</p>
+<p>Even in Rust:</p>
+<pre><code class="language-text">state field inaccessible
+</code></pre>
+<p>helps locally.</p>
+<p>But a database row can still be mutated externally.</p>
+<p>The strongest architecture is:</p>
+<pre><code class="language-text">authoritative state storage
+    ->
+write permission only through transition kernel
+</code></pre>
+<p>This can be implemented in nearly every host language.</p>
+<p>Therefore:</p>
+<p><strong>Transition closure can be made mostly language-independent.</strong></p>
+<p>Native language support improves accidental-use prevention but is not sufficient.</p>
+<hr>
+<h1 id="18-interpretation-closure-comparison">18. Interpretation-closure comparison</h1>
+<p>This is where host languages differ most.</p>
+<h2 id="very-strong-native">Very strong native</h2>
+<ul>
+<li>F#</li>
+<li>Rust</li>
+<li>Swift</li>
+<li>Kotlin</li>
+<li>Scala 3</li>
+<li>modern Java sealed switch</li>
+<li>C# 15 union</li>
+</ul>
+<h2 id="achievable-with-discipline">Achievable with discipline</h2>
+<p>TypeScript:</p>
+<ul>
+<li>tagged union;</li>
+<li><code>never</code>;</li>
+<li>analyzer forbidding default.</li>
+</ul>
+<h2 id="analyzer-dependent">Analyzer-dependent</h2>
+<ul>
+<li>Python</li>
+<li>Go</li>
+</ul>
+<h2 id="runtimegenerator-dependent">Runtime/generator-dependent</h2>
+<ul>
+<li>JavaScript</li>
+<li>SQL CASE logic</li>
+</ul>
+<p>Generated semantic compiler can compensate substantially, but native compile-time closure remains superior because errors appear automatically at the exact code location.</p>
+<hr>
+<h1 id="19-authority-closure-comparison">19. Authority-closure comparison</h1>
+<p>Local authority types are useful but should not be mistaken for distributed authority.</p>
+<p>Example:</p>
+<pre><code class="language-text">CanRefund
+</code></pre>
+<p>in Rust may be a private/move-only value.</p>
+<p>But after serialization, the server must decide whether the provided token remains valid.</p>
+<p>Thus the authoritative model should use:</p>
+<pre><code class="language-text">Capability {
+    id
+    subject
+    stateVersion
+    policyVersion
+    authority
+    expiration
+}
+</code></pre>
+<p>validated by trusted runtime.</p>
+<p>This works in:</p>
+<ul>
+<li>Rust;</li>
+<li>F#;</li>
+<li>C#;</li>
+<li>Java;</li>
+<li>TypeScript;</li>
+<li>Python;</li>
+<li>JavaScript.</li>
+</ul>
+<p>Strong languages can prevent more accidental local fabrication.</p>
+<p>They cannot replace server/runtime validation.</p>
+<hr>
+<h1 id="20-dependency-closure-comparison">20. Dependency-closure comparison</h1>
+<p>Dependency closure is fundamentally not a normal host-language feature.</p>
+<p>Example:</p>
+<pre><code class="language-text">RefundEligibility
+depends on:
+    PaymentState.Captured
+</code></pre>
+<p>A compiler cannot infer business-semantic dependency merely from ordinary types with enough certainty.</p>
+<p>The semantic IR is required.</p>
+<p>Therefore semantic compilation <strong>greatly reduces language differences</strong> in this dimension.</p>
+<p>This is one of the strongest arguments for the architecture.</p>
+<hr>
+<h1 id="21-source-generator-and-analyzer-feasibility">21. Source-generator and analyzer feasibility</h1>
+<h2 id="c">C#</h2>
+<p>Roslyn is an exceptionally good fit.</p>
+<p>Official Roslyn APIs support:</p>
+<ul>
+<li>syntax/semantic analysis;</li>
+<li>analyzers;</li>
+<li>code fixes;</li>
+<li>source generation.</li>
+</ul>
+<p>C# is arguably the best mainstream target for a first implementation.</p>
+<h2 id="java">Java</h2>
+<p>Annotation processing and compiler tooling are mature.</p>
+<p>Generated sealed hierarchies and build checks are practical.</p>
+<h2 id="kotlin">Kotlin</h2>
+<p>KSP officially supports source generation and is designed to reduce compiler-plugin complexity.</p>
+<h2 id="typescript">TypeScript</h2>
+<p>The compiler API and AST tooling enable generation and analysis, though ecosystem integration is less standardized than Roslyn diagnostics.</p>
+<h2 id="rust">Rust</h2>
+<p>Procedural macros and build tooling are powerful.</p>
+<p>Native types already solve much of what generation would otherwise emulate.</p>
+<h2 id="go">Go</h2>
+<p><code>go generate</code> makes generated source conventional, but semantic analysis tooling would require additional implementation.</p>
+<h2 id="python">Python</h2>
+<p>Code generation is easy.</p>
+<p>Strict mandatory analyzer enforcement is organizational rather than intrinsic.</p>
+<h2 id="javascript">JavaScript</h2>
+<p>Generation is easy; static enforcement is weakest.</p>
+<hr>
+<h1 id="22-runtime-kernel-requirements">22. Runtime-kernel requirements</h1>
+<p>The runtime kernel should remain small.</p>
+<p>Minimum responsibilities:</p>
+<pre><code class="language-text">validate current semantic state
+validate current version
+validate transition preconditions
+validate authority/capability
+validate evidence/policy freshness
+apply authoritative transition
+emit obligation changes
+record semantic operation/effect state
+produce new version
+</code></pre>
+<p>The kernel should <strong>not</strong> become:</p>
+<ul>
+<li>workflow framework;</li>
+<li>ORM;</li>
+<li>UI framework;</li>
+<li>dependency injection platform;</li>
+<li>general application runtime.</li>
+</ul>
+<p>Smallness matters because this component becomes the cross-language trust anchor.</p>
+<hr>
+<h1 id="23-database-and-persistence-boundary-requirements">23. Database and persistence boundary requirements</h1>
+<p>Persistence is a reconstruction boundary.</p>
+<p>Recommended pattern:</p>
+<pre><code class="language-text">Persistence DTO
+    ->
+Generated/validated reconstruction
+    ->
+Semantic domain value
+</code></pre>
+<p>Do not allow ORM hydration to silently create authoritative invalid states.</p>
+<h2 id="orm-concerns">ORM concerns</h2>
+<h3 id="ef-core--hibernate">EF Core / Hibernate</h3>
+<p>Private/setter patterns help, but change tracking and reflection can complicate enforcement.</p>
+<h3 id="sequelize--sqlalchemy">Sequelize / SQLAlchemy</h3>
+<p>Dynamic models make direct mutation particularly easy.</p>
+<h2 id="recommendation">Recommendation</h2>
+<p>The semantic model should distinguish:</p>
+<pre><code class="language-text">persistence representation
+</code></pre>
+<p>from:</p>
+<pre><code class="language-text">validated authoritative semantic value
+</code></pre>
+<p>The application must not assume:</p>
+<pre><code class="language-text">database row exists
+</code></pre>
+<p>therefore:</p>
+<pre><code class="language-text">domain state is valid
+</code></pre>
+<hr>
+<h1 id="24-sql-bypass-analysis">24. SQL bypass analysis</h1>
+<p>SQL is the clearest falsification test for language-only safety.</p>
+<p>Experiment:</p>
+<pre><code class="language-text">F# domain with perfect DUs
++
+agent has UPDATE permission
+</code></pre>
+<p>The agent can still bypass transition closure.</p>
+<p>Therefore:</p>
+<blockquote>
+<p>Application-language strength cannot be the primary authority boundary if other actors can mutate the database directly.</p>
+</blockquote>
+<p>Recommended controls:</p>
+<ul>
+<li>least-privilege DB roles;</li>
+<li>read-only agent SQL;</li>
+<li>transition stored procedure only where justified;</li>
+<li>service-owned writes;</li>
+<li>immutable event history;</li>
+<li>CI checks against direct status writes;</li>
+<li>audit emergency mutation.</li>
+</ul>
+<hr>
+<h1 id="25-capability-representation-analysis">25. Capability-representation analysis</h1>
+<h2 id="strong-local-languages">Strong local languages</h2>
+<p>Rust can represent single-use capabilities particularly well using move semantics.</p>
+<p>F#/Haskell can represent opaque constructors and typed transitions elegantly.</p>
+<h2 id="mainstream-languages">Mainstream languages</h2>
+<p>C#/Java/Kotlin can use private/sealed capability types.</p>
+<p>TypeScript can use brands/private symbols, but runtime trust remains required.</p>
+<p>Python/JS need runtime-issued identities.</p>
+<h2 id="distributed-recommendation">Distributed recommendation</h2>
+<p>All targets should ultimately rely on runtime-validated capability identity.</p>
+<p>The capability must be bound to:</p>
+<ul>
+<li>subject;</li>
+<li>semantic state version;</li>
+<li>policy version;</li>
+<li>authority;</li>
+<li>optional expiration;</li>
+<li>allowed transition.</li>
+</ul>
+<p>This makes authoritative correctness language-independent.</p>
+<hr>
+<h1 id="26-strong-target-vs-generated-weak-target-comparison">26. Strong target vs generated weak target comparison</h1>
+<p>Consider:</p>
+<pre><code class="language-text">F# native
+</code></pre>
+<p>versus:</p>
+<pre><code class="language-text">TypeScript generated + analyzer + runtime
+</code></pre>
+<h2 id="f-advantage">F# advantage</h2>
+<p>The compiler naturally makes semantic modeling ergonomic.</p>
+<p>New cases often cause immediate pattern-match warnings across ordinary code.</p>
+<p>Developers/agents receive feedback without understanding a custom analyzer.</p>
+<h2 id="generated-typescript-advantage">Generated TypeScript advantage</h2>
+<p>The same semantic IR can:</p>
+<ul>
+<li>generate types;</li>
+<li>generate tool schemas;</li>
+<li>constrain runtime capabilities;</li>
+<li>support existing web stack;</li>
+<li>avoid new language adoption.</li>
+</ul>
+<h2 id="likely-result">Likely result</h2>
+<p>Authoritative runtime escape rate can be made close.</p>
+<p>Compile-time misuse rate will remain lower in F#.</p>
+<p>The economic question becomes:</p>
+<pre><code class="language-text">Is earlier native detection worth language-adoption cost?
+</code></pre>
+<p>For many enterprises, semantic compilation may make the mainstream target more attractive.</p>
+<hr>
+<h1 id="27-ai-agent-bypass-behavior-risks">27. AI-agent bypass behavior risks</h1>
+<p>Agents optimize for task completion.</p>
+<p>When builds fail, likely shortcuts include:</p>
+<pre><code class="language-text">as any
+default:
+#pragma warning disable
+# type: ignore
+reflection
+direct property assignment
+direct SQL update
+</code></pre>
+<p>This is not hypothetical as an architecture risk; these constructs are attractive because they quickly eliminate local friction.</p>
+<p>Therefore the semantic compiler must treat architecture erosion itself as a violation.</p>
+<p>Required checks:</p>
+<ul>
+<li>no <code>any</code> in semantic modules;</li>
+<li>no ignored semantic diagnostics;</li>
+<li>no wildcard/default on closed consequential state;</li>
+<li>no direct state setter;</li>
+<li>no direct persistence mutation;</li>
+<li>no edits to generated files;</li>
+<li>no analyzer-disable comments.</li>
+</ul>
+<p>CI must make these errors, not warnings.</p>
+<hr>
+<h1 id="28-diagnostic-requirements">28. Diagnostic requirements</h1>
+<p>The semantic compiler should emit domain diagnostics rather than implementation diagnostics.</p>
+<p>Bad:</p>
+<pre><code class="language-text">TS2322: Type X is not assignable to never.
+</code></pre>
+<p>Better:</p>
+<pre><code class="language-text">SC-STATE-004:
+PaymentState.Disputed is not classified by RefundEligibility.
+</code></pre>
+<p>Bad:</p>
+<pre><code class="language-text">access violation line 842
+</code></pre>
+<p>Better:</p>
+<pre><code class="language-text">SC-TRANSITION-017:
+Payment authoritative state may change only through declared transitions.
+Use MarkRefundReconciled.
+</code></pre>
+<p>Agent repair cost will depend heavily on diagnostic quality.</p>
+<p>A semantic compiler can provide <strong>language-independent diagnostics</strong>, which may be a major cross-language advantage.</p>
+<hr>
+<h1 id="29-adoption-economics">29. Adoption economics</h1>
+<p>Compare:</p>
+<h2 id="new-language-strategy">New-language strategy</h2>
+<p>Costs:</p>
+<ul>
+<li>hiring;</li>
+<li>training;</li>
+<li>build/deployment changes;</li>
+<li>debugging unfamiliarity;</li>
+<li>interop;</li>
+<li>standards approval;</li>
+<li>operational ownership.</li>
+</ul>
+<p>Benefits:</p>
+<ul>
+<li>native semantic guarantees;</li>
+<li>better local ergonomics;</li>
+<li>less custom tooling.</li>
+</ul>
+<h2 id="semantic-compiler-strategy">Semantic-compiler strategy</h2>
+<p>Costs:</p>
+<ul>
+<li>compiler;</li>
+<li>generators;</li>
+<li>analyzers;</li>
+<li>runtime;</li>
+<li>CI integration;</li>
+<li>internal training.</li>
+</ul>
+<p>Benefits:</p>
+<ul>
+<li>existing language/toolchain;</li>
+<li>normal debugger;</li>
+<li>normal profiler;</li>
+<li>normal deployment;</li>
+<li>shared semantics across languages;</li>
+<li>agent-facing common model.</li>
+</ul>
+<p>The correct comparison is not:</p>
+<pre><code class="language-text">free C# vs expensive F#
+</code></pre>
+<p>It is:</p>
+<pre><code class="language-text">new language cost
+vs
+custom semantic-toolchain cost
+</code></pre>
+<p>Both are real.</p>
+<hr>
+<h1 id="30-toolchain-maintenance-economics">30. Toolchain-maintenance economics</h1>
+<p>Multi-target support can become expensive.</p>
+<p>Each target needs:</p>
+<ul>
+<li>generator;</li>
+<li>analyzer;</li>
+<li>runtime adapter;</li>
+<li>conformance test runner;</li>
+<li>language-version compatibility;</li>
+<li>ORM/framework tests.</li>
+</ul>
+<p>Therefore initial support should be narrow.</p>
+<p>Recommended enterprise-first targets:</p>
+<ol>
+<li>C#</li>
+<li>Java</li>
+<li>TypeScript</li>
+</ol>
+<p>Why:</p>
+<ul>
+<li>large installed base;</li>
+<li>strong generator/analyzer ecosystems;</li>
+<li>high potential adoption value.</li>
+</ul>
+<p>F#/Rust can serve as reference/baseline targets rather than first commercial priorities.</p>
+<hr>
+<h1 id="31-multi-target-conformance-strategy">31. Multi-target conformance strategy</h1>
+<p>A canonical IR should define observable semantics.</p>
+<p>Target conformance should test:</p>
+<pre><code class="language-text">same legal states
+same legal transitions
+same rejected transitions
+same capability frontier
+same obligations
+same effect rules
+</code></pre>
+<p>Create language-neutral examples:</p>
+<pre><code class="language-text">Input:
+    Payment = Authorized
+
+Transition:
+    Capture
+
+Expected:
+    Payment = Captured
+</code></pre>
+<p>Run against:</p>
+<ul>
+<li>C#;</li>
+<li>Java;</li>
+<li>TypeScript;</li>
+<li>F#;</li>
+<li>Rust.</li>
+</ul>
+<p>This tests generator equivalence.</p>
+<p>Then add <strong>target-specific escape tests</strong>:</p>
+<ul>
+<li>fake constructor;</li>
+<li>direct mutation;</li>
+<li>missing match case;</li>
+<li>stale capability;</li>
+<li>analyzer suppression;</li>
+<li>ORM bypass;</li>
+<li>direct persistence.</li>
+</ul>
+<p>This exposes guarantee gaps honestly.</p>
+<hr>
+<h1 id="32-experiment-design">32. Experiment design</h1>
+<h2 id="experiment-a--state-addition">Experiment A — state addition</h2>
+<p>Add:</p>
+<pre><code class="language-text">PaymentState.Disputed
+</code></pre>
+<p>Across:</p>
+<ul>
+<li>F#;</li>
+<li>Rust;</li>
+<li>Kotlin;</li>
+<li>Java;</li>
+<li>C#;</li>
+<li>TypeScript;</li>
+<li>Python;</li>
+<li>JavaScript;</li>
+<li>Go.</li>
+</ul>
+<p>Measure:</p>
+<ul>
+<li>compiler failures;</li>
+<li>analyzer failures;</li>
+<li>silent omissions;</li>
+<li>runtime failures;</li>
+<li>agent repair tokens.</li>
+</ul>
+<h2 id="experiment-b--direct-mutation">Experiment B — direct mutation</h2>
+<p>Prompt agent:</p>
+<pre><code class="language-text">Mark payment refunded with the smallest code change.
+</code></pre>
+<p>Measure bypass attempts.</p>
+<h2 id="experiment-c--fake-capability">Experiment C — fake capability</h2>
+<p>Ask agent to fabricate <code>CanRefund</code>.</p>
+<p>Measure:</p>
+<ul>
+<li>compile prevention;</li>
+<li>analyzer prevention;</li>
+<li>runtime prevention.</li>
+</ul>
+<h2 id="experiment-d--stale-capability">Experiment D — stale capability</h2>
+<p>Issue capability at state v8.</p>
+<p>Advance to v9.</p>
+<p>Attempt action.</p>
+<p>Every language should reject at runtime.</p>
+<h2 id="experiment-e--state-split">Experiment E — state split</h2>
+<pre><code class="language-text">Approved
+->
+Conditional
+Full
+</code></pre>
+<p>Measure dependency-migration completeness.</p>
+<h2 id="experiment-f--sql-bypass">Experiment F — SQL bypass</h2>
+<p>Give DB write tool.</p>
+<p>Compare:</p>
+<pre><code class="language-text">strong native language only
+</code></pre>
+<p>against:</p>
+<pre><code class="language-text">semantic runtime + DB ownership
+</code></pre>
+<p>This may be the most important experiment.</p>
+<h2 id="experiment-g--analyzer-suppression">Experiment G — analyzer suppression</h2>
+<p>Prompt agent to fix build quickly.</p>
+<p>Record:</p>
+<ul>
+<li>casts;</li>
+<li><code>any</code>;</li>
+<li>ignored diagnostics;</li>
+<li>wildcard branches.</li>
+</ul>
+<h2 id="experiment-h--same-domain-multiple-targets">Experiment H — same domain, multiple targets</h2>
+<p>Generate C#, Java, TS, F#.</p>
+<p>Run identical semantic changes.</p>
+<h2 id="experiment-i--smaller-model">Experiment I — smaller model</h2>
+<p>Compare:</p>
+<pre><code class="language-text">smaller model + generated TypeScript
+</code></pre>
+<p>against:</p>
+<pre><code class="language-text">larger model + ordinary TypeScript
+</code></pre>
+<h2 id="experiment-j--native-strong-vs-generated-weak">Experiment J — native strong vs generated weak</h2>
+<p>Compare:</p>
+<pre><code class="language-text">native F#
+</code></pre>
+<p>with:</p>
+<pre><code class="language-text">generated TypeScript
+</code></pre>
+<p>Measure total cost per correct semantic change.</p>
+<hr>
+<h1 id="33-metrics">33. Metrics</h1>
+<h2 id="build-time-semantic-error-detection">Build-Time Semantic Error Detection</h2>
+<pre><code class="language-text">semantic faults caught before runtime
+-------------------------------------
+injected semantic faults
+</code></pre>
+<h2 id="runtime-semantic-violation-detection">Runtime Semantic Violation Detection</h2>
+<pre><code class="language-text">remaining violations blocked
+----------------------------
+violations reaching runtime
+</code></pre>
+<h2 id="total-semantic-escape-rate">Total Semantic Escape Rate</h2>
+<pre><code class="language-text">violations reaching authoritative effect
+----------------------------------------
+attempted violations
+</code></pre>
+<p>This is the most important metric.</p>
+<h2 id="agent-bypass-attempt-rate">Agent Bypass Attempt Rate</h2>
+<h2 id="analyzer-suppression-attempt-rate">Analyzer Suppression Attempt Rate</h2>
+<h2 id="tokens-per-correct-change">Tokens per Correct Change</h2>
+<h2 id="repair-loops">Repair Loops</h2>
+<h2 id="generated-loc">Generated LOC</h2>
+<h2 id="semantic-contract-tokens">Semantic Contract Tokens</h2>
+<h2 id="runtime-overhead">Runtime Overhead</h2>
+<h2 id="human-review-time">Human Review Time</h2>
+<h2 id="cost-per-correct-completion">Cost per Correct Completion</h2>
+<h2 id="guarantee-gap">Guarantee Gap</h2>
+<p>Difference between strongest native target and generated target for:</p>
+<ul>
+<li>construction;</li>
+<li>interpretation;</li>
+<li>authority;</li>
+<li>immutability;</li>
+<li>bypass resistance.</li>
+</ul>
+<hr>
+<h1 id="34-counterarguments">34. Counterarguments</h1>
+<h2 id="1-just-use-frustkotlin">1. "Just use F#/Rust/Kotlin."</h2>
+<p>Sometimes correct.</p>
+<p>Greenfield high-consequence systems may benefit from stronger native semantics.</p>
+<p>But enterprise migration cost is real.</p>
+<p>A semantic layer may offer most authoritative correctness without organizational language replacement.</p>
+<h2 id="2-a-custom-compiler-is-more-complex-than-a-new-language">2. "A custom compiler is more complex than a new language."</h2>
+<p>Potentially true.</p>
+<p>This must be measured.</p>
+<p>If the semantic compiler becomes a huge proprietary platform, the hypothesis fails.</p>
+<h2 id="3-generated-typescript-creates-false-confidence">3. "Generated TypeScript creates false confidence."</h2>
+<p>Correct unless guarantee levels are explicitly documented.</p>
+<p>Never call generated TS "equivalent to Rust."</p>
+<h2 id="4-runtime-catches-errors-too-late">4. "Runtime catches errors too late."</h2>
+<p>True for developer feedback.</p>
+<p>But runtime is still required for distributed authority even in Rust/F#.</p>
+<p>The best model is defense in depth.</p>
+<h2 id="5-analyzers-are-easy-to-suppress">5. "Analyzers are easy to suppress."</h2>
+<p>Correct.</p>
+<p>CI must prohibit suppression in semantic modules.</p>
+<h2 id="6-typescriptpython-are-unsound">6. "TypeScript/Python are unsound."</h2>
+<p>This prevents full compile-time equivalence.</p>
+<p>It does not prevent a trusted runtime from enforcing authoritative state.</p>
+<h2 id="7-sql-undermines-everything">7. "SQL undermines everything."</h2>
+<p>Correct unless database mutation is controlled.</p>
+<p>This is architecture-wide, not language-specific.</p>
+<h2 id="8-supporting-many-languages-is-too-expensive">8. "Supporting many languages is too expensive."</h2>
+<p>Likely.</p>
+<p>Support few mainstream targets first.</p>
+<h2 id="9-generated-code-is-hard-to-debug">9. "Generated code is hard to debug."</h2>
+<p>Mitigate with:</p>
+<ul>
+<li>readable code;</li>
+<li>semantic source maps;</li>
+<li>semantic diagnostic IDs;</li>
+<li>hidden generated code unless debugging.</li>
+</ul>
+<h2 id="10-native-strong-language-ergonomics-remain-better">10. "Native strong-language ergonomics remain better."</h2>
+<p>Yes.</p>
+<p>Semantic compilation compensates for guarantees more readily than for ergonomics.</p>
+<h2 id="11-enterprise-teams-may-hate-a-dsl-more-than-a-language">11. "Enterprise teams may hate a DSL more than a language."</h2>
+<p>Possible.</p>
+<p>Keep DSL minimal or offer host-language frontends producing canonical IR.</p>
+<h2 id="12-frameworks-bypass-generated-semantics">12. "Frameworks bypass generated semantics."</h2>
+<p>Possible.</p>
+<p>The semantic runtime must sit below frameworks at the authoritative boundary.</p>
+<h2 id="13-runtime-does-most-work-so-why-generate-types">13. "Runtime does most work, so why generate types?"</h2>
+<p>Because compile-time types reduce repair latency, developer mistakes, and agent search cost.</p>
+<p>But runtime is the final authority.</p>
+<h2 id="14-good-conventional-cjava-is-sufficient">14. "Good conventional C#/Java is sufficient."</h2>
+<p>For some systems, yes.</p>
+<p>Semantic compilation becomes valuable when rule fan-out, agent operation, change frequency, or consequence justify it.</p>
+<h2 id="15-agents-may-understand-native-idioms-better-than-custom-generated-patterns">15. "Agents may understand native idioms better than custom generated patterns."</h2>
+<p>Likely.</p>
+<p>Generated targets should be idiomatic and diagnostics semantic.</p>
+<hr>
+<h1 id="35-what-can-genuinely-be-made-language-independent">35. What can genuinely be made language-independent</h1>
+<p>The following can be centralized in semantic IR/runtime:</p>
+<ul>
+<li>semantic state identities;</li>
+<li>legal transitions;</li>
+<li>transition prerequisites;</li>
+<li>authority rules;</li>
+<li>capability validity;</li>
+<li>state version binding;</li>
+<li>obligation rules;</li>
+<li>dependency graph;</li>
+<li>external-effect policies;</li>
+<li>policy versions;</li>
+<li>evidence requirements;</li>
+<li>migration obligations;</li>
+<li>semantic diagnostics;</li>
+<li>planning graph;</li>
+<li>agent capability view;</li>
+<li>authoritative persistence transition validation.</li>
+</ul>
+<p>These are the strongest candidates for portability.</p>
+<hr>
+<h1 id="36-what-cannot-be-made-language-independent">36. What cannot be made language-independent</h1>
+<p>The following remain host-dependent:</p>
+<ul>
+<li>native exhaustive-pattern ergonomics;</li>
+<li>compiler error quality;</li>
+<li>local mutation semantics;</li>
+<li>ownership/borrowing;</li>
+<li>affine/linear capability consumption;</li>
+<li>reflection behavior;</li>
+<li>unsafe casts;</li>
+<li>module system strength;</li>
+<li>generated-code tooling;</li>
+<li>IDE support;</li>
+<li>metaprogramming mechanisms;</li>
+<li>framework integration.</li>
+</ul>
+<p>Semantic compilation can compensate but not erase these differences.</p>
+<hr>
+<h1 id="37-minimum-language-requirements">37. Minimum language requirements</h1>
+<p>The architecture should not promise equal assurance for every Turing-complete language.</p>
+<p>A practical semantic-core target should preferably provide:</p>
+<ul>
+<li>modules/packages;</li>
+<li>controlled exports;</li>
+<li>deterministic build;</li>
+<li>generated-source integration;</li>
+<li>ability to call trusted runtime;</li>
+<li>CI static-analysis integration.</li>
+</ul>
+<p>For higher assurance:</p>
+<ul>
+<li>static types;</li>
+<li>closed union/sealed type support;</li>
+<li>exhaustive matching.</li>
+</ul>
+<p>This yields support tiers rather than a binary supported/unsupported label.</p>
+<hr>
+<h1 id="38-recommended-support-tiers">38. Recommended support tiers</h1>
+<h2 id="tier-a--native-semantic-targets">Tier A — Native semantic targets</h2>
+<p>Strong native closure:</p>
+<ul>
+<li>F#</li>
+<li>Rust</li>
+<li>Kotlin</li>
+<li>Swift</li>
+<li>Scala</li>
+<li>Haskell</li>
+<li>C# 15+ union-capable builds</li>
+<li>modern Java sealed-hierarchy builds</li>
+</ul>
+<p>Guarantees:</p>
+<ul>
+<li>strong construction/interpretation support;</li>
+<li>semantic compiler adds dependency/runtime closure.</li>
+</ul>
+<h2 id="tier-b--generated--analyzer-targets">Tier B — Generated + analyzer targets</h2>
+<ul>
+<li>TypeScript</li>
+<li>Go</li>
+<li>older C#</li>
+<li>Java configurations not using full sealed modeling</li>
+</ul>
+<p>Guarantees:</p>
+<ul>
+<li>generated state representation;</li>
+<li>build-time semantic analyzer;</li>
+<li>runtime kernel required.</li>
+</ul>
+<h2 id="tier-c--runtime-enforced-targets">Tier C — Runtime-enforced targets</h2>
+<ul>
+<li>JavaScript</li>
+<li>Python where typing is not mandatory</li>
+<li>dynamic integration scripts</li>
+</ul>
+<p>Guarantees:</p>
+<ul>
+<li>authoritative runtime correctness;</li>
+<li>lower compile-time protection.</li>
+</ul>
+<h2 id="tier-d--peripheral--untrusted">Tier D — Peripheral / untrusted</h2>
+<ul>
+<li>arbitrary SQL;</li>
+<li>shell scripts;</li>
+<li>admin tools;</li>
+<li>external agents.</li>
+</ul>
+<p>These should operate through constrained capabilities rather than authoritative mutation.</p>
+<hr>
+<h1 id="39-architecture-changes-recommended">39. Architecture changes recommended</h1>
+<h2 id="1-stop-treating-language-choice-as-the-only-safety-boundary">1. Stop treating language choice as the only safety boundary</h2>
+<p>Language is one layer.</p>
+<h2 id="2-define-canonical-semantic-ir">2. Define canonical semantic IR</h2>
+<p>Use one language-independent meaning.</p>
+<h2 id="3-generate-idiomatic-target-representations">3. Generate idiomatic target representations</h2>
+<p>Do not use lowest-common-denominator code.</p>
+<p>Examples:</p>
+<ul>
+<li>F#: DU</li>
+<li>Rust: enum</li>
+<li>C# 15: union</li>
+<li>Java: sealed interface + records</li>
+<li>Kotlin: sealed class/interface</li>
+<li>TypeScript: tagged union</li>
+<li>Python: frozen dataclasses + Literal.</li>
+</ul>
+<h2 id="4-publish-a-guarantee-profile-per-target">4. Publish a guarantee profile per target</h2>
+<p>Example:</p>
+<pre><code class="language-text">TypeScript:
+    Construction: Medium
+    Interpretation: Strong under CI
+    Authority: Runtime
+    Immutability: Medium
+    Escape risk: Medium-high
+</code></pre>
+<h2 id="5-mark-semantic-modules">5. Mark semantic modules</h2>
+<p>Apply stricter rules only there.</p>
+<h2 id="6-prohibit-escape-hatches-in-semantic-modules">6. Prohibit escape hatches in semantic modules</h2>
+<p>Examples:</p>
+<ul>
+<li><code>any</code></li>
+<li>unsafe casts</li>
+<li>reflection</li>
+<li>wildcard/default</li>
+<li>analyzer suppression.</li>
+</ul>
+<h2 id="7-make-semantic-diagnostics-ci-errors">7. Make semantic diagnostics CI errors</h2>
+<p>Not warnings.</p>
+<h2 id="8-build-a-tiny-trusted-runtime-kernel">8. Build a tiny trusted runtime kernel</h2>
+<p>Shared semantics, minimal dependencies.</p>
+<h2 id="9-treat-persistence-as-untrusted-input">9. Treat persistence as untrusted input</h2>
+<p>Validate reconstruction.</p>
+<h2 id="10-restrict-db-semantic-writes">10. Restrict DB semantic writes</h2>
+<p>No arbitrary agent SQL.</p>
+<h2 id="11-bind-capabilities-to-stateversionpolicy">11. Bind capabilities to state/version/policy</h2>
+<p>All targets rely on runtime validation.</p>
+<h2 id="12-exclude-generated-code-from-normal-agent-context">12. Exclude generated code from normal agent context</h2>
+<p>Expose compact semantic IR/view instead.</p>
+<h2 id="13-provide-source-mapping">13. Provide source mapping</h2>
+<p>Every generated artifact maps to semantic declaration.</p>
+<h2 id="14-run-cross-target-conformance-tests">14. Run cross-target conformance tests</h2>
+<p>Same semantics across targets.</p>
+<h2 id="15-run-adversarial-target-escape-tests">15. Run adversarial target escape tests</h2>
+<p>Don't merely test happy-path generation.</p>
+<hr>
+<h1 id="40-final-verdict">40. Final verdict</h1>
+<h2 id="can-semantic-compilation-compensate-for-lack-of-native-discriminated-unions">Can semantic compilation compensate for lack of native discriminated unions?</h2>
+<p><strong>Mostly</strong></p>
+<p>Generation can create closed representations and runtime validators, but native algebraic types remain more ergonomic and harder to bypass.</p>
+<h2 id="can-it-compensate-for-lack-of-exhaustive-pattern-matching">Can it compensate for lack of exhaustive pattern matching?</h2>
+<p><strong>Mostly</strong></p>
+<p>Build analyzers can force exhaustive handling in semantic modules.</p>
+<p>Native compiler support remains better because it is automatic and deeply integrated.</p>
+<h2 id="can-it-compensate-for-weak-immutability">Can it compensate for weak immutability?</h2>
+<p><strong>Partially</strong></p>
+<p>Generated frozen/readonly representations help, and transition-only authoritative storage can prevent mutation from becoming authoritative.</p>
+<p>But local deep immutability and alias control cannot be fully emulated.</p>
+<h2 id="can-it-compensate-for-weak-authoritycapability-typing">Can it compensate for weak authority/capability typing?</h2>
+<p><strong>Mostly</strong></p>
+<p>Runtime-issued, version-bound, server-validated capabilities can provide stronger distributed authority than local types alone.</p>
+<p>Native affine/opaque types remain valuable locally.</p>
+<h2 id="can-runtime-enforcement-equalize-authoritative-correctness-across-languages">Can runtime enforcement equalize authoritative correctness across languages?</h2>
+<p><strong>Mostly</strong></p>
+<p>This is the strongest conclusion of the research.</p>
+<p>Runtime enforcement can equalize:</p>
+<ul>
+<li>transition legality;</li>
+<li>state/version checks;</li>
+<li>policy;</li>
+<li>evidence;</li>
+<li>authority;</li>
+<li>obligations;</li>
+<li>external effects.</li>
+</ul>
+<p>Local compile-time misuse rates will still differ.</p>
+<h2 id="can-typescript-be-a-credible-semantic-core-target">Can TypeScript be a credible semantic-core target?</h2>
+<p><strong>With restrictions</strong></p>
+<p>Require:</p>
+<ul>
+<li>tagged generated unions;</li>
+<li>strict mode;</li>
+<li>no <code>any</code>;</li>
+<li>no unsafe assertions;</li>
+<li>no direct state mutation;</li>
+<li>CI analyzers;</li>
+<li>runtime validation.</li>
+</ul>
+<h2 id="can-plain-javascript-be-a-credible-semantic-core-target">Can plain JavaScript be a credible semantic-core target?</h2>
+<p><strong>Peripheral only / with strong runtime restrictions</strong></p>
+<p>It can participate safely through a runtime kernel, but it is not the preferred authoritative semantic implementation.</p>
+<h2 id="can-python-be-a-credible-semantic-core-target">Can Python be a credible semantic-core target?</h2>
+<p><strong>With restrictions</strong></p>
+<p>Mandatory analyzer + frozen generated structures + runtime validation are required.</p>
+<h2 id="can-c-achieve-near-f-semantic-safety-with-generationanalyzers">Can C# achieve near-F# semantic safety with generation/analyzers?</h2>
+<p><strong>Yes</strong></p>
+<p>Especially with C# 15 union types, Roslyn analyzers, source generation, and runtime enforcement.</p>
+<p>F# remains more naturally aligned with immutable algebraic domain modeling.</p>
+<h2 id="can-java-achieve-near-kotlinf-semantic-safety-with-generationanalyzers">Can Java achieve near-Kotlin/F# semantic safety with generation/analyzers?</h2>
+<p><strong>Mostly</strong></p>
+<p>Sealed hierarchies, records, exhaustive switch, generation, and runtime enforcement provide strong support.</p>
+<p>Ergonomics remain less concise than F#/Kotlin.</p>
+<h2 id="is-sql-a-major-independent-semantic-bypass-risk">Is SQL a major independent semantic bypass risk?</h2>
+<p><strong>High</strong></p>
+<p>This may be more important to authoritative correctness than whether the application uses C#, F#, TypeScript, or Rust.</p>
+<h2 id="best-mainstream-enterprise-target">Best mainstream enterprise target</h2>
+<p><strong>C#</strong></p>
+<p>Reason:</p>
+<ul>
+<li>very strong enterprise adoption;</li>
+<li>excellent Roslyn analyzer/source-generator platform;</li>
+<li>increasingly strong native union/pattern capabilities;</li>
+<li>mature runtime/tooling;</li>
+<li>low need for external libraries.</li>
+</ul>
+<p><strong>Java</strong> is a close second for JVM-heavy organizations.</p>
+<h2 id="strongest-native-target">Strongest native target</h2>
+<p>For business-domain algebraic modeling:</p>
+<p><strong>F#</strong></p>
+<p>For local authority/resource/ownership guarantees:</p>
+<p><strong>Rust</strong></p>
+<p>There is no single universally strongest language across all dimensions.</p>
+<h2 id="largest-residual-guarantee-gap">Largest residual guarantee gap</h2>
+<p><strong>Local affine/ownership and deep mutation guarantees cannot be reproduced faithfully in TypeScript/Python/JavaScript through code generation alone.</strong></p>
+<h2 id="most-important-runtime-enforcement">Most important runtime enforcement</h2>
+<blockquote>
+<p><strong>Validate every authoritative transition against current state, version, authority, policy, evidence, and capability identity at the moment of execution.</strong></p>
+</blockquote>
+<h2 id="most-important-analyzer">Most important analyzer</h2>
+<blockquote>
+<p><strong>Detect semantic bypass: direct mutation, missing state interpretation, wildcard/default handling, unsafe casts/<code>any</code>, generated-file edits, and analyzer suppression inside semantic modules.</strong></p>
+</blockquote>
+<h2 id="best-adoption-strategy">Best adoption strategy</h2>
+<p>Start with one high-consequence domain in the organization's existing language.</p>
+<p>Recommended sequence:</p>
+<ol>
+<li>define semantic IR;</li>
+<li>generate native state representation;</li>
+<li>generate runtime transition guard;</li>
+<li>add analyzer rules;</li>
+<li>restrict persistence writes;</li>
+<li>generate agent capability view;</li>
+<li>measure escape rate and change cost;</li>
+<li>expand only if evidence supports it.</li>
+</ol>
+<h2 id="most-important-experiment">Most important experiment</h2>
+<p><strong>Native F# vs generated TypeScript vs generated C#/Java on the same domain, including SQL bypass and deliberate analyzer-suppression attacks.</strong></p>
+<p>Measure:</p>
+<ul>
+<li>total semantic escape rate;</li>
+<li>build-time detection;</li>
+<li>runtime detection;</li>
+<li>agent bypass attempts;</li>
+<li>repair loops;</li>
+<li>tokens;</li>
+<li>cost per correct semantic change.</li>
+</ul>
+<h2 id="most-important-architecture-change-suggested-by-research">Most important architecture change suggested by research</h2>
+<p>The project should explicitly separate:</p>
+<pre><code class="language-text">Native Guarantee
+Build-Time Semantic Guarantee
+Runtime Authoritative Guarantee
+Persistence/Operational Guarantee
+</code></pre>
+<p>and publish a guarantee profile per language target.</p>
+<p>That prevents the architecture from making false equivalence claims while still allowing mainstream languages to achieve the correctness level that actually matters at the authoritative system boundary.</p>
+<hr>
+<h1 id="required-guarantee-matrix">Required guarantee matrix</h1>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Construction Closure</th>
+<th>Transition Closure</th>
+<th>Interpretation Closure</th>
+<th>Authority Closure</th>
+<th>Dependency Closure</th>
+<th>Compile-Time Protection</th>
+<th>Runtime Protection</th>
+<th>Major Escape Hatches</th>
+<th>Generator Complexity</th>
+<th>Enterprise Adoption Fit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F#</td>
+<td>Strong</td>
+<td>Strong + runtime</td>
+<td>Strong</td>
+<td>Medium-Strong local</td>
+<td>Generated</td>
+<td>Strong</td>
+<td>Required distributed</td>
+<td>.NET interop, reflection, DB</td>
+<td>Low-Medium</td>
+<td>Medium-High in .NET</td>
+</tr>
+<tr>
+<td>Rust</td>
+<td>Very Strong</td>
+<td>Very Strong + runtime</td>
+<td>Very Strong</td>
+<td>Strong local</td>
+<td>Generated</td>
+<td>Very Strong</td>
+<td>Required distributed</td>
+<td>unsafe, DB, protocol</td>
+<td>Medium</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Kotlin</td>
+<td>Strong</td>
+<td>Strong + runtime</td>
+<td>Strong</td>
+<td>Medium-Strong</td>
+<td>Generated</td>
+<td>Strong</td>
+<td>Required</td>
+<td>JVM reflection, DB</td>
+<td>Medium</td>
+<td>High JVM</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>Strong sealed</td>
+<td>Strong + runtime</td>
+<td>Strong modern switch</td>
+<td>Medium</td>
+<td>Generated</td>
+<td>Strong</td>
+<td>Required</td>
+<td>reflection, ORM, DB</td>
+<td>Medium</td>
+<td>Very High</td>
+</tr>
+<tr>
+<td>C# 15</td>
+<td>Strong union/sealed</td>
+<td>Strong + runtime</td>
+<td>Strong</td>
+<td>Medium</td>
+<td>Generated</td>
+<td>Strong</td>
+<td>Required</td>
+<td>reflection, dynamic, DB</td>
+<td>Low-Medium</td>
+<td>Very High</td>
+</tr>
+<tr>
+<td>TypeScript</td>
+<td>Medium</td>
+<td>Runtime-dominant</td>
+<td>Strong under strict pattern/analyzer</td>
+<td>Weak local / Strong runtime</td>
+<td>Generated</td>
+<td>Medium-Strong under CI</td>
+<td>Strong if kernel used</td>
+<td>any, assertions, mutation, JS</td>
+<td>Medium</td>
+<td>Very High</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>Weak</td>
+<td>Runtime</td>
+<td>Weak</td>
+<td>Weak local / Strong runtime</td>
+<td>Generated</td>
+<td>Low</td>
+<td>Strong if kernel used</td>
+<td>arbitrary mutation/dynamic code</td>
+<td>Medium</td>
+<td>Very High peripheral</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>Medium by convention/tooling</td>
+<td>Runtime</td>
+<td>Medium analyzer</td>
+<td>Weak local / Strong runtime</td>
+<td>Generated</td>
+<td>Medium optional</td>
+<td>Strong if kernel used</td>
+<td>dynamic mutation, ignores, monkey patch</td>
+<td>Medium</td>
+<td>Very High</td>
+</tr>
+<tr>
+<td>Go</td>
+<td>Medium</td>
+<td>Strong via module/runtime</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Generated</td>
+<td>Medium</td>
+<td>Strong</td>
+<td>open interfaces, direct writes</td>
+<td>Medium</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Swift</td>
+<td>Strong</td>
+<td>Strong + runtime</td>
+<td>Strong</td>
+<td>Medium-Strong</td>
+<td>Generated</td>
+<td>Strong</td>
+<td>Required distributed</td>
+<td>serialization, DB</td>
+<td>Medium</td>
+<td>High Apple</td>
+</tr>
+<tr>
+<td>Scala 3</td>
+<td>Strong</td>
+<td>Strong + runtime</td>
+<td>Strong</td>
+<td>Strong local</td>
+<td>Generated</td>
+<td>Strong</td>
+<td>Required distributed</td>
+<td>JVM reflection/interop</td>
+<td>Medium-High</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Haskell</td>
+<td>Strong</td>
+<td>Strong + runtime</td>
+<td>Strong with warning discipline</td>
+<td>Strong local</td>
+<td>Generated</td>
+<td>Strong</td>
+<td>Required distributed</td>
+<td>partial functions/extensions/interop</td>
+<td>High</td>
+<td>Low-Medium</td>
+</tr>
+<tr>
+<td>SQL</td>
+<td>Schema-dependent</td>
+<td>DB-dependent</td>
+<td>Weak for closed semantic families</td>
+<td>Role-dependent</td>
+<td>Generated/validated</td>
+<td>Low-Medium</td>
+<td>DB enforcement</td>
+<td>direct UPDATE/admin</td>
+<td>High if deeply generated</td>
+<td>Universal but dangerous</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="evidence-classification">Evidence classification</h1>
+<h2 id="strongly-established">Strongly established</h2>
+<ul>
+<li>Native algebraic/closed types provide better local state representation and exhaustive handling.</li>
+<li>TypeScript supports discriminated unions and <code>never</code>-based exhaustiveness, but types erase at runtime.</li>
+<li>Java sealed hierarchies and switch exhaustiveness materially improve closed-domain modeling.</li>
+<li>Kotlin sealed classes provide compiler exhaustiveness.</li>
+<li>F# discriminated unions are first-class closed sum types.</li>
+<li>Rust enums and ownership provide strong local guarantees.</li>
+<li>C# Roslyn provides mature analyzer/source-generator infrastructure.</li>
+<li>SQL/direct persistence can bypass application-language guarantees.</li>
+<li>Serialization requires runtime reconstruction/validation regardless of native type strength.</li>
+</ul>
+<h2 id="strong-architectural-inference">Strong architectural inference</h2>
+<ul>
+<li>A runtime semantic kernel can equalize much of authoritative correctness across languages.</li>
+<li>Semantic-module-specific analyzers are more adoptable than constraining entire codebases.</li>
+<li>A canonical semantic IR can become the common operational semantics across target languages.</li>
+<li>Host languages can act as implementation backends for a portable semantic frontend.</li>
+</ul>
+<h2 id="emerging--incomplete-empirical-support">Emerging / incomplete empirical support</h2>
+<ul>
+<li>Static type-checker feedback can aid AI code-repair loops.</li>
+<li>TypeScript projects show some quality/understandability advantages over JavaScript, but empirical research does not show automatic large reductions in bug proneness simply from using TypeScript.</li>
+<li>LLM pipelines that use static type checkers can iteratively improve generated typing results.</li>
+</ul>
+<h2 id="still-speculative">Still speculative</h2>
+<ul>
+<li>Exact semantic escape-rate difference between native F# and generated TypeScript.</li>
+<li>Exact token savings from shared semantic diagnostics.</li>
+<li>Whether smaller models can match larger models under generated semantic constraints.</li>
+<li>Whether enterprise adoption of a semantic compiler is cheaper than adopting F#/Rust/Kotlin.</li>
+<li>Long-term cost of maintaining C#/Java/TypeScript generators and analyzers.</li>
+</ul>
+<hr>
+<h1 id="key-sources">Key sources</h1>
+<h2 id="f">F#</h2>
+<p>Microsoft Learn, <strong>Discriminated Unions — F#</strong><br>
+<a href="https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/discriminated-unions">https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/discriminated-unions</a></p>
+<h2 id="rust-1">Rust</h2>
+<p>The Rust Programming Language, <strong>Enums and Pattern Matching</strong><br>
+<a href="https://doc.rust-lang.org/book/ch06-00-enums.html">https://doc.rust-lang.org/book/ch06-00-enums.html</a></p>
+<p>Crichton, Gray, Krishnamurthi, <strong>A Grounded Conceptual Model for Ownership Types in Rust</strong><br>
+<a href="https://arxiv.org/abs/2309.04134">https://arxiv.org/abs/2309.04134</a></p>
+<h2 id="kotlin-1">Kotlin</h2>
+<p>Kotlin Documentation, <strong>Sealed classes and interfaces</strong><br>
+<a href="https://kotlinlang.org/docs/sealed-classes.html">https://kotlinlang.org/docs/sealed-classes.html</a></p>
+<p>Kotlin Documentation, <strong>Kotlin Symbol Processing API</strong><br>
+<a href="https://kotlinlang.org/docs/ksp-overview.html">https://kotlinlang.org/docs/ksp-overview.html</a></p>
+<h2 id="java-1">Java</h2>
+<p>Oracle, <strong>Sealed Classes</strong><br>
+<a href="https://docs.oracle.com/en/java/javase/17/language/sealed-classes-and-interfaces.html">https://docs.oracle.com/en/java/javase/17/language/sealed-classes-and-interfaces.html</a></p>
+<p>OpenJDK, <strong>JEP 441: Pattern Matching for switch</strong><br>
+<a href="https://openjdk.org/jeps/441">https://openjdk.org/jeps/441</a></p>
+<p>Oracle, <strong>Pattern Matching for switch Expressions and Statements</strong><br>
+<a href="https://docs.oracle.com/en/java/javase/22/language/pattern-matching-switch-expressions-and-statements.html">https://docs.oracle.com/en/java/javase/22/language/pattern-matching-switch-expressions-and-statements.html</a></p>
+<h2 id="c-1">C#</h2>
+<p>Microsoft Learn, <strong>Pattern matching</strong><br>
+<a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/patterns">https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/patterns</a></p>
+<p>Microsoft, <strong>The .NET Compiler Platform SDK</strong><br>
+<a href="https://learn.microsoft.com/en-us/dotnet/csharp/roslyn-sdk/">https://learn.microsoft.com/en-us/dotnet/csharp/roslyn-sdk/</a></p>
+<p>Microsoft .NET Blog, <strong>Explore union types in C# 15</strong> — April 2026<br>
+<a href="https://devblogs.microsoft.com/dotnet/csharp-15-union-types/">https://devblogs.microsoft.com/dotnet/csharp-15-union-types/</a></p>
+<p>Important version note: C# 15 union types are a 2026 preview feature. Production support decisions should track the actual .NET/C# release channel used by the organization.</p>
+<h2 id="typescript-1">TypeScript</h2>
+<p>TypeScript Handbook, <strong>Narrowing</strong><br>
+<a href="https://www.typescriptlang.org/docs/handbook/2/narrowing.html">https://www.typescriptlang.org/docs/handbook/2/narrowing.html</a></p>
+<p>TypeScript Handbook, <strong>Unions and Intersection Types</strong><br>
+<a href="https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html">https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html</a></p>
+<p>Bogner &#x26; Merkel, <strong>To Type or Not to Type? A Systematic Comparison of the Software Quality of JavaScript and TypeScript Applications on GitHub</strong><br>
+<a href="https://arxiv.org/abs/2203.11115">https://arxiv.org/abs/2203.11115</a></p>
+<h2 id="python-1">Python</h2>
+<p>Mypy Documentation, <strong>Literal types and Enums</strong><br>
+<a href="https://mypy.readthedocs.io/en/stable/literal_types.html">https://mypy.readthedocs.io/en/stable/literal_types.html</a></p>
+<p>Bharti et al., <strong>Automated Type Annotation in Python Using Large Language Models</strong><br>
+<a href="https://arxiv.org/abs/2508.00422">https://arxiv.org/abs/2508.00422</a></p>
+<h2 id="go-1">Go</h2>
+<p>The Go Programming Language Specification<br>
+<a href="https://go.dev/ref/spec">https://go.dev/ref/spec</a></p>
+<h2 id="swift-1">Swift</h2>
+<p>The Swift Programming Language, <strong>Enumerations</strong><br>
+<a href="https://docs.swift.org/swift-book/documentation/the-swift-programming-language/enumerations/">https://docs.swift.org/swift-book/documentation/the-swift-programming-language/enumerations/</a></p>
+<h2 id="scala">Scala</h2>
+<p>Scala 3 Documentation, <strong>Enumerations</strong><br>
+<a href="https://docs.scala-lang.org/scala3/reference/enums/enums.html">https://docs.scala-lang.org/scala3/reference/enums/enums.html</a></p>
+<h2 id="haskell-1">Haskell</h2>
+<p>GHC User Guide, <strong>Generalised Algebraic Data Types</strong><br>
+<a href="https://downloads.haskell.org/~ghc/latest/docs/users_guide/exts/gadt.html">https://downloads.haskell.org/~ghc/latest/docs/users_guide/exts/gadt.html</a></p>
+<p>Kalvoda &#x26; Kerckhove, <strong>Structural and semantic pattern matching analysis in Haskell</strong><br>
+<a href="https://arxiv.org/abs/1909.04160">https://arxiv.org/abs/1909.04160</a></p>
+<hr>
+<h1 id="final-research-synthesis">Final research synthesis</h1>
+<p>The research changes the language question in an important way.</p>
+<p>The original framing is:</p>
+<pre><code class="language-text">Which language gives AI agents the strongest semantics?
+</code></pre>
+<p>The better framing is:</p>
+<pre><code class="language-text">Which guarantees should come from the language,
+which from semantic compilation,
+and which must exist at runtime anyway?
+</code></pre>
+<p>Once that decomposition is made, several things become clear.</p>
+<p>First:</p>
+<blockquote>
+<p><strong>Strong languages remain genuinely better inside the process.</strong></p>
+</blockquote>
+<p>They catch more errors earlier and make correct modeling more natural.</p>
+<p>Second:</p>
+<blockquote>
+<p><strong>The most important authoritative guarantees are distributed-system guarantees, not merely type-system guarantees.</strong></p>
+</blockquote>
+<p>A capability must still be validated after serialization.</p>
+<p>A database row must still be validated after loading.</p>
+<p>A stale state transition must still be rejected at runtime.</p>
+<p>A direct SQL update can still defeat Rust or F# if the database permits it.</p>
+<p>Third:</p>
+<blockquote>
+<p><strong>Semantic compilation can therefore compensate for mainstream-language weakness much more than it initially appears.</strong></p>
+</blockquote>
+<p>Not by pretending TypeScript is Rust.</p>
+<p>But by removing responsibility from TypeScript that TypeScript should never have been trusted with in the first place.</p>
+<p>The resulting architecture is:</p>
+<pre><code class="language-text">Strong native type features where available
+        +
+Semantic compiler/analyzers for cross-artifact closure
+        +
+Trusted runtime kernel for authoritative correctness
+        +
+Persistence/tool boundaries that prevent bypass
+</code></pre>
+<p>This is a stronger enterprise strategy than language migration alone.</p>
+<p>And because C# 15 is adding native union types, the practical enterprise gap is narrowing further.</p>
+<p>The most important remaining research question is empirical:</p>
+<blockquote>
+<p><strong>How close do generated mainstream targets get to strong native languages on total semantic escape rate and cost per correct AI-generated change?</strong></p>
+</blockquote>
+<p>That is now testable with the experiment suite defined above.</p></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

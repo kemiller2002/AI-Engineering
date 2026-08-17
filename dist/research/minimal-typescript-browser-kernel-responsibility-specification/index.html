@@ -1,0 +1,715 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Minimal TypeScript Browser Kernel — Responsibility Specification | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">Minimal TypeScript Browser Kernel — Responsibility Specification</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>docs/architecture/semantic-control/minimal-typescript-browser-kernel-responsibility-spec.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#minimal-typescript-browser-kernel-responsibility-specification">Minimal TypeScript Browser Kernel — Responsibility Specification</a></li><li><a href="#1-architectural-goal">1. Architectural Goal</a></li><li><a href="#2-core-architecture">2. Core Architecture</a></li><li><a href="#3-six-core-browser-kernel-systems">3. Six Core Browser-Kernel Systems</a></li><li><a href="#4-event-system">4. EVENT System</a></li><li><a href="#5-native-html-responsibilities">5. Native HTML Responsibilities</a></li><li><a href="#6-css-responsibilities">6. CSS Responsibilities</a></li><li><a href="#7-view-system">7. VIEW System</a></li><li><a href="#8-loading-unloading-and-replacing-html">8. Loading, Unloading, and Replacing HTML</a></li><li><a href="#9-where-html-fragments-come-from">9. Where HTML Fragments Come From</a></li><li><a href="#10-application-state-should-not-generate-dom-commands-directly">10. Application State Should Not Generate DOM Commands Directly</a></li><li><a href="#11-navigation-system">11. NAVIGATION System</a></li><li><a href="#12-lifecycle-system">12. LIFECYCLE System</a></li><li><a href="#13-page-unloading">13. Page Unloading</a></li><li><a href="#14-effect-system">14. EFFECT System</a></li><li><a href="#15-result-system">15. RESULT System</a></li><li><a href="#16-correlation-ids">16. Correlation IDs</a></li><li><a href="#17-http-fetch-capability">17. HTTP / Fetch Capability</a></li><li><a href="#18-cancellation">18. Cancellation</a></li><li><a href="#19-forms">19. Forms</a></li><li><a href="#20-focus-management">20. Focus Management</a></li><li><a href="#21-storage-capability">21. Storage Capability</a></li><li><a href="#22-url-state">22. URL State</a></li><li><a href="#23-timers-and-clock">23. Timers and Clock</a></li><li><a href="#24-browser-observers">24. Browser Observers</a></li><li><a href="#25-real-time-communication">25. Real-Time Communication</a></li><li><a href="#26-file-capability">26. File Capability</a></li><li><a href="#27-clipboard-capability">27. Clipboard Capability</a></li><li><a href="#28-external-links-and-native-browser-navigation">28. External Links and Native Browser Navigation</a></li><li><a href="#29-additional-optional-capabilities">29. Additional Optional Capabilities</a></li><li><a href="#30-service-workers">30. Service Workers</a></li><li><a href="#31-presentation-state-classes">31. Presentation State Classes</a></li><li><a href="#32-what-typescript-must-not-own">32. What TypeScript MUST NOT Own</a></li><li><a href="#33-forbidden-escape-hatches">33. Forbidden Escape Hatches</a></li><li><a href="#34-kernel-complexity-budget">34. Kernel Complexity Budget</a></li><li><a href="#35-typescript-reference-engine">35. TypeScript Reference Engine</a></li><li><a href="#36-stable-engine-interface">36. Stable Engine Interface</a></li><li><a href="#37-three-protocol-directions">37. Three Protocol Directions</a></li><li><a href="#38-protocol-typing">38. Protocol Typing</a></li><li><a href="#39-serialization-should-be-replaceable">39. Serialization Should Be Replaceable</a></li><li><a href="#40-engine-replacement-invariant">40. Engine Replacement Invariant</a></li><li><a href="#41-first-reference-application">41. First Reference Application</a></li><li><a href="#42-future-engine-swap-experiment">42. Future Engine Swap Experiment</a></li><li><a href="#43-react-comparison">43. React Comparison</a></li><li><a href="#44-main-architectural-question">44. Main Architectural Question</a></li><li><a href="#45-current-working-summary">45. Current Working Summary</a></li> </ol> </aside> <section class="document-body"><h1 id="minimal-typescript-browser-kernel--responsibility-specification">Minimal TypeScript Browser Kernel — Responsibility Specification</h1>
+<p>Status: Working architecture note
+Purpose: Define what JavaScript/TypeScript should and should not own in a browser application where authoritative application semantics live behind a stable engine interface, potentially implemented in WebAssembly.</p>
+<h2 id="1-architectural-goal">1. Architectural Goal</h2>
+<p>The browser application is split into four major concerns:</p>
+<p>HTML  → semantic document structure
+CSS   → presentation and purely visual interaction
+TypeScript Browser Kernel → browser mechanism
+Application Engine → application semantics</p>
+<p>The application engine may initially be written in TypeScript and later replaced by:</p>
+<ul>
+<li>C# / .NET WebAssembly</li>
+<li>F# / .NET WebAssembly</li>
+<li>Rust WebAssembly</li>
+<li>Kotlin WebAssembly</li>
+<li>Java WebAssembly</li>
+<li>other compatible implementations</li>
+</ul>
+<p>The browser kernel MUST NOT depend on which language implements the engine.</p>
+<p>Governing principle:</p>
+<p>JavaScript/TypeScript may provide mechanism, but it must not own application meaning.</p>
+<h2 id="2-core-architecture">2. Core Architecture</h2>
+<p>Native Browser</p>
+<p>HTML                  CSS
+│                     │
+└──── native UI ──────┘
+│
+browser events
+│
+▼
+TypeScript Kernel</p>
+<ul>
+<li>events → engine</li>
+<li>effects ← engine</li>
+<li>results → engine</li>
+<li>DOM ops ← engine</li>
+<li>navigation</li>
+<li>lifecycle
+│
+Stable Engine API
+│
+Application Engine</li>
+<li>state</li>
+<li>transitions</li>
+<li>validation</li>
+<li>evidence</li>
+<li>capabilities</li>
+<li>obligations</li>
+<li>effects</li>
+<li>projections</li>
+</ul>
+<p>The TypeScript browser kernel should be application-agnostic.</p>
+<p>It may understand:
+DOM, events, fetch, history, storage, focus, files, browser APIs, protocol transport.</p>
+<p>It must not understand:
+customers, patients, orders, payments, reservations, workflow rules, business policies, authorization rules, domain validation.</p>
+<h2 id="3-six-core-browser-kernel-systems">3. Six Core Browser-Kernel Systems</h2>
+<ol>
+<li>EVENT — browser → engine</li>
+<li>VIEW — engine → DOM</li>
+<li>EFFECT — engine → browser APIs</li>
+<li>RESULT — browser APIs → engine</li>
+<li>NAVIGATION — browser history/URL ↔ engine</li>
+<li>LIFECYCLE — browser lifecycle ↔ engine</li>
+</ol>
+<p>Everything else should ideally be an optional capability module.</p>
+<h2 id="4-event-system">4. EVENT System</h2>
+<p>The browser kernel owns physical browser event handling, including click, submit, input, change, blur, focus, keydown, pointer events, drag/drop, visibility changes, and popstate.</p>
+<p>Raw DOM events should normally NOT cross directly into the application engine. The kernel should translate physical browser events into semantic events.</p>
+<p>Example:</p>
+<p>DOM click
+→ Activate("cancel-reservation")
+→ engine</p>
+<p>Another example:</p>
+<p>input
+→ debounce / blur / validity check
+→ ValueCommitted(field="email", value="<a href="mailto:user@example.com">user@example.com</a>")
+→ engine</p>
+<p>Key principle:</p>
+<p>Cross the browser/engine boundary at semantic frequency, not physical-event frequency.</p>
+<p>High-frequency events such as mousemove, pointermove, scroll, animation frames, and every keystroke should remain browser-side unless their semantic meaning requires engine involvement.</p>
+<h2 id="5-native-html-responsibilities">5. Native HTML Responsibilities</h2>
+<p>HTML should continue to own browser-native structure and semantics whenever practical:</p>
+<ul>
+<li>forms</li>
+<li>labels</li>
+<li>buttons</li>
+<li>links</li>
+<li>input types</li>
+<li>required fields</li>
+<li>email syntax</li>
+<li>number ranges</li>
+<li>date controls</li>
+<li>select controls</li>
+<li>details/summary</li>
+<li>dialog where appropriate</li>
+<li>semantic headings</li>
+<li>landmarks</li>
+<li>accessibility structure</li>
+<li>native navigation</li>
+</ul>
+<p>Example:</p>
+<p>The browser can answer whether a value satisfies basic email syntax.
+The engine can answer whether the email domain is allowed, whether an account already exists, or whether the address is permitted for a workflow.</p>
+<p>Do not move functionality into Wasm merely because Wasm can perform it.</p>
+<h2 id="6-css-responsibilities">6. CSS Responsibilities</h2>
+<p>CSS should own purely visual interaction whenever possible:</p>
+<ul>
+<li>hover appearance</li>
+<li>focus appearance</li>
+<li>responsive layout</li>
+<li>media queries</li>
+<li>container queries</li>
+<li>transitions</li>
+<li>animations</li>
+<li>visual disabled states</li>
+<li>spacing</li>
+<li>typography</li>
+<li>layout</li>
+<li>presentation</li>
+</ul>
+<p>No event should cross into the engine simply to change button appearance.</p>
+<p>If hover has application meaning, then a semantic event may be justified. Example: hovering a customer record may request a protected preview only if the user has a capability.</p>
+<h2 id="7-view-system">7. VIEW System</h2>
+<p>The browser kernel owns physical DOM changes. The application engine determines what should be shown; the kernel executes the mechanism.</p>
+<p>Initial useful DOM operations:</p>
+<ul>
+<li>SetText</li>
+<li>SetValue</li>
+<li>SetAttribute</li>
+<li>RemoveAttribute</li>
+<li>AddClass</li>
+<li>RemoveClass</li>
+<li>SetVisible</li>
+<li>SetEnabled</li>
+<li>SetChecked</li>
+<li>SetSelected</li>
+<li>Focus</li>
+<li>ScrollIntoView</li>
+<li>InsertView</li>
+<li>ReplaceView</li>
+<li>RemoveView</li>
+<li>ClearRegion</li>
+</ul>
+<p>Potential additional operations:</p>
+<ul>
+<li>MoveView</li>
+<li>ReorderChildren</li>
+</ul>
+<p>Initially avoid unrestricted operations such as:</p>
+<ul>
+<li>SetInnerHtml</li>
+<li>ExecuteScript</li>
+<li>RunSelectorAndDoAnything</li>
+<li>SetArbitraryProperty</li>
+<li>CallArbitraryDomMethod</li>
+</ul>
+<p>These become escape hatches.</p>
+<h2 id="8-loading-unloading-and-replacing-html">8. Loading, Unloading, and Replacing HTML</h2>
+<p>SPA view loading/unloading belongs partly to VIEW and partly to NAVIGATION/LIFECYCLE.</p>
+<p>Useful operations:</p>
+<ul>
+<li>InsertView</li>
+<li>RemoveView</li>
+<li>ReplaceView</li>
+<li>AppendView</li>
+<li>PrependView</li>
+<li>ClearRegion</li>
+</ul>
+<p>Example:</p>
+<p>Engine requests ReplaceRegion(region="main", view=CustomerDetails(...)).
+The TypeScript kernel locates the region, renders or instantiates the requested view, replaces the DOM content, and maintains generic event handling.</p>
+<p>The engine should not manipulate the DOM directly.</p>
+<h2 id="9-where-html-fragments-come-from">9. Where HTML Fragments Come From</h2>
+<p>Three broad approaches are possible.</p>
+<p>A. Native HTML Templates</p>
+<p>...</p>
+<p>Engine requests InstantiateTemplate("customer-card", data).</p>
+<p>Advantages: browser-native, easy to inspect, semantic HTML, low application-JS complexity.</p>
+<p>B. Typed View Models + Known Templates</p>
+<p>Example:
+CustomerView { name, status, can_cancel }</p>
+<p>The browser kernel or generated renderer knows how to project the view model into HTML. This is a strong initial candidate.</p>
+<p>C. Raw HTML from Engine</p>
+<p>Example: ReplaceRegion("main", "...")</p>
+<p>Avoid initially because it introduces XSS/sanitization risk, stringly typed UI, harder verification, potential CSP complications, and harder agent reasoning.</p>
+<h2 id="10-application-state-should-not-generate-dom-commands-directly">10. Application State Should Not Generate DOM Commands Directly</h2>
+<p>Avoid coupling business transitions directly to DOM operations.</p>
+<p>Do not have Pending → Confirmed return SetText("status", "Confirmed") directly.</p>
+<p>Prefer:</p>
+<p>Domain State
+→ View Projection
+→ View Model
+→ UI Diff / View Commands
+→ TypeScript Kernel
+→ DOM</p>
+<p>Example:</p>
+<p>Reservation = Confirmed(confirmation)</p>
+<p>projects into:</p>
+<p>ReservationView {
+status_text = "Confirmed"
+can_cancel = false
+show_confirmation = true
+}</p>
+<p>Then the UI layer determines physical DOM changes.</p>
+<h2 id="11-navigation-system">11. NAVIGATION System</h2>
+<p>The browser kernel owns browser navigation mechanisms:</p>
+<ul>
+<li>URL</li>
+<li>pathname</li>
+<li>query string</li>
+<li>hash</li>
+<li>history</li>
+<li>pushState</li>
+<li>replaceState</li>
+<li>back</li>
+<li>forward</li>
+<li>popstate</li>
+<li>external navigation</li>
+</ul>
+<p>Example flow:</p>
+<p>User clicks /customers/291
+→ TypeScript intercepts semantic SPA navigation
+→ NavigationRequested("/customers/291")
+→ engine
+→ Navigate("/customers/291")
+→ TypeScript executes history.pushState(...)</p>
+<p>The engine decides whether navigation is legal, what the route means, and what application state should result.</p>
+<p>Native external links should generally remain native when application semantics do not require interception.</p>
+<h2 id="12-lifecycle-system">12. LIFECYCLE System</h2>
+<p>The kernel owns browser/document lifecycle observation.</p>
+<p>Potential lifecycle messages:</p>
+<ul>
+<li>EngineStarting</li>
+<li>EngineStarted</li>
+<li>ViewMounted</li>
+<li>ViewUnmounting</li>
+<li>ViewUnmounted</li>
+<li>DocumentVisible</li>
+<li>DocumentHidden</li>
+<li>PageLeaving</li>
+<li>PageRestored</li>
+<li>Online</li>
+<li>Offline</li>
+</ul>
+<p>Avoid recreating component lifecycle complexity equivalent to componentDidMount/componentWillUnmount/useEffect for everything.</p>
+<p>Lifecycle notifications should mainly serve subscriptions, cleanup, focus management, external widgets, network lifecycle, and browser-specific resources.</p>
+<p>Business logic should rarely depend directly on DOM mount/unmount.</p>
+<h2 id="13-page-unloading">13. Page Unloading</h2>
+<p>Do not rely on page unload as the only moment for critical state persistence.</p>
+<p>The kernel may attempt cleanup, abort open effects, release observers/subscriptions, and signal lifecycle changes when practical.</p>
+<p>Never design critical behavior around “if unload runs successfully, save the financial transaction.”</p>
+<h2 id="14-effect-system">14. EFFECT System</h2>
+<p>The application engine requests external effects. The TypeScript kernel executes browser mechanisms.</p>
+<p>Examples:</p>
+<ul>
+<li>HttpRequest</li>
+<li>Navigate</li>
+<li>StorageRead</li>
+<li>StorageWrite</li>
+<li>ClipboardWrite</li>
+<li>Focus</li>
+<li>FileOpen</li>
+<li>Download</li>
+<li>ScheduleTimer</li>
+<li>OpenWebSocket</li>
+</ul>
+<p>The engine determines why the effect should occur. The kernel only performs it.</p>
+<h2 id="15-result-system">15. RESULT System</h2>
+<p>Every asynchronous browser operation should produce an explicit result.</p>
+<p>Examples:</p>
+<ul>
+<li>HttpResult</li>
+<li>StorageResult</li>
+<li>ClipboardResult</li>
+<li>FileSelected</li>
+<li>TimerElapsed</li>
+<li>WebSocketOpened</li>
+<li>WebSocketMessage</li>
+<li>WebSocketClosed</li>
+<li>PermissionResult</li>
+<li>GeolocationResult</li>
+</ul>
+<p>The kernel must not interpret transport/platform outcomes as domain truth.</p>
+<p>HTTP 409 must not automatically become ReservationRejected. That interpretation belongs in the engine.</p>
+<h2 id="16-correlation-ids">16. Correlation IDs</h2>
+<p>All asynchronous operations should use correlation IDs.</p>
+<p>Example:
+EffectRequest { request_id = 847 }</p>
+<p>Later:
+EffectResult { request_id = 847 }</p>
+<p>This avoids hidden dependence on promise ordering, closure state, and implicit callbacks.</p>
+<p>Use correlation for HTTP, storage, file selection, permissions, clipboard, geolocation, timers, WebSocket actions, and other asynchronous effects.</p>
+<h2 id="17-http--fetch-capability">17. HTTP / Fetch Capability</h2>
+<p>The TypeScript kernel should own browser fetch execution.</p>
+<p>Flow:</p>
+<p>engine
+→ HttpRequest effect
+→ TypeScript
+→ fetch()
+→ transport result
+→ TypeScript
+→ HttpResult
+→ engine</p>
+<p>Transport-level results may contain request_id, HTTP status, headers, body, timing, network failure, aborted, or timeout.</p>
+<p>TypeScript must not interpret business meaning.</p>
+<p>A timeout after POST /payment must not automatically mean PaymentFailed. The engine may need Success, Failure, or OutcomeUnknown depending on the operation.</p>
+<h2 id="18-cancellation">18. Cancellation</h2>
+<p>The browser kernel should manage browser-level cancellation mechanisms such as AbortController, timer cancellation, subscription removal, stream cancellation, WebSocket close, and observer disconnect.</p>
+<p>Engine: CancelEffect(request_id)
+Kernel: physically aborts browser operation.</p>
+<h2 id="19-forms">19. Forms</h2>
+<p>The browser should handle native input behavior, HTML validity, required, email syntax, number ranges, date controls, checkbox/radio mechanics, autofill, and file-selection mechanics.</p>
+<p>The kernel should handle semantic submit capture, value extraction, generic serialization, and correlation.</p>
+<p>The engine should handle domain validation, cross-field business validation, commands, state transitions, authorization, and workflow rules.</p>
+<p>Preferred flow:</p>
+<p>HTML form
+→ native validity
+→ semantic submit
+→ generic browser extraction
+→ engine decoding
+→ typed draft
+→ domain validation
+→ command</p>
+<p>Possible future improvements:</p>
+<ul>
+<li>schema-generated form bindings</li>
+<li>typed element IDs</li>
+<li>generated serializers</li>
+<li>declarative metadata</li>
+<li>compile-time HTML/engine contracts</li>
+</ul>
+<h2 id="20-focus-management">20. Focus Management</h2>
+<p>The browser kernel owns physical focus operations such as Focus(element), Blur(element), and ScrollIntoView(element).</p>
+<p>The engine may request Focus("first-invalid-field").</p>
+<p>Engine = policy; browser kernel = mechanism.</p>
+<h2 id="21-storage-capability">21. Storage Capability</h2>
+<p>Storage should be optional rather than mandatory kernel core.</p>
+<p>Possible adapters:</p>
+<ul>
+<li>localStorage</li>
+<li>sessionStorage</li>
+<li>IndexedDB</li>
+<li>Cache API</li>
+</ul>
+<p>Preferred operations:</p>
+<ul>
+<li>StorageRead</li>
+<li>StorageWrite</li>
+<li>StorageDelete</li>
+</ul>
+<p>Prefer scoped capabilities such as DraftStorage, PreferenceStorage, and CacheStorage over unrestricted storage access.</p>
+<h2 id="22-url-state">22. URL State</h2>
+<p>The browser kernel handles window.location, pathname, query parameters, hash, and history state.</p>
+<p>It may send:</p>
+<p>LocationChanged { path, query, fragment }</p>
+<p>The engine determines application meaning.</p>
+<h2 id="23-timers-and-clock">23. Timers and Clock</h2>
+<p>Timers are browser mechanisms.</p>
+<p>Potential API:</p>
+<ul>
+<li>ScheduleOnce</li>
+<li>ScheduleRecurring</li>
+<li>CancelTimer</li>
+</ul>
+<p>If the engine requires current time, use an explicit GetCurrentTime capability rather than letting domain code read browser time directly.</p>
+<h2 id="24-browser-observers">24. Browser Observers</h2>
+<p>Optional capability modules may wrap:</p>
+<ul>
+<li>ResizeObserver</li>
+<li>IntersectionObserver</li>
+<li>MutationObserver</li>
+<li>visibility events</li>
+</ul>
+<p>Only semantically meaningful events should enter the engine. Purely visual resize behavior should generally remain CSS/browser-native.</p>
+<h2 id="25-real-time-communication">25. Real-Time Communication</h2>
+<p>Optional capability modules:</p>
+<ul>
+<li>WebSocket</li>
+<li>Server-Sent Events</li>
+</ul>
+<p>TypeScript owns open, close, transport reconnection when protocol-defined, message bytes/text, network errors, and connection lifecycle.</p>
+<p>The engine interprets application messages such as ReservationUpdated, OrderCancelled, and PaymentSettled.</p>
+<p>The kernel should not contain domain message interpretation.</p>
+<h2 id="26-file-capability">26. File Capability</h2>
+<p>Browser kernel may provide:</p>
+<ul>
+<li>OpenFilePicker</li>
+<li>ReadFileMetadata</li>
+<li>ReadFileBytes</li>
+<li>DownloadBlob</li>
+<li>CreateObjectUrl</li>
+<li>RevokeObjectUrl</li>
+</ul>
+<p>The engine owns file-type policy, business validation, content interpretation, authorization decisions, and upload rules.</p>
+<h2 id="27-clipboard-capability">27. Clipboard Capability</h2>
+<p>Optional operations:</p>
+<ul>
+<li>ClipboardRead</li>
+<li>ClipboardWrite</li>
+</ul>
+<p>Browser/permission mechanics belong to TypeScript. Application meaning belongs to the engine.</p>
+<h2 id="28-external-links-and-native-browser-navigation">28. External Links and Native Browser Navigation</h2>
+<p>Do not intercept browser behavior unnecessarily.</p>
+<p>Prefer native  for ordinary external navigation, mailto, tel, downloads, and new tabs unless application semantics require interception.</p>
+<p>Guiding principle:</p>
+<p>Do not replace native browser behavior unless application semantics require control.</p>
+<h2 id="29-additional-optional-capabilities">29. Additional Optional Capabilities</h2>
+<p>Possible modules:</p>
+<ul>
+<li>Http</li>
+<li>Storage</li>
+<li>Files</li>
+<li>Clipboard</li>
+<li>Notifications</li>
+<li>Geolocation</li>
+<li>Media</li>
+<li>Camera</li>
+<li>Microphone</li>
+<li>WebSocket</li>
+<li>SSE</li>
+<li>WebRTC</li>
+<li>ServiceWorker</li>
+<li>Workers</li>
+<li>Crypto</li>
+<li>Payments</li>
+<li>Fullscreen</li>
+<li>PointerLock</li>
+<li>DragDrop</li>
+<li>Observers</li>
+<li>Print</li>
+<li>Share</li>
+</ul>
+<p>These should not all exist in Kernel Core.</p>
+<h2 id="30-service-workers">30. Service Workers</h2>
+<p>Service workers have their own installation, waiting, activation, background execution, caching, fetch interception, and push behavior.</p>
+<p>Therefore service-worker support should be a separate module rather than part of mandatory kernel core.</p>
+<h2 id="31-presentation-state-classes">31. Presentation State Classes</h2>
+<p>Not every state belongs in the authoritative state system.</p>
+<p>A. Authoritative Domain State
+Examples: payment status, reservation status, eligibility, permissions, obligations.
+Owned by engine/domain model.</p>
+<p>B. Application / Workflow State
+Examples: active workflow, pending command, loading operation, reconciliation operation.
+Typically engine-owned.</p>
+<p>C. Presentation State
+Examples: expanded row, selected tab, draft text, local validation display.
+May live in a typed UI layer and does not require high-assurance domain semantics.</p>
+<p>D. Browser-Ephemeral State
+Examples: hover, pointer coordinates, scroll position, animation progress, browser focus internals.
+Prefer leaving these in browser-native behavior.</p>
+<h2 id="32-what-typescript-must-not-own">32. What TypeScript MUST NOT Own</h2>
+<p>TypeScript browser-kernel code must never contain:</p>
+<ul>
+<li>customer rules</li>
+<li>patient rules</li>
+<li>payment rules</li>
+<li>reservation rules</li>
+<li>authorization policies</li>
+<li>workflow truth</li>
+<li>domain state transitions</li>
+<li>business calculations</li>
+<li>semantic retry decisions</li>
+<li>policy interpretation</li>
+<li>evidence evaluation</li>
+<li>obligation resolution</li>
+</ul>
+<p>Prohibited example:</p>
+<p>if reservation.status == "pending": show cancel button</p>
+<p>Preferred:</p>
+<p>engine projects can_cancel = true
+kernel executes SetVisible(cancelButton, true)</p>
+<p>The kernel is not allowed to derive can_cancel.</p>
+<h2 id="33-forbidden-escape-hatches">33. Forbidden Escape Hatches</h2>
+<p>Kernel-facing APIs should not expose:</p>
+<ul>
+<li>eval</li>
+<li>executeJavascript</li>
+<li>callArbitraryFunction</li>
+<li>getArbitraryProperty</li>
+<li>setArbitraryProperty</li>
+<li>invokeAnything</li>
+<li>arbitrary DOM method calls</li>
+</ul>
+<p>Capabilities should be narrow and explicit.</p>
+<p>Example:
+BrowserCapabilities { Http, Navigation, Clipboard, Storage, Focus, Files }</p>
+<p>The engine should receive only capabilities it needs.</p>
+<h2 id="34-kernel-complexity-budget">34. Kernel Complexity Budget</h2>
+<p>Do not optimize only for line count.</p>
+<p>The more important requirement is a responsibility budget.</p>
+<p>The kernel may grow because production browser handling requires initialization, event delegation, async effects, error propagation, DOM updates, cleanup, subscriptions, capability dispatch, correlation, browser differences, abort/cancellation, accessibility support, and transport integration.</p>
+<p>That is acceptable.</p>
+<p>What is not acceptable is growth caused by business logic, domain-specific rendering decisions, workflow state, application data models, authorization policy, feature-specific caches, or application-specific lifecycle logic.</p>
+<p>A 3,000-line generic kernel may be healthy. A 1,000-line kernel containing hidden business meaning is not.</p>
+<h2 id="35-typescript-reference-engine">35. TypeScript Reference Engine</h2>
+<p>The first implementation should include a TypeScript reference engine, but it must obey the same architectural restrictions as future Wasm engines.</p>
+<p>The TypeScript engine must NOT directly use document, window, fetch, localStorage, or browser DOM APIs.</p>
+<p>It communicates only through the stable engine protocol.</p>
+<p>Browser Kernel
+→ EngineTransport
+→ DirectTypeScriptTransport / DotNetWasmTransport / RustWasmTransport / KotlinWasmTransport / JavaWasmTransport</p>
+<p>Replacing the engine must not require changes to browser behavior.</p>
+<h2 id="36-stable-engine-interface">36. Stable Engine Interface</h2>
+<p>Conceptually:</p>
+<p>interface ApplicationEngine {
+initialize(input: InitInput): EngineResult;
+handleEvent(event: SemanticEvent): EngineResult;
+handleEffectResult(result: EffectResult): EngineResult;
+}</p>
+<p>type EngineResult = {
+viewChanges: ViewChange[];
+effects: EffectRequest[];
+};</p>
+<p>Transport should be independently replaceable:</p>
+<p>interface EngineTransport {
+start(): Promise;
+dispatch(message: BrowserToEngineMessage): Promise;
+}</p>
+<h2 id="37-three-protocol-directions">37. Three Protocol Directions</h2>
+<p>Avoid one unstructured message channel.</p>
+<p>Browser → Engine:</p>
+<ul>
+<li>SemanticEvent</li>
+<li>EffectResult</li>
+<li>LifecycleEvent</li>
+<li>LocationChanged</li>
+</ul>
+<p>Engine → Browser:</p>
+<ul>
+<li>ViewChange</li>
+<li>EffectRequest</li>
+<li>SubscriptionRequest</li>
+<li>NavigationRequest</li>
+</ul>
+<p>Initialization:</p>
+<ul>
+<li>Capabilities</li>
+<li>Configuration</li>
+<li>ProtocolVersion</li>
+<li>Environment</li>
+</ul>
+<h2 id="38-protocol-typing">38. Protocol Typing</h2>
+<p>Avoid:
+{ type: "anything", payload: any }</p>
+<p>Prefer finite unions.</p>
+<p>SemanticEvent examples:</p>
+<ul>
+<li>Activate(...)</li>
+<li>Submit(...)</li>
+<li>ValueCommitted(...)</li>
+<li>SelectionChanged(...)</li>
+<li>NavigationRequested(...)</li>
+</ul>
+<p>EffectRequest examples:</p>
+<ul>
+<li>Http(...)</li>
+<li>StorageRead(...)</li>
+<li>StorageWrite(...)</li>
+<li>Navigate(...)</li>
+<li>ClipboardWrite(...)</li>
+<li>Focus(...)</li>
+</ul>
+<p>The TypeScript representation should map naturally to F# discriminated unions, Rust enums, C# sealed record hierarchies, Kotlin sealed classes, Java sealed interfaces, and WIT variants.</p>
+<h2 id="39-serialization-should-be-replaceable">39. Serialization Should Be Replaceable</h2>
+<p>The protocol and its serialization should not be the same abstraction.</p>
+<p>Initial choice: JSON, because it is easy to inspect, debug, log, test, fuzz, and use across languages.</p>
+<p>Later compare:</p>
+<ul>
+<li>JSON</li>
+<li>MessagePack</li>
+<li>CBOR</li>
+<li>Protocol Buffers</li>
+<li>FlatBuffers</li>
+<li>direct Wasm memory</li>
+<li>WIT / Component Model</li>
+</ul>
+<p>Performance optimization must not force changes to application semantics.</p>
+<h2 id="40-engine-replacement-invariant">40. Engine Replacement Invariant</h2>
+<p>Formal invariant:</p>
+<p>Replacing the application engine implementation must not require modification of HTML behavior, CSS behavior, event semantics, effect semantics, navigation semantics, lifecycle semantics, or view semantics.</p>
+<p>Only EngineTransport, ProtocolCodec, and language-specific bootstrapping may differ.</p>
+<p>This is the foundation for interchangeable C#, F#, Rust, Kotlin, Java, and TypeScript engines.</p>
+<h2 id="41-first-reference-application">41. First Reference Application</h2>
+<p>Recommended test application: Email Availability Form.</p>
+<p>It should contain:</p>
+<ul>
+<li>email field</li>
+<li>submit button</li>
+<li>status region</li>
+<li>native HTML email validation</li>
+<li>CSS hover/focus</li>
+<li>semantic ValueCommitted</li>
+<li>engine domain validation</li>
+<li>HTTP effect</li>
+<li>TypeScript fetch execution</li>
+<li>effect result</li>
+<li>engine interpretation</li>
+<li>view projection</li>
+<li>minimal DOM updates</li>
+<li>submit action</li>
+</ul>
+<p>Possible engine states:</p>
+<ul>
+<li>Empty</li>
+<li>Editing</li>
+<li>Checking</li>
+<li>Available</li>
+<li>Unavailable</li>
+<li>Invalid</li>
+<li>CheckFailed</li>
+</ul>
+<p>Flow:</p>
+<p>User enters email
+→ browser syntax validation
+→ ValueCommitted
+→ engine
+→ Checking + HttpRequest
+→ kernel executes fetch
+→ HttpResult
+→ engine
+→ Available / Unavailable / Failure
+→ view projection
+→ kernel applies DOM changes</p>
+<h2 id="42-future-engine-swap-experiment">42. Future Engine Swap Experiment</h2>
+<p>After validating the protocol with the TypeScript engine:</p>
+<p>Engine 1: TypeScript reference engine.
+Engine 2: C# / .NET Wasm. No browser-kernel changes except transport adapter.
+Engine 3: F# / .NET Wasm.
+Engine 4: Rust Wasm.
+Later: Kotlin Wasm and Java Wasm.</p>
+<p>If language replacement forces changes to browser-event semantics or view semantics, the abstraction should be considered suspect.</p>
+<h2 id="43-react-comparison">43. React Comparison</h2>
+<p>The proposed kernel is NOT intended to recreate React.</p>
+<p>React-style responsibilities should be decomposed as follows:</p>
+<p>React component state → presentation state or engine state
+global application state → engine
+business reducers → engine transitions
+useEffect business orchestration → explicit engine effects
+Context → explicit projection/capabilities
+virtual DOM → evaluate whether needed
+reconciliation → projection/diff or fine-grained updates
+event handling → kernel EVENT
+DOM updates → kernel VIEW
+fetch lifecycle → engine effects + kernel transport
+routing → NAVIGATION
+mount/unmount mechanics → LIFECYCLE where genuinely needed</p>
+<p>The goal is to determine which pieces disappear rather than merely rebuilding them.</p>
+<h2 id="44-main-architectural-question">44. Main Architectural Question</h2>
+<p>The core question is not whether this can technically be made to work.</p>
+<p>It is:</p>
+<p>Can this architecture remain small, generic, understandable, testable, and application-agnostic while supporting a real SPA?</p>
+<p>Main failure mode:</p>
+<p>tiny browser bridge
+→ more rendering logic
+→ more component lifecycle
+→ more caches
+→ more diffing
+→ more application-specific rules
+→ React-like framework recreated</p>
+<p>The Browser Kernel specification should make that growth visible.</p>
+<h2 id="45-current-working-summary">45. Current Working Summary</h2>
+<p>HTML = semantic structure
+CSS = presentation and visual behavior</p>
+<p>TypeScript Browser Kernel =</p>
+<ul>
+<li>EVENT</li>
+<li>VIEW</li>
+<li>EFFECT</li>
+<li>RESULT</li>
+<li>NAVIGATION</li>
+<li>LIFECYCLE</li>
+</ul>
+<p>Optional Browser Capabilities =</p>
+<ul>
+<li>HTTP</li>
+<li>Storage</li>
+<li>Files</li>
+<li>Clipboard</li>
+<li>Timers</li>
+<li>Observers</li>
+<li>WebSocket</li>
+<li>SSE</li>
+<li>Geolocation</li>
+<li>Media</li>
+<li>Workers</li>
+<li>Service Workers</li>
+<li>Crypto</li>
+<li>etc.</li>
+</ul>
+<p>Application Engine =</p>
+<ul>
+<li>authoritative state</li>
+<li>commands</li>
+<li>transitions</li>
+<li>validation</li>
+<li>business semantics</li>
+<li>capabilities</li>
+<li>evidence</li>
+<li>obligations</li>
+<li>effect decisions</li>
+<li>view projections</li>
+</ul>
+<p>Intended outcome:</p>
+<p>HTML/CSS
++
+small generic TypeScript browser kernel
++
+stable engine ABI
++
+replaceable strongly typed application engine</p>
+<p>The browser kernel is a platform adapter.
+It is not the application.</p></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

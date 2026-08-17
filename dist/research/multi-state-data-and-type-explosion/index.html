@@ -1,0 +1,538 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>multi state data and type explosion | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">multi state data and type explosion</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/working-notes/multi-state-data-and-type-explosion.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#multi-state-data-and-type-explosion-in-state-constrained-architecture">Multi-State Data and Type Explosion in State-Constrained Architecture</a></li><li><a href="#problem">Problem</a></li><li><a href="#naive-approach-one-type-per-full-combination">Naive Approach: One Type Per Full Combination</a></li><li><a href="#orthogonal-state-dimensions">Orthogonal State Dimensions</a></li><li><a href="#the-tradeoff">The Tradeoff</a></li><li><a href="#likely-split-primary-state-vs-secondary-state">Likely Split: Primary State vs Secondary State</a></li><li><a href="#how-to-decide-what-becomes-a-type">How to Decide What Becomes a Type</a></li><li><a href="#cross-state-invariants">Cross-State Invariants</a></li><li><a href="#derived-state">Derived State</a></li><li><a href="#four-useful-categories-of-state">Four Useful Categories of State</a></li><li><a href="#capabilities-as-an-alternative-to-more-types">Capabilities as an Alternative to More Types</a></li><li><a href="#why-capability-derivation-is-important">Why Capability Derivation Is Important</a></li><li><a href="#example">Example</a></li><li><a href="#possible-combined-architecture">Possible Combined Architecture</a></li><li><a href="#research-questions">Research Questions</a></li><li><a href="#working-design-principle">Working Design Principle</a></li><li><a href="#potential-importance">Potential Importance</a></li> </ol> </aside> <section class="document-body"><h1 id="multi-state-data-and-type-explosion-in-state-constrained-architecture">Multi-State Data and Type Explosion in State-Constrained Architecture</h1>
+<h2 id="problem">Problem</h2>
+<p>A major challenge in state-constrained software is how to represent objects that have multiple independent or partially independent state dimensions.</p>
+<p>A simple lifecycle is easy to model with types:</p>
+<pre><code>DraftOrder
+SubmittedOrder
+PaidOrder
+ShippedOrder
+</code></pre>
+<p>But real commercial objects often have several state dimensions at once.</p>
+<p>Example:</p>
+<pre><code>Lifecycle:
+    Draft
+    Active
+    Closed
+
+Review:
+    Unreviewed
+    Approved
+    Rejected
+
+Payment:
+    Unpaid
+    Paid
+    Refunded
+</code></pre>
+<p>If every possible combination becomes its own type, the number of types grows as the Cartesian product:</p>
+<pre><code>3 × 3 × 3 = 27 possible combinations
+</code></pre>
+<p>Add more state dimensions and the model quickly becomes impractical.</p>
+<p>This creates a central design question:</p>
+<pre><code>How do we preserve machine-enforced state constraints without creating an enormous number of types?
+</code></pre>
+<h2 id="naive-approach-one-type-per-full-combination">Naive Approach: One Type Per Full Combination</h2>
+<p>A naive design might create:</p>
+<pre><code>DraftUnreviewedUnpaidOrder
+DraftApprovedUnpaidOrder
+DraftApprovedPaidOrder
+ActiveApprovedPaidOrder
+ActiveApprovedRefundedOrder
+ClosedApprovedRefundedOrder
+...
+</code></pre>
+<p>This is not commercially practical.</p>
+<p>Problems include:</p>
+<ul>
+<li>combinatorial type explosion</li>
+<li>difficult naming</li>
+<li>difficult migrations</li>
+<li>excessive boilerplate</li>
+<li>hard-to-understand APIs</li>
+<li>difficult agent reasoning</li>
+<li>brittle refactoring</li>
+<li>repeated data structures</li>
+<li>difficulty adding a new independent state dimension</li>
+</ul>
+<h2 id="orthogonal-state-dimensions">Orthogonal State Dimensions</h2>
+<p>A better approach is to represent independent state dimensions independently.</p>
+<p>In F#:</p>
+<pre><code>type Lifecycle =
+    | Draft
+    | Active
+    | Closed
+
+type ReviewState =
+    | Unreviewed
+    | Approved of Approval
+    | Rejected of Rejection
+
+type PaymentState =
+    | Unpaid
+    | Paid of Payment
+    | Refunded of Refund
+
+type Order = {
+    Lifecycle : Lifecycle
+    Review : ReviewState
+    Payment : PaymentState
+}
+</code></pre>
+<p>This avoids creating all combinations manually.</p>
+<p>This idea corresponds closely to "orthogonal regions" in statecharts.</p>
+<p>Instead of one enormous state machine:</p>
+<pre><code>ActiveApprovedPaid
+ActiveApprovedUnpaid
+ActiveRejectedPaid
+...
+</code></pre>
+<p>we model separate state machines:</p>
+<pre><code>Lifecycle:
+    Draft -> Active -> Closed
+
+Review:
+    Unreviewed -> Approved
+               -> Rejected
+
+Payment:
+    Unpaid -> Paid -> Refunded
+</code></pre>
+<p>The object is therefore the composition of several state dimensions.</p>
+<h2 id="the-tradeoff">The Tradeoff</h2>
+<p>Orthogonal state dimensions reduce type explosion, but they reintroduce another problem:</p>
+<p>Some combinations may be representable even though they are invalid.</p>
+<p>For example:</p>
+<pre><code>Lifecycle = Draft
+Review = Approved
+Payment = Refunded
+</code></pre>
+<p>may be structurally constructible even if the domain says it should never happen.</p>
+<p>Therefore the central design problem becomes:</p>
+<pre><code>Which relationships should be enforced at the type level,
+and which should be enforced through guards and invariants?
+</code></pre>
+<h2 id="likely-split-primary-state-vs-secondary-state">Likely Split: Primary State vs Secondary State</h2>
+<p>A promising strategy is to encode only major behavioral state into distinct types.</p>
+<p>Example:</p>
+<pre><code>DraftOrder
+ActiveOrder
+ClosedOrder
+</code></pre>
+<p>Then keep secondary or orthogonal states as values inside those types.</p>
+<p>For example:</p>
+<pre><code>type ActiveOrder = {
+    Review : ReviewState
+    Payment : PaymentState
+}
+</code></pre>
+<p>This creates a hierarchy of enforcement.</p>
+<pre><code>Major behavioral state
+    -> type-level enforcement
+
+Orthogonal secondary state
+    -> discriminated union / state value
+
+Relationships among dimensions
+    -> guards and invariants
+</code></pre>
+<p>This avoids a combinatorial explosion while still allowing the compiler to enforce the most important lifecycle boundaries.</p>
+<h2 id="how-to-decide-what-becomes-a-type">How to Decide What Becomes a Type</h2>
+<p>A state dimension is a strong candidate for type-level encoding when it substantially changes:</p>
+<ul>
+<li>which operations are legal</li>
+<li>which data must exist</li>
+<li>which capabilities can be issued</li>
+<li>which invariants apply</li>
+<li>which transitions are possible</li>
+<li>which external effects are permitted</li>
+</ul>
+<p>For example:</p>
+<pre><code>DraftOrder
+</code></pre>
+<p>and:</p>
+<pre><code>PaidOrder
+</code></pre>
+<p>may deserve separate types because payment fundamentally changes what can happen next.</p>
+<p>By contrast, a secondary review status may be better represented as a discriminated union if it does not justify a new structural object type.</p>
+<h2 id="cross-state-invariants">Cross-State Invariants</h2>
+<p>Relationships between independent state dimensions should be expressed as explicit invariants.</p>
+<p>Examples:</p>
+<pre><code>Refunded implies a successful payment previously occurred.
+
+Approved implies review completed.
+
+Closed implies no new payment transitions may begin.
+
+Shippable implies:
+    Lifecycle = Active
+    AND Review = Approved
+    AND Payment = Paid
+</code></pre>
+<p>These invariants should not live only in comments.</p>
+<p>Possible enforcement mechanisms include:</p>
+<ul>
+<li>type constraints</li>
+<li>transition guards</li>
+<li>domain validation</li>
+<li>property-based testing</li>
+<li>model checking</li>
+<li>generated state specifications</li>
+</ul>
+<h2 id="derived-state">Derived State</h2>
+<p>Another major source of unnecessary state explosion is storing values that should actually be derived.</p>
+<p>Example:</p>
+<pre><code>IsReadyToShip =
+    Lifecycle = Active
+    AND
+    Review = Approved
+    AND
+    Payment = Paid
+</code></pre>
+<p>If "ready to ship" has no independent lifecycle, it should probably not be represented as another authoritative state.</p>
+<p>Do not automatically create:</p>
+<pre><code>ReadyToShipState
+</code></pre>
+<p>Instead derive it from authoritative state.</p>
+<p>This reduces:</p>
+<ul>
+<li>duplicated state</li>
+<li>synchronization errors</li>
+<li>invalid combinations</li>
+<li>type count</li>
+<li>agent ambiguity</li>
+</ul>
+<p>A useful principle is:</p>
+<pre><code>If a state can be deterministically calculated from authoritative state
+and does not have an independent lifecycle,
+prefer deriving it rather than storing it.
+</code></pre>
+<h2 id="four-useful-categories-of-state">Four Useful Categories of State</h2>
+<p>A useful working taxonomy is:</p>
+<ol>
+<li>
+<p>Primary State</p>
+<p>The major lifecycle state.</p>
+<p>Often appropriate for type-level encoding.</p>
+<p>Examples:</p>
+<pre><code>DraftOrder
+ActiveOrder
+ClosedOrder
+</code></pre>
+</li>
+<li>
+<p>Orthogonal State</p>
+<p>An independent state dimension.</p>
+<p>Usually represented as a discriminated union or equivalent value.</p>
+<p>Examples:</p>
+<pre><code>ReviewState
+PaymentState
+VerificationState
+</code></pre>
+</li>
+<li>
+<p>Derived State</p>
+<p>Computed from authoritative state.</p>
+<p>Usually should not be persisted independently.</p>
+<p>Examples:</p>
+<pre><code>IsReadyToShip
+CanSubmit
+NeedsReview
+</code></pre>
+</li>
+<li>
+<p>Ephemeral Execution State</p>
+<p>Temporary state of an operation or external effect.</p>
+<p>Examples:</p>
+<pre><code>Requested
+InProgress
+Succeeded
+Failed
+OutcomeUnknown
+</code></pre>
+</li>
+</ol>
+<h2 id="capabilities-as-an-alternative-to-more-types">Capabilities as an Alternative to More Types</h2>
+<p>A particularly promising technique is to avoid representing every legal combination as a type.</p>
+<p>Instead, derive capabilities from the current combination of state dimensions.</p>
+<p>For example:</p>
+<pre><code>Order
+  +
+Lifecycle
+  +
+ReviewState
+  +
+PaymentState
+    |
+    v
+capability evaluation
+    |
+    +-> CanApprove
+    +-> CanRefund
+    +-> CanShip
+</code></pre>
+<p>Then an operation could require a capability:</p>
+<pre><code>ship :
+    CanShip ->
+    Order ->
+    Shipment ->
+    Result&#x3C;Order, ShipError>
+</code></pre>
+<p>The system only creates <code>CanShip</code> when all relevant conditions are satisfied.</p>
+<p>For example:</p>
+<pre><code>CanShip exists only when:
+
+    Lifecycle = Active
+    Review = Approved
+    Payment = Paid
+</code></pre>
+<p>This avoids needing a type named:</p>
+<pre><code>ActiveApprovedPaidOrder
+</code></pre>
+<p>while still preventing arbitrary shipping.</p>
+<h2 id="why-capability-derivation-is-important">Why Capability Derivation Is Important</h2>
+<p>Capability-based legality may solve one of the biggest scalability problems in state-constrained design.</p>
+<p>Instead of encoding every valid combination into a distinct type:</p>
+<pre><code>state combination -> new type
+</code></pre>
+<p>we can use:</p>
+<pre><code>stable structural state -> type
+
+independent dimensions -> state values
+
+currently legal operation -> derived capability
+</code></pre>
+<p>This creates a potentially scalable rule:</p>
+<pre><code>Types represent stable structural states.
+
+Orthogonal unions represent independent state dimensions.
+
+Invariants coordinate dimensions.
+
+Capabilities represent temporarily legal operations derived from current state.
+</code></pre>
+<h2 id="example">Example</h2>
+<p>Suppose an order has:</p>
+<pre><code>Lifecycle = Active
+Review = Approved
+Payment = Paid
+</code></pre>
+<p>The runtime evaluates:</p>
+<pre><code>deriveCapabilities(order)
+</code></pre>
+<p>and produces:</p>
+<pre><code>CanShip
+CanRefund
+</code></pre>
+<p>but not:</p>
+<pre><code>CanApprove
+CanPay
+</code></pre>
+<p>The agent does not need to reason from scratch about which actions are legal.</p>
+<p>The runtime can expose only:</p>
+<pre><code>Ship
+Refund
+</code></pre>
+<p>because those are the capabilities currently available.</p>
+<p>This also connects directly to agent tool exposure.</p>
+<p>Instead of giving an AI agent every operation:</p>
+<pre><code>Submit
+Approve
+Reject
+Pay
+Refund
+Ship
+Cancel
+Reopen
+</code></pre>
+<p>the runtime could expose only the operations supported by currently derived capabilities.</p>
+<p>This reduces both:</p>
+<ul>
+<li>the state-type explosion problem</li>
+<li>the agent-action search-space problem</li>
+</ul>
+<h2 id="possible-combined-architecture">Possible Combined Architecture</h2>
+<p>A scalable object model may therefore look like:</p>
+<pre><code>Primary structural type
+        |
+        v
+Orthogonal state dimensions
+        |
+        v
+Cross-state invariants
+        |
+        v
+Derived capabilities
+        |
+        v
+Legal transitions
+        |
+        v
+Effects / events
+        |
+        v
+New state
+</code></pre>
+<p>Example:</p>
+<pre><code>ActiveOrder
+    |
+    +-- Review = Approved
+    +-- Payment = Paid
+    +-- Fulfillment = Waiting
+    |
+    v
+deriveCapabilities
+    |
+    +-- CanShip
+    +-- CanRefund
+    |
+    v
+Agent requests Ship
+    |
+    v
+runtime verifies CanShip
+    |
+    v
+Shipment effect
+    |
+    v
+ShipmentSucceeded event
+    |
+    v
+updated order state
+</code></pre>
+<h2 id="research-questions">Research Questions</h2>
+<p>This area needs explicit exploration.</p>
+<p>Key questions include:</p>
+<ol>
+<li>
+<p>Which state dimensions deserve distinct types?</p>
+</li>
+<li>
+<p>Which should remain discriminated unions or equivalent state values?</p>
+</li>
+<li>
+<p>How many primary type-level states can a commercial system tolerate before complexity outweighs the benefit?</p>
+</li>
+<li>
+<p>When should cross-state legality be represented by:</p>
+<ul>
+<li>types</li>
+<li>guards</li>
+<li>invariants</li>
+<li>capabilities</li>
+<li>property tests</li>
+<li>model checking</li>
+</ul>
+</li>
+<li>
+<p>Can capabilities reliably replace combinatorial state types?</p>
+</li>
+<li>
+<p>How should capabilities be created and revoked?</p>
+</li>
+<li>
+<p>Should capabilities be ephemeral values?</p>
+</li>
+<li>
+<p>Can capabilities be serialized, or should they exist only inside trusted runtime boundaries?</p>
+</li>
+<li>
+<p>How should multiple orthogonal state machines communicate?</p>
+</li>
+<li>
+<p>How should statecharts and hierarchical states map into typed code?</p>
+</li>
+<li>
+<p>How should agents discover currently legal capabilities?</p>
+</li>
+<li>
+<p>Should the runtime dynamically expose agent tools based on derived capabilities?</p>
+</li>
+<li>
+<p>How should invalid combinations be detected in persisted or imported data?</p>
+</li>
+<li>
+<p>How should state migrations work when new dimensions are introduced?</p>
+</li>
+<li>
+<p>How do we avoid turning cross-state invariant logic into another hidden, centralized rules engine?</p>
+</li>
+<li>
+<p>When should a derived value become a real state because it develops an independent lifecycle?</p>
+</li>
+<li>
+<p>Can a DSL generate:</p>
+<ul>
+<li>orthogonal state types</li>
+<li>cross-state invariants</li>
+<li>capability derivation</li>
+<li>transition APIs</li>
+<li>agent tools</li>
+<li>property tests</li>
+</ul>
+</li>
+<li>
+<p>What patterns work best in:</p>
+<ul>
+<li>F#</li>
+<li>C#</li>
+<li>TypeScript</li>
+<li>Python</li>
+<li>Rust</li>
+<li>Haskell</li>
+</ul>
+</li>
+<li>
+<p>Does capability derivation reduce agent context requirements?</p>
+</li>
+<li>
+<p>Does capability-based action exposure reduce agent mistakes?</p>
+</li>
+</ol>
+<h2 id="working-design-principle">Working Design Principle</h2>
+<p>A useful preliminary principle is:</p>
+<pre><code>Do not create one type for every possible combination of state.
+</code></pre>
+<p>Instead:</p>
+<pre><code>Use types for stable, behavior-changing structural states.
+
+Use orthogonal state values for independent dimensions.
+
+Use derived state when a value can be computed.
+
+Use guards and invariants to coordinate dimensions.
+
+Use capabilities to represent operations that are currently legal.
+</code></pre>
+<p>This may provide the balance between:</p>
+<pre><code>strong machine-enforced semantics
+</code></pre>
+<p>and:</p>
+<pre><code>commercially manageable type complexity.
+</code></pre>
+<h2 id="potential-importance">Potential Importance</h2>
+<p>This is not merely an implementation detail.</p>
+<p>If state-constrained architecture is going to work in real commercial systems, it must solve the multi-state problem without producing:</p>
+<ul>
+<li>hundreds of types</li>
+<li>unreadable APIs</li>
+<li>migration nightmares</li>
+<li>excessive ceremony</li>
+<li>developer resistance</li>
+</ul>
+<p>The capability approach may be particularly important because it shifts the model from:</p>
+<pre><code>represent every valid state combination
+</code></pre>
+<p>to:</p>
+<pre><code>represent stable state,
+then derive what actions are legal now.
+</code></pre>
+<p>That is likely much more scalable.</p>
+<p>It also aligns naturally with autonomous agents:</p>
+<pre><code>The agent does not need to understand every theoretically possible state combination.
+
+It needs to understand the current state and the legal transitions available from it.
+</code></pre>
+<p>That may be one of the central architectural ideas required to make state-constrained software practical for AI-native development.</p></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

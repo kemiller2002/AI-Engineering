@@ -7,11 +7,11 @@ semantic-control research program.
 ## Current inputs
 
 - Business and AI implementation requirements:
-  `requirements/time-entry-system-ai-requirements.txt`
+  `requirements/time-entry-system-ai-requirements.md`
 - Application semantic lifecycle and invariants:
-  `domain/time-entry-state-model-v0.1.txt`
+  `domain/time-entry-state-model-v0.1.md`
 - Current implementation structure and WASM/TypeScript/service/persistence
-  boundaries: `architecture/time-entry-large-view-architecture-v0.1.txt`
+  boundaries: `architecture/time-entry-large-view-architecture-v0.1.md`
 
 The requirements document contains explicitly separated business, domain,
 architecture, acceptance, and experimental sections. It remains intact to

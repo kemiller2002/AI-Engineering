@@ -1,0 +1,2010 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AI Research Mission 03 — Deterministic Environments vs Model Intelligence | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">AI Research Mission 03 — Deterministic Environments vs Model Intelligence</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/reports/03-deterministic-environment-vs-model-intelligence-research-report.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#ai-research-mission-03-deterministic-environments-vs-model-intelligence">AI Research Mission 03 — Deterministic Environments vs Model Intelligence</a></li><li><a href="#research-question">Research question</a></li><li><a href="#1-executive-verdict">1. Executive verdict</a></li><li><a href="#2-theory-of-deterministic-environment-substitution">2. Theory of deterministic-environment substitution</a></li><li><a href="#2-1-the-basic-mechanism">2.1 The basic mechanism</a></li><li><a href="#a-search-space-reduction">A. Search-space reduction</a></li><li><a href="#b-context-compression">B. Context compression</a></li><li><a href="#c-verification-substitution">C. Verification substitution</a></li><li><a href="#3-a-better-definition-of-environment-strength">3. A better definition of environment strength</a></li><li><a href="#e1-structural-constraint-strength">E1 — Structural constraint strength</a></li><li><a href="#e2-semantic-legality-strength">E2 — Semantic legality strength</a></li><li><a href="#e3-runtime-enforcement-strength">E3 — Runtime enforcement strength</a></li><li><a href="#e4-dependency-visibility">E4 — Dependency visibility</a></li><li><a href="#e5-diagnostic-quality">E5 — Diagnostic quality</a></li><li><a href="#e6-verification-strength">E6 — Verification strength</a></li><li><a href="#4-reasoning-externalization-map">4. Reasoning externalization map</a></li><li><a href="#5-compiler-in-the-loop-evidence">5. Compiler-in-the-loop evidence</a></li><li><a href="#5-1-cocogen">5.1 CoCoGen</a></li><li><a href="#5-2-iterative-feedback">5.2 Iterative feedback</a></li><li><a href="#6-static-analysis-as-external-reasoning">6. Static analysis as external reasoning</a></li><li><a href="#7-type-systems-as-search-space-reduction">7. Type systems as search-space reduction</a></li><li><a href="#7-1-likely-optimal-type-system-region">7.1 Likely optimal type-system region</a></li><li><a href="#8-exhaustiveness-as-deterministic-memory">8. Exhaustiveness as deterministic memory</a></li><li><a href="#primary-failure-mode">Primary failure mode</a></li><li><a href="#9-semantic-dependency-graphs-and-context-compression">9. Semantic dependency graphs and context compression</a></li><li><a href="#10-runtime-guards-as-error-prevention">10. Runtime guards as error prevention</a></li><li><a href="#case-a-rejection-is-rare">Case A — Rejection is rare</a></li><li><a href="#case-b-rejection-is-common-but-diagnostic-is-precise">Case B — Rejection is common but diagnostic is precise</a></li><li><a href="#case-c-rejection-is-common-and-diagnostic-is-opaque">Case C — Rejection is common and diagnostic is opaque</a></li><li><a href="#11-capabilities-as-deterministic-legality">11. Capabilities as deterministic legality</a></li><li><a href="#important-distinction">Important distinction</a></li><li><a href="#12-obligations-as-deterministic-work-discovery">12. Obligations as deterministic work discovery</a></li><li><a href="#13-deterministic-prerequisite-discovery">13. Deterministic prerequisite discovery</a></li><li><a href="#14-generated-tests-as-cheap-verification">14. Generated tests as cheap verification</a></li><li><a href="#structural-tests">Structural tests</a></li><li><a href="#independent-behavioral-tests">Independent behavioral tests</a></li><li><a href="#15-formal-methods-evidence">15. Formal methods evidence</a></li><li><a href="#16-trusted-deterministic-core-hypothesis">16. Trusted deterministic core hypothesis</a></li><li><a href="#17-model-intelligence-vs-environment-information">17. Model intelligence vs environment information</a></li><li><a href="#observed-task-performance">Observed task performance</a></li><li><a href="#18-smaller-model-substitution">18. Smaller-model substitution</a></li><li><a href="#model-capability-threshold-mct-">Model Capability Threshold (MCT)</a></li><li><a href="#19-model-environment-crossover-analysis">19. Model/environment crossover analysis</a></li><li><a href="#expected-crossover-by-task-type">Expected crossover by task type</a></li><li><a href="#likely-early-crossover">Likely early crossover</a></li><li><a href="#possible-crossover">Possible crossover</a></li><li><a href="#unlikely-crossover">Unlikely crossover</a></li><li><a href="#20-task-class-differences">20. Task-class differences</a></li><li><a href="#a-local-implementation">A. Local implementation</a></li><li><a href="#b-state-addition">B. State addition</a></li><li><a href="#c-state-split">C. State split</a></li><li><a href="#d-policy-change">D. Policy change</a></li><li><a href="#e-external-effect-change">E. External effect change</a></li><li><a href="#f-cross-module-change">F. Cross-module change</a></li><li><a href="#g-bug-fix">G. Bug fix</a></li><li><a href="#h-refactor">H. Refactor</a></li><li><a href="#i-product-pivot">I. Product pivot</a></li><li><a href="#j-operational-agent-task">J. Operational agent task</a></li><li><a href="#21-repair-loop-economics">21. Repair-loop economics</a></li><li><a href="#totaltaskcost">TotalTaskCost</a></li><li><a href="#22-diagnostic-quality-is-a-first-class-variable">22. Diagnostic quality is a first-class variable</a></li><li><a href="#23-diagnostic-compression">23. Diagnostic compression</a></li><li><a href="#24-human-review-implications">24. Human-review implications</a></li><li><a href="#25-semantic-defect-survival-matrix">25. Semantic defect survival matrix</a></li><li><a href="#26-single-source-of-semantic-truth-risk">26. Single-source-of-semantic-truth risk</a></li><li><a href="#independent-evidence-channels">Independent evidence channels</a></li><li><a href="#specification-mutation-testing">Specification mutation testing</a></li><li><a href="#27-false-confidence-risk">27. False-confidence risk</a></li><li><a href="#structural-correctness">Structural correctness</a></li><li><a href="#semantic-correctness">Semantic correctness</a></li><li><a href="#product-correctness">Product correctness</a></li><li><a href="#28-counterarguments-evaluated">28. Counterarguments evaluated</a></li><li><a href="#1-frontier-models-reason-well-enough-that-constraints-have-little-economic-value-">1. Frontier models reason well enough that constraints have little economic value.</a></li><li><a href="#2-strong-environments-create-too-many-repair-loops-">2. Strong environments create too many repair loops.</a></li><li><a href="#3-semantic-compiler-construction-cost-dominates-savings-">3. Semantic compiler construction cost dominates savings.</a></li><li><a href="#4-models-struggle-with-advanced-type-systems-">4. Models struggle with advanced type systems.</a></li><li><a href="#5-environment-feedback-increases-context-instead-of-reducing-it-">5. Environment feedback increases context instead of reducing it.</a></li><li><a href="#6-tests-compiler-errors-encourage-symptom-patching-">6. Tests/compiler errors encourage symptom patching.</a></li><li><a href="#7-wrong-specifications-create-correlated-failures-">7. Wrong specifications create correlated failures.</a></li><li><a href="#8-strong-constraints-reduce-useful-exploration-">8. Strong constraints reduce useful exploration.</a></li><li><a href="#9-smaller-models-still-cannot-understand-ambiguous-requirements-">9. Smaller models still cannot understand ambiguous requirements.</a></li><li><a href="#10-context-retrieval-dominates-cost-not-semantic-reasoning-">10. Context retrieval dominates cost, not semantic reasoning.</a></li><li><a href="#11-tool-latency-dominates-token-cost-">11. Tool latency dominates token cost.</a></li><li><a href="#12-prompt-caching-reduces-input-token-savings-">12. Prompt caching reduces input-token savings.</a></li><li><a href="#13-simple-analyzers-tests-capture-most-benefit-">13. Simple analyzers/tests capture most benefit.</a></li><li><a href="#14-human-review-remains-necessary-">14. Human review remains necessary.</a></li><li><a href="#15-benefits-apply-mainly-to-high-consequence-systems-">15. Benefits apply mainly to high-consequence systems.</a></li><li><a href="#29-recommended-experiment-design">29. Recommended experiment design</a></li><li><a href="#29-1-repositories">29.1 Repositories</a></li><li><a href="#e0-permissive">E0 — permissive</a></li><li><a href="#e1-typed">E1 — typed</a></li><li><a href="#e2-semantic-constrained">E2 — semantic constrained</a></li><li><a href="#e3-semantic-compiler">E3 — semantic compiler</a></li><li><a href="#29-2-model-tiers">29.2 Model tiers</a></li><li><a href="#29-3-task-suite">29.3 Task suite</a></li><li><a href="#29-4-repetitions">29.4 Repetitions</a></li><li><a href="#30-required-metrics">30. Required metrics</a></li><li><a href="#correct-completion-rate">Correct Completion Rate</a></li><li><a href="#effective-cost-per-correct-completion">Effective Cost per Correct Completion</a></li><li><a href="#context-acquisition-cost">Context Acquisition Cost</a></li><li><a href="#deterministic-rejection-efficiency">Deterministic Rejection Efficiency</a></li><li><a href="#model-substitution-ratio">Model Substitution Ratio</a></li><li><a href="#environment-leverage-ratio">Environment Leverage Ratio</a></li><li><a href="#31-ablation-plan">31. Ablation plan</a></li><li><a href="#32-error-injection-experiment">32. Error-injection experiment</a></li><li><a href="#33-ambiguous-requirement-experiment">33. Ambiguous-requirement experiment</a></li><li><a href="#34-specification-bug-experiment">34. Specification-bug experiment</a></li><li><a href="#35-economic-model">35. Economic model</a></li><li><a href="#36-break-even-analysis">36. Break-even analysis</a></li><li><a href="#37-marginal-cost-curve">37. Marginal-cost curve</a></li><li><a href="#weak-environment">Weak environment</a></li><li><a href="#strong-environment">Strong environment</a></li><li><a href="#38-longitudinal-hypothesis">38. Longitudinal hypothesis</a></li><li><a href="#compounding-benefit">Compounding benefit</a></li><li><a href="#semantic-accretion-failure">Semantic accretion failure</a></li><li><a href="#39-exploration-vs-commitment">39. Exploration vs commitment</a></li><li><a href="#40-what-is-empirically-supported">40. What is empirically supported</a></li><li><a href="#strongly-supported">Strongly supported</a></li><li><a href="#moderately-supported">Moderately supported</a></li><li><a href="#weakly-supported-not-yet-directly-demonstrated">Weakly supported / not yet directly demonstrated</a></li><li><a href="#41-what-remains-theoretical">41. What remains theoretical</a></li><li><a href="#42-architecture-changes-suggested-by-the-evidence">42. Architecture changes suggested by the evidence</a></li><li><a href="#phase-1-high-roi-deterministic-core">Phase 1 — High-ROI deterministic core</a></li><li><a href="#phase-2-runtime-legality">Phase 2 — Runtime legality</a></li><li><a href="#phase-3-agent-oriented-diagnostics">Phase 3 — Agent-oriented diagnostics</a></li><li><a href="#phase-4-semantic-dependency-capture">Phase 4 — Semantic dependency capture</a></li><li><a href="#phase-5-obligations">Phase 5 — Obligations</a></li><li><a href="#phase-6-formal-verification">Phase 6 — Formal verification</a></li><li><a href="#43-implications-for-javascript-typescript-and-sql-heavy-systems">43. Implications for JavaScript/TypeScript and SQL-heavy systems</a></li><li><a href="#44-startup-implications">44. Startup implications</a></li><li><a href="#wedge-a-ai-code-risk-assessment">Wedge A — AI code-risk assessment</a></li><li><a href="#wedge-b-semantic-constraint-layer">Wedge B — Semantic constraint layer</a></li><li><a href="#wedge-c-agent-semantic-context-service">Wedge C — Agent semantic context service</a></li><li><a href="#45-most-important-missing-experiment">45. Most important missing experiment</a></li><li><a href="#46-final-verdict">46. Final verdict</a></li><li><a href="#can-deterministic-environments-improve-agent-correctness-">Can deterministic environments improve agent correctness?</a></li><li><a href="#can-they-reduce-required-model-capability-">Can they reduce required model capability?</a></li><li><a href="#can-they-reduce-token-usage-">Can they reduce token usage?</a></li><li><a href="#can-they-reduce-total-cost-per-correct-completion-">Can they reduce total cost per correct completion?</a></li><li><a href="#can-a-smaller-model-strong-environment-outperform-a-larger-model-weak-environment-">Can a smaller model + strong environment outperform a larger model + weak environment?</a></li><li><a href="#most-externalizable-reasoning-category">Most externalizable reasoning category</a></li><li><a href="#least-externalizable-reasoning-category">Least externalizable reasoning category</a></li><li><a href="#most-valuable-deterministic-mechanism">Most valuable deterministic mechanism</a></li><li><a href="#biggest-economic-opportunity">Biggest economic opportunity</a></li><li><a href="#biggest-architectural-risk">Biggest architectural risk</a></li><li><a href="#most-important-missing-experiment">Most important missing experiment</a></li><li><a href="#likely-break-even-condition">Likely break-even condition</a></li><li><a href="#47-bottom-line-interpretation">47. Bottom-line interpretation</a></li><li><a href="#48-source-notes">48. Source notes</a></li><li><a href="#49-evidence-grading-summary">49. Evidence-grading summary</a></li><li><a href="#50-research-decision">50. Research decision</a></li> </ol> </aside> <section class="document-body"><h1 id="ai-research-mission-03--deterministic-environments-vs-model-intelligence">AI Research Mission 03 — Deterministic Environments vs Model Intelligence</h1>
+<h2 id="research-question">Research question</h2>
+<p><strong>How much probabilistic reasoning can be removed from an AI software agent and replaced with deterministic software structure before the deterministic environment costs more than it saves?</strong></p>
+<p>This report evaluates the hypothesis skeptically. It does <strong>not</strong> assume that stronger typing, more compiler feedback, more formal methods, or more runtime restrictions automatically improve agent economics.</p>
+<hr>
+<h1 id="1-executive-verdict">1. Executive verdict</h1>
+<p>The central hypothesis is <strong>substantially plausible, partially demonstrated, but not yet demonstrated end-to-end in the strong form proposed here</strong>.</p>
+<p>There is already good empirical evidence for several narrower claims:</p>
+<ol>
+<li>Compiler, execution, test, and verifier feedback can substantially improve code-generation and repair success.</li>
+<li>Type-aware constraints can eliminate a large class of invalid candidate programs and improve functional correctness.</li>
+<li>Structured agent-computer interfaces can materially improve software-agent performance without changing the underlying model.</li>
+<li>Repository exploration and context localization are distinct, costly parts of agent execution.</li>
+<li>Formal verification can turn some classes of correctness from probabilistic judgments into machine-checkable facts.</li>
+<li>Deterministic feedback is markedly stronger for syntax, typing, protocol legality, and local structural defects than for ambiguous requirements, business semantics, architecture selection, or algorithmic insight.</li>
+</ol>
+<p>However, the stronger economic claim remains insufficiently tested:</p>
+<blockquote>
+<p>A smaller, cheaper model in a semantically constrained environment can reliably match or outperform a frontier model operating over a conventional repository at lower total cost per semantically correct completion.</p>
+</blockquote>
+<p>The literature contains pieces of this result, but not yet the complete controlled comparison needed to establish it.</p>
+<p>The most defensible current conclusion is:</p>
+<blockquote>
+<p><strong>Environment quality is an independent capability multiplier for AI agents. Some reasoning currently paid for repeatedly in model inference can be externalized into reusable deterministic machinery. The economic opportunity is largest where legality, dependencies, state interpretation, prerequisite structure, and correctness conditions can be encoded once and reused across many agent tasks.</strong></p>
+</blockquote>
+<p>The architecture should therefore be viewed less as "replacing intelligence" and more as <strong>changing which problems require intelligence</strong>.</p>
+<p>The model should spend probabilistic reasoning on:</p>
+<ul>
+<li>ambiguity,</li>
+<li>judgment,</li>
+<li>hypothesis formation,</li>
+<li>design tradeoffs,</li>
+<li>semantic interpretation,</li>
+<li>prioritization,</li>
+<li>novel solution construction.</li>
+</ul>
+<p>The environment should increasingly own:</p>
+<ul>
+<li>legality,</li>
+<li>structural completeness,</li>
+<li>invariant enforcement,</li>
+<li>authority checks,</li>
+<li>known prerequisite relationships,</li>
+<li>dependency discovery,</li>
+<li>version consistency,</li>
+<li>retry safety where representable,</li>
+<li>exhaustive interpretation,</li>
+<li>deterministic verification.</li>
+</ul>
+<p>This creates a useful separation:</p>
+<p><strong>Deterministic environment answers:</strong></p>
+<ul>
+<li>What is possible?</li>
+<li>What is legal?</li>
+<li>What is missing?</li>
+<li>What depends on this?</li>
+<li>What facts are known?</li>
+<li>What must be revalidated?</li>
+<li>What invariant is violated?</li>
+</ul>
+<p><strong>Probabilistic model answers:</strong></p>
+<ul>
+<li>What should we do?</li>
+<li>What does the human probably mean?</li>
+<li>Which legal option best serves the goal?</li>
+<li>Is the existing semantic model itself wrong?</li>
+<li>What new abstraction should exist?</li>
+</ul>
+<p>That separation is better supported than any claim that model intelligence becomes unimportant.</p>
+<hr>
+<h1 id="2-theory-of-deterministic-environment-substitution">2. Theory of deterministic-environment substitution</h1>
+<h2 id="21-the-basic-mechanism">2.1 The basic mechanism</h2>
+<p>A language model solves many software tasks by reconstructing latent constraints from incomplete evidence spread across:</p>
+<ul>
+<li>source files,</li>
+<li>tests,</li>
+<li>schemas,</li>
+<li>naming conventions,</li>
+<li>APIs,</li>
+<li>comments,</li>
+<li>documentation,</li>
+<li>issue history,</li>
+<li>compiler errors,</li>
+<li>runtime behavior.</li>
+</ul>
+<p>This reconstruction consumes:</p>
+<ul>
+<li>context tokens,</li>
+<li>search/tool calls,</li>
+<li>reasoning,</li>
+<li>retries,</li>
+<li>test cycles,</li>
+<li>human review.</li>
+</ul>
+<p>A deterministic environment can sometimes encode those latent constraints explicitly.</p>
+<p>When it does, the model no longer needs to repeatedly infer them from raw artifacts.</p>
+<p>This creates three distinct forms of leverage.</p>
+<h3 id="a-search-space-reduction">A. Search-space reduction</h3>
+<p>Invalid candidates are prevented or rejected earlier.</p>
+<p>Examples:</p>
+<ul>
+<li>syntactically invalid code,</li>
+<li>ill-typed expressions,</li>
+<li>illegal transitions,</li>
+<li>unauthorized operations,</li>
+<li>missing exhaustive cases.</li>
+</ul>
+<h3 id="b-context-compression">B. Context compression</h3>
+<p>The environment can return only the relevant constraint or dependency rather than forcing the model to reconstruct it from many files.</p>
+<p>Example:</p>
+<p>Instead of reading twenty files to infer why shipping is blocked:</p>
+<p><code>ShipOrder blocked: PaymentCaptured missing.</code></p>
+<h3 id="c-verification-substitution">C. Verification substitution</h3>
+<p>The model does not need to "believe" that a property holds when a deterministic checker can establish it.</p>
+<p>Example:</p>
+<ul>
+<li>all state cases handled,</li>
+<li>transition input version matches authoritative version,</li>
+<li>no capability exists for an illegal action,</li>
+<li>generated implementation satisfies a formal postcondition.</li>
+</ul>
+<p>These mechanisms are separable. An environment can improve correctness without reducing tokens; reduce tokens without improving model choice quality; or add repair loops while still lowering total defect cost.</p>
+<hr>
+<h1 id="3-a-better-definition-of-environment-strength">3. A better definition of environment strength</h1>
+<p>The proposed levels are useful, but "strength" should be decomposed because a high-level number hides important differences.</p>
+<p>Use at least six dimensions.</p>
+<h2 id="e1--structural-constraint-strength">E1 — Structural constraint strength</h2>
+<p>How strongly the programming language/compiler prevents invalid representations.</p>
+<p>Examples:</p>
+<ul>
+<li>static typing,</li>
+<li>closed algebraic state families,</li>
+<li>exhaustive matching,</li>
+<li>non-null/option modeling,</li>
+<li>immutability,</li>
+<li>linear/affine ownership.</li>
+</ul>
+<h2 id="e2--semantic-legality-strength">E2 — Semantic legality strength</h2>
+<p>How strongly the application expresses domain legality.</p>
+<p>Examples:</p>
+<ul>
+<li>explicit transitions,</li>
+<li>transition guards,</li>
+<li>policy rules,</li>
+<li>authority checks,</li>
+<li>version checks.</li>
+</ul>
+<h2 id="e3--runtime-enforcement-strength">E3 — Runtime enforcement strength</h2>
+<p>Whether invalid actions can actually execute.</p>
+<p>Examples:</p>
+<ul>
+<li>reference monitor,</li>
+<li>capability gate,</li>
+<li>runtime guard,</li>
+<li>idempotency/effect protections.</li>
+</ul>
+<h2 id="e4--dependency-visibility">E4 — Dependency visibility</h2>
+<p>How mechanically visible consequences of change are.</p>
+<p>Examples:</p>
+<ul>
+<li>type dependencies,</li>
+<li>semantic dependency graph,</li>
+<li>generated impact report,</li>
+<li>program slicing,</li>
+<li>build graph.</li>
+</ul>
+<h2 id="e5--diagnostic-quality">E5 — Diagnostic quality</h2>
+<p>How precisely deterministic failures are presented to the agent.</p>
+<p>Examples:</p>
+<ul>
+<li>raw compiler string,</li>
+<li>structured diagnostic with semantic identifier,</li>
+<li>machine-readable missing prerequisite,</li>
+<li>exact migration checklist.</li>
+</ul>
+<h2 id="e6--verification-strength">E6 — Verification strength</h2>
+<p>What level of correctness is machine-checked.</p>
+<p>Examples:</p>
+<ul>
+<li>compile success,</li>
+<li>static-analysis cleanliness,</li>
+<li>test pass,</li>
+<li>model checking,</li>
+<li>SMT proof,</li>
+<li>theorem proof.</li>
+</ul>
+<p>Two systems at the same nominal "Level 3" may differ radically on these dimensions.</p>
+<p>This matters experimentally because the useful question is not only:</p>
+<blockquote>
+<p>Does Level 3 beat Level 1?</p>
+</blockquote>
+<p>It is also:</p>
+<blockquote>
+<p>Which deterministic dimension produced the improvement?</p>
+</blockquote>
+<hr>
+<h1 id="4-reasoning-externalization-map">4. Reasoning externalization map</h1>
+<table>
+<thead>
+<tr>
+<th>Reasoning function</th>
+<th>Deterministic substitute</th>
+<th align="right">Substitution strength</th>
+<th>What remains probabilistic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Is syntax valid?</td>
+<td>Parser/compiler</td>
+<td align="right">Very strong</td>
+<td>Almost nothing</td>
+</tr>
+<tr>
+<td>Is expression type-correct?</td>
+<td>Type checker</td>
+<td align="right">Very strong</td>
+<td>Choosing the intended type/design</td>
+</tr>
+<tr>
+<td>Was every closed state handled?</td>
+<td>Exhaustiveness checker</td>
+<td align="right">Very strong</td>
+<td>Correct behavior for each state</td>
+</tr>
+<tr>
+<td>Is transition structurally legal?</td>
+<td>Transition table/typed API</td>
+<td align="right">Very strong</td>
+<td>Whether transition is desirable</td>
+</tr>
+<tr>
+<td>Does actor have authority?</td>
+<td>Capability/policy engine</td>
+<td align="right">Strong</td>
+<td>Whether authority policy itself is correct</td>
+</tr>
+<tr>
+<td>Is state version stale?</td>
+<td>Version check</td>
+<td align="right">Very strong</td>
+<td>Recovery strategy</td>
+</tr>
+<tr>
+<td>Is retry safe?</td>
+<td>Effect/idempotency model</td>
+<td align="right">Strong where modeled</td>
+<td>Handling unknown external semantics</td>
+</tr>
+<tr>
+<td>What prerequisite is missing?</td>
+<td>Dependency/planning graph</td>
+<td align="right">Strong if graph complete</td>
+<td>Whether prerequisite graph is correct</td>
+</tr>
+<tr>
+<td>What code depends on changed state?</td>
+<td>Compiler + dependency graph + slicing</td>
+<td align="right">Moderate to strong</td>
+<td>Semantic consequences not represented in graph</td>
+</tr>
+<tr>
+<td>What unresolved work exists?</td>
+<td>Obligations/work graph</td>
+<td align="right">Strong if obligations explicit</td>
+<td>Prioritization and interpretation</td>
+</tr>
+<tr>
+<td>What tests should exist?</td>
+<td>Generated tests from transition model</td>
+<td align="right">Moderate</td>
+<td>Missing requirements and emergent behavior</td>
+</tr>
+<tr>
+<td>Is implementation consistent with formal spec?</td>
+<td>Proof/model checker/SMT</td>
+<td align="right">Very strong</td>
+<td>Whether spec expresses the right requirement</td>
+</tr>
+<tr>
+<td>What does an ambiguous feature request mean?</td>
+<td>None</td>
+<td align="right">Weak</td>
+<td>Human/model judgment</td>
+</tr>
+<tr>
+<td>Which architecture is best?</td>
+<td>Constraints can prune options</td>
+<td align="right">Weak to moderate</td>
+<td>Tradeoffs and future uncertainty</td>
+</tr>
+<tr>
+<td>Is the semantic model itself wrong?</td>
+<td>Differential evidence can help</td>
+<td align="right">Weak</td>
+<td>Requires critical reasoning</td>
+</tr>
+<tr>
+<td>What novel algorithm solves this problem?</td>
+<td>Solver/synthesis may help in bounded domains</td>
+<td align="right">Variable</td>
+<td>General invention remains probabilistic</td>
+</tr>
+<tr>
+<td>Which legal action best serves the user?</td>
+<td>None beyond objective functions</td>
+<td align="right">Weak</td>
+<td>Judgment and optimization</td>
+</tr>
+</tbody>
+</table>
+<p>The architecture is most compelling when the target reasoning is <strong>constraint satisfaction over known semantics</strong>.</p>
+<p>It is least compelling when the target reasoning is <strong>creation or interpretation of semantics</strong>.</p>
+<hr>
+<h1 id="5-compiler-in-the-loop-evidence">5. Compiler-in-the-loop evidence</h1>
+<p>Compiler and execution feedback are among the strongest existing empirical analogues for the hypothesis.</p>
+<h2 id="51-cocogen">5.1 CoCoGen</h2>
+<p>Bi et al. introduced CoCoGen, which combines static analysis and compiler feedback with iterative repository-context refinement for project-level code generation.</p>
+<p>Reported result:</p>
+<ul>
+<li>integration with GPT-3.5-Turbo and Code Llama 13B,</li>
+<li>substantial improvement over vanilla model generation,</li>
+<li>over 80% improvement reported for project-context-dependent generation in their experimental setting,</li>
+<li>consistent gains over retrieval baselines.</li>
+</ul>
+<p>Why this matters:</p>
+<p>The model did not become more intelligent. The environment supplied structured evidence about incompatibility with the project.</p>
+<p>This demonstrates <strong>environmental leverage</strong>.</p>
+<p>What it does not establish:</p>
+<ul>
+<li>that a smaller model can replace a frontier model,</li>
+<li>that total cost is lower after retries,</li>
+<li>that semantic business defects are reduced,</li>
+<li>that state-constrained architecture is superior to ordinary compiler guidance.</li>
+</ul>
+<p>Evidence grade: <strong>Strong for compiler-guided project-context correction; indirect for the broader hypothesis.</strong></p>
+<h2 id="52-iterative-feedback">5.2 Iterative feedback</h2>
+<p>Recent repair studies show that models can improve when given compiler and test feedback, but the gains are not unlimited.</p>
+<p>FeedbackEval reports:</p>
+<ul>
+<li>iterative feedback improves code repair,</li>
+<li>test and human feedback are especially useful,</li>
+<li>improvements tend to diminish after roughly two to three iterations.</li>
+</ul>
+<p>A 2026 study of iterative code correction similarly reports that:</p>
+<ul>
+<li>reasoning models use execution feedback better than non-reasoning models,</li>
+<li>syntactic/runtime failures are more tractable than logical/algorithmic failures.</li>
+</ul>
+<p>This is an important limitation.</p>
+<p>The environment can expose the error deterministically, but the model still needs enough capability to interpret and repair it.</p>
+<p>Therefore:</p>
+<blockquote>
+<p>Deterministic feedback does not eliminate a model-capability threshold.</p>
+</blockquote>
+<p>It can lower the threshold for some tasks, but not to zero.</p>
+<p>Evidence grade: <strong>Strong.</strong></p>
+<hr>
+<h1 id="6-static-analysis-as-external-reasoning">6. Static analysis as external reasoning</h1>
+<p>Static analysis already performs classes of reasoning that would be wasteful to ask an LLM to reproduce probabilistically.</p>
+<p>Examples:</p>
+<ul>
+<li>control-flow construction,</li>
+<li>data-flow analysis,</li>
+<li>taint propagation,</li>
+<li>reachability,</li>
+<li>type-state checks,</li>
+<li>dead code,</li>
+<li>ownership/aliasing constraints,</li>
+<li>nullability,</li>
+<li>effect tracking.</li>
+</ul>
+<p>The crucial point is not that LLMs cannot approximate these tasks. They often can.</p>
+<p>The point is:</p>
+<blockquote>
+<p>If a deterministic algorithm already computes the answer exactly or conservatively, paying an LLM to reconstruct it is usually economically irrational.</p>
+</blockquote>
+<p>Research on LLM code analysis also finds robustness problems: LLM-generated analyses can vary under small input changes even when tool-generated ground truth is stable.</p>
+<p>This creates a general design principle:</p>
+<p><strong>Do not use probabilistic inference for information already available from deterministic program analysis unless the model is interpreting the analysis rather than replacing it.</strong></p>
+<p>The best combined architecture is:</p>
+<p>deterministic analyzer
+→ compact structured result
+→ model interpretation / decision.</p>
+<p>Not:</p>
+<p>source code
+→ model guesses the analysis.</p>
+<p>Evidence grade: <strong>Strong as an architectural principle; direct cost evidence remains limited.</strong></p>
+<hr>
+<h1 id="7-type-systems-as-search-space-reduction">7. Type systems as search-space reduction</h1>
+<p>The strongest recent evidence comes from type-constrained generation.</p>
+<p>Mündler et al. report that, in their evaluation:</p>
+<ul>
+<li>a very large share of compilation failures were type-related,</li>
+<li>type-constrained decoding reduced compilation errors by more than half,</li>
+<li>functional correctness improved across synthesis, translation, and repair,</li>
+<li>effects were observed across multiple model families and sizes.</li>
+</ul>
+<p>This directly supports the hypothesis that formal structure can prune invalid model outputs.</p>
+<p>But it also exposes an important distinction:</p>
+<p><strong>Type correctness is not semantic correctness.</strong></p>
+<p>A perfectly typed program can:</p>
+<ul>
+<li>implement the wrong rule,</li>
+<li>call the wrong legal API,</li>
+<li>mishandle money,</li>
+<li>authorize the wrong actor,</li>
+<li>choose the wrong state transition.</li>
+</ul>
+<p>Therefore the economic value of types depends on whether important domain constraints are actually represented by the type structure.</p>
+<h2 id="71-likely-optimal-type-system-region">7.1 Likely optimal type-system region</h2>
+<p>There is probably no universally optimal "strongest possible" type system for agents.</p>
+<p>Benefits increase as useful invariants become machine-visible.</p>
+<p>Costs also increase through:</p>
+<ul>
+<li>more complex diagnostics,</li>
+<li>more type-level boilerplate,</li>
+<li>unfamiliar abstractions,</li>
+<li>longer repair loops,</li>
+<li>increased surface area for model misunderstanding.</li>
+</ul>
+<p>This suggests a practical optimum:</p>
+<blockquote>
+<p>Use the strongest type constructs that encode <strong>high-value, stable, frequently exercised invariants</strong>, but avoid type-level sophistication that mainly increases proof burden without eliminating economically important error classes.</p>
+</blockquote>
+<p>For the proposed architecture, high-value candidates are:</p>
+<ul>
+<li>closed state families,</li>
+<li>exhaustive interpretation,</li>
+<li>explicit optionality,</li>
+<li>immutable authoritative state,</li>
+<li>typed transition inputs/results,</li>
+<li>effect outcome types,</li>
+<li>version and authority wrappers where they prevent real errors.</li>
+</ul>
+<p>Refinement/dependent types should be targeted rather than universal.</p>
+<p>Evidence grade:</p>
+<ul>
+<li><strong>Strong</strong> that type constraints reduce invalid generation.</li>
+<li><strong>Moderate</strong> that stronger domain typing reduces total agent cost.</li>
+<li><strong>Weak</strong> for a universal optimum.</li>
+</ul>
+<hr>
+<h1 id="8-exhaustiveness-as-deterministic-memory">8. Exhaustiveness as deterministic memory</h1>
+<p>This is one of the strongest conceptual parts of the hypothesis.</p>
+<p>Suppose:</p>
+<p><code>PaymentState = Authorized | Captured | Refunded</code></p>
+<p>becomes:</p>
+<p><code>PaymentState = Authorized | Captured | Refunded | Disputed</code></p>
+<p>If every consequential interpretation must be exhaustive, the compiler can expose all incomplete interpretations.</p>
+<p>That changes the task.</p>
+<p>Without exhaustiveness:</p>
+<ul>
+<li>search for references,</li>
+<li>inspect likely handlers,</li>
+<li>infer which default branches are semantically meaningful,</li>
+<li>hope no interpretation is missed.</li>
+</ul>
+<p>With exhaustiveness:</p>
+<ul>
+<li>compiler enumerates structurally incomplete interpretations.</li>
+</ul>
+<p>This is not merely validation.</p>
+<p>It behaves like <strong>external deterministic memory</strong>.</p>
+<p>The compiler remembers every place whose closed-world assumption has been invalidated.</p>
+<p>The model still must decide what <code>Disputed</code> means in each location, but it does not need to remember or rediscover all locations.</p>
+<p>This supports two economic mechanisms:</p>
+<ol>
+<li>lower repository-search burden,</li>
+<li>lower omission-defect probability.</li>
+</ol>
+<h2 id="primary-failure-mode">Primary failure mode</h2>
+<p>Agents can defeat the mechanism with:</p>
+<ul>
+<li>wildcard branches,</li>
+<li>default cases,</li>
+<li>catch-all behavior.</li>
+</ul>
+<p>Therefore an AI-oriented architecture should consider:</p>
+<ul>
+<li>warnings-as-errors for non-exhaustive matches,</li>
+<li>restrictions on wildcard/default handling of consequential state,</li>
+<li>analyzer rules requiring explicit acknowledgement of newly introduced cases.</li>
+</ul>
+<p>Evidence grade:</p>
+<ul>
+<li><strong>Strong theoretical basis from compiler semantics.</strong></li>
+<li><strong>Moderate empirical support via constrained/type-guided generation.</strong></li>
+<li><strong>Missing direct agent-cost experiment.</strong></li>
+</ul>
+<hr>
+<h1 id="9-semantic-dependency-graphs-and-context-compression">9. Semantic dependency graphs and context compression</h1>
+<p>Repository exploration has now become a first-class research topic.</p>
+<p>Recent benchmarks such as SWE-Explore and ContextBench separate context retrieval/localization from final patch generation because:</p>
+<ul>
+<li>agents spend meaningful effort finding the relevant code,</li>
+<li>localization quality correlates with downstream repair success,</li>
+<li>line-level context efficiency remains difficult even when file-level localization is good.</li>
+</ul>
+<p>Other recent work explicitly notes that repository exploration consumes a substantial share of agent tool calls and tokens.</p>
+<p>This supports the proposed semantic-context hypothesis.</p>
+<p>A dependency graph that can answer:</p>
+<ul>
+<li>what interprets <code>Approved</code>,</li>
+<li>what derives <code>CanShip</code>,</li>
+<li>what policies consume <code>FundingState</code>,</li>
+<li>what obligations are created by <code>ConditionalApproval</code>,</li>
+</ul>
+<p>could replace open-ended textual search with bounded deterministic retrieval.</p>
+<p>But there is a major caveat.</p>
+<p>Traditional dependency graphs capture:</p>
+<ul>
+<li>imports,</li>
+<li>calls,</li>
+<li>inheritance,</li>
+<li>data flow,</li>
+<li>type references.</li>
+</ul>
+<p>They often do <strong>not</strong> capture business-semantic dependency.</p>
+<p>A semantic graph only has the hypothesized value if semantic relations are explicit enough to build it reliably.</p>
+<p>Therefore the graph is not free. The architecture must create semantic edges during design.</p>
+<p>Evidence grade:</p>
+<ul>
+<li><strong>Strong</strong> that context retrieval is a real agent problem.</li>
+<li><strong>Moderate</strong> that structural graphs help.</li>
+<li><strong>Plausible but not demonstrated</strong> that domain-semantic graphs produce the expected cost reduction.</li>
+</ul>
+<hr>
+<h1 id="10-runtime-guards-as-error-prevention">10. Runtime guards as error prevention</h1>
+<p>A runtime guard changes the required guarantee from:</p>
+<blockquote>
+<p>The model must never propose an illegal action.</p>
+</blockquote>
+<p>to:</p>
+<blockquote>
+<p>The model may propose an illegal action, but the system must never execute it.</p>
+</blockquote>
+<p>That is a major reliability improvement.</p>
+<p>It mirrors longstanding safety principles:</p>
+<ul>
+<li>reference monitors,</li>
+<li>capability security,</li>
+<li>safety kernels,</li>
+<li>least authority,</li>
+<li>defense in depth.</li>
+</ul>
+<p>The economic question is whether rejection creates costly retry loops.</p>
+<p>There are three cases.</p>
+<h2 id="case-a--rejection-is-rare">Case A — Rejection is rare</h2>
+<p>The guard is almost pure safety benefit.</p>
+<h2 id="case-b--rejection-is-common-but-diagnostic-is-precise">Case B — Rejection is common but diagnostic is precise</h2>
+<p>The model can repair cheaply.</p>
+<p>Example:</p>
+<p><code>SHIP_BLOCKED: PaymentCaptured missing. Legal producer: CapturePayment.</code></p>
+<p>This can be economically attractive because the runtime performs deterministic prerequisite discovery.</p>
+<h2 id="case-c--rejection-is-common-and-diagnostic-is-opaque">Case C — Rejection is common and diagnostic is opaque</h2>
+<p>The agent may repeatedly fail and consume tokens/tools.</p>
+<p>Example:</p>
+<p><code>403 invalid state</code></p>
+<p>This shifts rather than removes cost.</p>
+<p>Therefore guard quality and diagnostic quality must be evaluated together.</p>
+<p>Evidence grade: <strong>Strong for preventing execution of modeled illegal operations; uncertain for inference-cost reduction.</strong></p>
+<hr>
+<h1 id="11-capabilities-as-deterministic-legality">11. Capabilities as deterministic legality</h1>
+<p>Capabilities are one of the most promising agent-facing mechanisms.</p>
+<p>Instead of exposing every tool and requiring the model to infer legality, expose only actions legal in the current verified state.</p>
+<p>This converts:</p>
+<blockquote>
+<p>"Can I do X?"</p>
+</blockquote>
+<p>from a reasoning problem into an environment fact.</p>
+<p>The model is left with:</p>
+<blockquote>
+<p>"Among the legal actions, should I do X?"</p>
+</blockquote>
+<p>This can reduce:</p>
+<ul>
+<li>tool-selection branching factor,</li>
+<li>invalid actions,</li>
+<li>prompt rules,</li>
+<li>reasoning about permissions,</li>
+<li>possibly model capability requirements.</li>
+</ul>
+<p>It also creates a powerful security boundary if the capability is enforced rather than advisory.</p>
+<h2 id="important-distinction">Important distinction</h2>
+<p>Capabilities should be <strong>derived</strong>, not simply copied from model predictions.</p>
+<p>Otherwise the legality problem merely moves into another probabilistic component.</p>
+<p>Evidence grade: <strong>Strong theoretical and security-architecture support; direct LLM economic measurements are still sparse.</strong></p>
+<hr>
+<h1 id="12-obligations-as-deterministic-work-discovery">12. Obligations as deterministic work discovery</h1>
+<p>Obligations externalize a different kind of reasoning:</p>
+<p>"What remains to be done?"</p>
+<p>A general-purpose agent may repeatedly inspect state to infer unresolved work.</p>
+<p>An obligation system can expose:</p>
+<ul>
+<li>identifier,</li>
+<li>required resolution,</li>
+<li>evidence/status,</li>
+<li>satisfaction condition,</li>
+<li>dependency,</li>
+<li>deadline if applicable.</li>
+</ul>
+<p>This turns open-ended work discovery into bounded planning.</p>
+<p>The likely benefit is especially large for operational agents that run repeatedly over the same domain.</p>
+<p>Examples:</p>
+<ul>
+<li>reconcile refund,</li>
+<li>refresh expired evidence,</li>
+<li>resolve conditional approval,</li>
+<li>obtain required authorization,</li>
+<li>repair failed effect with unknown outcome.</li>
+</ul>
+<p>This resembles workflow engines, issue queues, and planning systems, but becomes more powerful when obligations are generated from domain state transitions.</p>
+<p>Evidence grade:</p>
+<ul>
+<li><strong>Strong analogy to workflow/planning systems.</strong></li>
+<li><strong>Weak direct LLM-agent empirical evidence.</strong></li>
+<li><strong>High-value experimental target.</strong></li>
+</ul>
+<hr>
+<h1 id="13-deterministic-prerequisite-discovery">13. Deterministic prerequisite discovery</h1>
+<p>This may be more important than it first appears.</p>
+<p>Many agent trajectories include reasoning of the form:</p>
+<ul>
+<li>"Why is action X unavailable?"</li>
+<li>"What has to happen first?"</li>
+<li>"Which operation creates that prerequisite?"</li>
+</ul>
+<p>If transitions and prerequisites form a graph, these become graph queries.</p>
+<p>Example:</p>
+<p><code>ShipOrder</code>
+blocked by
+<code>PaymentCaptured</code></p>
+<p>Legal producer:
+<code>CapturePayment</code></p>
+<p><code>CapturePayment</code>
+blocked by
+<code>AuthorizationValid</code></p>
+<p>The environment can perform backward chaining deterministically.</p>
+<p>The model then only decides:</p>
+<ul>
+<li>whether satisfying the prerequisite is appropriate,</li>
+<li>whether another legal route is preferable.</li>
+</ul>
+<p>This is analogous to:</p>
+<ul>
+<li>build systems,</li>
+<li>dependency solvers,</li>
+<li>workflow engines,</li>
+<li>backward-chaining rule systems,</li>
+<li>classical planning.</li>
+</ul>
+<p>The key requirement is that prerequisites be explicit and semantically trustworthy.</p>
+<p>Evidence grade: <strong>Strong computer-science basis; direct coding-agent substitution evidence remains limited.</strong></p>
+<hr>
+<h1 id="14-generated-tests-as-cheap-verification">14. Generated tests as cheap verification</h1>
+<p>Generated tests are valuable when they follow mechanically from the semantic model.</p>
+<p>Examples:</p>
+<ul>
+<li>every declared legal transition succeeds under its declared preconditions,</li>
+<li>every illegal transition is rejected,</li>
+<li>every state interpretation is exhaustive,</li>
+<li>capability exposure matches runtime legality,</li>
+<li>obligations have satisfaction paths,</li>
+<li>state-version mismatch is rejected,</li>
+<li>effect outcomes preserve unknown/failure/success distinctions.</li>
+</ul>
+<p>This reduces the need for the model to invent all validation cases.</p>
+<p>But generated tests have a classic oracle problem:</p>
+<blockquote>
+<p>If generated from the same incorrect specification, they can systematically reinforce the specification bug.</p>
+</blockquote>
+<p>Therefore generated tests should be divided into:</p>
+<h3 id="structural-tests">Structural tests</h3>
+<p>Derived from the semantic model.</p>
+<h3 id="independent-behavioral-tests">Independent behavioral tests</h3>
+<p>Derived from:</p>
+<ul>
+<li>product examples,</li>
+<li>historical incidents,</li>
+<li>external policies,</li>
+<li>independently authored acceptance criteria,</li>
+<li>property/metamorphic tests,</li>
+<li>differential implementations.</li>
+</ul>
+<p>Evidence grade: <strong>Strong for structural consistency; weak for proving product correctness.</strong></p>
+<hr>
+<h1 id="15-formal-methods-evidence">15. Formal methods evidence</h1>
+<p>Formal methods provide the clearest possible example of deterministic verification, but they also reveal the limits of substitution.</p>
+<p>Benchmarks such as CLEVER and VERINA show that current models still struggle with end-to-end verifiable code generation, particularly proof generation.</p>
+<p>For example, VERINA reports large gaps among:</p>
+<ul>
+<li>code generation,</li>
+<li>specification generation,</li>
+<li>proof generation.</li>
+</ul>
+<p>This matters because the formal checker can verify a proof perfectly, but the model still must construct:</p>
+<ul>
+<li>the right specification,</li>
+<li>the implementation,</li>
+<li>the proof.</li>
+</ul>
+<p>Formal verification therefore often <strong>raises the certainty of acceptance while raising the difficulty of producing an acceptable artifact</strong>.</p>
+<p>This is not a contradiction.</p>
+<p>It means formal methods are likely most economical where:</p>
+<ul>
+<li>the checked core is small,</li>
+<li>failures are expensive,</li>
+<li>invariants are stable,</li>
+<li>verification assets are reused many times.</li>
+</ul>
+<p>That strongly supports the "trusted semantic core" hypothesis.</p>
+<hr>
+<h1 id="16-trusted-deterministic-core-hypothesis">16. Trusted deterministic core hypothesis</h1>
+<p>A small deterministic semantic core surrounded by flexible ordinary code has strong precedent in systems design.</p>
+<p>Conceptual analogues include:</p>
+<ul>
+<li>microkernels,</li>
+<li>reference monitors,</li>
+<li>safety kernels,</li>
+<li>trusted computing bases.</li>
+</ul>
+<p>The architecture should minimize the amount of code that defines:</p>
+<ul>
+<li>authoritative state,</li>
+<li>legal transitions,</li>
+<li>capability derivation,</li>
+<li>policy application,</li>
+<li>evidence/version validity,</li>
+<li>effect identity and outcome,</li>
+<li>obligation creation/satisfaction.</li>
+</ul>
+<p>UI, formatting, adapters, orchestration, integration glue, reporting, and much application behavior can remain conventional.</p>
+<p>This matters economically.</p>
+<p>Verifying everything is expensive.</p>
+<p>Verifying the <strong>legality boundary</strong> may capture most of the safety value.</p>
+<p>Proposed principle:</p>
+<blockquote>
+<p><strong>Place consequential legality into the smallest deterministic layer that can enforce it. Keep creativity and adaptation outside that layer.</strong></p>
+</blockquote>
+<p>Evidence grade: <strong>Strong architectural precedent; direct AI-agent cost validation still needed.</strong></p>
+<hr>
+<h1 id="17-model-intelligence-vs-environment-information">17. Model intelligence vs environment information</h1>
+<p>A large model can appear more capable for at least two different reasons:</p>
+<ol>
+<li>it is better at genuine reasoning,</li>
+<li>it is better at reconstructing missing information from noisy context.</li>
+</ol>
+<p>These are economically different.</p>
+<p>If the second component is substantial, then explicit environment information can substitute for some model size.</p>
+<p>This gives a useful decomposition:</p>
+<h1 id="observed-task-performance"><code>Observed task performance</code></h1>
+<p><code>reasoning capability</code>
+×
+<code>relevant information availability</code>
+×
+<code>interface usability</code>
+×
+<code>verification feedback</code></p>
+<p>SWE-agent is relevant here because changing the agent-computer interface substantially improved performance without changing the basic idea of the underlying language model.</p>
+<p>That demonstrates that agent performance is not solely a function of model intelligence.</p>
+<p>The open research question is how much of current frontier-model advantage on software tasks is attributable to better hidden-semantic reconstruction.</p>
+<p>Evidence grade: <strong>Strong that interface/environment matters; weak on quantitative decomposition of model intelligence vs information.</strong></p>
+<hr>
+<h1 id="18-smaller-model-substitution">18. Smaller-model substitution</h1>
+<p>This is the most economically important hypothesis and one of the least directly established.</p>
+<p>The correct question is not:</p>
+<p>"Does a smaller model improve when given deterministic feedback?"</p>
+<p>That is already reasonably supported.</p>
+<p>The required question is:</p>
+<blockquote>
+<p>"What is the cheapest model that reaches a fixed semantic-correctness target under each environment?"</p>
+</blockquote>
+<p>Define:</p>
+<h2 id="model-capability-threshold-mct">Model Capability Threshold (MCT)</h2>
+<p>For environment <code>E</code> and target correctness <code>q</code>:</p>
+<p><code>MCT(E, q) = cheapest model tier reaching correctness q</code></p>
+<p>Then environment leverage exists when:</p>
+<p><code>MCT(strong environment, q) &#x3C; MCT(weak environment, q)</code></p>
+<p>A stronger result is:</p>
+<p><code>Cost(smaller model, strong environment, q)</code>
+&#x3C;
+<code>Cost(frontier model, weak environment, q)</code></p>
+<p>including amortized environment cost.</p>
+<p>No broad research result currently establishes this across realistic software tasks.</p>
+<p>Therefore:</p>
+<p><strong>Smaller-model substitution should be treated as a primary experimental hypothesis, not a proven architectural fact.</strong></p>
+<p>Evidence grade: <strong>Moderate plausibility; weak direct evidence.</strong></p>
+<hr>
+<h1 id="19-modelenvironment-crossover-analysis">19. Model/environment crossover analysis</h1>
+<p>The useful experimental matrix is:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="right">Weak env</th>
+<th align="right">Conventional typed</th>
+<th align="right">Compiler-guided</th>
+<th align="right">Semantic constrained</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Small model</td>
+<td align="right">A</td>
+<td align="right">B</td>
+<td align="right">C</td>
+<td align="right">D</td>
+</tr>
+<tr>
+<td>Medium model</td>
+<td align="right">E</td>
+<td align="right">F</td>
+<td align="right">G</td>
+<td align="right">H</td>
+</tr>
+<tr>
+<td>Frontier model</td>
+<td align="right">I</td>
+<td align="right">J</td>
+<td align="right">K</td>
+<td align="right">L</td>
+</tr>
+</tbody>
+</table>
+<p>The economically important comparisons are not merely adjacent cells.</p>
+<p>They are:</p>
+<ul>
+<li>D vs I</li>
+<li>H vs I</li>
+<li>G vs I</li>
+<li>H vs K</li>
+<li>D vs G</li>
+</ul>
+<h2 id="expected-crossover-by-task-type">Expected crossover by task type</h2>
+<h3 id="likely-early-crossover">Likely early crossover</h3>
+<ul>
+<li>adding a known state,</li>
+<li>implementing a known transition,</li>
+<li>migration completeness,</li>
+<li>permission/capability enforcement,</li>
+<li>prerequisite resolution,</li>
+<li>repetitive operational tasks,</li>
+<li>boilerplate constrained by strong types.</li>
+</ul>
+<h3 id="possible-crossover">Possible crossover</h3>
+<ul>
+<li>bug repair with good diagnostics,</li>
+<li>cross-module policy changes,</li>
+<li>refactoring with strong structural dependencies.</li>
+</ul>
+<h3 id="unlikely-crossover">Unlikely crossover</h3>
+<ul>
+<li>ambiguous product requirement,</li>
+<li>architecture selection,</li>
+<li>novel algorithm,</li>
+<li>root-cause debugging with poor observability,</li>
+<li>deciding the semantic model itself is wrong.</li>
+</ul>
+<p>Therefore there will probably not be one global crossover point.</p>
+<p>There will be a <strong>task-class-specific crossover surface</strong>.</p>
+<hr>
+<h1 id="20-task-class-differences">20. Task-class differences</h1>
+<h2 id="a-local-implementation">A. Local implementation</h2>
+<p>Environment benefit: moderate.</p>
+<p>Compiler/type feedback helps, but model knowledge of local APIs still matters.</p>
+<h2 id="b-state-addition">B. State addition</h2>
+<p>Environment benefit: very high if state family is closed and interpretations exhaustive.</p>
+<h2 id="c-state-split">C. State split</h2>
+<p>Environment benefit: very high.</p>
+<p>A split creates redistribution obligations across previous interpretations. Exhaustiveness and semantic dependency mapping can expose incomplete migration.</p>
+<h2 id="d-policy-change">D. Policy change</h2>
+<p>Environment benefit: high when policy is explicit and centrally modeled.</p>
+<p>Low when policy is implicit in distributed procedural code.</p>
+<h2 id="e-external-effect-change">E. External effect change</h2>
+<p>Environment benefit: high if effect identity, retry semantics, and unknown outcomes are modeled.</p>
+<h2 id="f-cross-module-change">F. Cross-module change</h2>
+<p>Environment benefit: potentially high if semantic dependencies exist.</p>
+<p>Otherwise repository comprehension still dominates.</p>
+<h2 id="g-bug-fix">G. Bug fix</h2>
+<p>Variable.</p>
+<p>Known invariant violations benefit strongly. Unknown root cause remains reasoning-heavy.</p>
+<h2 id="h-refactor">H. Refactor</h2>
+<p>Moderate to high for structural safety; lower for architecture quality.</p>
+<h2 id="i-product-pivot">I. Product pivot</h2>
+<p>Environment benefit depends on modularity and separation between semantic core and implementation shell.</p>
+<p>Over-modeling can actually make pivots harder if semantic abstractions were prematurely specialized.</p>
+<h2 id="j-operational-agent-task">J. Operational agent task</h2>
+<p>Potentially extremely high.</p>
+<p>Capabilities + obligations + prerequisites can convert open-ended autonomous exploration into bounded legal action selection.</p>
+<hr>
+<h1 id="21-repair-loop-economics">21. Repair-loop economics</h1>
+<p>A strong environment may increase the number of immediate failures.</p>
+<p>This can superficially look worse.</p>
+<p>But immediate deterministic failures are often cheap:</p>
+<ul>
+<li>compiler rejection,</li>
+<li>analyzer warning,</li>
+<li>denied transition,</li>
+<li>failed proof obligation.</li>
+</ul>
+<p>Delayed failures may be expensive:</p>
+<ul>
+<li>production incident,</li>
+<li>incorrect payment,</li>
+<li>irreversible side effect,</li>
+<li>regulatory defect,</li>
+<li>semantic data corruption.</li>
+</ul>
+<p>Therefore count:</p>
+<p><code>repair loops</code></p>
+<p>but optimize:</p>
+<p><code>cost per semantically correct completion</code></p>
+<p>and:</p>
+<p><code>expected downstream defect cost</code>.</p>
+<p>A useful decomposition is:</p>
+<h1 id="totaltaskcost"><code>TotalTaskCost</code></h1>
+<p><code>ModelInference</code>
++
+<code>ToolExecution</code>
++
+<code>RepairLoops</code>
++
+<code>HumanReview</code>
++
+<code>ExpectedEscapedDefectCost</code>
++
+<code>AmortizedEnvironmentCost</code></p>
+<p>A stronger environment is economically justified when the reduction in:</p>
+<ul>
+<li>model cost,</li>
+<li>review cost,</li>
+<li>escaped defect cost,</li>
+</ul>
+<p>exceeds:</p>
+<ul>
+<li>additional compile/test/proof cycles,</li>
+<li>environment construction/maintenance.</li>
+</ul>
+<hr>
+<h1 id="22-diagnostic-quality-is-a-first-class-variable">22. Diagnostic quality is a first-class variable</h1>
+<p>The prompt correctly identifies error-message quality as crucial.</p>
+<p>Compare:</p>
+<p><code>Error: invalid operation</code></p>
+<p>with:</p>
+<p><code>SC300 MigrationIncomplete</code>
+<code>PaymentState.Disputed is unhandled by RefundEligibility</code>
+<code>Required interpretations: RefundEligibility, CanShip, ChargebackPolicy</code></p>
+<p>Both are deterministic failures.</p>
+<p>Only the second compresses useful context.</p>
+<p>Therefore environment strength should explicitly include <strong>agent-oriented diagnostic structure</strong>.</p>
+<p>Ideal diagnostic fields:</p>
+<ul>
+<li>stable diagnostic code,</li>
+<li>violated invariant,</li>
+<li>semantic entity IDs,</li>
+<li>current state,</li>
+<li>attempted transition,</li>
+<li>missing prerequisite,</li>
+<li>legal producers,</li>
+<li>impacted dependencies,</li>
+<li>policy/evidence/version references,</li>
+<li>suggested evidence to inspect,</li>
+<li>machine-readable payload.</li>
+</ul>
+<p>This can reduce the amount of free-form compiler-output interpretation required from the model.</p>
+<hr>
+<h1 id="23-diagnostic-compression">23. Diagnostic compression</h1>
+<p>This is a particularly strong theoretical mechanism.</p>
+<p>A deterministic analyzer may internally process:</p>
+<ul>
+<li>thousands of symbols,</li>
+<li>dependency edges,</li>
+<li>control-flow nodes,</li>
+<li>policy relationships.</li>
+</ul>
+<p>It can return one relevant failure.</p>
+<p>The model receives the <strong>result of computation</strong>, not the raw input required to reproduce the computation.</p>
+<p>This is exactly a form of information compression.</p>
+<p>The same pattern already exists throughout computing:</p>
+<ul>
+<li>query planners,</li>
+<li>compilers,</li>
+<li>linters,</li>
+<li>SAT/SMT solvers,</li>
+<li>database indexes,</li>
+<li>build systems.</li>
+</ul>
+<p>AI agents make the economic impact newly visible because raw context has a metered inference cost.</p>
+<p>This leads to a broader principle:</p>
+<blockquote>
+<p><strong>Whenever software can compute a reliable intermediate fact more cheaply than the model can infer it, compute the fact first and give the model the result.</strong></p>
+</blockquote>
+<hr>
+<h1 id="24-human-review-implications">24. Human-review implications</h1>
+<p>Deterministic guarantees should not eliminate human review uniformly.</p>
+<p>They should change what humans review.</p>
+<p>Without strong environment:</p>
+<p>Human checks:</p>
+<ul>
+<li>did we miss a case?</li>
+<li>is action legal?</li>
+<li>does this compile?</li>
+<li>did the agent update every consumer?</li>
+<li>is the version stale?</li>
+<li>is retry safe?</li>
+</ul>
+<p>With strong environment:</p>
+<p>Machine checks:</p>
+<ul>
+<li>structural completeness,</li>
+<li>encoded legality,</li>
+<li>encoded version constraints,</li>
+<li>encoded invariants.</li>
+</ul>
+<p>Human reviews:</p>
+<ul>
+<li>is the requirement correct?</li>
+<li>is the semantic model correct?</li>
+<li>is the chosen behavior appropriate?</li>
+<li>are tradeoffs acceptable?</li>
+<li>does this solve the user's real problem?</li>
+</ul>
+<p>This is a high-value shift.</p>
+<p>Human attention moves from <strong>completeness policing</strong> to <strong>judgment</strong>.</p>
+<hr>
+<h1 id="25-semantic-defect-survival-matrix">25. Semantic defect survival matrix</h1>
+<table>
+<thead>
+<tr>
+<th>Defect</th>
+<th>Weak environment</th>
+<th>Typed environment</th>
+<th>State-constrained runtime</th>
+<th>Formally checked semantic core</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax error</td>
+<td>Usually caught</td>
+<td>Caught</td>
+<td>Caught</td>
+<td>Caught</td>
+</tr>
+<tr>
+<td>Type mismatch</td>
+<td>Runtime/late</td>
+<td>Usually caught</td>
+<td>Caught</td>
+<td>Caught</td>
+</tr>
+<tr>
+<td>Missing state case</td>
+<td>May survive</td>
+<td>Depends on exhaustiveness</td>
+<td>Usually caught if modeled</td>
+<td>Caught if specified</td>
+</tr>
+<tr>
+<td>Illegal transition</td>
+<td>May survive</td>
+<td>Often survives</td>
+<td>Rejected</td>
+<td>Rejected/proven</td>
+</tr>
+<tr>
+<td>Unauthorized action</td>
+<td>May survive</td>
+<td>Often survives</td>
+<td>Rejected if capability enforced</td>
+<td>Rejected if specified</td>
+</tr>
+<tr>
+<td>Stale state version</td>
+<td>May survive</td>
+<td>Usually survives</td>
+<td>Rejected if version-bound</td>
+<td>Rejected if specified</td>
+</tr>
+<tr>
+<td>Duplicate external effect</td>
+<td>May survive</td>
+<td>Usually survives</td>
+<td>Preventable if effect identity modeled</td>
+<td>Preventable/provable in bounded model</td>
+</tr>
+<tr>
+<td>Unknown-vs-failed effect conflation</td>
+<td>Common</td>
+<td>Common</td>
+<td>Preventable if explicit outcome type</td>
+<td>Preventable if specified</td>
+</tr>
+<tr>
+<td>Wrong business rule</td>
+<td>Survives</td>
+<td>Survives</td>
+<td>Survives if rule encoded incorrectly</td>
+<td>Can be perfectly reinforced</td>
+</tr>
+<tr>
+<td>Wrong requirement</td>
+<td>Survives</td>
+<td>Survives</td>
+<td>Survives</td>
+<td>Survives</td>
+</tr>
+<tr>
+<td>Poor architecture</td>
+<td>Survives</td>
+<td>Survives</td>
+<td>Survives</td>
+<td>Usually survives</td>
+</tr>
+<tr>
+<td>Bad optimization choice</td>
+<td>Survives</td>
+<td>Survives</td>
+<td>Survives</td>
+<td>Usually survives</td>
+</tr>
+</tbody>
+</table>
+<p>The strongest environment changes the distribution of surviving defects.</p>
+<p>It does not produce general correctness.</p>
+<hr>
+<h1 id="26-single-source-of-semantic-truth-risk">26. Single-source-of-semantic-truth risk</h1>
+<p>This is the most serious architectural counterargument.</p>
+<p>If:</p>
+<ul>
+<li>runtime guards,</li>
+<li>capabilities,</li>
+<li>generated tests,</li>
+<li>dependency graphs,</li>
+<li>planning,</li>
+<li>agent context,</li>
+</ul>
+<p>all derive from one semantic specification, then a wrong specification can create <strong>correlated failure</strong>.</p>
+<p>Everything agrees because everything is wrong in the same way.</p>
+<p>Mitigation should therefore be structural.</p>
+<h2 id="independent-evidence-channels">Independent evidence channels</h2>
+<p>Do not derive every validator from the same source.</p>
+<p>Use:</p>
+<ul>
+<li>externally authored acceptance examples,</li>
+<li>historical production incidents,</li>
+<li>differential tests,</li>
+<li>independently authored policies,</li>
+<li>invariants derived from accounting/security principles,</li>
+<li>specification mutation testing,</li>
+<li>model checking for internal consistency,</li>
+<li>provenance for rule origin.</li>
+</ul>
+<h2 id="specification-mutation-testing">Specification mutation testing</h2>
+<p>Intentionally mutate:</p>
+<ul>
+<li>guard conditions,</li>
+<li>transition destinations,</li>
+<li>authority requirements,</li>
+<li>evidence freshness,</li>
+<li>state interpretations.</li>
+</ul>
+<p>Then verify that independent tests detect the mutation.</p>
+<p>This tests whether the semantic specification is actually constrained by external truth.</p>
+<hr>
+<h1 id="27-false-confidence-risk">27. False-confidence risk</h1>
+<p>A deterministic environment can create dangerous confidence.</p>
+<p>Three layers must remain distinct.</p>
+<h2 id="structural-correctness">Structural correctness</h2>
+<p>The artifact satisfies language/system constraints.</p>
+<p>Example:</p>
+<ul>
+<li>type-checks,</li>
+<li>exhaustive,</li>
+<li>authorized.</li>
+</ul>
+<h2 id="semantic-correctness">Semantic correctness</h2>
+<p>The implementation matches the encoded business semantics.</p>
+<h2 id="product-correctness">Product correctness</h2>
+<p>The encoded semantics actually represent what users, regulators, operators, or the business need.</p>
+<p>Compilation proves structural properties.</p>
+<p>Formal verification proves conformance to a formal specification.</p>
+<p>Neither proves that the specification is the right product.</p>
+<p>This distinction should be explicit in tooling and reporting.</p>
+<hr>
+<h1 id="28-counterarguments-evaluated">28. Counterarguments evaluated</h1>
+<h2 id="1-frontier-models-reason-well-enough-that-constraints-have-little-economic-value">1. Frontier models reason well enough that constraints have little economic value.</h2>
+<p><strong>Partly false.</strong></p>
+<p>Even very capable models still benefit from tools, interfaces, tests, compilers, and structured feedback. However, the incremental value of additional constraints may shrink as models improve.</p>
+<p>Verdict: <strong>Constraints retain value, but ROI is task-dependent.</strong></p>
+<h2 id="2-strong-environments-create-too-many-repair-loops">2. Strong environments create too many repair loops.</h2>
+<p><strong>Plausible but incomplete.</strong></p>
+<p>More immediate failures may be economically desirable if they prevent expensive escaped defects. Measure total cost, not first-pass success.</p>
+<p>Verdict: <strong>Must be measured.</strong></p>
+<h2 id="3-semantic-compiler-construction-cost-dominates-savings">3. Semantic compiler construction cost dominates savings.</h2>
+<p><strong>Credible risk.</strong></p>
+<p>This is likely true for:</p>
+<ul>
+<li>small codebases,</li>
+<li>short-lived systems,</li>
+<li>low task volume,</li>
+<li>low-consequence domains,</li>
+<li>rapidly changing semantics.</li>
+</ul>
+<p>Verdict: <strong>Major break-even variable.</strong></p>
+<h2 id="4-models-struggle-with-advanced-type-systems">4. Models struggle with advanced type systems.</h2>
+<p><strong>Supported concern.</strong></p>
+<p>Formal-verification benchmarks show proof generation remains difficult. Advanced types can increase repair burden.</p>
+<p>Verdict: <strong>Use targeted strength, not maximal strength.</strong></p>
+<h2 id="5-environment-feedback-increases-context-instead-of-reducing-it">5. Environment feedback increases context instead of reducing it.</h2>
+<p><strong>Possible.</strong></p>
+<p>Verbose diagnostics and repeated loops can exceed the context they replace.</p>
+<p>Verdict: <strong>Diagnostics must be compressed and structured.</strong></p>
+<h2 id="6-testscompiler-errors-encourage-symptom-patching">6. Tests/compiler errors encourage symptom patching.</h2>
+<p><strong>Real.</strong></p>
+<p>Agents can overfit to visible tests or silence errors with defaults/casts/wildcards.</p>
+<p>Verdict: <strong>Require anti-evasion analyzers and semantic review.</strong></p>
+<h2 id="7-wrong-specifications-create-correlated-failures">7. Wrong specifications create correlated failures.</h2>
+<p><strong>Strong counterargument.</strong></p>
+<p>Verdict: <strong>Requires independent validation.</strong></p>
+<h2 id="8-strong-constraints-reduce-useful-exploration">8. Strong constraints reduce useful exploration.</h2>
+<p><strong>True if applied too early.</strong></p>
+<p>Verdict: <strong>Exploration permissive; commitment constrained.</strong></p>
+<h2 id="9-smaller-models-still-cannot-understand-ambiguous-requirements">9. Smaller models still cannot understand ambiguous requirements.</h2>
+<p><strong>Likely true.</strong></p>
+<p>Verdict: <strong>Determinism cannot manufacture missing intent.</strong></p>
+<h2 id="10-context-retrieval-dominates-cost-not-semantic-reasoning">10. Context retrieval dominates cost, not semantic reasoning.</h2>
+<p><strong>Could be true for some repository tasks.</strong></p>
+<p>But semantic context generation may itself reduce retrieval burden.</p>
+<p>Verdict: <strong>Measure separately.</strong></p>
+<h2 id="11-tool-latency-dominates-token-cost">11. Tool latency dominates token cost.</h2>
+<p><strong>Possible in compile/test-heavy environments.</strong></p>
+<p>Verdict: <strong>Use wall-clock and total dollar cost, not tokens alone.</strong></p>
+<h2 id="12-prompt-caching-reduces-input-token-savings">12. Prompt caching reduces input-token savings.</h2>
+<p><strong>True but incomplete.</strong></p>
+<p>Caching lowers the value of reducing repeated static context but does not eliminate:</p>
+<ul>
+<li>retrieval calls,</li>
+<li>latency,</li>
+<li>uncached dynamic context,</li>
+<li>reasoning burden,</li>
+<li>correctness benefits.</li>
+</ul>
+<p>Verdict: <strong>Include cache-adjusted economics.</strong></p>
+<h2 id="13-simple-analyzerstests-capture-most-benefit">13. Simple analyzers/tests capture most benefit.</h2>
+<p><strong>Very plausible.</strong></p>
+<p>This may be the biggest threat to a full semantic-compiler strategy.</p>
+<p>Verdict: <strong>Ablation is essential.</strong></p>
+<h2 id="14-human-review-remains-necessary">14. Human review remains necessary.</h2>
+<p><strong>True.</strong></p>
+<p>But the review can shift from completeness to judgment.</p>
+<p>Verdict: <strong>Reduction, not elimination.</strong></p>
+<h2 id="15-benefits-apply-mainly-to-high-consequence-systems">15. Benefits apply mainly to high-consequence systems.</h2>
+<p><strong>Partly true.</strong></p>
+<p>Correctness ROI is highest there, but inference/context savings may matter at enormous agent volume even in lower-consequence domains.</p>
+<p>Verdict: <strong>Two separate markets: consequence and volume.</strong></p>
+<hr>
+<h1 id="29-recommended-experiment-design">29. Recommended experiment design</h1>
+<p>The next research step should be a controlled benchmark specifically designed to test the missing strong claim.</p>
+<h2 id="291-repositories">29.1 Repositories</h2>
+<p>Build the same domain in four environment variants:</p>
+<h3 id="e0--permissive">E0 — permissive</h3>
+<ul>
+<li>mutable data,</li>
+<li>implicit transitions,</li>
+<li>broad tools,</li>
+<li>conventional tests.</li>
+</ul>
+<h3 id="e1--typed">E1 — typed</h3>
+<ul>
+<li>normal static types,</li>
+<li>compiler,</li>
+<li>unit/integration tests.</li>
+</ul>
+<h3 id="e2--semantic-constrained">E2 — semantic constrained</h3>
+<ul>
+<li>closed states,</li>
+<li>exhaustive handling,</li>
+<li>immutable authoritative state,</li>
+<li>explicit transitions,</li>
+<li>runtime guards,</li>
+<li>capabilities,</li>
+<li>obligations.</li>
+</ul>
+<h3 id="e3--semantic-compiler">E3 — semantic compiler</h3>
+<p>Adds:</p>
+<ul>
+<li>semantic dependency graph,</li>
+<li>generated impact reports,</li>
+<li>structured diagnostics,</li>
+<li>generated semantic tests,</li>
+<li>minimum-context generator.</li>
+</ul>
+<p>Keep application behavior equivalent.</p>
+<h2 id="292-model-tiers">29.2 Model tiers</h2>
+<p>At least:</p>
+<ul>
+<li>small open model,</li>
+<li>medium code model,</li>
+<li>frontier model.</li>
+</ul>
+<p>Prefer multiple families to avoid vendor-specific conclusions.</p>
+<h2 id="293-task-suite">29.3 Task suite</h2>
+<p>For every environment:</p>
+<ol>
+<li>local implementation,</li>
+<li>state addition,</li>
+<li>state split,</li>
+<li>policy change,</li>
+<li>cross-module change,</li>
+<li>illegal transition bug,</li>
+<li>stale version bug,</li>
+<li>duplicate effect bug,</li>
+<li>refactor,</li>
+<li>ambiguous requirement,</li>
+<li>specification bug,</li>
+<li>operational action-selection task.</li>
+</ol>
+<h2 id="294-repetitions">29.4 Repetitions</h2>
+<p>Use multiple independent runs per task/model/environment because agent trajectories are stochastic.</p>
+<p>Report confidence intervals.</p>
+<hr>
+<h1 id="30-required-metrics">30. Required metrics</h1>
+<p>Record raw:</p>
+<ul>
+<li>input tokens,</li>
+<li>output tokens,</li>
+<li>cached input tokens,</li>
+<li>reasoning tokens where available,</li>
+<li>model calls,</li>
+<li>search calls,</li>
+<li>file reads,</li>
+<li>unique files read,</li>
+<li>shell commands,</li>
+<li>compiler invocations,</li>
+<li>test invocations,</li>
+<li>analyzer invocations,</li>
+<li>failed actions,</li>
+<li>rejected illegal actions,</li>
+<li>repair cycles,</li>
+<li>wall-clock time,</li>
+<li>human interventions,</li>
+<li>patch size,</li>
+<li>semantic defects,</li>
+<li>escaped defects.</li>
+</ul>
+<p>Derived:</p>
+<h2 id="correct-completion-rate">Correct Completion Rate</h2>
+<p><code>CCR = semantically correct completions / attempts</code></p>
+<h2 id="effective-cost-per-correct-completion">Effective Cost per Correct Completion</h2>
+<p><code>ECC = total observed execution cost / expected correct completions</code></p>
+<p>For repeated trials:</p>
+<p><code>ECC = mean task cost / CCR</code></p>
+<p>This is more useful than cheapest single run.</p>
+<h2 id="context-acquisition-cost">Context Acquisition Cost</h2>
+<p>Tokens + tools consumed before first relevant edit/action.</p>
+<h2 id="deterministic-rejection-efficiency">Deterministic Rejection Efficiency</h2>
+<p><code>useful prevented defects / deterministic rejection cost</code></p>
+<h2 id="model-substitution-ratio">Model Substitution Ratio</h2>
+<p>Compare the cheapest model meeting a target correctness under each environment.</p>
+<h2 id="environment-leverage-ratio">Environment Leverage Ratio</h2>
+<p>A possible form:</p>
+<p><code>ELR = recurring savings per task / amortized environment cost per task</code></p>
+<p>Break-even occurs when <code>ELR > 1</code>.</p>
+<hr>
+<h1 id="31-ablation-plan">31. Ablation plan</h1>
+<p>Do not compare only "everything" vs "nothing."</p>
+<p>Remove one feature at a time.</p>
+<ol>
+<li>exhaustiveness,</li>
+<li>capability filtering,</li>
+<li>obligations,</li>
+<li>runtime legality checks,</li>
+<li>version-bound authority,</li>
+<li>semantic dependency graph,</li>
+<li>structured diagnostics,</li>
+<li>generated tests,</li>
+<li>prerequisite discovery,</li>
+<li>effect outcome modeling.</li>
+</ol>
+<p>Measure:</p>
+<ul>
+<li>correctness loss,</li>
+<li>cost change,</li>
+<li>context increase,</li>
+<li>repair-loop change.</li>
+</ul>
+<p>This answers a strategically critical question:</p>
+<blockquote>
+<p>Is a full semantic compiler needed, or do two or three cheap mechanisms capture most of the value?</p>
+</blockquote>
+<p>My prior expectation is that the highest early ROI will come from:</p>
+<ol>
+<li>closed/exhaustive consequential states,</li>
+<li>capability/runtime legality,</li>
+<li>structured diagnostics,</li>
+<li>semantic dependency/context generation.</li>
+</ol>
+<p>Obligations and formal verification may be more domain-specific.</p>
+<p>That expectation must be tested.</p>
+<hr>
+<h1 id="32-error-injection-experiment">32. Error-injection experiment</h1>
+<p>Inject known defects into equivalent repositories.</p>
+<p>Examples:</p>
+<ul>
+<li>remove one state branch,</li>
+<li>create illegal transition,</li>
+<li>skip authority check,</li>
+<li>use stale state version,</li>
+<li>retry external effect after unknown outcome,</li>
+<li>omit obligation satisfaction,</li>
+<li>split a state without updating one dependent interpretation,</li>
+<li>make capability exposure inconsistent with runtime guard.</li>
+</ul>
+<p>Measure:</p>
+<ul>
+<li>detection rate,</li>
+<li>time to detection,</li>
+<li>tokens before detection,</li>
+<li>tool calls,</li>
+<li>whether defect reaches final output,</li>
+<li>whether agent fixes root cause or bypasses the checker.</li>
+</ul>
+<p>This experiment isolates deterministic defect detection from open-ended coding capability.</p>
+<hr>
+<h1 id="33-ambiguous-requirement-experiment">33. Ambiguous-requirement experiment</h1>
+<p>Give:</p>
+<blockquote>
+<p>"Allow approved orders to ship faster."</p>
+</blockquote>
+<p>Intentionally omit:</p>
+<ul>
+<li>what "approved" means,</li>
+<li>whether payment must be captured,</li>
+<li>whether fraud review may be pending,</li>
+<li>what "faster" changes.</li>
+</ul>
+<p>A strong semantic environment should ideally cause missing assumptions to become visible.</p>
+<p>Success is <strong>not</strong> blindly implementing a legal interpretation.</p>
+<p>Success is:</p>
+<ul>
+<li>recognizing underspecification,</li>
+<li>identifying exactly which semantic decisions are missing,</li>
+<li>requesting/flagging the needed decisions.</li>
+</ul>
+<p>This tests whether constraints can improve epistemic behavior rather than merely reject code.</p>
+<hr>
+<h1 id="34-specification-bug-experiment">34. Specification-bug experiment</h1>
+<p>Encode a deliberately wrong rule:</p>
+<p><code>Disputed payments may ship.</code></p>
+<p>Generate:</p>
+<ul>
+<li>capabilities,</li>
+<li>tests,</li>
+<li>transition validation</li>
+</ul>
+<p>from that rule.</p>
+<p>Then test whether independent evidence catches it.</p>
+<p>This is crucial because it measures correlated failure risk.</p>
+<p>Possible independent checks:</p>
+<ul>
+<li>acceptance example says disputed orders cannot ship,</li>
+<li>policy document contradicts rule,</li>
+<li>historical incident test,</li>
+<li>independently authored invariant,</li>
+<li>second-model adversarial review.</li>
+</ul>
+<p>The architecture is only trustworthy if it has a way to challenge its own semantic source.</p>
+<hr>
+<h1 id="35-economic-model">35. Economic model</h1>
+<p>For environment <code>E</code>, model <code>M</code>, task volume <code>N</code>:</p>
+<p><code>TotalCost(E, M, N) =</code>
+<code>Construction(E)</code>
+<code>+ Maintenance(E, N)</code>
+<code>+ N * AgentExecution(E, M)</code>
+<code>+ N * HumanReview(E, M)</code>
+<code>+ N * ExpectedEscapedDefectCost(E, M)</code></p>
+<p>A strong environment wins when:</p>
+<p><code>TotalCost(strong, smaller, N)</code>
+&#x3C;
+<code>TotalCost(weak, frontier, N)</code></p>
+<p>The break-even task count is approximately:</p>
+<p><code>N* = (ConstructionStrong - ConstructionWeak)</code>
+<code>     /</code>
+<code>[(PerTaskWeak - PerTaskStrong)]</code></p>
+<p>where per-task cost must include:</p>
+<ul>
+<li>inference,</li>
+<li>tools,</li>
+<li>review,</li>
+<li>expected defects.</li>
+</ul>
+<p>This is why token savings alone are inadequate.</p>
+<p>A high-consequence defect can dominate thousands of inference calls.</p>
+<hr>
+<h1 id="36-break-even-analysis">36. Break-even analysis</h1>
+<p>There is no credible universal break-even number yet.</p>
+<p>But break-even should occur earlier when:</p>
+<ul>
+<li>agent task volume is high,</li>
+<li>system lifespan is long,</li>
+<li>domain rules are stable enough to encode,</li>
+<li>defects are expensive,</li>
+<li>the same semantic constraints recur across many tasks,</li>
+<li>human review is expensive,</li>
+<li>repository/context acquisition is large,</li>
+<li>illegal actions have high consequence.</li>
+</ul>
+<p>Break-even should occur later or never when:</p>
+<ul>
+<li>prototype is short-lived,</li>
+<li>product semantics change daily,</li>
+<li>tasks are mostly creative/exploratory,</li>
+<li>agents are rarely used,</li>
+<li>defects are cheap,</li>
+<li>deterministic model requires extensive bespoke maintenance.</li>
+</ul>
+<p>This suggests a startup wedge:</p>
+<p><strong>Do not sell "formalize everything."</strong></p>
+<p>Sell:</p>
+<blockquote>
+<p><strong>Encode the small set of semantic constraints repeatedly costing the organization agent tokens, review time, and production defects.</strong></p>
+</blockquote>
+<hr>
+<h1 id="37-marginal-cost-curve">37. Marginal-cost curve</h1>
+<p>The architecture is economically interesting because deterministic knowledge is reusable.</p>
+<p>A rule encoded once can potentially constrain:</p>
+<ul>
+<li>every agent,</li>
+<li>every model tier,</li>
+<li>every execution,</li>
+<li>every migration,</li>
+<li>every future state change.</li>
+</ul>
+<p>Model reasoning is generally paid again per execution.</p>
+<p>Therefore the theoretical cost curves are:</p>
+<h3 id="weak-environment">Weak environment</h3>
+<p>Low fixed cost.
+Higher variable reasoning/review/defect cost.</p>
+<h3 id="strong-environment">Strong environment</h3>
+<p>Higher fixed cost.
+Potentially lower variable cost.</p>
+<p>The architecture becomes compelling at sufficient task volume.</p>
+<p>However, rule maintenance creates a variable component too.</p>
+<p>So the real curve is not flat after construction.</p>
+<p>A better model is:</p>
+<p><code>StrongCost(N) = F + N*V + ChangeRate*SemanticMaintenance</code></p>
+<p>The key empirical question becomes:</p>
+<blockquote>
+<p>Does reusable semantic structure accumulate faster than semantic maintenance debt?</p>
+</blockquote>
+<hr>
+<h1 id="38-longitudinal-hypothesis">38. Longitudinal hypothesis</h1>
+<p>Two competing effects should be tested.</p>
+<h2 id="compounding-benefit">Compounding benefit</h2>
+<p>Over time:</p>
+<ul>
+<li>more state semantics explicit,</li>
+<li>more dependencies known,</li>
+<li>diagnostics improve,</li>
+<li>generated tests accumulate,</li>
+<li>agent context remains bounded,</li>
+<li>constraints are reused.</li>
+</ul>
+<h2 id="semantic-accretion-failure">Semantic accretion failure</h2>
+<p>Over time:</p>
+<ul>
+<li>state models become huge,</li>
+<li>policy rules interact,</li>
+<li>dependency graph becomes noisy,</li>
+<li>transitions proliferate,</li>
+<li>abstractions ossify,</li>
+<li>product pivot becomes expensive.</li>
+</ul>
+<p>Therefore complexity metrics should be longitudinal.</p>
+<p>Track:</p>
+<ul>
+<li>state count,</li>
+<li>transition count,</li>
+<li>average fan-out,</li>
+<li>policy count,</li>
+<li>obligation count,</li>
+<li>graph density,</li>
+<li>diagnostic volume,</li>
+<li>semantic model change frequency,</li>
+<li>time to modify semantic core.</li>
+</ul>
+<p>A strong architecture is not successful if it saves agent tokens by making human semantic evolution intolerable.</p>
+<hr>
+<h1 id="39-exploration-vs-commitment">39. Exploration vs commitment</h1>
+<p>This principle is strongly supported conceptually:</p>
+<blockquote>
+<p><strong>Exploration should be permissive. Commitment should be constrained.</strong></p>
+</blockquote>
+<p>The model should be free to:</p>
+<ul>
+<li>brainstorm,</li>
+<li>hypothesize,</li>
+<li>draft,</li>
+<li>simulate,</li>
+<li>search,</li>
+<li>propose alternative plans.</li>
+</ul>
+<p>The model should not be free to:</p>
+<ul>
+<li>mutate authoritative state arbitrarily,</li>
+<li>spend money without capability,</li>
+<li>approve deployment without required evidence,</li>
+<li>declare a claim verified without provenance,</li>
+<li>retry an unknown external effect blindly,</li>
+<li>bypass policy.</li>
+</ul>
+<p>This preserves the main advantage of probabilistic models—creative search—while constraining consequential actions.</p>
+<p>It also avoids a common mistake:</p>
+<p>trying to encode every thought into the semantic system.</p>
+<p>The semantic layer should govern <strong>commitment</strong>, not cognition.</p>
+<hr>
+<h1 id="40-what-is-empirically-supported">40. What is empirically supported</h1>
+<h2 id="strongly-supported">Strongly supported</h2>
+<ul>
+<li>Agent performance depends materially on environment/interface design, not only model capability.</li>
+<li>Compiler, execution, and test feedback improve many code-generation/repair tasks.</li>
+<li>Type-aware generation can substantially reduce compilation failures and improve functional correctness.</li>
+<li>Deterministic verification can guarantee conformance to encoded properties.</li>
+<li>Repository exploration/context acquisition is a distinct and important agent capability/cost.</li>
+<li>Iterative feedback helps more with syntactic/runtime errors than with deep logical/algorithmic failures.</li>
+<li>Formal proof generation remains difficult for current models even when proof checking is deterministic.</li>
+</ul>
+<h2 id="moderately-supported">Moderately supported</h2>
+<ul>
+<li>Structural program information can reduce open-ended repository navigation.</li>
+<li>Static analysis is best used as deterministic input to an LLM rather than probabilistically reconstructed by the LLM.</li>
+<li>Stronger constraints can lower the amount of corrective model reasoning for certain task classes.</li>
+</ul>
+<h2 id="weakly-supported--not-yet-directly-demonstrated">Weakly supported / not yet directly demonstrated</h2>
+<ul>
+<li>Closed semantic states reduce total tokens in repository-scale agent tasks.</li>
+<li>Capabilities materially allow smaller models to replace larger models.</li>
+<li>Obligations materially reduce autonomous exploration cost.</li>
+<li>Semantic dependency graphs outperform conventional code graphs for agent context.</li>
+<li>A semantic compiler lowers total dollars per correct completion after construction cost.</li>
+<li>Smaller model + strong semantic environment reliably beats frontier model + weak repository.</li>
+</ul>
+<hr>
+<h1 id="41-what-remains-theoretical">41. What remains theoretical</h1>
+<p>The following are currently research hypotheses, not established facts:</p>
+<ol>
+<li><strong>Semantic structure as context compression</strong> at business-domain scale.</li>
+<li><strong>Exhaustiveness as measurable agent memory substitution.</strong></li>
+<li><strong>Capability exposure as model-size substitution.</strong></li>
+<li><strong>Obligations as deterministic autonomous-work discovery.</strong></li>
+<li><strong>Semantic dependency graphs as a replacement for repository exploration.</strong></li>
+<li><strong>A stable model/environment crossover point.</strong></li>
+<li><strong>A semantic compiler with positive lifecycle ROI.</strong></li>
+<li><strong>Substantially bounded context as repositories grow.</strong></li>
+<li><strong>Lower human review cost without increased specification risk.</strong></li>
+</ol>
+<p>These are exactly the claims worth benchmarking because existing literature provides enough adjacent evidence to make them credible but not enough evidence to make them settled.</p>
+<hr>
+<h1 id="42-architecture-changes-suggested-by-the-evidence">42. Architecture changes suggested by the evidence</h1>
+<p>Based on the current evidence, I would <strong>not</strong> jump directly to a Level-5 formally verified environment.</p>
+<p>I would prioritize a narrower architecture designed to test the highest-leverage mechanisms cheaply.</p>
+<h2 id="phase-1--high-roi-deterministic-core">Phase 1 — High-ROI deterministic core</h2>
+<p>Implement:</p>
+<ul>
+<li>closed consequential state types,</li>
+<li>exhaustive handling,</li>
+<li>immutable authoritative state,</li>
+<li>explicit transition functions,</li>
+<li>structured transition results,</li>
+<li>explicit success/failure/outcome-unknown for external effects.</li>
+</ul>
+<h2 id="phase-2--runtime-legality">Phase 2 — Runtime legality</h2>
+<p>Add:</p>
+<ul>
+<li>capability derivation,</li>
+<li>runtime transition enforcement,</li>
+<li>version checks,</li>
+<li>authority/evidence guards.</li>
+</ul>
+<h2 id="phase-3--agent-oriented-diagnostics">Phase 3 — Agent-oriented diagnostics</h2>
+<p>Every rejection should be machine-readable.</p>
+<p>Return:</p>
+<ul>
+<li>violated rule,</li>
+<li>missing prerequisite,</li>
+<li>relevant semantic identifiers,</li>
+<li>legal alternatives,</li>
+<li>current version/evidence state.</li>
+</ul>
+<h2 id="phase-4--semantic-dependency-capture">Phase 4 — Semantic dependency capture</h2>
+<p>Do not build an enormous graph system first.</p>
+<p>Start by generating:</p>
+<ul>
+<li>state consumers,</li>
+<li>capability consumers,</li>
+<li>policy consumers,</li>
+<li>transition dependencies.</li>
+</ul>
+<p>Measure whether this reduces repository reads.</p>
+<h2 id="phase-5--obligations">Phase 5 — Obligations</h2>
+<p>Use only in domains where unresolved work is genuinely recurring and explicit.</p>
+<h2 id="phase-6--formal-verification">Phase 6 — Formal verification</h2>
+<p>Apply selectively to:</p>
+<ul>
+<li>money movement,</li>
+<li>authorization,</li>
+<li>effect idempotency,</li>
+<li>critical protocol transitions,</li>
+<li>safety/regulatory invariants.</li>
+</ul>
+<p>This approach keeps the trusted core small and gives each mechanism an independent experimental value.</p>
+<hr>
+<h1 id="43-implications-for-javascripttypescript-and-sql-heavy-systems">43. Implications for JavaScript/TypeScript and SQL-heavy systems</h1>
+<p>The hypothesis is especially relevant where the implementation environment permits many semantically invalid states.</p>
+<p>This does <strong>not</strong> mean JavaScript, TypeScript, or SQL are inherently unsuitable.</p>
+<p>It means a company using them should ask how much domain legality exists only as convention.</p>
+<p>Examples of risk:</p>
+<ul>
+<li>broad object mutation,</li>
+<li>optional fields whose combinations encode hidden state,</li>
+<li>string-valued status columns,</li>
+<li>partial SQL updates that bypass domain transitions,</li>
+<li>application code and stored procedures implementing overlapping rules,</li>
+<li>generic endpoints that permit illegal field combinations,</li>
+<li>runtime-only validation,</li>
+<li>defaults that silently absorb new state values.</li>
+</ul>
+<p>TypeScript can encode much more structure than many teams use:</p>
+<ul>
+<li>discriminated unions,</li>
+<li>readonly data,</li>
+<li>exhaustive <code>never</code> checks,</li>
+<li>narrow transition APIs.</li>
+</ul>
+<p>SQL should ideally be treated as a persistence boundary behind controlled transitions rather than as an unrestricted alternate mutation interface.</p>
+<p>The architecture should therefore evaluate <strong>effective semantic constraint</strong>, not language reputation.</p>
+<hr>
+<h1 id="44-startup-implications">44. Startup implications</h1>
+<p>If this becomes a product/company, the strongest initial value proposition is probably not:</p>
+<p>"Use state machines."</p>
+<p>Nor:</p>
+<p>"Adopt formal methods."</p>
+<p>Nor even:</p>
+<p>"Use stronger types."</p>
+<p>The economic framing is:</p>
+<blockquote>
+<p><strong>Your AI agents repeatedly spend money rediscovering rules your software already ought to know. Encode those rules once, expose only legal actions, and generate the minimum verified context each agent needs.</strong></p>
+</blockquote>
+<p>This creates three possible product wedges.</p>
+<h2 id="wedge-a--ai-code-risk-assessment">Wedge A — AI code-risk assessment</h2>
+<p>Measure how much legality is implicit and how much repository inference an agent must perform.</p>
+<h2 id="wedge-b--semantic-constraint-layer">Wedge B — Semantic constraint layer</h2>
+<p>Add explicit transitions, capabilities, and diagnostics around existing systems without full rewrite.</p>
+<h2 id="wedge-c--agent-semantic-context-service">Wedge C — Agent semantic context service</h2>
+<p>Generate:</p>
+<ul>
+<li>current verified state,</li>
+<li>legal actions,</li>
+<li>blocked reasons,</li>
+<li>dependencies,</li>
+<li>obligations,</li>
+<li>evidence.</li>
+</ul>
+<p>The third may be the most differentiated if the "semantic context compression" hypothesis is validated.</p>
+<hr>
+<h1 id="45-most-important-missing-experiment">45. Most important missing experiment</h1>
+<p>The single most important experiment is:</p>
+<blockquote>
+<p><strong>Run the same realistic state/policy migration task across multiple model tiers and multiple environment strengths, while measuring total cost per semantically correct completion.</strong></p>
+</blockquote>
+<p>Specifically:</p>
+<p>Task:</p>
+<ul>
+<li>split one consequential state into two,</li>
+<li>update cross-module policies,</li>
+<li>update capabilities,</li>
+<li>preserve effect behavior.</li>
+</ul>
+<p>Compare:</p>
+<ol>
+<li>frontier model + conventional repository,</li>
+<li>medium model + conventional repository,</li>
+<li>medium model + state-constrained environment,</li>
+<li>small model + state-constrained environment,</li>
+<li>small model + semantic dependency/diagnostic environment.</li>
+</ol>
+<p>Measure:</p>
+<ul>
+<li>correctness,</li>
+<li>files read,</li>
+<li>search calls,</li>
+<li>input tokens,</li>
+<li>output tokens,</li>
+<li>repairs,</li>
+<li>total latency,</li>
+<li>human review,</li>
+<li>escaped semantic defects.</li>
+</ul>
+<p>This directly tests:</p>
+<ul>
+<li>context compression,</li>
+<li>exhaustive deterministic memory,</li>
+<li>smaller-model substitution,</li>
+<li>environment crossover,</li>
+<li>economic value.</li>
+</ul>
+<hr>
+<h1 id="46-final-verdict">46. Final verdict</h1>
+<h2 id="can-deterministic-environments-improve-agent-correctness">Can deterministic environments improve agent correctness?</h2>
+<p><strong>Strong evidence</strong></p>
+<p>Deterministic constraints, compiler feedback, test feedback, type checking, and formal verification clearly improve or guarantee specific classes of correctness.</p>
+<p>Caveat: correctness is relative to encoded rules.</p>
+<h2 id="can-they-reduce-required-model-capability">Can they reduce required model capability?</h2>
+<p><strong>Moderate evidence</strong></p>
+<p>They clearly reduce some reasoning burden and improve weaker systems, but broad smaller-model substitution has not yet been demonstrated across realistic repository tasks.</p>
+<h2 id="can-they-reduce-token-usage">Can they reduce token usage?</h2>
+<p><strong>Moderate evidence</strong></p>
+<p>Context retrieval is a substantial agent activity and deterministic context generation should reduce some of it. Direct measurements for the proposed semantic architecture are still missing.</p>
+<h2 id="can-they-reduce-total-cost-per-correct-completion">Can they reduce total cost per correct completion?</h2>
+<p><strong>Moderate evidence</strong></p>
+<p>The mechanism is credible, especially at high volume or high defect cost, but environment-construction and maintenance costs must be included. Direct lifecycle evidence is missing.</p>
+<h2 id="can-a-smaller-model--strong-environment-outperform-a-larger-model--weak-environment">Can a smaller model + strong environment outperform a larger model + weak environment?</h2>
+<p><strong>Plausible</strong></p>
+<p>There is enough evidence from compiler feedback, constrained generation, interfaces, and tool-augmented systems to justify the experiment. There is not enough evidence to call it demonstrated as a general software-engineering result.</p>
+<h2 id="most-externalizable-reasoning-category">Most externalizable reasoning category</h2>
+<p><strong>Legality and structural completeness over already-known semantics.</strong></p>
+<p>Examples:</p>
+<ul>
+<li>valid state transitions,</li>
+<li>authority,</li>
+<li>prerequisites,</li>
+<li>exhaustiveness,</li>
+<li>versions,</li>
+<li>invariant enforcement.</li>
+</ul>
+<h2 id="least-externalizable-reasoning-category">Least externalizable reasoning category</h2>
+<p><strong>Creation and interpretation of missing semantics.</strong></p>
+<p>Examples:</p>
+<ul>
+<li>ambiguous requirements,</li>
+<li>product intent,</li>
+<li>architecture tradeoffs,</li>
+<li>deciding whether the specification is wrong.</li>
+</ul>
+<h2 id="most-valuable-deterministic-mechanism">Most valuable deterministic mechanism</h2>
+<p><strong>A small enforced semantic legality core with structured diagnostics.</strong></p>
+<p>This combines:</p>
+<ul>
+<li>error prevention,</li>
+<li>reduced action space,</li>
+<li>deterministic feedback,</li>
+<li>context compression.</li>
+</ul>
+<h2 id="biggest-economic-opportunity">Biggest economic opportunity</h2>
+<p><strong>Reducing repeated semantic reconstruction across large volumes of AI-agent work.</strong></p>
+<p>The value compounds if the same encoded rule replaces thousands of model inference episodes and human completeness checks.</p>
+<h2 id="biggest-architectural-risk">Biggest architectural risk</h2>
+<p><strong>Correlated correctness failure from a wrong semantic specification.</strong></p>
+<p>A system can become consistently, confidently wrong.</p>
+<h2 id="most-important-missing-experiment">Most important missing experiment</h2>
+<p><strong>Controlled model-tier × environment-strength crossover benchmark measuring dollars per semantically correct completion.</strong></p>
+<h2 id="likely-break-even-condition">Likely break-even condition</h2>
+<p>A stronger semantic environment is most likely to pay off when:</p>
+<ul>
+<li>the system is long-lived,</li>
+<li>agent volume is high,</li>
+<li>consequential domain rules recur frequently,</li>
+<li>the same semantics affect many tasks,</li>
+<li>defect/review cost is material,</li>
+<li>the semantic core can remain comparatively small and stable.</li>
+</ul>
+<hr>
+<h1 id="47-bottom-line-interpretation">47. Bottom-line interpretation</h1>
+<p>The research does <strong>not</strong> support the claim that deterministic architecture makes model intelligence unnecessary.</p>
+<p>It supports a more precise and potentially more valuable claim:</p>
+<blockquote>
+<p><strong>We currently spend model intelligence on two different jobs: judgment and reconstruction. Deterministic software can take over part of the reconstruction job.</strong></p>
+</blockquote>
+<p>That is strategically important.</p>
+<p>A frontier model operating in a weak environment may be forced to use expensive inference to repeatedly rediscover:</p>
+<ul>
+<li>what states exist,</li>
+<li>what is legal,</li>
+<li>what depends on a change,</li>
+<li>what is missing,</li>
+<li>whether an action is authorized,</li>
+<li>whether a case was forgotten.</li>
+</ul>
+<p>A stronger environment can make those facts explicit.</p>
+<p>The model then spends its expensive capability on the parts that actually require probabilistic intelligence.</p>
+<p>This is analogous to the broader history of software engineering:</p>
+<p>We do not ask programmers to mentally simulate every memory access because type systems, runtimes, operating systems, compilers, and hardware enforce structure.</p>
+<p>AI agents should probably be treated the same way.</p>
+<p>The most promising architecture is therefore not:</p>
+<p><strong>"Smarter agent."</strong></p>
+<p>It is:</p>
+<p><strong>"Agent + deterministic semantic substrate."</strong></p>
+<p>The decisive research question is now economic rather than philosophical:</p>
+<blockquote>
+<p><strong>How much of the frontier-model premium disappears when the environment supplies legality, dependencies, prerequisites, and machine-checkable feedback directly?</strong></p>
+</blockquote>
+<p>That is both measurable and commercially meaningful.</p>
+<hr>
+<h1 id="48-source-notes">48. Source notes</h1>
+<p>The following research was particularly important to this analysis.</p>
+<p>[S1] Bi, Z. et al. "Iterative Refinement of Project-Level Code Context for Precise Code Generation with Compiler Feedback." 2024. arXiv:2403.16792.</p>
+<p>[S2] Mündler, N. et al. "Type-Constrained Code Generation with Language Models." 2025. arXiv:2504.09246. Published work associated with PLDI 2025.</p>
+<p>[S3] Yang, J. et al. "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering." 2024. arXiv:2405.15793.</p>
+<p>[S4] Zhang, L. and Kothari, S. "Unlocking LLM Code Correction with Iterative Feedback Loops." 2026. arXiv:2606.17514.</p>
+<p>[S5] "FeedbackEval: A Benchmark for Evaluating Large Language Models' Feedback Comprehension in Code Repair." 2025. arXiv:2504.06939.</p>
+<p>[S6] Thakur, A. et al. "CLEVER: A Curated Benchmark for Formally Verified Code Generation." 2025. arXiv:2505.13938.</p>
+<p>[S7] Ye, Z. et al. "VERINA: Benchmarking Verifiable Code Generation." 2025. arXiv:2505.23135.</p>
+<p>[S8] Bursuc, S. et al. "A Benchmark for Vericoding: Formally Verified Program Synthesis." 2025. arXiv:2509.22908.</p>
+<p>[S9] Murphy, W. et al. "Combining LLM Code Generation with Formal Specifications and Reactive Program Synthesis." 2024. arXiv:2410.19736.</p>
+<p>[S10] Zhang, S. et al. "SWE-Explore: Benchmarking How Coding Agents Explore Repositories." 2026. arXiv:2606.07297.</p>
+<p>[S11] "A Benchmark for Context Retrieval in Coding Agents." 2026. arXiv:2602.05892.</p>
+<p>[S12] "Evaluating Repository Context Retrieval for Coding Agents." 2026. arXiv:2607.24882.</p>
+<p>[S13] "How Much Static Structure Do Code Agents Need?" 2026. arXiv:2606.26979.</p>
+<p>[S14] Park, K. et al. "Grammar-Aligned Decoding." 2024. arXiv:2405.21047.</p>
+<p>[S15] Kumar, A. et al. "How Developers Use AI Agents: When They Work, When They Don't, and Why." 2025. arXiv:2506.12347.</p>
+<p>[S16] Ceka, I. et al. "Understanding Software Engineering Agents Through the Lens of Traceability: An Empirical Study." 2025. arXiv:2506.08311.</p>
+<p>[S17] Foundational areas used for architectural comparison include reference monitors, capability security, program slicing, abstract interpretation, model checking, theorem proving, build/dependency systems, workflow engines, rule engines, and trusted computing base design.</p>
+<hr>
+<h1 id="49-evidence-grading-summary">49. Evidence-grading summary</h1>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Current grade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deterministic feedback improves certain agent coding tasks</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>Type constraints reduce invalid generated programs</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>Interface/environment changes can raise agent performance</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>Context retrieval is a meaningful agent bottleneck</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>Exhaustiveness can act as deterministic completeness memory</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>Semantic dependency graphs can compress agent context</td>
+<td>Moderate/Plausible</td>
+</tr>
+<tr>
+<td>Capabilities reduce model action-space reasoning</td>
+<td>Moderate/Plausible</td>
+</tr>
+<tr>
+<td>Obligations reduce autonomous work-discovery cost</td>
+<td>Plausible</td>
+</tr>
+<tr>
+<td>Formal methods should be concentrated in a small semantic core</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>Strong environments reduce required model tier</td>
+<td>Moderate/Plausible</td>
+</tr>
+<tr>
+<td>Strong environments reduce total lifecycle cost</td>
+<td>Moderate/Plausible</td>
+</tr>
+<tr>
+<td>Small model + strong environment beats frontier + weak environment</td>
+<td>Plausible, not demonstrated</td>
+</tr>
+<tr>
+<td>Full semantic compiler is necessary</td>
+<td>No evidence yet</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="50-research-decision">50. Research decision</h1>
+<p><strong>Proceed.</strong></p>
+<p>But proceed with a narrower empirical claim than the original broad thesis.</p>
+<p>The immediate research target should be:</p>
+<blockquote>
+<p><strong>Can explicit semantic legality + structured diagnostics + deterministic dependency exposure reduce context acquisition and model tier for state/policy migration tasks?</strong></p>
+</blockquote>
+<p>Why this target:</p>
+<ul>
+<li>it is testable,</li>
+<li>it maps directly to the strongest prior evidence,</li>
+<li>it attacks a measurable repository-agent cost,</li>
+<li>it isolates mechanisms that can be implemented without a full formal-methods platform,</li>
+<li>it can falsify the startup thesis early.</li>
+</ul>
+<p>If that experiment fails, the broader "semantic compiler as AI context compression" thesis should be weakened substantially.</p>
+<p>If it succeeds—especially if a medium or small model crosses a frontier-model baseline—the result would be unusually important.</p>
+<p>It would show that AI software-engineering performance is not simply a race toward larger models.</p>
+<p>It would show that <strong>software architecture itself can purchase model capability</strong>.</p></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

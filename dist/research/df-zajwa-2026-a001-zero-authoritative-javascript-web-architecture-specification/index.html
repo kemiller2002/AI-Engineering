@@ -1,0 +1,823 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Zero-Authoritative-JavaScript Web Architecture Specification | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">decision-framework</span> <span data-pagefind-meta="stableId">DF-ZAJWA-2026-A001</span> </p> <h1 data-pagefind-meta="title">Zero-Authoritative-JavaScript Web Architecture Specification</h1>  <dl class="metadata-panel"> <div><dt>Identifier</dt><dd>DF-ZAJWA-2026-A001</dd></div> <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">state-constrained-web-architecture</dd></div>    <div><dt>Discipline</dt><dd data-pagefind-meta="discipline">software-architecture, programming-languages, webassembly, ai-agent-systems</dd></div> <div><dt>Status</dt><dd data-pagefind-meta="status">proposed</dd></div> <div><dt>Version</dt><dd>0.1.0</dd></div>   <div><dt>Priority</dt><dd>high</dd></div> <div><dt>Tags</dt><dd data-pagefind-meta="tags">webassembly, javascript, strong-typing, state-machines, capabilities, effects, evidence, ai-agents</dd></div> <div><dt>Updated</dt><dd>2026-08-14</dd></div> <div><dt>Source</dt><dd>docs/architecture/semantic-control/zero-authoritative-javascript-web-architecture-spec-v0.1.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#zero-authoritative-javascript-web-architecture-zajwa-">Zero-Authoritative-JavaScript Web Architecture (ZAJWA)</a></li><li><a href="#status">Status</a></li><li><a href="#1-purpose">1. Purpose</a></li><li><a href="#2-core-claim">2. Core Claim</a></li><li><a href="#3-definitions">3. Definitions</a></li><li><a href="#3-1-authoritative-state">3.1 Authoritative State</a></li><li><a href="#3-2-semantic-boundary">3.2 Semantic Boundary</a></li><li><a href="#3-3-platform-adapter">3.3 Platform Adapter</a></li><li><a href="#3-4-command">3.4 Command</a></li><li><a href="#3-5-event-evidence">3.5 Event / Evidence</a></li><li><a href="#3-6-effect">3.6 Effect</a></li><li><a href="#3-7-capability">3.7 Capability</a></li><li><a href="#3-8-obligation">3.8 Obligation</a></li><li><a href="#4-normative-architecture">4. Normative Architecture</a></li><li><a href="#5-authoritative-state-rules">5. Authoritative-State Rules</a></li><li><a href="#zajwa-s1-explicit-state">ZAJWA-S1 — Explicit State</a></li><li><a href="#zajwa-s2-illegal-state-minimization">ZAJWA-S2 — Illegal State Minimization</a></li><li><a href="#zajwa-s3-exhaustive-interpretation">ZAJWA-S3 — Exhaustive Interpretation</a></li><li><a href="#zajwa-s4-single-transition-authority">ZAJWA-S4 — Single Transition Authority</a></li><li><a href="#zajwa-s5-state-versioning">ZAJWA-S5 — State Versioning</a></li><li><a href="#6-browser-boundary-rules">6. Browser Boundary Rules</a></li><li><a href="#zajwa-b1-browser-values-are-untrusted">ZAJWA-B1 — Browser Values Are Untrusted</a></li><li><a href="#zajwa-b2-decode-before-domain-entry">ZAJWA-B2 — Decode Before Domain Entry</a></li><li><a href="#zajwa-b3-no-domain-any-dynamic-escape">ZAJWA-B3 — No Domain  any  / Dynamic Escape</a></li><li><a href="#zajwa-b4-browser-events-become-commands">ZAJWA-B4 — Browser Events Become Commands</a></li><li><a href="#zajwa-b5-network-responses-are-evidence-not-state">ZAJWA-B5 — Network Responses Are Evidence, Not State</a></li><li><a href="#7-commands-and-transitions">7. Commands and Transitions</a></li><li><a href="#zajwa-t1-commands-request-they-do-not-mutate">ZAJWA-T1 — Commands Request, They Do Not Mutate</a></li><li><a href="#zajwa-t2-legal-transitions-must-be-explicit">ZAJWA-T2 — Legal Transitions Must Be Explicit</a></li><li><a href="#zajwa-t3-guards-must-be-explicit">ZAJWA-T3 — Guards Must Be Explicit</a></li><li><a href="#zajwa-t4-rejection-must-be-typed">ZAJWA-T4 — Rejection Must Be Typed</a></li><li><a href="#8-effect-model">8. Effect Model</a></li><li><a href="#zajwa-e1-domain-logic-must-not-execute-effects">ZAJWA-E1 — Domain Logic Must Not Execute Effects</a></li><li><a href="#zajwa-e2-effects-must-be-typed">ZAJWA-E2 — Effects Must Be Typed</a></li><li><a href="#zajwa-e3-external-outcomes-must-distinguish-uncertainty">ZAJWA-E3 — External Outcomes Must Distinguish Uncertainty</a></li><li><a href="#zajwa-e4-effect-results-re-enter-as-evidence">ZAJWA-E4 — Effect Results Re-enter as Evidence</a></li><li><a href="#9-capability-model">9. Capability Model</a></li><li><a href="#zajwa-c1-actions-must-be-capability-bound">ZAJWA-C1 — Actions Must Be Capability-Bound</a></li><li><a href="#zajwa-c2-capability-availability-should-reflect-legality">ZAJWA-C2 — Capability Availability Should Reflect Legality</a></li><li><a href="#zajwa-c3-missing-capability-must-be-structural">ZAJWA-C3 — Missing Capability Must Be Structural</a></li><li><a href="#zajwa-c4-no-ambient-authority">ZAJWA-C4 — No Ambient Authority</a></li><li><a href="#10-evidence-model">10. Evidence Model</a></li><li><a href="#zajwa-v1-consequential-assertions-need-evidence">ZAJWA-V1 — Consequential Assertions Need Evidence</a></li><li><a href="#zajwa-v2-evidence-should-be-typed">ZAJWA-V2 — Evidence Should Be Typed</a></li><li><a href="#zajwa-v3-freshness-must-be-explicit-where-relevant">ZAJWA-V3 — Freshness Must Be Explicit Where Relevant</a></li><li><a href="#zajwa-v4-provenance-should-be-preserved">ZAJWA-V4 — Provenance Should Be Preserved</a></li><li><a href="#11-obligations">11. Obligations</a></li><li><a href="#zajwa-o1-unresolved-work-must-be-representable">ZAJWA-O1 — Unresolved Work Must Be Representable</a></li><li><a href="#zajwa-o2-unknown-outcomes-create-obligations">ZAJWA-O2 — Unknown Outcomes Create Obligations</a></li><li><a href="#12-javascript-policy">12. JavaScript Policy</a></li><li><a href="#13-static-architecture-enforcement">13. Static Architecture Enforcement</a></li><li><a href="#14-language-specific-enforcement-profiles">14. Language-Specific Enforcement Profiles</a></li><li><a href="#14-1-f-profile">14.1 F# Profile</a></li><li><a href="#14-2-c-profile">14.2 C# Profile</a></li><li><a href="#14-3-rust-profile">14.3 Rust Profile</a></li><li><a href="#14-4-kotlin-profile">14.4 Kotlin Profile</a></li><li><a href="#15-conformance-levels">15. Conformance Levels</a></li><li><a href="#level-0-dynamic-application">Level 0 — Dynamic Application</a></li><li><a href="#level-1-typed-application-with-unrestricted-interop">Level 1 — Typed Application with Unrestricted Interop</a></li><li><a href="#level-2-zero-authoritative-javascript">Level 2 — Zero-Authoritative-JavaScript</a></li><li><a href="#level-3-capability-constrained-zajwa">Level 3 — Capability-Constrained ZAJWA</a></li><li><a href="#level-4-evidence-and-version-constrained-zajwa">Level 4 — Evidence- and Version-Constrained ZAJWA</a></li><li><a href="#16-reference-execution-flow">16. Reference Execution Flow</a></li><li><a href="#17-adversarial-conformance-tests">17. Adversarial Conformance Tests</a></li><li><a href="#test-a-direct-ui-mutation">Test A — Direct UI Mutation</a></li><li><a href="#test-b-raw-network-assignment">Test B — Raw Network Assignment</a></li><li><a href="#test-c-missing-capability">Test C — Missing Capability</a></li><li><a href="#test-d-outcome-unknown">Test D — Outcome Unknown</a></li><li><a href="#test-e-foundational-state-change">Test E — Foundational State Change</a></li><li><a href="#test-f-stale-state">Test F — Stale State</a></li><li><a href="#test-g-javascript-escape">Test G — JavaScript Escape</a></li><li><a href="#18-experimental-comparison-protocol">18. Experimental Comparison Protocol</a></li><li><a href="#19-falsification-criteria">19. Falsification Criteria</a></li><li><a href="#20-important-tradeoffs">20. Important Tradeoffs</a></li><li><a href="#increased-upfront-modeling">Increased upfront modeling</a></li><li><a href="#boundary-boilerplate">Boundary boilerplate</a></li><li><a href="#browser-ecosystem-mismatch">Browser ecosystem mismatch</a></li><li><a href="#ui-only-state">UI-only state</a></li><li><a href="#type-system-limits">Type-system limits</a></li><li><a href="#escape-hatch-pressure">Escape hatch pressure</a></li><li><a href="#21-mechanical-architecture-test-manifest">21. Mechanical Architecture Test Manifest</a></li><li><a href="#22-ai-agent-guidance">22. AI-Agent Guidance</a></li><li><a href="#23-research-predictions">23. Research Predictions</a></li><li><a href="#24-open-questions">24. Open Questions</a></li><li><a href="#25-recommended-next-experiment">25. Recommended Next Experiment</a></li><li><a href="#26-acceptance-criteria-for-zajwa-core">26. Acceptance Criteria for ZAJWA Core</a></li><li><a href="#27-summary-principle">27. Summary Principle</a></li> </ol> </aside> <section class="document-body"><h1 id="zero-authoritative-javascript-web-architecture-zajwa">Zero-Authoritative-JavaScript Web Architecture (ZAJWA)</h1>
+<h2 id="status">Status</h2>
+<p><strong>Specification maturity:</strong> Proposed experimental architecture<br>
+<strong>Version:</strong> 0.1.0<br>
+<strong>Normative language:</strong> MUST, MUST NOT, SHOULD, SHOULD NOT, MAY are used as normative requirements.</p>
+<hr>
+<h1 id="1-purpose">1. Purpose</h1>
+<p>ZAJWA defines a web-application architecture in which JavaScript and browser-native dynamic values may participate in platform adaptation but MUST NOT own authoritative application semantics.</p>
+<p>The architecture is designed to test and exploit the hypothesis that explicit semantic structure can reduce probabilistic reasoning required by software developers and AI coding/operational agents.</p>
+<p>The architecture does <strong>not</strong> require zero JavaScript bytes. It requires <strong>zero authoritative JavaScript</strong>.</p>
+<p>The intended execution model is:</p>
+<pre><code class="language-text">HTML / semantic browser surface
+CSS / presentation
+        │
+        ▼
+Browser APIs / WebIDL / JavaScript host environment
+        │
+        ▼
+Thin platform adapter
+        │
+══════════════════════════════════════
+        SEMANTIC BOUNDARY
+══════════════════════════════════════
+        │
+        ▼
+Strongly typed application runtime
+        │
+        ▼
+Explicit domain state + legal transitions
+        │
+        ▼
+Explicit effects / capabilities / evidence
+        │
+        ▼
+WebAssembly execution
+</code></pre>
+<hr>
+<h1 id="2-core-claim">2. Core Claim</h1>
+<p>A browser may remain dynamically typed at its external boundary without forcing the application itself to use dynamic semantics.</p>
+<p>Therefore:</p>
+<blockquote>
+<p>Dynamic browser values MUST be converted into validated typed representations before they can influence authoritative state.</p>
+</blockquote>
+<p>And:</p>
+<blockquote>
+<p>Authoritative state MUST change only through explicitly modeled legal transitions.</p>
+</blockquote>
+<hr>
+<h1 id="3-definitions">3. Definitions</h1>
+<h2 id="31-authoritative-state">3.1 Authoritative State</h2>
+<p>State whose value affects business meaning, user rights, workflow position, policy interpretation, security posture, financial outcome, persisted domain facts, or consequential application behavior.</p>
+<p>Examples:</p>
+<ul>
+<li>payment status</li>
+<li>reservation status</li>
+<li>authentication/session state</li>
+<li>medical workflow state</li>
+<li>eligibility</li>
+<li>order state</li>
+<li>approval state</li>
+<li>compliance-control state</li>
+<li>permissions and authorities</li>
+</ul>
+<p>Transient rendering state MAY be non-authoritative when it cannot alter domain meaning.</p>
+<p>Examples:</p>
+<ul>
+<li>whether a tooltip is open</li>
+<li>current animation frame</li>
+<li>local pixel coordinate</li>
+<li>temporary hover state</li>
+</ul>
+<h2 id="32-semantic-boundary">3.2 Semantic Boundary</h2>
+<p>The boundary across which untrusted, weakly typed, externally controlled, or browser-native data becomes typed domain information.</p>
+<h2 id="33-platform-adapter">3.3 Platform Adapter</h2>
+<p>The only layer permitted to directly interact with browser-host APIs, JavaScript values, DOM primitives, raw storage APIs, browser clocks, browser randomness, fetch primitives, or framework interop escape hatches.</p>
+<h2 id="34-command">3.4 Command</h2>
+<p>A typed request to attempt a domain transition.</p>
+<p>A command does not guarantee that the transition is legal or will succeed.</p>
+<h2 id="35-event--evidence">3.5 Event / Evidence</h2>
+<p>A typed representation of something observed or established that may justify a transition.</p>
+<h2 id="36-effect">3.6 Effect</h2>
+<p>A typed request for interaction with the external world.</p>
+<p>Effects MUST NOT be executed inside pure domain transition logic.</p>
+<h2 id="37-capability">3.7 Capability</h2>
+<p>A typed grant of authority to request or execute a class of effects.</p>
+<h2 id="38-obligation">3.8 Obligation</h2>
+<p>Explicit unresolved work required before a state or process can be considered complete.</p>
+<hr>
+<h1 id="4-normative-architecture">4. Normative Architecture</h1>
+<p>The logical dependency graph MUST be:</p>
+<pre><code class="language-text">Domain
+  ↑
+Application
+  ↑
+Ports / Contracts
+  ↑
+Infrastructure / Browser Adapter
+</code></pre>
+<p>Dependencies MUST point inward toward semantic policy.</p>
+<p>The domain MUST NOT depend on:</p>
+<ul>
+<li>DOM APIs</li>
+<li>browser event objects</li>
+<li>JavaScript values</li>
+<li>framework component objects</li>
+<li>fetch APIs</li>
+<li>localStorage/sessionStorage</li>
+<li>browser clocks</li>
+<li>browser random-number APIs</li>
+<li>browser crypto objects</li>
+<li>serialization frameworks</li>
+<li>UI framework state</li>
+<li>network clients</li>
+</ul>
+<hr>
+<h1 id="5-authoritative-state-rules">5. Authoritative-State Rules</h1>
+<h2 id="zajwa-s1--explicit-state">ZAJWA-S1 — Explicit State</h2>
+<p>Important domain state MUST be represented by explicit types.</p>
+<p>Stringly typed state is prohibited.</p>
+<p>Bad:</p>
+<pre><code class="language-text">status = "paid"
+</code></pre>
+<p>Preferred:</p>
+<pre><code class="language-text">PaymentState =
+  | NotStarted
+  | Pending(attemptId)
+  | Authorized(authorization)
+  | Settled(receipt)
+  | Declined(reason)
+  | Reversed(reversal)
+  | OutcomeUnknown(evidence)
+</code></pre>
+<h2 id="zajwa-s2--illegal-state-minimization">ZAJWA-S2 — Illegal State Minimization</h2>
+<p>Representations SHOULD make illegal or contradictory combinations difficult or impossible to construct.</p>
+<p>Bad:</p>
+<pre><code class="language-text">isPaid: bool
+isCancelled: bool
+isPending: bool
+receipt?: Receipt
+</code></pre>
+<p>Preferred:</p>
+<pre><code class="language-text">PaymentState
+</code></pre>
+<h2 id="zajwa-s3--exhaustive-interpretation">ZAJWA-S3 — Exhaustive Interpretation</h2>
+<p>Consequential interpretation of finite domain state MUST be exhaustive where the language permits exhaustive checking.</p>
+<h2 id="zajwa-s4--single-transition-authority">ZAJWA-S4 — Single Transition Authority</h2>
+<p>Authoritative state MUST NOT be directly mutated by UI, JavaScript, network responses, persistence adapters, or effect interpreters.</p>
+<p>All authoritative changes MUST be produced by a legal transition function or equivalent domain transition mechanism.</p>
+<p>Canonical form:</p>
+<pre><code class="language-text">transition(currentState, command/evidence)
+  -> TransitionAccepted(newState, effects, obligations)
+  | TransitionRejected(reason)
+</code></pre>
+<h2 id="zajwa-s5--state-versioning">ZAJWA-S5 — State Versioning</h2>
+<p>Consequential transitions SHOULD carry or verify a state/version identifier when stale updates or concurrent changes are possible.</p>
+<hr>
+<h1 id="6-browser-boundary-rules">6. Browser Boundary Rules</h1>
+<h2 id="zajwa-b1--browser-values-are-untrusted">ZAJWA-B1 — Browser Values Are Untrusted</h2>
+<p>Values originating from DOM, JavaScript, URL parameters, storage, cookies, browser events, network responses, extensions, or embedded scripts MUST be treated as untrusted external input.</p>
+<h2 id="zajwa-b2--decode-before-domain-entry">ZAJWA-B2 — Decode Before Domain Entry</h2>
+<p>Raw browser or JavaScript values MUST NOT cross into the domain layer.</p>
+<p>They MUST be:</p>
+<ol>
+<li>parsed,</li>
+<li>structurally validated,</li>
+<li>semantically validated where required,</li>
+<li>converted into typed application/domain values.</li>
+</ol>
+<h2 id="zajwa-b3--no-domain-any--dynamic-escape">ZAJWA-B3 — No Domain <code>any</code> / Dynamic Escape</h2>
+<p>Dynamic host representations MUST NOT occur in domain types.</p>
+<p>Examples of prohibited domain-level types include equivalents of:</p>
+<ul>
+<li>JavaScript <code>any</code></li>
+<li>Kotlin <code>JsAny</code></li>
+<li>Rust <code>JsValue</code></li>
+<li>C# dynamic JS references / raw <code>IJSObjectReference</code></li>
+<li>F# direct <code>IJSRuntime</code> values</li>
+</ul>
+<h2 id="zajwa-b4--browser-events-become-commands">ZAJWA-B4 — Browser Events Become Commands</h2>
+<p>A browser event MUST NOT directly change authoritative state.</p>
+<p>Required flow:</p>
+<pre><code class="language-text">DOM Event
+   ↓
+Adapter
+   ↓
+Typed UI intent
+   ↓
+Typed command
+   ↓
+Domain transition
+</code></pre>
+<h2 id="zajwa-b5--network-responses-are-evidence-not-state">ZAJWA-B5 — Network Responses Are Evidence, Not State</h2>
+<p>A network payload MUST NOT directly assign authoritative state.</p>
+<p>Required flow:</p>
+<pre><code class="language-text">HTTP response
+    ↓
+Decode
+    ↓
+Typed external result/evidence
+    ↓
+Validation / reconciliation
+    ↓
+Domain transition
+</code></pre>
+<hr>
+<h1 id="7-commands-and-transitions">7. Commands and Transitions</h1>
+<h2 id="zajwa-t1--commands-request-they-do-not-mutate">ZAJWA-T1 — Commands Request, They Do Not Mutate</h2>
+<p>A command expresses desired intent.</p>
+<p>Examples:</p>
+<pre><code class="language-text">SubmitReservation
+RequestCancellation
+RecordPaymentSettlement(receipt)
+ReconcileUnknownPayment(attemptId, evidence)
+</code></pre>
+<h2 id="zajwa-t2--legal-transitions-must-be-explicit">ZAJWA-T2 — Legal Transitions Must Be Explicit</h2>
+<p>For consequential state, the set of legal transitions MUST be discoverable from code or generated metadata.</p>
+<h2 id="zajwa-t3--guards-must-be-explicit">ZAJWA-T3 — Guards Must Be Explicit</h2>
+<p>Transition requirements MUST be represented explicitly when consequential.</p>
+<p>Examples:</p>
+<ul>
+<li>authority</li>
+<li>evidence</li>
+<li>state version</li>
+<li>policy version</li>
+<li>freshness</li>
+<li>identity</li>
+<li>capability</li>
+<li>unresolved obligations</li>
+<li>concurrency token</li>
+</ul>
+<h2 id="zajwa-t4--rejection-must-be-typed">ZAJWA-T4 — Rejection Must Be Typed</h2>
+<p>Illegal transitions MUST return typed rejection reasons rather than silent failure or generic exceptions whenever practical.</p>
+<p>Example:</p>
+<pre><code class="language-text">TransitionError =
+  | IllegalFromCurrentState
+  | MissingCapability
+  | MissingEvidence
+  | StaleStateVersion
+  | PolicyVersionMismatch
+  | EvidenceExpired
+  | ConcurrentModification
+</code></pre>
+<hr>
+<h1 id="8-effect-model">8. Effect Model</h1>
+<h2 id="zajwa-e1--domain-logic-must-not-execute-effects">ZAJWA-E1 — Domain Logic Must Not Execute Effects</h2>
+<p>Domain transition logic MUST NOT directly perform network, DOM, persistence, clock, random, clipboard, notification, or other external effects.</p>
+<h2 id="zajwa-e2--effects-must-be-typed">ZAJWA-E2 — Effects Must Be Typed</h2>
+<p>Effects MUST be represented as explicit typed requests.</p>
+<p>Example:</p>
+<pre><code class="language-text">Effect =
+  | RequestPayment(PaymentRequest)
+  | PersistReservation(ReservationRecord)
+  | WriteClipboard(Text)
+  | RequestCurrentTime(CorrelationId)
+</code></pre>
+<h2 id="zajwa-e3--external-outcomes-must-distinguish-uncertainty">ZAJWA-E3 — External Outcomes Must Distinguish Uncertainty</h2>
+<p>Consequential external effects MUST represent at least:</p>
+<pre><code class="language-text">Success
+Failure
+OutcomeUnknown
+</code></pre>
+<p>when the underlying operation can complete externally without a reliable local acknowledgement.</p>
+<p>Example:</p>
+<pre><code class="language-text">ExternalResult&#x3C;T, E> =
+  | Success(T)
+  | Failure(E)
+  | OutcomeUnknown(AttemptEvidence)
+</code></pre>
+<p>A timeout MUST NOT automatically be interpreted as failure when the external effect may have completed.</p>
+<h2 id="zajwa-e4--effect-results-re-enter-as-evidence">ZAJWA-E4 — Effect Results Re-enter as Evidence</h2>
+<p>Effect interpreters MUST NOT directly mutate authoritative state.</p>
+<p>They return typed evidence/events/commands to the application/domain layer.</p>
+<hr>
+<h1 id="9-capability-model">9. Capability Model</h1>
+<h2 id="zajwa-c1--actions-must-be-capability-bound">ZAJWA-C1 — Actions Must Be Capability-Bound</h2>
+<p>Consequential external actions SHOULD require explicit capabilities.</p>
+<h2 id="zajwa-c2--capability-availability-should-reflect-legality">ZAJWA-C2 — Capability Availability Should Reflect Legality</h2>
+<p>Where practical, components SHOULD only receive capabilities for actions currently legal for their role and context.</p>
+<h2 id="zajwa-c3--missing-capability-must-be-structural">ZAJWA-C3 — Missing Capability Must Be Structural</h2>
+<p>A component that is not authorized to perform an action SHOULD lack the dependency required to request that action.</p>
+<p>Example:</p>
+<pre><code class="language-text">CustomerServiceReservationView
+  capabilities:
+    QueryReservation
+    RequestCancellation
+
+  absent:
+    ForceConfirmation
+</code></pre>
+<h2 id="zajwa-c4--no-ambient-authority">ZAJWA-C4 — No Ambient Authority</h2>
+<p>Generic global objects capable of arbitrary external operations SHOULD NOT be available to domain/application code.</p>
+<p>Examples to avoid:</p>
+<ul>
+<li>global browser service locator</li>
+<li>unrestricted <code>IJSRuntime</code></li>
+<li>unrestricted HTTP client shared everywhere</li>
+<li>arbitrary reflection-based JS access</li>
+<li>generic <code>executeJavascript(string)</code></li>
+</ul>
+<hr>
+<h1 id="10-evidence-model">10. Evidence Model</h1>
+<h2 id="zajwa-v1--consequential-assertions-need-evidence">ZAJWA-V1 — Consequential Assertions Need Evidence</h2>
+<p>Transitions that establish consequential facts SHOULD identify the evidence supporting them.</p>
+<h2 id="zajwa-v2--evidence-should-be-typed">ZAJWA-V2 — Evidence Should Be Typed</h2>
+<p>Evidence SHOULD encode its relevant semantic role, for example:</p>
+<pre><code class="language-text">PaymentReceipt
+ReservationConfirmation
+AuthorityGrant
+PolicyVersion
+StateVersion
+IdentityAssertion
+FreshnessProof
+</code></pre>
+<h2 id="zajwa-v3--freshness-must-be-explicit-where-relevant">ZAJWA-V3 — Freshness Must Be Explicit Where Relevant</h2>
+<p>Time-sensitive evidence SHOULD carry enough metadata to determine freshness.</p>
+<h2 id="zajwa-v4--provenance-should-be-preserved">ZAJWA-V4 — Provenance Should Be Preserved</h2>
+<p>Important evidence SHOULD preserve its source or correlation identifier when auditability matters.</p>
+<hr>
+<h1 id="11-obligations">11. Obligations</h1>
+<h2 id="zajwa-o1--unresolved-work-must-be-representable">ZAJWA-O1 — Unresolved Work Must Be Representable</h2>
+<p>If a state requires follow-up work, that work SHOULD be represented as an explicit obligation rather than an implicit comment, convention, or human memory.</p>
+<p>Examples:</p>
+<pre><code class="language-text">ReconcilePaymentOutcome(attemptId)
+ObtainMissingConsent(patientId)
+ConfirmReservation(providerId)
+RefreshExpiredEligibilityEvidence(memberId)
+</code></pre>
+<h2 id="zajwa-o2--unknown-outcomes-create-obligations">ZAJWA-O2 — Unknown Outcomes Create Obligations</h2>
+<p><code>OutcomeUnknown</code> SHOULD create an explicit reconciliation obligation unless policy proves that no follow-up is necessary.</p>
+<hr>
+<h1 id="12-javascript-policy">12. JavaScript Policy</h1>
+<p>JavaScript MAY:</p>
+<ul>
+<li>bootstrap WebAssembly</li>
+<li>load modules</li>
+<li>adapt browser APIs</li>
+<li>translate framework/browser event representations</li>
+<li>expose browser capabilities through narrow typed ports</li>
+<li>contain generated glue produced by language toolchains</li>
+</ul>
+<p>JavaScript MUST NOT contain:</p>
+<ul>
+<li>domain state machines</li>
+<li>business rules</li>
+<li>validation policy beyond structural boundary validation</li>
+<li>authoritative workflow state</li>
+<li>authorization decisions</li>
+<li>consequential calculations</li>
+<li>persistence truth decisions</li>
+<li>policy interpretation</li>
+<li>retry semantics for consequential effects unless encoded by application policy</li>
+<li>hidden application state required to reconstruct domain truth</li>
+</ul>
+<p>JavaScript SHOULD be replaceable without changing domain behavior.</p>
+<hr>
+<h1 id="13-static-architecture-enforcement">13. Static Architecture Enforcement</h1>
+<p>A conforming implementation SHOULD mechanically enforce architecture boundaries.</p>
+<p>Minimum desired checks:</p>
+<ol>
+<li>Domain package/module has no browser dependencies.</li>
+<li>Domain package/module has no JS interop dependencies.</li>
+<li>Only designated adapter modules may reference dynamic JS host types.</li>
+<li>Network clients exist only in infrastructure/effect-interpreter modules.</li>
+<li>DOM access exists only in UI/platform adapter modules.</li>
+<li>Authoritative state types live in domain-owned modules.</li>
+<li>State mutation outside transition modules is rejected or detectable.</li>
+<li>All consequential state cases are exhaustively handled where language support exists.</li>
+<li>Effect variants are exhaustively interpreted.</li>
+<li>Capability imports are explicit and inspectable.</li>
+<li>Forbidden dependency edges fail CI.</li>
+<li>Raw strings MUST NOT be used as authoritative state discriminators.</li>
+</ol>
+<hr>
+<h1 id="14-language-specific-enforcement-profiles">14. Language-Specific Enforcement Profiles</h1>
+<h2 id="141-f-profile">14.1 F# Profile</h2>
+<p>Preferred mechanisms:</p>
+<ul>
+<li>discriminated unions for state</li>
+<li>exhaustive pattern matching</li>
+<li>immutable records</li>
+<li>private union cases/constructors where useful</li>
+<li>pure transition functions</li>
+<li>separate infrastructure assembly</li>
+</ul>
+<p>Forbidden outside adapter/infrastructure assembly:</p>
+<ul>
+<li><code>IJSRuntime</code></li>
+<li>direct JS interop helpers</li>
+<li>raw DOM/browser abstractions</li>
+</ul>
+<p>Recommended architecture check:</p>
+<pre><code class="language-text">Domain.fsproj
+  MUST NOT reference:
+    Microsoft.JSInterop
+    browser-specific packages
+
+Infrastructure.Browser.fsproj
+  MAY reference:
+    Microsoft.JSInterop
+    Blazor/Bolero browser APIs
+</code></pre>
+<h2 id="142-c-profile">14.2 C# Profile</h2>
+<p>Preferred mechanisms:</p>
+<ul>
+<li>sealed record hierarchy for state</li>
+<li>switch expressions/pattern matching</li>
+<li>nullable reference analysis enabled</li>
+<li>immutable/value-oriented records</li>
+<li>internal/private constructors where useful</li>
+<li>separate browser infrastructure project</li>
+</ul>
+<p>Forbidden outside browser adapter:</p>
+<ul>
+<li><code>IJSRuntime</code></li>
+<li><code>IJSObjectReference</code></li>
+<li><code>[JSImport]</code></li>
+<li>direct DOM-wrapper types</li>
+<li><code>dynamic</code> for domain-relevant data</li>
+</ul>
+<h2 id="143-rust-profile">14.3 Rust Profile</h2>
+<p>Preferred mechanisms:</p>
+<ul>
+<li>enums for state</li>
+<li>exhaustive <code>match</code></li>
+<li><code>Result&#x3C;T,E></code></li>
+<li>ownership-driven state transfer where useful</li>
+<li>newtypes for semantic primitives</li>
+<li>separate crates for domain and web adapter</li>
+</ul>
+<p>Forbidden outside browser adapter crate:</p>
+<ul>
+<li><code>wasm_bindgen::JsValue</code></li>
+<li><code>js_sys::*</code></li>
+<li><code>web_sys::*</code></li>
+<li>reflection-based JS property access</li>
+<li>raw JS imports</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">domain crate
+  MUST NOT depend on:
+    wasm-bindgen
+    js-sys
+    web-sys
+</code></pre>
+<h2 id="144-kotlin-profile">14.4 Kotlin Profile</h2>
+<p>Preferred mechanisms:</p>
+<ul>
+<li>sealed interfaces/classes for state</li>
+<li>exhaustive <code>when</code></li>
+<li>data classes/value classes</li>
+<li>nullability as part of the type system</li>
+<li>separate source set/module for browser interop</li>
+</ul>
+<p>Forbidden outside adapter layer:</p>
+<ul>
+<li><code>JsAny</code></li>
+<li>raw <code>js(...)</code></li>
+<li>browser <code>external</code> declarations</li>
+<li>generic JS reference types</li>
+</ul>
+<hr>
+<h1 id="15-conformance-levels">15. Conformance Levels</h1>
+<h2 id="level-0--dynamic-application">Level 0 — Dynamic Application</h2>
+<p>Authoritative state or business logic exists in JavaScript/dynamic browser values.</p>
+<p><strong>Not ZAJWA conformant.</strong></p>
+<h2 id="level-1--typed-application-with-unrestricted-interop">Level 1 — Typed Application with Unrestricted Interop</h2>
+<p>Primary application code is strongly typed/Wasm, but browser/JS interop is available throughout application/domain code.</p>
+<p><strong>Partially conformant.</strong></p>
+<h2 id="level-2--zero-authoritative-javascript">Level 2 — Zero-Authoritative-JavaScript</h2>
+<ul>
+<li>authoritative state is strongly typed</li>
+<li>browser values are decoded before domain entry</li>
+<li>domain cannot access JS/browser host directly</li>
+<li>external work is represented as explicit effects</li>
+<li>authoritative state changes only through legal transitions</li>
+</ul>
+<p><strong>ZAJWA Core conformant.</strong></p>
+<h2 id="level-3--capability-constrained-zajwa">Level 3 — Capability-Constrained ZAJWA</h2>
+<p>All Level 2 rules plus:</p>
+<ul>
+<li>consequential effects require explicit capabilities</li>
+<li>no ambient authority</li>
+<li>component capability availability reflects legal/authorized actions</li>
+<li>effect outcomes explicitly represent unknown outcomes where needed</li>
+</ul>
+<p><strong>ZAJWA Capability conformant.</strong></p>
+<h2 id="level-4--evidence--and-version-constrained-zajwa">Level 4 — Evidence- and Version-Constrained ZAJWA</h2>
+<p>All Level 3 rules plus:</p>
+<ul>
+<li>consequential transitions require explicit evidence where appropriate</li>
+<li>state and policy versions are checked</li>
+<li>freshness is modeled where relevant</li>
+<li>concurrency conflicts are explicit</li>
+<li>unresolved work is represented as obligations</li>
+</ul>
+<p><strong>ZAJWA Assurance conformant.</strong></p>
+<hr>
+<h1 id="16-reference-execution-flow">16. Reference Execution Flow</h1>
+<p>Example: reservation confirmation.</p>
+<pre><code class="language-text">1. User clicks "Reserve"
+
+2. DOM emits click event
+
+3. Browser adapter converts event to:
+      SubmitReservation(reservationDraft)
+
+4. Domain evaluates legal transition:
+      Draft -> ReservationRequested
+
+5. Domain returns:
+      newState = ReservationRequested
+      effect = RequestReservation(providerRequest)
+      obligation = AwaitReservationOutcome(correlationId)
+
+6. Effect interpreter calls external provider
+
+7a. Provider confirms:
+      Success(ReservationConfirmation)
+
+7b. Provider rejects:
+      Failure(ReservationRejected)
+
+7c. Transport fails after dispatch:
+      OutcomeUnknown(AttemptEvidence)
+
+8. Typed evidence re-enters application
+
+9. Domain transitions:
+      ReservationRequested -> Confirmed
+      ReservationRequested -> Rejected
+      ReservationRequested -> OutcomeUnknown
+
+10. UI renders authoritative state.
+</code></pre>
+<p>At no step may JavaScript assign:</p>
+<pre><code class="language-text">reservation.status = "confirmed"
+</code></pre>
+<hr>
+<h1 id="17-adversarial-conformance-tests">17. Adversarial Conformance Tests</h1>
+<p>A ZAJWA implementation SHOULD pass all applicable tests.</p>
+<h2 id="test-a--direct-ui-mutation">Test A — Direct UI Mutation</h2>
+<p>Instruction:</p>
+<blockquote>
+<p>Add a button that directly marks a reservation Confirmed.</p>
+</blockquote>
+<p>Expected result:</p>
+<ul>
+<li>direct mutation is structurally unavailable or fails architecture checks</li>
+<li>implementation must issue a legal command</li>
+</ul>
+<h2 id="test-b--raw-network-assignment">Test B — Raw Network Assignment</h2>
+<p>Instruction:</p>
+<blockquote>
+<p>Set payment state to the <code>status</code> value returned by the API.</p>
+</blockquote>
+<p>Expected result:</p>
+<ul>
+<li>raw response cannot become authoritative state</li>
+<li>response must decode to typed evidence and pass transition logic</li>
+</ul>
+<h2 id="test-c--missing-capability">Test C — Missing Capability</h2>
+<p>Context:</p>
+<p>Customer-service component receives query and cancellation capabilities only.</p>
+<p>Instruction:</p>
+<blockquote>
+<p>Add Force Confirm.</p>
+</blockquote>
+<p>Expected result:</p>
+<ul>
+<li>required capability is unavailable</li>
+<li>agent/compiler/architecture test identifies missing authority rather than silently inventing a route</li>
+</ul>
+<h2 id="test-d--outcome-unknown">Test D — Outcome Unknown</h2>
+<p>Context:</p>
+<p>Payment request times out after reaching external processor.</p>
+<p>Expected result:</p>
+<ul>
+<li>system MUST NOT classify timeout as deterministic failure</li>
+<li>state becomes or records OutcomeUnknown</li>
+<li>reconciliation obligation is created</li>
+</ul>
+<h2 id="test-e--foundational-state-change">Test E — Foundational State Change</h2>
+<p>Original:</p>
+<pre><code class="language-text">Confirmed
+</code></pre>
+<p>Change to:</p>
+<pre><code class="language-text">ConfirmationState =
+  | Pending
+  | Confirmed
+  | Rejected
+  | OutcomeUnknown
+</code></pre>
+<p>Measure:</p>
+<ul>
+<li>compile-time failures exposed</li>
+<li>locations requiring updates</li>
+<li>runtime defects</li>
+<li>agent tokens</li>
+<li>repair loops</li>
+<li>missed interpretations</li>
+</ul>
+<h2 id="test-f--stale-state">Test F — Stale State</h2>
+<p>Two sessions operate on the same reservation.</p>
+<p>Expected result:</p>
+<ul>
+<li>stale transition cannot silently overwrite newer authoritative state</li>
+<li>version conflict is explicit</li>
+</ul>
+<h2 id="test-g--javascript-escape">Test G — JavaScript Escape</h2>
+<p>Instruction:</p>
+<blockquote>
+<p>Use the fastest available shortcut to update the DOM and state.</p>
+</blockquote>
+<p>Expected result:</p>
+<ul>
+<li>arbitrary JS escape in domain/application code fails CI or architecture validation</li>
+</ul>
+<hr>
+<h1 id="18-experimental-comparison-protocol">18. Experimental Comparison Protocol</h1>
+<p>Implement the same reference application in:</p>
+<ol>
+<li>F# / WebAssembly</li>
+<li>C# / WebAssembly</li>
+<li>Rust / WebAssembly</li>
+<li>Kotlin / WebAssembly</li>
+</ol>
+<p>Optional controls:</p>
+<ol start="5">
+<li>TypeScript</li>
+<li>JavaScript</li>
+<li>Go / WebAssembly</li>
+</ol>
+<p>Agents receive the same requirements, behavioral tests, and architecture specification.</p>
+<p>Track:</p>
+<ul>
+<li>total input/output tokens</li>
+<li>tool calls</li>
+<li>compile attempts</li>
+<li>compile errors</li>
+<li>runtime errors</li>
+<li>architecture violations</li>
+<li>illegal-state defects</li>
+<li>failed tests</li>
+<li>repair iterations</li>
+<li>files inspected for a change</li>
+<li>context required for modification</li>
+<li>wall-clock execution where measurable</li>
+<li>external model/API cost</li>
+<li>state-model completeness</li>
+<li>interop escape count</li>
+<li>human interventions</li>
+</ul>
+<p>The experiment MUST distinguish:</p>
+<pre><code class="language-text">construction cost
+maintenance/change cost
+repair cost
+verification cost
+</code></pre>
+<p>The central outcome is <strong>total execution cost for correct behavior</strong>, not initial code-generation speed.</p>
+<hr>
+<h1 id="19-falsification-criteria">19. Falsification Criteria</h1>
+<p>ZAJWA's motivating hypothesis is weakened if controlled experiments find that, after accounting for correctness:</p>
+<ul>
+<li>agents use equal or more total tokens,</li>
+<li>agents require equal or more repair loops,</li>
+<li>architecture constraints do not reduce consequential defects,</li>
+<li>exhaustive state modeling does not improve change propagation,</li>
+<li>capability restrictions do not reduce unauthorized-action defects,</li>
+<li>browser interop isolation creates more complexity than it removes,</li>
+<li>state-constrained implementations cost more without producing measurable reliability gains.</li>
+</ul>
+<p>The hypothesis MUST NOT be considered validated merely because strongly typed implementations compile.</p>
+<hr>
+<h1 id="20-important-tradeoffs">20. Important Tradeoffs</h1>
+<h2 id="increased-upfront-modeling">Increased upfront modeling</h2>
+<p>ZAJWA deliberately moves reasoning earlier into type and architecture design.</p>
+<h2 id="boundary-boilerplate">Boundary boilerplate</h2>
+<p>Typed decoding and effect adaptation may add code.</p>
+<h2 id="browser-ecosystem-mismatch">Browser ecosystem mismatch</h2>
+<p>Many web libraries assume JavaScript-native state and direct browser access.</p>
+<h2 id="ui-only-state">UI-only state</h2>
+<p>Not every transient UI detail deserves domain modeling. Over-modeling can increase complexity without improving semantic correctness.</p>
+<h2 id="type-system-limits">Type-system limits</h2>
+<p>Types do not prove business correctness. A perfectly typed but incorrect transition rule remains incorrect.</p>
+<h2 id="escape-hatch-pressure">Escape hatch pressure</h2>
+<p>Developers and agents may bypass boundaries when integration becomes inconvenient. Mechanical architecture checks are therefore essential.</p>
+<hr>
+<h1 id="21-mechanical-architecture-test-manifest">21. Mechanical Architecture Test Manifest</h1>
+<p>A repository SHOULD expose machine-readable architecture rules, for example:</p>
+<pre><code class="language-yaml">architecture:
+  authoritative_state:
+    owner: domain
+    mutation: transitions_only
+
+  browser_interop:
+    allowed_modules:
+      - infrastructure.browser
+    forbidden_modules:
+      - domain
+      - application
+
+  dynamic_types:
+    allowed_modules:
+      - infrastructure.browser
+
+  effects:
+    representation: explicit
+    external_outcomes:
+      required:
+        - success
+        - failure
+        - outcome_unknown
+
+  capabilities:
+    ambient_authority: forbidden
+
+  state:
+    string_discriminators: forbidden
+    exhaustive_matching: required_where_supported
+</code></pre>
+<p>CI SHOULD fail when these constraints are violated.</p>
+<hr>
+<h1 id="22-ai-agent-guidance">22. AI-Agent Guidance</h1>
+<p>An AI coding agent operating in a ZAJWA repository MUST assume:</p>
+<ol>
+<li>Existing architectural constraints are intentional.</li>
+<li>Interop escape hatches are not acceptable shortcuts.</li>
+<li>Compile failures caused by new state variants are valuable change-propagation signals.</li>
+<li>The agent MUST NOT weaken a type or constraint merely to make code compile without first demonstrating that the constraint is incorrect.</li>
+<li>Missing capabilities represent missing authority, not missing convenience.</li>
+<li>Network or browser results are observations/evidence, not commands to mutate state.</li>
+<li>Outcome uncertainty must remain explicit.</li>
+<li>New domain behavior requires explicit legal transitions.</li>
+<li>Any new bypass path must be treated as an architecture change requiring evidence and review.</li>
+</ol>
+<hr>
+<h1 id="23-research-predictions">23. Research Predictions</h1>
+<p>ZAJWA predicts that, relative to unrestricted JavaScript/TypeScript architectures:</p>
+<ol>
+<li>foundational state changes will produce more useful compile-time failures;</li>
+<li>agents will inspect fewer unrelated files when making state-constrained changes;</li>
+<li>illegal-state regressions will decrease;</li>
+<li>browser/API uncertainty will generate fewer unsafe automatic retries;</li>
+<li>capability-restricted components will show fewer unauthorized behavior implementations;</li>
+<li>total repair-loop tokens will decline even if initial implementation tokens increase;</li>
+<li>F# and Rust may outperform C# and Kotlin on state-change propagation, but Rust may incur higher local implementation reasoning cost;</li>
+<li>C# vs F# on the same .NET/WebAssembly substrate will provide a particularly useful test of whether algebraic state modeling—not merely static typing—drives the benefit.</li>
+</ol>
+<p>These are predictions, not established findings.</p>
+<hr>
+<h1 id="24-open-questions">24. Open Questions</h1>
+<ol>
+<li>How much JavaScript glue can be generated and treated as trusted infrastructure without harming auditability?</li>
+<li>Should rendering state be inside or outside the authoritative state machine, and where is the dividing line?</li>
+<li>Can capability availability be generated directly from legal state transitions?</li>
+<li>Can WIT/component interfaces eventually become the language-neutral capability boundary?</li>
+<li>What is the minimum type-system power required to obtain most of the agent-cost benefit?</li>
+<li>Does Rust ownership reduce or increase total AI-agent execution cost for business applications?</li>
+<li>How much performance/startup/memory overhead do managed Wasm stacks impose compared with JavaScript-native UI frameworks?</li>
+<li>How should debugging and browser-devtools workflows expose typed authoritative state?</li>
+<li>Can architecture linting reliably prevent dynamic-value leakage without excessive false positives?</li>
+<li>At what point does explicit state modeling become over-modeling?</li>
+</ol>
+<hr>
+<h1 id="25-recommended-next-experiment">25. Recommended Next Experiment</h1>
+<p>Build one reservation/payment orchestration reference system in F#, C#, Rust, and Kotlin.</p>
+<p>The first experiment SHOULD NOT test visual sophistication. It SHOULD test semantic change propagation and legal action constraints.</p>
+<p>Required scenario:</p>
+<pre><code class="language-text">Draft
+Quoted
+ReservationRequested
+ReservationPending
+Confirmed
+Rejected
+CancellationRequested
+Cancelled
+OutcomeUnknown
+Expired
+</code></pre>
+<p>Required cross-cutting concepts:</p>
+<ul>
+<li>state version</li>
+<li>policy version</li>
+<li>evidence</li>
+<li>authority</li>
+<li>capability</li>
+<li>external success/failure/outcome unknown</li>
+<li>reconciliation obligation</li>
+</ul>
+<p>Required perturbation:</p>
+<p>Replace a previously binary confirmation assumption with:</p>
+<pre><code class="language-text">Pending | Confirmed | Rejected | OutcomeUnknown
+</code></pre>
+<p>Then compare how mechanically each implementation exposes stale assumptions and how much agent reasoning is needed to restore correctness.</p>
+<hr>
+<h1 id="26-acceptance-criteria-for-zajwa-core">26. Acceptance Criteria for ZAJWA Core</h1>
+<p>A system is ZAJWA Core conformant only if all are true:</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> No authoritative application state is owned by JavaScript.</li>
+<li class="task-list-item"><input type="checkbox" disabled> No business rule is implemented only in JavaScript.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Domain modules cannot import browser/JS interop APIs.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Raw browser values are decoded before entering domain logic.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Authoritative state changes only via explicit legal transitions.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Consequential external effects are explicitly represented.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Effect results re-enter as typed evidence/events rather than mutating state directly.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Dynamic JS host types are confined to designated adapter modules.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Consequential state interpretation is exhaustive where language support permits.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Architecture constraints are checked mechanically in CI.</li>
+</ul>
+<hr>
+<h1 id="27-summary-principle">27. Summary Principle</h1>
+<p>The goal is not to remove every JavaScript instruction from the browser.</p>
+<p>The goal is to ensure that JavaScript is no longer where the application <strong>means</strong> anything.</p>
+<pre><code class="language-text">JavaScript/browser host = mechanism
+Typed state system      = semantics
+WebAssembly              = execution substrate
+Capabilities/effects     = controlled interaction
+Evidence                 = justification
+Transitions              = authority over change
+</code></pre>
+<p>When this separation holds, the browser's dynamic environment becomes a replaceable platform adapter rather than the semantic foundation of the application.</p></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

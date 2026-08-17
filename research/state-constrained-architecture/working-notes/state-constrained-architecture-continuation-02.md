@@ -1,0 +1,1651 @@
+State-Constrained Architecture — Continuation Notes
+====================================================
+
+This file continues the prior document:
+
+    multi-state-data-and-type-explosion.md
+
+It captures the subsequent exploration of:
+
+- multi-object state
+- cross-object policy
+- obligations
+- version-bound capabilities
+- stale snapshots
+- concurrent agents
+- uncertain external effects
+- coordination aggregates
+- effect execution state
+- freshness requirements
+- policy evolution
+- policy versioning
+- policy snapshots
+- reassessment obligations
+- policy dependency graphs
+
+
+PART 1 — Multi-Object State
+===========================
+
+Problem
+-------
+
+The next stress test considered multiple independently stateful objects:
+
+    Customer
+    Order
+    Payment
+    Shipment
+
+The key question was:
+
+    Can state-constrained architecture remain understandable when
+    transitions in one object depend on the state of several others?
+
+A raw combined state space grows quickly.
+
+Even a small example can produce hundreds of possible snapshots.
+
+The critical discovery was that cross-object relationships should not automatically be treated as impossible states.
+
+
+Reality Can Create Unwanted State Combinations
+----------------------------------------------
+
+Suppose:
+
+    Customer = Verified
+    Order = Approved
+    Payment = Captured
+    Shipment = Ready
+
+Then later:
+
+    Customer -> Blocked
+
+The resulting combination:
+
+    Customer = Blocked
+    Order = Approved
+
+is not necessarily an impossible state.
+
+It may be an undesirable condition, but reality is allowed to produce it.
+
+The system must represent the condition accurately.
+
+The important rule is not:
+
+    "Blocked + Approved can never exist."
+
+The important rule may instead be:
+
+    "A blocked customer cannot proceed to shipment."
+
+This distinction is fundamental.
+
+
+Local Invariants vs Cross-Object Policy
+---------------------------------------
+
+A local aggregate invariant can often be structural.
+
+Example:
+
+    Payment = Refunded
+
+may require:
+
+    a prior successful payment capture event
+
+That belongs inside the Payment aggregate.
+
+By contrast, a cross-object rule such as:
+
+    CanShip requires:
+        Customer = Verified
+        Order = Approved
+        Payment = Captured
+        Shipment = Ready
+
+is better understood as cross-object policy.
+
+Therefore:
+
+    Local invariants
+        constrain what an aggregate itself may represent.
+
+    Cross-object policy
+        determines what actions are legal or required
+        based on combinations of independently authoritative states.
+
+
+Capabilities and Obligations
+----------------------------
+
+The multi-object test exposed another important distinction.
+
+Cross-object policy may derive two different kinds of outcomes:
+
+    Capabilities
+        What MAY happen.
+
+    Obligations
+        What MUST be resolved.
+
+Example:
+
+Before customer blocking:
+
+    CanShip
+
+After:
+
+    Customer = Blocked
+
+the system may derive:
+
+    CanShip = absent
+
+and also:
+
+    ResolveApprovedOrderForBlockedCustomer
+    HoldFulfillment
+    EvaluateRefund
+
+These are not permissions.
+
+They are obligations.
+
+This suggests a broader architecture:
+
+                    LOCAL STATE MACHINES
+                           |
+             +-------------+-------------+
+             |             |             |
+          Customer       Order        Payment
+             |             |             |
+             +-------------+-------------+
+                           |
+                           v
+                   CROSS-OBJECT POLICY
+                           |
+                  +--------+--------+
+                  |                 |
+                  v                 v
+             Capabilities       Obligations
+                  |                 |
+                  v                 v
+              What MAY          What MUST
+              happen            be resolved
+
+
+Potential New Primitive: Obligation
+-----------------------------------
+
+The multi-object test suggests that Obligation may deserve first-class treatment.
+
+Working definition:
+
+    Obligation = a required resolution or follow-up created by
+    the current relationship among states, evidence, policy, or events.
+
+Possible lifecycle:
+
+    Raised
+      ->
+    Acknowledged
+      ->
+    InProgress
+      ->
+    Satisfied
+
+or:
+
+    Waived
+    Expired
+    Escalated
+
+This area still requires deeper exploration.
+
+
+Version-Bound Multi-Object Capabilities
+---------------------------------------
+
+Suppose a capability is derived from:
+
+    Order@17       = Approved
+    Payment@8      = Captured
+    Customer@42    = Verified
+    Shipment@5     = Ready
+
+Then CanShip should not be a timeless permission.
+
+It should be bound to the exact state snapshot:
+
+    CanShip {
+        OrderVersion = 17
+        PaymentVersion = 8
+        CustomerVersion = 42
+        ShipmentVersion = 5
+    }
+
+If the customer changes:
+
+    Customer@43 = Blocked
+
+then:
+
+    CanShip based on Customer@42
+
+is stale.
+
+At transition execution time:
+
+    Order      17 == 17  valid
+    Payment     8 == 8   valid
+    Customer   43 != 42  stale
+    Shipment    5 == 5   valid
+
+Result:
+
+    REJECTED
+    Stale capability:
+    Customer state changed.
+
+This suggests a powerful interpretation:
+
+    A capability is proof that an operation was legal
+    against a specific observed state snapshot.
+
+It is not permanent authority.
+
+
+Optimistic Semantic Concurrency
+-------------------------------
+
+This avoids requiring an agent to hold locks while reasoning.
+
+The pattern becomes:
+
+    Observe versioned state snapshot
+        ->
+    Derive capabilities
+        ->
+    Agent reasons
+        ->
+    Agent requests transition
+        ->
+    Runtime revalidates versions
+        ->
+    Execute or reject
+
+This is optimistic concurrency applied to semantic permission.
+
+
+Cross-Object Policy Should Be Declarative
+-----------------------------------------
+
+A major danger is moving all complexity into one enormous function:
+
+    deriveCapabilities(customer, order, payment, shipment)
+
+with thousands of conditionals.
+
+That would merely relocate the semantic mess.
+
+Instead, cross-object rules should ideally be independently declarative.
+
+Example:
+
+    capability CanShip
+
+    depends on:
+        Order
+        Payment
+        Customer
+        Shipment
+
+    requires:
+        Order.State = Approved
+        Payment.State = Captured
+        Customer.State = Verified
+        Shipment.State = Ready
+
+Similarly:
+
+    obligation ResolveBlockedCustomerOrder
+
+    when:
+        Customer.State = Blocked
+        Order.State = Approved
+
+    resolution:
+        HoldFulfillment
+        OR CancelOrder
+        OR Escalate
+
+Such rules become:
+
+- testable
+- versionable
+- queryable
+- explainable
+- attributable
+- machine-readable
+- available to agents
+
+
+Three-Level Multi-Object Architecture
+-------------------------------------
+
+A promising model is:
+
+Level 1 — Aggregate State Machines
+    Each object owns its own state and local invariants.
+
+Level 2 — Cross-Object Policy
+    Declarative rules derive:
+        capabilities
+        obligations
+        warnings
+
+Level 3 — Coordinators
+    Long-running cross-object processes become their own stateful aggregates.
+
+Example coordinator:
+
+    BlockedCustomerResolution
+
+    Detected
+        ->
+    FulfillmentHoldRequested
+        ->
+    FulfillmentHeld
+        ->
+    RefundEvaluated
+        ->
+    RefundRequired
+        OR
+    NoRefundRequired
+        OR
+    HumanReviewRequired
+        ->
+    Resolved
+
+Important principle:
+
+    Do not hide long-running multi-object behavior inside policy rules.
+
+If coordination has a lifecycle, make the coordination itself stateful.
+
+
+Multi-Object Design Rule
+------------------------
+
+Working principle:
+
+    Do not combine independent objects into one giant state machine
+    merely because their states affect one another.
+
+Instead:
+
+    Keep authoritative state local.
+
+    Derive cross-object capabilities and obligations
+    from versioned snapshots.
+
+    Promote long-running coordination to a state machine of its own.
+
+
+Agent-Facing Consequence
+------------------------
+
+An agent should not need to understand every combination in the raw state space.
+
+It needs:
+
+    current verified state
+    legal frontier
+    outstanding obligations
+
+Example:
+
+    Current facts:
+
+        Order: Approved
+        Payment: Captured
+        Customer: Blocked
+        Shipment: Ready
+
+    Available transitions:
+
+        RefundPayment
+        HoldShipment
+
+    Outstanding obligations:
+
+        ResolveBlockedCustomerOrder
+
+    Unavailable:
+
+        Ship
+
+    Reason:
+
+        Customer is Blocked.
+
+This collapses combinatorial state into an actionable frontier.
+
+Working insight:
+
+    Agents do not need the complete state space.
+
+    They need the current verified state,
+    the legal frontier,
+    and outstanding obligations.
+
+
+PART 2 — Distributed Concurrency and Unknown Effects
+====================================================
+
+Problem
+-------
+
+The next stress test introduced:
+
+- stale reads
+- concurrent agents
+- external side effects
+- uncertain external outcomes
+
+Scenario:
+
+    Customer = Verified @42
+    Order = Approved @17
+    Payment = Captured @8
+    Shipment = Ready @5
+
+The system derives:
+
+    CanShip
+    CanRefund
+
+Then:
+
+    Customer -> Blocked @43
+
+Agent A still holds the old CanShip capability.
+
+Agent B begins a refund.
+
+The refund provider times out.
+
+Now:
+
+    Customer = Blocked @43
+    Order = Approved @17
+    Payment = Captured @8
+    Shipment = Ready @5
+
+    Refund execution = OutcomeUnknown
+
+
+Version-Bound Capability Works for Stale Domain State
+-----------------------------------------------------
+
+Agent A's CanShip was derived from:
+
+    Customer@42
+    Order@17
+    Payment@8
+    Shipment@5
+
+The runtime sees:
+
+    Customer 42 != 43
+
+and rejects shipment.
+
+This validates version-bound capabilities for stale observed state.
+
+
+Domain Versioning Alone Is Not Enough
+-------------------------------------
+
+A more important hole appeared with the refund.
+
+The payment provider timed out.
+
+Locally:
+
+    Payment = Captured
+
+has not changed.
+
+If capability derivation only inspects domain objects, the system may still derive:
+
+    CanRefund
+
+But the external refund may already have succeeded.
+
+A second agent could issue another refund.
+
+Therefore:
+
+    External operation state must itself become authoritative
+    and participate in capability derivation.
+
+
+Explicit Effect Execution State
+-------------------------------
+
+Refund execution should have a lifecycle such as:
+
+    Idle
+      ->
+    Requested
+      ->
+    Succeeded
+    Failed
+    OutcomeUnknown
+
+Once refund execution becomes:
+
+    OutcomeUnknown
+
+the legal frontier changes.
+
+Before:
+
+    Refund
+    HoldShipment
+
+After unknown outcome:
+
+    ReconcileRefund
+    HoldShipment
+
+And crucially:
+
+    CanRefund
+
+disappears.
+
+This yields the rule:
+
+    External execution state participates in legality.
+
+Do not derive action capabilities from domain state alone
+when an uncertain external operation is already in flight.
+
+
+Three Interacting State Dimensions
+----------------------------------
+
+The architecture now clearly needs at least:
+
+1. Domain State
+
+    Customer
+    Order
+    Payment
+    Shipment
+
+2. Execution State
+
+    Refund:
+        Idle
+        Requested
+        OutcomeUnknown
+        Succeeded
+        Failed
+
+3. Coordination State
+
+    The state of a multi-object decision process
+    controlling mutually incompatible actions.
+
+
+Concurrent Legal Actions Can Conflict
+-------------------------------------
+
+Consider:
+
+    Agent A receives CanShip
+    Agent B receives CanRefund
+
+Both capabilities were legitimately derived from the same snapshot.
+
+Both version checks can pass at execution time.
+
+Yet shipping and refunding may be mutually incompatible.
+
+This reveals:
+
+    Snapshot validation prevents stale actions.
+
+    It does not prevent two individually legal actions
+    from conflicting when they begin concurrently.
+
+
+Coordination Aggregates
+-----------------------
+
+Introduce a small coordinator for the conflict boundary.
+
+Example:
+
+    FulfillmentDisposition
+
+    Open
+      ->
+    Shipping
+
+    Open
+      ->
+    Refunding
+
+    Open
+      ->
+    Holding
+
+Both agents may initially see:
+
+    BeginShipping
+    BeginRefund
+
+But each transition must atomically claim:
+
+    Open
+
+Example:
+
+Agent A:
+
+    Open@10 -> Shipping@11
+
+Agent B:
+
+    BeginRefund based on Open@10
+
+Runtime:
+
+    REJECTED
+
+    Expected:
+        Open@10
+
+    Actual:
+        Shipping@11
+
+This serializes only the decision point where operations conflict.
+
+It avoids a giant distributed transaction across:
+
+    Customer
+    Order
+    Payment
+    Shipment
+
+
+Coordination Principle
+----------------------
+
+Working rule:
+
+    When multiple individually legal transitions
+    cannot safely occur concurrently,
+    introduce a small coordination aggregate
+    whose state serializes that decision.
+
+Do not lock every related object.
+
+Serialize the specific semantic conflict boundary.
+
+
+Two-Stage External Effects
+--------------------------
+
+A request to perform an external effect must not be equivalent to successful domain transition.
+
+Do not model:
+
+    RequestRefund
+        =
+    Payment -> Refunded
+
+Instead:
+
+    Authorize operation
+        ->
+    Claim coordination state
+        ->
+    Begin effect
+        ->
+    External request
+        ->
+    Verify or reconcile outcome
+        ->
+    Commit domain transition
+
+Example:
+
+    Open
+      ->
+    BeginRefund
+      ->
+    Refunding
+      ->
+    RefundRequested
+      ->
+    Provider timeout
+      ->
+    RefundOutcomeUnknown
+
+At that point the system does not guess.
+
+The legal frontier becomes:
+
+    ReconcileRefund
+    InvestigateRefund
+    HoldShipment
+
+not:
+
+    RetryRefund blindly
+    Ship anyway
+
+
+Idempotency
+-----------
+
+External semantic operations need stable identities.
+
+Example:
+
+    RefundOperationId = R817
+
+A retry should mean:
+
+    Continue/retry operation R817
+
+not:
+
+    Create a new refund.
+
+Principle:
+
+    Retries repeat an operation identity.
+
+    They do not create a new semantic operation.
+
+
+Concurrency Architecture
+------------------------
+
+The resulting architecture is:
+
+          VERSIONED DOMAIN STATE
+                   |
+       +-----------+-----------+
+       |           |           |
+    Customer     Payment     Shipment
+       |           |           |
+       +-----------+-----------+
+                   |
+                   v
+            POLICY EVALUATION
+                   |
+                   v
+          Derived Capabilities
+                   |
+                   v
+               Agent(s)
+                   |
+            propose actions
+                   |
+                   v
+        COORDINATION AGGREGATE
+                   |
+          atomic state claim
+                   |
+                   v
+            EFFECT EXECUTION
+                   |
+          +--------+--------+
+          |        |        |
+          v        v        v
+       Success   Failure   Unknown
+          |                 |
+          v                 v
+    domain transition    reconciliation
+
+
+Freshness and Partial Observability
+-----------------------------------
+
+Another distributed-systems problem remains.
+
+Suppose:
+
+    Customer service reports:
+        Verified @42
+
+but:
+
+    Fraud service already has:
+        Blocked @43
+
+and the policy runtime has not observed @43 yet.
+
+Version checks cannot detect information that has not yet arrived.
+
+This is not unique to AI.
+
+It is a distributed-consistency problem.
+
+However, the uncertainty can be made explicit.
+
+A cross-system observation may include:
+
+    value
+    source
+    version
+    observedAt
+    freshness
+
+Example:
+
+    FraudStatus:
+        value = Clear
+        version = 88
+        observedAt = 4 seconds ago
+
+Policy could require:
+
+    CanShip requires:
+        FraudStatus age < 30 seconds
+
+For high-risk transitions, policy may require synchronous refresh
+rather than accepting a cached observation.
+
+This suggests:
+
+    Freshness is part of evidence.
+
+
+Four Concurrency Defenses
+-------------------------
+
+The stress test produced four distinct defenses.
+
+1. Version-Bound Capabilities
+
+Protect against:
+
+    state changed after the agent observed it
+
+
+2. Coordination Aggregates
+
+Protect against:
+
+    two individually legal but mutually incompatible
+    actions beginning concurrently
+
+
+3. Explicit Effect State
+
+Protect against:
+
+    uncertain external operation outcome
+
+
+4. Freshness Requirements
+
+Protect against:
+
+    observations that may already be stale
+    even though no newer version is locally known
+
+
+Updated Working Model
+---------------------
+
+The model now includes:
+
+    LOCAL STATE
+        What does each aggregate own?
+
+    CROSS-OBJECT POLICY
+        What does the combination permit or require?
+
+    CAPABILITY
+        What may happen based on this versioned snapshot?
+
+    OBLIGATION
+        What now needs resolution?
+
+    COORDINATOR
+        Which competing multi-object process has claimed action?
+
+    EFFECT STATE
+        What do we know about the external action?
+
+    EVENT
+        What actually happened?
+
+    PROVENANCE
+        Why do we believe all of the above?
+
+Important insight:
+
+    Capabilities describe a legal frontier.
+
+    Coordinators arbitrate conflicting movement across that frontier.
+
+
+PART 3 — Policy Evolution and Versioning
+========================================
+
+Problem
+-------
+
+The previous architecture assumes the rules are stable.
+
+Real commercial systems constantly change:
+
+- business rules
+- regulatory rules
+- risk thresholds
+- evidence requirements
+- capability requirements
+- approval rules
+- timing rules
+
+A transition can be legal under one policy version
+and illegal under another.
+
+Therefore:
+
+    every consequential transition must preserve
+    which policy version made it legal.
+
+
+Policy Version
+--------------
+
+A policy is a versioned set of rules governing transitions.
+
+Example:
+
+    Policy v12
+
+    Approve requires:
+        IdentityVerified
+        ReviewerAssigned
+
+    Ship requires:
+        PaymentCaptured
+
+Later:
+
+    Policy v13
+
+    Approve requires:
+        IdentityVerified
+        ReviewerAssigned
+        FraudCheckPassed
+
+    Ship requires:
+        PaymentCaptured
+        FraudCheckFresh < 30 minutes
+
+
+Capabilities Must Bind Policy Version
+-------------------------------------
+
+Suppose:
+
+    CanApprove
+
+was derived under:
+
+    Policy v12
+
+Before execution:
+
+    Policy v13
+
+becomes active.
+
+The capability should carry:
+
+    CanApprove {
+        policyVersion = 12
+        stateVersions = [...]
+    }
+
+At execution the runtime checks:
+
+    Is the state snapshot still valid?
+
+    Is the policy snapshot still valid?
+
+If not:
+
+    REJECTED
+
+    Capability derived under policy v12.
+
+    Current applicable policy requires reevaluation.
+
+
+Policy Effective Periods
+------------------------
+
+Not all transitions use simply "the newest policy."
+
+Example:
+
+    Applications submitted before October 1:
+        Policy v12
+
+    Applications submitted October 1 or later:
+        Policy v13
+
+Therefore policy selection requires context.
+
+Possible context:
+
+    PolicyContext {
+        jurisdiction
+        effectiveDate
+        transactionDate
+        product
+        customerClass
+        policyVersion
+    }
+
+Important question:
+
+    Which policy governs this transition?
+
+is more precise than:
+
+    What is the current policy?
+
+
+Historical State Must Not Be Silently Reinterpreted
+---------------------------------------------------
+
+Suppose an application was legitimately approved under v12:
+
+    ApplicationApproved
+
+    PolicyVersion:
+        12
+
+    Evidence:
+        IdentityVerified
+        ReviewerAssigned
+
+Then v13 adds:
+
+    FraudCheckPassed
+
+That should not automatically make the historical approval invalid.
+
+Unless a policy is explicitly retroactive,
+the historical decision remains valid according to the policy snapshot
+that governed it at the time.
+
+Therefore important events should preserve:
+
+    transition
+    state before
+    state after
+    policy version
+    evidence
+    capabilities
+    actor
+    timestamp
+
+
+Policy Changes Are Themselves State Transitions
+-----------------------------------------------
+
+Policy should not be changed through arbitrary assignment.
+
+A policy can have its own lifecycle:
+
+    Draft
+      ->
+    Reviewed
+      ->
+    Approved
+      ->
+    Scheduled
+      ->
+    Active
+      ->
+    Superseded
+      ->
+    Retired
+
+An AI agent may propose:
+
+    Change shipping freshness from 30 minutes to 10 minutes.
+
+But it should not directly rewrite production policy.
+
+It requests a policy transition.
+
+This recursively applies the same architecture to the rules themselves.
+
+
+Three Policy Change Classes
+---------------------------
+
+Policy changes should distinguish at least three effects.
+
+
+1. Prospective Change
+
+Only future transitions use the new rule.
+
+Example:
+
+    v13 effective tomorrow
+
+Existing state remains valid.
+
+
+2. Reassessment-Triggering Change
+
+Existing state remains historically valid,
+but current objects must be reevaluated.
+
+Example:
+
+    New fraud rule requires all currently Approved
+    but unfunded applications to be rechecked.
+
+The system generates obligations:
+
+    ReassessApplication A17
+    ReassessApplication A31
+    ...
+
+It does not silently rewrite those applications.
+
+
+3. Invalidating Change
+
+Some evidence or prior basis is explicitly invalidated.
+
+Example:
+
+    Credential issuer X was compromised.
+
+    All verifications from issuer X are invalid.
+
+Then:
+
+    Evidence invalidated
+        ->
+    Claims downgraded
+        ->
+    Capabilities disappear
+        ->
+    Obligations generated
+
+This is more precise than saying:
+
+    New policy means old state is wrong.
+
+
+Policy Dependencies
+-------------------
+
+Capabilities may depend on multiple policy modules.
+
+Example:
+
+    CanShip
+
+depends on:
+
+    ShippingPolicy@13
+    FraudPolicy@8
+    PaymentPolicy@22
+
+The capability should preserve this policy snapshot:
+
+    CanShip {
+        policyDependencies = [
+            ShippingPolicy@13
+            FraudPolicy@8
+            PaymentPolicy@22
+        ]
+    }
+
+If only FraudPolicy changes,
+the system can identify exactly which capabilities require reevaluation.
+
+
+Policy Dependency Graph
+-----------------------
+
+A policy dependency graph may look like:
+
+    Policy
+      ->
+    Guard
+      ->
+    Capability
+      ->
+    Transition
+
+This makes policy impact analysis mechanically possible.
+
+
+Commercial Importance
+---------------------
+
+Today, when a business rule changes,
+organizations often ask:
+
+    Where is this rule implemented?
+
+The answer may be scattered across:
+
+    service A
+    service B
+    UI validation
+    database trigger
+    batch process
+    stored procedure
+    tests
+    comments
+
+The desired architecture is:
+
+    Policy P17
+        ->
+    Guards G4, G9
+        ->
+    Capabilities C2, C7
+        ->
+    Transitions T3, T11
+
+This could greatly reduce both human and agent search cost.
+
+
+Policy Should Be Declarative and Versioned
+------------------------------------------
+
+Policies should ideally be declarative
+rather than arbitrary executable functions.
+
+Example:
+
+    policy ShippingEligibility v13
+
+    effective:
+        2026-10-01
+
+    transition:
+        Ship
+
+    requires:
+        Order.State = Approved
+        Payment.State = Captured
+        Customer.FraudState = Clear
+
+    requiresFresh:
+        Customer.FraudState < 30m
+
+From this, tooling may be able to generate:
+
+- guards
+- capability derivation
+- agent tool availability
+- documentation
+- policy-diff reports
+- tests
+- model-checker rules
+
+
+Policy Diff
+-----------
+
+A policy diff from:
+
+    v12 -> v13
+
+should ideally explain:
+
+    Added requirement:
+        FraudCheckPassed
+
+    Changed freshness:
+        60 minutes -> 30 minutes
+
+    Affected transitions:
+        Approve
+        Ship
+
+    Existing objects requiring reassessment:
+        318
+
+    Historical events affected:
+        0
+
+    Outstanding capabilities invalidated:
+        42
+
+This creates a useful interface for both humans and agents.
+
+
+Policy Branching
+----------------
+
+Real organizations rarely have one global policy.
+
+They may have:
+
+    US policy
+    EU policy
+    Indiana policy
+    Enterprise customer policy
+    Legacy customer policy
+    Experimental policy
+
+Therefore policy version should not be a single global integer.
+
+Instead use separately versioned policy modules.
+
+Example:
+
+    PolicySet {
+        IdentityPolicy
+        FraudPolicy
+        PaymentPolicy
+        ShippingPolicy
+    }
+
+A transition evaluates against a policy snapshot:
+
+    PolicySnapshot {
+        IdentityPolicy@7
+        FraudPolicy@12
+        ShippingPolicy@4
+    }
+
+This prevents an unrelated policy change
+from invalidating all capabilities.
+
+
+Core Policy Model
+-----------------
+
+Working concepts:
+
+    POLICY
+        Versioned rule set.
+
+    POLICY CONTEXT
+        Determines which policy applies.
+
+    POLICY SNAPSHOT
+        Exact versions used for a decision.
+
+    POLICY DEPENDENCIES
+        Which guards, capabilities, and transitions rely on which policies.
+
+    POLICY CHANGE
+        Itself governed by state transitions.
+
+    POLICY EFFECT
+        Prospective, reassessment-triggering, or invalidating.
+
+
+Transition Audit Record
+-----------------------
+
+Every consequential transition should preserve something like:
+
+    State snapshot
+    Policy snapshot
+    Evidence snapshot
+    Capability
+    Actor
+    Result
+    Timestamp
+    Provenance
+
+This provides historical explainability.
+
+
+Strong Policy Principle
+-----------------------
+
+Working rule:
+
+    A state transition is legal according to
+    a specific versioned policy snapshot,
+    not according to an abstract notion of
+    "the current rules."
+
+
+Example
+-------
+
+Agent proposes:
+
+    Ship
+
+Runtime evaluates:
+
+    State snapshot:
+        Order@17
+        Payment@8
+        Customer@43
+
+    Policy snapshot:
+        ShippingPolicy@13
+        FraudPolicy@8
+
+    Evidence:
+        PaymentCaptured E44
+        FraudCheck E51
+
+    Capability:
+        CanShip@991
+
+Later, the system can still reconstruct
+why the transition was legal.
+
+
+Next Open Problem
+-----------------
+
+A major next issue remains:
+
+    What happens when a policy change generates
+    thousands or millions of reassessment obligations?
+
+This introduces new questions about:
+
+- prioritization
+- batching
+- deadlines
+- risk ranking
+- conflicting obligations
+- resource constraints
+- policy-driven work queues
+- escalation
+- eventual completion
+- historical auditability
+
+
+UPDATED ARCHITECTURAL SUMMARY
+=============================
+
+The architecture now contains at least these concepts:
+
+    Local State
+        Authoritative state owned by an aggregate.
+
+    Orthogonal State
+        Independent state dimensions.
+
+    Derived State
+        State calculated from authoritative state.
+
+    Epistemic State
+        Unknown / assumed / inferred / verified / contradicted / invalidated.
+
+    Execution State
+        State of an external operation.
+
+    Transition
+        Legal state change.
+
+    Guard
+        Local condition controlling transition legality.
+
+    Invariant
+        Condition that must hold for valid aggregate state.
+
+    Cross-Object Policy
+        Rules interpreting combinations of independently authoritative states.
+
+    Capability
+        Version-bound proof that an operation was legal for a specific snapshot.
+
+    Obligation
+        Required resolution created by current state or policy.
+
+    Coordinator
+        Small stateful object that serializes conflicting multi-object processes.
+
+    Effect
+        External interaction.
+
+    Event
+        Immutable fact that occurred.
+
+    Evidence
+        Basis for claims and decisions.
+
+    Provenance
+        Why the system believes or did something.
+
+    Freshness
+        How current an observation must be.
+
+    Policy
+        Versioned rules governing transitions.
+
+    Policy Context
+        Determines which policy applies.
+
+    Policy Snapshot
+        Exact policy versions used for a decision.
+
+    Policy Dependency
+        Relationship from policy to guards, capabilities, and transitions.
+
+
+CURRENT HIGH-LEVEL FLOW
+=======================
+
+        VERSIONED LOCAL STATE
+                 |
+                 v
+        EVIDENCE + PROVENANCE
+                 |
+                 v
+          POLICY SNAPSHOT
+                 |
+                 v
+      CROSS-OBJECT POLICY
+                 |
+          +------+------+
+          |             |
+          v             v
+     Capabilities    Obligations
+          |             |
+          v             v
+        Agent       Required work
+          |
+          v
+    Transition request
+          |
+          v
+    Version + policy validation
+          |
+          v
+     Coordination claim
+          |
+          v
+      Effect execution
+          |
+      +---+---+
+      |   |   |
+      v   v   v
+    Success Failure Unknown
+      |           |
+      v           v
+   Event      Reconciliation
+      |
+      v
+   New state
+
+
+CURRENT WORKING PRINCIPLES
+==========================
+
+1. Do not create one type for every state combination.
+
+2. Use types for stable structural state.
+
+3. Use orthogonal state values for independent dimensions.
+
+4. Use derived state when possible.
+
+5. Use local invariants for aggregate consistency.
+
+6. Use cross-object policy for relationships among aggregates.
+
+7. Use capabilities for what may legally happen now.
+
+8. Use obligations for what must be resolved.
+
+9. Bind capabilities to exact state versions.
+
+10. Bind capabilities to exact policy snapshots.
+
+11. Revalidate capabilities at execution time.
+
+12. Use coordination aggregates for mutually incompatible concurrent transitions.
+
+13. External effects require explicit execution state.
+
+14. Unknown external outcome must remain Unknown until reconciled.
+
+15. Retries reuse semantic operation identity.
+
+16. Freshness is part of evidence for distributed observations.
+
+17. Historical transitions preserve policy and evidence provenance.
+
+18. Policy changes are themselves governed state transitions.
+
+19. Policy changes may be prospective, reassessment-triggering, or invalidating.
+
+20. Agents should see the current verified state, legal frontier, obligations, and reasons—not the entire theoretical state space.
+

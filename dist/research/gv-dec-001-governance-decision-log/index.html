@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Governance Decision Log | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span> <span data-pagefind-meta="stableId">GV-DEC-001</span> </p> <h1 data-pagefind-meta="title">Governance Decision Log</h1>  <dl class="metadata-panel"> <div><dt>Identifier</dt><dd>GV-DEC-001</dd></div> <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">canonical</dd></div> <div><dt>Version</dt><dd>1.0.0</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div> <div><dt>Tags</dt><dd data-pagefind-meta="tags">governance, decisions, phase-1</dd></div> <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>docs/00-governance/Governance-Decision-Log.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#governance-decision-log">Governance Decision Log</a></li><li><a href="#evidence-baseline">Evidence Baseline</a></li><li><a href="#df-gov-001-authority-order">DF-GOV-001 — Authority Order</a></li><li><a href="#df-gov-002-canonical-artifact-hierarchy">DF-GOV-002 — Canonical Artifact Hierarchy</a></li><li><a href="#df-gov-003-meaning-of-df-">DF-GOV-003 — Meaning of  DF-</a></li><li><a href="#df-gov-004-confidence-representation">DF-GOV-004 — Confidence Representation</a></li><li><a href="#df-gov-005-full-rep-threshold">DF-GOV-005 — Full REP Threshold</a></li><li><a href="#df-gov-006-agent-escalation-thresholds">DF-GOV-006 — Agent Escalation Thresholds</a></li><li><a href="#df-gov-007-registry-update-expectations">DF-GOV-007 — Registry Update Expectations</a></li><li><a href="#df-gov-008-versioning-and-supersession">DF-GOV-008 — Versioning and Supersession</a></li><li><a href="#df-gov-009-research-and-implementation-relationship">DF-GOV-009 — Research and Implementation Relationship</a></li><li><a href="#df-gov-010-role-of-root-agents-md">DF-GOV-010 — Role of Root  AGENTS.md</a></li> </ol> </aside> <section class="document-body"><h1 id="governance-decision-log">Governance Decision Log</h1>
+<h2 id="evidence-baseline">Evidence Baseline</h2>
+<p>On 2026-07-22, repository discovery found the Phase 1 execution prompt as the only substantive working-tree document and <code>.gitattributes</code> as the only tracked file. There were no existing REPs, registries, journals, agent charters, Clarity or Visual Engineering materials, architecture documents, development standards, or prior governance proposals. Consequently, the decisions below are grounded in the explicit Phase 1 mandate, general operational tradeoffs, and internal consistency—not falsely attributed legacy practice. Each is revisited when real use supplies contrary evidence.</p>
+<h2 id="df-gov-001--authority-order">DF-GOV-001 — Authority Order</h2>
+<ul>
+<li><strong>Date:</strong> 2026-07-22</li>
+<li><strong>Status:</strong> accepted</li>
+<li><strong>Context:</strong> Agents need deterministic conflict resolution without treating repository state or agent preference as policy.</li>
+<li><strong>Hypothesis:</strong> A layered authority order, with safety/legal constraints as non-waivable boundaries, permits useful autonomy while preserving control.</li>
+<li><strong>Evidence considered:</strong> Required authority order in the Phase 1 mandate; need to preserve explicit user intent; current implementation may reveal actual behavior but not normative intent. No contradictory repository record exists.</li>
+<li><strong>Alternatives:</strong> Treat implementation as authoritative; put all constraints above user intent without qualification; escalate every conflict.</li>
+<li><strong>Decision:</strong> Use the eight-level order in <code>GV-ROS-001</code>; safety/legal/platform constraints remain applicable boundaries regardless of phrasing. Resolve same-level ties by applicability, specificity, accepted status, then recency.</li>
+<li><strong>Confidence:</strong> High (0.86)</li>
+<li><strong>Consequences:</strong> Agents can resolve routine conflicts; material ambiguity still escalates.</li>
+<li><strong>Revisit trigger:</strong> A real conflict cannot be resolved safely or a platform policy requires a revised formulation.</li>
+</ul>
+<h2 id="df-gov-002--canonical-artifact-hierarchy">DF-GOV-002 — Canonical Artifact Hierarchy</h2>
+<ul>
+<li><strong>Date:</strong> 2026-07-22</li>
+<li><strong>Status:</strong> accepted</li>
+<li><strong>Context:</strong> The mandated REP foundation explicitly prohibits silently replacing its hierarchy.</li>
+<li><strong>Hypothesis:</strong> Journal → REP → Theory Registry → Evidence Registry should remain the primary hierarchy, with other registries supporting it.</li>
+<li><strong>Evidence considered:</strong> Explicit Phase 1 canonical REP foundation; distinct chronological, synthesis, model, and provenance roles. No legacy artifacts contradict it.</li>
+<li><strong>Alternatives:</strong> Make REP the sole source; place every registry at the same level; make code the source of research truth.</li>
+<li><strong>Decision:</strong> Preserve the four-part hierarchy. Hypothesis, Experiment, Decision, Concept, and Glossary records are supporting indexes with distinct lifecycles.</li>
+<li><strong>Confidence:</strong> Very High (0.95)</li>
+<li><strong>Consequences:</strong> Rich source records and current-state indexes coexist without claiming equal function.</li>
+<li><strong>Revisit trigger:</strong> Operational use reveals unresolvable ownership or synchronization problems.</li>
+</ul>
+<h2 id="df-gov-003--meaning-of-df-">DF-GOV-003 — Meaning of <code>DF-</code></h2>
+<ul>
+<li><strong>Date:</strong> 2026-07-22</li>
+<li><strong>Status:</strong> accepted</li>
+<li><strong>Context:</strong> The prompt identifies ambiguity between decision framework and decision record.</li>
+<li><strong>Hypothesis:</strong> One decision-record meaning produces stronger traceability than an identifier that denotes both a reusable method and an enacted choice.</li>
+<li><strong>Evidence considered:</strong> Required preference for one canonical meaning; decisions require context, alternatives, evidence, and consequences. No legacy <code>DF-</code> records exist.</li>
+<li><strong>Alternatives:</strong> Use <code>DF-</code> for both; reserve it for frameworks and create a new decision prefix.</li>
+<li><strong>Decision:</strong> <code>DF-</code> means Decision Record. Future reusable decision frameworks require a separately governed artifact type. Legacy <code>DF-</code> frameworks retain IDs, declare <code>legacy_type</code>, and link a new Decision Record when used.</li>
+<li><strong>Confidence:</strong> High (0.90)</li>
+<li><strong>Consequences:</strong> Every <code>DF-</code> denotes an actual choice; migration preserves history.</li>
+<li><strong>Revisit trigger:</strong> Existing external records surface whose migration cost or semantics make this unsafe.</li>
+</ul>
+<h2 id="df-gov-004--confidence-representation">DF-GOV-004 — Confidence Representation</h2>
+<ul>
+<li><strong>Date:</strong> 2026-07-22</li>
+<li><strong>Status:</strong> accepted</li>
+<li><strong>Context:</strong> Contributors need readable uncertainty without false precision.</li>
+<li><strong>Hypothesis:</strong> Mandatory categorical labels plus optional numeric estimates balance communication and comparison.</li>
+<li><strong>Evidence considered:</strong> Phase 1 preference for both forms; numerical estimates can imply unjustified calibration; categories alone can be coarse.</li>
+<li><strong>Alternatives:</strong> Numeric only; categorical only; no standardized representation.</li>
+<li><strong>Decision:</strong> Require Low, Medium, High, or Very High with rationale; permit <code>0.00–1.00</code> estimates. Keep confidence independent of completion, priority, and importance.</li>
+<li><strong>Confidence:</strong> High (0.84)</li>
+<li><strong>Consequences:</strong> Uncertainty is visible and comparable while rationale remains primary.</li>
+<li><strong>Revisit trigger:</strong> Calibration data supports different bands or users consistently misinterpret the scale.</li>
+</ul>
+<h2 id="df-gov-005--full-rep-threshold">DF-GOV-005 — Full REP Threshold</h2>
+<ul>
+<li><strong>Date:</strong> 2026-07-22</li>
+<li><strong>Status:</strong> accepted</li>
+<li><strong>Context:</strong> A REP is valuable but too costly for every edit.</li>
+<li><strong>Hypothesis:</strong> Requiring a REP for theory-relevant, decision-relevant, multi-session/agent, or durable research handoffs preserves knowledge without blocking routine work.</li>
+<li><strong>Evidence considered:</strong> REP purpose and success criterion; explicit efficiency principle and instruction that not every implementation needs a REP.</li>
+<li><strong>Alternatives:</strong> REP for every change; REP only on publication; agent discretion without thresholds.</li>
+<li><strong>Decision:</strong> Apply the five artifact thresholds in <code>GV-AGENT-001</code>; use a full or partial REP when bounded research affects theory/material decisions, crosses sessions/agents, or requires executable research handoff.</li>
+<li><strong>Confidence:</strong> High (0.85)</li>
+<li><strong>Consequences:</strong> Trivial work remains lightweight; substantial research remains reconstructable.</li>
+<li><strong>Revisit trigger:</strong> Repeated knowledge loss below the threshold or ceremony exceeds its demonstrated value.</li>
+</ul>
+<h2 id="df-gov-006--agent-escalation-thresholds">DF-GOV-006 — Agent Escalation Thresholds</h2>
+<ul>
+<li><strong>Date:</strong> 2026-07-22</li>
+<li><strong>Status:</strong> accepted</li>
+<li><strong>Context:</strong> Excess escalation blocks work; unbounded autonomy creates harm.</li>
+<li><strong>Hypothesis:</strong> Agents should decide reversible, in-scope matters and escalate restricted consequences rather than mere uncertainty.</li>
+<li><strong>Evidence considered:</strong> Phase 1 autonomy and escalation requirements; reversibility limits downside and safe probes reduce uncertainty.</li>
+<li><strong>Alternatives:</strong> Ask before every choice; fully autonomous action within technical access; dollar-value-only thresholds.</li>
+<li><strong>Decision:</strong> Escalate irreversible destruction, material security/privacy risk, legal ambiguity, materially conflicting goals, missing required access, or consequences outside authorized scope. Take safe reversible paths and document assumptions.</li>
+<li><strong>Confidence:</strong> High (0.88)</li>
+<li><strong>Consequences:</strong> Agents act efficiently while retaining human control over consequential risk.</li>
+<li><strong>Revisit trigger:</strong> An incident shows a missing risk class or routine work is repeatedly blocked.</li>
+</ul>
+<h2 id="df-gov-007--registry-update-expectations">DF-GOV-007 — Registry Update Expectations</h2>
+<ul>
+<li><strong>Date:</strong> 2026-07-22</li>
+<li><strong>Status:</strong> provisionally accepted</li>
+<li><strong>Context:</strong> Registries must expose current knowledge without losing history, but none exist yet.</li>
+<li><strong>Hypothesis:</strong> Append-oriented history plus mutable current-state views provides auditability and usability.</li>
+<li><strong>Evidence considered:</strong> Need for lifecycle traceability; instruction not to create empty registries; absence of actual registry storage or consumers.</li>
+<li><strong>Alternatives:</strong> Immutable registries only; overwrite entries; defer all rules until implementation.</li>
+<li><strong>Decision:</strong> Preserve state-transition history and update affected current entries atomically with accepted REPs when registries exist. Explicitly record blocked updates. Do not create empty registries; Phase 2 must define schema, storage, ownership, and validation with real records.</li>
+<li><strong>Confidence:</strong> Medium (0.68)</li>
+<li><strong>Consequences:</strong> A coherent default exists without prematurely choosing file formats.</li>
+<li><strong>Revisit trigger:</strong> First registry implementation, concurrency needs, or evidence that append history is unsustainable.</li>
+</ul>
+<h2 id="df-gov-008--versioning-and-supersession">DF-GOV-008 — Versioning and Supersession</h2>
+<ul>
+<li><strong>Date:</strong> 2026-07-22</li>
+<li><strong>Status:</strong> accepted</li>
+<li><strong>Context:</strong> Canonical changes must remain legible and migratable.</li>
+<li><strong>Hypothesis:</strong> Stable IDs, semantic document versions, explicit statuses, bidirectional supersession, and migrations for breaking changes prevent silent policy drift.</li>
+<li><strong>Evidence considered:</strong> Required metadata and migration rules; auditability needs. No legacy IDs require retrofit.</li>
+<li><strong>Alternatives:</strong> Date versions only; overwrite in place; always create a new ID.</li>
+<li><strong>Decision:</strong> Adopt <code>draft/canonical/deprecated/archived</code>, semantic versions, stable identity across revisions, new IDs for coexisting/new identities, and explicit migration for breaking changes.</li>
+<li><strong>Confidence:</strong> High (0.87)</li>
+<li><strong>Consequences:</strong> Consumers can determine authority and change impact; maintainers incur modest metadata upkeep.</li>
+<li><strong>Revisit trigger:</strong> Tooling requires a different version scheme or identity ambiguity emerges.</li>
+</ul>
+<h2 id="df-gov-009--research-and-implementation-relationship">DF-GOV-009 — Research and Implementation Relationship</h2>
+<ul>
+<li><strong>Date:</strong> 2026-07-22</li>
+<li><strong>Status:</strong> accepted</li>
+<li><strong>Context:</strong> Research conclusions must guide implementation without treating a successful build as proof of every underlying theory.</li>
+<li><strong>Hypothesis:</strong> Decisions bridge accepted research to implementation; validation results feed back as evidence.</li>
+<li><strong>Evidence considered:</strong> Required end-to-end lifecycle and traceability; implementation can validate behavior while leaving causal explanations uncertain.</li>
+<li><strong>Alternatives:</strong> Direct REP-to-code with no decision; implementation as canonical truth; isolate research from engineering.</li>
+<li><strong>Decision:</strong> Material implementation follows an accepted decision linked to relevant REP/theory; its validation produces evidence and may update hypotheses/theory. Trivial implementation may link acceptance criteria without a REP.</li>
+<li><strong>Confidence:</strong> High (0.89)</li>
+<li><strong>Consequences:</strong> Traceability is proportional and learning becomes cyclical.</li>
+<li><strong>Revisit trigger:</strong> Workflow evidence shows the decision bridge duplicates another authoritative mechanism.</li>
+</ul>
+<h2 id="df-gov-010--role-of-root-agentsmd">DF-GOV-010 — Role of Root <code>AGENTS.md</code></h2>
+<ul>
+<li><strong>Date:</strong> 2026-07-22</li>
+<li><strong>Status:</strong> accepted</li>
+<li><strong>Context:</strong> Every coding agent needs a routinely readable entry point, but a single file cannot carry all procedures.</li>
+<li><strong>Hypothesis:</strong> A concise root guide is sufficient for orientation when it links to scoped canonical documents, not when it duplicates them.</li>
+<li><strong>Evidence considered:</strong> Explicit Phase 1 requirement; long startup files are less likely to be followed; scoped documents reduce duplication.</li>
+<li><strong>Alternatives:</strong> Put the entire ROS in <code>AGENTS.md</code>; omit root guidance; tool-specific instruction files as independent authorities.</li>
+<li><strong>Decision:</strong> <code>AGENTS.md</code> is the canonical startup router and high-signal rule summary. Detailed authority remains in the linked constitution and manuals; future local agent files may refine task context but cannot contradict higher governance.</li>
+<li><strong>Confidence:</strong> High (0.86)</li>
+<li><strong>Consequences:</strong> New agents orient quickly; canonical detail remains maintainable.</li>
+<li><strong>Revisit trigger:</strong> Agent evaluations show missed rules, broken discovery, or tool incompatibility with links/front matter.</li>
+</ul></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

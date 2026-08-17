@@ -1,0 +1,936 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Agent Research Script: Minimal Browser ABI for Strongly Typed WebAssembly Applications | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">Agent Research Script: Minimal Browser ABI for Strongly Typed WebAssembly Applications</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/prompts/minimal-browser-abi-research-prompt.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#agent-research-script-minimal-browser-abi-for-strongly-typed-webassembly-applications">Agent Research Script: Minimal Browser ABI for Strongly Typed WebAssembly Applications</a></li><li><a href="#mission">Mission</a></li><li><a href="#existing-architectural-context">Existing Architectural Context</a></li><li><a href="#core-architecture-to-investigate">Core Architecture to Investigate</a></li><li><a href="#key-design-principle">Key Design Principle</a></li><li><a href="#research-questions">Research Questions</a></li><li><a href="#1-what-should-remain-entirely-native-">1. What should remain entirely native?</a></li><li><a href="#html">HTML</a></li><li><a href="#css">CSS</a></li><li><a href="#2-what-events-need-to-cross-into-wasm-">2. What events need to cross into Wasm?</a></li><li><a href="#3-what-dom-operations-must-wasm-be-able-to-request-">3. What DOM operations must Wasm be able to request?</a></li><li><a href="#4-what-browser-capabilities-must-be-exposed-">4. What browser capabilities must be exposed?</a></li><li><a href="#capability-design">Capability Design</a></li><li><a href="#fetch-network-architecture">Fetch / Network Architecture</a></li><li><a href="#ui-projection-model">UI Projection Model</a></li><li><a href="#approach-a-explicit-dom-commands">Approach A: Explicit DOM commands</a></li><li><a href="#approach-b-typed-view-model-projection-diff">Approach B: Typed view model projection + diff</a></li><li><a href="#approach-c-fine-grained-reactive-dependencies">Approach C: Fine-grained reactive dependencies</a></li><li><a href="#react-comparison">React Comparison</a></li><li><a href="#presentation-state">Presentation State</a></li><li><a href="#a">A</a></li><li><a href="#b">B</a></li><li><a href="#c">C</a></li><li><a href="#d">D</a></li><li><a href="#form-architecture">Form Architecture</a></li><li><a href="#javascript-bridge-size">JavaScript Bridge Size</a></li><li><a href="#security-analysis">Security Analysis</a></li><li><a href="#performance-analysis">Performance Analysis</a></li><li><a href="#strongly-typed-language-compatibility">Strongly Typed Language Compatibility</a></li><li><a href="#webassembly-component-model">WebAssembly Component Model</a></li><li><a href="#prototype-requirement">Prototype Requirement</a></li><li><a href="#failure-falsification-tests">Failure / Falsification Tests</a></li><li><a href="#high-frequency-events">High-frequency events</a></li><li><a href="#large-dom-updates">Large DOM updates</a></li><li><a href="#complex-dynamic-lists">Complex dynamic lists</a></li><li><a href="#rich-text-editing">Rich text editing</a></li><li><a href="#drag-and-drop">Drag-and-drop</a></li><li><a href="#canvas-webgl-applications">Canvas/WebGL applications</a></li><li><a href="#complex-animations">Complex animations</a></li><li><a href="#third-party-widgets">Third-party widgets</a></li><li><a href="#accessibility">Accessibility</a></li><li><a href="#ssr-hydration">SSR / hydration</a></li><li><a href="#offline-apps">Offline apps</a></li><li><a href="#real-time-applications">Real-time applications</a></li><li><a href="#browser-extensions">Browser extensions</a></li><li><a href="#ai-agent-evaluation">AI-Agent Evaluation</a></li><li><a href="#deliverables">Deliverables</a></li><li><a href="#1-research-summary">1. Research Summary</a></li><li><a href="#2-minimal-browser-abi-specification">2. Minimal Browser ABI Specification</a></li><li><a href="#3-javascript-bridge-specification">3. JavaScript Bridge Specification</a></li><li><a href="#4-wasm-application-contract">4. Wasm Application Contract</a></li><li><a href="#5-html-css-responsibility-specification">5. HTML/CSS Responsibility Specification</a></li><li><a href="#6-react-responsibility-decomposition">6. React Responsibility Decomposition</a></li><li><a href="#7-prototype-design">7. Prototype Design</a></li><li><a href="#8-conformance-tests">8. Conformance Tests</a></li><li><a href="#9-falsification-report">9. Falsification Report</a></li><li><a href="#10-recommendation">10. Recommendation</a></li><li><a href="#research-standards">Research Standards</a></li><li><a href="#critical-constraints">Critical Constraints</a></li><li><a href="#final-decision-test">Final Decision Test</a></li> </ol> </aside> <section class="document-body"><h1 id="agent-research-script-minimal-browser-abi-for-strongly-typed-webassembly-applications">Agent Research Script: Minimal Browser ABI for Strongly Typed WebAssembly Applications</h1>
+<h2 id="mission">Mission</h2>
+<p>Act as a senior browser-runtime engineer, WebAssembly researcher, programming-language researcher, frontend-architecture researcher, security engineer, and AI-agent systems researcher.</p>
+<p>Your task is to investigate, design, and critically evaluate a <strong>minimal, application-agnostic browser ABI</strong> that allows:</p>
+<ul>
+<li>HTML to own document structure and native browser semantics.</li>
+<li>CSS to own presentation and purely visual interaction.</li>
+<li>JavaScript to act only as a thin browser event/effect bridge.</li>
+<li>WebAssembly to own authoritative application semantics, state transitions, validation, capabilities, effects, evidence, obligations, and application decisions.</li>
+</ul>
+<p>The goal is NOT to rewrite React in another language.</p>
+<p>The goal is to determine whether modern web applications can be built with a much smaller semantic surface:</p>
+<pre><code class="language-text">HTML / CSS
+    ↓
+native browser behavior
+    ↓
+tiny generic JavaScript bridge
+    ↕
+strongly typed WebAssembly application
+</code></pre>
+<p>The central hypothesis is:</p>
+<blockquote>
+<p>A browser application can keep HTML/CSS as native browser concerns, reduce JavaScript to a small generic event/effect adapter, and move authoritative application semantics into strongly typed WebAssembly without recreating the complexity of a large JavaScript framework.</p>
+</blockquote>
+<p>Do not assume this hypothesis is true.</p>
+<p>Be skeptical.</p>
+<p>Your job is to determine:</p>
+<ol>
+<li>what can actually be removed,</li>
+<li>what must remain,</li>
+<li>where complexity merely moves,</li>
+<li>where performance or ergonomics become worse,</li>
+<li>which browser APIs force awkward interop,</li>
+<li>whether the JavaScript bridge can remain generic and application-agnostic,</li>
+<li>whether the resulting architecture is easier for AI agents to reason about and modify.</li>
+</ol>
+<hr>
+<h1 id="existing-architectural-context">Existing Architectural Context</h1>
+<p>If available, read and incorporate the project specification:</p>
+<p><code>/mnt/data/zero-authoritative-javascript-web-architecture-spec-v0.1.md</code></p>
+<p>Treat that specification as prior architectural context, not unquestionable truth.</p>
+<p>Challenge it where necessary.</p>
+<p>The key prior principle is:</p>
+<blockquote>
+<p>JavaScript may provide mechanism, but it may not own meaning.</p>
+</blockquote>
+<p>The new investigation goes one level deeper:</p>
+<blockquote>
+<p>How small can the browser-side mechanism actually become?</p>
+</blockquote>
+<hr>
+<h1 id="core-architecture-to-investigate">Core Architecture to Investigate</h1>
+<p>Evaluate this target model:</p>
+<pre><code class="language-text">                 BROWSER
+
+        HTML                  CSS
+         │                     │
+         └──── native UI ──────┘
+                  │
+             browser events
+                  │
+                  ▼
+        ┌──────────────────┐
+        │ Generic JS bridge│
+        │                  │
+        │ events → Wasm    │
+        │ effects ← Wasm   │
+        │ results → Wasm   │
+        │ DOM ops ← Wasm   │
+        └────────┬─────────┘
+                 │
+                 ▼
+              WebAssembly
+                 │
+        ┌────────▼─────────┐
+        │ Typed Application│
+        │                  │
+        │ domain state     │
+        │ transitions      │
+        │ validation       │
+        │ evidence         │
+        │ capabilities     │
+        │ obligations      │
+        │ effects          │
+        │ projections      │
+        └──────────────────┘
+</code></pre>
+<p>The JavaScript layer should ideally:</p>
+<ul>
+<li>contain no domain knowledge,</li>
+<li>contain no application-specific rules,</li>
+<li>contain no authoritative state,</li>
+<li>contain no business validation,</li>
+<li>contain no workflow decisions,</li>
+<li>contain no authorization decisions,</li>
+<li>contain no policy interpretation.</li>
+</ul>
+<hr>
+<h1 id="key-design-principle">Key Design Principle</h1>
+<p>Use this rule:</p>
+<blockquote>
+<p>Cross the JavaScript/WebAssembly boundary at semantic frequency, not physical-event frequency.</p>
+</blockquote>
+<p>Examples:</p>
+<p>Do NOT send to Wasm merely for:</p>
+<ul>
+<li>CSS hover styling,</li>
+<li>animations,</li>
+<li>layout,</li>
+<li>scroll position unless semantically important,</li>
+<li>every pointer movement,</li>
+<li>every animation frame,</li>
+<li>purely visual focus effects,</li>
+<li>native browser validation that does not affect domain meaning.</li>
+</ul>
+<p>Do send to Wasm for:</p>
+<ul>
+<li>submit intent,</li>
+<li>meaningful field completion,</li>
+<li>workflow commands,</li>
+<li>domain validation,</li>
+<li>capability checks,</li>
+<li>consequential state transitions,</li>
+<li>network-triggering actions,</li>
+<li>reconciliation,</li>
+<li>authorization-relevant decisions.</li>
+</ul>
+<hr>
+<h1 id="research-questions">Research Questions</h1>
+<p>Answer all of the following.</p>
+<h2 id="1-what-should-remain-entirely-native">1. What should remain entirely native?</h2>
+<p>Determine which application behaviors should remain entirely in:</p>
+<h3 id="html">HTML</h3>
+<p>Examples:</p>
+<ul>
+<li>semantic structure,</li>
+<li>forms,</li>
+<li>labels,</li>
+<li>input types,</li>
+<li>accessibility primitives,</li>
+<li>native dialogs where appropriate,</li>
+<li>details/summary,</li>
+<li>validation constraints,</li>
+<li>links,</li>
+<li>navigation semantics.</li>
+</ul>
+<h3 id="css">CSS</h3>
+<p>Examples:</p>
+<ul>
+<li>hover,</li>
+<li>focus appearance,</li>
+<li>responsive layout,</li>
+<li>visual state,</li>
+<li>transitions,</li>
+<li>animation,</li>
+<li>media/container queries.</li>
+</ul>
+<p>For each category, explain why moving it to Wasm would be unnecessary or harmful.</p>
+<hr>
+<h2 id="2-what-events-need-to-cross-into-wasm">2. What events need to cross into Wasm?</h2>
+<p>Create a minimal event taxonomy.</p>
+<p>Candidate event families:</p>
+<pre><code class="language-text">Activate
+Submit
+ValueChanged
+ValueCommitted
+SelectionChanged
+FocusEntered
+FocusLeft
+KeyCommand
+PointerCommand
+NavigationRequested
+FileSelected
+VisibilityChanged
+CustomSemanticEvent
+</code></pre>
+<p>Do not simply mirror DOM event names.</p>
+<p>Design events around semantic usefulness.</p>
+<p>Investigate whether a generic event envelope could work:</p>
+<pre><code class="language-text">UiEvent {
+    event_id
+    source_id
+    event_type
+    value
+    metadata
+    correlation_id
+}
+</code></pre>
+<p>Then evaluate whether this becomes too dynamically typed.</p>
+<p>If so, propose a better typed or schema-driven alternative.</p>
+<hr>
+<h2 id="3-what-dom-operations-must-wasm-be-able-to-request">3. What DOM operations must Wasm be able to request?</h2>
+<p>Find the smallest useful set.</p>
+<p>Candidates:</p>
+<pre><code class="language-text">SetText
+SetValue
+SetAttribute
+RemoveAttribute
+AddClass
+RemoveClass
+SetVisible
+SetEnabled
+SetChecked
+SetSelected
+Focus
+ScrollIntoView
+InsertFragment
+RemoveNode
+ReplaceFragment
+</code></pre>
+<p>Challenge each operation.</p>
+<p>Determine:</p>
+<ul>
+<li>whether it is actually necessary,</li>
+<li>whether it introduces too much arbitrary DOM authority,</li>
+<li>whether higher-level UI projection operations would be safer,</li>
+<li>whether direct HTML fragments should ever be allowed,</li>
+<li>whether DOM IDs are sufficient addressing,</li>
+<li>whether stable semantic element handles are preferable.</li>
+</ul>
+<hr>
+<h2 id="4-what-browser-capabilities-must-be-exposed">4. What browser capabilities must be exposed?</h2>
+<p>Investigate a minimal capability surface for:</p>
+<pre><code class="language-text">HTTP / fetch
+navigation
+history
+clipboard
+local storage
+session storage
+IndexedDB
+cookies where allowed
+file picker
+file download
+notifications
+geolocation
+media
+camera/microphone
+WebSocket
+Server-Sent Events
+WebRTC
+workers
+timers
+clock
+randomness / crypto
+visibility
+resize observation
+intersection observation
+URL/query state
+</code></pre>
+<p>Classify each as:</p>
+<ul>
+<li>essential core capability,</li>
+<li>optional capability module,</li>
+<li>should remain browser-native,</li>
+<li>should be avoided,</li>
+<li>too dangerous for unrestricted exposure.</li>
+</ul>
+<hr>
+<h1 id="capability-design">Capability Design</h1>
+<p>Do NOT expose generic escape hatches such as:</p>
+<pre><code class="language-text">eval
+executeJavascript
+callArbitraryFunction
+getArbitraryProperty
+setArbitraryProperty
+invokeAnything
+</code></pre>
+<p>Instead design narrow explicit capabilities.</p>
+<p>Example:</p>
+<pre><code class="language-text">BrowserCapabilities {
+    Http
+    Navigation
+    Clipboard
+    Storage
+    Focus
+    Files
+}
+</code></pre>
+<p>Investigate whether capability handles can be granted selectively.</p>
+<p>Example:</p>
+<pre><code class="language-text">CustomerSupportModule
+    can:
+        QueryReservation
+        RequestCancellation
+
+    cannot:
+        ForceConfirmation
+        RawFetch
+        ArbitraryDomMutation
+</code></pre>
+<p>Determine how much of this can be enforced:</p>
+<ul>
+<li>at compile time,</li>
+<li>at link time,</li>
+<li>through module boundaries,</li>
+<li>through WebAssembly component interfaces,</li>
+<li>through runtime capability injection,</li>
+<li>through CI/static analysis.</li>
+</ul>
+<hr>
+<h1 id="fetch--network-architecture">Fetch / Network Architecture</h1>
+<p>Design and test this flow:</p>
+<pre><code class="language-text">Wasm
+ ↓
+HttpRequest effect
+ ↓
+JS bridge
+ ↓
+fetch()
+ ↓
+response
+ ↓
+JS bridge
+ ↓
+HttpResult evidence
+ ↓
+Wasm
+</code></pre>
+<p>The JavaScript layer MUST NOT interpret business meaning.</p>
+<p>It may return transport-level information such as:</p>
+<pre><code class="language-text">request_id
+HTTP status
+headers
+body bytes/text
+timing
+network failure
+abort
+timeout
+</code></pre>
+<p>The Wasm layer must determine domain meaning.</p>
+<p>Explicitly investigate ambiguous outcomes.</p>
+<p>Example:</p>
+<pre><code class="language-text">POST /payment
+↓
+network timeout
+</code></pre>
+<p>The result must not automatically mean:</p>
+<pre><code class="language-text">PaymentFailed
+</code></pre>
+<p>because the remote side may have completed the operation.</p>
+<p>Design:</p>
+<pre><code class="language-text">Success
+Failure
+OutcomeUnknown
+</code></pre>
+<p>where appropriate.</p>
+<hr>
+<h1 id="ui-projection-model">UI Projection Model</h1>
+<p>Investigate whether domain/application state should directly emit DOM operations.</p>
+<p>Assume initially that it SHOULD NOT.</p>
+<p>Prefer:</p>
+<pre><code class="language-text">Domain State
+    ↓
+View Projection
+    ↓
+View Model
+    ↓
+UI Diff / UI Commands
+    ↓
+JS bridge
+    ↓
+DOM
+</code></pre>
+<p>Determine whether a minimal UI runtime can track view dependencies without a React-style virtual DOM.</p>
+<p>Explore at least three approaches:</p>
+<h2 id="approach-a-explicit-dom-commands">Approach A: Explicit DOM commands</h2>
+<p>Example:</p>
+<pre><code class="language-text">SetText("reservation-status", "Confirmed")
+SetEnabled("cancel-button", false)
+</code></pre>
+<h2 id="approach-b-typed-view-model-projection--diff">Approach B: Typed view model projection + diff</h2>
+<p>Example:</p>
+<pre><code class="language-text">ReservationView {
+    status_text
+    can_cancel
+    show_confirmation
+}
+</code></pre>
+<p>Runtime compares old/new view models.</p>
+<h2 id="approach-c-fine-grained-reactive-dependencies">Approach C: Fine-grained reactive dependencies</h2>
+<p>Example:</p>
+<pre><code class="language-text">Reservation.Status
+    ├── StatusLabel
+    ├── CancelButton.Enabled
+    └── ConfirmationPanel.Visible
+</code></pre>
+<p>Compare the tradeoffs:</p>
+<ul>
+<li>implementation complexity,</li>
+<li>runtime cost,</li>
+<li>agent reasoning cost,</li>
+<li>debuggability,</li>
+<li>accessibility,</li>
+<li>determinism,</li>
+<li>testability,</li>
+<li>amount of JS required,</li>
+<li>amount of Wasm required.</li>
+</ul>
+<hr>
+<h1 id="react-comparison">React Comparison</h1>
+<p>Use React as a control.</p>
+<p>Do not treat React as the target architecture.</p>
+<p>Compare the proposed model against React in terms of:</p>
+<pre><code class="language-text">component model
+state management
+effects
+hooks
+context
+render scheduling
+virtual DOM
+reconciliation
+event handling
+DOM updates
+fetch lifecycle
+form lifecycle
+server cache
+local presentation state
+</code></pre>
+<p>For each React responsibility classify:</p>
+<pre><code class="language-text">Keep concept
+Replace
+Eliminate
+Move to browser
+Move to Wasm
+Move to generic bridge
+</code></pre>
+<p>The goal is to identify which framework machinery becomes unnecessary when:</p>
+<ul>
+<li>state is explicit,</li>
+<li>transitions are explicit,</li>
+<li>effects are explicit,</li>
+<li>dependencies are explicit.</li>
+</ul>
+<hr>
+<h1 id="presentation-state">Presentation State</h1>
+<p>Do not force all state into the authoritative domain model.</p>
+<p>Define at least four state classes:</p>
+<pre><code class="language-text">A. Authoritative domain state
+B. Application/workflow state
+C. Presentation state
+D. Browser-ephemeral state
+</code></pre>
+<p>Examples:</p>
+<h3 id="a">A</h3>
+<ul>
+<li>payment status,</li>
+<li>reservation status,</li>
+<li>eligibility,</li>
+<li>permissions,</li>
+<li>obligations.</li>
+</ul>
+<h3 id="b">B</h3>
+<ul>
+<li>active workflow,</li>
+<li>pending command,</li>
+<li>loading/reconciliation operation.</li>
+</ul>
+<h3 id="c">C</h3>
+<ul>
+<li>expanded row,</li>
+<li>selected tab,</li>
+<li>draft form text,</li>
+<li>local validation display.</li>
+</ul>
+<h3 id="d">D</h3>
+<ul>
+<li>hover,</li>
+<li>pointer coordinates,</li>
+<li>scroll,</li>
+<li>animation progress,</li>
+<li>browser focus internals.</li>
+</ul>
+<p>Determine which layers:</p>
+<ul>
+<li>belong in Wasm,</li>
+<li>may remain in native browser behavior,</li>
+<li>may remain in generic JS,</li>
+<li>should never enter authoritative state.</li>
+</ul>
+<hr>
+<h1 id="form-architecture">Form Architecture</h1>
+<p>Investigate forms specifically.</p>
+<p>Prefer this flow:</p>
+<pre><code class="language-text">HTML form
+ ↓
+native browser validity
+ ↓
+semantic submit
+ ↓
+generic JS serialization
+ ↓
+Wasm decoding
+ ↓
+typed draft
+ ↓
+domain validation
+ ↓
+command
+</code></pre>
+<p>Evaluate whether generic serialization creates weak typing.</p>
+<p>Explore alternatives:</p>
+<ul>
+<li>schema-generated form bindings,</li>
+<li>typed element IDs,</li>
+<li>generated serializers,</li>
+<li>declarative metadata,</li>
+<li>compile-time generated Wasm/HTML contracts.</li>
+</ul>
+<p>Determine whether form libraries like React Hook Form become unnecessary or merely move elsewhere.</p>
+<hr>
+<h1 id="javascript-bridge-size">JavaScript Bridge Size</h1>
+<p>Estimate the realistic size and complexity of a production-quality generic bridge.</p>
+<p>Do not optimize for a toy demo.</p>
+<p>Account for:</p>
+<ul>
+<li>initialization,</li>
+<li>module loading,</li>
+<li>event delegation,</li>
+<li>async effects,</li>
+<li>fetch,</li>
+<li>error propagation,</li>
+<li>DOM operations,</li>
+<li>capability dispatch,</li>
+<li>cleanup,</li>
+<li>subscriptions,</li>
+<li>browser differences,</li>
+<li>accessibility-related behavior,</li>
+<li>abort/cancellation,</li>
+<li>correlation IDs,</li>
+<li>concurrency.</li>
+</ul>
+<p>Determine whether the bridge could plausibly remain:</p>
+<ul>
+<li>hundreds of lines,</li>
+<li>a few thousand lines,</li>
+<li>tens of thousands of lines.</li>
+</ul>
+<p>Explain what causes growth.</p>
+<p>The goal is NOT minimal line count at any cost.</p>
+<p>The goal is minimal semantic authority and minimal application-specific logic.</p>
+<hr>
+<h1 id="security-analysis">Security Analysis</h1>
+<p>Evaluate the security implications.</p>
+<p>Investigate whether the architecture enables:</p>
+<ul>
+<li>strict Content Security Policy,</li>
+<li>no inline application JavaScript,</li>
+<li>no eval,</li>
+<li>reduced dependency attack surface,</li>
+<li>no application-specific JavaScript bundle,</li>
+<li>constrained browser capabilities,</li>
+<li>easier auditing,</li>
+<li>easier fuzzing,</li>
+<li>easier supply-chain review.</li>
+</ul>
+<p>Do not claim WebAssembly is automatically secure.</p>
+<p>Separate:</p>
+<ul>
+<li>sandboxing benefits,</li>
+<li>architectural benefits,</li>
+<li>CSP benefits,</li>
+<li>type-system benefits,</li>
+<li>capability-control benefits.</li>
+</ul>
+<hr>
+<h1 id="performance-analysis">Performance Analysis</h1>
+<p>Investigate likely performance costs.</p>
+<p>Pay special attention to:</p>
+<ul>
+<li>JS/Wasm boundary crossing,</li>
+<li>serialization,</li>
+<li>DOM mutation cost,</li>
+<li>event frequency,</li>
+<li>large forms,</li>
+<li>large tables,</li>
+<li>high-frequency pointer input,</li>
+<li>animation,</li>
+<li>network-heavy applications,</li>
+<li>memory copying,</li>
+<li>string conversion,</li>
+<li>garbage collection,</li>
+<li>browser engine optimization differences.</li>
+</ul>
+<p>Test or estimate:</p>
+<pre><code class="language-text">physical event frequency
+vs
+semantic event frequency
+</code></pre>
+<p>Develop batching rules.</p>
+<p>Example:</p>
+<pre><code class="language-text">mousemove
+    → remain browser-side
+
+email input
+    → debounce
+    → semantic ValueCommitted
+
+form submit
+    → immediate Wasm event
+</code></pre>
+<hr>
+<h1 id="strongly-typed-language-compatibility">Strongly Typed Language Compatibility</h1>
+<p>Evaluate the ABI from the perspective of:</p>
+<ul>
+<li>F#</li>
+<li>C#</li>
+<li>Rust</li>
+<li>Kotlin</li>
+</ul>
+<p>Optionally:</p>
+<ul>
+<li>Swift</li>
+<li>Haskell</li>
+<li>Go</li>
+</ul>
+<p>The ABI should ideally be language-neutral.</p>
+<p>Determine what representation works best across languages:</p>
+<ul>
+<li>JSON,</li>
+<li>MessagePack,</li>
+<li>CBOR,</li>
+<li>FlatBuffers,</li>
+<li>Protocol Buffers,</li>
+<li>WIT/component-model values,</li>
+<li>shared memory,</li>
+<li>generated binary protocol.</li>
+</ul>
+<p>Do not assume JSON is optimal.</p>
+<p>Compare:</p>
+<ul>
+<li>implementation complexity,</li>
+<li>runtime cost,</li>
+<li>type preservation,</li>
+<li>schema evolution,</li>
+<li>debugging,</li>
+<li>browser tooling,</li>
+<li>agent comprehensibility.</li>
+</ul>
+<hr>
+<h1 id="webassembly-component-model">WebAssembly Component Model</h1>
+<p>Investigate whether the WebAssembly Component Model and WIT can help define the browser ABI.</p>
+<p>Explore whether concepts such as:</p>
+<pre><code class="language-text">record
+variant
+enum
+option
+result
+resource
+</code></pre>
+<p>can describe:</p>
+<ul>
+<li>browser events,</li>
+<li>effect requests,</li>
+<li>effect results,</li>
+<li>capabilities,</li>
+<li>element handles.</li>
+</ul>
+<p>Determine:</p>
+<ul>
+<li>what works today,</li>
+<li>what is theoretical,</li>
+<li>what browser support is missing,</li>
+<li>whether a custom ABI is still required.</li>
+</ul>
+<p>Do not overstate maturity.</p>
+<hr>
+<h1 id="prototype-requirement">Prototype Requirement</h1>
+<p>Build or specify a minimal prototype application that proves the architecture.</p>
+<p>The prototype should contain:</p>
+<ol>
+<li>A native HTML form.</li>
+<li>CSS hover/focus behavior with no Wasm call.</li>
+<li>An email field.</li>
+<li>Browser-native email syntax validation.</li>
+<li>A semantic event when the email is committed or debounced.</li>
+<li>Wasm domain validation.</li>
+<li>Wasm requesting a fetch through the JS bridge.</li>
+<li>JS executing fetch.</li>
+<li>JS returning transport-level evidence.</li>
+<li>Wasm deciding:
+<ul>
+<li>available,</li>
+<li>unavailable,</li>
+<li>invalid,</li>
+<li>request failed,</li>
+<li>outcome unknown if applicable.</li>
+</ul>
+</li>
+<li>Wasm projecting view state.</li>
+<li>The bridge applying minimal DOM updates.</li>
+<li>A submit command.</li>
+<li>A second external effect.</li>
+<li>At least one capability the application is deliberately NOT granted.</li>
+</ol>
+<p>Use one strongly typed language for the first prototype.</p>
+<p>Prefer F# or Rust unless evidence strongly favors another option.</p>
+<p>Do not choose based on familiarity alone.</p>
+<hr>
+<h1 id="failure--falsification-tests">Failure / Falsification Tests</h1>
+<p>Actively try to break the architecture.</p>
+<p>Test cases must include:</p>
+<h2 id="high-frequency-events">High-frequency events</h2>
+<p>Can the boundary become a bottleneck?</p>
+<h2 id="large-dom-updates">Large DOM updates</h2>
+<p>Does avoiding a virtual DOM become cumbersome?</p>
+<h2 id="complex-dynamic-lists">Complex dynamic lists</h2>
+<p>How are insertion, deletion, sorting, and keyed identity handled?</p>
+<h2 id="rich-text-editing">Rich text editing</h2>
+<p>Does the model fall apart?</p>
+<h2 id="drag-and-drop">Drag-and-drop</h2>
+<p>Does too much physical event data need to cross the boundary?</p>
+<h2 id="canvaswebgl-applications">Canvas/WebGL applications</h2>
+<p>Is this architecture inappropriate there?</p>
+<h2 id="complex-animations">Complex animations</h2>
+<p>Should these remain browser-side?</p>
+<h2 id="third-party-widgets">Third-party widgets</h2>
+<p>Payments, maps, analytics, support chat, CAPTCHA, editors.</p>
+<h2 id="accessibility">Accessibility</h2>
+<p>Can generic DOM commands accidentally break semantics?</p>
+<h2 id="ssr--hydration">SSR / hydration</h2>
+<p>How does the model behave with server-rendered HTML?</p>
+<h2 id="offline-apps">Offline apps</h2>
+<p>How do service workers fit?</p>
+<h2 id="real-time-applications">Real-time applications</h2>
+<p>How do WebSocket/SSE events enter Wasm?</p>
+<h2 id="browser-extensions">Browser extensions</h2>
+<p>Can injected JS interfere with assumptions?</p>
+<p>For each failure case classify:</p>
+<pre><code class="language-text">Architecture still works
+Requires extension
+Requires specialized bridge
+Poor fit
+Fundamental problem
+</code></pre>
+<hr>
+<h1 id="ai-agent-evaluation">AI-Agent Evaluation</h1>
+<p>The broader research question is whether this architecture is easier for AI coding agents.</p>
+<p>Evaluate whether an agent must reason about fewer implicit concepts than in React.</p>
+<p>Compare:</p>
+<p>React-style reasoning:</p>
+<pre><code class="language-text">state
+props
+context
+hooks
+closures
+effect dependencies
+memoization
+render lifecycle
+component ownership
+query cache
+async state
+reconciliation
+</code></pre>
+<p>against proposed reasoning:</p>
+<pre><code class="language-text">state
+command
+transition
+effect
+capability
+projection
+view
+</code></pre>
+<p>Do not assume fewer named concepts automatically means lower token cost.</p>
+<p>Identify:</p>
+<ul>
+<li>hidden complexity,</li>
+<li>generated-code complexity,</li>
+<li>debugging burden,</li>
+<li>ABI complexity,</li>
+<li>tooling burden.</li>
+</ul>
+<p>Propose controlled experiments measuring:</p>
+<pre><code class="language-text">tokens
+tool calls
+files inspected
+repair loops
+compile errors
+runtime defects
+architecture violations
+context required
+regressions
+time to modify
+total execution cost
+</code></pre>
+<hr>
+<h1 id="deliverables">Deliverables</h1>
+<p>Produce all of the following.</p>
+<h2 id="1-research-summary">1. Research Summary</h2>
+<p>A concise answer to:</p>
+<blockquote>
+<p>Is a native HTML/CSS + tiny generic JavaScript bridge + strongly typed Wasm application architecture technically viable today?</p>
+</blockquote>
+<p>Give:</p>
+<ul>
+<li>Yes,</li>
+<li>Partially,</li>
+<li>No,</li>
+</ul>
+<p>with precise qualifications.</p>
+<hr>
+<h2 id="2-minimal-browser-abi-specification">2. Minimal Browser ABI Specification</h2>
+<p>Define:</p>
+<pre><code class="language-text">events
+DOM commands
+browser capabilities
+effect requests
+effect results
+correlation
+errors
+cancellation
+lifecycle
+</code></pre>
+<p>Use language-neutral types.</p>
+<hr>
+<h2 id="3-javascript-bridge-specification">3. JavaScript Bridge Specification</h2>
+<p>Define exactly what JS MAY and MUST NOT do.</p>
+<p>Include security invariants.</p>
+<hr>
+<h2 id="4-wasm-application-contract">4. Wasm Application Contract</h2>
+<p>Define what the Wasm side owns.</p>
+<p>Include:</p>
+<ul>
+<li>authoritative state,</li>
+<li>transitions,</li>
+<li>validation,</li>
+<li>effects,</li>
+<li>capabilities,</li>
+<li>evidence,</li>
+<li>obligations,</li>
+<li>view projection.</li>
+</ul>
+<hr>
+<h2 id="5-htmlcss-responsibility-specification">5. HTML/CSS Responsibility Specification</h2>
+<p>Explicitly define what should not cross into Wasm.</p>
+<hr>
+<h2 id="6-react-responsibility-decomposition">6. React Responsibility Decomposition</h2>
+<p>Provide a table showing which React responsibilities:</p>
+<ul>
+<li>disappear,</li>
+<li>move to Wasm,</li>
+<li>remain native,</li>
+<li>remain in bridge.</li>
+</ul>
+<hr>
+<h2 id="7-prototype-design">7. Prototype Design</h2>
+<p>Provide enough detail for another agent to implement the prototype without further architectural decisions.</p>
+<hr>
+<h2 id="8-conformance-tests">8. Conformance Tests</h2>
+<p>Create machine-checkable or mechanically reviewable rules.</p>
+<p>Examples:</p>
+<pre><code class="language-text">No application-specific JavaScript.
+No eval.
+No raw JS execution capability.
+No browser types in the domain module.
+No direct fetch from domain/application modules.
+No authoritative state in DOM attributes.
+No business rule inside event handlers.
+No network response directly mutates domain state.
+</code></pre>
+<hr>
+<h2 id="9-falsification-report">9. Falsification Report</h2>
+<p>List findings that weaken the hypothesis.</p>
+<p>Do not hide failures.</p>
+<hr>
+<h2 id="10-recommendation">10. Recommendation</h2>
+<p>Conclude whether to:</p>
+<pre><code class="language-text">Proceed
+Proceed with constraints
+Prototype only
+Abandon
+</code></pre>
+<p>Explain why.</p>
+<hr>
+<h1 id="research-standards">Research Standards</h1>
+<p>Use primary sources where possible:</p>
+<ul>
+<li>W3C</li>
+<li>WHATWG</li>
+<li>WebAssembly specifications</li>
+<li>official browser documentation</li>
+<li>MDN when appropriate</li>
+<li>official Rust wasm-bindgen/web-sys documentation</li>
+<li>Microsoft .NET/Blazor documentation</li>
+<li>JetBrains Kotlin/Wasm documentation</li>
+<li>official framework/runtime documentation</li>
+<li>peer-reviewed or original technical papers where useful</li>
+</ul>
+<p>Avoid relying on SEO articles or unsourced summaries for architectural conclusions.</p>
+<p>For anything current or unstable, verify against up-to-date sources.</p>
+<p>Separate:</p>
+<pre><code class="language-text">Observed fact
+Source evidence
+Inference
+Hypothesis
+Recommendation
+</code></pre>
+<p>Do not blur these categories.</p>
+<hr>
+<h1 id="critical-constraints">Critical Constraints</h1>
+<p>Do not:</p>
+<ul>
+<li>recreate React and call that success,</li>
+<li>assume a virtual DOM is required,</li>
+<li>assume a virtual DOM is unnecessary,</li>
+<li>assume JSON is the ABI,</li>
+<li>assume Wasm boundary cost is negligible,</li>
+<li>assume HTML/CSS can handle every interaction,</li>
+<li>assume all local state belongs in Wasm,</li>
+<li>assume WebAssembly Component Model browser support is complete,</li>
+<li>assume static typing alone solves architectural problems,</li>
+<li>hide complexity inside generated code and then claim it disappeared,</li>
+<li>confuse fewer JavaScript lines with lower total system complexity.</li>
+</ul>
+<p>The main question is:</p>
+<blockquote>
+<p>Does this architecture actually reduce semantic complexity, implicit reasoning, and failure modes?</p>
+</blockquote>
+<p>Not:</p>
+<blockquote>
+<p>Can we technically make it work?</p>
+</blockquote>
+<hr>
+<h1 id="final-decision-test">Final Decision Test</h1>
+<p>At the end, answer this exact question:</p>
+<blockquote>
+<p>If we were designing a serious web application platform from scratch in 2026 for both human developers and AI coding agents, would we deliberately choose native HTML/CSS + a narrow browser capability bridge + strongly typed WebAssembly over a React-style JavaScript application architecture?</p>
+</blockquote>
+<p>Answer with:</p>
+<ul>
+<li>the strongest case FOR,</li>
+<li>the strongest case AGAINST,</li>
+<li>the conditions under which the recommendation changes,</li>
+<li>the experiments still required before making a production commitment.</li>
+</ul></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

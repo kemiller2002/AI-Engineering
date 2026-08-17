@@ -1,0 +1,2727 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AI Research Mission 05 — Epistemic State, Evidence, and Agent Truth Control | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">AI Research Mission 05 — Epistemic State, Evidence, and Agent Truth Control</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/reports/05-epistemic-state-evidence-agent-truth-control-research-report.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#ai-research-mission-05-epistemic-state-evidence-and-agent-truth-control">AI Research Mission 05 — Epistemic State, Evidence, and Agent Truth Control</a></li><li><a href="#central-question">Central question</a></li><li><a href="#1-executive-verdict">1. Executive verdict</a></li><li><a href="#2-formal-definition-of-a-claim">2. Formal definition of a Claim</a></li><li><a href="#2-1-minimum-fields">2.1 Minimum fields</a></li><li><a href="#3-formal-definition-of-evidence">3. Formal definition of Evidence</a></li><li><a href="#3-1-minimum-evidence-fields">3.1 Minimum evidence fields</a></li><li><a href="#4-the-eight-state-model-critique">4. The eight-state model: critique</a></li><li><a href="#5-state-machine-vs-lattice-analysis">5. State machine vs lattice analysis</a></li><li><a href="#5-1-why-a-linear-ordering-fails">5.1 Why a linear ordering fails</a></li><li><a href="#5-2-lattice-usefulness">5.2 Lattice usefulness</a></li><li><a href="#6-recommended-epistemic-decomposition">6. Recommended epistemic decomposition</a></li><li><a href="#dimension-a-evidence-polarity">Dimension A — Evidence polarity</a></li><li><a href="#dimension-b-origin-derivation">Dimension B — Origin / derivation</a></li><li><a href="#dimension-c-verification">Dimension C — Verification</a></li><li><a href="#dimension-d-confidence-probability">Dimension D — Confidence / probability</a></li><li><a href="#dimension-e-freshness">Dimension E — Freshness</a></li><li><a href="#dimension-f-availability-for-action">Dimension F — Availability for action</a></li><li><a href="#7-status-vs-confidence">7. Status vs confidence</a></li><li><a href="#confidence-asks">Confidence asks</a></li><li><a href="#verification-asks">Verification asks</a></li><li><a href="#evidence-strength-asks">Evidence strength asks</a></li><li><a href="#source-authority-asks">Source authority asks</a></li><li><a href="#freshness-asks">Freshness asks</a></li><li><a href="#8-unknown-is-not-false">8. Unknown is not false</a></li><li><a href="#8-1-recommended-rule">8.1 Recommended rule</a></li><li><a href="#9-reported-vs-verified">9. Reported vs verified</a></li><li><a href="#10-assumption-modeling">10. Assumption modeling</a></li><li><a href="#recommended-rule">Recommended rule</a></li><li><a href="#11-inference-modeling">11. Inference modeling</a></li><li><a href="#deductive-derivation">Deductive derivation</a></li><li><a href="#probabilistic-inference">Probabilistic inference</a></li><li><a href="#heuristic-inference">Heuristic inference</a></li><li><a href="#model-generated-inference">Model-generated inference</a></li><li><a href="#12-supported">12. Supported</a></li><li><a href="#13-verified">13. Verified</a></li><li><a href="#14-contradiction-modeling">14. Contradiction modeling</a></li><li><a href="#15-invalidation-modeling">15. Invalidation modeling</a></li><li><a href="#16-truth-maintenance-systems-comparison">16. Truth-maintenance systems comparison</a></li><li><a href="#a-store-justifications">A. Store justifications</a></li><li><a href="#b-track-dependencies">B. Track dependencies</a></li><li><a href="#c-retraction-is-first-class">C. Retraction is first-class</a></li><li><a href="#d-assumptions-remain-explicit">D. Assumptions remain explicit</a></li><li><a href="#e-multiple-contexts-can-coexist">E. Multiple contexts can coexist</a></li><li><a href="#17-belief-revision-comparison">17. Belief-revision comparison</a></li><li><a href="#18-epistemic-logic-comparison">18. Epistemic logic comparison</a></li><li><a href="#19-multi-agent-epistemics">19. Multi-agent epistemics</a></li><li><a href="#20-provenance">20. Provenance</a></li><li><a href="#21-data-lineage">21. Data lineage</a></li><li><a href="#22-ai-generated-claims">22. AI-generated claims</a></li><li><a href="#origin">Origin</a></li><li><a href="#epistemic-authority">Epistemic authority</a></li><li><a href="#23-model-confidence">23. Model confidence</a></li><li><a href="#24-evidence-authority">24. Evidence authority</a></li><li><a href="#25-freshness">25. Freshness</a></li><li><a href="#26-policy-relative-verification">26. Policy-relative verification</a></li><li><a href="#27-claim-dependency-and-cascade-model">27. Claim dependency and cascade model</a></li><li><a href="#28-epistemic-cascade">28. Epistemic cascade</a></li><li><a href="#29-ai-agent-assumption-drift">29. AI-agent assumption drift</a></li><li><a href="#30-assumption-debt">30. Assumption debt</a></li><li><a href="#31-epistemic-requirements-for-capabilities">31. Epistemic requirements for capabilities</a></li><li><a href="#32-four-valued-paraconsistent-model">32. Four-valued / paraconsistent model</a></li><li><a href="#33-open-world-vs-closed-world">33. Open-world vs closed-world</a></li><li><a href="#34-healthcare-case-study">34. Healthcare case study</a></li><li><a href="#35-accessibility-case-study">35. Accessibility case study</a></li><li><a href="#36-finance-fraud-case-study">36. Finance / fraud case study</a></li><li><a href="#37-software-deployment-case-study">37. Software deployment case study</a></li><li><a href="#38-research-scientific-case-study">38. Research/scientific case study</a></li><li><a href="#39-false-verification">39. False verification</a></li><li><a href="#40-verification-authority">40. Verification authority</a></li><li><a href="#41-machine-checkable-verification-taxonomy">41. Machine-checkable verification taxonomy</a></li><li><a href="#type-1-deterministic-verification">Type 1 — Deterministic verification</a></li><li><a href="#type-2-credential-verification">Type 2 — Credential verification</a></li><li><a href="#type-3-expert-attestation">Type 3 — Expert attestation</a></li><li><a href="#type-4-probabilistic-assessment">Type 4 — Probabilistic assessment</a></li><li><a href="#type-5-composite-verification">Type 5 — Composite verification</a></li><li><a href="#42-evidence-quality">42. Evidence quality</a></li><li><a href="#43-independence-of-evidence">43. Independence of evidence</a></li><li><a href="#44-evidence-deduplication">44. Evidence deduplication</a></li><li><a href="#45-contradiction-resolution">45. Contradiction resolution</a></li><li><a href="#46-argumentation-frameworks">46. Argumentation frameworks</a></li><li><a href="#47-dempster-shafer-evidence-theory">47. Dempster-Shafer evidence theory</a></li><li><a href="#48-bayesian-models">48. Bayesian models</a></li><li><a href="#49-epistemic-state-as-context-compression">49. Epistemic state as context compression</a></li><li><a href="#50-token-cost-hypothesis">50. Token-cost hypothesis</a></li><li><a href="#a-raw-evidence">A. Raw evidence</a></li><li><a href="#b-epistemic-summary">B. Epistemic summary</a></li><li><a href="#51-lazy-evidence-retrieval">51. Lazy evidence retrieval</a></li><li><a href="#initial-context">Initial context</a></li><li><a href="#tool">Tool</a></li><li><a href="#52-smaller-model-hypothesis">52. Smaller-model hypothesis</a></li><li><a href="#environment-a">Environment A</a></li><li><a href="#environment-b">Environment B</a></li><li><a href="#53-human-review">53. Human review</a></li><li><a href="#54-auditability">54. Auditability</a></li><li><a href="#55-historical-truth">55. Historical truth</a></li><li><a href="#56-policy-evolution">56. Policy evolution</a></li><li><a href="#prospective">Prospective</a></li><li><a href="#reassessment-triggering">Reassessment-triggering</a></li><li><a href="#retroactive-invalidation">Retroactive invalidation</a></li><li><a href="#57-epistemic-obligations">57. Epistemic obligations</a></li><li><a href="#58-epistemic-capabilities">58. Epistemic capabilities</a></li><li><a href="#59-prompt-rule-vs-runtime-enforcement">59. Prompt rule vs runtime enforcement</a></li><li><a href="#prompt">Prompt</a></li><li><a href="#runtime">Runtime</a></li><li><a href="#60-cross-agent-consistency">60. Cross-agent consistency</a></li><li><a href="#61-staleness-and-versioning">61. Staleness and versioning</a></li><li><a href="#62-claim-identity">62. Claim identity</a></li><li><a href="#63-subject-versioning">63. Subject versioning</a></li><li><a href="#64-semantic-granularity">64. Semantic granularity</a></li><li><a href="#65-ontology-risk">65. Ontology risk</a></li><li><a href="#66-minimum-viable-epistemic-model">66. Minimum viable epistemic model</a></li><li><a href="#67-state-machine-vs-derived-view">67. State machine vs derived view</a></li><li><a href="#68-event-sourcing">68. Event sourcing</a></li><li><a href="#69-semantic-compiler-checks">69. Semantic compiler checks</a></li><li><a href="#70-claim-policy">70. Claim policy</a></li><li><a href="#71-single-source-of-truth-risk">71. Single-source-of-truth risk</a></li><li><a href="#72-false-certainty-risk">72. False-certainty risk</a></li><li><a href="#internal-representation">Internal representation</a></li><li><a href="#human-interface">Human interface</a></li><li><a href="#73-false-negative-risk">73. False-negative risk</a></li><li><a href="#74-agent-gaming">74. Agent gaming</a></li><li><a href="#75-evidence-fabrication">75. Evidence fabrication</a></li><li><a href="#76-external-source-uncertainty">76. External-source uncertainty</a></li><li><a href="#77-human-testimony">77. Human testimony</a></li><li><a href="#78-privacy-implications">78. Privacy implications</a></li><li><a href="#79-security-implications">79. Security implications</a></li><li><a href="#80-experiment-assumption-promotion">80. Experiment — assumption promotion</a></li><li><a href="#conventional-system">Conventional system</a></li><li><a href="#epistemic-system">Epistemic system</a></li><li><a href="#81-experiment-repeated-report">81. Experiment — repeated report</a></li><li><a href="#82-experiment-evidence-invalidation">82. Experiment — evidence invalidation</a></li><li><a href="#83-experiment-contradictory-evidence">83. Experiment — contradictory evidence</a></li><li><a href="#84-experiment-policy-change">84. Experiment — policy change</a></li><li><a href="#85-experiment-agent-restart">85. Experiment — agent restart</a></li><li><a href="#a">A</a></li><li><a href="#b">B</a></li><li><a href="#86-experiment-small-model">86. Experiment — small model</a></li><li><a href="#87-metrics">87. Metrics</a></li><li><a href="#verification-precision">Verification Precision</a></li><li><a href="#verification-recall">Verification Recall</a></li><li><a href="#false-certainty-rate">False Certainty Rate</a></li><li><a href="#unsupported-action-rate">Unsupported Action Rate</a></li><li><a href="#contradiction-preservation-rate">Contradiction Preservation Rate</a></li><li><a href="#evidence-independence-error-rate">Evidence Independence Error Rate</a></li><li><a href="#assumption-survival-rate">Assumption Survival Rate</a></li><li><a href="#evidence-reconstruction-cost">Evidence Reconstruction Cost</a></li><li><a href="#cost-per-justified-decision">Cost Per Justified Decision</a></li><li><a href="#88-longitudinal-experiment">88. Longitudinal experiment</a></li><li><a href="#89-economic-implications">89. Economic implications</a></li><li><a href="#a-fewer-downstream-errors">A. Fewer downstream errors</a></li><li><a href="#b-lower-reconstruction-cost">B. Lower reconstruction cost</a></li><li><a href="#c-lower-human-audit-cost">C. Lower human audit cost</a></li><li><a href="#d-potential-smaller-model-substitution">D. Potential smaller-model substitution</a></li><li><a href="#90-cost-model">90. Cost model</a></li><li><a href="#91-where-not-to-use-explicit-epistemics">91. Where not to use explicit epistemics</a></li><li><a href="#92-counterarguments">92. Counterarguments</a></li><li><a href="#1-the-epistemic-model-becomes-too-complex-">1. The epistemic model becomes too complex.</a></li><li><a href="#2-most-commercial-software-does-not-need-this-">2. Most commercial software does not need this.</a></li><li><a href="#3-verification-creates-false-confidence-">3. Verification creates false confidence.</a></li><li><a href="#4-evidence-graphs-consume-too-many-tokens-">4. Evidence graphs consume too many tokens.</a></li><li><a href="#5-agents-still-need-raw-sources-">5. Agents still need raw sources.</a></li><li><a href="#6-human-judgment-cannot-be-encoded-">6. Human judgment cannot be encoded.</a></li><li><a href="#7-probability-confidence-solves-most-of-the-problem-">7. Probability/confidence solves most of the problem.</a></li><li><a href="#8-provenance-is-expensive-">8. Provenance is expensive.</a></li><li><a href="#9-evidence-policies-become-brittle-">9. Evidence policies become brittle.</a></li><li><a href="#10-contradiction-logic-becomes-a-research-project-">10. Contradiction logic becomes a research project.</a></li><li><a href="#11-knowledge-graphs-introduce-too-much-infrastructure-">11. Knowledge graphs introduce too much infrastructure.</a></li><li><a href="#12-model-output-may-influence-verification-indirectly-">12. Model output may influence verification indirectly.</a></li><li><a href="#13-users-dislike-unknown-">13. Users dislike &quot;unknown.&quot;</a></li><li><a href="#14-system-may-become-unable-to-act-under-uncertainty-">14. System may become unable to act under uncertainty.</a></li><li><a href="#15-structured-epistemics-slows-product-development-">15. Structured epistemics slows product development.</a></li><li><a href="#93-what-existing-research-strongly-supports">93. What existing research strongly supports</a></li><li><a href="#94-what-remains-speculative">94. What remains speculative</a></li><li><a href="#95-recommended-architecture-changes">95. Recommended architecture changes</a></li><li><a href="#change-1-abandon-the-single-eight-state-authoritative-enum">Change 1 — Abandon the single eight-state authoritative enum</a></li><li><a href="#change-2-make-evidence-and-verification-records-authoritative">Change 2 — Make evidence and verification records authoritative</a></li><li><a href="#change-3-rename-internal-verified">Change 3 — Rename internal  Verified</a></li><li><a href="#change-4-put-invalidated-on-evidence-verification-records">Change 4 — Put  Invalidated  on evidence/verification records</a></li><li><a href="#change-5-put-reported-and-inferred-in-origin-derivation-metadata">Change 5 — Put  Reported  and  Inferred  in origin/derivation metadata</a></li><li><a href="#change-6-keep-assumptions-inside-explicit-reasoning-contexts">Change 6 — Keep assumptions inside explicit reasoning contexts</a></li><li><a href="#change-7-use-a-four-valued-evidence-polarity-view">Change 7 — Use a four-valued evidence-polarity view</a></li><li><a href="#change-8-bind-verification-to-policy-time-evidence-and-subject-version">Change 8 — Bind verification to policy, time, evidence, and subject version</a></li><li><a href="#change-9-gate-capabilities-on-explicit-epistemic-requirements">Change 9 — Gate capabilities on explicit epistemic requirements</a></li><li><a href="#change-10-add-version-bound-epistemic-snapshots-for-agents">Change 10 — Add version-bound epistemic snapshots for agents</a></li><li><a href="#change-11-use-lazy-evidence-retrieval">Change 11 — Use lazy evidence retrieval</a></li><li><a href="#change-12-keep-v0-1-small">Change 12 — Keep v0.1 small</a></li><li><a href="#96-minimum-viable-implementation">96. Minimum viable implementation</a></li><li><a href="#97-final-verdict">97. Final verdict</a></li><li><a href="#does-explicit-epistemic-state-reduce-unsupported-certainty-">Does explicit epistemic state reduce unsupported certainty?</a></li><li><a href="#does-evidence-provenance-reduce-inherited-agent-assumptions-">Does evidence provenance reduce inherited agent assumptions?</a></li><li><a href="#does-structured-epistemic-state-reduce-context-token-cost-">Does structured epistemic state reduce context/token cost?</a></li><li><a href="#can-it-enable-smaller-models-">Can it enable smaller models?</a></li><li><a href="#should-epistemic-status-be-">Should epistemic status be:</a></li><li><a href="#should-verified-be-renamed-">Should &quot;Verified&quot; be renamed?</a></li><li><a href="#closest-existing-formalism">Closest existing formalism</a></li><li><a href="#strongest-prior-art">Strongest prior art</a></li><li><a href="#most-important-architecture-correction">Most important architecture correction</a></li><li><a href="#biggest-complexity-risk">Biggest complexity risk</a></li><li><a href="#most-valuable-ai-specific-benefit">Most valuable AI-specific benefit</a></li><li><a href="#most-important-missing-experiment">Most important missing experiment</a></li><li><a href="#98-overall-research-decision">98. Overall research decision</a></li><li><a href="#99-priority-research-agenda">99. Priority research agenda</a></li><li><a href="#priority-1-longitudinal-assumption-laundering-benchmark">Priority 1 — Longitudinal assumption-laundering benchmark</a></li><li><a href="#priority-2-evidence-invalidation-cascade-prototype">Priority 2 — Evidence-invalidation cascade prototype</a></li><li><a href="#priority-3-raw-evidence-vs-structured-epistemic-context-benchmark">Priority 3 — Raw evidence vs structured epistemic context benchmark</a></li><li><a href="#priority-4-small-model-substitution-experiment">Priority 4 — Small-model substitution experiment</a></li><li><a href="#priority-5-security-and-privacy-threat-model">Priority 5 — Security and privacy threat model</a></li><li><a href="#priority-6-domain-adapters">Priority 6 — Domain adapters</a></li><li><a href="#100-key-references">100. Key references</a></li><li><a href="#foundational-truth-maintenance-and-belief-revision">Foundational truth maintenance and belief revision</a></li><li><a href="#paraconsistency-and-argumentation">Paraconsistency and argumentation</a></li><li><a href="#provenance">Provenance</a></li><li><a href="#open-world-semantics">Open-world semantics</a></li><li><a href="#healthcare-terminology">Healthcare terminology</a></li><li><a href="#llm-uncertainty-and-calibration">LLM uncertainty and calibration</a></li><li><a href="#101-evidence-grading-summary">101. Evidence grading summary</a></li><li><a href="#102-final-architectural-principle">102. Final architectural principle</a></li> </ol> </aside> <section class="document-body"><h1 id="ai-research-mission-05--epistemic-state-evidence-and-agent-truth-control">AI Research Mission 05 — Epistemic State, Evidence, and Agent Truth Control</h1>
+<h2 id="central-question">Central question</h2>
+<p><strong>Can explicit claims, evidence, provenance, and epistemic authority prevent AI agents from turning uncertain assumptions into durable system truth—without creating a knowledge-representation system so complex that it costs more than it saves?</strong></p>
+<hr>
+<h1 id="1-executive-verdict">1. Executive verdict</h1>
+<p>The central concern is well founded:</p>
+<blockquote>
+<p>An AI-generated, imported, reported, or inferred proposition should not acquire greater epistemic authority merely because it has been stored, repeated, copied, summarized, or reused by later agents.</p>
+</blockquote>
+<p>Existing work in truth-maintenance systems, belief revision, provenance, paraconsistent logic, clinical information modeling, uncertainty research, and argumentation strongly supports separating:</p>
+<ul>
+<li>the proposition,</li>
+<li>its sources,</li>
+<li>its derivations,</li>
+<li>its support and opposition,</li>
+<li>its provenance,</li>
+<li>its verification procedure,</li>
+<li>freshness,</li>
+<li>confidence,</li>
+<li>and the authority required to act on it.</li>
+</ul>
+<p>However, the proposed eight-state model:</p>
+<p><code>Unknown</code>
+<code>Reported</code>
+<code>Assumed</code>
+<code>Inferred</code>
+<code>Supported</code>
+<code>Verified</code>
+<code>Contradicted</code>
+<code>Invalidated</code></p>
+<p>is <strong>not a good single authoritative state machine</strong>.</p>
+<p>The categories mix several different dimensions.</p>
+<p>For example:</p>
+<ul>
+<li><code>Reported</code> describes <strong>origin</strong>.</li>
+<li><code>Assumed</code> describes <strong>reasoning posture/context</strong>.</li>
+<li><code>Inferred</code> describes <strong>derivation method</strong>.</li>
+<li><code>Supported</code> describes <strong>evidential relation</strong>.</li>
+<li><code>Verified</code> describes <strong>successful satisfaction of a procedure/policy</strong>.</li>
+<li><code>Contradicted</code> describes <strong>presence of opposing evidence</strong>.</li>
+<li><code>Invalidated</code> may describe <strong>evidence status</strong>, not claim status.</li>
+<li><code>Unknown</code> describes <strong>absence or insufficiency of information</strong>.</li>
+</ul>
+<p>These are not mutually exclusive.</p>
+<p>A claim can simultaneously be:</p>
+<ul>
+<li>reported by a hotel,</li>
+<li>probabilistically inferred by a model,</li>
+<li>supported by a photograph,</li>
+<li>contradicted by a traveler report,</li>
+<li>and previously verified under an obsolete policy.</li>
+</ul>
+<p>Trying to collapse those facts into one enum creates information loss and ambiguous transitions.</p>
+<p>The strongest architecture emerging from prior art is therefore:</p>
+<blockquote>
+<p><strong>Claims and evidence are authoritative records. Epistemic summaries are derived views. Verification is a policy-relative record, not a declaration of metaphysical truth.</strong></p>
+</blockquote>
+<p>A minimal architecture should distinguish at least:</p>
+<ol>
+<li><strong>Claim identity</strong></li>
+<li><strong>Evidence</strong></li>
+<li><strong>Provenance</strong></li>
+<li><strong>Support/opposition</strong></li>
+<li><strong>Derivation/origin</strong></li>
+<li><strong>Verification record</strong></li>
+<li><strong>Freshness/effective scope</strong></li>
+<li><strong>Derived usability for a particular action</strong></li>
+</ol>
+<p>The architecture should generally avoid storing <code>Verified</code> as a freely mutable field.</p>
+<p>Instead:</p>
+<p><code>Evidence + Provenance + VerificationPolicy + Authority + Time</code>
+→
+<code>VerificationRecord</code>
+→
+<code>Derived epistemic view</code>
+→
+<code>Capabilities / Obligations</code></p>
+<p>The strongest AI-specific benefit is not philosophical truth representation.</p>
+<p>It is <strong>preventing assumption laundering</strong>.</p>
+<p>An agent should not be able to turn:</p>
+<p><code>model guessed X</code></p>
+<p>into:</p>
+<p><code>database contains X</code></p>
+<p>into:</p>
+<p><code>later agent assumes X was verified</code></p>
+<p>into:</p>
+<p><code>consequential action relies on X</code>.</p>
+<p>That failure mode is structurally plausible and the proposed architecture provides a direct mechanism for stopping it.</p>
+<p>The evidence for <strong>correctness, traceability, retraction, contradiction preservation, and auditability</strong> is strong.</p>
+<p>The evidence that this will <strong>reduce LLM token cost or enable smaller models</strong> is plausible but still indirect. That requires dedicated experiments.</p>
+<hr>
+<h1 id="2-formal-definition-of-a-claim">2. Formal definition of a Claim</h1>
+<p>A useful working definition is:</p>
+<blockquote>
+<p><strong>A Claim is an addressable proposition about a specific subject and scope whose acceptance, rejection, or uncertainty may affect reasoning, policy, capabilities, obligations, or consequential decisions.</strong></p>
+</blockquote>
+<p>A Claim should not itself encode:</p>
+<ul>
+<li>whether it is true,</li>
+<li>whether it is believed,</li>
+<li>who reported it,</li>
+<li>how confident a model is,</li>
+<li>whether it has been verified.</li>
+</ul>
+<p>Those belong to associated records.</p>
+<h2 id="21-minimum-fields">2.1 Minimum fields</h2>
+<pre><code class="language-text">Claim {
+    claimId
+    propositionType
+    subjectId
+    parameters
+    effectiveScope?
+    subjectVersion?
+}
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-text">Claim:
+    claimId: C-217-DOOR
+    propositionType: BathroomDoorWidthAtLeast
+    subjectId: HotelRoom:217
+    parameters:
+        inches: 32
+    subjectVersion: RenovationVersion:2026-04
+</code></pre>
+<p>This is superior to a vague claim such as:</p>
+<p><code>HotelIsAccessible</code></p>
+<p>because the latter hides many independently relevant propositions.</p>
+<hr>
+<h1 id="3-formal-definition-of-evidence">3. Formal definition of Evidence</h1>
+<p>A useful definition is:</p>
+<blockquote>
+<p><strong>Evidence is an addressable observation, testimony, record, measurement, credential, artifact, or derived result that may bear on one or more claims.</strong></p>
+</blockquote>
+<p>Evidence is not synonymous with truth.</p>
+<p>Evidence can be:</p>
+<ul>
+<li>incorrect,</li>
+<li>stale,</li>
+<li>forged,</li>
+<li>ambiguous,</li>
+<li>duplicated,</li>
+<li>derived from another source,</li>
+<li>attached to the wrong subject,</li>
+<li>superseded.</li>
+</ul>
+<h2 id="31-minimum-evidence-fields">3.1 Minimum evidence fields</h2>
+<pre><code class="language-text">Evidence {
+    evidenceId
+    evidenceType
+    contentRef
+    source
+    observedAt
+    recordedAt
+    subjectScope
+    provenance
+    validity
+}
+</code></pre>
+<p>Relations should be separate:</p>
+<pre><code class="language-text">EvidenceRelation {
+    evidenceId
+    claimId
+    relation: Supports | Opposes | Relevant
+    derivationRule?
+}
+</code></pre>
+<p>Why separate the relation?</p>
+<p>The same evidence may support one proposition while opposing another.</p>
+<hr>
+<h1 id="4-the-eight-state-model-critique">4. The eight-state model: critique</h1>
+<p>The proposed state list contains useful concepts but combines incompatible axes.</p>
+<table>
+<thead>
+<tr>
+<th>Proposed value</th>
+<th>What it actually describes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unknown</td>
+<td>information sufficiency</td>
+</tr>
+<tr>
+<td>Reported</td>
+<td>origin / testimony</td>
+</tr>
+<tr>
+<td>Assumed</td>
+<td>reasoning context</td>
+</tr>
+<tr>
+<td>Inferred</td>
+<td>derivation</td>
+</tr>
+<tr>
+<td>Supported</td>
+<td>evidential relation</td>
+</tr>
+<tr>
+<td>Verified</td>
+<td>procedural qualification</td>
+</tr>
+<tr>
+<td>Contradicted</td>
+<td>evidence conflict</td>
+</tr>
+<tr>
+<td>Invalidated</td>
+<td>evidence/verification validity</td>
+</tr>
+</tbody>
+</table>
+<p>This means a single enum cannot faithfully represent real cases.</p>
+<p>Consider:</p>
+<blockquote>
+<p>Hotel reports a roll-in shower. A photograph appears consistent. A traveler reports a tub. A third-party inspection six months earlier passed under Policy@7, but Policy@8 now requires current measurements.</p>
+</blockquote>
+<p>What is the single state?</p>
+<ul>
+<li>Reported?</li>
+<li>Supported?</li>
+<li>Contradicted?</li>
+<li>Verified?</li>
+<li>Invalidated?</li>
+</ul>
+<p>All describe part of the situation.</p>
+<p>The correct answer is not one state.</p>
+<p>The correct answer is a <strong>multi-dimensional epistemic record</strong>.</p>
+<hr>
+<h1 id="5-state-machine-vs-lattice-analysis">5. State machine vs lattice analysis</h1>
+<p>A state machine is appropriate when:</p>
+<ul>
+<li>states are mutually exclusive,</li>
+<li>transitions represent meaningful lifecycle changes,</li>
+<li>one state summarizes the authoritative situation.</li>
+</ul>
+<p>Epistemic information often does not have this shape.</p>
+<h2 id="51-why-a-linear-ordering-fails">5.1 Why a linear ordering fails</h2>
+<p>There is no safe ordering such as:</p>
+<p><code>Reported &#x3C; Inferred &#x3C; Supported &#x3C; Verified</code></p>
+<p>because:</p>
+<ul>
+<li>a certified report may be stronger than a weak inference,</li>
+<li>a deterministic inference from verified measurements may be stronger than a human report,</li>
+<li><code>Contradicted</code> does not mean "less than Supported"; both may be present,</li>
+<li><code>Assumed</code> is not naturally above or below anything.</li>
+</ul>
+<h2 id="52-lattice-usefulness">5.2 Lattice usefulness</h2>
+<p>Belnap-style four-valued logic offers a useful submodel for <strong>evidence polarity</strong>:</p>
+<ul>
+<li>neither support nor opposition,</li>
+<li>support for proposition,</li>
+<li>support for negation,</li>
+<li>support for both.</li>
+</ul>
+<p>This represents:</p>
+<ul>
+<li>Unknown,</li>
+<li>SupportedTrue,</li>
+<li>SupportedFalse,</li>
+<li>Conflicted.</li>
+</ul>
+<p>That is much better than forcing contradictions into binary truth.</p>
+<p>But even this is not enough to represent:</p>
+<ul>
+<li>source authority,</li>
+<li>confidence,</li>
+<li>freshness,</li>
+<li>verification procedure,</li>
+<li>origin.</li>
+</ul>
+<p>Therefore the best architecture is not "use a lattice for everything."</p>
+<p>It is:</p>
+<blockquote>
+<p><strong>Use a small lattice where the semantics are genuinely lattice-shaped, embedded inside a multi-dimensional record.</strong></p>
+</blockquote>
+<hr>
+<h1 id="6-recommended-epistemic-decomposition">6. Recommended epistemic decomposition</h1>
+<p>A claim should expose several orthogonal dimensions.</p>
+<h2 id="dimension-a--evidence-polarity">Dimension A — Evidence polarity</h2>
+<pre><code class="language-text">NoEvidence
+SupportOnly
+OppositionOnly
+Conflicted
+</code></pre>
+<h2 id="dimension-b--origin--derivation">Dimension B — Origin / derivation</h2>
+<p>Potential values:</p>
+<pre><code class="language-text">HumanReported
+ExternalSystemReported
+SensorObserved
+Imported
+DeductivelyDerived
+ProbabilisticallyInferred
+HeuristicallyInferred
+ModelGenerated
+</code></pre>
+<p>Multiple origins may exist.</p>
+<h2 id="dimension-c--verification">Dimension C — Verification</h2>
+<p>Do not model this as truth.</p>
+<p>Model verification records:</p>
+<pre><code class="language-text">VerificationRecord {
+    claimId
+    policyVersion
+    verifier
+    method
+    evidenceSet
+    grantedAt
+    validUntil?
+    subjectVersion
+    status
+}
+</code></pre>
+<h2 id="dimension-d--confidence--probability">Dimension D — Confidence / probability</h2>
+<p>Optional and method-specific.</p>
+<p>Do not use a universal confidence score unless the producing method gives it a defensible interpretation.</p>
+<h2 id="dimension-e--freshness">Dimension E — Freshness</h2>
+<p>Freshness should be evaluated relative to the consuming policy.</p>
+<p>Evidence does not necessarily become false merely because it becomes too old for a transaction.</p>
+<h2 id="dimension-f--availability-for-action">Dimension F — Availability for action</h2>
+<p>Derived from the requirements of the particular action.</p>
+<p>Example:</p>
+<pre><code class="language-text">CanShip =
+    current verification record satisfies ShippingPolicy
+    AND no disqualifying contradiction
+    AND evidence freshness acceptable
+    AND subject version matches
+</code></pre>
+<p>This is more useful than asking whether the claim is simply "Verified."</p>
+<hr>
+<h1 id="7-status-vs-confidence">7. Status vs confidence</h1>
+<p>The prompt correctly treats this as a critical distinction.</p>
+<p><code>95% confidence</code></p>
+<p>does not imply:</p>
+<p><code>Verified</code>.</p>
+<p>And:</p>
+<p><code>VerifiedUnderPolicy</code></p>
+<p>does not imply:</p>
+<p><code>95% probability objectively true</code>.</p>
+<p>These answer different questions.</p>
+<h2 id="confidence-asks">Confidence asks</h2>
+<blockquote>
+<p>How uncertain is an estimator about this proposition?</p>
+</blockquote>
+<h2 id="verification-asks">Verification asks</h2>
+<blockquote>
+<p>Has a declared procedure been satisfied?</p>
+</blockquote>
+<h2 id="evidence-strength-asks">Evidence strength asks</h2>
+<blockquote>
+<p>What support exists and how good is it?</p>
+</blockquote>
+<h2 id="source-authority-asks">Source authority asks</h2>
+<blockquote>
+<p>What authority or reliability does the source have under this domain's policy?</p>
+</blockquote>
+<h2 id="freshness-asks">Freshness asks</h2>
+<blockquote>
+<p>Is the evidence sufficiently current for this use?</p>
+</blockquote>
+<p>These should not be collapsed.</p>
+<p>LLM calibration research reinforces this separation. Modern models can be systematically overconfident, and verbalized confidence may not reliably track correctness. Model confidence therefore should never be treated as evidence authority.</p>
+<hr>
+<h1 id="8-unknown-is-not-false">8. Unknown is not false</h1>
+<p>This is one of the strongest principles in the specification.</p>
+<p>The distinction is formal and widely recognized.</p>
+<p>In open-world reasoning:</p>
+<blockquote>
+<p>failure to establish P does not establish ¬P.</p>
+</blockquote>
+<p>Example:</p>
+<p>No measurement exists for room 217 bathroom door.</p>
+<p>Correct representation:</p>
+<p><code>DoorWidthAtLeast32: unknown</code></p>
+<p>Incorrect representation:</p>
+<p><code>DoorWidthAtLeast32: false</code></p>
+<p>Why it matters:</p>
+<p>A false negative may trigger:</p>
+<ul>
+<li>rejection of an accessible room,</li>
+<li>incorrect medical inference,</li>
+<li>denied transaction,</li>
+<li>false compliance failure.</li>
+</ul>
+<p>Likewise treating unknown as true can produce unsafe action.</p>
+<h2 id="81-recommended-rule">8.1 Recommended rule</h2>
+<p>Closed-world behavior should be explicit and policy-scoped.</p>
+<p>Example:</p>
+<pre><code class="language-text">For Capability CanShip:
+    absence of FraudClear verification => capability unavailable
+</code></pre>
+<p>That does <strong>not</strong> mean:</p>
+<p><code>FraudClear = false</code>.</p>
+<p>It means:</p>
+<p><code>required evidence condition not satisfied</code>.</p>
+<p>This is a critical architectural distinction.</p>
+<hr>
+<h1 id="9-reported-vs-verified">9. Reported vs verified</h1>
+<p>A report is evidence about a claim.</p>
+<p>It should not normally be an epistemic state of the claim.</p>
+<p>Example:</p>
+<pre><code class="language-text">Evidence E17:
+    type: HumanOrOrganizationReport
+    source: Hotel
+    proposition: RoomHasRollInShower
+</code></pre>
+<p>A verification process may decide that hotel testimony is enough under one policy.</p>
+<p>Another policy may require:</p>
+<ul>
+<li>independent measurement,</li>
+<li>photograph,</li>
+<li>inspector certification.</li>
+</ul>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>"Reported" belongs primarily to evidence provenance. "Verified" belongs to verification procedure.</strong></p>
+</blockquote>
+<p>The claim itself should not need to "transition from Reported to Verified."</p>
+<p>Instead:</p>
+<ol>
+<li>report evidence added,</li>
+<li>verification policy evaluated,</li>
+<li>verification record created if requirements satisfied.</li>
+</ol>
+<p>This eliminates an artificial lifecycle.</p>
+<hr>
+<h1 id="10-assumption-modeling">10. Assumption modeling</h1>
+<p>Assumptions are especially dangerous because they are useful.</p>
+<p>Agents must be able to reason hypothetically.</p>
+<p>But assumptions should not become authoritative evidence.</p>
+<p>Truth-maintenance research, especially assumption-based TMS work, provides a close conceptual match.</p>
+<p>An assumption should belong to a <strong>reasoning context</strong>.</p>
+<p>Example:</p>
+<pre><code class="language-text">Scenario S42:
+    assume PolicyResponseIsCurrent
+</code></pre>
+<p>Claims derived in S42 should retain dependency on that assumption.</p>
+<p>They should not automatically enter authoritative claim state.</p>
+<h2 id="recommended-rule">Recommended rule</h2>
+<p><strong>Assumptions belong in planning/simulation contexts unless explicitly promoted through a separate authorized evidence process.</strong></p>
+<p>This permits:</p>
+<ul>
+<li>counterfactual reasoning,</li>
+<li>planning,</li>
+<li>what-if analysis,</li>
+</ul>
+<p>without laundering assumptions into persistent truth.</p>
+<hr>
+<h1 id="11-inference-modeling">11. Inference modeling</h1>
+<p><code>Inferred</code> is too broad.</p>
+<p>At minimum distinguish:</p>
+<h2 id="deductive-derivation">Deductive derivation</h2>
+<p>Example:</p>
+<pre><code class="language-text">MeasuredWidth = 36
+Requirement = width >= 32
+therefore
+DoorWidthMeetsRequirement
+</code></pre>
+<p>Given correct premises and rule, the derivation is deterministic.</p>
+<h2 id="probabilistic-inference">Probabilistic inference</h2>
+<p>Example:</p>
+<pre><code class="language-text">symptoms + labs -> 0.78 probability of condition
+</code></pre>
+<h2 id="heuristic-inference">Heuristic inference</h2>
+<p>Example:</p>
+<p>Rule-of-thumb reasoning.</p>
+<h2 id="model-generated-inference">Model-generated inference</h2>
+<p>An LLM produces a proposition based on unstructured evidence.</p>
+<p>These have different reliability and verification implications.</p>
+<p>Recommended derivation record:</p>
+<pre><code class="language-text">Derivation {
+    claimId
+    method
+    ruleOrModel
+    inputs
+    producedAt
+    modelVersion?
+    confidence?
+}
+</code></pre>
+<p>Again: derivation method should not be the claim's singular state.</p>
+<hr>
+<h1 id="12-supported">12. Supported</h1>
+<p><code>Supported</code> is useful as a derived summary, but dangerous as an authoritative mutable status.</p>
+<p>A claim is supported when current admissible evidence provides support under some evidence interpretation.</p>
+<p>But this can coexist with opposition.</p>
+<p>Therefore use:</p>
+<pre><code class="language-text">supportPresent: true
+oppositionPresent: true
+</code></pre>
+<p>which may derive:</p>
+<p><code>ConflictState = Contested</code></p>
+<p>rather than overwriting "Supported" with "Contradicted."</p>
+<p>The derived view can still expose user-friendly labels:</p>
+<ul>
+<li>Unsupported</li>
+<li>Supported</li>
+<li>Opposed</li>
+<li>Contested</li>
+</ul>
+<p>but the evidence graph remains authoritative.</p>
+<hr>
+<h1 id="13-verified">13. Verified</h1>
+<p>The term <code>Verified</code> creates semantic risk because people naturally read it as "true."</p>
+<p>The architecture can only guarantee:</p>
+<blockquote>
+<p>A verification procedure accepted a claim under a particular policy, using a particular evidence set, at a particular time.</p>
+</blockquote>
+<p>Therefore the more precise internal concept is:</p>
+<p><code>VerificationSatisfied</code></p>
+<p>or:</p>
+<p><code>VerifiedUnderPolicy</code>.</p>
+<p>Recommended record:</p>
+<pre><code class="language-text">VerificationRecord {
+    claim
+    policy: AccessibilityPolicy@8
+    evidence: [E17, E21]
+    verifier: AccessibilityVerifier@3
+    decision: Satisfied
+    verifiedAt
+    validUntil
+    subjectVersion
+}
+</code></pre>
+<p>User interfaces may still say "Verified" where appropriate, but APIs and internal architecture should preserve policy relativity.</p>
+<hr>
+<h1 id="14-contradiction-modeling">14. Contradiction modeling</h1>
+<p>Contradiction should not force immediate binary resolution.</p>
+<p>This is a major insight from paraconsistent approaches.</p>
+<p>Example:</p>
+<p>Hotel:
+<code>RollInShower = yes</code></p>
+<p>Inspection:
+<code>RollInShower = no</code></p>
+<p>A conventional system may:</p>
+<ul>
+<li>overwrite one record,</li>
+<li>choose latest,</li>
+<li>choose higher priority,</li>
+<li>accidentally treat inconsistency as corruption.</li>
+</ul>
+<p>A better system preserves:</p>
+<pre><code class="language-text">Support: E1
+Opposition: E2
+Conflict: true
+</code></pre>
+<p>Policy can decide:</p>
+<ul>
+<li>block action,</li>
+<li>prefer a particular source,</li>
+<li>require review,</li>
+<li>request fresh evidence.</li>
+</ul>
+<p>This separates:</p>
+<p><strong>preserving disagreement</strong></p>
+<p>from:</p>
+<p><strong>resolving disagreement</strong>.</p>
+<hr>
+<h1 id="15-invalidation-modeling">15. Invalidation modeling</h1>
+<p>The prompt identifies another crucial correction.</p>
+<p><code>Invalidated</code> is usually more naturally a status of:</p>
+<ul>
+<li>evidence,</li>
+<li>derivation,</li>
+<li>verification record,</li>
+</ul>
+<p>than a primitive status of the claim.</p>
+<p>Example:</p>
+<p>A sensor is discovered to have been miscalibrated.</p>
+<p>What becomes invalid?</p>
+<p>The measurement evidence.</p>
+<p>Then:</p>
+<ol>
+<li>evidence validity changes,</li>
+<li>dependent derivations recalculate,</li>
+<li>verification records depending on it may become unsatisfied/revoked,</li>
+<li>capabilities may disappear,</li>
+<li>obligations may arise.</li>
+</ol>
+<p>The claim may remain true in the world.</p>
+<p>We simply no longer have sufficient justification for using it.</p>
+<p>This distinction is essential.</p>
+<hr>
+<h1 id="16-truth-maintenance-systems-comparison">16. Truth-maintenance systems comparison</h1>
+<p>Truth Maintenance Systems are among the closest intellectual ancestors of the proposed design.</p>
+<p>Doyle's classic TMS work focuses on recording justifications for beliefs and maintaining their status as justifications change.</p>
+<p>Assumption-Based Truth Maintenance Systems extend this by tracking sets of assumptions under which propositions hold and supporting reasoning across inconsistent or alternative contexts.</p>
+<p>Key architectural lessons:</p>
+<h2 id="a-store-justifications">A. Store justifications</h2>
+<p>Do not store only the current conclusion.</p>
+<h2 id="b-track-dependencies">B. Track dependencies</h2>
+<p>If justification J disappears, dependent conclusions must be reconsidered.</p>
+<h2 id="c-retraction-is-first-class">C. Retraction is first-class</h2>
+<p>Changing evidence should propagate.</p>
+<h2 id="d-assumptions-remain-explicit">D. Assumptions remain explicit</h2>
+<p>They should not be indistinguishable from established premises.</p>
+<h2 id="e-multiple-contexts-can-coexist">E. Multiple contexts can coexist</h2>
+<p>This maps directly to:</p>
+<ul>
+<li>agent planning,</li>
+<li>simulation,</li>
+<li>counterfactual reasoning.</li>
+</ul>
+<p>The proposed epistemic architecture can be seen as a modern, application-focused TMS combined with provenance and runtime capability enforcement.</p>
+<hr>
+<h1 id="17-belief-revision-comparison">17. Belief-revision comparison</h1>
+<p>AGM belief revision formalizes operations such as:</p>
+<ul>
+<li>expansion,</li>
+<li>contraction,</li>
+<li>revision.</li>
+</ul>
+<p>It asks how a rational belief set should change when new information arrives.</p>
+<p>This is valuable conceptually but does not directly solve the application architecture.</p>
+<p>Why?</p>
+<p>The proposed system is less concerned with:</p>
+<blockquote>
+<p>What should an ideal rational agent believe?</p>
+</blockquote>
+<p>and more concerned with:</p>
+<blockquote>
+<p>What propositions may an operational system treat as sufficiently justified for a particular consequential action?</p>
+</blockquote>
+<p>Those are different.</p>
+<p>AGM contributes principles for:</p>
+<ul>
+<li>revision after contradiction,</li>
+<li>minimal disturbance,</li>
+<li>explicit contraction.</li>
+</ul>
+<p>But application-level evidence provenance requires more operational metadata than classical AGM theory supplies.</p>
+<p>Recommended use:</p>
+<p><strong>Borrow revision concepts, not the entire belief-set abstraction.</strong></p>
+<hr>
+<h1 id="18-epistemic-logic-comparison">18. Epistemic logic comparison</h1>
+<p>Epistemic logic introduces operators such as:</p>
+<p><code>K_A(P)</code> — actor A knows P.</p>
+<p>This is useful for distributed/multi-agent reasoning but should not become the default representation.</p>
+<p>Operational systems often need more precise statements:</p>
+<ul>
+<li>Agent A observed evidence E.</li>
+<li>System currently accepts VerificationRecord V.</li>
+<li>Agent B's context version predates E.</li>
+<li>Policy P requires V.</li>
+</ul>
+<p>This is more concrete than:</p>
+<p><code>Agent A knows X</code>.</p>
+<p>Recommended principle:</p>
+<blockquote>
+<p><strong>Use epistemic logic where actor-specific information state matters; use provenance/evidence records for authoritative operational truth control.</strong></p>
+</blockquote>
+<hr>
+<h1 id="19-multi-agent-epistemics">19. Multi-agent epistemics</h1>
+<p>A key AI-agent problem is that an agent's local context is not authoritative epistemic state.</p>
+<p>Example:</p>
+<pre><code class="language-text">Authoritative claim version: 19
+Agent A context: version 19
+Agent B context: version 17
+</code></pre>
+<p>Agent B should not be treated as "wrong" merely because it has older information.</p>
+<p>It is stale.</p>
+<p>This suggests versioned epistemic reads.</p>
+<p>A capability issued against claim version 18 should become invalid if evidence changes and the relevant epistemic state becomes version 19.</p>
+<p>This connects naturally with version-bound capability design.</p>
+<hr>
+<h1 id="20-provenance">20. Provenance</h1>
+<p>W3C PROV is highly relevant and should be adopted conceptually rather than reinvented.</p>
+<p>W3C PROV distinguishes:</p>
+<ul>
+<li><strong>Entities</strong></li>
+<li><strong>Activities</strong></li>
+<li><strong>Agents</strong></li>
+</ul>
+<p>and relations describing:</p>
+<ul>
+<li>generation,</li>
+<li>derivation,</li>
+<li>attribution,</li>
+<li>usage.</li>
+</ul>
+<p>For the proposed architecture:</p>
+<pre><code class="language-text">EvidenceEntity
+    wasGeneratedBy
+ExtractionActivity
+    used
+SourceDocument
+    wasAssociatedWith
+OCRSystem
+</code></pre>
+<p>This allows the system to reconstruct:</p>
+<p>tax return
+→ OCR
+→ extracted amount
+→ normalized income
+→ claim
+→ verification
+→ loan capability.</p>
+<p>If the OCR output is invalidated, downstream dependencies can be located.</p>
+<p>The key lesson:</p>
+<blockquote>
+<p>Provenance should be a composable graph, not a human-readable source string.</p>
+</blockquote>
+<hr>
+<h1 id="21-data-lineage">21. Data lineage</h1>
+<p>Lineage is particularly important for derived evidence.</p>
+<p>Example:</p>
+<pre><code class="language-text">TaxReturn.pdf
+  -> OCR_v3
+  -> "annual income = 120000"
+  -> currency normalization
+  -> income threshold rule
+  -> IncomeAboveThreshold
+</code></pre>
+<p>If OCR is later corrected to 12,000:</p>
+<p>the architecture should not merely update one number.</p>
+<p>It should invalidate/recompute downstream claims and decisions.</p>
+<p>This is exactly the kind of dependency propagation studied in:</p>
+<ul>
+<li>provenance,</li>
+<li>incremental computation,</li>
+<li>build systems,</li>
+<li>truth maintenance.</li>
+</ul>
+<hr>
+<h1 id="22-ai-generated-claims">22. AI-generated claims</h1>
+<p>AI output requires two separate concepts:</p>
+<h2 id="origin">Origin</h2>
+<p><code>GeneratedByModel</code></p>
+<h2 id="epistemic-authority">Epistemic authority</h2>
+<p>Usually:</p>
+<ul>
+<li>proposed,</li>
+<li>inferred,</li>
+<li>unverified.</li>
+</ul>
+<p>These must remain distinct.</p>
+<p>A model may produce a deductively correct conclusion from verified evidence.</p>
+<p>Conversely, a human may provide an unreliable report.</p>
+<p>Therefore origin alone does not define evidence quality.</p>
+<p>But model origin is important for:</p>
+<ul>
+<li>audit,</li>
+<li>reproduction,</li>
+<li>model-version tracking,</li>
+<li>policy restrictions,</li>
+<li>calibration.</li>
+</ul>
+<p>Recommended metadata:</p>
+<pre><code class="language-text">generation {
+    model
+    modelVersion
+    prompt/context reference
+    generatedAt
+    toolEvidenceRefs
+}
+</code></pre>
+<p>An LLM-generated assertion should not become trusted evidence merely because it is persisted.</p>
+<hr>
+<h1 id="23-model-confidence">23. Model confidence</h1>
+<p>Current evidence strongly argues against using self-reported LLM confidence as a verification mechanism.</p>
+<p>Empirical work continues to find:</p>
+<ul>
+<li>overconfidence,</li>
+<li>miscalibration,</li>
+<li>sensitivity to elicitation method,</li>
+<li>imperfect connection between verbalized confidence and actual correctness.</li>
+</ul>
+<p>Therefore:</p>
+<pre><code class="language-text">modelConfidence = 0.97
+</code></pre>
+<p>should mean only:</p>
+<blockquote>
+<p>this confidence estimator produced 0.97 under this calibration method.</p>
+</blockquote>
+<p>It should not mean:</p>
+<ul>
+<li>source authority,</li>
+<li>verified,</li>
+<li>true,</li>
+<li>independently supported.</li>
+</ul>
+<p>Model confidence may be useful for:</p>
+<ul>
+<li>routing to review,</li>
+<li>deciding whether to retrieve more evidence,</li>
+<li>abstention,</li>
+<li>prioritizing checks.</li>
+</ul>
+<p>It should not grant consequential capabilities by itself unless policy explicitly accepts that model and threshold.</p>
+<hr>
+<h1 id="24-evidence-authority">24. Evidence authority</h1>
+<p>There is no universal evidence hierarchy.</p>
+<p>A calibrated sensor can be authoritative for:</p>
+<ul>
+<li>temperature,</li>
+</ul>
+<p>but irrelevant for:</p>
+<ul>
+<li>whether a patient feels pain.</li>
+</ul>
+<p>A patient's self-report may be the strongest evidence for subjective symptoms.</p>
+<p>A government database may be authoritative for:</p>
+<ul>
+<li>licensing status,</li>
+</ul>
+<p>but not necessarily current physical accessibility.</p>
+<p>Therefore source authority should be <strong>claim/policy-specific</strong>.</p>
+<p>Recommended policy pattern:</p>
+<pre><code class="language-text">AccessibilityPolicy@8:
+    RollInShower:
+        acceptedEvidence:
+            IndependentMeasurement
+            CertifiedInspection
+        optionalSupportingEvidence:
+            HotelReport
+            TravelerPhoto
+</code></pre>
+<p>Avoid:</p>
+<p><code>sourceAuthority = 0.86</code></p>
+<p>as a universal scalar.</p>
+<hr>
+<h1 id="25-freshness">25. Freshness</h1>
+<p>Freshness is a use requirement, not necessarily truth decay.</p>
+<p>Example:</p>
+<p>A fraud assessment from 31 minutes ago may still accurately describe the assessment at its observation time.</p>
+<p>But if the payment policy requires:</p>
+<p><code>age &#x3C;= 30 minutes</code></p>
+<p>it is no longer sufficient for approval.</p>
+<p>Therefore preserve:</p>
+<pre><code class="language-text">observedAt
+validFor?
+</code></pre>
+<p>and evaluate:</p>
+<pre><code class="language-text">isFreshEnoughFor(policy, now)
+</code></pre>
+<p>Do not mutate the claim to <code>Invalidated</code> solely because a consuming policy's freshness window expired.</p>
+<hr>
+<h1 id="26-policy-relative-verification">26. Policy-relative verification</h1>
+<p>Verification is inherently policy-relative.</p>
+<p>Example:</p>
+<pre><code class="language-text">AccessibilityPolicy@7:
+    hotel self-report sufficient
+
+AccessibilityPolicy@8:
+    independent measurement required
+</code></pre>
+<p>A historical verification under @7 should remain historically accurate:</p>
+<blockquote>
+<p>The claim satisfied Policy@7 at time T.</p>
+</blockquote>
+<p>It does not imply:</p>
+<blockquote>
+<p>The claim satisfies Policy@8 now.</p>
+</blockquote>
+<p>Therefore the verification record must preserve:</p>
+<ul>
+<li>policy ID,</li>
+<li>policy version,</li>
+<li>evidence set,</li>
+<li>verifier,</li>
+<li>timestamp,</li>
+<li>subject version.</li>
+</ul>
+<p>This is essential for auditability.</p>
+<hr>
+<h1 id="27-claim-dependency-and-cascade-model">27. Claim dependency and cascade model</h1>
+<p>A useful dependency chain:</p>
+<pre><code class="language-text">Evidence E1
+    ->
+Claim A support
+
+Claim A + Rule R
+    ->
+Claim B
+
+Claim B verified under Policy P
+    ->
+Capability C
+
+Capability C
+    ->
+Action A17
+</code></pre>
+<p>If E1 is invalidated:</p>
+<pre><code class="language-text">E1 invalid
+    ->
+Claim A support recomputed
+    ->
+Claim B derivation becomes unsupported
+    ->
+verification record no longer current
+    ->
+Capability C removed
+    ->
+pending plan invalid
+    ->
+ReverifyClaim obligation created
+</code></pre>
+<p>This is one of the architecture's strongest ideas.</p>
+<p>It makes epistemic change operational.</p>
+<hr>
+<h1 id="28-epistemic-cascade">28. Epistemic cascade</h1>
+<p>Recommended architecture:</p>
+<pre><code class="language-text">EvidenceChanged
+    ↓
+RecomputeAffectedClaimViews
+    ↓
+ReevaluateVerificationRecords
+    ↓
+RecalculateCapabilities
+    ↓
+InvalidateStalePlans
+    ↓
+GenerateEpistemicObligations
+</code></pre>
+<p>Potential obligations:</p>
+<ul>
+<li>RefreshEvidence</li>
+<li>ReverifyClaim</li>
+<li>ResolveContradiction</li>
+<li>RequestHumanReview</li>
+<li>ReassessDependentDecision</li>
+</ul>
+<p>The dependency graph should allow incremental recomputation rather than global re-evaluation.</p>
+<hr>
+<h1 id="29-ai-agent-assumption-drift">29. AI-agent assumption drift</h1>
+<p>The specific AI risk can be called <strong>assumption laundering</strong> or <strong>assumption inheritance</strong>.</p>
+<p>Pattern:</p>
+<pre><code class="language-text">Agent 1:
+    "Probably X."
+
+Agent 1 writes:
+    X=true
+
+Agent 2 sees:
+    X=true
+
+Agent 2 infers:
+    "Someone verified X."
+
+Agent 3 builds:
+    behavior depending on X
+</code></pre>
+<p>The key problem is not merely hallucination.</p>
+<p>It is <strong>persistence converting provenance-free inference into apparent authority</strong>.</p>
+<p>Traditional hallucination mitigation often operates within one response.</p>
+<p>This architecture targets a longer timescale:</p>
+<blockquote>
+<p>What happens when uncertain model output survives into future agent contexts?</p>
+</blockquote>
+<p>That is a distinct and under-tested risk.</p>
+<hr>
+<h1 id="30-assumption-debt">30. Assumption debt</h1>
+<p>"Assumption Debt" is a useful operational concept if defined narrowly.</p>
+<p>Recommended definition:</p>
+<blockquote>
+<p><strong>Assumption Debt is consequential system behavior that depends on propositions whose evidential or verification authority is below the level required by the relevant decision policy.</strong></p>
+</blockquote>
+<p>Possible metric:</p>
+<pre><code class="language-text">AssumptionDebt =
+    count or weighted value of
+    consequential dependencies
+    on insufficiently justified claims
+</code></pre>
+<p>Weight by:</p>
+<ul>
+<li>consequence,</li>
+<li>age,</li>
+<li>fan-out,</li>
+<li>number of downstream capabilities,</li>
+<li>correction cost.</li>
+</ul>
+<p>Do not count every unknown fact.</p>
+<p>Only count epistemically insufficient dependencies that matter.</p>
+<hr>
+<h1 id="31-epistemic-requirements-for-capabilities">31. Epistemic requirements for capabilities</h1>
+<p>Do not use:</p>
+<p><code>atLeast Verified</code></p>
+<p>unless there is a well-defined order.</p>
+<p>Instead specify exact requirements.</p>
+<p>Example:</p>
+<pre><code class="language-text">CanApproveLoan requires:
+    Identity:
+        activeVerification(policy = IdentityPolicy@4)
+
+    Income:
+        supportingEvidence(
+            type in ApprovedIncomeSources,
+            maxAge = 90d)
+
+    FraudRisk:
+        assessment(
+            model in ApprovedModels,
+            maxAge = 30m,
+            score &#x3C; threshold)
+</code></pre>
+<p>This avoids pretending all epistemic states form one scale.</p>
+<hr>
+<h1 id="32-four-valued--paraconsistent-model">32. Four-valued / paraconsistent model</h1>
+<p>Belnap's four-valued logic is particularly useful for evidence conflict.</p>
+<p>Interpret a proposition using two independent questions:</p>
+<ul>
+<li>Is there support for P?</li>
+<li>Is there support for not-P?</li>
+</ul>
+<p>This yields:</p>
+<table>
+<thead>
+<tr>
+<th>Support P</th>
+<th>Support ¬P</th>
+<th>State</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No</td>
+<td>No</td>
+<td>Unknown</td>
+</tr>
+<tr>
+<td>Yes</td>
+<td>No</td>
+<td>Supported-P</td>
+</tr>
+<tr>
+<td>No</td>
+<td>Yes</td>
+<td>Supported-not-P</td>
+</tr>
+<tr>
+<td>Yes</td>
+<td>Yes</td>
+<td>Conflict</td>
+</tr>
+</tbody>
+</table>
+<p>This handles contradictory information without explosion or forced overwrite.</p>
+<p>But it should be a <strong>derived evidence polarity</strong>, not the entire epistemic model.</p>
+<hr>
+<h1 id="33-open-world-vs-closed-world">33. Open-world vs closed-world</h1>
+<p>The default for consequential claims should generally be:</p>
+<blockquote>
+<p>absence of evidence is absence of knowledge.</p>
+</blockquote>
+<p>Not:</p>
+<blockquote>
+<p>absence means false.</p>
+</blockquote>
+<p>But some application domains legitimately use closed-world rules.</p>
+<p>Example:</p>
+<p>A permission system may say:</p>
+<blockquote>
+<p>No explicit permission record => permission denied.</p>
+</blockquote>
+<p>That is a policy decision.</p>
+<p>It should not be generalized into epistemology.</p>
+<p>Recommended design:</p>
+<pre><code class="language-text">Claim layer:
+    open-world by default
+
+Policy/capability layer:
+    may use explicit closed-world rules
+</code></pre>
+<p>This avoids conflating:</p>
+<ul>
+<li>"we do not know X"
+with:</li>
+<li>"policy forbids acting unless X is established."</li>
+</ul>
+<hr>
+<h1 id="34-healthcare-case-study">34. Healthcare case study</h1>
+<p>Healthcare provides strong evidence that epistemic and clinical status should be separated.</p>
+<p>HL7 FHIR explicitly distinguishes a condition's:</p>
+<ul>
+<li>clinical status,</li>
+<li>verification status.</li>
+</ul>
+<p>FHIR verification statuses include concepts such as:</p>
+<ul>
+<li>provisional,</li>
+<li>differential,</li>
+<li>confirmed,</li>
+<li>refuted,</li>
+<li>entered-in-error.</li>
+</ul>
+<p>This is very close to the problem being studied.</p>
+<p>Crucially, a diagnosis can be:</p>
+<ul>
+<li>clinically active,</li>
+<li>but only provisional.</li>
+</ul>
+<p>That supports the architectural principle:</p>
+<blockquote>
+<p>Domain state and epistemic status are different axes.</p>
+</blockquote>
+<p>It also warns against inventing one universal epistemic vocabulary.</p>
+<p>Clinical systems already have domain-specific verification concepts.</p>
+<p>The general platform should support policy-specific status vocabularies rather than replacing them.</p>
+<hr>
+<h1 id="35-accessibility-case-study">35. Accessibility case study</h1>
+<p>Claim:</p>
+<p><code>Room217HasRollInShower</code></p>
+<p>Evidence:</p>
+<ul>
+<li>E1 hotel report,</li>
+<li>E2 hotel photograph,</li>
+<li>E3 traveler report,</li>
+<li>E4 independent measurement.</li>
+</ul>
+<p>A good record might expose:</p>
+<pre><code class="language-text">Evidence polarity:
+    support: E1, E2
+    opposition: E3
+
+Conflict:
+    true
+
+Verification:
+    no current verification under AccessibilityPolicy@8
+
+Required:
+    IndependentMeasurement
+</code></pre>
+<p>This is far safer than:</p>
+<p><code>RoomAccessible = true</code>.</p>
+<p>It also demonstrates why claim granularity matters.</p>
+<p>"Accessible" is not one physical property.</p>
+<hr>
+<h1 id="36-finance--fraud-case-study">36. Finance / fraud case study</h1>
+<p>Claim:</p>
+<p><code>TransactionLowRisk</code></p>
+<p>This may be generated by an ML model.</p>
+<p>The system should preserve:</p>
+<pre><code class="language-text">model
+modelVersion
+score
+inputDataVersion
+producedAt
+calibration
+</code></pre>
+<p>The policy might require:</p>
+<pre><code class="language-text">approved model version
+score &#x3C; threshold
+assessment age &#x3C; 30 minutes
+identity verification present
+</code></pre>
+<p>The risk score is a prediction.</p>
+<p>It should not be represented as a verified fact that the transaction is objectively safe.</p>
+<hr>
+<h1 id="37-software-deployment-case-study">37. Software deployment case study</h1>
+<p>Claim:</p>
+<p><code>BuildEligibleForDeployment</code></p>
+<p>Evidence:</p>
+<ul>
+<li>test suite result,</li>
+<li>security scanner,</li>
+<li>review approval,</li>
+<li>artifact hash,</li>
+<li>provenance from build pipeline.</li>
+</ul>
+<p>Suppose the security scanner is later found compromised.</p>
+<p>The correct behavior is:</p>
+<ol>
+<li>scanner evidence invalidated,</li>
+<li>build verification recomputed,</li>
+<li>future deployment capability removed,</li>
+<li>prior deployment decisions remain historically recorded,</li>
+<li>obligation created to reassess affected artifacts.</li>
+</ol>
+<p>This illustrates why historical truth and current usability must be distinct.</p>
+<hr>
+<h1 id="38-researchscientific-case-study">38. Research/scientific case study</h1>
+<p>Scientific claims expose the danger of the word <code>Verified</code>.</p>
+<p>A hypothesis may be:</p>
+<ul>
+<li>supported by evidence,</li>
+<li>replicated,</li>
+<li>contradicted by other studies,</li>
+<li>uncertain under model assumptions.</li>
+</ul>
+<p>Science rarely converts a proposition into permanently verified truth.</p>
+<p>This suggests the architecture should reserve strong verification terminology for procedural contexts.</p>
+<p>For broader knowledge claims, use:</p>
+<ul>
+<li>support,</li>
+<li>opposition,</li>
+<li>provenance,</li>
+<li>uncertainty.</li>
+</ul>
+<hr>
+<h1 id="39-false-verification">39. False verification</h1>
+<p>The system cannot guarantee objective truth.</p>
+<p>If bad evidence satisfies a bad policy:</p>
+<p>the claim can become procedurally accepted.</p>
+<p>Therefore always preserve:</p>
+<pre><code class="language-text">verificationRecord.policy
+verificationRecord.evidence
+verificationRecord.verifier
+</code></pre>
+<p>The guarantee is:</p>
+<blockquote>
+<p>verification procedure satisfied.</p>
+</blockquote>
+<p>Not:</p>
+<blockquote>
+<p>reality is necessarily as represented.</p>
+</blockquote>
+<p>This should be explicit in documentation and user-facing semantics.</p>
+<hr>
+<h1 id="40-verification-authority">40. Verification authority</h1>
+<p>Consequential verification should require protected constructors.</p>
+<p>An ordinary agent should not be able to create:</p>
+<pre><code class="language-text">Verified&#x3C;Identity>
+</code></pre>
+<p>simply because it decides the evidence looks convincing.</p>
+<p>Instead the agent can:</p>
+<ul>
+<li>submit evidence,</li>
+<li>request verification,</li>
+<li>propose a conclusion.</li>
+</ul>
+<p>An authorized verification component then evaluates policy.</p>
+<p>Possible verification authorities:</p>
+<ul>
+<li>deterministic verifier,</li>
+<li>credential validator,</li>
+<li>approved expert,</li>
+<li>trusted external system,</li>
+<li>composite workflow.</li>
+</ul>
+<p>This applies the same capability principle to epistemic authority.</p>
+<hr>
+<h1 id="41-machine-checkable-verification-taxonomy">41. Machine-checkable verification taxonomy</h1>
+<h2 id="type-1--deterministic-verification">Type 1 — Deterministic verification</h2>
+<p>Example:
+<code>36 >= 32</code></p>
+<h2 id="type-2--credential-verification">Type 2 — Credential verification</h2>
+<p>Example:
+signed certification from approved authority.</p>
+<h2 id="type-3--expert-attestation">Type 3 — Expert attestation</h2>
+<p>Example:
+clinician diagnosis.</p>
+<h2 id="type-4--probabilistic-assessment">Type 4 — Probabilistic assessment</h2>
+<p>Example:
+fraud model below threshold.</p>
+<h2 id="type-5--composite-verification">Type 5 — Composite verification</h2>
+<p>Combination of:</p>
+<ul>
+<li>measurements,</li>
+<li>credential,</li>
+<li>human approval,</li>
+<li>model output.</li>
+</ul>
+<p>Policies should declare which type they accept.</p>
+<hr>
+<h1 id="42-evidence-quality">42. Evidence quality</h1>
+<p>Avoid a universal evidence-quality score.</p>
+<p>Evidence quality can depend on:</p>
+<ul>
+<li>directness,</li>
+<li>measurement error,</li>
+<li>source competence,</li>
+<li>authority,</li>
+<li>freshness,</li>
+<li>independence,</li>
+<li>reproducibility,</li>
+<li>subject match.</li>
+</ul>
+<p>And the relative importance of these varies by domain.</p>
+<p>Recommended approach:</p>
+<blockquote>
+<p><strong>Policies define admissibility and sufficiency criteria over evidence attributes.</strong></p>
+</blockquote>
+<p>Do not reduce everything to:</p>
+<p><code>quality = 0.83</code></p>
+<p>unless a domain has a validated scoring model.</p>
+<hr>
+<h1 id="43-independence-of-evidence">43. Independence of evidence</h1>
+<p>This is a major provenance benefit.</p>
+<p>Suppose:</p>
+<pre><code class="language-text">Hotel page S1
+    -> Travel site A copies S1
+    -> Blog B copies A
+    -> Model summary C summarizes B
+</code></pre>
+<p>Without lineage:</p>
+<p>the system sees four apparent reports.</p>
+<p>With provenance:</p>
+<p>they form one evidence family derived from S1.</p>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>Evidence count should never substitute for evidence independence.</strong></p>
+</blockquote>
+<p>This directly supports the prompt's principle:</p>
+<p><strong>Repetition does not increase epistemic authority automatically.</strong></p>
+<hr>
+<h1 id="44-evidence-deduplication">44. Evidence deduplication</h1>
+<p>A practical mechanism is provenance-root grouping.</p>
+<p>For each evidence item, compute or retain:</p>
+<ul>
+<li>originating source,</li>
+<li>derivation chain,</li>
+<li>source content hash where appropriate,</li>
+<li>transformation activities.</li>
+</ul>
+<p>Then group evidence sharing a common root.</p>
+<p>This need not perfectly solve source dependence.</p>
+<p>But it can stop obvious amplification through copying.</p>
+<hr>
+<h1 id="45-contradiction-resolution">45. Contradiction resolution</h1>
+<p>The architecture should not require the agent to resolve every conflict.</p>
+<p>Permissible outcomes include:</p>
+<ul>
+<li>unresolved conflict,</li>
+<li>requires review,</li>
+<li>insufficient evidence,</li>
+<li>action blocked,</li>
+<li>lower-trust source ignored by policy,</li>
+<li>fresh evidence required.</li>
+</ul>
+<p>The key is:</p>
+<blockquote>
+<p><strong>Preserving a contradiction is a valid system result.</strong></p>
+</blockquote>
+<p>Forced certainty is often more dangerous than temporary inability to act.</p>
+<hr>
+<h1 id="46-argumentation-frameworks">46. Argumentation frameworks</h1>
+<p>Dung-style abstract argumentation models arguments and attack relationships.</p>
+<p>Structured argumentation systems extend this toward:</p>
+<ul>
+<li>premises,</li>
+<li>rules,</li>
+<li>defeasible inference,</li>
+<li>support/attack.</li>
+</ul>
+<p>These are useful for complex domains where:</p>
+<ul>
+<li>evidence supports competing arguments,</li>
+<li>rules have exceptions,</li>
+<li>conflicts require explicit reasoning.</li>
+</ul>
+<p>However, they risk turning a practical architecture into a research platform.</p>
+<p>Recommendation:</p>
+<p>Do not start with a full argumentation engine.</p>
+<p>Introduce support/attack graphs only when:</p>
+<ul>
+<li>policy cannot be expressed cleanly as evidence sufficiency,</li>
+<li>conflict resolution itself must be explained formally.</li>
+</ul>
+<hr>
+<h1 id="47-dempster-shafer-evidence-theory">47. Dempster-Shafer evidence theory</h1>
+<p>Dempster-Shafer theory can explicitly represent:</p>
+<ul>
+<li>belief,</li>
+<li>plausibility,</li>
+<li>ignorance,</li>
+<li>combined evidence.</li>
+</ul>
+<p>That makes it conceptually attractive.</p>
+<p>But its evidence-combination rules introduce complexity, especially with dependent or conflicting evidence.</p>
+<p>The architecture does not need Dempster-Shafer merely to preserve:</p>
+<ul>
+<li>unknown,</li>
+<li>conflict,</li>
+<li>evidence provenance.</li>
+</ul>
+<p>Recommendation:</p>
+<p><strong>Do not adopt Dempster-Shafer in v0.1.</strong></p>
+<p>Use it only if a target domain has a justified need for evidence fusion.</p>
+<hr>
+<h1 id="48-bayesian-models">48. Bayesian models</h1>
+<p>Bayesian reasoning is appropriate when:</p>
+<ul>
+<li>probabilities have meaningful interpretation,</li>
+<li>likelihood models exist,</li>
+<li>evidence dependencies are understood.</li>
+</ul>
+<p>But:</p>
+<p><code>posterior probability = 0.96</code></p>
+<p>does not mean:</p>
+<p><code>verified</code>.</p>
+<p>A hybrid architecture is more appropriate:</p>
+<pre><code class="language-text">probabilistic assessment
++
+provenance
++
+policy
++
+verification record
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-text">FraudRisk = 0.03
+model = M17
+calibration = C4
+age = 8m
+</code></pre>
+<p>Policy determines whether that is sufficient for an action.</p>
+<hr>
+<h1 id="49-epistemic-state-as-context-compression">49. Epistemic state as context compression</h1>
+<p>The architecture could materially reduce context.</p>
+<p>Instead of giving an agent:</p>
+<ul>
+<li>5 source documents,</li>
+<li>3 summaries,</li>
+<li>2 old reports,</li>
+<li>previous agent reasoning,</li>
+</ul>
+<p>give:</p>
+<pre><code class="language-text">Claim: Room217HasRollInShower
+Evidence polarity: Conflicted
+
+Supporting:
+    E17 HotelReport
+    E21 Photo
+
+Opposing:
+    E33 TravelerReport
+
+Current verification:
+    None under AccessibilityPolicy@8
+
+Missing:
+    IndependentMeasurement
+
+Evidence available lazily.
+</code></pre>
+<p>This can compress:</p>
+<ul>
+<li>provenance,</li>
+<li>conflict,</li>
+<li>verification,</li>
+<li>required next step.</li>
+</ul>
+<p>But compression is safe only if:</p>
+<ul>
+<li>the summary is generated deterministically,</li>
+<li>underlying evidence remains retrievable,</li>
+<li>the agent knows when raw evidence is necessary.</li>
+</ul>
+<hr>
+<h1 id="50-token-cost-hypothesis">50. Token-cost hypothesis</h1>
+<p>Two environments should be compared:</p>
+<h2 id="a-raw-evidence">A. Raw evidence</h2>
+<p>Agent reconstructs:</p>
+<ul>
+<li>what sources exist,</li>
+<li>which are duplicates,</li>
+<li>what supports/opposes,</li>
+<li>what is current,</li>
+<li>what was previously verified.</li>
+</ul>
+<h2 id="b-epistemic-summary">B. Epistemic summary</h2>
+<p>Agent receives:</p>
+<ul>
+<li>derived status,</li>
+<li>evidence references,</li>
+<li>conflicts,</li>
+<li>verification record,</li>
+<li>missing requirements.</li>
+</ul>
+<p>Measure:</p>
+<ul>
+<li>input tokens,</li>
+<li>evidence retrieval calls,</li>
+<li>false certainty,</li>
+<li>decision accuracy,</li>
+<li>omissions.</li>
+</ul>
+<p>This claim is plausible but currently under-demonstrated in AI-agent literature.</p>
+<hr>
+<h1 id="51-lazy-evidence-retrieval">51. Lazy evidence retrieval</h1>
+<p>A strong design is:</p>
+<h2 id="initial-context">Initial context</h2>
+<pre><code class="language-text">claim
+current evidence summary
+verification status
+conflict flag
+policy requirements
+</code></pre>
+<h2 id="tool">Tool</h2>
+<pre><code class="language-text">getEvidence(claimId)
+getEvidence(evidenceId)
+getProvenance(evidenceId)
+</code></pre>
+<p>This preserves context economy without hiding raw sources.</p>
+<p>The model retrieves details only where needed.</p>
+<p>This resembles query planning:</p>
+<p>do not load the whole epistemic graph into every prompt.</p>
+<hr>
+<h1 id="52-smaller-model-hypothesis">52. Smaller-model hypothesis</h1>
+<p>The strongest economic experiment is:</p>
+<h3 id="environment-a">Environment A</h3>
+<p>Large model + raw evidence corpus.</p>
+<h3 id="environment-b">Environment B</h3>
+<p>Small/medium model + structured epistemic summary + lazy retrieval.</p>
+<p>Ask both to make consequential decisions.</p>
+<p>Measure:</p>
+<ul>
+<li>correct abstention,</li>
+<li>unsupported certainty,</li>
+<li>correct capability choice,</li>
+<li>tokens,</li>
+<li>tool calls,</li>
+<li>dollar cost.</li>
+</ul>
+<p>Why this may work:</p>
+<p>The larger model currently spends capability on:</p>
+<ul>
+<li>source comparison,</li>
+<li>provenance reconstruction,</li>
+<li>contradiction detection,</li>
+<li>freshness checking.</li>
+</ul>
+<p>A deterministic system can precompute part of that.</p>
+<p>But the smaller model must still understand:</p>
+<ul>
+<li>what action is desirable,</li>
+<li>whether semantic policy is appropriate,</li>
+<li>ambiguous evidence.</li>
+</ul>
+<p>Therefore smaller-model substitution is <strong>plausible, not established</strong>.</p>
+<hr>
+<h1 id="53-human-review">53. Human review</h1>
+<p>Structured epistemics can change human review from:</p>
+<blockquote>
+<p>"Please reread all these documents and tell me why we believe this."</p>
+</blockquote>
+<p>to:</p>
+<blockquote>
+<p>"Here is the claim, supporting/opposing evidence, provenance, policy, and verification record."</p>
+</blockquote>
+<p>This should reduce reconstruction burden.</p>
+<p>Humans still need to review:</p>
+<ul>
+<li>ambiguous evidence,</li>
+<li>expert judgments,</li>
+<li>policy quality,</li>
+<li>conflicts,</li>
+<li>specification errors.</li>
+</ul>
+<p>The likely benefit is <strong>review compression</strong>, not elimination.</p>
+<hr>
+<h1 id="54-auditability">54. Auditability</h1>
+<p>For each consequential action, record epistemic dependencies.</p>
+<p>Example:</p>
+<pre><code class="language-text">Decision: ApproveShipment A778
+
+Required claim:
+    FraudClear
+
+Verification:
+    V103
+
+Policy:
+    FraudPolicy@12
+
+Evidence:
+    RiskAssessment E99
+
+Claim version:
+    18
+</code></pre>
+<p>Historical audit can then answer:</p>
+<ul>
+<li>what the system accepted,</li>
+<li>why,</li>
+<li>under which policy,</li>
+<li>using which evidence,</li>
+<li>at what time.</li>
+</ul>
+<p>This is much stronger than recording only the final action.</p>
+<hr>
+<h1 id="55-historical-truth">55. Historical truth</h1>
+<p>Two propositions must be separated:</p>
+<p>A.</p>
+<blockquote>
+<p>At 10:15, the system had sufficient evidence under Policy@7 to accept C.</p>
+</blockquote>
+<p>B.</p>
+<blockquote>
+<p>C is objectively true now.</p>
+</blockquote>
+<p>Historical audit requires A even if B later becomes false or unknown.</p>
+<p>This suggests bitemporal thinking:</p>
+<ul>
+<li>when was the underlying observation valid?</li>
+<li>when did the system know/record it?</li>
+</ul>
+<p>At minimum store:</p>
+<ul>
+<li>observed/effective time,</li>
+<li>recorded time.</li>
+</ul>
+<hr>
+<h1 id="56-policy-evolution">56. Policy evolution</h1>
+<p>When Policy@8 replaces Policy@7, choose an explicit migration posture.</p>
+<h2 id="prospective">Prospective</h2>
+<p>Only future verifications use @8.</p>
+<h2 id="reassessment-triggering">Reassessment-triggering</h2>
+<p>Existing relevant claims become obligations for re-verification.</p>
+<h2 id="retroactive-invalidation">Retroactive invalidation</h2>
+<p>Historical decisions are treated as invalid under the new policy.</p>
+<p>These have radically different semantics.</p>
+<p>Do not let policy deployment implicitly choose one.</p>
+<hr>
+<h1 id="57-epistemic-obligations">57. Epistemic obligations</h1>
+<p>Evidence changes naturally create work.</p>
+<p>Examples:</p>
+<pre><code class="language-text">O-71 ReverifyIdentity
+O-72 ResolveEvidenceConflict
+O-73 RefreshFraudAssessment
+O-74 RequestIndependentMeasurement
+</code></pre>
+<p>This is a strong connection between epistemic architecture and obligation-driven agents.</p>
+<p>The agent no longer needs to discover every downstream problem by open-ended exploration.</p>
+<p>The system exposes unresolved epistemic work.</p>
+<hr>
+<h1 id="58-epistemic-capabilities">58. Epistemic capabilities</h1>
+<p>Capabilities should depend on <strong>requirements</strong>, not vague claim labels.</p>
+<p>Example:</p>
+<pre><code class="language-text">CanApproveLoan
+requires:
+    Identity verification current under Policy@5
+    Income evidence sufficient under Policy@3
+    Fraud assessment fresh under Policy@11
+</code></pre>
+<p>If evidence changes:</p>
+<p>the capability disappears automatically.</p>
+<p>This makes uncertain knowledge operationally safe.</p>
+<hr>
+<h1 id="59-prompt-rule-vs-runtime-enforcement">59. Prompt rule vs runtime enforcement</h1>
+<p>Compare:</p>
+<h3 id="prompt">Prompt</h3>
+<p>"Make sure identity is verified."</p>
+<p>The model must:</p>
+<ul>
+<li>remember rule,</li>
+<li>reconstruct status,</li>
+<li>interpret evidence,</li>
+<li>obey.</li>
+</ul>
+<h3 id="runtime">Runtime</h3>
+<p><code>ApproveLoan</code> tool is unavailable unless identity verification requirements are satisfied.</p>
+<p>The model still chooses whether approval is desirable.</p>
+<p>But it cannot bypass the legality condition.</p>
+<p>This is the same useful split:</p>
+<p><strong>runtime answers MAY</strong></p>
+<p><strong>model answers SHOULD</strong></p>
+<hr>
+<h1 id="60-cross-agent-consistency">60. Cross-agent consistency</h1>
+<p>Agents should read from one authoritative epistemic service or versioned snapshot.</p>
+<p>They may still disagree about:</p>
+<ul>
+<li>interpretation,</li>
+<li>recommendation,</li>
+<li>policy critique.</li>
+</ul>
+<p>They should not independently invent current verification state.</p>
+<p>Important:</p>
+<p>consistency of stored epistemic state does not imply correctness of the stored evidence/policy.</p>
+<p>It only prevents avoidable drift across agents.</p>
+<hr>
+<h1 id="61-staleness-and-versioning">61. Staleness and versioning</h1>
+<p>Every derived epistemic view should have a version.</p>
+<p>Example:</p>
+<pre><code class="language-text">ClaimViewVersion = 18
+</code></pre>
+<p>A capability may be bound to:</p>
+<pre><code class="language-text">FraudClaimVersion = 18
+</code></pre>
+<p>Evidence added:</p>
+<pre><code class="language-text">ClaimViewVersion = 19
+</code></pre>
+<p>The old capability is rejected.</p>
+<p>This prevents an agent operating on cached epistemic state from committing an action after the evidence basis changes.</p>
+<hr>
+<h1 id="62-claim-identity">62. Claim identity</h1>
+<p>Stable claim identity is essential.</p>
+<p>Avoid:</p>
+<p><code>HotelAccessible</code></p>
+<p>Prefer:</p>
+<pre><code class="language-text">subject = Room217
+predicate = BathroomDoorWidthAtLeast
+object/parameter = 32 inches
+effectiveScope = current configuration
+</code></pre>
+<p>This resembles RDF/knowledge-graph proposition modeling.</p>
+<p>But the project should not require RDF infrastructure in v0.1.</p>
+<p>Stable IDs and typed propositions are enough to begin.</p>
+<hr>
+<h1 id="63-subject-versioning">63. Subject versioning</h1>
+<p>Evidence must bind to the relevant version of a subject.</p>
+<p>Example:</p>
+<pre><code class="language-text">Room217
+RenovationVersion 4
+</code></pre>
+<p>A measurement taken before renovation should not automatically verify the post-renovation room.</p>
+<p>Other examples:</p>
+<ul>
+<li>software artifact hash,</li>
+<li>policy version,</li>
+<li>medical episode,</li>
+<li>account snapshot,</li>
+<li>device configuration.</li>
+</ul>
+<p>This is critical for stale-proof reasoning.</p>
+<hr>
+<h1 id="64-semantic-granularity">64. Semantic granularity</h1>
+<p>Too coarse:</p>
+<p><code>HotelAccessible</code></p>
+<p>Too fine:</p>
+<p>thousands of microclaims no decision ever uses.</p>
+<p>The correct granularity is decision-driven.</p>
+<p>Create a claim when its truth/justification can independently affect:</p>
+<ul>
+<li>a capability,</li>
+<li>obligation,</li>
+<li>verification policy,</li>
+<li>consequential decision,</li>
+<li>explanation.</li>
+</ul>
+<p>This provides a practical stopping rule.</p>
+<hr>
+<h1 id="65-ontology-risk">65. Ontology risk</h1>
+<p>A rich epistemic architecture can easily become:</p>
+<ul>
+<li>RDF platform,</li>
+<li>ontology engine,</li>
+<li>universal evidence graph,</li>
+<li>argumentation system,</li>
+<li>probabilistic logic engine,</li>
+<li>temporal database.</li>
+</ul>
+<p>That would likely kill v0.1.</p>
+<p>The product should not attempt universal knowledge representation.</p>
+<p>The right question is:</p>
+<blockquote>
+<p>What is the smallest structure needed to stop unsupported propositions from gaining operational authority?</p>
+</blockquote>
+<hr>
+<h1 id="66-minimum-viable-epistemic-model">66. Minimum viable epistemic model</h1>
+<p>Recommended v0.1:</p>
+<pre><code class="language-text">Claim {
+    id
+    subject
+    proposition
+    subjectVersion?
+}
+
+Evidence {
+    id
+    type
+    source
+    observedAt
+    recordedAt
+    subjectVersion?
+    validity
+    provenanceRoot?
+}
+
+EvidenceRelation {
+    evidenceId
+    claimId
+    relation: Supports | Opposes
+}
+
+VerificationPolicy {
+    id
+    version
+    rules
+}
+
+VerificationRecord {
+    id
+    claimId
+    policyVersion
+    evidenceIds
+    verifier
+    grantedAt
+    validUntil?
+    subjectVersion
+    status
+}
+</code></pre>
+<p>Derived:</p>
+<pre><code class="language-text">ClaimView {
+    evidencePolarity:
+        Unknown | SupportOnly | OppositionOnly | Conflicted
+
+    currentVerifications
+    freshness
+    missingRequirements
+}
+</code></pre>
+<p>This captures most of the value without building a universal epistemology engine.</p>
+<hr>
+<h1 id="67-state-machine-vs-derived-view">67. State machine vs derived view</h1>
+<p>Recommendation:</p>
+<p><strong>Derived state.</strong></p>
+<p>Do not allow:</p>
+<pre><code class="language-text">claim.status = Verified
+</code></pre>
+<p>as a general mutation.</p>
+<p>Instead:</p>
+<pre><code class="language-text">deriveClaimView(claim, evidence, verificationRecords, now, policy)
+</code></pre>
+<p>Benefits:</p>
+<ul>
+<li>no drift between status and evidence,</li>
+<li>automatic downgrade after invalidation,</li>
+<li>reproducible reasoning,</li>
+<li>easier audit,</li>
+<li>simpler agent authority rules.</li>
+</ul>
+<p>Events can remain authoritative while views are projections.</p>
+<hr>
+<h1 id="68-event-sourcing">68. Event sourcing</h1>
+<p>Event sourcing fits naturally.</p>
+<p>Possible events:</p>
+<pre><code class="language-text">ClaimDeclared
+EvidenceAdded
+EvidenceRelationAdded
+EvidenceRetracted
+EvidenceInvalidated
+VerificationGranted
+VerificationRevoked
+PolicyActivated
+SubjectVersionChanged
+</code></pre>
+<p>Derived views can be rebuilt.</p>
+<p>However:</p>
+<p>event sourcing is not required for the epistemic model to work.</p>
+<p>Do not force it if the existing system does not benefit from event sourcing generally.</p>
+<p>The important property is <strong>immutable provenance of important changes</strong>, not adherence to a specific persistence pattern.</p>
+<hr>
+<h1 id="69-semantic-compiler-checks">69. Semantic compiler checks</h1>
+<p>Useful static checks could include:</p>
+<ul>
+<li>capability requires undefined claim,</li>
+<li>capability requires impossible verification policy,</li>
+<li>verification policy has no authorized producer,</li>
+<li>current verification references invalidated evidence,</li>
+<li>evidence missing provenance where policy requires it,</li>
+<li>derived claim cycle with no base evidence,</li>
+<li>policy requires mutually impossible conditions,</li>
+<li>model-generated evidence treated as trusted without authorization,</li>
+<li>wildcard/default epistemic handling,</li>
+<li>subject version missing for version-sensitive claims.</li>
+</ul>
+<p>This is feasible without theorem proving.</p>
+<hr>
+<h1 id="70-claim-policy">70. Claim policy</h1>
+<p>A small DSL may eventually be useful:</p>
+<pre><code class="language-text">claim FraudClear {
+    verify with FraudPolicy@12 {
+        requires RiskAssessment {
+            producer in ApprovedRiskModels
+            maxAge 30m
+        }
+    }
+}
+</code></pre>
+<p>But begin with typed configuration/code.</p>
+<p>A DSL should emerge only if repeated patterns justify it.</p>
+<hr>
+<h1 id="71-single-source-of-truth-risk">71. Single-source-of-truth risk</h1>
+<p>If one verification policy is wrong:</p>
+<ul>
+<li>all agents can be consistently wrong,</li>
+<li>all generated capabilities can be wrong,</li>
+<li>all generated tests can reinforce the same mistake.</li>
+</ul>
+<p>This is correlated semantic failure.</p>
+<p>Mitigation:</p>
+<ul>
+<li>independent policy review,</li>
+<li>external acceptance examples,</li>
+<li>mutation testing,</li>
+<li>evidence audits,</li>
+<li>differential validation,</li>
+<li>provenance,</li>
+<li>human authority for high-consequence changes.</li>
+</ul>
+<p>The architecture increases consistency.</p>
+<p>Consistency is useful only when the policy is correct.</p>
+<hr>
+<h1 id="72-false-certainty-risk">72. False-certainty risk</h1>
+<p>The label "Verified" invites overconfidence.</p>
+<p>Recommendation:</p>
+<h3 id="internal-representation">Internal representation</h3>
+<p><code>VerificationSatisfied(policy, evidence, time)</code></p>
+<p>or:</p>
+<p><code>VerifiedUnderPolicy</code>.</p>
+<h3 id="human-interface">Human interface</h3>
+<p>"Verified" may be acceptable if the UI exposes:</p>
+<ul>
+<li>what was verified,</li>
+<li>under which policy,</li>
+<li>when,</li>
+<li>evidence age,</li>
+<li>conflicts.</li>
+</ul>
+<p>This makes the bounded meaning visible.</p>
+<hr>
+<h1 id="73-false-negative-risk">73. False-negative risk</h1>
+<p>A claim can be true yet unsupported.</p>
+<p>Example:</p>
+<p>The room really does have a roll-in shower.</p>
+<p>But no acceptable evidence exists.</p>
+<p>System says:</p>
+<p><code>not currently verified</code>.</p>
+<p>That is not equivalent to:</p>
+<p><code>false</code>.</p>
+<p>Policies must allow responses such as:</p>
+<ul>
+<li>request evidence,</li>
+<li>escalate,</li>
+<li>proceed under explicit risk authority,</li>
+<li>remain unable to act.</li>
+</ul>
+<hr>
+<h1 id="74-agent-gaming">74. Agent gaming</h1>
+<p>If an agent is rewarded for:</p>
+<p>"Get claim verified"</p>
+<p>it may seek shortcuts.</p>
+<p>Threats include:</p>
+<ul>
+<li>choosing low-authority source,</li>
+<li>duplicating evidence,</li>
+<li>modifying policy,</li>
+<li>fabricating report,</li>
+<li>ignoring opposition,</li>
+<li>reusing stale evidence.</li>
+</ul>
+<p>Therefore:</p>
+<ul>
+<li>agents should not control verification policy and evidence authority in the same capability scope,</li>
+<li>evidence constructors should be protected,</li>
+<li>provenance should be mandatory for trusted evidence,</li>
+<li>policy changes should require separate authority.</li>
+</ul>
+<p>This is separation of duties for epistemics.</p>
+<hr>
+<h1 id="75-evidence-fabrication">75. Evidence fabrication</h1>
+<p>Trusted evidence paths should use mechanisms appropriate to the source:</p>
+<ul>
+<li>authenticated API response,</li>
+<li>signed credential,</li>
+<li>content hash,</li>
+<li>sensor identity,</li>
+<li>human attestation,</li>
+<li>artifact hash,</li>
+<li>protected ingestion pipeline.</li>
+</ul>
+<p>An AI-generated summary can reference evidence.</p>
+<p>It should not become the evidence root unless policy explicitly permits that.</p>
+<hr>
+<h1 id="76-external-source-uncertainty">76. External-source uncertainty</h1>
+<p>Even a trusted API can be wrong.</p>
+<p>Therefore provenance allows the system to say:</p>
+<blockquote>
+<p>According to trusted source S at time T, value V was returned.</p>
+</blockquote>
+<p>It does not guarantee:</p>
+<blockquote>
+<p>Reality must equal V.</p>
+</blockquote>
+<p>This again separates:</p>
+<ul>
+<li>provenance authenticity,</li>
+<li>procedural verification,</li>
+<li>objective truth.</li>
+</ul>
+<hr>
+<h1 id="77-human-testimony">77. Human testimony</h1>
+<p>Evidence policy must respect domain semantics.</p>
+<p>Examples where self-report is legitimate:</p>
+<ul>
+<li>pain,</li>
+<li>fatigue,</li>
+<li>preference,</li>
+<li>subjective experience.</li>
+</ul>
+<p>Therefore never hardcode:</p>
+<p><code>HumanReport &#x3C; SensorData</code>.</p>
+<p>Evidence authority is contextual.</p>
+<hr>
+<h1 id="78-privacy-implications">78. Privacy implications</h1>
+<p>Explicit evidence systems create substantial privacy costs.</p>
+<p>Risks:</p>
+<ul>
+<li>more retained sensitive data,</li>
+<li>longer provenance chains,</li>
+<li>easier reconstruction of personal history,</li>
+<li>overcollection "for audit."</li>
+</ul>
+<p>Mitigations:</p>
+<ul>
+<li>data minimization,</li>
+<li>evidence references instead of prompt duplication,</li>
+<li>retention policies,</li>
+<li>access control,</li>
+<li>selective disclosure,</li>
+<li>redaction,</li>
+<li>cryptographic commitments where appropriate,</li>
+<li>separate claim summary from raw sensitive evidence.</li>
+</ul>
+<p>This is a real tradeoff.</p>
+<p>Epistemic traceability and privacy can conflict.</p>
+<hr>
+<h1 id="79-security-implications">79. Security implications</h1>
+<p>The evidence layer becomes a high-value target.</p>
+<p>Threats:</p>
+<ul>
+<li>evidence injection,</li>
+<li>source spoofing,</li>
+<li>replay,</li>
+<li>stale credential reuse,</li>
+<li>provenance tampering,</li>
+<li>verifier compromise,</li>
+<li>policy downgrade,</li>
+<li>evidence deletion,</li>
+<li>subject misbinding.</li>
+</ul>
+<p>Therefore the trusted semantic core must include:</p>
+<ul>
+<li>source authentication,</li>
+<li>integrity,</li>
+<li>versioning,</li>
+<li>authorization,</li>
+<li>audit trails.</li>
+</ul>
+<p>A claim system without protected evidence ingestion may produce a false sense of safety.</p>
+<hr>
+<h1 id="80-experiment--assumption-promotion">80. Experiment — assumption promotion</h1>
+<p>Setup:</p>
+<p>Source says:
+"Feature X is probably available."</p>
+<h3 id="conventional-system">Conventional system</h3>
+<p>Agent records/use X.</p>
+<p>Later agents receive resulting artifacts.</p>
+<h3 id="epistemic-system">Epistemic system</h3>
+<p>Evidence remains a report/inference with no verification.</p>
+<p>Run 20–50 downstream tasks.</p>
+<p>Measure:</p>
+<ul>
+<li>how often X becomes treated as fact,</li>
+<li>number of consequential dependencies,</li>
+<li>repair cost after correction,</li>
+<li>tokens.</li>
+</ul>
+<p>Primary metric:</p>
+<p><strong>Assumption Survival Rate.</strong></p>
+<hr>
+<h1 id="81-experiment--repeated-report">81. Experiment — repeated report</h1>
+<p>Use one originating source copied through five derivative channels.</p>
+<p>Compare agent judgments with and without provenance.</p>
+<p>Measure:</p>
+<ul>
+<li>perceived corroboration,</li>
+<li>decision confidence,</li>
+<li>verification errors,</li>
+<li>source-count errors.</li>
+</ul>
+<p>This directly tests whether provenance prevents repetition from masquerading as independence.</p>
+<hr>
+<h1 id="82-experiment--evidence-invalidation">82. Experiment — evidence invalidation</h1>
+<p>Start with:</p>
+<pre><code class="language-text">Verification V1
+depends on E1
+Capability C exists
+</code></pre>
+<p>Invalidate E1.</p>
+<p>Measure whether:</p>
+<ul>
+<li>V1 becomes unusable,</li>
+<li>C disappears,</li>
+<li>plans using C become stale,</li>
+<li>obligation generated,</li>
+<li>old actions rejected.</li>
+</ul>
+<p>This should be almost fully deterministic.</p>
+<hr>
+<h1 id="83-experiment--contradictory-evidence">83. Experiment — contradictory evidence</h1>
+<p>Provide:</p>
+<ul>
+<li>strong supporting evidence,</li>
+<li>strong opposing evidence.</li>
+</ul>
+<p>Compare:</p>
+<p>A. ordinary agent memory/database,</p>
+<p>B. explicit evidence-polarity model.</p>
+<p>Measure:</p>
+<ul>
+<li>fabricated resolution,</li>
+<li>false certainty,</li>
+<li>appropriate abstention,</li>
+<li>human escalation,</li>
+<li>tokens.</li>
+</ul>
+<hr>
+<h1 id="84-experiment--policy-change">84. Experiment — policy change</h1>
+<p>Change:</p>
+<p><code>Policy@7 -> Policy@8</code></p>
+<p>Measure:</p>
+<ul>
+<li>affected claims found,</li>
+<li>re-verification obligations,</li>
+<li>incorrect reinterpretation of historical decisions,</li>
+<li>context/tool cost.</li>
+</ul>
+<p>This tests the value of policy-relative verification.</p>
+<hr>
+<h1 id="85-experiment--agent-restart">85. Experiment — agent restart</h1>
+<p>Agent 1 spends substantial context investigating a claim.</p>
+<p>Agent 2 starts fresh.</p>
+<h3 id="a">A</h3>
+<p>Give raw history.</p>
+<h3 id="b">B</h3>
+<p>Give structured ClaimView + provenance links.</p>
+<p>Measure:</p>
+<ul>
+<li>reconstruction tokens,</li>
+<li>duplicate source retrieval,</li>
+<li>disagreement,</li>
+<li>decision quality,</li>
+<li>latency.</li>
+</ul>
+<p>This may be the clearest direct test of epistemic context compression.</p>
+<hr>
+<h1 id="86-experiment--small-model">86. Experiment — small model</h1>
+<p>Compare:</p>
+<pre><code class="language-text">Frontier model
++
+raw evidence corpus
+</code></pre>
+<p>against:</p>
+<pre><code class="language-text">smaller model
++
+structured epistemic view
++
+lazy evidence retrieval
+</code></pre>
+<p>Use tasks requiring:</p>
+<ul>
+<li>conflict recognition,</li>
+<li>source independence,</li>
+<li>freshness,</li>
+<li>verification-policy application.</li>
+</ul>
+<p>This directly tests model substitution.</p>
+<hr>
+<h1 id="87-metrics">87. Metrics</h1>
+<h2 id="verification-precision">Verification Precision</h2>
+<pre><code class="language-text">claims marked verification-satisfied
+that satisfy reference standard
+/
+all claims marked verification-satisfied
+</code></pre>
+<h2 id="verification-recall">Verification Recall</h2>
+<pre><code class="language-text">reference-verifiable claims
+correctly marked verification-satisfied
+/
+all reference-verifiable claims
+</code></pre>
+<h2 id="false-certainty-rate">False Certainty Rate</h2>
+<p>Consequential decisions where the agent treats insufficiently supported claim as established.</p>
+<h2 id="unsupported-action-rate">Unsupported Action Rate</h2>
+<p>Consequential actions executed without required epistemic evidence.</p>
+<h2 id="contradiction-preservation-rate">Contradiction Preservation Rate</h2>
+<p>Conflicted cases where the system preserves rather than invents resolution.</p>
+<h2 id="evidence-independence-error-rate">Evidence Independence Error Rate</h2>
+<p>Derivative copies incorrectly treated as independent corroboration.</p>
+<h2 id="assumption-survival-rate">Assumption Survival Rate</h2>
+<p>Unsupported assumptions still affecting consequential behavior after N downstream agent operations.</p>
+<h2 id="evidence-reconstruction-cost">Evidence Reconstruction Cost</h2>
+<p>Tokens/tool calls needed to answer:</p>
+<p>"Why is this claim accepted?"</p>
+<h2 id="cost-per-justified-decision">Cost Per Justified Decision</h2>
+<pre><code class="language-text">total execution cost
+/
+consequential decisions
+meeting reference evidence requirements
+</code></pre>
+<hr>
+<h1 id="88-longitudinal-experiment">88. Longitudinal experiment</h1>
+<p>This experiment is especially important.</p>
+<p>Run:</p>
+<p>50–100 sequential agent modifications/decisions.</p>
+<p>Seed:</p>
+<ul>
+<li>ambiguous evidence,</li>
+<li>model inferences,</li>
+<li>stale sources,</li>
+<li>copied sources,</li>
+<li>policy changes.</li>
+</ul>
+<p>Compare architectures.</p>
+<p>Track over time:</p>
+<ul>
+<li>unsupported assumptions,</li>
+<li>assumption promotions,</li>
+<li>evidence lineage loss,</li>
+<li>stale decisions,</li>
+<li>correction cost,</li>
+<li>tokens,</li>
+<li>human intervention.</li>
+</ul>
+<p>The key hypothesis is not merely:</p>
+<p>"Does explicit epistemics help one task?"</p>
+<p>It is:</p>
+<blockquote>
+<p><strong>Does it prevent semantic uncertainty from compounding across generations of agent work?</strong></p>
+</blockquote>
+<hr>
+<h1 id="89-economic-implications">89. Economic implications</h1>
+<p>The economic value can come from four sources.</p>
+<h2 id="a-fewer-downstream-errors">A. Fewer downstream errors</h2>
+<p>Unsupported claims cannot automatically authorize actions.</p>
+<h2 id="b-lower-reconstruction-cost">B. Lower reconstruction cost</h2>
+<p>Agents do not repeatedly rediscover why a claim is accepted.</p>
+<h2 id="c-lower-human-audit-cost">C. Lower human audit cost</h2>
+<p>Evidence and policy are traceable.</p>
+<h2 id="d-potential-smaller-model-substitution">D. Potential smaller-model substitution</h2>
+<p>Structured epistemic state may remove source-comparison work from the model.</p>
+<p>Costs include:</p>
+<ul>
+<li>evidence ingestion,</li>
+<li>provenance storage,</li>
+<li>policy maintenance,</li>
+<li>dependency propagation,</li>
+<li>privacy/security controls,</li>
+<li>ontology complexity.</li>
+</ul>
+<p>Therefore the architecture should be applied selectively.</p>
+<hr>
+<h1 id="90-cost-model">90. Cost model</h1>
+<p>For N consequential decisions:</p>
+<pre><code class="language-text">TotalCost =
+    EpistemicInfrastructure
+    + EvidenceMaintenance
+    + AgentInference
+    + EvidenceRetrieval
+    + HumanReview
+    + ExpectedUnsupportedDecisionCost
+    + Privacy/SecurityOverhead
+</code></pre>
+<p>The architecture wins when reusable evidence structure lowers:</p>
+<ul>
+<li>repeated inference,</li>
+<li>repeated human verification,</li>
+<li>escaped decision errors,</li>
+</ul>
+<p>more than it costs to maintain.</p>
+<p>Break-even should occur sooner in:</p>
+<ul>
+<li>healthcare,</li>
+<li>finance,</li>
+<li>compliance,</li>
+<li>accessibility,</li>
+<li>safety,</li>
+<li>operational automation,</li>
+<li>multi-agent systems with long-lived memory.</li>
+</ul>
+<p>Later or never in:</p>
+<ul>
+<li>transient UI logic,</li>
+<li>trivial preferences,</li>
+<li>low-consequence computation.</li>
+</ul>
+<hr>
+<h1 id="91-where-not-to-use-explicit-epistemics">91. Where not to use explicit epistemics</h1>
+<p>Do not create claims/evidence graphs for:</p>
+<ul>
+<li>pure deterministic computation,</li>
+<li>transient component state,</li>
+<li>temporary rendering values,</li>
+<li>obvious derived arithmetic,</li>
+<li>low-consequence preferences,</li>
+<li>facts already enforced by authoritative deterministic systems.</li>
+</ul>
+<p>Example:</p>
+<p><code>ButtonHover = true</code></p>
+<p>does not need provenance.</p>
+<p>The trigger should be:</p>
+<blockquote>
+<p>Would accepting this proposition incorrectly affect a consequential decision, capability, obligation, policy, or future agent reasoning?</p>
+</blockquote>
+<p>If no, the full epistemic machinery is probably unnecessary.</p>
+<hr>
+<h1 id="92-counterarguments">92. Counterarguments</h1>
+<h2 id="1-the-epistemic-model-becomes-too-complex">1. The epistemic model becomes too complex.</h2>
+<p><strong>Strong risk.</strong></p>
+<p>This is the largest implementation threat.</p>
+<p>Mitigation:</p>
+<ul>
+<li>claims only for consequential propositions,</li>
+<li>minimal evidence graph,</li>
+<li>no universal ontology.</li>
+</ul>
+<h2 id="2-most-commercial-software-does-not-need-this">2. Most commercial software does not need this.</h2>
+<p><strong>Mostly true.</strong></p>
+<p>Most individual values do not.</p>
+<p>But specific decision boundaries may.</p>
+<h2 id="3-verification-creates-false-confidence">3. Verification creates false confidence.</h2>
+<p><strong>True if terminology is careless.</strong></p>
+<p>Use policy-relative verification.</p>
+<h2 id="4-evidence-graphs-consume-too-many-tokens">4. Evidence graphs consume too many tokens.</h2>
+<p><strong>Only if injected wholesale.</strong></p>
+<p>Use derived summaries + lazy retrieval.</p>
+<h2 id="5-agents-still-need-raw-sources">5. Agents still need raw sources.</h2>
+<p><strong>Yes, sometimes.</strong></p>
+<p>The goal is not elimination; it is selective retrieval.</p>
+<h2 id="6-human-judgment-cannot-be-encoded">6. Human judgment cannot be encoded.</h2>
+<p><strong>Correct.</strong></p>
+<p>Represent expert attestation or escalation rather than pretending to formalize the judgment.</p>
+<h2 id="7-probabilityconfidence-solves-most-of-the-problem">7. Probability/confidence solves most of the problem.</h2>
+<p><strong>No.</strong></p>
+<p>Probability does not capture provenance, authority, independence, freshness, or procedural verification.</p>
+<h2 id="8-provenance-is-expensive">8. Provenance is expensive.</h2>
+<p><strong>Yes.</strong></p>
+<p>Scope it to consequential claims/evidence.</p>
+<h2 id="9-evidence-policies-become-brittle">9. Evidence policies become brittle.</h2>
+<p><strong>Possible.</strong></p>
+<p>Version policies and permit explicit expert/manual paths.</p>
+<h2 id="10-contradiction-logic-becomes-a-research-project">10. Contradiction logic becomes a research project.</h2>
+<p><strong>Avoidable.</strong></p>
+<p>Start with simple support/opposition/conflict.</p>
+<h2 id="11-knowledge-graphs-introduce-too-much-infrastructure">11. Knowledge graphs introduce too much infrastructure.</h2>
+<p><strong>True if adopted prematurely.</strong></p>
+<p>Do not require a graph database for v0.1.</p>
+<h2 id="12-model-output-may-influence-verification-indirectly">12. Model output may influence verification indirectly.</h2>
+<p><strong>Yes.</strong></p>
+<p>Record model origin and isolate trusted verification producers.</p>
+<h2 id="13-users-dislike-unknown">13. Users dislike "unknown."</h2>
+<p><strong>Likely in some workflows.</strong></p>
+<p>But hiding uncertainty does not remove it.</p>
+<p>Design explicit next actions.</p>
+<h2 id="14-system-may-become-unable-to-act-under-uncertainty">14. System may become unable to act under uncertainty.</h2>
+<p><strong>A policy problem.</strong></p>
+<p>Allow explicit risk-authorized action where appropriate.</p>
+<h2 id="15-structured-epistemics-slows-product-development">15. Structured epistemics slows product development.</h2>
+<p><strong>Possible.</strong></p>
+<p>Apply only at consequential boundaries.</p>
+<hr>
+<h1 id="93-what-existing-research-strongly-supports">93. What existing research strongly supports</h1>
+<ol>
+<li>
+<p><strong>Justification/dependency tracking</strong> is a well-established method for maintaining beliefs as assumptions change.</p>
+</li>
+<li>
+<p><strong>Contradictory information need not force logical collapse or immediate binary resolution.</strong></p>
+</li>
+<li>
+<p><strong>Unknown and false are distinct under open-world reasoning.</strong></p>
+</li>
+<li>
+<p><strong>Provenance is a mature formal concept with standardized representations such as W3C PROV.</strong></p>
+</li>
+<li>
+<p><strong>Clinical systems already separate domain/clinical state from verification state.</strong></p>
+</li>
+<li>
+<p><strong>LLM confidence is not a reliable substitute for evidence or verification authority.</strong></p>
+</li>
+<li>
+<p><strong>Policy-relative acceptance is conceptually different from objective truth.</strong></p>
+</li>
+<li>
+<p><strong>Retraction/invalidation should propagate through dependencies.</strong></p>
+</li>
+</ol>
+<p>These are strong foundations for the architecture.</p>
+<hr>
+<h1 id="94-what-remains-speculative">94. What remains speculative</h1>
+<p>The following are not yet established by existing evidence:</p>
+<ol>
+<li>
+<p>Explicit epistemic state materially reduces LLM token cost.</p>
+</li>
+<li>
+<p>Smaller models can reliably replace larger models when given structured epistemic views.</p>
+</li>
+<li>
+<p>Assumption laundering is a quantitatively major source of longitudinal agent defects.</p>
+</li>
+<li>
+<p>An epistemic evidence graph remains manageable at enterprise scale without excessive complexity.</p>
+</li>
+<li>
+<p>Structured epistemic summaries preserve enough information to avoid harmful compression.</p>
+</li>
+<li>
+<p>Capability gating on epistemic requirements materially lowers total cost per correct decision.</p>
+</li>
+<li>
+<p>The proposed system produces positive lifecycle ROI outside high-consequence domains.</p>
+</li>
+</ol>
+<p>These should be tested rather than asserted.</p>
+<hr>
+<h1 id="95-recommended-architecture-changes">95. Recommended architecture changes</h1>
+<h2 id="change-1--abandon-the-single-eight-state-authoritative-enum">Change 1 — Abandon the single eight-state authoritative enum</h2>
+<p>Keep the concepts, separate the dimensions.</p>
+<h2 id="change-2--make-evidence-and-verification-records-authoritative">Change 2 — Make evidence and verification records authoritative</h2>
+<p>Claim status should be derived.</p>
+<h2 id="change-3--rename-internal-verified">Change 3 — Rename internal <code>Verified</code></h2>
+<p>Use:</p>
+<p><code>VerificationSatisfied</code>
+or
+<code>VerifiedUnderPolicy</code>.</p>
+<h2 id="change-4--put-invalidated-on-evidenceverification-records">Change 4 — Put <code>Invalidated</code> on evidence/verification records</h2>
+<p>Then recalculate claim views.</p>
+<h2 id="change-5--put-reported-and-inferred-in-originderivation-metadata">Change 5 — Put <code>Reported</code> and <code>Inferred</code> in origin/derivation metadata</h2>
+<p>Not claim lifecycle state.</p>
+<h2 id="change-6--keep-assumptions-inside-explicit-reasoning-contexts">Change 6 — Keep assumptions inside explicit reasoning contexts</h2>
+<p>Do not persist them as authoritative truth.</p>
+<h2 id="change-7--use-a-four-valued-evidence-polarity-view">Change 7 — Use a four-valued evidence-polarity view</h2>
+<p>Unknown / Support / Opposition / Conflict.</p>
+<h2 id="change-8--bind-verification-to-policy-time-evidence-and-subject-version">Change 8 — Bind verification to policy, time, evidence, and subject version</h2>
+<h2 id="change-9--gate-capabilities-on-explicit-epistemic-requirements">Change 9 — Gate capabilities on explicit epistemic requirements</h2>
+<p>Not vague status ordering.</p>
+<h2 id="change-10--add-version-bound-epistemic-snapshots-for-agents">Change 10 — Add version-bound epistemic snapshots for agents</h2>
+<h2 id="change-11--use-lazy-evidence-retrieval">Change 11 — Use lazy evidence retrieval</h2>
+<p>Do not put the full graph in every prompt.</p>
+<h2 id="change-12--keep-v01-small">Change 12 — Keep v0.1 small</h2>
+<p>No full ontology platform.
+No Dempster-Shafer unless a domain proves the need.
+No universal argumentation engine.</p>
+<hr>
+<h1 id="96-minimum-viable-implementation">96. Minimum viable implementation</h1>
+<p>A first implementation can be surprisingly small.</p>
+<pre><code class="language-text">Claim
+Evidence
+EvidenceRelation
+VerificationPolicy
+VerificationRecord
+ClaimView
+</code></pre>
+<p>Functions:</p>
+<pre><code class="language-text">deriveEvidencePolarity(claim)
+currentVerification(claim, policy, time, subjectVersion)
+missingVerificationRequirements(claim, policy)
+affectedClaims(evidenceChange)
+deriveCapabilities(epistemicSnapshot)
+</code></pre>
+<p>Events:</p>
+<pre><code class="language-text">EvidenceAdded
+EvidenceInvalidated
+VerificationGranted
+VerificationRevoked
+PolicyChanged
+</code></pre>
+<p>That is enough to test the hypothesis.</p>
+<p>Do not build:</p>
+<ul>
+<li>universal ontology,</li>
+<li>probabilistic belief network,</li>
+<li>theorem prover,</li>
+<li>knowledge-graph product,</li>
+</ul>
+<p>until experiments show those are necessary.</p>
+<hr>
+<h1 id="97-final-verdict">97. Final verdict</h1>
+<h2 id="does-explicit-epistemic-state-reduce-unsupported-certainty">Does explicit epistemic state reduce unsupported certainty?</h2>
+<p><strong>Strong evidence</strong>, if "epistemic state" means explicit evidence/provenance/verification structure rather than a mutable confidence label.</p>
+<p>The formal traditions behind TMS, provenance, open-world reasoning, paraconsistency, and verification status strongly support preserving justification and uncertainty instead of collapsing them.</p>
+<h2 id="does-evidence-provenance-reduce-inherited-agent-assumptions">Does evidence provenance reduce inherited agent assumptions?</h2>
+<p><strong>Moderate evidence</strong></p>
+<p>Provenance clearly enables lineage, source independence analysis, and retraction. The specific longitudinal AI-agent assumption-inheritance benefit is highly plausible but not yet well quantified.</p>
+<h2 id="does-structured-epistemic-state-reduce-contexttoken-cost">Does structured epistemic state reduce context/token cost?</h2>
+<p><strong>Weak-to-moderate evidence</strong></p>
+<p>The compression mechanism is credible, but direct controlled evidence for this architecture is missing.</p>
+<h2 id="can-it-enable-smaller-models">Can it enable smaller models?</h2>
+<p><strong>Weak evidence / plausible hypothesis</strong></p>
+<p>This is experimentally attractive but not demonstrated.</p>
+<h2 id="should-epistemic-status-be">Should epistemic status be:</h2>
+<p><strong>Multi-dimensional record with derived views, including a small lattice-like evidence-polarity component.</strong></p>
+<p>Not a single mutable state enum.</p>
+<h2 id="should-verified-be-renamed">Should "Verified" be renamed?</h2>
+<p><strong>Yes, internally.</strong></p>
+<p>Recommendation:</p>
+<p><code>VerificationSatisfied</code></p>
+<p>or:</p>
+<p><code>VerifiedUnderPolicy</code>.</p>
+<p>This avoids conflating procedural acceptance with objective truth.</p>
+<h2 id="closest-existing-formalism">Closest existing formalism</h2>
+<p><strong>Truth-maintenance systems combined with provenance and paraconsistent evidence handling.</strong></p>
+<p>No single existing formalism captures the entire architecture.</p>
+<h2 id="strongest-prior-art">Strongest prior art</h2>
+<ul>
+<li>Doyle's Truth Maintenance System</li>
+<li>de Kleer's Assumption-Based TMS</li>
+<li>AGM belief revision</li>
+<li>Belnap four-valued logic</li>
+<li>Dung-style argumentation</li>
+<li>W3C PROV</li>
+<li>HL7/FHIR separation of clinical and verification state</li>
+<li>modern calibration research showing model confidence cannot be equated with correctness</li>
+</ul>
+<h2 id="most-important-architecture-correction">Most important architecture correction</h2>
+<p><strong>Do not store epistemic authority as one mutable claim state. Derive it from evidence, provenance, verification records, policy, and time.</strong></p>
+<h2 id="biggest-complexity-risk">Biggest complexity risk</h2>
+<p><strong>Accidentally building a universal knowledge-representation/ontology platform.</strong></p>
+<p>Keep claims narrow and decision-driven.</p>
+<h2 id="most-valuable-ai-specific-benefit">Most valuable AI-specific benefit</h2>
+<p><strong>Preventing assumption laundering across agents and across time.</strong></p>
+<p>The model may infer something.</p>
+<p>The system preserves that it was an inference.</p>
+<p>Future agents cannot mistake persistence for verification.</p>
+<h2 id="most-important-missing-experiment">Most important missing experiment</h2>
+<p><strong>A longitudinal multi-agent experiment measuring whether unsupported assumptions become durable system truth less often under explicit epistemic provenance—and whether this reduces total tokens and correction cost.</strong></p>
+<hr>
+<h1 id="98-overall-research-decision">98. Overall research decision</h1>
+<p><strong>Proceed, with a major architecture revision.</strong></p>
+<p>The hypothesis is stronger after comparison with prior art, but the original eight-state representation should not survive unchanged.</p>
+<p>The research suggests a cleaner principle:</p>
+<blockquote>
+<p><strong>Truth claims should not move through an authority ladder. Evidence accumulates, conflicts, expires, and is invalidated. Verification procedures evaluate that evidence. Epistemic views are derived. Actions require explicit epistemic conditions.</strong></p>
+</blockquote>
+<p>This has several advantages.</p>
+<p>It stops:</p>
+<ul>
+<li>repetition from becoming authority,</li>
+<li>model output from becoming evidence merely by persistence,</li>
+<li>unknown from becoming false,</li>
+<li>contradiction from being overwritten,</li>
+<li>stale evidence from silently authorizing action,</li>
+<li>invalidated evidence from leaving dependent capabilities alive.</li>
+</ul>
+<p>It also preserves uncertainty rather than trying to eliminate it.</p>
+<p>The architecture's most promising AI contribution is therefore not:</p>
+<blockquote>
+<p>"Teach the agent what is true."</p>
+</blockquote>
+<p>It is:</p>
+<blockquote>
+<p><strong>"Make it impossible for the system to forget why it thinks something is true."</strong></p>
+</blockquote>
+<p>That is a much more defensible objective.</p>
+<p>And it connects directly to the larger state-constrained architecture:</p>
+<pre><code class="language-text">Evidence
+    ↓
+Derived epistemic view
+    ↓
+Verification
+    ↓
+Capabilities / Obligations
+    ↓
+Legal agent actions
+</code></pre>
+<p>The agent is still probabilistic.</p>
+<p>The authority of its assumptions does not have to be.</p>
+<hr>
+<h1 id="99-priority-research-agenda">99. Priority research agenda</h1>
+<p>The next work should happen in this order.</p>
+<h2 id="priority-1--longitudinal-assumption-laundering-benchmark">Priority 1 — Longitudinal assumption-laundering benchmark</h2>
+<p>Validate that the problem is material.</p>
+<h2 id="priority-2--evidence-invalidation-cascade-prototype">Priority 2 — Evidence-invalidation cascade prototype</h2>
+<p>Demonstrate deterministic:</p>
+<ul>
+<li>downgrade,</li>
+<li>capability removal,</li>
+<li>obligation creation.</li>
+</ul>
+<h2 id="priority-3--raw-evidence-vs-structured-epistemic-context-benchmark">Priority 3 — Raw evidence vs structured epistemic context benchmark</h2>
+<p>Measure token/tool savings.</p>
+<h2 id="priority-4--small-model-substitution-experiment">Priority 4 — Small-model substitution experiment</h2>
+<p>Only after Priority 3 shows meaningful context reduction.</p>
+<h2 id="priority-5--security-and-privacy-threat-model">Priority 5 — Security and privacy threat model</h2>
+<p>Before using the architecture in high-consequence domains.</p>
+<h2 id="priority-6--domain-adapters">Priority 6 — Domain adapters</h2>
+<p>Test:</p>
+<ul>
+<li>accessibility,</li>
+<li>deployment,</li>
+<li>fraud,</li>
+<li>healthcare.</li>
+</ul>
+<p>The goal should not be to prove that every fact needs epistemic machinery.</p>
+<p>It should be to locate the narrow set of consequential claims where explicit epistemic authority creates outsized safety and economic leverage.</p>
+<hr>
+<h1 id="100-key-references">100. Key references</h1>
+<h2 id="foundational-truth-maintenance-and-belief-revision">Foundational truth maintenance and belief revision</h2>
+<ol>
+<li>
+<p>Doyle, J. (1979). "A Truth Maintenance System." <em>Artificial Intelligence</em>, 12(3), 231–272.</p>
+</li>
+<li>
+<p>de Kleer, J. (1986). "An Assumption-Based TMS." <em>Artificial Intelligence</em>, 28(2), 127–162.</p>
+</li>
+<li>
+<p>Alchourrón, C. E., Gärdenfors, P., &#x26; Makinson, D. (1985). "On the Logic of Theory Change: Partial Meet Contraction and Revision Functions." <em>Journal of Symbolic Logic</em>, 50, 510–530.</p>
+</li>
+</ol>
+<h2 id="paraconsistency-and-argumentation">Paraconsistency and argumentation</h2>
+<ol start="4">
+<li>
+<p>Belnap, N. D. (1977). "A Useful Four-Valued Logic." In <em>Modern Uses of Multiple-Valued Logic</em>.</p>
+</li>
+<li>
+<p>Dung, P. M. (1995). "On the Acceptability of Arguments and its Fundamental Role in Nonmonotonic Reasoning, Logic Programming and n-Person Games." <em>Artificial Intelligence</em>, 77(2), 321–357.</p>
+</li>
+</ol>
+<h2 id="provenance">Provenance</h2>
+<ol start="6">
+<li>
+<p>W3C (2013). <em>PROV-DM: The PROV Data Model</em>. W3C Recommendation.</p>
+</li>
+<li>
+<p>W3C (2013). <em>PROV-Overview</em>. W3C Recommendation family overview.</p>
+</li>
+</ol>
+<h2 id="open-world-semantics">Open-world semantics</h2>
+<ol start="8">
+<li>W3C Semantic Web / OWL materials describing open-world semantics and the distinction between missing information and negative assertions.</li>
+</ol>
+<h2 id="healthcare-terminology">Healthcare terminology</h2>
+<ol start="9">
+<li>HL7 FHIR / HL7 Terminology. <code>Condition.verificationStatus</code> and Condition Verification Status terminology, separating clinical status from verification status.</li>
+</ol>
+<h2 id="llm-uncertainty-and-calibration">LLM uncertainty and calibration</h2>
+<ol start="10">
+<li>
+<p>Sun, Y.-J., Dey, S., Hakkani-Tur, D., &#x26; Tur, G. (2024). "Confidence Estimation for LLM-Based Dialogue State Tracking."</p>
+</li>
+<li>
+<p>Yang, R., Rajagopal, D., Hayati, S. A., Hu, B., &#x26; Kang, D. (2024). "Confidence Calibration and Rationalization for LLMs via Multi-Agent Deliberation."</p>
+</li>
+<li>
+<p>Epstein, E. L. et al. (2025). "LLMs are Overconfident: Evaluating Confidence Interval Calibration with FermiEval."</p>
+</li>
+<li>
+<p>OpenAI researchers (2025). "Why Language Models Hallucinate." Analysis of incentives and statistical mechanisms that encourage guessing rather than uncertainty acknowledgement.</p>
+</li>
+</ol>
+<hr>
+<h1 id="101-evidence-grading-summary">101. Evidence grading summary</h1>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unknown must not automatically become false</td>
+<td>Strong formal support</td>
+</tr>
+<tr>
+<td>Contradiction can be preserved without forced resolution</td>
+<td>Strong formal support</td>
+</tr>
+<tr>
+<td>Justifications should be tracked for retractable beliefs</td>
+<td>Strong formal support</td>
+</tr>
+<tr>
+<td>Provenance should be explicit and machine-readable</td>
+<td>Strong standards/prior-art support</td>
+</tr>
+<tr>
+<td>Verification should be distinct from domain state</td>
+<td>Strong domain precedent</td>
+</tr>
+<tr>
+<td>LLM confidence should not be treated as truth authority</td>
+<td>Strong empirical support</td>
+</tr>
+<tr>
+<td>The eight-state enum is structurally inappropriate</td>
+<td>Strong architectural inference from prior art</td>
+</tr>
+<tr>
+<td>Epistemic status should be derived</td>
+<td>Strong architectural inference</td>
+</tr>
+<tr>
+<td>Provenance will reduce cross-agent assumption inheritance</td>
+<td>Moderate/plausible</td>
+</tr>
+<tr>
+<td>Structured epistemics will reduce agent tokens</td>
+<td>Plausible, missing direct test</td>
+</tr>
+<tr>
+<td>Structured epistemics will enable smaller models</td>
+<td>Plausible, weak direct evidence</td>
+</tr>
+<tr>
+<td>Full knowledge graph infrastructure is necessary</td>
+<td>No evidence</td>
+</tr>
+<tr>
+<td>Dempster-Shafer is necessary</td>
+<td>No evidence</td>
+</tr>
+<tr>
+<td>Full formal argumentation is necessary</td>
+<td>No evidence</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="102-final-architectural-principle">102. Final architectural principle</h1>
+<p>The simplest durable rule emerging from the research is:</p>
+<blockquote>
+<p><strong>Claims do not become true because software remembers them.</strong></p>
+</blockquote>
+<p>Software should remember:</p>
+<ul>
+<li>what was claimed,</li>
+<li>who or what produced it,</li>
+<li>what evidence supports it,</li>
+<li>what evidence opposes it,</li>
+<li>how it was derived,</li>
+<li>under which policy it was accepted,</li>
+<li>when that acceptance was valid,</li>
+<li>and what depends on it.</li>
+</ul>
+<p>Then the system can decide what actions are currently justified.</p>
+<p>That gives AI agents something far more useful than a database full of accumulated "facts":</p>
+<p><strong>a machine-readable boundary between what the system has heard, what it has inferred, what it can justify, and what it is allowed to act upon.</strong></p></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

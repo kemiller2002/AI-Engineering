@@ -15,6 +15,9 @@
 
 ## Unreleased
 
+- Renamed 45 Markdown-formatted `.txt` research, semantic-control architecture,
+  and Time Entry documents to `.md`, repaired repository references, and made
+  the canonical state-constrained corpus discoverable by Research Publisher.
 - Extended the RFR-009 repository-integrity validator with metadata coverage by
   artifact class, declared relationship resolution, generated/dependency-tree
   exclusions, three new calibration probes, and a schema 1.1 inventory; recorded

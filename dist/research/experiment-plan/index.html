@@ -1,0 +1,595 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>experiment plan | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">experiment plan</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/experiments/semantic-evolution-cascade/experiment-plan.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#state-constrained-architecture-semantic-evolution-cascade-experiment">State-Constrained Architecture — Semantic Evolution Cascade Experiment</a></li><li><a href="#5-go-runtime-behavior">5. Go Runtime Behavior</a></li><li><a href="#6-test-2-catch-all-default-handling">6. Test 2 — Catch-All / Default Handling</a></li><li><a href="#10-semantic-change-coverage-scc-">10. Semantic Change Coverage (SCC)</a></li><li><a href="#11-why-catch-alls-are-more-dangerous-than-they-look">11. Why Catch-Alls Are More Dangerous Than They Look</a></li><li><a href="#14-semantic-compiler-implication">14. Semantic Compiler Implication</a></li><li><a href="#15-state-evolution-should-become-a-compiler-operation">15. State Evolution Should Become a Compiler Operation</a></li><li><a href="#17-typescript-result">17. TypeScript Result</a></li><li><a href="#18-go-result">18. Go Result</a></li><li><a href="#21-agent-behavior-experiment-suggested">21. Agent Behavior Experiment Suggested</a></li><li><a href="#22-preliminary-result">22. Preliminary Result</a></li><li><a href="#24-next-recommended-experiment">24. Next Recommended Experiment</a></li> </ol> </aside> <section class="document-body"><h1 id="state-constrained-architecture--semantic-evolution-cascade-experiment">State-Constrained Architecture — Semantic Evolution Cascade Experiment</h1>
+<p>This note captures the preliminary experiment testing whether a change to a
+closed domain-state universe mechanically forces stale semantic assumptions
+back into view.</p>
+<p>The central research question was:</p>
+<pre><code>When a new state is added, does the language/toolchain force every
+consequential interpretation of that state family to be reconsidered?
+</code></pre>
+<p>This directly tests the previously identified requirement:</p>
+<pre><code>Interpretation Closure
+</code></pre>
+<p>The goal is to convert state evolution from an open-ended repository search
+problem into deterministic compiler-guided work.</p>
+<ol>
+<li>Hypothesis
+=============</li>
+</ol>
+<p>Hypothesis:</p>
+<pre><code>Closed state modeling materially protects AI-maintained software
+only when changes to the state universe mechanically expose stale
+interpretations.
+</code></pre>
+<p>In other words:</p>
+<pre><code>It is not enough to model all legal states.
+</code></pre>
+<p>The toolchain must also force code that interprets those states
+to reconsider its assumptions whenever the state family changes.</p>
+<ol start="2">
+<li>Test Domain
+==============</li>
+</ol>
+<p>Initial state family:</p>
+<pre><code>PaymentState
+
+    Authorized
+    Captured
+    Refunded
+</code></pre>
+<p>Six separate consequential interpretations were created:</p>
+<pre><code>display
+refund eligibility
+settlement eligibility
+risk classification
+accounting treatment
+agent action selection
+</code></pre>
+<p>Then a new state was introduced:</p>
+<pre><code>Disputed
+</code></pre>
+<p>No interpretation logic was initially modified.</p>
+<p>The test measured which toolchains mechanically surfaced the stale assumptions.</p>
+<ol start="3">
+<li>Test 1 — Fully Exhaustive Handling
+=====================================</li>
+</ol>
+<p>Each of the six interpretations explicitly handled every known state.</p>
+<p>Conceptually:</p>
+<pre><code>Authorized -> ...
+Captured   -> ...
+Refunded   -> ...
+</code></pre>
+<p>No wildcard/default/catch-all behavior was used.</p>
+<p>Then:</p>
+<pre><code>Disputed
+</code></pre>
+<p>was added.</p>
+<ol start="4">
+<li>Results — Strict Exhaustive Version
+======================================</li>
+</ol>
+<p>Observed result:</p>
+<table>
+<thead>
+<tr>
+<th>Toolchain</th>
+<th align="right">Affected interpretations</th>
+<th align="right">Mechanically surfaced</th>
+<th align="right">Semantic Change Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Java 21 sealed hierarchy</td>
+<td align="right">6</td>
+<td align="right">6</td>
+<td align="right">100%</td>
+</tr>
+<tr>
+<td>Kotlin sealed hierarchy</td>
+<td align="right">6</td>
+<td align="right">6</td>
+<td align="right">100%</td>
+</tr>
+<tr>
+<td>Swift enum</td>
+<td align="right">6</td>
+<td align="right">6</td>
+<td align="right">100%</td>
+</tr>
+<tr>
+<td>TypeScript + never exhaustiveness</td>
+<td align="right">6</td>
+<td align="right">6</td>
+<td align="right">100%</td>
+</tr>
+<tr>
+<td>Go interface/type switch</td>
+<td align="right">6</td>
+<td align="right">0</td>
+<td align="right">0%</td>
+</tr>
+</tbody>
+</table>
+<p>The strong toolchains failed the build/type-check in every affected
+interpretation.</p>
+<p>Examples of feedback:</p>
+<p>Kotlin:</p>
+<pre><code>when expression must be exhaustive;
+add DISPUTED
+</code></pre>
+<p>Swift:</p>
+<pre><code>add missing case: .disputed
+</code></pre>
+<p>Java:</p>
+<pre><code>switch expression does not cover all possible input values
+</code></pre>
+<p>TypeScript:</p>
+<pre><code>Disputed was no longer assignable to never
+in each exhaustive assertion
+</code></pre>
+<p>Go:</p>
+<pre><code>compiled successfully
+</code></pre>
+<h1 id="5-go-runtime-behavior">5. Go Runtime Behavior</h1>
+<p>The Go version was executed with:</p>
+<pre><code>Disputed
+</code></pre>
+<p>The old handlers silently returned fallback/default values such as:</p>
+<pre><code>""
+false
+false
+0
+""
+""
+</code></pre>
+<p>This demonstrates the exact failure mode the architecture is intended
+to prevent:</p>
+<pre><code>syntactically valid program
+    +
+successful compilation
+    +
+semantically unexamined new state
+</code></pre>
+<h1 id="6-test-2--catch-all--default-handling">6. Test 2 — Catch-All / Default Handling</h1>
+<p>The second test deliberately weakened the code style.</p>
+<p>Only three of the six interpretations remained explicitly exhaustive.</p>
+<p>The other three used catch-all behavior such as:</p>
+<pre><code>Authorized -> ...
+default    -> ...
+</code></pre>
+<p>or:</p>
+<pre><code>Captured -> ...
+else     -> ...
+</code></pre>
+<p>Then:</p>
+<pre><code>Disputed
+</code></pre>
+<p>was added.</p>
+<ol start="7">
+<li>Results — Catch-All Variant
+==============================</li>
+</ol>
+<p>Observed result:</p>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th align="right">Semantic assumptions affected</th>
+<th align="right">Mechanically surfaced</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Java</td>
+<td align="right">6</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td>Kotlin</td>
+<td align="right">6</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td>Swift</td>
+<td align="right">6</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td>TypeScript</td>
+<td align="right">6</td>
+<td align="right">3</td>
+</tr>
+</tbody>
+</table>
+<p>Semantic Change Coverage dropped from:</p>
+<pre><code>6 / 6 = 100%
+</code></pre>
+<p>to:</p>
+<pre><code>3 / 6 = 50%
+</code></pre>
+<p>The language did not become weaker.</p>
+<p>The coding style disabled half of the compiler/toolchain protection.</p>
+<ol start="8">
+<li>Primary Finding
+==================</li>
+</ol>
+<p>There are two distinct questions:</p>
+<pre><code>1. Does the compiler know the complete state universe?
+
+2. Does the code expose every semantic interpretation to that
+   exhaustiveness mechanism?
+</code></pre>
+<p>A language can answer the first question well while application code
+silently defeats the second.</p>
+<p>This means:</p>
+<pre><code>Discriminated unions / sealed types / enums are necessary only as
+part of a larger semantic-closure strategy.
+</code></pre>
+<p>They do not guarantee interpretation closure by themselves.</p>
+<ol start="9">
+<li>Why This Matters for AI Agents
+=================================</li>
+</ol>
+<p>Without interpretation closure:</p>
+<pre><code>Agent adds new state
+    ->
+Searches repository
+    ->
+Finds likely conditionals
+    ->
+Infers which ones matter
+    ->
+Updates some
+    ->
+Potentially misses others
+    ->
+Semantic drift survives
+</code></pre>
+<p>With interpretation closure:</p>
+<pre><code>Agent adds new state
+    ->
+Compile / type-check
+    ->
+Deterministic list of incomplete interpretations
+    ->
+Agent resolves each semantic question
+    ->
+Recompile
+</code></pre>
+<p>The compiler becomes a semantic checklist.</p>
+<p>This transforms:</p>
+<pre><code>probabilistic repository-wide semantic discovery
+</code></pre>
+<p>into:</p>
+<pre><code>finite deterministic repair work
+</code></pre>
+<h1 id="10-semantic-change-coverage-scc">10. Semantic Change Coverage (SCC)</h1>
+<p>A new metric was proposed:</p>
+<pre><code>Semantic Change Coverage
+</code></pre>
+<p>Definition:</p>
+<pre><code>    consequential interpretations mechanically surfaced
+SCC = ---------------------------------------------------
+         consequential interpretations actually affected
+</code></pre>
+<p>Ideal value:</p>
+<pre><code>1.00 / 100%
+</code></pre>
+<p>Examples from the preliminary experiment:</p>
+<pre><code>Java strict          100%
+Kotlin strict        100%
+Swift strict         100%
+TypeScript strict    100%
+
+Same languages with
+50% catch-all use     50%
+
+Go                     0%
+</code></pre>
+<p>These values should not yet be generalized beyond the controlled experiment.</p>
+<p>The important result is the mechanism:</p>
+<pre><code>semantic assumptions can be measured by how completely
+the toolchain forces them back into view after state evolution.
+</code></pre>
+<h1 id="11-why-catch-alls-are-more-dangerous-than-they-look">11. Why Catch-Alls Are More Dangerous Than They Look</h1>
+<p>Consider:</p>
+<pre><code>Captured -> CanRefund
+_        -> CannotRefund
+</code></pre>
+<p>This may look equivalent to:</p>
+<pre><code>Authorized -> CannotRefund
+Captured   -> CanRefund
+Refunded   -> CannotRefund
+</code></pre>
+<p>But it is not.</p>
+<p>The wildcard actually means:</p>
+<pre><code>Every state that exists now,
+and every future state not explicitly listed,
+should be treated as CannotRefund.
+</code></pre>
+<p>That is a much stronger semantic claim.</p>
+<p>Usually the developer did not consciously intend that future-state policy.</p>
+<p>When:</p>
+<pre><code>Disputed
+</code></pre>
+<p>is added, the wildcard silently makes a decision for it.</p>
+<ol start="12">
+<li>Stronger Architectural Rule
+===============================</li>
+</ol>
+<p>Proposed rule:</p>
+<pre><code>Consequential closed state families must not permit
+implicit future-state handling.
+</code></pre>
+<p>Therefore:</p>
+<pre><code>wildcard
+default
+else
+</code></pre>
+<p>should be prohibited for consequential state families
+unless the semantic specification explicitly declares that
+the remaining cases are intentionally equivalent.</p>
+<ol start="13">
+<li>Explicit Grouping Is Acceptable
+===================================</li>
+</ol>
+<p>Explicit grouping of known cases is different.</p>
+<p>Example:</p>
+<pre><code>Authorized | Refunded -> CannotRefund
+Captured              -> CanRefund
+</code></pre>
+<p>This is desirable because the semantic equivalence is explicit.</p>
+<p>If:</p>
+<pre><code>Disputed
+</code></pre>
+<p>is added, it is not automatically absorbed.</p>
+<p>The toolchain must ask:</p>
+<pre><code>What does Disputed mean here?
+</code></pre>
+<h1 id="14-semantic-compiler-implication">14. Semantic Compiler Implication</h1>
+<p>The semantic compiler should not merely generate state types.</p>
+<p>It should also enforce interpretation policy.</p>
+<p>Example conceptual declaration:</p>
+<pre><code>state PaymentState {
+    consequential: true
+
+    Authorized
+    Captured
+    Refunded
+}
+</code></pre>
+<p>Generated analyzers could prohibit:</p>
+<pre><code>_
+default
+else
+</code></pre>
+<p>when interpreting PaymentState.</p>
+<p>Possible diagnostic:</p>
+<pre><code>SC001
+
+Wildcard handler forbidden for consequential closed state family
+PaymentState.
+
+Enumerate known cases explicitly or declare semantic equivalence
+in the semantic specification.
+</code></pre>
+<h1 id="15-state-evolution-should-become-a-compiler-operation">15. State Evolution Should Become a Compiler Operation</h1>
+<p>Adding:</p>
+<pre><code>Disputed
+</code></pre>
+<p>should trigger more than host-language compile errors.</p>
+<p>The semantic compiler could report:</p>
+<pre><code>PaymentState changed
+
+New state:
+    Disputed
+
+Affected interpretations:
+    RefundEligibility
+    SettlementEligibility
+    RiskClassification
+    AccountingTreatment
+    AgentActions
+    DisplayStatus
+
+Affected transitions:
+    ...
+
+Affected policies:
+    ...
+
+Affected obligations:
+    ...
+
+Affected planning paths:
+    ...
+</code></pre>
+<p>This moves semantic impact analysis into the compiler/tooling layer.</p>
+<ol start="16">
+<li>Desired State-Evolution Workflow
+====================================</li>
+</ol>
+<p>A state-universe change should ideally follow:</p>
+<pre><code>Add new state
+    ->
+Semantic compiler updates state universe
+    ->
+Host compiler/analyzers expose incomplete interpretations
+    ->
+Generated tests expand
+    ->
+Capability graph recalculates
+    ->
+Obligation graph recalculates
+    ->
+Planning graph recalculates
+    ->
+Policy impact report generated
+    ->
+Agent/human resolves each semantic question
+    ->
+Build succeeds
+</code></pre>
+<p>Avoid:</p>
+<pre><code>Add enum/state
+    ->
+Build succeeds
+    ->
+Hope all conditionals were updated
+</code></pre>
+<h1 id="17-typescript-result">17. TypeScript Result</h1>
+<p>TypeScript performed better than a simplistic language ranking would suggest.</p>
+<p>When using:</p>
+<pre><code>discriminated unions
+    +
+strict checking
+    +
+assertNever-style exhaustiveness
+</code></pre>
+<p>it surfaced:</p>
+<pre><code>6 / 6
+</code></pre>
+<p>affected interpretations.</p>
+<p>However, this protection is easier to disable than in stronger nominal
+closed-state environments.</p>
+<p>An agent can introduce:</p>
+<pre><code>default
+any
+type assertions
+checker suppression
+relaxed compiler settings
+</code></pre>
+<p>Therefore the issue is not:</p>
+<pre><code>TypeScript cannot do interpretation closure.
+</code></pre>
+<p>It is:</p>
+<pre><code>TypeScript does not make interpretation closure sufficiently unavoidable
+without an enforced project profile.
+</code></pre>
+<h1 id="18-go-result">18. Go Result</h1>
+<p>Go provides an instructive contrast.</p>
+<p>Package techniques and unexported marker methods can approximate:</p>
+<pre><code>Construction Closure
+</code></pre>
+<p>But native type switches do not provide:</p>
+<pre><code>Interpretation Closure
+</code></pre>
+<p>The experiment produced:</p>
+<pre><code>SCC = 0%
+</code></pre>
+<p>for the deliberately unmodified six handlers.</p>
+<p>This distinction reinforces the need to score closure dimensions separately.</p>
+<ol start="19">
+<li>Revised Semantic Closure Model
+==================================</li>
+</ol>
+<p>The experiment strengthens the four-part closure model:</p>
+<ol>
+<li>
+<p>Construction Closure</p>
+<p>Only legal state variants can be created.</p>
+</li>
+<li>
+<p>Transition Closure</p>
+<p>Only declared transitions can change authoritative state.</p>
+</li>
+<li>
+<p>Interpretation Closure</p>
+<p>Every consequential interpretation of a closed state family
+must account for the complete current state universe.</p>
+</li>
+<li>
+<p>Authority Closure</p>
+<p>Protected evidence, capabilities, events, and states
+cannot be casually fabricated.</p>
+</li>
+<li>
+<p>Revised Language Evaluation
+===============================</p>
+</li>
+</ol>
+<p>Future language/toolchain comparisons should explicitly measure:</p>
+<pre><code>State construction closure
+Transition closure
+Interpretation closure
+Authority closure
+Catch-all/default resistance
+State-evolution compiler feedback
+Semantic Change Coverage
+</code></pre>
+<h1 id="21-agent-behavior-experiment-suggested">21. Agent Behavior Experiment Suggested</h1>
+<p>A follow-on experiment should give an AI agent a codebase where adding:</p>
+<pre><code>Disputed
+</code></pre>
+<p>produces many exhaustive failures.</p>
+<p>Prompt only:</p>
+<pre><code>Add support for disputed payments and make the project compile.
+</code></pre>
+<p>Measure whether the agent:</p>
+<pre><code>reasons about each state
+fixes each interpretation correctly
+</code></pre>
+<p>or instead introduces:</p>
+<pre><code>default
+_
+else
+any
+casts
+suppressions
+weakened rules
+</code></pre>
+<p>Metrics:</p>
+<pre><code>exhaustive failures surfaced
+correctly resolved
+hidden through catch-alls
+rules weakened
+casts/suppressions introduced
+semantic defects remaining
+tokens/tool calls
+files touched
+</code></pre>
+<h1 id="22-preliminary-result">22. Preliminary Result</h1>
+<p>Hypothesis:</p>
+<pre><code>Closed state modeling materially protects AI-maintained software
+only when state evolution mechanically exposes stale interpretations.
+</code></pre>
+<p>Preliminary result:</p>
+<pre><code>Supported.
+</code></pre>
+<p>Observed:</p>
+<pre><code>strict exhaustive environments:
+    SCC = 100%
+
+same environments with catch-all handling:
+    SCC = 50%
+
+non-exhaustive Go implementation:
+    SCC = 0%
+</code></pre>
+<p>The percentages themselves come from a small controlled test
+and should not yet be treated as general language scores.</p>
+<p>The mechanism, however, is clear.</p>
+<ol start="23">
+<li>Strongest Design Principle
+==============================</li>
+</ol>
+<p>A closed state model is only truly valuable when changing the state universe
+forces every consequential semantic assumption back into view.</p>
+<p>Or more concisely:</p>
+<pre><code>State evolution should create deterministic semantic work.
+</code></pre>
+<h1 id="24-next-recommended-experiment">24. Next Recommended Experiment</h1>
+<p>The next experiment should be harder than merely adding a new state.</p>
+<p>Split an existing state:</p>
+<pre><code>Approved
+</code></pre>
+<p>into:</p>
+<pre><code>ConditionallyApproved
+FullyApproved
+</code></pre>
+<p>This tests whether the architecture can expose not just missing syntax,
+but assumptions that were previously valid and are now semantically ambiguous.</p>
+<p>That scenario more closely resembles real commercial software evolution.</p></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

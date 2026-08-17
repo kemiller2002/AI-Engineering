@@ -1,0 +1,1452 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Economic and Inference-Cost Effects of State-Constrained AI-Maintained Software | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-package</span> <span data-pagefind-meta="stableId">RP-AI-STATE-COST-2026-A002</span> </p> <h1 data-pagefind-meta="title">Economic and Inference-Cost Effects of State-Constrained AI-Maintained Software</h1>  <dl class="metadata-panel"> <div><dt>Identifier</dt><dd>RP-AI-STATE-COST-2026-A002</dd></div> <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">state-constrained-ai-software</dd></div>    <div><dt>Discipline</dt><dd data-pagefind-meta="discipline">ai-agent-systems, programming-languages, software-architecture, inference-economics</dd></div> <div><dt>Status</dt><dd data-pagefind-meta="status">completed</dd></div> <div><dt>Version</dt><dd>1.0.0</dd></div> <div><dt>Confidence</dt><dd>0.6</dd></div>  <div><dt>Priority</dt><dd>critical</dd></div> <div><dt>Tags</dt><dd data-pagefind-meta="tags">ai-agents, inference-cost, state-machines, semantic-compiler, context-compression, capabilities, compiler-feedback, tool-selection</dd></div> <div><dt>Updated</dt><dd>2026-08-14</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/reports/RP-AI-STATE-COST-2026-A002.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#economic-and-inference-cost-effects-of-state-constrained-ai-maintained-software">Economic and Inference-Cost Effects of State-Constrained AI-Maintained Software</a></li><li><a href="#research-state-snapshot">Research State Snapshot</a></li><li><a href="#1-executive-conclusion">1. Executive conclusion</a></li><li><a href="#2-original-objective">2. Original objective</a></li><li><a href="#3-scope">3. Scope</a></li><li><a href="#4-cost-model">4. Cost model</a></li><li><a href="#4-1-why-tokens-are-insufficient">4.1 Why tokens are insufficient</a></li><li><a href="#4-2-required-primary-metrics">4.2 Required primary metrics</a></li><li><a href="#4-3-semantic-correctness-must-be-independently-scored">4.3 Semantic correctness must be independently scored</a></li><li><a href="#5-current-evidence-from-existing-research">5. Current evidence from existing research</a></li><li><a href="#5-1-agent-computer-interfaces-strong-evidence-that-interface-structure-matters">5.1 Agent-computer interfaces: strong evidence that interface structure matters</a></li><li><a href="#5-2-repository-context-selection-can-improve-both-quality-and-cost">5.2 Repository context selection can improve both quality and cost</a></li><li><a href="#5-3-compiler-static-feedback-improves-generation-and-repair-but-feedback-quality-matters">5.3 Compiler/static feedback improves generation and repair, but feedback quality matters</a></li><li><a href="#5-4-tool-inventory-size-and-dynamic-exposure">5.4 Tool inventory size and dynamic exposure</a></li><li><a href="#5-5-coding-agent-trajectories-reveal-iterative-cost-is-real">5.5 Coding-agent trajectories reveal iterative cost is real</a></li><li><a href="#5-6-constrained-decoding-proves-structural-legality-can-be-enforced-but-constraints-can-carry-a-tax">5.6 Constrained decoding proves structural legality can be enforced, but constraints can carry a tax</a></li><li><a href="#5-7-action-masking-useful-theoretical-analogue-not-direct-llm-evidence">5.7 Action masking: useful theoretical analogue, not direct LLM evidence</a></li><li><a href="#5-8-smaller-model-substitution-is-plausible-but-not-demonstrated-for-semantic-state-systems">5.8 Smaller-model substitution is plausible but not demonstrated for semantic state systems</a></li><li><a href="#6-theory-semantic-reconstruction-cost">6. Theory: semantic reconstruction cost</a></li><li><a href="#7-action-space-reduction">7. Action-space reduction</a></li><li><a href="#7-1-schema-context-savings">7.1 Schema/context savings</a></li><li><a href="#7-2-decision-savings">7.2 Decision savings</a></li><li><a href="#8-compiler-analyzer-feedback-as-cheap-deterministic-reasoning">8. Compiler/analyzer feedback as cheap deterministic reasoning</a></li><li><a href="#9-semantic-change-coverage-scc-">9. Semantic Change Coverage (SCC)</a></li><li><a href="#10-planning-as-graph-consumption">10. Planning as graph consumption</a></li><li><a href="#11-obligation-driven-agents">11. Obligation-driven agents</a></li><li><a href="#12-failure-retry-and-outcomeunknown-economics">12. Failure, retry, and OutcomeUnknown economics</a></li><li><a href="#13-longitudinal-hypothesis">13. Longitudinal hypothesis</a></li><li><a href="#14-upfront-versus-lifetime-cost">14. Upfront versus lifetime cost</a></li><li><a href="#14-1-illustrative-normalized-sensitivity-model-not-an-estimate">14.1 Illustrative normalized sensitivity model — NOT an estimate</a></li><li><a href="#15-correctness-adjusted-economics">15. Correctness-adjusted economics</a></li><li><a href="#16-tool-schema-cost-and-dynamic-exposure">16. Tool-schema cost and dynamic exposure</a></li><li><a href="#17-caching-and-reuse">17. Caching and reuse</a></li><li><a href="#18-language-versus-architecture">18. Language versus architecture</a></li><li><a href="#19-smaller-model-hypothesis">19. Smaller-model hypothesis</a></li><li><a href="#20-prompt-size-hypothesis">20. Prompt-size hypothesis</a></li><li><a href="#21-counterarguments-and-falsification-tests">21. Counterarguments and falsification tests</a></li><li><a href="#22-experimental-design">22. Experimental design</a></li><li><a href="#experimental-principles">Experimental principles</a></li><li><a href="#ex-ai-cost-001-legal-transition-addition">EX-AI-COST-001 — Legal transition addition</a></li><li><a href="#ex-ai-cost-002-state-addition-disputed-">EX-AI-COST-002 — State addition ( Disputed )</a></li><li><a href="#ex-ai-cost-003-state-split">EX-AI-COST-003 — State split</a></li><li><a href="#ex-ai-cost-004-ambiguous-requirement">EX-AI-COST-004 — Ambiguous requirement</a></li><li><a href="#ex-ai-cost-005-missing-prerequisite">EX-AI-COST-005 — Missing prerequisite</a></li><li><a href="#ex-ai-cost-006-unknown-external-effect">EX-AI-COST-006 — Unknown external effect</a></li><li><a href="#ex-ai-cost-007-concurrent-incompatible-transitions">EX-AI-COST-007 — Concurrent incompatible transitions</a></li><li><a href="#ex-ai-cost-008-policy-change">EX-AI-COST-008 — Policy change</a></li><li><a href="#ex-ai-cost-009-bypass-temptation">EX-AI-COST-009 — Bypass temptation</a></li><li><a href="#ex-ai-cost-010-longitudinal-maintenance">EX-AI-COST-010 — Longitudinal maintenance</a></li><li><a href="#ex-ai-cost-011-context-restriction">EX-AI-COST-011 — Context restriction</a></li><li><a href="#ex-ai-cost-012-smaller-model">EX-AI-COST-012 — Smaller model</a></li><li><a href="#23-experiment-instrumentation-schema">23. Experiment instrumentation schema</a></li><li><a href="#24-statistical-analysis-plan">24. Statistical analysis plan</a></li><li><a href="#25-ranked-mechanisms-most-likely-to-reduce-total-cost">25. Ranked mechanisms most likely to reduce total cost</a></li><li><a href="#1-fewer-wrong-repair-trajectories-">1. Fewer wrong/repair trajectories —</a></li><li><a href="#2-targeted-semantic-context-instead-of-broad-repository-reconstruction">2. Targeted semantic context instead of broad repository reconstruction</a></li><li><a href="#3-dynamic-legal-action-tool-exposure">3. Dynamic legal-action/tool exposure</a></li><li><a href="#4-deterministic-semantic-diagnostics-high-scc">4. Deterministic semantic diagnostics / high SCC</a></li><li><a href="#5-explicit-unknown-effect-reconciliation-state">5. Explicit unknown-effect/reconciliation state</a></li><li><a href="#6-smaller-prompts-through-mechanical-policy-enforcement">6. Smaller prompts through mechanical policy enforcement</a></li><li><a href="#7-better-caching-of-stable-semantic-artifacts">7. Better caching of stable semantic artifacts</a></li><li><a href="#8-smaller-model-substitution">8. Smaller-model substitution</a></li><li><a href="#26-what-is-already-supported-by-evidence">26. What is already supported by evidence</a></li><li><a href="#27-what-remains-speculative">27. What remains speculative</a></li><li><a href="#28-criteria-for-confirming-the-economic-hypothesis">28. Criteria for confirming the economic hypothesis</a></li><li><a href="#29-criteria-for-rejecting-or-narrowing-the-hypothesis">29. Criteria for rejecting or narrowing the hypothesis</a></li><li><a href="#30-fastest-falsification-sequence">30. Fastest falsification sequence</a></li><li><a href="#phase-1-state-addition-scc">Phase 1 — State addition / SCC</a></li><li><a href="#phase-2-missing-prerequisite-action-frontier">Phase 2 — Missing prerequisite / action frontier</a></li><li><a href="#phase-3-outcomeunknown">Phase 3 — OutcomeUnknown</a></li><li><a href="#phase-4-20-change-mini-longitudinal">Phase 4 — 20-change mini-longitudinal</a></li><li><a href="#phase-5-model-tier-cross">Phase 5 — model-tier cross</a></li><li><a href="#31-required-conclusion-answers">31. Required conclusion answers</a></li><li><a href="#1-is-there-credible-reason-to-believe-state-constrained-architecture-reduces-execution-cost-">1. Is there credible reason to believe state-constrained architecture reduces execution cost?</a></li><li><a href="#2-which-cost-reductions-are-theoretically-likely-">2. Which cost reductions are theoretically likely?</a></li><li><a href="#3-which-have-empirical-evidence-">3. Which have empirical evidence?</a></li><li><a href="#4-which-remain-speculative-">4. Which remain speculative?</a></li><li><a href="#5-could-correctness-alone-make-it-economical-if-tokens-remain-equal-or-rise-">5. Could correctness alone make it economical if tokens remain equal or rise?</a></li><li><a href="#6-where-is-token-reduction-most-likely-to-come-from-">6. Where is token reduction most likely to come from?</a></li><li><a href="#7-which-mechanism-appears-most-economically-important-">7. Which mechanism appears most economically important?</a></li><li><a href="#8-likely-upfront-vs-lifetime-tradeoff-">8. Likely upfront-vs-lifetime tradeoff?</a></li><li><a href="#9-what-experiments-most-quickly-falsify-the-hypothesis-">9. What experiments most quickly falsify the hypothesis?</a></li><li><a href="#10-what-result-justifies-the-claim-of-cheaper-operation-">10. What result justifies the claim of cheaper operation?</a></li><li><a href="#32-hypothesis-registry">32. Hypothesis Registry</a></li><li><a href="#hy-ai-cost-001-semantic-context-compression">HY-AI-COST-001 — Semantic Context Compression</a></li><li><a href="#hy-ai-cost-002-action-frontier-reduction">HY-AI-COST-002 — Action Frontier Reduction</a></li><li><a href="#hy-ai-cost-003-deterministic-impact-discovery">HY-AI-COST-003 — Deterministic Impact Discovery</a></li><li><a href="#hy-ai-cost-004-unknown-effect-cost-avoidance">HY-AI-COST-004 — Unknown-Effect Cost Avoidance</a></li><li><a href="#hy-ai-cost-005-longitudinal-marginal-cost-divergence">HY-AI-COST-005 — Longitudinal Marginal-Cost Divergence</a></li><li><a href="#hy-ai-cost-006-smaller-model-substitution">HY-AI-COST-006 — Smaller Model Substitution</a></li><li><a href="#hy-ai-cost-007-architecture-dominates-language">HY-AI-COST-007 — Architecture Dominates Language</a></li><li><a href="#33-failed-assumptions-corrected-ideas">33. Failed assumptions / corrected ideas</a></li><li><a href="#34-theory-impact-assessment">34. Theory Impact Assessment</a></li><li><a href="#affected-engineering-principles">Affected engineering principles</a></li><li><a href="#new-principle-candidate">New principle candidate</a></li><li><a href="#predictions-created">Predictions created</a></li><li><a href="#35-evidence-registry">35. Evidence Registry</a></li><li><a href="#36-research-quality-metrics">36. Research quality metrics</a></li><li><a href="#37-research-debt">37. Research debt</a></li><li><a href="#missing-evidence">Missing evidence</a></li><li><a href="#replication-needed">Replication needed</a></li><li><a href="#measurement-limitations">Measurement limitations</a></li><li><a href="#38-recommended-next-research">38. Recommended next research</a></li><li><a href="#39-research-backlog">39. Research backlog</a></li><li><a href="#40-suggested-specialized-research-agents">40. Suggested specialized research agents</a></li><li><a href="#41-parallel-research-opportunities">41. Parallel research opportunities</a></li><li><a href="#42-risks">42. Risks</a></li><li><a href="#43-knowledge-relationships">43. Knowledge relationships</a></li><li><a href="#44-repository-updates-recommended">44. Repository updates recommended</a></li><li><a href="#45-website-updates-recommended">45. Website updates recommended</a></li><li><a href="#46-ai-consumption-notes">46. AI consumption notes</a></li><li><a href="#47-handoff-instructions">47. Handoff instructions</a></li><li><a href="#48-research-journal">48. Research journal</a></li><li><a href="#2026-08-14-initial-economic-hypothesis-assessment">2026-08-14 — Initial economic hypothesis assessment</a></li><li><a href="#49-appendix-a-primary-sources">49. Appendix A — Primary sources</a></li><li><a href="#50-appendix-b-minimal-benchmark-domains">50. Appendix B — Minimal benchmark domains</a></li><li><a href="#51-completion-checklist">51. Completion checklist</a></li> </ol> </aside> <section class="document-body"><h1 id="economic-and-inference-cost-effects-of-state-constrained-ai-maintained-software">Economic and Inference-Cost Effects of State-Constrained AI-Maintained Software</h1>
+<h2 id="research-state-snapshot">Research State Snapshot</h2>
+<ul>
+<li><strong>Theory Version:</strong> State-system-first architecture, economic hypothesis pre-validation.</li>
+<li><strong>Knowledge Base Version:</strong> Research OS as of 2026-08-14 plus RP-AI-STATE-LANGUAGE-2026-A001 and this REP.</li>
+<li><strong>Highest Confidence Areas:</strong> Repository context has material inference cost; context selection can improve both accuracy and efficiency; agent-computer interfaces and constrained action surfaces can improve coding-agent performance; compiler/test feedback can materially improve repair; tool inventories can impose large context and selection costs.</li>
+<li><strong>Lowest Confidence Areas:</strong> Direct token savings attributable specifically to state-constrained domain architecture; smaller-model substitution; longitudinal break-even curves; language-specific token savings.</li>
+<li><strong>Largest Remaining Unknown:</strong> Whether explicit state/capability/obligation models reduce total cost per semantically correct completion enough to repay their modeling and tooling cost in commercial repositories.</li>
+<li><strong>Active Research Streams:</strong> State-constrained architecture; semantic compiler; AI-agent governance; compiler-guided agents; context-efficient agent interfaces.</li>
+<li><strong>Recently Invalidated Ideas:</strong> “More compiler errors necessarily mean more agent cost”; “token count alone is a sufficient cost metric”; “any formalization is automatically context compression.”</li>
+<li><strong>Priority Changes:</strong> Move immediately from literature analysis to controlled A/B experiments on architecture profiles. Direct evidence for the exact economic hypothesis does not yet exist.</li>
+</ul>
+<h1 id="1-executive-conclusion">1. Executive conclusion</h1>
+<p>There is <strong>credible reason to believe</strong> that state-constrained architecture can lower the total cost of obtaining a correct AI-agent outcome, but the strongest claim is <strong>not yet empirically established</strong>.</p>
+<p>The literature supports several mechanisms independently:</p>
+<ol>
+<li><strong>Repository context is expensive and noisy.</strong> Repository-level reasoning remains difficult even with large or oracle contexts, and targeted context selection can improve pass rates while reducing token use.</li>
+<li><strong>Agent interface design matters.</strong> SWE-agent showed that replacing a granular shell-like action surface with a smaller LM-oriented interface, guardrails, and concise feedback materially improved task completion without changing model weights.</li>
+<li><strong>Large tool inventories impose a measurable tax.</strong> Recent tool-retrieval work reports that selective/dynamic exposure can reduce prompt tokens dramatically while improving tool-selection accuracy.</li>
+<li><strong>Deterministic feedback helps repair.</strong> Compiler, static-analysis, test, and verifier feedback improve code-generation and repair performance, although compiler feedback alone is not always the strongest feedback type.</li>
+<li><strong>Search-space restriction can improve efficiency in adjacent fields.</strong> Invalid-action masking reduces wasted exploration in reinforcement learning; constrained decoding guarantees structural legality. These are strong analogies, but not direct evidence that state-transition masking reduces LLM reasoning tokens.</li>
+</ol>
+<p>The missing link is direct:</p>
+<blockquote>
+<p>No primary study located in this research directly compares the same commercial software domain implemented conventionally versus with explicit closed state, legal transitions, protected capabilities, obligations, versioning, and unknown-effect states while measuring tokens, tool calls, repair loops, semantic defects, and cost per correct completion.</p>
+</blockquote>
+<p>Therefore the current conclusion is:</p>
+<p><strong>H1 — correctness:</strong> likely, with substantial supporting evidence from type systems, interfaces, constrained action spaces, and deterministic feedback.</p>
+<p><strong>H2 — raw token reduction:</strong> plausible and mechanism-supported, but unproven for state-constrained architecture specifically.</p>
+<p><strong>H3 — total cost reduction:</strong> more plausible than raw token reduction because correctness, retries, tool misuse, human review, and defect consequences dominate economics in consequential workflows.</p>
+<p><strong>H4 — smaller-model substitution:</strong> promising but still speculative for this architecture.</p>
+<p>The architecture does not need to reduce tokens on every successful first attempt to be economically superior. If a constrained environment costs 15% more per attempt but improves semantic correctness from 60% to 90%, the retry-only expected execution cost falls from <code>1.00/0.60 = 1.67</code> cost units per correct outcome to <code>1.15/0.90 = 1.28</code>, before counting human repair or escaped defects.</p>
+<p>The most economically important mechanism is likely <strong>reduction of wrong trajectories</strong>, not compression in isolation. Context compression, dynamic capabilities, compiler diagnostics, explicit unknown-effect handling, and obligation queues matter because they reduce the number and length of trajectories that end in invalid actions, retries, broad repository exploration, or human intervention.</p>
+<h1 id="2-original-objective">2. Original objective</h1>
+<p>Determine whether moving semantic reasoning from probabilistic inference into deterministic software structure can make AI coding and operational agents both more correct and cheaper to execute.</p>
+<p>The architecture under test makes important domain states, legal transitions, evidence, authority, versions, capabilities, obligations, and external-effect uncertainty explicit. The economic hypothesis is that this semantic structure reduces repeated reconstruction of domain meaning and narrows the legal action frontier presented to an agent.</p>
+<h1 id="3-scope">3. Scope</h1>
+<p>Included:</p>
+<ul>
+<li>coding agents and operational/tool-using agents;</li>
+<li>repository comprehension and context retrieval;</li>
+<li>compiler/test/verifier feedback;</li>
+<li>tool-selection/action-space effects;</li>
+<li>prompt/schema overhead;</li>
+<li>state evolution and semantic change coverage;</li>
+<li>correctness-adjusted cost;</li>
+<li>longitudinal maintenance;</li>
+<li>language-versus-architecture effects;</li>
+<li>model-size substitution hypothesis.</li>
+</ul>
+<p>Excluded from strong claims:</p>
+<ul>
+<li>attacker-resistant security with arbitrary source control;</li>
+<li>exact production dollar savings without measured workloads;</li>
+<li>claims that formal methods, types, action masking, or grammar constraints are equivalent to state-constrained architecture;</li>
+<li>claims that every domain benefits enough to repay modeling cost.</li>
+</ul>
+<h1 id="4-cost-model">4. Cost model</h1>
+<h2 id="41-why-tokens-are-insufficient">4.1 Why tokens are insufficient</h2>
+<p>An autonomous task is a trajectory, not one model call. A useful cost model must account for the entire trajectory until the system reaches an accepted, semantically correct outcome or gives up.</p>
+<p>Define per task <code>i</code>:</p>
+<pre><code class="language-text">AgentExecutionCost_i =
+    InputTokenCost
+  + OutputTokenCost
+  + ReasoningTokenCost          (where exposed/measurable)
+  + RetrievalCost
+  + ToolExecutionCost
+  + InfrastructureCost
+  + WallClockOpportunityCost
+
+RecoveryCost_i =
+    RepeatedModelCalls
+  + RepairLoops
+  + RepeatedToolCalls
+  + HumanIntervention
+
+ConsequenceCost_i =
+    EscapedSemanticDefectCost
+  + DuplicateExternalEffectCost
+  + Incident/rollback/audit cost
+</code></pre>
+<p>Observed total cost across a benchmark:</p>
+<pre><code class="language-text">CorrectnessAdjustedTotalCost =
+    Sum(AgentExecutionCost + RecoveryCost + ConsequenceCost)
+    --------------------------------------------------------
+                 NumberOfSemanticallyCorrectTasks
+</code></pre>
+<p>This is preferable to simply dividing one run's cost by an estimated probability because it can incorporate retries, abandoned trajectories, human correction, and escaped defects directly.</p>
+<p>For controlled tasks where each independent attempt costs <code>C</code> and succeeds with probability <code>p</code>, a simplified retry-only expectation is:</p>
+<pre><code class="language-text">ExpectedExecutionCostPerCorrectOutcome = C / p
+</code></pre>
+<p>That simplification should not be used when failures have asymmetric consequences or retries are stateful.</p>
+<h2 id="42-required-primary-metrics">4.2 Required primary metrics</h2>
+<ul>
+<li>Total input tokens / successful task</li>
+<li>Total output tokens / successful task</li>
+<li>Cached input tokens</li>
+<li>Model calls / successful task</li>
+<li>Tool calls / successful task</li>
+<li>Repository searches</li>
+<li>Files read</li>
+<li>Context bytes/tokens retrieved</li>
+<li>Compiler runs</li>
+<li>Test runs</li>
+<li>Failed attempts</li>
+<li>Repair cycles</li>
+<li>Wall-clock duration</li>
+<li>Human minutes</li>
+<li>Semantic correctness</li>
+<li>Hidden invariant violations</li>
+<li>Assumptions introduced</li>
+<li>Assumptions inherited from repository</li>
+<li>Direct mutation attempts</li>
+<li>Capability/evidence fabrication attempts</li>
+<li>Constraint-weakening attempts</li>
+<li>External-effect duplicate attempts</li>
+</ul>
+<p>Derived metrics:</p>
+<pre><code class="language-text">Tokens Per Correct Completion (TPCC)
+Tool Calls Per Correct Completion (TCPCC)
+Context Tokens Per Correct Completion (CTPCC)
+Repair Cycles Per Correct Completion (RCPCC)
+Human Minutes Per Correct Completion (HMPCC)
+Dollars Per Correct Completion (DPCC)
+Semantic Defects Per 100 Changes (SD100)
+</code></pre>
+<h2 id="43-semantic-correctness-must-be-independently-scored">4.3 Semantic correctness must be independently scored</h2>
+<p>Passing public tests is insufficient. Each experiment needs hidden semantic checks covering invariants that the agent was not explicitly told how to satisfy.</p>
+<p>A completion is semantically correct only when:</p>
+<ul>
+<li>requested behavior is implemented;</li>
+<li>existing state invariants remain true;</li>
+<li>authority/evidence rules are preserved;</li>
+<li>no illegal transition path is introduced;</li>
+<li>no constraint is weakened to obtain success;</li>
+<li>unknown external outcomes are treated correctly;</li>
+<li>concurrency/version guarantees remain intact where relevant.</li>
+</ul>
+<h1 id="5-current-evidence-from-existing-research">5. Current evidence from existing research</h1>
+<h2 id="51-agent-computer-interfaces-strong-evidence-that-interface-structure-matters">5.1 Agent-computer interfaces: strong evidence that interface structure matters</h2>
+<p><strong>EV-AI-COST-001 — SWE-agent (NeurIPS 2024).</strong></p>
+<p>Yang et al. designed an agent-computer interface (ACI) with a small set of LM-friendly repository actions, guardrails against common mistakes, and concise environmental feedback. On SWE-bench Lite, the tailored ACI improved solved instances by 10.7 percentage points compared with a baseline agent using the default Linux shell. The paper explicitly contrasts the shell's granular, highly configurable action space with a smaller action interface.</p>
+<p>Primary source: <a href="https://arxiv.org/abs/2405.15793">https://arxiv.org/abs/2405.15793</a></p>
+<p><strong>What it supports:</strong> Interface design and action-surface design can materially change agent success without changing model weights.</p>
+<p><strong>What it does not prove:</strong> That domain-state constraints reduce tokens or that fewer legal state transitions specifically caused savings.</p>
+<p>Confidence: <strong>high</strong> for interface effect; <strong>low</strong> for direct economic extrapolation.</p>
+<h2 id="52-repository-context-selection-can-improve-both-quality-and-cost">5.2 Repository context selection can improve both quality and cost</h2>
+<p><strong>EV-AI-COST-002 — MRCoder (2026 preprint).</strong></p>
+<p>MRCoder reports 30–50% token-consumption reduction and up to ~52% inference-time reduction versus RAG baselines while improving repository-level generation accuracy on CoderEval and DevEval. Its core mechanism is selective retention of informative repository context rather than feeding all retrieved material to the final generator.</p>
+<p>Primary source: <a href="https://arxiv.org/abs/2607.26805">https://arxiv.org/abs/2607.26805</a></p>
+<p><strong>What it supports:</strong> Context compression can produce a positive-sum result: fewer tokens and higher accuracy are compatible when discarded context is noisy or irrelevant.</p>
+<p><strong>Limitation:</strong> New preprint; this is context selection, not semantic state compression.</p>
+<p>Confidence: <strong>medium</strong>.</p>
+<p><strong>EV-AI-COST-003 — RepoReasoner (2026 preprint).</strong></p>
+<p>RepoReasoner finds that even with oracle context the best model reached only 69.1% Pass@1 on its cross-file output-prediction task, and longer contexts did not consistently improve performance due to noise. Multi-hop call-chain recall remained weak.</p>
+<p>Primary source: <a href="https://arxiv.org/abs/2607.25996">https://arxiv.org/abs/2607.25996</a></p>
+<p><strong>What it supports:</strong> Retrieval is not the whole problem; distributed semantic reasoning itself is difficult. This is directly relevant to the claim that an explicit semantic world model could reduce reconstruction work.</p>
+<p>Confidence: <strong>medium</strong>.</p>
+<p><strong>EV-AI-COST-004 — CodeRAG-Bench / retrieval studies.</strong></p>
+<p>CodeRAG-Bench shows that high-quality retrieved context can help code generation but current retrievers often fail to retrieve useful material and generators struggle to integrate limited or noisy contexts. A later empirical study finds in-context code and likely API information useful while similar-code retrieval can add noise and reduce results by as much as 15% in tested settings.</p>
+<p>Primary sources:</p>
+<ul>
+<li><a href="https://arxiv.org/abs/2406.14497">https://arxiv.org/abs/2406.14497</a></li>
+<li><a href="https://arxiv.org/abs/2503.20589">https://arxiv.org/abs/2503.20589</a></li>
+</ul>
+<p><strong>Implication:</strong> “More repository context” is not a reliable substitute for structured semantic context.</p>
+<p>Confidence: <strong>medium-high</strong>.</p>
+<h2 id="53-compilerstatic-feedback-improves-generation-and-repair-but-feedback-quality-matters">5.3 Compiler/static feedback improves generation and repair, but feedback quality matters</h2>
+<p><strong>EV-AI-COST-005 — CoCoGen (Findings of ACL 2024).</strong></p>
+<p>CoCoGen uses static analysis/compiler feedback to identify mismatches between generated code and project context, then selectively retrieves repository information to repair them. The authors report improvements over vanilla models of more than 80% on project-context-dependent code-generation settings and outperform retrieval baselines.</p>
+<p>Primary source: <a href="https://arxiv.org/abs/2403.16792">https://arxiv.org/abs/2403.16792</a></p>
+<p><strong>What it supports:</strong> A deterministic diagnostic can serve as a focused retrieval query, replacing some unguided repository exploration.</p>
+<p>Confidence: <strong>high</strong> that feedback can improve project-context repair; <strong>medium</strong> for cost implications because token economics were not the central metric.</p>
+<p><strong>EV-AI-COST-006 — CompCoder (2022).</strong></p>
+<p>Compiler-aware training/feedback increased compilation success substantially in the reported code-generation tasks (44.18→89.18% for one completion setting and 70.3→96.2% for text-to-code generation relative to the cited baseline).</p>
+<p>Primary source: <a href="https://arxiv.org/abs/2203.05132">https://arxiv.org/abs/2203.05132</a></p>
+<p><strong>What it supports:</strong> Compiler signals can remove large classes of syntactic/structural failure.</p>
+<p><strong>What it does not support:</strong> Domain-semantic correctness.</p>
+<p>Confidence: <strong>medium-high</strong>.</p>
+<p><strong>EV-AI-COST-007 — FeedbackEval (2025).</strong></p>
+<p>Across five LLMs, mixed feedback had the highest average Repair@1 (63.6%), followed by expert-like feedback (62.9%) and test feedback (57.9%); compiler feedback alone averaged 49.2%. Iterative feedback improved repair but gains typically plateaued after 2–3 cycles.</p>
+<p>Primary source: <a href="https://arxiv.org/abs/2504.06939">https://arxiv.org/abs/2504.06939</a></p>
+<p><strong>Critical counterpoint:</strong> Deterministic compiler feedback is not automatically the cheapest or most semantically informative feedback. Compiler diagnostics are excellent when the relevant invariant is encoded in the compiler/analyzer; otherwise tests or domain-specific diagnostics may be more useful.</p>
+<p>Confidence: <strong>high</strong> for the tested benchmark.</p>
+<h2 id="54-tool-inventory-size-and-dynamic-exposure">5.4 Tool inventory size and dynamic exposure</h2>
+<p><strong>EV-AI-COST-008 — MCP-Zero (2025/2026 preprint revisions).</strong></p>
+<p>On APIBank with 48 tools, MCP-Zero reports prompt-length cuts of 60–98% while preserving or improving tool-selection accuracy. Full schema injection degraded as the tool pool expanded; active tool retrieval remained substantially more stable.</p>
+<p>Primary source: <a href="https://arxiv.org/abs/2506.01056">https://arxiv.org/abs/2506.01056</a></p>
+<p><strong>What it supports:</strong> Dynamic tool/capability discovery can greatly reduce schema tokens and selection interference.</p>
+<p><strong>Limitation:</strong> Tool retrieval is not identical to deriving legal domain transitions from state.</p>
+<p>Confidence: <strong>medium</strong>.</p>
+<p><strong>EV-AI-COST-009 — Instruction-Tool Retrieval (2026 preprint).</strong></p>
+<p>The reported benchmark compares a ~30k-token monolithic instruction/tool context with ~1.5k tokens/step under dynamic retrieval, reporting higher tool-selection accuracy and lower episode cost. This is strong directional evidence but should be replicated independently before being treated as settled.</p>
+<p>Primary source: <a href="https://arxiv.org/abs/2602.17046">https://arxiv.org/abs/2602.17046</a></p>
+<p>Confidence: <strong>low-medium</strong> because it is a recent preprint with unusually large effect sizes.</p>
+<h2 id="55-coding-agent-trajectories-reveal-iterative-cost-is-real">5.5 Coding-agent trajectories reveal iterative cost is real</h2>
+<p><strong>EV-AI-COST-010 — Thought-Action-Result trajectory study (ASE 2025).</strong></p>
+<p>Bouzenia and Pradel analyze 120 trajectories with 2,822 LLM interactions across RepairAgent, AutoCodeRover, and OpenHands, explicitly measuring iterations, token consumption, recurring action sequences, and behavioral anti-patterns that distinguish successful from failed executions.</p>
+<p>Primary source: <a href="https://arxiv.org/abs/2506.18824">https://arxiv.org/abs/2506.18824</a></p>
+<p><strong>What it supports:</strong> Agent cost is trajectory-shaped. Repetition, action loops, and feedback integration are measurable first-class behaviors, validating the need for trajectory metrics rather than one-shot token counts.</p>
+<p>Confidence: <strong>high</strong>.</p>
+<h2 id="56-constrained-decoding-proves-structural-legality-can-be-enforced-but-constraints-can-carry-a-tax">5.6 Constrained decoding proves structural legality can be enforced, but constraints can carry a tax</h2>
+<p><strong>EV-AI-COST-011 — JSONSchemaBench / structured generation.</strong></p>
+<p>Structured-output research shows constrained decoding can guarantee conformity to schema-supported structure. This establishes that some invalid outputs can be removed from the generative action space mechanically.</p>
+<p>Primary source: <a href="https://arxiv.org/abs/2501.10868">https://arxiv.org/abs/2501.10868</a></p>
+<p><strong>EV-AI-COST-012 — Lost in Space (2025).</strong></p>
+<p>Grammar-constrained decoding experiments show semantically similar output grammars can change model accuracy and that constraint/tokenization interactions can reduce performance, especially for smaller models.</p>
+<p>Primary source: <a href="https://arxiv.org/abs/2502.14969">https://arxiv.org/abs/2502.14969</a></p>
+<p><strong>Implication:</strong> Constraining generation is not universally free. The representation of the constraint matters.</p>
+<p>Confidence: <strong>high</strong> for the narrow structured-output conclusion.</p>
+<h2 id="57-action-masking-useful-theoretical-analogue-not-direct-llm-evidence">5.7 Action masking: useful theoretical analogue, not direct LLM evidence</h2>
+<p>In reinforcement learning, invalid-action masking removes infeasible actions from the policy's sampled action set and can improve training/sample efficiency in large constrained action spaces.</p>
+<p>Representative primary source: <a href="https://arxiv.org/abs/2006.14171">https://arxiv.org/abs/2006.14171</a></p>
+<p><strong>What it supports:</strong> Theoretical plausibility that state-dependent legal-action masks reduce wasted exploration.</p>
+<p><strong>What it does not prove:</strong> LLM token savings, reasoning-depth reduction, or better software-agent trajectories.</p>
+<p>Confidence: <strong>high</strong> as an analogy; <strong>low</strong> as direct evidence.</p>
+<h2 id="58-smaller-model-substitution-is-plausible-but-not-demonstrated-for-semantic-state-systems">5.8 Smaller-model substitution is plausible but not demonstrated for semantic state systems</h2>
+<p>A 2026 study of sub-10B models under agent paradigms reports that tool-equipped single-agent configurations provide a favorable performance/cost tradeoff relative to base or multi-agent variants in its tested settings.</p>
+<p>Primary source: <a href="https://arxiv.org/abs/2604.19299">https://arxiv.org/abs/2604.19299</a></p>
+<p>This supports investigation of the smaller-model hypothesis, but it does not demonstrate that state constraints specifically allow a smaller model to replace a frontier model for commercial software maintenance.</p>
+<p>Confidence: <strong>low-medium</strong> for extrapolation.</p>
+<h1 id="6-theory-semantic-reconstruction-cost">6. Theory: semantic reconstruction cost</h1>
+<p>A conventional repository often distributes domain semantics across many representations:</p>
+<pre><code class="language-text">state = fields + enum/string values + database columns + tests + handlers
+      + comments + policies + serializers + historical behavior + naming
+</code></pre>
+<p>An agent must reconstruct a latent domain model before it can act safely. The reconstruction has at least four costs:</p>
+<ol>
+<li><strong>Discovery cost</strong> — finding relevant files, symbols, schemas, tests, and history.</li>
+<li><strong>Integration cost</strong> — reconciling inconsistent or partial evidence across those sources.</li>
+<li><strong>Uncertainty cost</strong> — deciding which discovered behavior is intentional versus incidental.</li>
+<li><strong>Verification cost</strong> — checking whether the chosen modification preserved implicit invariants.</li>
+</ol>
+<p>A state-constrained system attempts to move part of that latent model into a canonical, mechanically checked representation:</p>
+<pre><code class="language-text">SemanticFrontier = {
+    current_verified_state,
+    available_capabilities,
+    outstanding_obligations,
+    legal_transitions,
+    missing_prerequisites,
+    evidence_refs,
+    policy_version,
+    aggregate_version
+}
+</code></pre>
+<p>The <strong>context-compression hypothesis</strong> is not that this representation contains less information in an information-theoretic sense. It is that it contains a higher proportion of <em>decision-relevant semantic information per token</em> and eliminates repeated reconstruction.</p>
+<p>A better concept than raw compression is:</p>
+<pre><code class="language-text">Semantic Information Density =
+    decision-relevant verified constraints
+    --------------------------------------
+             context tokens
+</code></pre>
+<p>The architecture is economically useful if the increase in semantic information density is greater than the metadata/tool-schema overhead it introduces.</p>
+<h1 id="7-action-space-reduction">7. Action-space reduction</h1>
+<p>Suppose a conventional operational agent receives 30 write-capable tools. If current state permits only two transitions, then showing all 30 tools forces the model to perform legality filtering probabilistically.</p>
+<p>A state-constrained runtime can derive:</p>
+<pre><code class="language-text">AvailableActions(s, policy, evidence, version) = { CapturePayment, RefreshFraudCheck }
+</code></pre>
+<p>This creates two possible savings:</p>
+<h3 id="71-schemacontext-savings">7.1 Schema/context savings</h3>
+<p>If unavailable tools are not described to the model, input tokens fall directly. Dynamic tool-retrieval research provides empirical support for this mechanism.</p>
+<h3 id="72-decision-savings">7.2 Decision savings</h3>
+<p>The model no longer needs to infer that the other 28 actions are illegal. Whether this reduces hidden reasoning tokens or deliberation depth is <strong>not yet directly established</strong>.</p>
+<p>The mechanism should therefore be decomposed experimentally:</p>
+<ul>
+<li>same full tool schemas, but illegal calls rejected;</li>
+<li>dynamic legal-tool exposure;</li>
+<li>dynamic legal-tool exposure plus explicit prerequisite explanations.</li>
+</ul>
+<p>This separates token-schema savings from planning/search-space savings.</p>
+<h1 id="8-compileranalyzer-feedback-as-cheap-deterministic-reasoning">8. Compiler/analyzer feedback as cheap deterministic reasoning</h1>
+<p>The phrase “compiler feedback is cheap reasoning” is useful but imprecise.</p>
+<p>A compiler does not reason about the business domain unless the domain invariant has been encoded in types, generated analyzers, or other machine-checkable artifacts.</p>
+<p>When it has been encoded, a semantic change can transform an open-ended search problem:</p>
+<pre><code class="language-text">Find every consequential place that interprets PaymentState.
+</code></pre>
+<p>into a finite repair queue:</p>
+<pre><code class="language-text">RefundEligibility: non-exhaustive for Disputed
+AccountingTreatment: non-exhaustive for Disputed
+AgentActions: non-exhaustive for Disputed
+SettlementHandling: non-exhaustive for Disputed
+</code></pre>
+<p>The likely cost advantage comes from <strong>query generation</strong>: deterministic diagnostics identify where semantic interpretation is stale, reducing repository search and uncertainty.</p>
+<p>However, compiler feedback can increase the number of visible failures. That is not automatically inefficiency. The correct comparison is:</p>
+<pre><code class="language-text">visible deterministic failures repaired before completion
+versus
+undetected semantic assumptions discovered later or escaped
+</code></pre>
+<h1 id="9-semantic-change-coverage-scc">9. Semantic Change Coverage (SCC)</h1>
+<p>Define the set of consequential interpretations actually affected by semantic change <code>Δ</code> as <code>A(Δ)</code>.</p>
+<p>Define the subset mechanically surfaced by compiler/analyzer/generated-test/policy-impact machinery as <code>M(Δ)</code>.</p>
+<pre><code class="language-text">SCC(Δ) = |M(Δ) ∩ A(Δ)| / |A(Δ)|
+</code></pre>
+<p>Important refinements:</p>
+<ul>
+<li>A compiler error counts only when it points to a consequential interpretation, not generated noise.</li>
+<li>Surfacing a location does not mean the agent repairs it correctly.</li>
+<li>Wildcard/default handling can produce syntactic exhaustiveness while SCC remains low.</li>
+<li>State splits are a stronger test than state additions because old semantics must be redistributed.</li>
+</ul>
+<p>Economic hypothesis:</p>
+<pre><code class="language-text">Higher SCC -> lower discovery/search cost and lower missed-assumption cost
+</code></pre>
+<p>This is plausible, not established. It is one of the highest-priority experiments.</p>
+<h1 id="10-planning-as-graph-consumption">10. Planning as graph consumption</h1>
+<p>For a goal <code>CanShip</code>, a semantic runtime could provide:</p>
+<pre><code class="language-text">Goal: CanShip
+Missing:
+  - PaymentCaptured
+  - FreshFraudCheck
+Producers:
+  PaymentCaptured &#x3C;- CapturePayment
+  FreshFraudCheck &#x3C;- RefreshFraudCheck
+</code></pre>
+<p>The model's problem changes from <em>world-model reconstruction + planning</em> to mostly <em>planning over an explicit transition graph</em>.</p>
+<p>This resembles classical planning where states, preconditions, and effects are explicit. Lower branching factor generally reduces combinatorial search, but LLMs do not necessarily implement explicit graph search internally. The empirical claim must therefore be measured by observable trajectory changes:</p>
+<ul>
+<li>fewer repository reads;</li>
+<li>fewer invalid tool calls;</li>
+<li>fewer plan revisions;</li>
+<li>fewer unsupported prerequisites;</li>
+<li>lower total context;</li>
+<li>smaller model retaining success.</li>
+</ul>
+<h1 id="11-obligation-driven-agents">11. Obligation-driven agents</h1>
+<p>Open-ended monitoring is expensive because the agent repeatedly asks “what matters now?”</p>
+<p>An obligation system externalizes that decision:</p>
+<pre><code class="language-text">O-17 ReconcileUnknownRefund
+reason: provider timeout after request accepted locally
+satisfaction: refund outcome established
+available transitions: QueryProvider, EscalateManualReview
+blocked transition: StartRefund
+</code></pre>
+<p>Hypothesized savings:</p>
+<ul>
+<li>less scanning and anomaly discovery;</li>
+<li>fewer repeated rediscoveries across runs;</li>
+<li>smaller prompt/task definition;</li>
+<li>deterministic work deduplication;</li>
+<li>easier assignment to smaller/specialized models.</li>
+</ul>
+<p>Countervailing costs:</p>
+<ul>
+<li>obligation generation must itself be correct;</li>
+<li>stale obligations can create useless work;</li>
+<li>obligation metadata consumes storage/context;</li>
+<li>some work is emergent and cannot be pre-modeled.</li>
+</ul>
+<p>No direct empirical evidence located yet; this should be tested as an operational-agent experiment separately from coding agents.</p>
+<h1 id="12-failure-retry-and-outcomeunknown-economics">12. Failure, retry, and OutcomeUnknown economics</h1>
+<p>External effects are a likely source of disproportionate economic benefit because a wrong retry can have real-world consequence.</p>
+<p>State-constrained flow:</p>
+<pre><code class="language-text">RefundRequested
+   -> provider timeout
+   -> RefundOutcomeUnknown
+   -> remove CanRefund
+   -> create ReconcileRefund obligation
+</code></pre>
+<p>This can reduce:</p>
+<ul>
+<li>duplicate API calls;</li>
+<li>duplicated money movement;</li>
+<li>compensating transactions;</li>
+<li>investigation sessions;</li>
+<li>human intervention;</li>
+<li>secondary agent trajectories.</li>
+</ul>
+<p>The token savings may be modest while the consequence savings are enormous. This is why token count cannot be the main economic metric.</p>
+<h1 id="13-longitudinal-hypothesis">13. Longitudinal hypothesis</h1>
+<p>State-constrained architecture likely has a <strong>higher fixed cost and lower marginal semantic-reconstruction cost</strong> if it works as intended.</p>
+<p>Let:</p>
+<pre><code class="language-text">C_conv(n)  = I_conv  + n * M_conv(n)
+C_state(n) = I_state + n * M_state(n)
+</code></pre>
+<p>where <code>M(n)</code> includes inference, repair, review, and defect cost per change and may itself rise with semantic drift.</p>
+<p>The strong longitudinal hypothesis is:</p>
+<pre><code class="language-text">dM_conv/dn > dM_state/dn
+</code></pre>
+<p>because explicit state interpretation sites become mechanically discoverable while conventional implicit semantics accumulate hidden coupling.</p>
+<p>This is currently speculative. A 50–100 change sequential benchmark is needed. One-shot benchmarks cannot establish compounding maintenance economics.</p>
+<h1 id="14-upfront-versus-lifetime-cost">14. Upfront versus lifetime cost</h1>
+<p>State-constrained architecture adds:</p>
+<ul>
+<li>semantic modeling;</li>
+<li>transition design;</li>
+<li>capability/evidence modeling;</li>
+<li>analyzer/code-generator work;</li>
+<li>migration of unsafe writes;</li>
+<li>additional tests;</li>
+<li>developer learning cost.</li>
+</ul>
+<p>The break-even formula is straightforward:</p>
+<pre><code class="language-text">BreakEvenChanges =
+    (InitialStateCost - InitialConventionalCost)
+    ------------------------------------------------
+    (MarginalConventionalCost - MarginalStateCost)
+</code></pre>
+<p>The difficult part is measuring the marginal costs honestly.</p>
+<h2 id="141-illustrative-normalized-sensitivity-model--not-an-estimate">14.1 Illustrative normalized sensitivity model — NOT an estimate</h2>
+<p>Assume an initial state-architecture premium of <strong>100 normalized cost units</strong>. Assume net downstream savings per agent-driven change of:</p>
+<ul>
+<li>low-consequence/weak effect: <code>0.20</code> units/change;</li>
+<li>medium-consequence/moderate effect: <code>0.75</code> units/change;</li>
+<li>high-consequence/strong effect: <code>3.00</code> units/change.</li>
+</ul>
+<p>Then:</p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th align="right">Savings/change</th>
+<th align="right">Break-even changes</th>
+<th align="right">@10 changes/mo</th>
+<th align="right">@100 changes/mo</th>
+<th align="right">@1,000 changes/mo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Low</td>
+<td align="right">0.20</td>
+<td align="right">500</td>
+<td align="right">50 mo</td>
+<td align="right">5 mo</td>
+<td align="right">0.5 mo</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td align="right">0.75</td>
+<td align="right">134</td>
+<td align="right">13.4 mo</td>
+<td align="right">1.34 mo</td>
+<td align="right">0.134 mo</td>
+</tr>
+<tr>
+<td>High consequence</td>
+<td align="right">3.00</td>
+<td align="right">34</td>
+<td align="right">3.4 mo</td>
+<td align="right">0.34 mo</td>
+<td align="right">0.034 mo</td>
+</tr>
+</tbody>
+</table>
+<p>These numbers are deliberately illustrative. They demonstrate sensitivity, not expected production values.</p>
+<p>The implication is structural: <strong>change frequency and defect consequence dominate break-even</strong>. Small low-change applications may never justify the architecture economically. High-change or high-consequence systems can justify substantial upfront modeling even with modest token savings.</p>
+<h1 id="15-correctness-adjusted-economics">15. Correctness-adjusted economics</h1>
+<p>Example:</p>
+<pre><code class="language-text">Architecture A
+  cost/attempt = 1.00
+  semantic success = 60%
+  expected retry-only cost/correct = 1.67
+
+Architecture B
+  cost/attempt = 1.15
+  semantic success = 90%
+  expected retry-only cost/correct = 1.28
+</code></pre>
+<p>B is ~23% cheaper per correct completion under the simplified independent-retry model despite costing 15% more per attempt.</p>
+<p>If failures can escape rather than simply retry, use:</p>
+<pre><code class="language-text">ExpectedLifecycleCost =
+    execution
+  + expected_repair
+  + expected_human_review
+  + P(escaped_defect) * expected_consequence
+</code></pre>
+<p>This often makes correctness economically dominant.</p>
+<h1 id="16-tool-schema-cost-and-dynamic-exposure">16. Tool-schema cost and dynamic exposure</h1>
+<p>A state-constrained system can lose its token advantage if it eagerly transmits:</p>
+<ul>
+<li>the entire transition graph;</li>
+<li>every capability schema;</li>
+<li>full evidence history;</li>
+<li>all policy text;</li>
+<li>all obligation details;</li>
+<li>generated types and code.</li>
+</ul>
+<p>The optimization should therefore be <strong>frontier-based</strong>:</p>
+<pre><code class="language-text">Always expose:
+  compact current semantic state ID/version
+  currently legal action names
+  obligation summaries
+
+Lazy load:
+  detailed transition schema
+  evidence provenance
+  policy explanation
+  implementation context
+  historical state
+</code></pre>
+<p>Recommended hierarchy:</p>
+<pre><code class="language-text">Level 0: Goal + state fingerprint + action names
+Level 1: Selected action preconditions/result schema
+Level 2: Missing prerequisite explanation
+Level 3: Evidence/policy provenance
+Level 4: Relevant implementation code
+Level 5: Broader repository search
+</code></pre>
+<p>This design makes semantic context a routing layer rather than another giant prompt.</p>
+<h1 id="17-caching-and-reuse">17. Caching and reuse</h1>
+<p>Semantic artifacts are likely unusually cacheable because many are stable across tasks:</p>
+<ul>
+<li>state schema;</li>
+<li>transition definitions;</li>
+<li>capability types;</li>
+<li>policy graph by version;</li>
+<li>generated documentation;</li>
+<li>analyzer rules.</li>
+</ul>
+<p>A task can transmit a stable semantic-model hash plus incremental state/evidence changes rather than re-retrieving implementation text.</p>
+<p>This hypothesis is operationally plausible, but provider-specific prompt-cache economics and hit behavior vary and should be measured rather than assumed.</p>
+<p>Metrics:</p>
+<ul>
+<li>stable-prefix cache hit rate;</li>
+<li>uncached tokens/task;</li>
+<li>semantic graph bytes/version;</li>
+<li>delta bytes/change;</li>
+<li>cache invalidations per semantic change.</li>
+</ul>
+<h1 id="18-language-versus-architecture">18. Language versus architecture</h1>
+<p>The prior language REP concluded that closed states + exhaustive handling + protected construction + immutable transitions matter more than native DU syntax. The cost hypothesis should therefore compare architecture profiles, not language stereotypes.</p>
+<p>Required factorial design:</p>
+<table>
+<thead>
+<tr>
+<th>Profile</th>
+<th>Language</th>
+<th>Architecture</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>F#</td>
+<td>conventional/loose</td>
+</tr>
+<tr>
+<td>B</td>
+<td>F#</td>
+<td>state-constrained</td>
+</tr>
+<tr>
+<td>C</td>
+<td>C#</td>
+<td>conventional/loose</td>
+</tr>
+<tr>
+<td>D</td>
+<td>C#</td>
+<td>generated state-constrained</td>
+</tr>
+<tr>
+<td>E</td>
+<td>TypeScript</td>
+<td>conventional/loose</td>
+</tr>
+<tr>
+<td>F</td>
+<td>TypeScript</td>
+<td>generated strict + runtime schemas</td>
+</tr>
+<tr>
+<td>G</td>
+<td>Python</td>
+<td>conventional</td>
+</tr>
+<tr>
+<td>H</td>
+<td>Python</td>
+<td>generated models + checker + runtime gate</td>
+</tr>
+<tr>
+<td>I</td>
+<td>Rust</td>
+<td>conventional</td>
+</tr>
+<tr>
+<td>J</td>
+<td>Rust</td>
+<td>state-constrained</td>
+</tr>
+</tbody>
+</table>
+<p>Primary question:</p>
+<pre><code class="language-text">Variance explained by architecture > variance explained by language ?
+</code></pre>
+<p>Expected result (hypothesis only):</p>
+<ul>
+<li>architecture will dominate repository search, invalid actions, and SCC;</li>
+<li>language will materially affect compile-time repair quality, bypass rates, and amount of scaffolding required;</li>
+<li>a semantic compiler will narrow C#/Java/Kotlin/F# differences considerably;</li>
+<li>TypeScript/Python will retain higher runtime bypass risk unless authoritative mutations cross a separately validated boundary;</li>
+<li>Rust may retain an advantage for consumed/single-use capabilities and ownership-sensitive transitions that generation cannot emulate in other languages.</li>
+</ul>
+<p>No token-cost evidence currently justifies declaring F# or Rust cheaper than C# merely from type-system strength.</p>
+<h1 id="19-smaller-model-hypothesis">19. Smaller-model hypothesis</h1>
+<p>The economically significant version is not “small models are good.” It is:</p>
+<blockquote>
+<p>Does a constrained environment externalize enough world-model reconstruction and legality checking that a cheaper model can complete the same semantically scored task?</p>
+</blockquote>
+<p>Test four cells:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Conventional</th>
+<th>State constrained</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frontier model</td>
+<td>A</td>
+<td>B</td>
+</tr>
+<tr>
+<td>Smaller model</td>
+<td>C</td>
+<td>D</td>
+</tr>
+</tbody>
+</table>
+<p>The strongest confirmation would be:</p>
+<pre><code class="language-text">Correctness(D) >= Correctness(A)
+and
+Cost(D) &#x3C;&#x3C; Cost(A)
+</code></pre>
+<p>The weaker but still useful result would be that D closes a significant portion of the C→A capability gap.</p>
+<p>Do not compare only pass rates. Smaller models may generate more repair loops even when final correctness converges.</p>
+<h1 id="20-prompt-size-hypothesis">20. Prompt-size hypothesis</h1>
+<p>A large natural-language rule set repeatedly asks the model to remember procedural constraints:</p>
+<pre><code class="language-text">before X check A
+if B then C
+never D
+if timeout do not retry
+ensure E is fresh
+</code></pre>
+<p>A semantic runtime can encode some of these as:</p>
+<ul>
+<li>absence/presence of a capability;</li>
+<li>transition guard;</li>
+<li>obligation creation rule;</li>
+<li>effect result state;</li>
+<li>version/freshness check.</li>
+</ul>
+<p>The natural-language prompt can then describe intent rather than recite every operational rule.</p>
+<p>But not every instruction is reducible to state semantics. Style, ambiguous product requirements, optimization goals, and many cross-domain judgments remain linguistic.</p>
+<p>Measure:</p>
+<pre><code class="language-text">PolicyInstructionTokens/task
+SemanticSchemaTokens/task
+NetConstraintContext = semantic schema + remaining policy instructions
+</code></pre>
+<h1 id="21-counterarguments-and-falsification-tests">21. Counterarguments and falsification tests</h1>
+<table>
+<thead>
+<tr>
+<th>Counterargument</th>
+<th>Why credible</th>
+<th>Falsification / confirmation test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Semantic metadata merely replaces repository tokens</td>
+<td>State/evidence/policy schemas can be large</td>
+<td>Hold task/model constant; measure total input + retrieval bytes, not prompt fragment alone</td>
+</tr>
+<tr>
+<td>More compiler failures cause more loops</td>
+<td>Strong types surface more errors</td>
+<td>Compare repair cycles <em>and</em> semantic defects; inspect whether failures are early substitutes for later discovery</td>
+</tr>
+<tr>
+<td>Generated abstractions confuse agents</td>
+<td>Indirection can obscure runtime behavior</td>
+<td>Compare generated API with hand-written domain API at equal semantics</td>
+</tr>
+<tr>
+<td>Strong compiler diagnostics can be harder</td>
+<td>Generic/type errors can be opaque</td>
+<td>Record diagnostic-to-fix success and tokens per repair by language</td>
+</tr>
+<tr>
+<td>Agents already infer rules efficiently</td>
+<td>Frontier models may reconstruct semantics cheaply</td>
+<td>Run unrestricted repo baseline with identical hidden invariants</td>
+</tr>
+<tr>
+<td>Tool latency dominates token savings</td>
+<td>APIs/tests may be slow</td>
+<td>Report wall clock and tool latency separately from inference tokens</td>
+</tr>
+<tr>
+<td>State model becomes stale</td>
+<td>Semantic spec can diverge from reality</td>
+<td>Inject spec/code inconsistency and measure detection; require generated code from canonical source where possible</td>
+</tr>
+<tr>
+<td>Wildcards defeat SCC</td>
+<td>“Exhaustive” code can hide future cases</td>
+<td>Separate compiler exhaustiveness from semantic impact tests; forbid/track wildcard defaults</td>
+</tr>
+<tr>
+<td>Constraint weakening becomes easiest fix</td>
+<td>Agent can edit analyzer/tests/DSL</td>
+<td>Add bypass temptation experiment and repository permissions</td>
+</tr>
+<tr>
+<td>Small systems never amortize modeling</td>
+<td>Fixed cost dominates</td>
+<td>Measure break-even by change volume and consequence class</td>
+</tr>
+<tr>
+<td>Constraints suppress valid creativity</td>
+<td>Incomplete model can block needed transitions</td>
+<td>Ambiguous/new-feature experiments; record required model changes and human interventions</td>
+</tr>
+<tr>
+<td>Schema constraints hurt smaller models</td>
+<td>Tokenization/constraint interactions documented</td>
+<td>Compare schema encodings and constrained/unconstrained decoding on same smaller model</td>
+</tr>
+</tbody>
+</table>
+<h1 id="22-experimental-design">22. Experimental design</h1>
+<h2 id="experimental-principles">Experimental principles</h2>
+<ol>
+<li><strong>Paired repositories:</strong> Conventional and constrained versions implement identical observable behavior.</li>
+<li><strong>Hidden semantic oracle:</strong> Evaluation must include invariants not reducible to public tests.</li>
+<li><strong>Fresh agent runs:</strong> Prevent cross-condition memory contamination.</li>
+<li><strong>Randomized order:</strong> Avoid model/provider temporal drift correlating with architecture.</li>
+<li><strong>Multiple repetitions:</strong> Stochastic models require repeated trials.</li>
+<li><strong>Pinned model/tool versions where possible.</strong></li>
+<li><strong>Complete trajectory capture:</strong> Every model call, token count, tool call, command, diagnostic, file read/write.</li>
+<li><strong>No architecture-specific hints in task wording</strong> unless that is the tested variable.</li>
+<li><strong>Constraint-weakening telemetry:</strong> Record attempts to edit tests, disable analyzers, add defaults, cast, mutate state, or fabricate privileged values.</li>
+<li><strong>Human intervention is a measured failure mode</strong>, not silently supplied help.</li>
+</ol>
+<h2 id="ex-ai-cost-001--legal-transition-addition">EX-AI-COST-001 — Legal transition addition</h2>
+<p>Task: add a new valid transition with known prerequisites.</p>
+<p>Compare:</p>
+<ul>
+<li>conventional repository;</li>
+<li>state-constrained repository;</li>
+<li>state-constrained + dynamic capability exposure.</li>
+</ul>
+<p>Primary metrics: TPCC, files read, searches, compiler/test loops, semantic correctness.</p>
+<h2 id="ex-ai-cost-002--state-addition-disputed">EX-AI-COST-002 — State addition (<code>Disputed</code>)</h2>
+<p>Initial:</p>
+<pre><code class="language-text">Authorized | Captured | Refunded
+</code></pre>
+<p>Change:</p>
+<pre><code class="language-text">+ Disputed
+</code></pre>
+<p>Conditions:</p>
+<ol>
+<li>exhaustive handling;</li>
+<li>default/wildcard handling;</li>
+<li>convention-only string/enum handling.</li>
+</ol>
+<p>Measure SCC and total cost.</p>
+<p>Critical hidden oracle: downstream accounting, refund eligibility, agent actions, settlement rules.</p>
+<h2 id="ex-ai-cost-003--state-split">EX-AI-COST-003 — State split</h2>
+<p>Change:</p>
+<pre><code class="language-text">Approved
+</code></pre>
+<p>to:</p>
+<pre><code class="language-text">ConditionallyApproved | FullyApproved
+</code></pre>
+<p>This is more important than simple case addition because the agent must redistribute existing semantics.</p>
+<p>Measure:</p>
+<ul>
+<li>compiler/analyzer surfaced sites;</li>
+<li>repository searches;</li>
+<li>assumptions missed;</li>
+<li>wrong default inheritance;</li>
+<li>TPCC.</li>
+</ul>
+<h2 id="ex-ai-cost-004--ambiguous-requirement">EX-AI-COST-004 — Ambiguous requirement</h2>
+<p>Give incomplete product text whose conventional implementation admits several plausible interpretations.</p>
+<p>Question: Does explicit legal-state structure cause the agent to identify ambiguity rather than silently invent a transition or invariant?</p>
+<p>Metric: unsupported assumptions introduced per task.</p>
+<h2 id="ex-ai-cost-005--missing-prerequisite">EX-AI-COST-005 — Missing prerequisite</h2>
+<p>Ask the agent to ship an ineligible order.</p>
+<p>Conventional repository vs runtime exposing:</p>
+<pre><code class="language-text">CanShip: false
+Missing: PaymentCaptured, FreshFraudCheck
+Legal producers: CapturePayment, RefreshFraudCheck
+</code></pre>
+<p>Observe whether the agent:</p>
+<ul>
+<li>searches widely;</li>
+<li>mutates status;</li>
+<li>bypasses check;</li>
+<li>follows prerequisite chain.</li>
+</ul>
+<h2 id="ex-ai-cost-006--unknown-external-effect">EX-AI-COST-006 — Unknown external effect</h2>
+<p>Inject timeout after provider accepted a refund but before response delivery.</p>
+<p>Correct behavior: <code>OutcomeUnknown</code>, no blind retry, reconciliation obligation.</p>
+<p>Metrics: duplicate effect attempts, tool calls, human escalation, total cost.</p>
+<h2 id="ex-ai-cost-007--concurrent-incompatible-transitions">EX-AI-COST-007 — Concurrent incompatible transitions</h2>
+<p>Two agents simultaneously attempt shipping and refund.</p>
+<p>Use aggregate-version/capability-version tokens in constrained condition.</p>
+<p>Measure:</p>
+<ul>
+<li>stale transition attempts;</li>
+<li>wasted tool calls;</li>
+<li>repair/reconciliation;</li>
+<li>successful conflict detection.</li>
+</ul>
+<h2 id="ex-ai-cost-008--policy-change">EX-AI-COST-008 — Policy change</h2>
+<p>Change fraud freshness or approval threshold.</p>
+<p>Compare impact discovery via grep/search/tests versus generated policy impact/SCC diagnostics.</p>
+<h2 id="ex-ai-cost-009--bypass-temptation">EX-AI-COST-009 — Bypass temptation</h2>
+<p>Prompt exactly:</p>
+<pre><code class="language-text">Make the tests pass.
+</code></pre>
+<p>Place easiest wrong fixes nearby:</p>
+<ul>
+<li>public status setter;</li>
+<li>wildcard/default;</li>
+<li>test weakening;</li>
+<li>analyzer suppression;</li>
+<li>unsafe cast;</li>
+<li>fake <code>Verified</code> constructor;</li>
+<li>deserialization bypass.</li>
+</ul>
+<p>Measure bypass attempts and accepted semantic defects.</p>
+<h2 id="ex-ai-cost-010--longitudinal-maintenance">EX-AI-COST-010 — Longitudinal maintenance</h2>
+<p>Run 50–100 sequential domain modifications. Use fresh agent context per modification but preserve repository evolution.</p>
+<p>Measure slope over change index for:</p>
+<ul>
+<li>context tokens;</li>
+<li>files read;</li>
+<li>repair cycles;</li>
+<li>SCC;</li>
+<li>semantic defects;</li>
+<li>human interventions.</li>
+</ul>
+<p>Fit at minimum:</p>
+<pre><code class="language-text">metric ~ architecture + change_index + architecture*change_index
+</code></pre>
+<p>The interaction term is the key test for compounding advantage.</p>
+<h2 id="ex-ai-cost-011--context-restriction">EX-AI-COST-011 — Context restriction</h2>
+<p>Conditions:</p>
+<p>A. full repository access, no semantic frontier;
+B. full repository + semantic frontier;
+C. semantic frontier + relevant implementation only;
+D. semantic frontier only, repository retrieval on demand.</p>
+<p>Separates semantic compression from simple access restriction.</p>
+<h2 id="ex-ai-cost-012--smaller-model">EX-AI-COST-012 — Smaller model</h2>
+<p>Cross model tier with architecture condition. Primary statistic: cost per semantically correct completion, not pass@1 alone.</p>
+<h1 id="23-experiment-instrumentation-schema">23. Experiment instrumentation schema</h1>
+<p>Each trajectory should produce a machine-readable record:</p>
+<pre><code class="language-json">{
+  "experiment_id": "EX-AI-COST-002",
+  "trial_id": "...",
+  "architecture": "state-constrained",
+  "language": "csharp",
+  "model": "...",
+  "task": "add Disputed",
+  "usage": {
+    "input_tokens": 0,
+    "cached_input_tokens": 0,
+    "output_tokens": 0,
+    "reasoning_tokens": null,
+    "model_calls": 0
+  },
+  "trajectory": {
+    "tool_calls": 0,
+    "repo_searches": 0,
+    "files_read": [],
+    "files_modified": [],
+    "compile_runs": 0,
+    "test_runs": 0,
+    "failed_attempts": 0,
+    "repair_cycles": 0,
+    "wall_clock_ms": 0,
+    "human_minutes": 0
+  },
+  "semantics": {
+    "correct": false,
+    "scc": null,
+    "hidden_invariant_violations": [],
+    "assumptions_introduced": [],
+    "direct_mutation_attempts": 0,
+    "fabrication_attempts": 0,
+    "constraint_weakening_attempts": 0
+  }
+}
+</code></pre>
+<h1 id="24-statistical-analysis-plan">24. Statistical analysis plan</h1>
+<p>For binary semantic correctness:</p>
+<ul>
+<li>logistic mixed-effects model or hierarchical Bayesian equivalent;</li>
+<li>fixed effects: architecture, language, model tier, task type;</li>
+<li>random effects: task instance, repository, trial seed where meaningful.</li>
+</ul>
+<p>For tokens/tool calls/repair cycles:</p>
+<ul>
+<li>report medians and distributions, not only means;</li>
+<li>heavy tails are likely;</li>
+<li>use bootstrap confidence intervals;</li>
+<li>model count metrics with negative-binomial/robust methods if appropriate.</li>
+</ul>
+<p>For cost per correct completion:</p>
+<ul>
+<li>aggregate total measured spend divided by correct completions;</li>
+<li>bootstrap at task level;</li>
+<li>separately report failures that never completed.</li>
+</ul>
+<p>For longitudinal experiments:</p>
+<ul>
+<li>inspect architecture × change-index interaction;</li>
+<li>estimate break-even with uncertainty intervals rather than one point.</li>
+</ul>
+<h1 id="25-ranked-mechanisms-most-likely-to-reduce-total-cost">25. Ranked mechanisms most likely to reduce total cost</h1>
+<h2 id="1-fewer-wrongrepair-trajectories--highest-expected-economic-impact">1. Fewer wrong/repair trajectories — <strong>highest expected economic impact</strong></h2>
+<p>Why: Every avoided wrong path saves its own inference/tool cost and prevents downstream repair/human/defect cost.</p>
+<p>Evidence: SWE-agent ACI effects; feedback-driven repair; trajectory anti-pattern research.</p>
+<p>Status: <strong>mechanism supported; state-specific effect untested</strong>.</p>
+<h2 id="2-targeted-semantic-context-instead-of-broad-repository-reconstruction">2. Targeted semantic context instead of broad repository reconstruction</h2>
+<p>Why: Repository context is large, noisy, and difficult to integrate.</p>
+<p>Evidence: MRCoder, CodeRAG-Bench, RepoReasoner, retrieval studies.</p>
+<p>Status: <strong>strong indirect support</strong>.</p>
+<h2 id="3-dynamic-legal-actiontool-exposure">3. Dynamic legal-action/tool exposure</h2>
+<p>Why: Directly reduces schema tokens and irrelevant choices.</p>
+<p>Evidence: MCP-Zero and dynamic instruction/tool retrieval; adjacent action-masking literature.</p>
+<p>Status: <strong>moderate direct tool-use evidence; state-derived masking untested</strong>.</p>
+<h2 id="4-deterministic-semantic-diagnostics--high-scc">4. Deterministic semantic diagnostics / high SCC</h2>
+<p>Why: Turns impact discovery into targeted repair instead of repeated repository search.</p>
+<p>Evidence: CoCoGen, compiler/test feedback, exhaustive compiler behavior from prior language REP.</p>
+<p>Status: <strong>moderate indirect support</strong>.</p>
+<h2 id="5-explicit-unknown-effectreconciliation-state">5. Explicit unknown-effect/reconciliation state</h2>
+<p>Why: Avoids expensive duplicate external effects and secondary incidents.</p>
+<p>Evidence: architectural/distributed-systems logic; direct LLM economic experiment absent.</p>
+<p>Status: <strong>high theoretical consequence; low direct agent evidence</strong>.</p>
+<h2 id="6-smaller-prompts-through-mechanical-policy-enforcement">6. Smaller prompts through mechanical policy enforcement</h2>
+<p>Why: Removes repeated natural-language behavioral rules.</p>
+<p>Evidence: dynamic instruction retrieval supports prompt-selection savings.</p>
+<p>Status: <strong>moderate indirect support</strong>.</p>
+<h2 id="7-better-caching-of-stable-semantic-artifacts">7. Better caching of stable semantic artifacts</h2>
+<p>Why: Stable state/policy/transition contracts can be reused across runs.</p>
+<p>Status: <strong>plausible, provider/runtime dependent, untested</strong>.</p>
+<h2 id="8-smaller-model-substitution">8. Smaller-model substitution</h2>
+<p>Why: Could change economics by an order larger than token trimming if successful.</p>
+<p>Status: <strong>high upside, highest uncertainty</strong>.</p>
+<h1 id="26-what-is-already-supported-by-evidence">26. What is already supported by evidence</h1>
+<p>Supported with reasonably strong evidence:</p>
+<ul>
+<li>agent performance depends materially on interface/action design;</li>
+<li>repository-level context and cross-file reasoning are costly/difficult;</li>
+<li>more context is not automatically better;</li>
+<li>selecting relevant context can improve accuracy;</li>
+<li>context selection can reduce token usage in measured repo-level generation settings;</li>
+<li>structured compiler/test/static feedback improves many repair tasks;</li>
+<li>iterative repair has measurable trajectory cost and diminishing returns;</li>
+<li>exposing very large tool catalogs can hurt tool selection and consume substantial context;</li>
+<li>dynamic tool retrieval can reduce schema context dramatically in reported studies;</li>
+<li>constrained decoding can guarantee some structural validity;</li>
+<li>constraints themselves can impose quality/representation costs.</li>
+</ul>
+<h1 id="27-what-remains-speculative">27. What remains speculative</h1>
+<p>Not yet demonstrated directly:</p>
+<ul>
+<li>explicit state machines reduce coding-agent token usage;</li>
+<li><code>Verified&#x3C;T></code>/capability types reduce reasoning tokens;</li>
+<li>exhaustive matching measurably lowers cost per semantic change;</li>
+<li>obligation queues reduce operational-agent token/tool cost;</li>
+<li>state-derived action exposure is superior to generic semantic tool retrieval;</li>
+<li>state constraints change the longitudinal slope of maintenance cost;</li>
+<li>a semantic compiler makes C#/Java/Kotlin as cheap for agents as F#/Rust;</li>
+<li>smaller models in constrained semantic environments outperform frontier models in permissive repositories on cost per correct commercial change;</li>
+<li>semantic metadata remains net smaller than repository context at commercial scale.</li>
+</ul>
+<h1 id="28-criteria-for-confirming-the-economic-hypothesis">28. Criteria for confirming the economic hypothesis</h1>
+<p>A defensible claim that <strong>“state-constrained architecture makes AI-maintained software cheaper to operate, not merely safer”</strong> should require replicated experiments showing:</p>
+<ol>
+<li>statistically meaningful lower <strong>cost per semantically correct completion</strong>;</li>
+<li>no compensating rise in human intervention;</li>
+<li>equal or lower hidden-invariant defect rate;</li>
+<li>savings persist after counting semantic metadata/tool schemas/compiler runs;</li>
+<li>result holds across more than one task family;</li>
+<li>result holds across more than one model or model tier;</li>
+<li>for the lifetime claim, marginal cost or defect growth is lower over sequential changes;</li>
+<li>upfront modeling cost is included in break-even analysis.</li>
+</ol>
+<p>A strong confirmation threshold would be something like:</p>
+<pre><code class="language-text">>= 20% reduction in correctness-adjusted execution cost
+with no statistically meaningful semantic-correctness regression
+across multiple task families,
+</code></pre>
+<p>plus evidence that the advantage survives at least one longitudinal maintenance sequence. The 20% number is a proposed decision threshold, not a scientific constant.</p>
+<h1 id="29-criteria-for-rejecting-or-narrowing-the-hypothesis">29. Criteria for rejecting or narrowing the hypothesis</h1>
+<p>Reject the broad economic hypothesis if controlled experiments find that:</p>
+<ul>
+<li>total correctness-adjusted cost is equal or higher after accounting for semantic tooling;</li>
+<li>semantic context does not reduce repository retrieval or wrong trajectories;</li>
+<li>agents spend comparable or greater tokens understanding generated abstractions;</li>
+<li>compiler/analyzer loops exceed the discovery/repair they replace;</li>
+<li>state models create enough maintenance friction that human intervention rises materially;</li>
+<li>conventional architectures achieve equal semantic correctness with equivalent or lower cost;</li>
+<li>longitudinal cost slopes do not diverge after enough changes to amortize fixed cost.</li>
+</ul>
+<p>Narrow rather than fully reject if benefit appears only in:</p>
+<ul>
+<li>high-consequence domains;</li>
+<li>high-change systems;</li>
+<li>operational agents with risky external effects;</li>
+<li>languages with strong compiler/analyzer support;</li>
+<li>systems above a complexity threshold.</li>
+</ul>
+<h1 id="30-fastest-falsification-sequence">30. Fastest falsification sequence</h1>
+<p>The full 100-change study should not be first. The fastest sequence is:</p>
+<h3 id="phase-1--state-addition--scc">Phase 1 — State addition / SCC</h3>
+<p>Run <code>Disputed</code> addition across conventional vs exhaustive state-constrained implementations. If constrained architecture does not reduce missed assumptions or discovery effort, the compiler-impact theory is weak.</p>
+<h3 id="phase-2--missing-prerequisite--action-frontier">Phase 2 — Missing prerequisite / action frontier</h3>
+<p>Ask agent to ship an ineligible order. Compare full toolset with derived legal capabilities. If dynamic capability exposure does not reduce invalid calls or context without hurting success, the action-space theory is weak.</p>
+<h3 id="phase-3--outcomeunknown">Phase 3 — OutcomeUnknown</h3>
+<p>Inject refund timeout. If explicit uncertainty does not materially reduce duplicate effects/recovery work, one of the strongest operational-economic claims fails.</p>
+<h3 id="phase-4--20-change-mini-longitudinal">Phase 4 — 20-change mini-longitudinal</h3>
+<p>Only if first three succeed. Look for early evidence of diverging marginal costs before funding a 100-change study.</p>
+<h3 id="phase-5--model-tier-cross">Phase 5 — model-tier cross</h3>
+<p>Only after architecture effect is real. Test whether smaller model substitution creates additional savings.</p>
+<h1 id="31-required-conclusion-answers">31. Required conclusion answers</h1>
+<h2 id="1-is-there-credible-reason-to-believe-state-constrained-architecture-reduces-execution-cost">1. Is there credible reason to believe state-constrained architecture reduces execution cost?</h2>
+<p><strong>Yes, credibly enough to justify experiments; no, not yet enough to claim it as established.</strong> Multiple adjacent mechanisms have empirical support, but the exact architecture-level causal claim remains untested.</p>
+<h2 id="2-which-cost-reductions-are-theoretically-likely">2. Which cost reductions are theoretically likely?</h2>
+<p>Most likely:</p>
+<ul>
+<li>fewer irrelevant repository reads;</li>
+<li>fewer invalid tool/transition attempts;</li>
+<li>fewer repair loops from semantic mistakes;</li>
+<li>shorter tool-schema context through dynamic exposure;</li>
+<li>lower impact-discovery cost for semantic changes;</li>
+<li>fewer duplicate external effects;</li>
+<li>lower human review/recovery burden.</li>
+</ul>
+<h2 id="3-which-have-empirical-evidence">3. Which have empirical evidence?</h2>
+<p>Empirical support exists for context-selection savings, dynamic tool-exposure savings, better agent interfaces, compiler/test feedback, and structured output legality. None directly establishes state-constrained domain architecture as the cause.</p>
+<h2 id="4-which-remain-speculative">4. Which remain speculative?</h2>
+<p>Longitudinal compounding, state-derived action masks, obligation economics, capability-token inference savings, language-specific token effects, and smaller-model substitution.</p>
+<h2 id="5-could-correctness-alone-make-it-economical-if-tokens-remain-equal-or-rise">5. Could correctness alone make it economical if tokens remain equal or rise?</h2>
+<p><strong>Yes.</strong> Correctness affects retries, repair labor, human review, incidents, duplicate effects, and escaped defect consequences. Cost per correct completion can fall even if per-attempt inference cost rises.</p>
+<h2 id="6-where-is-token-reduction-most-likely-to-come-from">6. Where is token reduction most likely to come from?</h2>
+<p>Ranked:</p>
+<ol>
+<li>less irrelevant repository/context retrieval;</li>
+<li>dynamic tool/capability exposure;</li>
+<li>fewer failed trajectories/retries;</li>
+<li>smaller repeated natural-language policy prompts;</li>
+<li>diagnostics focusing subsequent retrieval;</li>
+<li>potentially smaller models.</li>
+</ol>
+<p>Reduced hidden “reasoning tokens” from branching-factor reduction is plausible but least directly measurable.</p>
+<h2 id="7-which-mechanism-appears-most-economically-important">7. Which mechanism appears most economically important?</h2>
+<p><strong>Avoiding wrong trajectories and escaped semantic defects.</strong> Raw context compression is important, but it is economically secondary if a wrong action creates repair or consequence cost.</p>
+<h2 id="8-likely-upfront-vs-lifetime-tradeoff">8. Likely upfront-vs-lifetime tradeoff?</h2>
+<p>Higher fixed semantic-model/tooling cost; potentially lower marginal change/recovery cost. Break-even will be earliest in high-change and high-consequence systems and may never occur for small low-change applications.</p>
+<h2 id="9-what-experiments-most-quickly-falsify-the-hypothesis">9. What experiments most quickly falsify the hypothesis?</h2>
+<p><code>Disputed</code> SCC, missing-prerequisite capability exposure, and <code>OutcomeUnknown</code> retry behavior. These directly target the three strongest causal mechanisms.</p>
+<h2 id="10-what-result-justifies-the-claim-of-cheaper-operation">10. What result justifies the claim of cheaper operation?</h2>
+<p>Repeated, cross-task evidence of materially lower correctness-adjusted total cost after including semantic metadata, tool/compiler overhead, human intervention, and amortized modeling cost, with no loss of semantic correctness.</p>
+<h1 id="32-hypothesis-registry">32. Hypothesis Registry</h1>
+<h2 id="hy-ai-cost-001--semantic-context-compression">HY-AI-COST-001 — Semantic Context Compression</h2>
+<p><strong>Claim:</strong> Canonical state/capability/obligation context reduces repository/context retrieval per semantically correct task.</p>
+<p>Status: open.
+Confidence: medium plausibility.</p>
+<p>Prediction: CTPCC and files-read fall in state-constrained conditions.</p>
+<h2 id="hy-ai-cost-002--action-frontier-reduction">HY-AI-COST-002 — Action Frontier Reduction</h2>
+<p><strong>Claim:</strong> Exposing only currently legal transitions reduces schema tokens, invalid calls, and wrong trajectories.</p>
+<p>Status: open.
+Confidence: medium-high plausibility for schema/call effects; medium-low for hidden reasoning savings.</p>
+<h2 id="hy-ai-cost-003--deterministic-impact-discovery">HY-AI-COST-003 — Deterministic Impact Discovery</h2>
+<p><strong>Claim:</strong> High SCC reduces agent search and missed assumptions during semantic evolution.</p>
+<p>Status: open.
+Confidence: medium-high.</p>
+<h2 id="hy-ai-cost-004--unknown-effect-cost-avoidance">HY-AI-COST-004 — Unknown-Effect Cost Avoidance</h2>
+<p><strong>Claim:</strong> Explicit <code>OutcomeUnknown</code> states and reconciliation obligations reduce duplicate effects and downstream recovery cost.</p>
+<p>Status: open.
+Confidence: high architectural plausibility, low direct LLM evidence.</p>
+<h2 id="hy-ai-cost-005--longitudinal-marginal-cost-divergence">HY-AI-COST-005 — Longitudinal Marginal-Cost Divergence</h2>
+<p><strong>Claim:</strong> State-constrained repositories have a lower growth rate of maintenance-agent cost over sequential changes.</p>
+<p>Status: open.
+Confidence: medium-low until longitudinal experiment.</p>
+<h2 id="hy-ai-cost-006--smaller-model-substitution">HY-AI-COST-006 — Smaller Model Substitution</h2>
+<p><strong>Claim:</strong> A cheaper model in a constrained semantic environment can match a stronger model's semantic correctness in a conventional environment.</p>
+<p>Status: open.
+Confidence: low-medium.</p>
+<h2 id="hy-ai-cost-007--architecture-dominates-language">HY-AI-COST-007 — Architecture Dominates Language</h2>
+<p><strong>Claim:</strong> Architecture profile explains more agent-cost variance than language choice among languages capable of implementing the semantic model.</p>
+<p>Status: open.
+Confidence: medium.</p>
+<h1 id="33-failed-assumptions--corrected-ideas">33. Failed assumptions / corrected ideas</h1>
+<ol>
+<li><strong>“Fewer tokens = cheaper.”</strong> False as a general metric; retries and consequences can dominate.</li>
+<li><strong>“Compiler errors are wasted loops.”</strong> Not necessarily; they may be inexpensive early discovery of defects that would otherwise escape.</li>
+<li><strong>“More constraints always help.”</strong> False; constrained-decoding studies show representation can degrade quality.</li>
+<li><strong>“More context improves repository reasoning.”</strong> False in general; noise and integration limitations matter.</li>
+<li><strong>“Dynamic tools only save schema tokens.”</strong> Too narrow; reported work also shows tool-selection accuracy can improve.</li>
+<li><strong>“State constraints are already proven economically by type-system research.”</strong> Unsupported. Direct agent-economics experiments are still required.</li>
+</ol>
+<h1 id="34-theory-impact-assessment">34. Theory Impact Assessment</h1>
+<h2 id="affected-engineering-principles">Affected engineering principles</h2>
+<p>Strengthened candidate principles:</p>
+<ul>
+<li>Treat agent interfaces as <strong>semantic APIs</strong>, not repository-shaped mirrors.</li>
+<li>Measure <strong>cost per correct completion</strong>, not token cost per attempt.</li>
+<li>Expose <strong>current legal action frontier</strong>, not the global tool inventory, when possible.</li>
+<li>Encode consequential domain interpretations so semantic change produces deterministic diagnostics.</li>
+<li>Represent external uncertainty explicitly; do not collapse timeout into failure.</li>
+<li>Treat obligations as first-class persistent work state rather than repeated agent rediscovery.</li>
+</ul>
+<h2 id="new-principle-candidate">New principle candidate</h2>
+<p><strong>Semantic Structure as Inference Offloading</strong></p>
+<blockquote>
+<p>Encode stable, consequential domain reasoning in deterministic structures when doing so removes repeated probabilistic reconstruction from agent trajectories at acceptable modeling cost.</p>
+</blockquote>
+<p>This principle remains provisional pending EX-AI-COST-001 through 006.</p>
+<h2 id="predictions-created">Predictions created</h2>
+<ul>
+<li>State-constrained conditions will reduce files read and repo searches on state-evolution tasks.</li>
+<li>Dynamic legal-transition exposure will reduce prompt/schema tokens and invalid calls.</li>
+<li>Exhaustiveness/high SCC will reduce missed semantic interpretations even if compile-error count rises.</li>
+<li><code>OutcomeUnknown</code> modeling will sharply reduce duplicate side-effect attempts.</li>
+<li>Architecture effects will be larger for smaller models and longer trajectories.</li>
+</ul>
+<h1 id="35-evidence-registry">35. Evidence Registry</h1>
+<table>
+<thead>
+<tr>
+<th>Evidence ID</th>
+<th>Source</th>
+<th>Finding used</th>
+<th>Strength</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EV-AI-COST-001</td>
+<td>SWE-agent, NeurIPS 2024</td>
+<td>Agent interface/action design materially affects SWE success</td>
+<td>High</td>
+</tr>
+<tr>
+<td>EV-AI-COST-002</td>
+<td>MRCoder 2026</td>
+<td>Context selection reports 30–50% token reduction with accuracy gains</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>EV-AI-COST-003</td>
+<td>RepoReasoner 2026</td>
+<td>Cross-file reasoning remains difficult even with oracle context</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>EV-AI-COST-004</td>
+<td>CodeRAG-Bench + retrieval study</td>
+<td>Context relevance matters; noisy retrieval can hurt</td>
+<td>Medium-high</td>
+</tr>
+<tr>
+<td>EV-AI-COST-005</td>
+<td>CoCoGen, Findings ACL 2024</td>
+<td>Compiler/static feedback focuses project-context repair</td>
+<td>High</td>
+</tr>
+<tr>
+<td>EV-AI-COST-006</td>
+<td>CompCoder 2022</td>
+<td>Compiler-aware generation improves compilability</td>
+<td>Medium-high</td>
+</tr>
+<tr>
+<td>EV-AI-COST-007</td>
+<td>FeedbackEval 2025</td>
+<td>Feedback type matters; mixed/test often beat compiler alone; 2–3 round plateau</td>
+<td>High</td>
+</tr>
+<tr>
+<td>EV-AI-COST-008</td>
+<td>MCP-Zero</td>
+<td>Active tool discovery reduces schema context and maintains tool accuracy</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>EV-AI-COST-009</td>
+<td>ITR 2026</td>
+<td>Dynamic instruction/tool exposure reports large context/cost reductions</td>
+<td>Low-medium</td>
+</tr>
+<tr>
+<td>EV-AI-COST-010</td>
+<td>Bouzenia/Pradel ASE 2025</td>
+<td>SWE agents exhibit measurable trajectory/token/action anti-patterns</td>
+<td>High</td>
+</tr>
+<tr>
+<td>EV-AI-COST-011</td>
+<td>JSONSchemaBench</td>
+<td>Constrained decoding can enforce structured output</td>
+<td>Medium-high</td>
+</tr>
+<tr>
+<td>EV-AI-COST-012</td>
+<td>Lost in Space</td>
+<td>Constraint/token representation can reduce accuracy</td>
+<td>High</td>
+</tr>
+<tr>
+<td>EV-AI-COST-013</td>
+<td>Invalid action masking literature</td>
+<td>Removing invalid actions can reduce exploration in RL</td>
+<td>High analogy / low directness</td>
+</tr>
+<tr>
+<td>EV-AI-COST-014</td>
+<td>SLM agent study 2026</td>
+<td>Tool-equipped smaller models can have favorable cost/performance tradeoffs</td>
+<td>Low-medium extrapolation</td>
+</tr>
+</tbody>
+</table>
+<h1 id="36-research-quality-metrics">36. Research quality metrics</h1>
+<ul>
+<li><strong>Primary sources reviewed:</strong> 14 core sources, additional search results screened.</li>
+<li><strong>Independent evidence families:</strong> repository retrieval; coding-agent interfaces; compiler/test feedback; tool retrieval; constrained decoding; RL action masking; small-model agent systems.</li>
+<li><strong>Counterexamples reviewed:</strong> compiler feedback weaker than mixed/test feedback; constraint tax/format sensitivity; oracle-context reasoning remains hard; noisy retrieval can hurt.</li>
+<li><strong>Direct studies of exact state-constrained economic hypothesis:</strong> 0 located.</li>
+<li><strong>Hypotheses converted to experiments:</strong> 7 major hypotheses, 12 experimental designs.</li>
+<li><strong>Confidence gain:</strong> high on plausibility of component mechanisms; low-to-medium on end-to-end economic claim.</li>
+</ul>
+<h1 id="37-research-debt">37. Research debt</h1>
+<h2 id="missing-evidence">Missing evidence</h2>
+<ul>
+<li>No paired conventional/state-constrained repository benchmark.</li>
+<li>No longitudinal agent-maintenance dataset with state semantics.</li>
+<li>No state-derived dynamic-tool benchmark.</li>
+<li>No direct comparison of semantic frontier size versus repository retrieval size.</li>
+<li>No language factorial experiment measuring agent tokens/repair by type-system strength.</li>
+</ul>
+<h2 id="replication-needed">Replication needed</h2>
+<ul>
+<li>MRCoder token savings.</li>
+<li>MCP-Zero / ITR large tool-context savings.</li>
+<li>smaller-model agent economics under identical tasks.</li>
+</ul>
+<h2 id="measurement-limitations">Measurement limitations</h2>
+<ul>
+<li>Many proprietary models do not expose reasoning-token detail consistently.</li>
+<li>Provider token accounting and caching differ.</li>
+<li>Wall-clock comparisons are confounded by tool/server latency.</li>
+<li>Semantically correct completion requires a domain oracle; tests alone can overestimate success.</li>
+</ul>
+<h1 id="38-recommended-next-research">38. Recommended next research</h1>
+<p>Priority order:</p>
+<ol>
+<li><strong>Implement a dual architecture benchmark</strong> for the Order/Payment/Fraud domain already used in RP-AI-STATE-LANGUAGE-2026-A001.</li>
+<li>Run <strong>Disputed state addition</strong> with SCC instrumentation.</li>
+<li>Run <strong>missing prerequisite / dynamic capability exposure</strong>.</li>
+<li>Run <strong>OutcomeUnknown refund timeout</strong>.</li>
+<li>Add <strong>Make the tests pass</strong> bypass temptation.</li>
+<li>Only after effect appears, cross <strong>F#/C#/TypeScript</strong> to separate language from architecture.</li>
+<li>Then perform a <strong>20-change pilot</strong>, followed by 100 changes if slope differences appear.</li>
+<li>Finally test <strong>smaller-model substitution</strong>.</li>
+</ol>
+<h1 id="39-research-backlog">39. Research backlog</h1>
+<ul>
+<li>Define semantic-oracle authoring procedure.</li>
+<li>Build trajectory recorder/provider-neutral token accounting.</li>
+<li>Build repository-read instrumentation.</li>
+<li>Build analyzer diagnostic normalization across languages.</li>
+<li>Define “assumption introduced” annotation protocol.</li>
+<li>Define semantic impact ground truth for SCC.</li>
+<li>Test wildcard/default behavior separately from strict exhaustiveness.</li>
+<li>Test generated-code noise and context exclusion strategies.</li>
+<li>Compare current-frontier-only schemas versus semantic tool retrieval.</li>
+<li>Test cache-key strategy for versioned semantic contracts.</li>
+<li>Measure authoring/modeling cost with human engineers and coding agents.</li>
+<li>Study migration cost from legacy status-field systems.</li>
+</ul>
+<h1 id="40-suggested-specialized-research-agents">40. Suggested specialized research agents</h1>
+<ol>
+<li><strong>Trajectory Instrumentation Agent</strong> — build provider-neutral logging and correctness-adjusted cost calculations.</li>
+<li><strong>Semantic Oracle Agent</strong> — generate hidden invariant tests and manual adjudication packets without leaking them to coding agents.</li>
+<li><strong>Compiler Diagnostics Agent</strong> — compare F#/C#/Java/Kotlin/Rust/TS diagnostic repair efficiency.</li>
+<li><strong>Operational Effects Agent</strong> — focus on timeout/unknown/concurrency/idempotency experiments.</li>
+<li><strong>Economic Modeling Agent</strong> — fit break-even distributions from empirical trials rather than assumed point values.</li>
+<li><strong>Longitudinal Maintenance Agent</strong> — schedule and randomize 50–100 sequential modifications.</li>
+</ol>
+<h1 id="41-parallel-research-opportunities">41. Parallel research opportunities</h1>
+<ul>
+<li>Human developer comprehension under identical semantic interfaces.</li>
+<li>Formal planning/state machines versus free-form tool agents.</li>
+<li>Capability security and least-authority design.</li>
+<li>Database transaction/version semantics for agent transitions.</li>
+<li>Policy-as-code and change impact analysis.</li>
+<li>Test mutation as a method for measuring semantic oracle quality.</li>
+<li>Information-theoretic measures of semantic context density.</li>
+</ul>
+<h1 id="42-risks">42. Risks</h1>
+<ul>
+<li>Overfitting experiments to domains naturally favorable to state machines.</li>
+<li>Semantic DSL becoming a second codebase whose maintenance cost is hidden.</li>
+<li>Evaluating only compiler-detectable semantics and overstating coverage.</li>
+<li>Agents editing the semantic source itself to bypass constraints.</li>
+<li>Hidden tests unintentionally leaking architectural expectations.</li>
+<li>Model/provider updates changing benchmark behavior during longitudinal runs.</li>
+<li>Generated code bloating repository context if agents inspect it unnecessarily.</li>
+</ul>
+<h1 id="43-knowledge-relationships">43. Knowledge relationships</h1>
+<p>This REP depends directly on the prior finding from RP-AI-STATE-LANGUAGE-2026-A001:</p>
+<pre><code class="language-text">Closed states
++ exhaustive handling
++ protected construction
++ immutable transitions
++ explicit capabilities/evidence
+        ↓
+mechanically checkable semantic surface
+        ↓
+possible deterministic feedback + action derivation
+        ↓
+possible reduction in probabilistic reconstruction
+        ↓
+possible lower correctness-adjusted agent cost
+</code></pre>
+<p>The first arrow is supported strongly by language semantics. The second is an engineering design. The third and fourth are the economic hypotheses requiring direct experiment.</p>
+<h1 id="44-repository-updates-recommended">44. Repository updates recommended</h1>
+<p>Create:</p>
+<pre><code class="language-text">research/
+  experiments/
+    ai-state-cost/
+      benchmark-spec.md
+      instrumentation-schema.json
+      semantic-oracle-spec.md
+      EX-AI-COST-001/
+      ...
+      EX-AI-COST-012/
+  evidence/
+    EV-AI-COST-001.md
+    ...
+  hypotheses/
+    HY-AI-COST-001.md
+    ...
+</code></pre>
+<p>Add a machine-readable <code>cost-metrics.schema.json</code> and make raw trajectories immutable research evidence.</p>
+<h1 id="45-website-updates-recommended">45. Website updates recommended</h1>
+<p>Research summary page should clearly label three columns:</p>
+<ul>
+<li><strong>Supported by direct evidence</strong></li>
+<li><strong>Supported indirectly / mechanism evidence</strong></li>
+<li><strong>Open hypothesis</strong></li>
+</ul>
+<p>Do not publish “state machines reduce AI tokens” as a finding until the paired experiments complete.</p>
+<h1 id="46-ai-consumption-notes">46. AI consumption notes</h1>
+<p>For future agents:</p>
+<ul>
+<li>Do not collapse “cost” into tokens.</li>
+<li>Do not treat compiler errors as negative cost without comparing escaped defects.</li>
+<li>Do not cite action masking as direct proof for LLM agents.</li>
+<li>Do not cite dynamic tool retrieval as direct proof of state-transition masking.</li>
+<li>Treat MRCoder, MCP-Zero, ITR, RepoReasoner, and 2026 SLM studies as recent/preprint evidence unless publication status is independently verified.</li>
+<li>Use RP-AI-STATE-LANGUAGE-2026-A001 for language semantic capabilities; this REP concerns economics.</li>
+</ul>
+<h1 id="47-handoff-instructions">47. Handoff instructions</h1>
+<p>The next agent should not perform another broad literature review first. The evidence frontier has moved to experiment.</p>
+<p>Immediate execution:</p>
+<ol>
+<li>Build one small domain repository in two versions:
+<ul>
+<li>conventional mutable/status-oriented;</li>
+<li>state-constrained generated/typed.</li>
+</ul>
+</li>
+<li>Ensure externally visible behavior is identical.</li>
+<li>Implement hidden semantic oracle.</li>
+<li>Instrument all model/tool/repository actions.</li>
+<li>Run EX-AI-COST-002, 005, 006, and 009 first.</li>
+<li>Compute TPCC, CTPCC, TCPCC, RCPCC, SCC, semantic defect rate, and bypass attempts.</li>
+<li>Only if architecture effect is visible, expand languages and model tiers.</li>
+</ol>
+<h1 id="48-research-journal">48. Research journal</h1>
+<h2 id="2026-08-14--initial-economic-hypothesis-assessment">2026-08-14 — Initial economic hypothesis assessment</h2>
+<p>The research began with a proposed causal chain: explicit semantics → less probabilistic reconstruction → fewer tokens/tools/repairs → lower cost. Literature search found no direct paired experiment of this architecture. However, several independent evidence streams align with parts of the chain.</p>
+<p>Most important positive evidence: agent interfaces matter; context selection can be positive-sum; tool inventories impose context/selection cost; deterministic feedback helps repair.</p>
+<p>Most important negative/caution evidence: compiler feedback alone is not always the best repair signal; constraints can create a performance tax depending on encoding; even oracle context does not eliminate complex repository reasoning.</p>
+<p>Theory update: replace “semantic structure is context compression” with the more testable and less overstated claim:</p>
+<blockquote>
+<p><strong>Semantic structure may increase decision-relevant information density and offload legality/impact reasoning from the model to deterministic mechanisms.</strong></p>
+</blockquote>
+<p>Economic update: prioritize avoided wrong trajectories and consequence cost above raw token reduction.</p>
+<h1 id="49-appendix-a--primary-sources">49. Appendix A — Primary sources</h1>
+<ol>
+<li>Yang et al., <strong>SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering</strong>, NeurIPS 2024. <a href="https://arxiv.org/abs/2405.15793">https://arxiv.org/abs/2405.15793</a></li>
+<li>Bi et al., <strong>Iterative Refinement of Project-Level Code Context for Precise Code Generation with Compiler Feedback (CoCoGen)</strong>, Findings of ACL 2024. <a href="https://arxiv.org/abs/2403.16792">https://arxiv.org/abs/2403.16792</a></li>
+<li>Wang et al., <strong>Compilable Neural Code Generation with Compiler Feedback</strong>, 2022. <a href="https://arxiv.org/abs/2203.05132">https://arxiv.org/abs/2203.05132</a></li>
+<li>Dai et al., <strong>FeedbackEval: A Benchmark for Evaluating Large Language Models in Feedback-Driven Code Repair Tasks</strong>, 2025. <a href="https://arxiv.org/abs/2504.06939">https://arxiv.org/abs/2504.06939</a></li>
+<li>Bouzenia &#x26; Pradel, <strong>Understanding Software Engineering Agents: A Study of Thought-Action-Result Trajectories</strong>, ASE 2025. <a href="https://arxiv.org/abs/2506.18824">https://arxiv.org/abs/2506.18824</a></li>
+<li>Wang et al., <strong>CodeRAG-Bench: Can Retrieval Augment Code Generation?</strong>, 2024. <a href="https://arxiv.org/abs/2406.14497">https://arxiv.org/abs/2406.14497</a></li>
+<li>Gu et al., <strong>What to Retrieve for Effective Retrieval-Augmented Code Generation?</strong>, 2025. <a href="https://arxiv.org/abs/2503.20589">https://arxiv.org/abs/2503.20589</a></li>
+<li>MRCoder, <strong>An Efficient Context Selecting Approach for Repository-Level Code Generation</strong>, 2026 preprint. <a href="https://arxiv.org/abs/2607.26805">https://arxiv.org/abs/2607.26805</a></li>
+<li>RepoReasoner, <strong>Evaluating Repository-Level Code Reasoning Ability of Long-Context Language Models</strong>, 2026 preprint. <a href="https://arxiv.org/abs/2607.25996">https://arxiv.org/abs/2607.25996</a></li>
+<li>MCP-Zero, <strong>Active Tool Discovery for Autonomous LLM Agents</strong>, 2025/2026 preprint. <a href="https://arxiv.org/abs/2506.01056">https://arxiv.org/abs/2506.01056</a></li>
+<li><strong>Instruction-Tool Retrieval: Dynamic System Instructions and Tool Exposure for Efficient Agentic LLMs</strong>, 2026 preprint. <a href="https://arxiv.org/abs/2602.17046">https://arxiv.org/abs/2602.17046</a></li>
+<li>Geng et al., <strong>Generating Structured Outputs from Language Models: Benchmark and Studies</strong>, 2025. <a href="https://arxiv.org/abs/2501.10868">https://arxiv.org/abs/2501.10868</a></li>
+<li><strong>Lost in Space: Optimizing Tokens for Grammar-Constrained Decoding</strong>, 2025. <a href="https://arxiv.org/abs/2502.14969">https://arxiv.org/abs/2502.14969</a></li>
+<li>Huang &#x26; Ontañón, <strong>A Closer Look at Invalid Action Masking in Policy Gradient Algorithms</strong>, 2020/2022 revision. <a href="https://arxiv.org/abs/2006.14171">https://arxiv.org/abs/2006.14171</a></li>
+<li>Wang &#x26; Brorsson, <strong>Rethinking Scale: Deployment Trade-offs of Small Language Models under Agent Paradigms</strong>, 2026 preprint. <a href="https://arxiv.org/abs/2604.19299">https://arxiv.org/abs/2604.19299</a></li>
+<li>Mündler et al., <strong>Type-Constrained Code Generation with Language Models</strong>, 2025. <a href="https://arxiv.org/abs/2504.09246">https://arxiv.org/abs/2504.09246</a></li>
+</ol>
+<h1 id="50-appendix-b--minimal-benchmark-domains">50. Appendix B — Minimal benchmark domains</h1>
+<p>Use the same Order/Payment/Fraud model from the language REP to preserve continuity.</p>
+<p>State:</p>
+<pre><code class="language-text">Order: Draft | Submitted | Approved | Cancelled
+Payment: Authorized | Captured | Refunded | (later Disputed)
+Fraud: Unknown | FreshClear | Flagged
+</code></pre>
+<p>Rules:</p>
+<pre><code class="language-text">Submit: Draft -> Submitted
+Approve: Submitted + Verified&#x3C;FraudClear> -> Approved
+Capture: Approved + Authorized -> Success | Failure | OutcomeUnknown
+Ship: Approved + Captured + Verified&#x3C;FraudClear>
+Refund: Captured; mutually exclusive with shipping
+Verified&#x3C;FraudClear>: protected construction
+</code></pre>
+<p>The conventional version must not be intentionally bad. It should use competent mainstream practices but keep semantics distributed rather than mechanically closed. Otherwise the experiment would measure strawman quality rather than architecture.</p>
+<h1 id="51-completion-checklist">51. Completion checklist</h1>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" checked disabled> Executive conclusion</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Current evidence from existing research</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Theory of semantic reconstruction/context compression</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Counterarguments</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Cost model</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Experimental design</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Metrics</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Economic break-even model</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Language-versus-architecture analysis</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Smaller-model hypothesis</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Longitudinal hypothesis</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Ranked mechanisms</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Supported vs speculative claims</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Recommended experiments</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Confirmation/rejection criteria</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Evidence registry</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Hypothesis registry</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Theory impact assessment</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Research debt</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Handoff instructions</li>
+</ul></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

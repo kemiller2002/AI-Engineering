@@ -40,7 +40,7 @@ named but absent specification documents were invented.
 
 Two duplicate pairs were verified by SHA-256 before consolidation:
 
-- The Time Entry copy of `dependency-minimal-browser-kernel-architecture-policy.txt`
+- The Time Entry copy of `dependency-minimal-browser-kernel-architecture-policy.md`
   matched the generic copy (`6993d4d35c0389bdcbfc9f1bcca7e7c14e1f39494190be6b34ca952d809c37e9`).
 - `state_modularity_literature_deep_research_2026-08-14 2.txt` matched the
   unsuffixed file (`2e57aea1cd25cf02a0c567397d008f7bf0326c8f543160b96005b7071b35a8df`).

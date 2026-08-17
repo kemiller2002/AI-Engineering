@@ -1,0 +1,594 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Time Entry System — Large-View Architecture v0.1 | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">Time Entry System — Large-View Architecture v0.1</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>content/projects/time-entry/architecture/time-entry-large-view-architecture-v0.1.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#time-entry-system-large-view-architecture-v0-1">Time Entry System — Large-View Architecture v0.1</a></li><li><a href="#1-large-view-architecture">1. Large-View Architecture</a></li><li><a href="#2-layer-1-presentation">2. Layer 1 — Presentation</a></li><li><a href="#presentation-responsibilities">Presentation responsibilities</a></li><li><a href="#presentation-must-not-own">Presentation must NOT own</a></li><li><a href="#3-layer-2-application-domain-in-wasm">3. Layer 2 — Application + Domain in WASM</a></li><li><a href="#wasm-responsibilities">WASM responsibilities</a></li><li><a href="#wasm-should-not-know-github-details">WASM should not know GitHub details</a></li><li><a href="#4-layer-3-service-infrastructure-layer">4. Layer 3 — Service / Infrastructure Layer</a></li><li><a href="#service-responsibilities">Service responsibilities</a></li><li><a href="#example-conceptual-service-operations">Example conceptual service operations</a></li><li><a href="#5-logical-service-layer-vs-physical-server">5. Logical Service Layer vs Physical Server</a></li><li><a href="#6-layer-4-github-persistence">6. Layer 4 — GitHub Persistence</a></li><li><a href="#persistence-flow">Persistence flow</a></li><li><a href="#7-persistence-document-partition">7. Persistence Document Partition</a></li><li><a href="#8-versioning-and-optimistic-concurrency">8. Versioning and Optimistic Concurrency</a></li><li><a href="#9-unknown-write-outcomes">9. Unknown Write Outcomes</a></li><li><a href="#outcomeunknown-flow">OutcomeUnknown flow</a></li><li><a href="#10-conflict-resolution">10. Conflict Resolution</a></li><li><a href="#11-dependency-direction">11. Dependency Direction</a></li><li><a href="#12-browser-wasm-interaction-pattern">12. Browser/WASM Interaction Pattern</a></li><li><a href="#13-state-ownership">13. State Ownership</a></li><li><a href="#domain-state">Domain state</a></li><li><a href="#execution-synchronization-state">Execution/synchronization state</a></li><li><a href="#ephemeral-ui-state">Ephemeral UI state</a></li><li><a href="#14-no-duplicate-business-semantics">14. No Duplicate Business Semantics</a></li><li><a href="#15-minimal-dependencies">15. Minimal Dependencies</a></li><li><a href="#16-authentication-boundary">16. Authentication Boundary</a></li><li><a href="#17-why-this-architecture-is-being-tested">17. Why This Architecture Is Being Tested</a></li><li><a href="#18-architecture-non-goals">18. Architecture Non-Goals</a></li><li><a href="#19-current-large-view-architecture-summary">19. Current Large-View Architecture Summary</a></li> </ol> </aside> <section class="document-body"><h1 id="time-entry-system--large-view-architecture-v01">Time Entry System — Large-View Architecture v0.1</h1>
+<p>Date: 2026-08-14
+Status: Initial architecture
+Purpose: Record the high-level architecture for the first implementation of the time-entry system while preserving a strict separation between presentation, application/domain semantics, infrastructure/services, and persistence.</p>
+<p>This document describes HOW the current implementation is organized.</p>
+<p>It does not replace the business requirements or the application-specific state model.</p>
+<p>Core architectural rule:</p>
+<blockquote>
+<p>WASM owns application meaning. TypeScript and GitHub do not.</p>
+</blockquote>
+<p>A second important rule:</p>
+<blockquote>
+<p>Logical architectural layers do not have to be separate deployment processes.</p>
+</blockquote>
+<p>The service layer may initially run in the browser while remaining architecturally distinct from presentation and domain code.</p>
+<hr>
+<h1 id="1-large-view-architecture">1. Large-View Architecture</h1>
+<p>The first implementation has four logical layers:</p>
+<pre><code>1. Presentation
+   HTML / CSS / minimal TypeScript
+
+2. Application + Domain
+   WASM
+   application-specific semantic state and behavior
+
+3. Infrastructure / Services
+   persistence coordination
+   GitHub repository adapter
+   synchronization
+   authentication boundary
+   version / conflict handling
+
+4. Persistence
+   GitHub repository
+   JSON documents
+   Git SHAs / versions
+   commit history
+</code></pre>
+<p>High-level flow:</p>
+<pre><code>┌─────────────────────────────────────────────┐
+│              Browser Application            │
+│                                             │
+│  HTML / CSS                                 │
+│  Minimal TypeScript Kernel                  │
+│  WASM Application / Domain Core             │
+└──────────────────────┬──────────────────────┘
+                       │
+                       │ application commands / queries
+                       ▼
+┌─────────────────────────────────────────────┐
+│                Service Layer                │
+│                                             │
+│  application operations                     │
+│  persistence coordination                   │
+│  version / conflict handling                │
+│  GitHub protocol                            │
+│  authentication boundary                    │
+└──────────────────────┬──────────────────────┘
+                       │
+                       │ GitHub API
+                       ▼
+┌─────────────────────────────────────────────┐
+│             GitHub Data Store               │
+│                                             │
+│  JSON documents                             │
+│  Git versions / SHAs                        │
+│  commits / history                          │
+└─────────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h1 id="2-layer-1--presentation">2. Layer 1 — Presentation</h1>
+<p>The presentation layer consists of:</p>
+<pre><code>HTML
+CSS
+minimal TypeScript
+</code></pre>
+<p>The presentation layer is responsible for browser interaction and visual behavior.</p>
+<p>It is NOT the authoritative business/domain layer.</p>
+<h2 id="presentation-responsibilities">Presentation responsibilities</h2>
+<p>TypeScript may own:</p>
+<ul>
+<li>DOM event handling;</li>
+<li>DOM updates;</li>
+<li>rendering;</li>
+<li>route/history handling if needed;</li>
+<li>browser-native fetch;</li>
+<li>WASM bootstrap;</li>
+<li>serialization bridge;</li>
+<li>browser cache;</li>
+<li>ephemeral UI state.</li>
+</ul>
+<p>Examples of acceptable UI-only state:</p>
+<ul>
+<li>selected day;</li>
+<li>active tab;</li>
+<li>open modal;</li>
+<li>focused control;</li>
+<li>scroll position;</li>
+<li>current route;</li>
+<li>temporary input before submission.</li>
+</ul>
+<h2 id="presentation-must-not-own">Presentation must NOT own</h2>
+<p>TypeScript must not independently implement:</p>
+<ul>
+<li>time-entry lifecycle rules;</li>
+<li>six-minute invariants;</li>
+<li>overlap rules;</li>
+<li>project eligibility rules;</li>
+<li>split legality;</li>
+<li>correction legality;</li>
+<li>totals as an authoritative business calculation;</li>
+<li>capability derivation;</li>
+<li>semantic transition validity.</li>
+</ul>
+<p>If a business rule exists in WASM/domain code, do not duplicate it in TypeScript.</p>
+<hr>
+<h1 id="3-layer-2--application--domain-in-wasm">3. Layer 2 — Application + Domain in WASM</h1>
+<p>WASM is the semantic center of the application.</p>
+<p>This is where application-specific meaning lives.</p>
+<p>The domain should be represented directly using application-specific types and operations.</p>
+<p>Examples:</p>
+<pre><code>TimeEntry
+Project
+Label
+Person
+
+CreateTimeEntry
+CorrectTimeEntry
+SplitTimeEntry
+VoidTimeEntry
+</code></pre>
+<p>Do not implement a generic metadata-driven state engine in place of these concepts.</p>
+<h2 id="wasm-responsibilities">WASM responsibilities</h2>
+<p>WASM should own:</p>
+<ul>
+<li>TimeEntry domain types;</li>
+<li>Project domain types;</li>
+<li>Label domain types;</li>
+<li>Person domain types;</li>
+<li>TimeEntryStatus;</li>
+<li>ProjectStatus;</li>
+<li>six-minute unit representation;</li>
+<li>domain invariants;</li>
+<li>transition requirements;</li>
+<li>split logic;</li>
+<li>correction logic;</li>
+<li>void/supersede logic;</li>
+<li>overlap detection;</li>
+<li>totals;</li>
+<li>domain projections;</li>
+<li>capability derivation;</li>
+<li>structured domain diagnostics;</li>
+<li>validation of persistence data into domain types where practical.</li>
+</ul>
+<h2 id="wasm-should-not-know-github-details">WASM should not know GitHub details</h2>
+<p>The domain/application layer should not depend directly on:</p>
+<ul>
+<li>GitHub REST URL paths;</li>
+<li>GitHub repository layout details;</li>
+<li>GitHub HTTP headers;</li>
+<li>GitHub token format;</li>
+<li>GitHub Contents API implementation details.</li>
+</ul>
+<p>Conceptually, the domain/application layer should work with service-level operations such as:</p>
+<pre><code>LoadWeek
+SaveWeek
+LoadProjects
+SaveProject
+</code></pre>
+<p>rather than:</p>
+<pre><code>PUT /repos/.../contents/...
+</code></pre>
+<p>GitHub is an infrastructure implementation detail.</p>
+<hr>
+<h1 id="4-layer-3--service--infrastructure-layer">4. Layer 3 — Service / Infrastructure Layer</h1>
+<p>The service layer coordinates communication between the application/domain and external persistence.</p>
+<p>This is a logical architectural layer.</p>
+<p>It does not necessarily require a separate server process in v0.1.</p>
+<h2 id="service-responsibilities">Service responsibilities</h2>
+<p>The service layer owns:</p>
+<ul>
+<li>loading weekly documents;</li>
+<li>loading project documents;</li>
+<li>loading labels;</li>
+<li>saving weekly documents;</li>
+<li>saving projects;</li>
+<li>GitHub API interaction;</li>
+<li>serialization/deserialization coordination;</li>
+<li>expected Git SHA / version tracking;</li>
+<li>optimistic concurrency;</li>
+<li>conflict detection;</li>
+<li>write reconciliation;</li>
+<li>authentication handoff;</li>
+<li>synchronization state;</li>
+<li>mapping GitHub failures into meaningful application-facing results.</li>
+</ul>
+<h2 id="example-conceptual-service-operations">Example conceptual service operations</h2>
+<pre><code>LoadWeek(personId, weekStarting)
+
+SaveWeek(
+    expectedVersion,
+    weeklyDocument
+)
+
+LoadProject(projectId)
+
+SaveProject(
+    expectedVersion,
+    projectDocument
+)
+</code></pre>
+<p>These are conceptual application/infrastructure operations.</p>
+<p>Their concrete implementation may use GitHub REST APIs.</p>
+<hr>
+<h1 id="5-logical-service-layer-vs-physical-server">5. Logical Service Layer vs Physical Server</h1>
+<p>The service layer does NOT have to be a standalone backend in the first version.</p>
+<p>Initial deployment may be:</p>
+<pre><code>Browser
+    ├── HTML / CSS
+    ├── TypeScript kernel
+    ├── WASM domain/application
+    └── GitHub service adapter
+             │
+             ▼
+           GitHub
+</code></pre>
+<p>This keeps the experiment small.</p>
+<p>The service layer remains architecturally distinct even when it executes inside the browser.</p>
+<p>Later, authentication or multi-user requirements may justify:</p>
+<pre><code>Browser
+   │
+   ▼
+Small Service
+   │
+   ▼
+GitHub
+</code></pre>
+<p>That deployment change should not alter domain meaning.</p>
+<p>Important principle:</p>
+<blockquote>
+<p>Service boundary and deployment boundary are not the same thing.</p>
+</blockquote>
+<hr>
+<h1 id="6-layer-4--github-persistence">6. Layer 4 — GitHub Persistence</h1>
+<p>GitHub is the persistent datastore.</p>
+<p>GitHub stores:</p>
+<ul>
+<li>JSON documents;</li>
+<li>Git object versions / SHAs;</li>
+<li>commit history;</li>
+<li>authorship/timestamps from Git operations.</li>
+</ul>
+<p>GitHub persistence must not become application meaning.</p>
+<h2 id="persistence-flow">Persistence flow</h2>
+<pre><code>GitHub JSON
+    ->
+service layer
+    ->
+parse / schema validation
+    ->
+WASM domain construction
+    ->
+domain operations
+    ->
+serialization
+    ->
+service layer
+    ->
+GitHub JSON
+</code></pre>
+<p>Raw JSON must not be manipulated as if it is authoritative domain state.</p>
+<hr>
+<h1 id="7-persistence-document-partition">7. Persistence Document Partition</h1>
+<p>Recommended initial layout:</p>
+<pre><code>/data/
+    projects/
+        &#x3C;project-id>.json
+
+    labels/
+        labels.json
+
+    people/
+        &#x3C;person-id>/
+            &#x3C;year>/
+                &#x3C;month>/
+                    &#x3C;week-start>.json
+</code></pre>
+<p>Example:</p>
+<pre><code>/data/people/kevin/2026/08/2026-08-10.json
+</code></pre>
+<p>The week is the natural initial persistence boundary because it aligns with:</p>
+<ul>
+<li>weekly review;</li>
+<li>weekly totals;</li>
+<li>overlap validation;</li>
+<li>conflict scope;</li>
+<li>future approval;</li>
+<li>Git write locality.</li>
+</ul>
+<hr>
+<h1 id="8-versioning-and-optimistic-concurrency">8. Versioning and Optimistic Concurrency</h1>
+<p>The service layer must retain the GitHub file/blob SHA or equivalent version when loading a document.</p>
+<p>Saving is conceptually:</p>
+<pre><code>SaveWeek(expectedVersion, updatedWeek)
+</code></pre>
+<p>If the remote version has changed:</p>
+<pre><code>Conflict
+</code></pre>
+<p>not:</p>
+<pre><code>silently overwrite
+</code></pre>
+<p>Last-write-wins is not allowed for semantic data.</p>
+<p>The Git SHA acts as an authoritative external version token for persistence concurrency.</p>
+<hr>
+<h1 id="9-unknown-write-outcomes">9. Unknown Write Outcomes</h1>
+<p>A network failure after a GitHub write is sent does not prove that the write failed.</p>
+<p>The infrastructure layer therefore needs explicit execution state:</p>
+<pre><code>Clean
+ModifiedLocally
+Saving
+SaveFailed
+SaveOutcomeUnknown
+Conflict
+</code></pre>
+<p>Important distinction:</p>
+<pre><code>TimeEntryStatus
+</code></pre>
+<p>is domain state.</p>
+<pre><code>SyncState
+</code></pre>
+<p>is execution/persistence state.</p>
+<p>Do not combine them.</p>
+<h2 id="outcomeunknown-flow">OutcomeUnknown flow</h2>
+<pre><code>write sent
+    ->
+response becomes indeterminate
+    ->
+SaveOutcomeUnknown
+    ->
+inspect GitHub state
+    ->
+determine whether intended write exists
+    ->
+resolve to Clean or ModifiedLocally
+</code></pre>
+<p>Do not blindly resend while the previous operation's outcome is unknown.</p>
+<hr>
+<h1 id="10-conflict-resolution">10. Conflict Resolution</h1>
+<p>On Git SHA/version conflict:</p>
+<pre><code>1. fetch latest remote state
+2. compare with expected base
+3. identify semantic differences
+4. merge only when explicitly safe
+5. otherwise surface conflict
+</code></pre>
+<p>Example potentially mergeable:</p>
+<pre><code>local:
+    correct description on Entry A
+
+remote:
+    add unrelated Entry B
+</code></pre>
+<p>Example semantic conflict:</p>
+<pre><code>local:
+    split Entry A
+
+remote:
+    change Entry A duration
+</code></pre>
+<p>Do not assume a generic JSON merge is semantically safe.</p>
+<hr>
+<h1 id="11-dependency-direction">11. Dependency Direction</h1>
+<p>Preferred conceptual dependency direction:</p>
+<pre><code>Presentation
+    ↓
+Application / Domain
+    ↓
+Service abstraction
+    ↓
+GitHub implementation
+</code></pre>
+<p>The domain should not depend upward on:</p>
+<ul>
+<li>UI concerns;</li>
+<li>DOM;</li>
+<li>browser widgets;</li>
+<li>GitHub API mechanics.</li>
+</ul>
+<p>Infrastructure may depend on abstractions exposed by the application/service boundary, not the reverse.</p>
+<hr>
+<h1 id="12-browserwasm-interaction-pattern">12. Browser/WASM Interaction Pattern</h1>
+<p>Example:</p>
+<pre><code>User clicks Split at 10:00
+    ->
+TypeScript captures UI event
+    ->
+TypeScript invokes WASM SplitTimeEntry command
+    ->
+WASM validates:
+    current state
+    six-minute boundary
+    source duration
+    split invariants
+    overlap
+    provenance
+    ->
+WASM returns:
+    valid updated projection
+    OR structured diagnostic
+    ->
+TypeScript renders result
+</code></pre>
+<p>TypeScript must not independently decide whether 10:00 is a legal split.</p>
+<hr>
+<h1 id="13-state-ownership">13. State Ownership</h1>
+<p>The architecture intentionally separates state dimensions.</p>
+<h2 id="domain-state">Domain state</h2>
+<p>Owned by WASM/domain:</p>
+<pre><code>TimeEntryStatus
+    Recorded
+    Voided
+    Superseded
+
+ProjectStatus
+    Active
+    Archived
+</code></pre>
+<h2 id="executionsynchronization-state">Execution/synchronization state</h2>
+<p>Owned by service/infrastructure:</p>
+<pre><code>Clean
+ModifiedLocally
+Saving
+SaveFailed
+SaveOutcomeUnknown
+Conflict
+</code></pre>
+<h2 id="ephemeral-ui-state">Ephemeral UI state</h2>
+<p>Owned by TypeScript/presentation:</p>
+<pre><code>selected day
+active tab
+modal open
+focus
+route
+scroll position
+</code></pre>
+<p>Do not create one global application state object containing all three dimensions unless it is merely a projection/composition for rendering.</p>
+<p>Authority remains separated.</p>
+<hr>
+<h1 id="14-no-duplicate-business-semantics">14. No Duplicate Business Semantics</h1>
+<p>The same business rule must not be reimplemented in:</p>
+<pre><code>WASM
+TypeScript
+JSON metadata
+GitHub adapter
+</code></pre>
+<p>Example:</p>
+<p>The rule:</p>
+<pre><code>Recorded entries for the same person may not overlap
+</code></pre>
+<p>belongs in the domain/application layer.</p>
+<p>TypeScript may display an overlap error, but must not independently establish the authoritative rule.</p>
+<p>GitHub persistence must store the result, not independently reinterpret the rule.</p>
+<hr>
+<h1 id="15-minimal-dependencies">15. Minimal Dependencies</h1>
+<p>Default to no external libraries unless genuinely required.</p>
+<p>Prefer:</p>
+<ul>
+<li>browser-native APIs;</li>
+<li>standard library;</li>
+<li>native language/runtime features;</li>
+<li>explicit code;</li>
+<li>WASM standard interop.</li>
+</ul>
+<p>Do not add:</p>
+<ul>
+<li>React;</li>
+<li>Redux;</li>
+<li>Vue;</li>
+<li>Angular;</li>
+<li>generic client state framework;</li>
+<li>workflow framework;</li>
+<li>generic state-machine framework</li>
+</ul>
+<p>unless a later explicit requirement justifies it.</p>
+<hr>
+<h1 id="16-authentication-boundary">16. Authentication Boundary</h1>
+<p>For a trusted single-user experimental version, a narrowly scoped GitHub credential may be used.</p>
+<p>The browser architecture must not assume this is the final production authentication model.</p>
+<p>If multi-user or broader deployment emerges, the service layer can move behind:</p>
+<ul>
+<li>GitHub App;</li>
+<li>OAuth;</li>
+<li>short-lived credentials;</li>
+<li>minimal server/token exchange.</li>
+</ul>
+<p>This should not require rewriting domain logic.</p>
+<hr>
+<h1 id="17-why-this-architecture-is-being-tested">17. Why This Architecture Is Being Tested</h1>
+<p>This application is also an architecture experiment.</p>
+<p>We are testing whether:</p>
+<pre><code>application-specific domain semantics in WASM
+</code></pre>
+<p>combined with:</p>
+<pre><code>minimal TypeScript browser mechanics
+</code></pre>
+<p>and:</p>
+<pre><code>explicit service/persistence boundaries
+</code></pre>
+<p>produce software that is:</p>
+<ul>
+<li>easier for AI agents to understand;</li>
+<li>harder for AI agents to mutate incorrectly;</li>
+<li>lower in duplicated semantics;</li>
+<li>simpler to change;</li>
+<li>safer under concurrent writes;</li>
+<li>safer under uncertain external outcomes;</li>
+<li>less dependent on large SPA frameworks.</li>
+</ul>
+<p>The experiment should remain small enough that these claims can be evaluated honestly.</p>
+<hr>
+<h1 id="18-architecture-non-goals">18. Architecture Non-Goals</h1>
+<p>Do not turn the first version into:</p>
+<ul>
+<li>microservices;</li>
+<li>distributed service mesh;</li>
+<li>generic domain framework;</li>
+<li>generic semantic runtime;</li>
+<li>generic state engine;</li>
+<li>event-sourcing platform;</li>
+<li>generalized workflow engine;</li>
+<li>large SPA framework;</li>
+<li>metadata-driven application builder.</li>
+</ul>
+<p>The architecture should be only as complicated as required by:</p>
+<pre><code>browser
+    +
+WASM domain/application
+    +
+service/infrastructure adapter
+    +
+GitHub JSON persistence
+</code></pre>
+<hr>
+<h1 id="19-current-large-view-architecture-summary">19. Current Large-View Architecture Summary</h1>
+<p>The system is:</p>
+<pre><code>Browser Application
+    |
+    |-- HTML / CSS
+    |
+    |-- Minimal TypeScript Kernel
+    |       browser events
+    |       DOM
+    |       rendering
+    |       fetch
+    |       WASM bridge
+    |
+    |-- WASM Application / Domain Core
+            TimeEntry
+            Project
+            Label
+            Person
+            state machines
+            transitions
+            invariants
+            capabilities
+            totals
+            diagnostics
+    |
+    v
+Service / Infrastructure Layer
+    GitHub adapter
+    load/save coordination
+    optimistic concurrency
+    authentication handoff
+    synchronization
+    conflict detection
+    OutcomeUnknown reconciliation
+    |
+    v
+GitHub Data Store
+    JSON files
+    SHAs / versions
+    commits
+    history
+</code></pre>
+<p>Final governing principle:</p>
+<blockquote>
+<p>The WASM application/domain layer owns meaning.
+The TypeScript layer owns browser mechanics.
+The service layer owns external coordination.
+GitHub owns durable persistence and history.</p>
+</blockquote></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

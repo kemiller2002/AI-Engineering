@@ -1,0 +1,574 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Time Entry System — State Model v0.1 | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">Time Entry System — State Model v0.1</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>content/projects/time-entry/domain/time-entry-state-model-v0.1.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#time-entry-system-state-model-v0-1">Time Entry System — State Model v0.1</a></li><li><a href="#1-timeentry-state-family">1. TimeEntry State Family</a></li><li><a href="#timeentrystatus">TimeEntryStatus</a></li><li><a href="#recorded">Recorded</a></li><li><a href="#voided">Voided</a></li><li><a href="#superseded">Superseded</a></li><li><a href="#2-timeentry-transition-table">2. TimeEntry Transition Table</a></li><li><a href="#3-createtimeentry">3. CreateTimeEntry</a></li><li><a href="#4-correcttimeentry">4. CorrectTimeEntry</a></li><li><a href="#5-splittimeentry">5. SplitTimeEntry</a></li><li><a href="#6-voidtimeentry">6. VoidTimeEntry</a></li><li><a href="#7-derived-timeentry-capabilities">7. Derived TimeEntry Capabilities</a></li><li><a href="#recorded-entry">Recorded entry</a></li><li><a href="#recorded-entry-with-durationunits-2">Recorded entry with durationUnits &gt;= 2</a></li><li><a href="#recorded-entry-with-durationunits-1">Recorded entry with durationUnits = 1</a></li><li><a href="#voided">Voided</a></li><li><a href="#superseded">Superseded</a></li><li><a href="#8-timeentry-invariants">8. TimeEntry Invariants</a></li><li><a href="#time-001">TIME-001</a></li><li><a href="#time-002">TIME-002</a></li><li><a href="#time-003">TIME-003</a></li><li><a href="#time-004">TIME-004</a></li><li><a href="#time-005">TIME-005</a></li><li><a href="#time-006">TIME-006</a></li><li><a href="#time-007">TIME-007</a></li><li><a href="#time-008">TIME-008</a></li><li><a href="#time-009">TIME-009</a></li><li><a href="#9-state-vs-requirement-vs-invariant">9. State vs Requirement vs Invariant</a></li><li><a href="#10-project-state-family">10. Project State Family</a></li><li><a href="#projectstatus">ProjectStatus</a></li><li><a href="#active">Active</a></li><li><a href="#archived">Archived</a></li><li><a href="#11-project-transitions">11. Project Transitions</a></li><li><a href="#createproject">CreateProject</a></li><li><a href="#correctproject">CorrectProject</a></li><li><a href="#archiveproject">ArchiveProject</a></li><li><a href="#reactivateproject">ReactivateProject</a></li><li><a href="#12-cross-state-semantic-dependencies">12. Cross-State Semantic Dependencies</a></li><li><a href="#13-synchronization-state-family">13. Synchronization State Family</a></li><li><a href="#syncstate">SyncState</a></li><li><a href="#14-synchronization-transitions">14. Synchronization Transitions</a></li><li><a href="#localsemanticchange">LocalSemanticChange</a></li><li><a href="#beginsave">BeginSave</a></li><li><a href="#saveconfirmed">SaveConfirmed</a></li><li><a href="#saveknownfailed">SaveKnownFailed</a></li><li><a href="#saveindeterminate">SaveIndeterminate</a></li><li><a href="#saveconflict">SaveConflict</a></li><li><a href="#retryknownfailedsave">RetryKnownFailedSave</a></li><li><a href="#reconcileunknownsuccess">ReconcileUnknownSuccess</a></li><li><a href="#reconcileunknownabsent">ReconcileUnknownAbsent</a></li><li><a href="#resolveconflict">ResolveConflict</a></li><li><a href="#15-synchronization-capability-principles">15. Synchronization Capability Principles</a></li><li><a href="#saving">Saving</a></li><li><a href="#saveoutcomeunknown">SaveOutcomeUnknown</a></li><li><a href="#conflict">Conflict</a></li><li><a href="#16-semantic-operation-identity-for-persistence">16. Semantic Operation Identity for Persistence</a></li><li><a href="#17-state-families-in-v0-1">17. State Families in v0.1</a></li><li><a href="#18-states-we-are-deliberately-not-adding-yet">18. States We Are Deliberately NOT Adding Yet</a></li><li><a href="#19-future-state-migration-experiment">19. Future State-Migration Experiment</a></li><li><a href="#20-implementation-directive">20. Implementation Directive</a></li> </ol> </aside> <section class="document-body"><h1 id="time-entry-system--state-model-v01">Time Entry System — State Model v0.1</h1>
+<p>Date: 2026-08-14
+Status: Initial semantic model
+Purpose: Define the first application-specific state machines, transitions, requirements, invariants, and derived capabilities for the time-entry system.</p>
+<p>This document is intentionally separate from the business requirements.</p>
+<p>Business requirements define what the product must do.
+This document defines the current semantic/state model used to implement those requirements.</p>
+<p>Core rule:</p>
+<blockquote>
+<p>States describe durable semantic conditions.
+Transitions describe legal changes.
+Requirements describe conditions for a specific transition.
+Invariants describe truths that must always hold.
+Capabilities are derived legal actions, not additional state.</p>
+</blockquote>
+<p>Do not add states merely because a value can be represented as an enum.
+A state should exist because it changes legitimate future behavior.</p>
+<hr>
+<h1 id="1-timeentry-state-family">1. TimeEntry State Family</h1>
+<h2 id="timeentrystatus">TimeEntryStatus</h2>
+<pre><code>Recorded
+Voided
+Superseded
+</code></pre>
+<h3 id="recorded">Recorded</h3>
+<p>Meaning:</p>
+<p>The entry is part of the presently authoritative allocation of time.</p>
+<p>Consequences:</p>
+<ul>
+<li>contributes to totals;</li>
+<li>may be corrected;</li>
+<li>may be split when splittable;</li>
+<li>may be voided.</li>
+</ul>
+<h3 id="voided">Voided</h3>
+<p>Meaning:</p>
+<p>The entry was intentionally withdrawn from current reported time.</p>
+<p>Consequences:</p>
+<ul>
+<li>does not contribute to totals;</li>
+<li>remains historically recoverable;</li>
+<li>has no ordinary v0.1 transitions.</li>
+</ul>
+<h3 id="superseded">Superseded</h3>
+<p>Meaning:</p>
+<p>The entry was replaced by one or more new entries that now represent the same underlying time allocation more accurately.</p>
+<p>Typical cause:</p>
+<ul>
+<li>SplitTimeEntry</li>
+</ul>
+<p>Consequences:</p>
+<ul>
+<li>does not contribute to totals;</li>
+<li>replacement entries are authoritative;</li>
+<li>remains historically recoverable;</li>
+<li>has no ordinary v0.1 transitions.</li>
+</ul>
+<p>Voided and Superseded are intentionally different.</p>
+<p>Voided means:</p>
+<pre><code>this entry should no longer count
+</code></pre>
+<p>Superseded means:</p>
+<pre><code>this time still exists, but this representation has been replaced
+</code></pre>
+<hr>
+<h1 id="2-timeentry-transition-table">2. TimeEntry Transition Table</h1>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Operation</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>none</td>
+<td>CreateTimeEntry</td>
+<td>Recorded</td>
+</tr>
+<tr>
+<td>Recorded</td>
+<td>CorrectTimeEntry</td>
+<td>Recorded</td>
+</tr>
+<tr>
+<td>Recorded</td>
+<td>SplitTimeEntry</td>
+<td>source Superseded + two Recorded children</td>
+</tr>
+<tr>
+<td>Recorded</td>
+<td>VoidTimeEntry</td>
+<td>Voided</td>
+</tr>
+<tr>
+<td>Voided</td>
+<td>none in v0.1</td>
+<td>terminal</td>
+</tr>
+<tr>
+<td>Superseded</td>
+<td>none in v0.1</td>
+<td>terminal</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="3-createtimeentry">3. CreateTimeEntry</h1>
+<p>Transition:</p>
+<pre><code>none -> Recorded
+</code></pre>
+<p>Inputs:</p>
+<pre><code>PersonId
+Date
+Start
+DurationUnits
+ProjectId
+Labels[]
+Description
+</code></pre>
+<p>Requirements:</p>
+<ul>
+<li>person exists;</li>
+<li>person is active;</li>
+<li>project exists;</li>
+<li>project is Active;</li>
+<li>selected labels exist;</li>
+<li>selected labels are active;</li>
+<li>durationUnits > 0;</li>
+<li>duration is integral six-minute units;</li>
+<li>start is on a six-minute boundary;</li>
+<li>interval does not cross midnight;</li>
+<li>description is non-blank;</li>
+<li>interval does not overlap another Recorded entry for the same person.</li>
+</ul>
+<p>Produces:</p>
+<ul>
+<li>new stable TimeEntryId;</li>
+<li>status = Recorded;</li>
+<li>initial revision/version;</li>
+<li>creation provenance.</li>
+</ul>
+<hr>
+<h1 id="4-correcttimeentry">4. CorrectTimeEntry</h1>
+<p>Transition:</p>
+<pre><code>Recorded -> Recorded
+</code></pre>
+<p>A semantic transition does not have to change an enum value.</p>
+<p>Correctable values:</p>
+<ul>
+<li>date;</li>
+<li>start;</li>
+<li>durationUnits;</li>
+<li>project;</li>
+<li>labels;</li>
+<li>description.</li>
+</ul>
+<p>Requirements:</p>
+<ul>
+<li>source entry is Recorded;</li>
+<li>resulting durationUnits > 0;</li>
+<li>resulting start is on a six-minute boundary;</li>
+<li>resulting interval does not cross midnight;</li>
+<li>resulting interval does not overlap another Recorded entry for the same person;</li>
+<li>resulting description is non-blank;</li>
+<li>selected labels exist;</li>
+<li>newly assigned labels are active;</li>
+<li>project exists.</li>
+</ul>
+<p>Project rule:</p>
+<p>An archived project cannot be newly assigned.</p>
+<p>However, an existing entry that already references a project later archived may retain that historical project association while correcting unrelated fields.</p>
+<p>If the correction changes ProjectId, the destination project must be Active.</p>
+<p>Produces:</p>
+<ul>
+<li>same TimeEntryId;</li>
+<li>status remains Recorded;</li>
+<li>revised values;</li>
+<li>revision/version increment;</li>
+<li>historical change remains recoverable.</li>
+</ul>
+<hr>
+<h1 id="5-splittimeentry">5. SplitTimeEntry</h1>
+<p>Transition:</p>
+<pre><code>Recorded source
+    ->
+Superseded source
++ Recorded left child
++ Recorded right child
+</code></pre>
+<p>Inputs:</p>
+<pre><code>SourceEntryId
+SplitPoint
+</code></pre>
+<p>Requirements:</p>
+<ul>
+<li>source.status = Recorded;</li>
+<li>split point > source start;</li>
+<li>split point &#x3C; source end;</li>
+<li>split point lies on six-minute boundary;</li>
+<li>both resulting entries have duration >= 1 unit.</li>
+</ul>
+<p>Derived values:</p>
+<pre><code>left.start = source.start
+left.end = splitPoint
+
+right.start = splitPoint
+right.end = source.end
+</code></pre>
+<p>Strong postconditions:</p>
+<pre><code>left.durationUnits + right.durationUnits
+    =
+source.durationUnits
+</code></pre>
+<p>Children must exactly cover the original interval.</p>
+<p>No gap.
+No overlap.</p>
+<p>Both children preserve:</p>
+<ul>
+<li>personId;</li>
+<li>date.</li>
+</ul>
+<p>Both initially inherit:</p>
+<ul>
+<li>projectId;</li>
+<li>labels;</li>
+<li>description.</li>
+</ul>
+<p>Provenance:</p>
+<pre><code>left.splitFrom = source.id
+right.splitFrom = source.id
+</code></pre>
+<p>Recommended reverse relationship:</p>
+<pre><code>source.supersededBy = [left.id, right.id]
+</code></pre>
+<p>Produces:</p>
+<pre><code>source.status = Superseded
+left.status = Recorded
+right.status = Recorded
+</code></pre>
+<p>The source no longer contributes to totals.</p>
+<hr>
+<h1 id="6-voidtimeentry">6. VoidTimeEntry</h1>
+<p>Transition:</p>
+<pre><code>Recorded -> Voided
+</code></pre>
+<p>Inputs:</p>
+<pre><code>EntryId
+Reason?  # optional initially
+</code></pre>
+<p>Requirements:</p>
+<ul>
+<li>entry.status = Recorded.</li>
+</ul>
+<p>Produces:</p>
+<ul>
+<li>status = Voided;</li>
+<li>void timestamp;</li>
+<li>optional reason;</li>
+<li>version/revision increment.</li>
+</ul>
+<p>Consequences:</p>
+<p>The entry stops contributing to:</p>
+<ul>
+<li>day totals;</li>
+<li>week totals;</li>
+<li>project totals;</li>
+<li>label totals.</li>
+</ul>
+<p>Voided is terminal in v0.1.</p>
+<p>Do not add RestoreTimeEntry until a real product requirement justifies it.</p>
+<hr>
+<h1 id="7-derived-timeentry-capabilities">7. Derived TimeEntry Capabilities</h1>
+<p>Capabilities are not states.</p>
+<p>They are derived from state plus other requirements.</p>
+<h2 id="recorded-entry">Recorded entry</h2>
+<p>Generally available:</p>
+<pre><code>CanCorrect
+CanVoid
+</code></pre>
+<h2 id="recorded-entry-with-durationunits--2">Recorded entry with durationUnits >= 2</h2>
+<p>Additionally:</p>
+<pre><code>CanSplit
+</code></pre>
+<h2 id="recorded-entry-with-durationunits--1">Recorded entry with durationUnits = 1</h2>
+<pre><code>CanSplit = false
+</code></pre>
+<p>because no legal interior six-minute boundary exists.</p>
+<h2 id="voided-1">Voided</h2>
+<p>No ordinary v0.1 capabilities.</p>
+<h2 id="superseded-1">Superseded</h2>
+<p>No ordinary v0.1 capabilities.</p>
+<p>Do not create states such as:</p>
+<pre><code>RecordedSplittable
+RecordedNotSplittable
+</code></pre>
+<p>Splittable is a derived capability, not lifecycle state.</p>
+<hr>
+<h1 id="8-timeentry-invariants">8. TimeEntry Invariants</h1>
+<p>These must hold regardless of which transition produced current state.</p>
+<h2 id="time-001">TIME-001</h2>
+<pre><code>durationUnits > 0
+</code></pre>
+<p>for every Recorded entry.</p>
+<h2 id="time-002">TIME-002</h2>
+<p>Duration is an integer number of six-minute units.</p>
+<h2 id="time-003">TIME-003</h2>
+<p>Start lies on a six-minute boundary.</p>
+<h2 id="time-004">TIME-004</h2>
+<p>A Recorded entry does not cross midnight.</p>
+<h2 id="time-005">TIME-005</h2>
+<p>Recorded entries for the same person do not overlap.</p>
+<h2 id="time-006">TIME-006</h2>
+<p>Every Recorded entry references an existing project.</p>
+<h2 id="time-007">TIME-007</h2>
+<p>Every label reference resolves to a known label.</p>
+<h2 id="time-008">TIME-008</h2>
+<p>Description is non-blank.</p>
+<h2 id="time-009">TIME-009</h2>
+<p>Voided and Superseded entries do not contribute to current totals.</p>
+<hr>
+<h1 id="9-state-vs-requirement-vs-invariant">9. State vs Requirement vs Invariant</h1>
+<p>Example state:</p>
+<pre><code>entry.status = Recorded
+</code></pre>
+<p>Example transition requirement:</p>
+<pre><code>SplitPoint lies strictly inside the entry interval
+</code></pre>
+<p>Example invariant:</p>
+<pre><code>Recorded entries for the same person do not overlap
+</code></pre>
+<p>Do not create lifecycle states for:</p>
+<pre><code>NonOverlapping
+ValidProject
+HasDescription
+Splittable
+</code></pre>
+<p>Those are invariants or derived conditions.</p>
+<hr>
+<h1 id="10-project-state-family">10. Project State Family</h1>
+<h2 id="projectstatus">ProjectStatus</h2>
+<pre><code>Active
+Archived
+</code></pre>
+<h3 id="active">Active</h3>
+<ul>
+<li>accepts new ordinary time entries;</li>
+<li>may be corrected;</li>
+<li>may be archived.</li>
+</ul>
+<h3 id="archived">Archived</h3>
+<ul>
+<li>remains historically resolvable;</li>
+<li>remains reportable;</li>
+<li>may not receive newly assigned ordinary time entries.</li>
+</ul>
+<p>Potential Reactivate behavior must be an explicit product decision.</p>
+<hr>
+<h1 id="11-project-transitions">11. Project Transitions</h1>
+<h2 id="createproject">CreateProject</h2>
+<pre><code>none -> Active
+</code></pre>
+<h2 id="correctproject">CorrectProject</h2>
+<pre><code>Active -> Active
+</code></pre>
+<p>Potentially allow limited corrections to Archived projects if needed for historical metadata, but do not assume this without a requirement.</p>
+<h2 id="archiveproject">ArchiveProject</h2>
+<pre><code>Active -> Archived
+</code></pre>
+<h2 id="reactivateproject">ReactivateProject</h2>
+<p>Not required in v0.1 unless explicitly approved.</p>
+<hr>
+<h1 id="12-cross-state-semantic-dependencies">12. Cross-State Semantic Dependencies</h1>
+<p>TimeEntry and Project remain separate state families.</p>
+<p>Do not combine them into a single mega-state.</p>
+<p>Example:</p>
+<pre><code>CreateTimeEntry
+</code></pre>
+<p>requires:</p>
+<pre><code>Project(projectId).status = Active
+</code></pre>
+<p>This is a semantic dependency:</p>
+<pre><code>TimeEntry.Create
+    depends on
+Project.Active
+</code></pre>
+<p>CorrectTimeEntry has a related dependency:</p>
+<p>If ProjectId changes:</p>
+<pre><code>destination Project.status must be Active
+</code></pre>
+<p>An existing historical reference to an Archived project remains legitimate.</p>
+<hr>
+<h1 id="13-synchronization-state-family">13. Synchronization State Family</h1>
+<p>Synchronization state is not TimeEntry business state.</p>
+<h2 id="syncstate">SyncState</h2>
+<pre><code>Clean
+ModifiedLocally
+Saving
+SaveFailed
+SaveOutcomeUnknown
+Conflict
+</code></pre>
+<p>This state family describes persistence/execution condition.</p>
+<p>A TimeEntry may remain:</p>
+<pre><code>Recorded
+</code></pre>
+<p>while synchronization is:</p>
+<pre><code>SaveOutcomeUnknown
+</code></pre>
+<p>Do not merge these dimensions.</p>
+<hr>
+<h1 id="14-synchronization-transitions">14. Synchronization Transitions</h1>
+<h2 id="localsemanticchange">LocalSemanticChange</h2>
+<pre><code>Clean -> ModifiedLocally
+</code></pre>
+<p>A valid local semantic transition has changed the current weekly document but has not yet been durably confirmed remotely.</p>
+<h2 id="beginsave">BeginSave</h2>
+<pre><code>ModifiedLocally -> Saving
+</code></pre>
+<h2 id="saveconfirmed">SaveConfirmed</h2>
+<pre><code>Saving -> Clean
+</code></pre>
+<p>Remote GitHub state conclusively contains intended change.</p>
+<h2 id="saveknownfailed">SaveKnownFailed</h2>
+<pre><code>Saving -> SaveFailed
+</code></pre>
+<p>The system has authoritative evidence that the intended write did not occur.</p>
+<h2 id="saveindeterminate">SaveIndeterminate</h2>
+<pre><code>Saving -> SaveOutcomeUnknown
+</code></pre>
+<p>The caller cannot establish whether the intended GitHub write committed.</p>
+<p>Examples:</p>
+<ul>
+<li>connection lost after request dispatch;</li>
+<li>timeout before conclusive response;</li>
+<li>ambiguous transport failure.</li>
+</ul>
+<h2 id="saveconflict">SaveConflict</h2>
+<pre><code>Saving -> Conflict
+</code></pre>
+<p>Expected Git SHA/version is stale.</p>
+<p>Remote state changed concurrently.</p>
+<h2 id="retryknownfailedsave">RetryKnownFailedSave</h2>
+<pre><code>SaveFailed -> Saving
+</code></pre>
+<p>Legal only when prior effect is known not to have occurred.</p>
+<h2 id="reconcileunknownsuccess">ReconcileUnknownSuccess</h2>
+<pre><code>SaveOutcomeUnknown -> Clean
+</code></pre>
+<p>Reconciliation proves intended write already exists remotely.</p>
+<h2 id="reconcileunknownabsent">ReconcileUnknownAbsent</h2>
+<pre><code>SaveOutcomeUnknown -> ModifiedLocally
+</code></pre>
+<p>Reconciliation proves intended write did not occur.</p>
+<p>Only after this transition may normal save logic create a new write attempt.</p>
+<h2 id="resolveconflict">ResolveConflict</h2>
+<pre><code>Conflict -> ModifiedLocally
+</code></pre>
+<p>Requires deliberate semantic resolution of local vs remote state.</p>
+<hr>
+<h1 id="15-synchronization-capability-principles">15. Synchronization Capability Principles</h1>
+<h2 id="saving">Saving</h2>
+<p>Do not start another equivalent semantic save while an existing save attempt is unresolved.</p>
+<h2 id="saveoutcomeunknown">SaveOutcomeUnknown</h2>
+<p>Available:</p>
+<pre><code>ReconcileRemoteState
+</code></pre>
+<p>Unavailable:</p>
+<pre><code>blindly create another equivalent save operation
+</code></pre>
+<p>Unknown must not collapse into failure.</p>
+<h2 id="conflict">Conflict</h2>
+<p>Available:</p>
+<pre><code>InspectRemote
+ResolveConflict
+</code></pre>
+<p>Do not apply generic last-write-wins.</p>
+<hr>
+<h1 id="16-semantic-operation-identity-for-persistence">16. Semantic Operation Identity for Persistence</h1>
+<p>A future implementation should associate a stable semantic operation ID with a meaningful save operation.</p>
+<p>Example:</p>
+<pre><code>SaveWeek:kevin:2026-08-10:&#x3C;operation-id>
+</code></pre>
+<p>Transport retries are attempts of the same semantic operation.</p>
+<p>Do not confuse:</p>
+<pre><code>retry same semantic operation
+</code></pre>
+<p>with:</p>
+<pre><code>create another new semantic operation
+</code></pre>
+<p>This distinction is especially important during SaveOutcomeUnknown.</p>
+<hr>
+<h1 id="17-state-families-in-v01">17. State Families in v0.1</h1>
+<p>The current intended state families are:</p>
+<pre><code>TimeEntryStatus
+    Recorded
+    Voided
+    Superseded
+
+ProjectStatus
+    Active
+    Archived
+
+SyncState
+    Clean
+    ModifiedLocally
+    Saving
+    SaveFailed
+    SaveOutcomeUnknown
+    Conflict
+</code></pre>
+<p>These state families are intentionally independent.</p>
+<p>Do not construct a Cartesian-product mega-state such as:</p>
+<pre><code>RecordedActiveProjectSaving
+</code></pre>
+<p>Compose dimensions through requirements and dependencies instead.</p>
+<hr>
+<h1 id="18-states-we-are-deliberately-not-adding-yet">18. States We Are Deliberately NOT Adding Yet</h1>
+<p>Do not currently introduce:</p>
+<pre><code>Draft
+Submitted
+Approved
+Rejected
+Locked
+Billed
+Invoiced
+PendingApproval
+ReadyForBilling
+</code></pre>
+<p>These may become legitimate later if they change what actions are legally available.</p>
+<p>Rule:</p>
+<blockquote>
+<p>Earn your states.</p>
+</blockquote>
+<hr>
+<h1 id="19-future-state-migration-experiment">19. Future State-Migration Experiment</h1>
+<p>A later version may introduce approval state.</p>
+<p>Example:</p>
+<pre><code>Approved
+</code></pre>
+<p>may later split into:</p>
+<pre><code>ManagerApproved
+ClientApproved
+</code></pre>
+<p>or:</p>
+<pre><code>InternallyApproved
+ReadyForBilling
+</code></pre>
+<p>When this occurs, consequential interpretations must not silently inherit old Approved behavior.</p>
+<p>Dependent meanings such as:</p>
+<pre><code>CanEdit
+CanInvoice
+CanExport
+CanClosePeriod
+</code></pre>
+<p>must be explicitly reconsidered.</p>
+<p>This is intended as a test of semantic dependency and migration handling.</p>
+<hr>
+<h1 id="20-implementation-directive">20. Implementation Directive</h1>
+<p>Implement these state families as application-specific semantic types.</p>
+<p>Do not create a generic metadata-driven runtime representation of business state.</p>
+<p>The reusable architecture may understand:</p>
+<ul>
+<li>how to validate transitions;</li>
+<li>how to derive capabilities;</li>
+<li>how to version state;</li>
+<li>how to track semantic dependencies;</li>
+<li>how to produce structured diagnostics.</li>
+</ul>
+<p>It should not define what Recorded, Voided, Superseded, Active, or Archived mean.</p>
+<p>Those meanings belong to this application.</p></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

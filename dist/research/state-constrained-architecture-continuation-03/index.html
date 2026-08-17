@@ -1,0 +1,2404 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>state constrained architecture continuation 03 | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">state constrained architecture continuation 03</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/working-notes/state-constrained-architecture-continuation-03.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#state-constrained-architecture-continuation-notes-03">State-Constrained Architecture — Continuation Notes 03</a></li><li><a href="#part-1-cross-domain-applicability">PART 1 — Cross-Domain Applicability</a></li><li><a href="#core-applicability-question">Core Applicability Question</a></li><li><a href="#initial-domain-examples">Initial Domain Examples</a></li><li><a href="#recurring-primitives">Recurring Primitives</a></li><li><a href="#applicability-test">Applicability Test</a></li><li><a href="#three-broad-domain-classes">Three Broad Domain Classes</a></li><li><a href="#cross-domain-stress-test">Cross-Domain Stress Test</a></li><li><a href="#healthcare">Healthcare</a></li><li><a href="#finance-payments">Finance / Payments</a></li><li><a href="#devops-deployment">DevOps / Deployment</a></li><li><a href="#manufacturing">Manufacturing</a></li><li><a href="#research">Research</a></li><li><a href="#cross-domain-conclusion">Cross-Domain Conclusion</a></li><li><a href="#possible-missing-concept-subject">Possible Missing Concept: Subject</a></li><li><a href="#part-2-boundary-testing-where-not-to-use-it">PART 2 — Boundary Testing: Where NOT to Use It</a></li><li><a href="#pure-data-transformation">Pure Data Transformation</a></li><li><a href="#numerical-computation">Numerical Computation</a></li><li><a href="#crud-content-systems">CRUD Content Systems</a></li><li><a href="#creative-software">Creative Software</a></li><li><a href="#exploratory-analytics">Exploratory Analytics</a></li><li><a href="#machine-learning">Machine Learning</a></li><li><a href="#games">Games</a></li><li><a href="#ui-state">UI State</a></li><li><a href="#stateless-services">Stateless Services</a></li><li><a href="#search-and-retrieval">Search and Retrieval</a></li><li><a href="#boundary-conclusion">Boundary Conclusion</a></li><li><a href="#revised-applicability-rule">Revised Applicability Rule</a></li><li><a href="#three-zone-software-model">Three-Zone Software Model</a></li><li><a href="#key-principle">Key Principle</a></li><li><a href="#part-3-obligations">PART 3 — Obligations</a></li><li><a href="#why-obligations-matter">Why Obligations Matter</a></li><li><a href="#working-definition">Working Definition</a></li><li><a href="#obligation-lifecycle">Obligation Lifecycle</a></li><li><a href="#obligation-provenance">Obligation Provenance</a></li><li><a href="#derived-obligations">Derived Obligations</a></li><li><a href="#forward-consequence-model">Forward Consequence Model</a></li><li><a href="#obligation-severity-and-consequence">Obligation Severity and Consequence</a></li><li><a href="#kinds-of-obligation">Kinds of Obligation</a></li><li><a href="#capability-vs-obligation">Capability vs Obligation</a></li><li><a href="#conflicting-obligations">Conflicting Obligations</a></li><li><a href="#priority-is-not-just-a-number">Priority Is Not Just a Number</a></li><li><a href="#obligations-can-generate-obligations">Obligations Can Generate Obligations</a></li><li><a href="#large-scale-obligation-generation">Large-Scale Obligation Generation</a></li><li><a href="#obligation-groups-batches">Obligation Groups / Batches</a></li><li><a href="#satisfaction-criteria">Satisfaction Criteria</a></li><li><a href="#waivers">Waivers</a></li><li><a href="#obligations-as-agent-work-queue">Obligations as Agent Work Queue</a></li><li><a href="#agent-operating-loop">Agent Operating Loop</a></li><li><a href="#obligation-as-canonical-concept">Obligation as Canonical Concept</a></li><li><a href="#part-4-planning-from-obligations">PART 4 — Planning From Obligations</a></li><li><a href="#core-idea">Core Idea</a></li><li><a href="#simple-example">Simple Example</a></li><li><a href="#planning-as-graph-search">Planning as Graph Search</a></li><li><a href="#missing-prerequisites">Missing Prerequisites</a></li><li><a href="#plans-must-branch-across-uncertain-effects">Plans Must Branch Across Uncertain Effects</a></li><li><a href="#plans-are-graphs-not-necessarily-sequences">Plans Are Graphs, Not Necessarily Sequences</a></li><li><a href="#goals-vs-actions">Goals vs Actions</a></li><li><a href="#requirement-gap">Requirement Gap</a></li><li><a href="#planning-dependency-chain">Planning Dependency Chain</a></li><li><a href="#prompt-compression">Prompt Compression</a></li><li><a href="#dependency-cycles">Dependency Cycles</a></li><li><a href="#multiple-legal-paths">Multiple Legal Paths</a></li><li><a href="#protected-prerequisites">Protected Prerequisites</a></li><li><a href="#unreachable-obligations">Unreachable Obligations</a></li><li><a href="#plan-explanations">Plan Explanations</a></li><li><a href="#possible-agent-interface">Possible Agent Interface</a></li><li><a href="#safety-consequence">Safety Consequence</a></li><li><a href="#planning-architecture">Planning Architecture</a></li><li><a href="#planning-implication">Planning Implication</a></li><li><a href="#part-5-one-specification-generating-four-artifacts">PART 5 — One Specification Generating Four Artifacts</a></li><li><a href="#test-goal">Test Goal</a></li><li><a href="#toy-domain">Toy Domain</a></li><li><a href="#example-transition">Example Transition</a></li><li><a href="#shipping-transition">Shipping Transition</a></li><li><a href="#uncertain-transition">Uncertain Transition</a></li><li><a href="#artifact-1-runtime-guards">Artifact 1 — Runtime Guards</a></li><li><a href="#artifact-2-agent-action-availability">Artifact 2 — Agent Action Availability</a></li><li><a href="#exhaustive-consistency-check">Exhaustive Consistency Check</a></li><li><a href="#artifact-3-planning-graph">Artifact 3 — Planning Graph</a></li><li><a href="#artifact-4-generated-tests">Artifact 4 — Generated Tests</a></li><li><a href="#additional-artifacts-from-the-same-specification">Additional Artifacts From the Same Specification</a></li><li><a href="#what-the-specification-does-not-generate">What the Specification Does NOT Generate</a></li><li><a href="#complex-domain-computation">Complex Domain Computation</a></li><li><a href="#two-layer-model">Two-Layer Model</a></li><li><a href="#semantic-compiler">Semantic Compiler</a></li><li><a href="#drift-reduction">Drift Reduction</a></li><li><a href="#emerging-product-concept">Emerging Product Concept</a></li><li><a href="#part-6-minimum-semantic-dsl">PART 6 — Minimum Semantic DSL</a></li><li><a href="#language-design-goal">Language-Design Goal</a></li><li><a href="#candidate-minimal-constructs">Candidate Minimal Constructs</a></li><li><a href="#state">State</a></li><li><a href="#claims">Claims</a></li><li><a href="#transitions">Transitions</a></li><li><a href="#effects">Effects</a></li><li><a href="#obligations">Obligations</a></li><li><a href="#authority">Authority</a></li><li><a href="#policy">Policy</a></li><li><a href="#what-not-to-include-in-the-dsl">What NOT to Include in the DSL</a></li><li><a href="#external-evaluators">External Evaluators</a></li><li><a href="#arithmetic-boundary">Arithmetic Boundary</a></li><li><a href="#cross-domain-dsl-check">Cross-Domain DSL Check</a></li><li><a href="#relations">Relations</a></li><li><a href="#sets-and-cardinality">Sets and Cardinality</a></li><li><a href="#candidate-condition-grammar">Candidate Condition Grammar</a></li><li><a href="#time">Time</a></li><li><a href="#static-analysis-enabled-by-restriction">Static Analysis Enabled by Restriction</a></li><li><a href="#three-tiers">Three Tiers</a></li><li><a href="#specification-changes">Specification Changes</a></li><li><a href="#dsl-inclusion-test">DSL Inclusion Test</a></li><li><a href="#realistic-example">Realistic Example</a></li><li><a href="#semantic-compiler-output">Semantic Compiler Output</a></li><li><a href="#current-conclusion">Current Conclusion</a></li><li><a href="#strong-emerging-thesis">Strong Emerging Thesis</a></li><li><a href="#next-proposed-test">NEXT PROPOSED TEST</a></li> </ol> </aside> <section class="document-body"><h1 id="state-constrained-architecture--continuation-notes-03">State-Constrained Architecture — Continuation Notes 03</h1>
+<p>This file continues:</p>
+<pre><code>state-constrained-architecture-continuation-02.md
+</code></pre>
+<p>It captures the subsequent exploration of:</p>
+<ul>
+<li>cross-domain applicability</li>
+<li>domains where state-constrained architecture should NOT be used</li>
+<li>the semantic boundary between exploration and commitment</li>
+<li>obligation modeling</li>
+<li>obligation conflicts, satisfaction, batching, and agent work queues</li>
+<li>planning from obligations and missing prerequisites</li>
+<li>legal-path generation</li>
+<li>contingent planning across uncertain effects</li>
+<li>generation of runtime guards, agent actions, planning graphs, and tests</li>
+<li>the idea of a semantic compiler</li>
+<li>the minimum viable semantic DSL</li>
+<li>separation between semantic specification and arbitrary implementation code</li>
+</ul>
+<h1 id="part-1--cross-domain-applicability">PART 1 — Cross-Domain Applicability</h1>
+<h2 id="core-applicability-question">Core Applicability Question</h2>
+<p>A useful test for whether state-constrained architecture applies to a domain is:</p>
+<pre><code>Does the domain contain things whose current condition changes
+what may legally, safely, or meaningfully happen next?
+</code></pre>
+<p>If yes, the approach is likely relevant.</p>
+<p>The architecture appears broadly applicable wherever there is:</p>
+<ul>
+<li>meaningful lifecycle state</li>
+<li>constrained transitions</li>
+<li>authority</li>
+<li>uncertainty</li>
+<li>evidence</li>
+<li>irreversible or consequential effects</li>
+<li>policy</li>
+<li>multi-actor coordination</li>
+</ul>
+<h2 id="initial-domain-examples">Initial Domain Examples</h2>
+<p>Domains that appear to fit well include:</p>
+<p>Healthcare
+suspected -> supported -> established -> contradicted</p>
+<p>Finance
+pending -> authorized -> settled -> reversed</p>
+<p>Insurance
+filed -> reviewed -> approved/denied -> paid</p>
+<p>DevOps
+built -> tested -> approved -> deployed</p>
+<p>Security
+requested -> authenticated -> authorized -> revoked</p>
+<p>Research
+hypothesis -> supported -> contradicted -> verified</p>
+<p>Legal / Compliance
+draft -> reviewed -> approved -> effective</p>
+<p>Manufacturing
+queued -> assembled -> inspected -> released</p>
+<p>Logistics
+created -> packed -> shipped -> delivered -> returned</p>
+<p>Customer Support
+opened -> triaged -> investigating -> resolved</p>
+<p>HR
+candidate -> interviewed -> offered -> hired</p>
+<p>Procurement
+requested -> approved -> ordered -> received</p>
+<h2 id="recurring-primitives">Recurring Primitives</h2>
+<p>The same primitives repeatedly appeared across domains:</p>
+<pre><code>State
+Transition
+Guard
+Invariant
+Claim
+Evidence
+Capability
+Effect
+Event
+Obligation
+Provenance
+Policy
+Coordinator
+</code></pre>
+<h2 id="applicability-test">Applicability Test</h2>
+<p>A domain is a stronger fit as more of these are true:</p>
+<ol>
+<li>There are identifiable lifecycle states.</li>
+<li>Current state affects which actions are valid.</li>
+<li>Some transitions are forbidden.</li>
+<li>Some transitions are high consequence.</li>
+<li>Transitions require evidence.</li>
+<li>Authority matters.</li>
+<li>Facts can be uncertain or disputed.</li>
+<li>External effects can have unknown outcomes.</li>
+<li>Multiple actors can conflict.</li>
+<li>Rules change over time.</li>
+<li>The system must explain why something happened.</li>
+<li>Incorrect assumptions can propagate into later work.</li>
+</ol>
+<p>A rough diagnostic scale was proposed:</p>
+<pre><code>0–2    Low applicability
+3–5    Useful selectively
+6–8    Strong fit
+9–12   Likely architectural fit
+</code></pre>
+<p>These thresholds are heuristic, not proven.</p>
+<h2 id="three-broad-domain-classes">Three Broad Domain Classes</h2>
+<p>Transactional domains:</p>
+<pre><code>finance
+commerce
+insurance
+logistics
+deployment
+</code></pre>
+<p>Knowledge domains:</p>
+<pre><code>medicine
+research
+legal reasoning
+compliance
+intelligence analysis
+</code></pre>
+<p>Governance domains:</p>
+<pre><code>approvals
+organizational decisions
+risk
+policy
+security
+</code></pre>
+<p>Different classes emphasize different primitives.</p>
+<p>Example:</p>
+<p>Payment:
+State + Effect + Idempotency</p>
+<p>HelixNote:
+Claim + Evidence + Epistemic State + Provenance</p>
+<p>Clarity:
+Decision State + Evidence + Capability + Obligation</p>
+<p>DevOps:
+State + Capability + Invariant + Effect</p>
+<h2 id="cross-domain-stress-test">Cross-Domain Stress Test</h2>
+<p>Five deliberately different domains were modeled using the same primitive set:</p>
+<ol>
+<li>Healthcare</li>
+<li>Finance / Payments</li>
+<li>DevOps / Deployment</li>
+<li>Manufacturing</li>
+<li>Research</li>
+</ol>
+<p>The test looked specifically for concepts that would force the introduction
+of fundamentally new primitives.</p>
+<h2 id="healthcare">Healthcare</h2>
+<p>Example hypothesis lifecycle:</p>
+<pre><code>Unknown
+  ->
+Suspected
+  ->
+Supported
+  ->
+Established
+  ->
+Contradicted
+</code></pre>
+<p>Supporting concepts:</p>
+<p>Claim:
+Patient has condition X</p>
+<p>Evidence:
+Lab result
+Imaging
+Patient report
+Clinician observation</p>
+<p>Capability:
+Clinician may establish diagnosis</p>
+<p>Effect:
+Order test
+Prescribe medication</p>
+<p>Event:
+TestResulted
+MedicationStarted</p>
+<p>Obligation:
+Follow up abnormal result
+Reassess conflicting evidence</p>
+<p>Dominant concepts:</p>
+<pre><code>Claim
+Evidence
+Epistemic State
+Provenance
+Obligation
+</code></pre>
+<p>The main wrinkle is that medical state is often knowledge ABOUT reality,
+not reality itself.</p>
+<p>This reinforces the importance of separating:</p>
+<pre><code>Domain State
+</code></pre>
+<p>from:</p>
+<pre><code>Epistemic State
+</code></pre>
+<h2 id="finance--payments">Finance / Payments</h2>
+<p>Example:</p>
+<pre><code>Payment:
+    Created
+    -> Authorized
+    -> Captured
+    -> Settled
+    -> Refunded
+</code></pre>
+<p>Refund execution:</p>
+<pre><code>Idle
+  ->
+Requested
+  ->
+Succeeded
+Failed
+OutcomeUnknown
+</code></pre>
+<p>Supporting concepts:</p>
+<p>Guard:
+Capture only after authorization</p>
+<p>Invariant:
+Refund amount &#x3C;= captured amount</p>
+<p>Capability:
+CanCapture
+CanRefund</p>
+<p>Effect:
+Call payment processor</p>
+<p>Event:
+PaymentAuthorized
+CaptureSucceeded
+RefundSucceeded</p>
+<p>Coordinator:
+Prevent mutually incompatible concurrent operations</p>
+<p>Obligation:
+Reconcile unknown payment outcome</p>
+<p>Dominant concepts:</p>
+<pre><code>State
+Transition
+Effect
+Coordinator
+Idempotency
+Capability
+</code></pre>
+<h2 id="devops--deployment">DevOps / Deployment</h2>
+<p>Example:</p>
+<pre><code>Build:
+    Created
+    -> Built
+    -> Tested
+    -> Approved
+    -> Deployable
+    -> Deployed
+</code></pre>
+<p>Claims:</p>
+<pre><code>TestsPassed
+SecurityScanPassed
+</code></pre>
+<p>Evidence:</p>
+<pre><code>CI result
+security scan result
+exact artifact hash
+</code></pre>
+<p>Capability:</p>
+<pre><code>CanDeployProduction
+</code></pre>
+<p>Invariant:</p>
+<pre><code>Production deployment refers to the exact approved artifact
+</code></pre>
+<p>Effect:</p>
+<pre><code>Deploy artifact
+</code></pre>
+<p>Event:</p>
+<pre><code>DeploymentStarted
+DeploymentSucceeded
+</code></pre>
+<p>Obligation:</p>
+<pre><code>Roll back or investigate failed deployment
+</code></pre>
+<p>Policy versioning fits naturally.</p>
+<p>For example:</p>
+<pre><code>DeploymentPolicy@12
+    requires unit tests
+    requires integration tests
+</code></pre>
+<p>Later:</p>
+<pre><code>DeploymentPolicy@13
+    requires unit tests
+    requires integration tests
+    requires security scan
+</code></pre>
+<p>Deployment events retain the policy snapshot under which deployment was legal.</p>
+<h2 id="manufacturing">Manufacturing</h2>
+<p>Example:</p>
+<pre><code>Part:
+    Raw
+    -> Machined
+    -> Inspected
+    -> Released
+</code></pre>
+<p>Inspection:</p>
+<pre><code>NotInspected
+  ->
+Passed
+Failed
+ConditionalReview
+</code></pre>
+<p>Evidence:</p>
+<pre><code>Measurements
+Inspection records
+</code></pre>
+<p>Guard:</p>
+<pre><code>Release requires Passed inspection
+</code></pre>
+<p>Capability:</p>
+<pre><code>CanReleasePart
+</code></pre>
+<p>Effect:</p>
+<pre><code>Start machine
+Move inventory
+Print shipping label
+</code></pre>
+<p>Event:</p>
+<pre><code>InspectionCompleted
+PartReleased
+</code></pre>
+<p>Obligation:</p>
+<pre><code>Quarantine failed batch
+Investigate measurement anomaly
+</code></pre>
+<p>A particularly strong example:</p>
+<pre><code>Calibration evidence invalidated
+    ->
+inspection claims lose authority
+    ->
+previously released parts identified
+    ->
+reassessment obligations generated
+</code></pre>
+<p>This is structurally similar to evidence invalidation in healthcare.</p>
+<h2 id="research">Research</h2>
+<p>Example:</p>
+<pre><code>Hypothesis:
+    Proposed
+    -> Investigating
+    -> Supported
+    -> Contradicted
+    -> Established
+</code></pre>
+<p>Claim:</p>
+<pre><code>Technique A reduces error rate
+</code></pre>
+<p>Evidence:</p>
+<pre><code>Experiment
+Paper
+Dataset
+</code></pre>
+<p>Epistemic State:</p>
+<pre><code>Assumed
+Inferred
+Verified
+Contradicted
+</code></pre>
+<p>Event:</p>
+<pre><code>EvidenceAdded
+EvidenceInvalidated
+ClaimReassessed
+</code></pre>
+<p>Obligation:</p>
+<pre><code>Replicate experiment
+Resolve contradictory evidence
+</code></pre>
+<p>Policy:</p>
+<pre><code>Evidence threshold for "Established"
+</code></pre>
+<p>Dominant concepts:</p>
+<pre><code>Claim
+Evidence
+Epistemic State
+Provenance
+Obligation
+Policy
+</code></pre>
+<p>This was important because research is not primarily transactional,
+yet the same architecture still works.</p>
+<h2 id="cross-domain-conclusion">Cross-Domain Conclusion</h2>
+<p>The same primitives survive across very different domains.</p>
+<p>What changes is their relative importance.</p>
+<p>This suggests the architecture is more like a semantic grammar than
+a mandatory one-size-fits-all object model.</p>
+<p>A domain composes the primitives that carry semantic weight.</p>
+<p>The recurring pattern is:</p>
+<pre><code>What do we currently believe/state?
+    ->
+Why do we believe it?
+    ->
+What rules apply?
+    ->
+What may happen next?
+    ->
+Who may cause it?
+    ->
+What actually happened?
+    ->
+What changed?
+    ->
+What now requires attention?
+</code></pre>
+<p>Mapping:</p>
+<pre><code>State / Claim
+    ->
+Evidence + Provenance
+    ->
+Policy
+    ->
+Capability
+    ->
+Transition
+    ->
+Effect
+    ->
+Event
+    ->
+New State
+    ->
+Obligation
+</code></pre>
+<h2 id="possible-missing-concept-subject">Possible Missing Concept: Subject</h2>
+<p>One concept repeatedly appeared:</p>
+<pre><code>Subject
+</code></pre>
+<p>Meaning:</p>
+<pre><code>What thing is the state, claim, evidence, or transition about?
+</code></pre>
+<p>Examples:</p>
+<pre><code>Patient P17
+Payment P92
+Build B44
+Part X117
+Hypothesis H3
+</code></pre>
+<p>Possible model:</p>
+<pre><code>Claim C17
+    about Subject Patient-42
+
+Evidence E91
+    supports Claim C17
+
+Transition T12
+    changes Subject Order-81
+</code></pre>
+<p>It is not yet clear whether Subject deserves to be a canonical primitive
+or is simply identity attached to other concepts.</p>
+<h1 id="part-2--boundary-testing-where-not-to-use-it">PART 2 — Boundary Testing: Where NOT to Use It</h1>
+<p>The architecture should not be treated as a universal replacement
+for ordinary programming.</p>
+<p>The critical boundary is whether correctness depends on:</p>
+<pre><code>what may happen next
+</code></pre>
+<p>versus simply:</p>
+<pre><code>transforming input into output
+</code></pre>
+<h2 id="pure-data-transformation">Pure Data Transformation</h2>
+<p>Examples:</p>
+<pre><code>Image -> Resized Image
+CSV -> Aggregate Statistics
+</code></pre>
+<p>Adding:</p>
+<pre><code>Unprocessed -> Processed
+</code></pre>
+<p>usually contributes little.</p>
+<p>A function such as:</p>
+<pre><code>resize : Image -> Dimensions -> Image
+</code></pre>
+<p>already captures the essential behavior.</p>
+<p>There is little meaningful lifecycle, authority, evidence,
+or transition legality.</p>
+<p>Rule:</p>
+<pre><code>If output depends primarily on inputs rather than history
+or lifecycle, a state system is probably unnecessary.
+</code></pre>
+<h2 id="numerical-computation">Numerical Computation</h2>
+<p>Examples:</p>
+<pre><code>matrix multiplication
+statistical calculation
+signal processing
+compression
+encryption
+</code></pre>
+<p>The correctness properties are mathematical,
+not lifecycle-oriented.</p>
+<p>The job around a computation may have state:</p>
+<pre><code>Queued
+Running
+Completed
+Failed
+</code></pre>
+<p>but the computation itself often does not need domain state modeling.</p>
+<h2 id="crud-content-systems">CRUD Content Systems</h2>
+<p>A basic editable document with:</p>
+<pre><code>title
+body
+author
+</code></pre>
+<p>does not necessarily need state-constrained architecture.</p>
+<p>However:</p>
+<pre><code>Draft
+  ->
+Review
+  ->
+Approved
+  ->
+Published
+  ->
+Retracted
+</code></pre>
+<p>does.</p>
+<p>Important distinction:</p>
+<pre><code>Article body
+    ordinary data
+
+Publishing lifecycle
+    state system
+</code></pre>
+<p>Rule:</p>
+<pre><code>Model the consequential lifecycle,
+not the entire object.
+</code></pre>
+<h2 id="creative-software">Creative Software</h2>
+<p>Examples:</p>
+<pre><code>writing
+drawing
+music composition
+image generation
+brainstorming
+3D modeling
+</code></pre>
+<p>Creative value may depend on a huge permissive search space.</p>
+<p>Trying to define legal next artistic states can be counterproductive.</p>
+<p>State systems may still govern surrounding workflows:</p>
+<pre><code>Draft -> Submitted -> Approved
+</code></pre>
+<p>or:</p>
+<pre><code>RenderQueued -> Rendering -> Complete
+</code></pre>
+<p>but not the creative exploration itself.</p>
+<p>Rule:</p>
+<pre><code>Constraint should surround creative work,
+not unnecessarily constrain the creative search space.
+</code></pre>
+<h2 id="exploratory-analytics">Exploratory Analytics</h2>
+<p>During exploration:</p>
+<pre><code>explore
+hypothesize
+calculate
+discard
+try again
+</code></pre>
+<p>permissiveness is useful.</p>
+<p>Once a finding becomes operational:</p>
+<pre><code>InterestingPattern
+    ->
+Claim
+    ->
+Evidence evaluated
+    ->
+Decision input
+</code></pre>
+<p>constraint becomes relevant.</p>
+<p>Important boundary:</p>
+<pre><code>Exploration
+    permissive
+
+Operationalization
+    constrained
+</code></pre>
+<h2 id="machine-learning">Machine Learning</h2>
+<p>Training itself is often:</p>
+<pre><code>data -> optimization -> model
+</code></pre>
+<p>and does not require the full semantic architecture.</p>
+<p>But surrounding lifecycle does:</p>
+<pre><code>Dataset -> Validated
+Model -> Evaluated
+ModelVersion -> Approved
+Deployment -> Production
+</code></pre>
+<p>Claims such as:</p>
+<pre><code>Model has 93% accuracy
+</code></pre>
+<p>also require evidence and provenance.</p>
+<h2 id="games">Games</h2>
+<p>Games contain many natural state machines:</p>
+<pre><code>Idle
+Walking
+Jumping
+Falling
+Dead
+</code></pre>
+<p>But not every world value is semantic state.</p>
+<p>For example:</p>
+<pre><code>x = 142
+y = 918
+</code></pre>
+<p>need not become a distinct state machine.</p>
+<p>Important distinction:</p>
+<pre><code>State that affects behavioral legality
+</code></pre>
+<p>versus:</p>
+<pre><code>Data that merely describes the current world
+</code></pre>
+<h2 id="ui-state">UI State</h2>
+<p>Ordinary form values:</p>
+<pre><code>FirstName
+LastName
+SearchText
+ScrollPosition
+</code></pre>
+<p>do not need heavy state semantics.</p>
+<p>But:</p>
+<pre><code>Editing
+  ->
+Submitting
+  ->
+Submitted
+</code></pre>
+<p>or:</p>
+<pre><code>Submitting
+  ->
+Failed
+</code></pre>
+<p>may.</p>
+<p>Rule:</p>
+<pre><code>values != behavioral state
+</code></pre>
+<h2 id="stateless-services">Stateless Services</h2>
+<p>Example:</p>
+<pre><code>POST /convert-temperature
+
+32°F -> 0°C
+</code></pre>
+<p>There is essentially nothing for the architecture to contribute.</p>
+<p>This is a useful negative control.</p>
+<h2 id="search-and-retrieval">Search and Retrieval</h2>
+<p>Search itself:</p>
+<pre><code>query -> results
+</code></pre>
+<p>usually does not need state-constrained semantics.</p>
+<p>But if search results become evidence for:</p>
+<pre><code>medical recommendation
+financial transaction
+compliance decision
+</code></pre>
+<p>then the semantic architecture belongs at the downstream decision boundary.</p>
+<h2 id="boundary-conclusion">Boundary Conclusion</h2>
+<p>The wrong question is:</p>
+<pre><code>Does this application have state?
+</code></pre>
+<p>Almost every application does.</p>
+<p>The better question is:</p>
+<pre><code>Does the current condition determine which future actions are
+legitimate, and does getting that wrong have semantic consequences?
+</code></pre>
+<p>If no:</p>
+<pre><code>normal typed data and functions
+</code></pre>
+<p>If yes:</p>
+<pre><code>state-constrained modeling becomes valuable
+</code></pre>
+<h2 id="revised-applicability-rule">Revised Applicability Rule</h2>
+<p>A concept deserves state-system treatment when two or more of these are true:</p>
+<ol>
+<li>Current condition changes legal future behavior.</li>
+<li>History matters.</li>
+<li>Some transitions are forbidden.</li>
+<li>Authority matters.</li>
+<li>Evidence matters.</li>
+<li>Effects may be irreversible.</li>
+<li>External outcomes can be uncertain.</li>
+<li>Rules change over time.</li>
+<li>Multiple actors can conflict.</li>
+<li>The system must explain why something happened.</li>
+</ol>
+<h2 id="three-zone-software-model">Three-Zone Software Model</h2>
+<p>The boundary test suggests a useful software structure:</p>
+<pre><code>    PERMISSIVE / COMPUTATIONAL CORE
+    -------------------------------
+    calculations
+    transformations
+    creative exploration
+    model inference
+
+                |
+                v
+
+        SEMANTIC BOUNDARY
+
+                |
+                v
+
+    STATE-CONSTRAINED DOMAIN
+    ------------------------
+    claims
+    decisions
+    approvals
+    commitments
+    effects
+    transitions
+    obligations
+</code></pre>
+<h2 id="key-principle">Key Principle</h2>
+<pre><code>Exploration should be permissive.
+
+Commitment should be constrained.
+</code></pre>
+<p>This is one of the clearest statements of the overall architecture.</p>
+<p>AI can have broad freedom to reason, generate, and explore.</p>
+<p>Hard constraints become dominant when it attempts consequential operations such as:</p>
+<pre><code>merge code
+deploy production
+establish medical claim
+approve loan
+send money
+change policy
+</code></pre>
+<p>State-constrained architecture is therefore not:</p>
+<pre><code>a programming paradigm for everything
+</code></pre>
+<p>It is:</p>
+<pre><code>an architecture for governing consequential transitions.
+</code></pre>
+<h1 id="part-3--obligations">PART 3 — Obligations</h1>
+<h2 id="why-obligations-matter">Why Obligations Matter</h2>
+<p>Capabilities answer:</p>
+<pre><code>What MAY happen?
+</code></pre>
+<p>Obligations answer:</p>
+<pre><code>What MUST be resolved?
+</code></pre>
+<p>Example:</p>
+<pre><code>Evidence invalidated
+    ->
+Diagnosis support weakened
+</code></pre>
+<p>The system may remove:</p>
+<pre><code>CanTreatAsEstablished
+</code></pre>
+<p>but should also create:</p>
+<pre><code>Obligation:
+    ReassessDiagnosis
+</code></pre>
+<p>Without obligations, the architecture can block unsafe actions
+but still fail to ensure important unresolved conditions are addressed.</p>
+<h2 id="working-definition">Working Definition</h2>
+<p>An obligation is:</p>
+<pre><code>A versioned, attributable requirement for some condition
+to be resolved, satisfied, waived, or escalated because of
+state, evidence, policy, or an event.
+</code></pre>
+<p>A task says:</p>
+<pre><code>Do this.
+</code></pre>
+<p>An obligation says:</p>
+<pre><code>This condition cannot simply be ignored.
+</code></pre>
+<h2 id="obligation-lifecycle">Obligation Lifecycle</h2>
+<p>Possible lifecycle:</p>
+<pre><code>Raised
+  ->
+Acknowledged
+  ->
+InProgress
+  ->
+Satisfied
+</code></pre>
+<p>Alternative transitions:</p>
+<pre><code>Raised -> Waived
+Raised -> Escalated
+InProgress -> Blocked
+Blocked -> Escalated
+Raised -> Superseded
+</code></pre>
+<p>Caution around Expired:</p>
+<p>A missed deadline should not normally erase the obligation.</p>
+<p>Better:</p>
+<pre><code>Due
+  ->
+Overdue
+  ->
+Escalated
+</code></pre>
+<h2 id="obligation-provenance">Obligation Provenance</h2>
+<p>An obligation should preserve why it exists.</p>
+<p>Example:</p>
+<pre><code>Obligation O-117
+
+Type:
+    ReassessApplication
+
+Subject:
+    Application A-42
+
+CreatedBy:
+    FraudPolicy v13 activation
+
+Reason:
+    Prior approval relied on FraudPolicy v12
+
+Evidence:
+    PolicyDiff PD-13
+
+RaisedAt:
+    2026-08-14
+
+RequiredResolution:
+    Reevaluate under FraudPolicy v13
+</code></pre>
+<h2 id="derived-obligations">Derived Obligations</h2>
+<p>Most obligations should ideally be mechanically derived.</p>
+<p>Examples:</p>
+<p>Policy change:</p>
+<pre><code>when:
+    Policy changes fraud requirement
+
+and:
+    Order.State = Approved
+    Funding.State != Funded
+
+derive:
+    ReassessFraudEligibility
+</code></pre>
+<p>Unknown external effect:</p>
+<pre><code>when:
+    RefundExecution = OutcomeUnknown
+
+derive:
+    ReconcileRefund
+</code></pre>
+<p>Evidence invalidation:</p>
+<pre><code>when:
+    Evidence E17 invalidated
+
+and:
+    Claim C42 dependsOn E17
+
+derive:
+    ReassessClaim C42
+</code></pre>
+<h2 id="forward-consequence-model">Forward Consequence Model</h2>
+<pre><code>Event / State Change
+    ->
+Policy Evaluation
+    ->
+Capabilities removed or added
+    ->
+Obligations raised
+</code></pre>
+<h2 id="obligation-severity-and-consequence">Obligation Severity and Consequence</h2>
+<p>Not all obligations are equally urgent.</p>
+<p>Possible metadata:</p>
+<pre><code>priority
+consequence
+deadline
+reversibility
+risk
+</code></pre>
+<p>But obligation identity should remain separate from priority.</p>
+<p>The obligation defines:</p>
+<pre><code>what condition must be resolved
+</code></pre>
+<p>Priority defines:</p>
+<pre><code>how urgently
+</code></pre>
+<h2 id="kinds-of-obligation">Kinds of Obligation</h2>
+<p>At least four kinds appear useful:</p>
+<ol>
+<li>
+<p>Remedial</p>
+<p>ReconcileUnknownPayment
+RepairInvalidState
+ReassessInvalidatedEvidence</p>
+</li>
+<li>
+<p>Procedural</p>
+<p>ObtainApproval
+CompleteReview
+PerformInspection</p>
+</li>
+<li>
+<p>Monitoring</p>
+<p>RecheckFraudStatusBeforeShipping
+MonitorTreatmentResponse</p>
+</li>
+<li>
+<p>Escalation</p>
+<p>HumanReviewRequired
+ComplianceEscalation
+ClinicalReviewRequired</p>
+</li>
+</ol>
+<h2 id="capability-vs-obligation">Capability vs Obligation</h2>
+<p>An obligation does NOT automatically grant permission to satisfy it.</p>
+<p>Example:</p>
+<pre><code>Obligation:
+    ApproveOrRejectApplication
+</code></pre>
+<p>does not imply:</p>
+<pre><code>CanApprove
+</code></pre>
+<p>Instead:</p>
+<pre><code>Obligation
+    something must be resolved
+
+Capability
+    an actor may perform a particular transition
+</code></pre>
+<p>Example:</p>
+<pre><code>Obligation:
+    ReassessDiagnosis
+
+Agent capabilities:
+    CanCollectEvidence
+    CanProposeReassessment
+
+Clinician capability:
+    CanEstablishDiagnosis
+</code></pre>
+<p>This allows agents to advance work without possessing final authority.</p>
+<h2 id="conflicting-obligations">Conflicting Obligations</h2>
+<p>Conflicting obligations are inevitable.</p>
+<p>Example:</p>
+<pre><code>Obligation A:
+    Refund customer immediately
+
+Obligation B:
+    Do not move funds while fraud investigation is open
+</code></pre>
+<p>Both may be valid.</p>
+<p>The system should not silently choose.</p>
+<p>Possible representation:</p>
+<pre><code>ObligationConflict {
+    obligations = [A, B]
+    state = Unresolved
+}
+</code></pre>
+<p>The legal frontier may become:</p>
+<pre><code>CanEscalate
+CanRequestPolicyResolution
+</code></pre>
+<p>instead of:</p>
+<pre><code>CanRefund
+</code></pre>
+<p>Principle:</p>
+<pre><code>Conflicting obligations create a decision state.
+
+They do not cancel each other implicitly.
+</code></pre>
+<h2 id="priority-is-not-just-a-number">Priority Is Not Just a Number</h2>
+<p>Priority should ideally derive from policy,
+not arbitrary numeric ordering.</p>
+<p>Example:</p>
+<pre><code>Safety > financial convenience
+Regulatory deadline > internal SLA
+Irreversible harm > reversible delay
+</code></pre>
+<p>When policy cannot decide the conflict,
+the system should escalate.</p>
+<h2 id="obligations-can-generate-obligations">Obligations Can Generate Obligations</h2>
+<p>Example:</p>
+<pre><code>Obligation:
+    ReconcileRefund
+</code></pre>
+<p>External provider still cannot determine outcome.</p>
+<p>Then:</p>
+<pre><code>Obligation:
+    EscalateRefundInvestigation
+</code></pre>
+<p>This recursion is another reason obligations may need to be first-class stateful objects.</p>
+<h2 id="large-scale-obligation-generation">Large-Scale Obligation Generation</h2>
+<p>A policy change may affect hundreds of thousands of subjects.</p>
+<p>Example:</p>
+<pre><code>Policy v13 activated
+
+318,271 applications require reassessment
+</code></pre>
+<p>Creating hundreds of thousands of heavyweight workflows immediately
+may be wasteful.</p>
+<p>Possible model:</p>
+<pre><code>Obligation Rule
+    ->
+Affected Population
+    ->
+Materialized obligations as needed
+</code></pre>
+<p>Example:</p>
+<pre><code>PolicyImpact I-17
+
+Affected:
+    Approved applications not yet funded
+
+Count:
+    318,271
+
+Rule:
+    ReassessFraudEligibility
+</code></pre>
+<p>Obligations can be materialized lazily or in batches.</p>
+<h2 id="obligation-groups--batches">Obligation Groups / Batches</h2>
+<p>Example:</p>
+<pre><code>ObligationBatch {
+    source = PolicyChange v13
+    scope = 318,271 applications
+    completed = 71,219
+    blocked = 214
+    remaining = ...
+}
+</code></pre>
+<p>Individual obligations retain identity.</p>
+<p>The batch provides operational visibility.</p>
+<h2 id="satisfaction-criteria">Satisfaction Criteria</h2>
+<p>An obligation should ideally have machine-checkable satisfaction criteria.</p>
+<p>Example:</p>
+<pre><code>Obligation:
+    ReconcileRefund
+
+Satisfied when:
+    RefundExecution = Succeeded
+    OR
+    RefundExecution = FailedWithVerifiedNoEffect
+</code></pre>
+<p>Or:</p>
+<pre><code>Obligation:
+    ReassessClaim
+
+Satisfied when:
+    Claim.EpistemicState changed
+    AND
+    reassessment event recorded
+</code></pre>
+<p>This prevents an agent from merely declaring:</p>
+<pre><code>Done
+</code></pre>
+<h2 id="waivers">Waivers</h2>
+<p>Waiving an obligation should itself be a governed transition.</p>
+<p>Example:</p>
+<pre><code>Waive requires:
+    WaiverCapability
+    Reason
+    PolicyBasis
+    Actor
+    Timestamp
+</code></pre>
+<p>Not:</p>
+<pre><code>obligation.status = Closed
+</code></pre>
+<h2 id="obligations-as-agent-work-queue">Obligations as Agent Work Queue</h2>
+<p>Instead of telling an agent:</p>
+<pre><code>Inspect everything and decide what needs doing
+</code></pre>
+<p>the runtime can expose:</p>
+<pre><code>Outstanding obligations:
+
+    O-17 Reconcile refund
+    O-18 Obtain fresh fraud status
+    O-19 Reassess approval
+</code></pre>
+<p>Each obligation can expose:</p>
+<pre><code>current state
+reason
+required resolution
+available transitions
+missing evidence
+required capability
+deadline
+</code></pre>
+<h2 id="agent-operating-loop">Agent Operating Loop</h2>
+<pre><code>Observe obligations
+    ->
+Choose resolvable obligation
+    ->
+Inspect legal transitions
+    ->
+Gather missing evidence
+    ->
+Propose transition
+    ->
+System validates
+    ->
+Obligation satisfied or updated
+</code></pre>
+<h2 id="obligation-as-canonical-concept">Obligation as Canonical Concept</h2>
+<p>Obligation increasingly appears to deserve canonical status.</p>
+<p>The architecture becomes:</p>
+<pre><code>STATE
+    What is true?
+
+CLAIM / EVIDENCE
+    Why do we believe it?
+
+POLICY
+    What rules apply?
+
+CAPABILITY
+    What may happen?
+
+OBLIGATION
+    What must be resolved?
+
+TRANSITION
+    How state may change?
+
+COORDINATOR
+    What mutually exclusive process currently owns action?
+
+EFFECT
+    What happens outside the system?
+
+EVENT
+    What actually happened?
+
+PROVENANCE
+    Why did all of this occur?
+</code></pre>
+<p>Useful duality:</p>
+<pre><code>Capabilities define the legal frontier.
+
+Obligations define the required frontier.
+</code></pre>
+<h1 id="part-4--planning-from-obligations">PART 4 — Planning From Obligations</h1>
+<h2 id="core-idea">Core Idea</h2>
+<p>Once obligations and capabilities are both explicit,
+the architecture can derive paths from:</p>
+<pre><code>Something must be resolved
+</code></pre>
+<p>to:</p>
+<pre><code>What must become true before resolution is legal
+</code></pre>
+<p>This turns the state model into a constrained planner.</p>
+<h2 id="simple-example">Simple Example</h2>
+<p>Obligation:</p>
+<pre><code>ShipApprovedOrder
+</code></pre>
+<p>Current state:</p>
+<pre><code>Order = Approved
+Payment = Authorized
+Customer = Verified
+Shipment = Ready
+</code></pre>
+<p>CanShip requires:</p>
+<pre><code>Order = Approved
+Payment = Captured
+Customer = Verified
+Shipment = Ready
+</code></pre>
+<p>Missing prerequisite:</p>
+<pre><code>Payment = Captured
+</code></pre>
+<p>What transition can establish it?</p>
+<pre><code>CapturePayment
+</code></pre>
+<p>CanCapture requires:</p>
+<pre><code>Payment = Authorized
+Customer = Verified
+</code></pre>
+<p>Those requirements are already satisfied.</p>
+<p>Derived plan:</p>
+<pre><code>CapturePayment
+    ->
+ShipOrder
+</code></pre>
+<p>The agent did not infer the workflow from repository code.</p>
+<p>The architecture exposed it.</p>
+<h2 id="planning-as-graph-search">Planning as Graph Search</h2>
+<p>The system can be understood as:</p>
+<pre><code>Current State
+    ->
+Available Transitions
+    ->
+Possible Next States
+    ->
+...
+    ->
+Obligation Satisfied
+</code></pre>
+<p>Agent planning becomes:</p>
+<pre><code>Find a legal path from current verified state
+to a state satisfying the obligation.
+</code></pre>
+<p>The agent does not control which edges exist.</p>
+<p>The state/policy system does.</p>
+<h2 id="missing-prerequisites">Missing Prerequisites</h2>
+<p>Example obligation:</p>
+<pre><code>ReassessApplication
+</code></pre>
+<p>Satisfaction:</p>
+<pre><code>Application.ReviewState = Reassessed
+</code></pre>
+<p>Reassess requires:</p>
+<pre><code>FreshFraudCheck
+IdentityVerified
+ReviewerAssigned
+</code></pre>
+<p>Current state:</p>
+<pre><code>IdentityVerified       yes
+ReviewerAssigned       yes
+FraudCheck             stale
+</code></pre>
+<p>Missing prerequisite:</p>
+<pre><code>FreshFraudCheck
+</code></pre>
+<p>Transition that may produce it:</p>
+<pre><code>RequestFraudCheck
+</code></pre>
+<h2 id="plans-must-branch-across-uncertain-effects">Plans Must Branch Across Uncertain Effects</h2>
+<p>RequestFraudCheck has an external uncertain outcome.</p>
+<p>The planner must NOT pretend:</p>
+<pre><code>RequestFraudCheck
+  ->
+Reassess
+</code></pre>
+<p>is guaranteed.</p>
+<p>Instead:</p>
+<pre><code>RequestFraudCheck
+    ->
+WAIT FOR EVENT
+</code></pre>
+<p>Possible outcomes:</p>
+<pre><code>             RequestFraudCheck
+                     |
+            +--------+--------+
+            |                 |
+            v                 v
+         Clear             Flagged
+            |                 |
+            v                 v
+         Reassess          Escalate
+</code></pre>
+<p>Possible timeout:</p>
+<pre><code>Timeout
+  ->
+Reconcile
+</code></pre>
+<p>Principle:</p>
+<pre><code>Plans must branch at uncertain effects
+rather than pretending future state is known.
+</code></pre>
+<h2 id="plans-are-graphs-not-necessarily-sequences">Plans Are Graphs, Not Necessarily Sequences</h2>
+<p>The plan itself may be contingent.</p>
+<p>This is policy-aware contingent planning.</p>
+<h2 id="goals-vs-actions">Goals vs Actions</h2>
+<p>An obligation should provide a goal,
+not necessarily a hard-coded procedure.</p>
+<p>Example:</p>
+<pre><code>Goal:
+    Refund disposition resolved
+</code></pre>
+<p>Possible satisfaction states:</p>
+<pre><code>RefundSucceeded
+OR
+VerifiedNoRefundRequired
+OR
+WaiverApproved
+</code></pre>
+<p>Therefore:</p>
+<pre><code>Obligation
+    ->
+Satisfaction Conditions
+</code></pre>
+<p>rather than:</p>
+<pre><code>Obligation
+    ->
+Fixed Procedure
+</code></pre>
+<p>The planner finds a valid route.</p>
+<h2 id="requirement-gap">Requirement Gap</h2>
+<p>A useful derived concept is:</p>
+<pre><code>Requirement Gap
+</code></pre>
+<p>Example:</p>
+<pre><code>Goal:
+    CanShip
+
+Missing:
+    PaymentCaptured
+    FreshFraudCheck
+</code></pre>
+<p>For each gap:</p>
+<pre><code>What legal transition can establish this condition?
+</code></pre>
+<p>Possible answers:</p>
+<pre><code>PaymentCaptured
+    &#x3C;- CapturePayment
+
+FreshFraudCheck
+    &#x3C;- RequestFraudCheck
+</code></pre>
+<p>Then recursively analyze their prerequisites.</p>
+<h2 id="planning-dependency-chain">Planning Dependency Chain</h2>
+<pre><code>Obligation
+    ->
+Satisfaction condition
+    ->
+Required capability/state
+    ->
+Missing prerequisites
+    ->
+Transitions capable of producing them
+    ->
+Their prerequisites
+</code></pre>
+<h2 id="prompt-compression">Prompt Compression</h2>
+<p>Today, an agent might be prompted:</p>
+<pre><code>Before shipping, check payment.
+If not captured, capture it.
+Make sure fraud status is fresh.
+If stale, request another check.
+If customer is blocked, do not ship and escalate.
+</code></pre>
+<p>Instead, the semantic model can say:</p>
+<pre><code>CanShip requires:
+    ApprovedOrder
+    CapturedPayment
+    VerifiedCustomer
+    FreshFraudClearance
+</code></pre>
+<p>The planner discovers the legal dependency path.</p>
+<p>This is semantic compression.</p>
+<h2 id="dependency-cycles">Dependency Cycles</h2>
+<p>Potential problem:</p>
+<pre><code>A requires B
+B requires C
+C requires A
+</code></pre>
+<p>A naive planner may loop forever.</p>
+<p>Need to distinguish:</p>
+<pre><code>Transition graph cycles
+</code></pre>
+<p>from:</p>
+<pre><code>Requirement dependency cycles
+</code></pre>
+<p>The latter may indicate a broken specification
+and should potentially be detected at compile time.</p>
+<h2 id="multiple-legal-paths">Multiple Legal Paths</h2>
+<p>Example:</p>
+<pre><code>Path A:
+    AutoVerification -> Approve
+
+Path B:
+    ManualReview -> Approve
+
+Path C:
+    Waiver -> Approve
+</code></pre>
+<p>All may be legal.</p>
+<p>Selecting among them requires more than legality.</p>
+<p>Potential optimization attributes:</p>
+<pre><code>cost
+risk
+latency
+reversibility
+authority
+</code></pre>
+<p>Important separation:</p>
+<pre><code>LEGALITY
+    what is permitted
+
+PREFERENCE
+    which permitted route is preferred
+</code></pre>
+<p>Policy determines legality.</p>
+<p>Optimization ranks legal routes.</p>
+<h2 id="protected-prerequisites">Protected Prerequisites</h2>
+<p>The planner must not manufacture protected prerequisites.</p>
+<p>If it needs:</p>
+<pre><code>IdentityVerified
+</code></pre>
+<p>it cannot simply construct:</p>
+<pre><code>IdentityVerified
+</code></pre>
+<p>It must find an authorized transition such as:</p>
+<pre><code>VerifyIdentity
+</code></pre>
+<p>which itself requires proper evidence or an external verifier.</p>
+<p>Principle:</p>
+<pre><code>The planner may search for ways to obtain prerequisites,
+but cannot construct protected prerequisites directly.
+</code></pre>
+<h2 id="unreachable-obligations">Unreachable Obligations</h2>
+<p>The planner must be able to conclude:</p>
+<pre><code>No currently legal path to satisfaction.
+</code></pre>
+<p>Example:</p>
+<pre><code>Obligation:
+    RefundCustomer
+</code></pre>
+<p>but:</p>
+<pre><code>payment provider permanently unavailable
+no manual refund capability exists
+</code></pre>
+<p>Then:</p>
+<pre><code>Blocked obligation
+
+Reason:
+    No valid transition can satisfy prerequisite X
+</code></pre>
+<p>Possible actions:</p>
+<pre><code>Escalate
+Change policy
+Introduce manual capability
+</code></pre>
+<p>This is preferable to hallucinating a workaround.</p>
+<h2 id="plan-explanations">Plan Explanations</h2>
+<p>Instead of:</p>
+<pre><code>Cannot ship
+</code></pre>
+<p>the runtime can explain:</p>
+<pre><code>Cannot ShipOrder.
+
+CanShip requires:
+    ✓ OrderApproved
+    ✓ CustomerVerified
+    ✗ PaymentCaptured
+    ✗ FraudStatusFresh
+
+Shortest currently legal path:
+
+    1. CapturePayment
+    2. RequestFraudRefresh
+    3. Wait for FraudCheckCompleted
+    4. Re-evaluate CanShip
+</code></pre>
+<h2 id="possible-agent-interface">Possible Agent Interface</h2>
+<p>A constrained agent runtime may need only a small planning surface:</p>
+<pre><code>get_obligations()
+get_available_capabilities()
+explain_blocked_transition()
+find_legal_paths(goal)
+request_transition(...)
+</code></pre>
+<p>rather than unrestricted tools like:</p>
+<pre><code>shell
+database
+arbitrary APIs
+entire repository access
+</code></pre>
+<h2 id="safety-consequence">Safety Consequence</h2>
+<p>Conventional agent thinking:</p>
+<pre><code>I need state X.
+I'll edit the system until X is true.
+</code></pre>
+<p>State-constrained planning:</p>
+<pre><code>I need X.
+What legal transition can create X?
+</code></pre>
+<p>If none exists:</p>
+<pre><code>X cannot currently be obtained.
+</code></pre>
+<p>This is fundamentally different.</p>
+<h2 id="planning-architecture">Planning Architecture</h2>
+<pre><code>            OBLIGATION
+                |
+                v
+      SATISFACTION CRITERIA
+                |
+                v
+         GOAL CONDITIONS
+                |
+                v
+      CURRENT VERIFIED STATE
+                |
+                v
+         GAP ANALYSIS
+                |
+                v
+  LEGAL TRANSITION GRAPH SEARCH
+                |
+         +------+------+
+         |             |
+         v             v
+   deterministic    uncertain effect
+     transition          |
+         |               v
+         |          wait/reconcile
+         |               |
+         +-------+-------+
+                 |
+                 v
+           NEW STATE
+                 |
+                 v
+              REPLAN
+</code></pre>
+<p>Throughout this process:</p>
+<pre><code>Policy
+Capabilities
+Authority
+Versions
+Evidence
+Freshness
+</code></pre>
+<p>constrain the graph.</p>
+<h2 id="planning-implication">Planning Implication</h2>
+<p>The same specification that prevents illegal actions
+can also generate legal plans.</p>
+<p>This makes the architecture more than a guardrail.</p>
+<p>It can become the agent's world model.</p>
+<p>The deterministic layer answers:</p>
+<pre><code>What exists?
+What may change?
+What am I allowed to do?
+What do I need first?
+What happens if this fails?
+</code></pre>
+<p>The probabilistic agent focuses on:</p>
+<pre><code>choosing among legitimate alternatives
+interpreting ambiguous human intent
+gathering information
+explaining
+handling genuinely novel cases
+</code></pre>
+<h1 id="part-5--one-specification-generating-four-artifacts">PART 5 — One Specification Generating Four Artifacts</h1>
+<h2 id="test-goal">Test Goal</h2>
+<p>The next test asked whether one declarative specification
+could drive all of:</p>
+<ol>
+<li>Runtime guards</li>
+<li>Agent-visible actions</li>
+<li>Planning graph</li>
+<li>Generated tests</li>
+</ol>
+<p>without embedding four separate interpretations of the same rule.</p>
+<h2 id="toy-domain">Toy Domain</h2>
+<p>State dimensions:</p>
+<pre><code>Order:
+    Draft
+    Approved
+
+Payment:
+    Authorized
+    Captured
+
+Fraud:
+    FreshClear
+    Stale
+    Flagged
+</code></pre>
+<h2 id="example-transition">Example Transition</h2>
+<pre><code>transition CapturePayment
+
+requires:
+    Order = Approved
+    Payment = Authorized
+
+produces:
+    Payment = Captured
+
+effect:
+    payment.capture
+</code></pre>
+<h2 id="shipping-transition">Shipping Transition</h2>
+<pre><code>transition ShipOrder
+
+requires:
+    Order = Approved
+    Payment = Captured
+    Fraud = FreshClear
+
+effect:
+    shipping.ship
+</code></pre>
+<h2 id="uncertain-transition">Uncertain Transition</h2>
+<pre><code>transition RefreshFraud
+
+requires:
+    Fraud = Stale
+
+effect:
+    fraud.refresh
+
+outcomes:
+
+    FraudClear:
+        Fraud = FreshClear
+
+    FraudFlagged:
+        Fraud = Flagged
+</code></pre>
+<h2 id="artifact-1--runtime-guards">Artifact 1 — Runtime Guards</h2>
+<p>The compiler can generate:</p>
+<pre><code>let canShip state =
+    state.Order = Approved &#x26;&#x26;
+    state.Payment = Captured &#x26;&#x26;
+    state.Fraud = FreshClear
+</code></pre>
+<p>No separate human-authored guard logic is needed.</p>
+<h2 id="artifact-2--agent-action-availability">Artifact 2 — Agent Action Availability</h2>
+<p>For:</p>
+<pre><code>Order = Approved
+Payment = Authorized
+Fraud = Stale
+</code></pre>
+<p>the agent receives:</p>
+<pre><code>Available:
+    CapturePayment
+    RefreshFraud
+
+Unavailable:
+    ShipOrder
+</code></pre>
+<p>After capture:</p>
+<pre><code>Order = Approved
+Payment = Captured
+Fraud = Stale
+</code></pre>
+<p>the agent receives:</p>
+<pre><code>Available:
+    RefreshFraud
+
+ShipOrder blocked because:
+    Fraud must be FreshClear
+    Current value: Stale
+</code></pre>
+<h2 id="exhaustive-consistency-check">Exhaustive Consistency Check</h2>
+<p>The toy model has 12 possible state combinations.</p>
+<p>The test compared:</p>
+<pre><code>runtime guard result
+</code></pre>
+<p>against:</p>
+<pre><code>agent action visibility
+</code></pre>
+<p>for every combination.</p>
+<p>Result:</p>
+<pre><code>zero disagreements
+</code></pre>
+<p>This worked because both were generated from the same requirement clauses.</p>
+<p>Desired property:</p>
+<pre><code>Agent-visible action space
+    =
+Runtime-accepted action space
+</code></pre>
+<h2 id="artifact-3--planning-graph">Artifact 3 — Planning Graph</h2>
+<p>Starting state:</p>
+<pre><code>Order = Approved
+Payment = Authorized
+Fraud = Stale
+</code></pre>
+<p>Goal:</p>
+<pre><code>Order = Approved
+Payment = Captured
+Fraud = FreshClear
+</code></pre>
+<p>The generated graph finds:</p>
+<pre><code>CapturePayment
+    ->
+RefreshFraud
+</code></pre>
+<p>But RefreshFraud is uncertain.</p>
+<p>Therefore the planner must produce:</p>
+<pre><code>1. CapturePayment
+2. RefreshFraud
+3. Wait for outcome
+
+If FraudClear:
+    ShipOrder may become available
+
+If FraudFlagged:
+    ShipOrder remains unavailable
+    Replan
+</code></pre>
+<h2 id="artifact-4--generated-tests">Artifact 4 — Generated Tests</h2>
+<p>From:</p>
+<pre><code>ShipOrder requires:
+    Approved
+    Captured
+    FreshClear
+</code></pre>
+<p>the compiler can generate positive tests:</p>
+<pre><code>Approved + Captured + FreshClear
+    => CanShip
+</code></pre>
+<p>and negative tests:</p>
+<pre><code>Draft + Captured + FreshClear
+    => CannotShip
+
+Approved + Authorized + FreshClear
+    => CannotShip
+
+Approved + Captured + Stale
+    => CannotShip
+
+Approved + Captured + Flagged
+    => CannotShip
+</code></pre>
+<p>It can also generate the stronger property:</p>
+<pre><code>For every state:
+
+    Agent exposes ShipOrder
+        IFF
+    Runtime accepts ShipOrder guard
+</code></pre>
+<h2 id="additional-artifacts-from-the-same-specification">Additional Artifacts From the Same Specification</h2>
+<p>Documentation:</p>
+<pre><code>Ship Order
+
+Requirements:
+    Order must be Approved
+    Payment must be Captured
+    Fraud status must be FreshClear
+</code></pre>
+<p>Block explanations:</p>
+<pre><code>Cannot ShipOrder.
+
+Missing:
+    Payment = Captured
+
+Current:
+    Payment = Authorized
+</code></pre>
+<p>Dependency graph:</p>
+<pre><code>PaymentCaptured --+
+OrderApproved -----+--> CanShip --> ShipOrder
+FraudFreshClear ---+
+</code></pre>
+<p>Agent tool schema:</p>
+<pre><code>ship_order(orderId)
+</code></pre>
+<p>exposed only when legal.</p>
+<p>Policy impact analysis:</p>
+<p>If shipping policy changes, the compiler can identify:</p>
+<pre><code>CanShip
+ShipOrder
+planning paths containing ShipOrder
+generated tests
+agent action availability
+</code></pre>
+<h2 id="what-the-specification-does-not-generate">What the Specification Does NOT Generate</h2>
+<p>The semantic specification does not eliminate ordinary implementation code.</p>
+<p>For:</p>
+<pre><code>effect:
+    payment.capture
+</code></pre>
+<p>someone must still implement the integration.</p>
+<p>Example conceptual interface:</p>
+<pre><code>PaymentEffects.Capture(
+    PaymentId,
+    OperationId
+) -> CaptureOutcome
+</code></pre>
+<p>The generated semantic layer controls:</p>
+<pre><code>when it can be called
+what operation identity to use
+what outcomes are possible
+how outcomes affect state
+</code></pre>
+<p>but not the low-level integration itself.</p>
+<h2 id="complex-domain-computation">Complex Domain Computation</h2>
+<p>A rule like:</p>
+<pre><code>AvailableCredit >= RequestedAmount
+</code></pre>
+<p>may be simple enough for the semantic layer.</p>
+<p>A concept like:</p>
+<pre><code>RiskAcceptable
+</code></pre>
+<p>may require complex computation.</p>
+<p>Do not duplicate the risk algorithm in the DSL.</p>
+<p>Instead:</p>
+<pre><code>Claim:
+    RiskAcceptable
+
+Provided by:
+    RiskEvaluation
+</code></pre>
+<p>The architecture governs:</p>
+<pre><code>meaning
+authority
+freshness
+evidence
+use in transitions
+</code></pre>
+<p>The risk engine computes the result.</p>
+<h2 id="two-layer-model">Two-Layer Model</h2>
+<p>Semantic Specification:</p>
+<pre><code>states
+claims
+transitions
+requirements
+invariants
+capabilities
+obligations
+effects
+possible outcomes
+policy dependencies
+authority
+freshness
+</code></pre>
+<p>Implementation:</p>
+<pre><code>algorithms
+database adapters
+API calls
+ML models
+UI
+external integrations
+pure computation
+</code></pre>
+<h2 id="semantic-compiler">Semantic Compiler</h2>
+<p>Input:</p>
+<pre><code>Domain Specification
+</code></pre>
+<p>Compiler performs:</p>
+<pre><code>semantic validation
+dependency analysis
+cycle detection
+reachability analysis
+policy validation
+</code></pre>
+<p>Potential output:</p>
+<pre><code>Domain types
+Runtime guards
+Capability evaluators
+Obligation evaluators
+Agent tools
+Planning graph
+Property tests
+Documentation
+Diagrams
+Audit metadata
+Policy dependency graph
+</code></pre>
+<h2 id="drift-reduction">Drift Reduction</h2>
+<p>If documentation, runtime behavior, tests, and agent tools
+all originate from the same transition definition,
+they cannot drift independently as easily.</p>
+<p>This directly attacks:</p>
+<pre><code>documentation says X
+runtime says Y
+tests imply Z
+prompt says something else
+</code></pre>
+<p>Key insight:</p>
+<pre><code>The specification does not merely constrain code.
+
+It prevents different representations of domain meaning
+from drifting independently.
+</code></pre>
+<h2 id="emerging-product-concept">Emerging Product Concept</h2>
+<p>The architecture is starting to look like:</p>
+<pre><code>A semantic compiler for agent-operated software.
+</code></pre>
+<p>It takes consequential domain rules and produces
+the deterministic environment within which probabilistic agents operate.</p>
+<h1 id="part-6--minimum-semantic-dsl">PART 6 — Minimum Semantic DSL</h1>
+<h2 id="language-design-goal">Language-Design Goal</h2>
+<p>Find the smallest semantic vocabulary that can express
+the tested domains without turning into a general-purpose programming language.</p>
+<p>Core design rule:</p>
+<pre><code>The DSL describes semantics and legality.
+
+It does not implement arbitrary computation.
+</code></pre>
+<h2 id="candidate-minimal-constructs">Candidate Minimal Constructs</h2>
+<p>A minimal language may need roughly:</p>
+<pre><code>subject
+state
+relation
+
+claim
+evidence
+
+rule
+policy
+
+transition
+requires
+produces
+
+effect
+outcome
+
+authority
+
+obligation
+satisfiedWhen
+</code></pre>
+<h2 id="state">State</h2>
+<p>Example:</p>
+<pre><code>state Payment {
+    Authorized
+    Captured
+    Refunded
+}
+</code></pre>
+<p>States may carry required data:</p>
+<pre><code>state Payment {
+    Authorized {
+        authorizationId
+    }
+
+    Captured {
+        captureId
+        amount
+    }
+}
+</code></pre>
+<p>Arbitrary methods and computation should remain outside the DSL.</p>
+<h2 id="claims">Claims</h2>
+<p>Claims represent propositions whose truth is established elsewhere.</p>
+<p>Example:</p>
+<pre><code>claim FraudClear {
+    subject: Customer
+    source: FraudService
+    freshness: 30m
+}
+</code></pre>
+<p>Or:</p>
+<pre><code>claim IdentityVerified {
+    subject: Customer
+    source: IdentityProvider
+}
+</code></pre>
+<p>This provides an escape hatch for complex domain logic.</p>
+<p>The fraud engine can do arbitrary computation externally.</p>
+<p>Its output enters the semantic system as evidence supporting a claim.</p>
+<h2 id="transitions">Transitions</h2>
+<p>Example:</p>
+<pre><code>transition CapturePayment {
+
+    requires:
+        Order = Approved
+        Payment = Authorized
+
+    produces:
+        Payment = Captured
+}
+</code></pre>
+<p>The <code>requires</code> language should be deliberately limited.</p>
+<p>Good:</p>
+<pre><code>Payment = Captured
+FraudClear
+Amount &#x3C;= CreditLimit
+Order.Owner = Actor
+</code></pre>
+<p>Potentially useful:</p>
+<pre><code>all Items satisfy Item.Ready
+</code></pre>
+<p>Dangerous:</p>
+<pre><code>execute arbitrary F# expression
+</code></pre>
+<p>Arbitrary executable expressions would destroy analyzability.</p>
+<h2 id="effects">Effects</h2>
+<p>Example:</p>
+<pre><code>transition CapturePayment {
+
+    requires:
+        Payment = Authorized
+
+    effect:
+        PaymentProvider.Capture
+
+    outcomes:
+        Success -> Payment = Captured
+        Declined -> Payment = Authorized
+        Unknown -> CaptureStatus = OutcomeUnknown
+}
+</code></pre>
+<p>The actual provider implementation remains external.</p>
+<p>The compiler only needs to know:</p>
+<pre><code>this is an effect
+possible outcomes
+Unknown may occur
+idempotency requirements
+</code></pre>
+<h2 id="obligations">Obligations</h2>
+<p>Example:</p>
+<pre><code>obligation ResolveRefund {
+
+    when:
+        RefundStatus = OutcomeUnknown
+
+    satisfiedWhen:
+        RefundStatus = Succeeded
+        OR
+        RefundStatus = VerifiedFailed
+
+    escalateAfter:
+        24h
+}
+</code></pre>
+<p>No arbitrary procedural loops are needed in the DSL.</p>
+<h2 id="authority">Authority</h2>
+<p>Example:</p>
+<pre><code>authority EstablishDiagnosis {
+    allowed:
+        LicensedClinician
+}
+</code></pre>
+<p>Then:</p>
+<pre><code>transition EstablishDiagnosis {
+
+    requires:
+        EvidenceSufficient
+
+    authority:
+        EstablishDiagnosis
+
+    produces:
+        Diagnosis = Established
+}
+</code></pre>
+<p>An agent may be allowed to propose a diagnosis
+without possessing the final establishment authority.</p>
+<h2 id="policy">Policy</h2>
+<p>Policy should be:</p>
+<pre><code>versioned
+selectable
+diffable
+dependency-trackable
+</code></pre>
+<p>Example:</p>
+<pre><code>policy FraudPolicy v13 {
+
+    appliesWhen:
+        jurisdiction = US
+
+    transition ShipOrder adds requirement:
+        FraudClear
+}
+</code></pre>
+<p>Alternative:</p>
+<pre><code>rule ShippingEligibility {
+    requires:
+        Order = Approved
+        Payment = Captured
+        FraudClear
+}
+
+transition ShipOrder {
+    governedBy:
+        ShippingEligibility
+}
+</code></pre>
+<h2 id="what-not-to-include-in-the-dsl">What NOT to Include in the DSL</h2>
+<p>Avoid general-purpose constructs:</p>
+<pre><code>for
+while
+recursion
+mutable variables
+arbitrary functions
+network access
+filesystem access
+database access
+dynamic code execution
+</code></pre>
+<p>If these are added, the semantic DSL becomes another programming language.</p>
+<h2 id="external-evaluators">External Evaluators</h2>
+<p>Complex computation should remain external.</p>
+<p>Example:</p>
+<pre><code>claim Creditworthy {
+    evaluator:
+        CreditRiskEngine
+}
+</code></pre>
+<p>The evaluator can do arbitrary computation.</p>
+<p>Its result enters through a controlled semantic boundary.</p>
+<p>Pattern:</p>
+<pre><code>COMPUTATION
+    ->
+claim/evidence boundary
+    ->
+SEMANTIC SYSTEM
+</code></pre>
+<h2 id="arithmetic-boundary">Arithmetic Boundary</h2>
+<p>Useful:</p>
+<pre><code>Amount &#x3C;= Limit
+</code></pre>
+<p>Useful:</p>
+<pre><code>RiskScore &#x3C; MaximumRiskScore
+</code></pre>
+<p>Not desirable:</p>
+<pre><code>calculating RiskScore inside the DSL
+</code></pre>
+<p>Rule:</p>
+<pre><code>DSL expressions may compare already-computed values,
+but should not perform substantial business computation.
+</code></pre>
+<h2 id="cross-domain-dsl-check">Cross-Domain DSL Check</h2>
+<p>Healthcare:</p>
+<pre><code>state
+claim
+evidence
+transition
+authority
+obligation
+policy
+</code></pre>
+<p>Finance:</p>
+<pre><code>state
+transition
+effect
+outcome
+claim
+authority
+obligation
+</code></pre>
+<p>DevOps:</p>
+<pre><code>claim
+transition
+authority
+effect
+outcome
+policy
+</code></pre>
+<p>Manufacturing:</p>
+<pre><code>claim
+transition
+evidence
+authority
+obligation
+</code></pre>
+<p>Research:</p>
+<pre><code>state
+claim
+evidence
+transition
+obligation
+policy
+</code></pre>
+<p>No fundamentally new language feature was required.</p>
+<h2 id="relations">Relations</h2>
+<p>Cross-object rules require typed relationships.</p>
+<p>Examples:</p>
+<pre><code>Payment belongsTo Order
+Shipment fulfills Order
+Evidence supports Claim
+</code></pre>
+<p>Possible syntax:</p>
+<pre><code>relation Payment.order -> Order
+relation Shipment.order -> Order
+relation Evidence supports Claim
+</code></pre>
+<p>The DSL should avoid becoming a general graph-query language.</p>
+<p>Prefer:</p>
+<pre><code>typed references
+bounded traversal
+</code></pre>
+<h2 id="sets-and-cardinality">Sets and Cardinality</h2>
+<p>Real rules may require:</p>
+<pre><code>all required approvals exist
+</code></pre>
+<p>or:</p>
+<pre><code>at least two reviewers approved
+</code></pre>
+<p>A tiny quantified expression set may be enough:</p>
+<pre><code>all
+any
+none
+count
+</code></pre>
+<p>Examples:</p>
+<pre><code>all RequiredInspections are Passed
+
+count Approvals >= 2
+</code></pre>
+<p>Avoid arbitrary iteration.</p>
+<h2 id="candidate-condition-grammar">Candidate Condition Grammar</h2>
+<p>Possible limited condition language:</p>
+<pre><code>state equality
+claim present
+claim absent
+comparison
+all condition
+any condition
+count comparison
+AND
+OR
+NOT
+</code></pre>
+<p>Potential time-related conditions:</p>
+<pre><code>changedWithin
+observedWithin
+</code></pre>
+<h2 id="time">Time</h2>
+<p>Semantic time likely needs first-class concepts such as:</p>
+<pre><code>effective
+freshness
+deadline
+duration
+</code></pre>
+<p>Examples:</p>
+<pre><code>FraudClear within 30m
+
+Obligation unresolved for 24h
+
+Policy effective after 2026-10-01
+</code></pre>
+<p>Avoid arbitrary date arithmetic.</p>
+<h2 id="static-analysis-enabled-by-restriction">Static Analysis Enabled by Restriction</h2>
+<p>Because the DSL is intentionally constrained,
+the compiler can ask questions ordinary application code cannot easily answer.</p>
+<p>Can this transition ever occur?</p>
+<pre><code>Unreachable transition?
+</code></pre>
+<p>Can an illegal state be reached?</p>
+<pre><code>Invariant violation?
+</code></pre>
+<p>Are there requirement cycles?</p>
+<pre><code>A requires B
+B requires A
+</code></pre>
+<p>Is an obligation impossible to satisfy?</p>
+<pre><code>No path reaches satisfaction criteria.
+</code></pre>
+<p>Are there states with no legal exit?</p>
+<pre><code>Deadlock.
+</code></pre>
+<p>Are two transitions mutually conflicting?</p>
+<pre><code>Ship
+Refund
+</code></pre>
+<p>Can a policy change eliminate all routes to a required obligation?</p>
+<p>Are there claims that are required but impossible to establish?</p>
+<p>Example:</p>
+<pre><code>CanShip requires FraudClear
+</code></pre>
+<p>but:</p>
+<pre><code>no provider/evidence path can establish FraudClear
+</code></pre>
+<h2 id="three-tiers">Three Tiers</h2>
+<p>A strong architecture emerges:</p>
+<p>TIER 1 — SEMANTIC SPECIFICATION</p>
+<pre><code>What is meaningful and legal?
+</code></pre>
+<p>TIER 2 — TRUSTED IMPLEMENTATIONS</p>
+<pre><code>How are claims computed and effects executed?
+</code></pre>
+<p>TIER 3 — PROBABILISTIC AGENTS</p>
+<pre><code>What should we attempt next?
+</code></pre>
+<p>Agents should not directly redefine Tier 1.</p>
+<p>Agents may invoke Tier 2 only through permissions/capabilities
+generated from Tier 1.</p>
+<h2 id="specification-changes">Specification Changes</h2>
+<p>Agents may propose specification changes,
+but that is itself a governed operation.</p>
+<p>Example lifecycle:</p>
+<pre><code>DraftSpecChange
+  ->
+Analyzed
+  ->
+Tested
+  ->
+Reviewed
+  ->
+Approved
+  ->
+Activated
+</code></pre>
+<p>This prevents agents from solving blocked tasks
+by simply weakening the rules.</p>
+<h2 id="dsl-inclusion-test">DSL Inclusion Test</h2>
+<p>Ask:</p>
+<pre><code>Does this define what is allowed/required,
+or does it explain how to perform computation?
+</code></pre>
+<p>If it defines:</p>
+<pre><code>what is allowed
+what is required
+what counts as completion
+who may act
+what outcomes can exist
+</code></pre>
+<p>put it in the semantic specification.</p>
+<p>If it defines:</p>
+<pre><code>how to calculate
+how to call an API
+how to render
+how to search
+how to optimize
+</code></pre>
+<p>leave it in ordinary code.</p>
+<h2 id="realistic-example">Realistic Example</h2>
+<pre><code>subject Order
+
+state OrderLifecycle {
+    Draft
+    Submitted
+    Approved
+    Cancelled
+}
+
+state Payment {
+    Authorized
+    Captured
+    Refunded
+}
+
+claim FraudClear {
+    source: FraudService
+    freshWithin: 30m
+}
+
+transition ApproveOrder {
+
+    from:
+        OrderLifecycle = Submitted
+
+    requires:
+        FraudClear
+
+    authority:
+        OrderApproval
+
+    produces:
+        OrderLifecycle = Approved
+}
+
+transition CapturePayment {
+
+    requires:
+        OrderLifecycle = Approved
+        Payment = Authorized
+
+    effect:
+        Payments.Capture
+
+    outcomes:
+
+        success:
+            Payment = Captured
+
+        failure:
+            Payment = Authorized
+
+        unknown:
+            CaptureExecution = OutcomeUnknown
+}
+
+obligation FulfillApprovedOrder {
+
+    when:
+        OrderLifecycle = Approved
+
+    satisfiedWhen:
+        Shipment = Shipped
+        OR
+        OrderLifecycle = Cancelled
+}
+</code></pre>
+<h2 id="semantic-compiler-output">Semantic Compiler Output</h2>
+<p>From one semantic source:</p>
+<pre><code>compiler
+    ->
+runtime guards
+agent tools
+planner
+tests
+documentation
+state graph
+policy dependency graph
+audit metadata
+</code></pre>
+<h2 id="current-conclusion">Current Conclusion</h2>
+<p>The promising design is not a new general-purpose programming language.</p>
+<p>It is:</p>
+<pre><code>A constrained semantic declaration language
+with external computation and effect interfaces.
+</code></pre>
+<p>The restriction is a feature.</p>
+<p>By sacrificing computational expressiveness,
+the architecture gains:</p>
+<pre><code>static analyzability
+artifact generation
+reachability analysis
+contradiction detection
+policy diffs
+consistent agent action spaces
+generated verification
+stronger semantic stability
+</code></pre>
+<h2 id="strong-emerging-thesis">Strong Emerging Thesis</h2>
+<p>A semantic compiler for agent-operated software could provide
+a deterministic world model for probabilistic agents.</p>
+<p>The compiler would take:</p>
+<pre><code>domain meaning
+states
+transitions
+requirements
+authority
+evidence
+policy
+obligations
+effects
+</code></pre>
+<p>and generate:</p>
+<pre><code>what agents can see
+what agents can do
+what paths are legal
+what tests must hold
+what runtime enforcement applies
+how actions can be explained
+</code></pre>
+<h1 id="next-proposed-test">NEXT PROPOSED TEST</h1>
+<p>Define a v0.1 grammar/specification and attempt to encode:</p>
+<ol>
+<li>One HelixNote workflow</li>
+<li>One Clarity workflow</li>
+<li>One payment workflow</li>
+</ol>
+<p>without changing the grammar.</p>
+<p>If those three substantially different workflows fit cleanly,
+the idea begins to look less like an architectural philosophy
+and more like an implementable semantic platform/compiler.</p></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

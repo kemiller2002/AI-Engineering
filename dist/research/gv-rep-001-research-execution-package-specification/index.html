@@ -1,0 +1,320 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Research Execution Package Specification | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span> <span data-pagefind-meta="stableId">GV-REP-001</span> </p> <h1 data-pagefind-meta="title">Research Execution Package Specification</h1>  <dl class="metadata-panel"> <div><dt>Identifier</dt><dd>GV-REP-001</dd></div> <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">canonical</dd></div> <div><dt>Version</dt><dd>2.0.0</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div> <div><dt>Tags</dt><dd data-pagefind-meta="tags">governance, research, rep, specification</dd></div> <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>docs/00-governance/Research-Execution-Package-Specification.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#research-execution-package-specification">Research Execution Package Specification</a></li><li><a href="#status-and-purpose">Status and Purpose</a></li><li><a href="#artifact-hierarchy-and-boundaries">Artifact Hierarchy and Boundaries</a></li><li><a href="#identifier-rules">Identifier Rules</a></li><li><a href="#required-metadata">Required Metadata</a></li><li><a href="#research-state-snapshot">Research State Snapshot</a></li><li><a href="#mandatory-sections">Mandatory Sections</a></li><li><a href="#evidence-traceability">Evidence Traceability</a></li><li><a href="#theory-impact-assessment">Theory Impact Assessment</a></li><li><a href="#quality-metrics">Quality Metrics</a></li><li><a href="#research-debt">Research Debt</a></li><li><a href="#partial-abandoned-and-superseded-research">Partial, Abandoned, and Superseded Research</a></li><li><a href="#registry-update-rules">Registry Update Rules</a></li><li><a href="#completion-checklist">Completion Checklist</a></li><li><a href="#minimal-rep-example">Minimal REP Example</a></li><li><a href="#full-rep-template">Full REP Template</a></li> </ol> </aside> <section class="document-body"><h1 id="research-execution-package-specification">Research Execution Package Specification</h1>
+<h2 id="status-and-purpose">Status and Purpose</h2>
+<p>This is the canonical normalized REP v2.0 specification. No earlier REP file was present in the repository at adoption, so it preserves and operationalizes the v2 concepts supplied by the Phase 1 governance mandate without claiming migration of absent records.</p>
+<p>A Research Execution Package (REP) is the canonical artifact produced at completion—or explicit termination—of a bounded research effort. It is the permanent scientific synthesis, executable handoff, theory update, knowledge-transfer artifact, and synchronization point between autonomous agents. Its success criterion is strict: a different capable agent can reconstruct the investigation, understand current theory, continue immediately, and produce the next REP without additional context.</p>
+<h2 id="artifact-hierarchy-and-boundaries">Artifact Hierarchy and Boundaries</h2>
+<p>The canonical scientific hierarchy is:</p>
+<ol>
+<li>Scientific Research Journal (<code>JR-</code>) — chronological, detailed investigation record.</li>
+<li>Research Execution Package (<code>RP-</code>) — assessed synthesis and handoff.</li>
+<li>Theory Registry (<code>TH-</code>) — current explanatory models and predictions.</li>
+<li>Evidence Registry (<code>EV-</code>) — durable evidence and provenance.</li>
+</ol>
+<p>Supporting indexes are Hypothesis (<code>HY-</code>), Experiment (<code>EX-</code>), Decision Record (<code>DF-</code>), Concept (<code>CN-</code>), and Glossary (<code>GL-</code>). They expose current state and relationships without replacing the primary artifacts. <code>DF-</code> canonically means Decision Record. A legacy <code>DF-</code> that meant decision framework must declare that legacy type and cannot itself authorize a choice; create and link a Decision Record when a choice is made.</p>
+<p>A journal is chronological and may contain raw observations, dead ends, and changing interpretations. A REP is a bounded, quality-assessed synthesis that references the journal rather than copying it wholesale. A research result changes justified understanding. An implementation result changes or validates a built system and becomes evidence; it belongs in the REP only insofar as it tests a research claim, with engineering details in their normal change record.</p>
+<h2 id="identifier-rules">Identifier Rules</h2>
+<p>Use <code>&#x3C;PREFIX>-&#x3C;scope>-&#x3C;sequence-or-unique-token></code> where repository conventions exist, or <code>&#x3C;PREFIX>-YYYY-NNN</code> until they do. IDs are unique, stable, case-sensitive, and never reused. Titles may change without changing IDs. Reserve an ID only when creating a real record; gaps are allowed. References use IDs plus links where possible.</p>
+<table>
+<thead>
+<tr>
+<th>Artifact</th>
+<th>Prefix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Research Package</td>
+<td><code>RP-</code></td>
+</tr>
+<tr>
+<td>Journal Entry</td>
+<td><code>JR-</code></td>
+</tr>
+<tr>
+<td>Evidence</td>
+<td><code>EV-</code></td>
+</tr>
+<tr>
+<td>Hypothesis</td>
+<td><code>HY-</code></td>
+</tr>
+<tr>
+<td>Theory</td>
+<td><code>TH-</code></td>
+</tr>
+<tr>
+<td>Experiment</td>
+<td><code>EX-</code></td>
+</tr>
+<tr>
+<td>Decision Record</td>
+<td><code>DF-</code></td>
+</tr>
+<tr>
+<td>Concept</td>
+<td><code>CN-</code></td>
+</tr>
+<tr>
+<td>Glossary</td>
+<td><code>GL-</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="required-metadata">Required Metadata</h2>
+<p>Every REP begins with machine-readable front matter containing:</p>
+<pre><code class="language-yaml">---
+identifier: RP-YYYY-NNN
+title: Concise research title
+research_area: area
+discipline: [primary-discipline]
+author_agent: agent-or-human-identity
+version: 1.0.0
+status: canonical # draft | canonical | deprecated | archived
+confidence:
+  label: medium # low | medium | high | very-high
+  estimate: 0.60 # optional, 0.00–1.00
+  rationale: Brief justification
+completion:
+  state: complete # not-started | in-progress | partial | complete | abandoned
+  estimate: 1.0 # optional, 0.00–1.00
+priority: medium
+related_projects: []
+related_documents: []
+supersedes: []
+superseded_by: []
+tags: []
+keywords: []
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+---
+</code></pre>
+<p>Confidence follows the ROS model: Low <code>0.00–0.39</code>, Medium <code>0.40–0.69</code>, High <code>0.70–0.89</code>, Very High <code>0.90–1.00</code>. Numeric values are optional judgments, not statistical claims unless a method establishes that meaning. Completion is independent of confidence; abandoned work can contain high-confidence findings, and complete work can end with low confidence.</p>
+<h2 id="research-state-snapshot">Research State Snapshot</h2>
+<p>Every REP begins its body with a compact snapshot:</p>
+<ul>
+<li>Theory Version</li>
+<li>Knowledge Base Version</li>
+<li>Highest Confidence Areas</li>
+<li>Lowest Confidence Areas</li>
+<li>Largest Remaining Unknown</li>
+<li>Active Research Streams</li>
+<li>Recently Invalidated Ideas</li>
+<li>Priority Changes</li>
+</ul>
+<p>Use <code>none</code>, <code>unknown</code>, or <code>not established</code> rather than omitting a field or inventing a version.</p>
+<h2 id="mandatory-sections">Mandatory Sections</h2>
+<p>The following headings are mandatory. A section may say “Not applicable” with a reason; it may not silently disappear.</p>
+<ol>
+<li><strong>Executive Summary</strong> — decision-relevant result, confidence, and largest caveat.</li>
+<li><strong>Original Objective</strong> — initial question and success criterion.</li>
+<li><strong>Scope</strong> — included, excluded, and changes to scope.</li>
+<li><strong>Repository Context</strong> — applicable records, code, history, and baseline.</li>
+<li><strong>Current Understanding</strong> — synthesized model and confidence.</li>
+<li><strong>Key Discoveries</strong> — findings linked to evidence, hypotheses, and theories.</li>
+<li><strong>Evidence Registry</strong> — evidence items added/updated and provenance.</li>
+<li><strong>Hypothesis Registry</strong> — hypotheses, evidence for/against, confidence, disposition.</li>
+<li><strong>Failed Assumptions</strong> — invalidated or weakened assumptions and impact.</li>
+<li><strong>Open Questions</strong> — unresolved, prioritized, and decision relevance.</li>
+<li><strong>Recommended Next Research</strong> — highest-value follow-ups and stopping tests.</li>
+<li><strong>Research Backlog</strong> — ordered work not selected now.</li>
+<li><strong>Suggested Specialized Research Agents</strong> — skills, scope, inputs, outputs; or why none.</li>
+<li><strong>Parallel Research Opportunities</strong> — safely independent streams and dependencies.</li>
+<li><strong>Risks</strong> — epistemic, operational, ethical, safety, and adoption risks.</li>
+<li><strong>Cross-Discipline Opportunities</strong> — useful external methods or perspectives.</li>
+<li><strong>Knowledge Relationships</strong> — links among evidence, hypotheses, theories, decisions, concepts.</li>
+<li><strong>Theory Impact Assessment</strong> — the required theory-impact fields below.</li>
+<li><strong>Research Quality Metrics</strong> — counts/assessments below, with method.</li>
+<li><strong>Research Debt</strong> — missing work below, prioritized.</li>
+<li><strong>Repository Updates</strong> — durable files/registries changed or explicitly not changed.</li>
+<li><strong>Website Updates</strong> — published/generated views changed, deferred, or inapplicable.</li>
+<li><strong>AI Consumption Notes</strong> — reliable facts, caveats, retrieval terms, and misuse risks.</li>
+<li><strong>Handoff Instructions</strong> — exact resumption point, prerequisites, commands/paths, next action.</li>
+<li><strong>Research Journal</strong> — <code>JR-</code> index and concise timeline, not a lossy replacement.</li>
+<li><strong>Appendix</strong> — methods, extended tables, source notes, or “None.”</li>
+<li><strong>Completion Checklist</strong> — every completion item marked with evidence or explanation.</li>
+</ol>
+<h2 id="evidence-traceability">Evidence Traceability</h2>
+<p>Decision-relevant claims cite <code>EV-</code> and, when applicable, <code>HY-</code> and <code>TH-</code>. Each evidence item records source/provenance, collection date, method, direct observation versus interpretation, quality/limitations, supported and contradicted claims, and repository location. Preserve contradictory and null evidence. Distinguish primary sources from summaries and independent sources from repeated reporting of one origin. A URL alone is not an assessment.</p>
+<p>If registries do not yet exist, include provisional records inside the REP and list creation/update debt; do not fabricate external entries. When registries exist, update them atomically with REP acceptance or state why the update is blocked.</p>
+<h2 id="theory-impact-assessment">Theory Impact Assessment</h2>
+<p>Record all of:</p>
+<ul>
+<li>Affected Theory Records</li>
+<li>Affected Engineering Principles</li>
+<li>New Principle Candidates</li>
+<li>Deprecated Principles</li>
+<li>Confidence Changes</li>
+<li>Predictions Created</li>
+<li>Predictions Invalidated</li>
+<li>Required Theory Registry Updates</li>
+</ul>
+<p>For each changed theory, state the prior and new status/confidence, linked evidence, compatibility, and whether the REP proposes or completes the registry update.</p>
+<h2 id="quality-metrics">Quality Metrics</h2>
+<p>Report method-aware counts or <code>unknown/not measured</code> for Primary Sources, Independent Sources, Counterexamples Reviewed, Competing Viewpoints Reviewed, Hypotheses Tested, Failed Hypotheses, Research Completeness, Confidence Gain, and Open Questions Reduced. Define the denominator or rubric for percentages. Metrics diagnose quality; they are not targets to game and do not override evidence quality.</p>
+<h2 id="research-debt">Research Debt</h2>
+<p>Record and prioritize Missing Evidence, Missing Experiments, Missing Disciplines, Weak Areas, Replication Needed, Tool Limitations, and Assumptions Awaiting Evidence. Include consequence, suggested resolution, and revisit trigger where material.</p>
+<h2 id="partial-abandoned-and-superseded-research">Partial, Abandoned, and Superseded Research</h2>
+<ul>
+<li><strong>Partial:</strong> use when useful work exists but the success criterion or planned scope is incomplete. Complete all headings, flag gaps, preserve journal/evidence, and give an executable next step.</li>
+<li><strong>Abandoned:</strong> use when continuation is no longer justified, safe, authorized, or possible. Record why, salvageable results, confidence, blockers, and conditions for reopening. Abandoned does not mean deleted.</li>
+<li><strong>Supersession:</strong> a newer REP states what it replaces and why; update links in both records and affected registries. Preserve the old REP as deprecated or archived. Identify claims that remain valid, change, or are withdrawn. Never overwrite historical conclusions as though they were never held.</li>
+</ul>
+<h2 id="registry-update-rules">Registry Update Rules</h2>
+<p>On acceptance, update every affected existing registry or explicitly list the blocked/deferred update in Research Debt and Repository Updates. Registry entries are append-oriented in history but may expose a current-state view. State transitions preserve author, date, prior status, reason, and source REP. Do not create an empty registry merely to satisfy this specification. Registry schema and ownership must be canonical before shared use.</p>
+<h2 id="completion-checklist">Completion Checklist</h2>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> Metadata is complete and internally consistent.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Research State Snapshot is complete.</li>
+<li class="task-list-item"><input type="checkbox" disabled> All mandatory sections exist; non-applicable sections explain why.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Important claims trace to evidence and relevant hypotheses/theories.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Contradictory evidence and failed assumptions are preserved.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Theory impact and required registry changes are explicit.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Quality metrics state their method or limitation.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Research debt is prioritized.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Partial/abandoned status, if used, has recovery instructions.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Repository and website updates are accurate.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Handoff permits continuation without conversation history.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Links, identifiers, and supersession relationships validate.</li>
+<li class="task-list-item"><input type="checkbox" disabled> Another capable agent can satisfy the REP success criterion.</li>
+</ul>
+<h2 id="minimal-rep-example">Minimal REP Example</h2>
+<p>This example is structurally abbreviated for illustration; a real REP still includes every mandatory heading.</p>
+<pre><code class="language-markdown">---
+identifier: RP-2026-001
+title: Example investigation
+research_area: example
+discipline: [systems-research]
+author_agent: example-agent
+version: 1.0.0
+status: canonical
+confidence: {label: medium, estimate: 0.60, rationale: "One primary result; replication pending."}
+completion: {state: complete, estimate: 1.0}
+priority: medium
+related_projects: []
+related_documents: [JR-2026-001]
+supersedes: []
+superseded_by: []
+tags: [example]
+keywords: [rep]
+created: 2026-07-22
+updated: 2026-07-22
+---
+# Research State Snapshot
+- Theory Version: TH-EXAMPLE-001 v0.2
+- Knowledge Base Version: not established
+- Highest Confidence Areas: EV-2026-001 directly supports the observed behavior
+- Lowest Confidence Areas: generalization beyond the tested case
+- Largest Remaining Unknown: independent replication
+- Active Research Streams: none
+- Recently Invalidated Ideas: HY-2026-002
+- Priority Changes: replication moved to highest priority
+
+# Executive Summary
+The tested case supports HY-2026-001 at Medium confidence; broader claims remain unsupported.
+
+# Original Objective
+Determine whether the behavior occurs in the defined case. Success: reproducible observation and documented limits.
+
+# Scope
+One defined case; generalization excluded.
+
+# Repository Context
+Journal: JR-2026-001. No pre-existing registry was available.
+
+# Current Understanding
+EV-2026-001 supports HY-2026-001; TH-EXAMPLE-001 remains provisional.
+
+# Key Discoveries
+- The behavior reproduced under the recorded protocol [EV-2026-001; HY-2026-001].
+
+# Evidence Registry
+- EV-2026-001 — primary observation; protocol and raw result linked; single-case limitation.
+
+# Hypothesis Registry
+- HY-2026-001 — provisionally accepted; Medium (0.60).
+
+# Failed Assumptions
+- HY-2026-002 rejected: the control did not show the expected effect [EV-2026-002].
+
+# Open Questions
+1. Does an independent replication agree?
+
+# Recommended Next Research
+Replicate with a preregistered protocol; stop after two consistent independent runs or investigate divergence.
+</code></pre>
+<h2 id="full-rep-template">Full REP Template</h2>
+<p>Copy the metadata schema above, then use this body:</p>
+<pre><code class="language-markdown"># Research State Snapshot
+- Theory Version:
+- Knowledge Base Version:
+- Highest Confidence Areas:
+- Lowest Confidence Areas:
+- Largest Remaining Unknown:
+- Active Research Streams:
+- Recently Invalidated Ideas:
+- Priority Changes:
+
+# Executive Summary
+# Original Objective
+## Success Criterion
+# Scope
+## Included
+## Excluded
+## Scope Changes
+# Repository Context
+# Current Understanding
+# Key Discoveries
+# Evidence Registry
+| ID | Claim/Observation | Source and Method | Supports/Contradicts | Quality and Limits |
+|---|---|---|---|---|
+# Hypothesis Registry
+| ID | Statement | Evidence For | Evidence Against | Unknowns | Confidence | Disposition | Implications |
+|---|---|---|---|---|---|---|---|
+# Failed Assumptions
+# Open Questions
+# Recommended Next Research
+# Research Backlog
+# Suggested Specialized Research Agents
+# Parallel Research Opportunities
+# Risks
+# Cross-Discipline Opportunities
+# Knowledge Relationships
+# Theory Impact Assessment
+- Affected Theory Records:
+- Affected Engineering Principles:
+- New Principle Candidates:
+- Deprecated Principles:
+- Confidence Changes:
+- Predictions Created:
+- Predictions Invalidated:
+- Required Theory Registry Updates:
+# Research Quality Metrics
+| Metric | Value | Method/Limit |
+|---|---|---|
+| Primary Sources | | |
+| Independent Sources | | |
+| Counterexamples Reviewed | | |
+| Competing Viewpoints Reviewed | | |
+| Hypotheses Tested | | |
+| Failed Hypotheses | | |
+| Research Completeness | | |
+| Confidence Gain | | |
+| Open Questions Reduced | | |
+# Research Debt
+## Missing Evidence
+## Missing Experiments
+## Missing Disciplines
+## Weak Areas
+## Replication Needed
+## Tool Limitations
+## Assumptions Awaiting Evidence
+# Repository Updates
+# Website Updates
+# AI Consumption Notes
+# Handoff Instructions
+# Research Journal
+# Appendix
+# Completion Checklist
+</code></pre></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

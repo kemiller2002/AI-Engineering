@@ -1,0 +1,592 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>state systems learning recommendations | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">state systems learning recommendations</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/references/state-systems-learning-recommendations.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#state-systems-learning-recommendations">State Systems Learning Recommendations</a></li><li><a href="#purpose">Purpose</a></li><li><a href="#books">BOOKS</a></li><li><a href="#if-reading-only-three-books-initially">If reading only three books initially</a></li><li><a href="#websites-and-online-resources">WEBSITES AND ONLINE RESOURCES</a></li><li><a href="#recommended-learning-order">RECOMMENDED LEARNING ORDER</a></li><li><a href="#stage-1-state-fundamentals">Stage 1 — State fundamentals</a></li><li><a href="#stage-2-statecharts">Stage 2 — Statecharts</a></li><li><a href="#stage-3-domain-state">Stage 3 — Domain state</a></li><li><a href="#stage-4-events-and-history">Stage 4 — Events and history</a></li><li><a href="#stage-5-formal-state-transition-systems">Stage 5 — Formal state-transition systems</a></li><li><a href="#core-concepts-to-master">CORE CONCEPTS TO MASTER</a></li><li><a href="#state">State</a></li><li><a href="#event">Event</a></li><li><a href="#command">Command</a></li><li><a href="#transition">Transition</a></li><li><a href="#guard">Guard</a></li><li><a href="#action-effect">Action / Effect</a></li><li><a href="#invariant">Invariant</a></li><li><a href="#hierarchical-state">Hierarchical State</a></li><li><a href="#orthogonal-state">Orthogonal State</a></li><li><a href="#reachability">Reachability</a></li><li><a href="#safety-property">Safety Property</a></li><li><a href="#liveness-property">Liveness Property</a></li><li><a href="#agent-oriented-connection">AGENT-ORIENTED CONNECTION</a></li><li><a href="#three-types-of-state-worth-exploring">THREE TYPES OF STATE WORTH EXPLORING</a></li><li><a href="#2-execution-state">2. Execution State</a></li><li><a href="#3-knowledge-epistemic-state">3. Knowledge / Epistemic State</a></li><li><a href="#a-possible-long-term-design-principle">A POSSIBLE LONG-TERM DESIGN PRINCIPLE</a></li><li><a href="#language-connection">LANGUAGE CONNECTION</a></li><li><a href="#practical-study-exercises">PRACTICAL STUDY EXERCISES</a></li><li><a href="#exercise-1-order-lifecycle">Exercise 1: Order Lifecycle</a></li><li><a href="#exercise-2-deployment-workflow">Exercise 2: Deployment Workflow</a></li><li><a href="#exercise-3-agent-knowledge">Exercise 3: Agent Knowledge</a></li><li><a href="#exercise-4-model-checking">Exercise 4: Model Checking</a></li><li><a href="#summary-path">SUMMARY PATH</a></li> </ol> </aside> <section class="document-body"><h1 id="state-systems-learning-recommendations">State Systems Learning Recommendations</h1>
+<h2 id="purpose">Purpose</h2>
+<p>This reading and website list is aimed at learning state systems well enough to reason about:</p>
+<ul>
+<li>finite state machines</li>
+<li>statecharts</li>
+<li>state transitions</li>
+<li>guards and invariants</li>
+<li>domain modeling</li>
+<li>event-driven systems</li>
+<li>formal verification</li>
+<li>model checking</li>
+<li>agent-oriented software where AI proposes transitions inside a constrained state system</li>
+</ul>
+<p>The broader goal is not just to learn "the State pattern," but to understand how systems can be designed so that invalid states and illegal transitions are difficult or impossible to express.</p>
+<h1 id="books">BOOKS</h1>
+<ol>
+<li>
+<p>Practical UML Statecharts in C/C++
+Author: Miro Samek</p>
+<p>Why read it:</p>
+<ul>
+<li>Strong introduction to real state-machine modeling.</li>
+<li>Covers finite state machines, hierarchical state machines, events, transitions, and implementation.</li>
+<li>Useful even if you do not care about C or C++.</li>
+<li>Helps bridge the gap between abstract state diagrams and executable software.</li>
+</ul>
+<p>Focus on:</p>
+<ul>
+<li>states</li>
+<li>events</li>
+<li>transitions</li>
+<li>guards</li>
+<li>entry/exit behavior</li>
+<li>hierarchical state machines</li>
+<li>state explosion</li>
+</ul>
+</li>
+<li>
+<p>Modeling and Verification Using UML Statecharts
+Author: Doron Drusinsky</p>
+<p>Why read it:</p>
+<ul>
+<li>Moves beyond merely implementing state machines.</li>
+<li>Connects statecharts to formal verification.</li>
+<li>Introduces ideas around temporal behavior, runtime monitoring, and checking behavioral properties.</li>
+</ul>
+<p>Especially relevant for:</p>
+<ul>
+<li>determining whether forbidden states are reachable</li>
+<li>verifying that required transitions eventually occur</li>
+<li>reasoning about system behavior over time</li>
+</ul>
+</li>
+<li>
+<p>Domain-Driven Design
+Author: Eric Evans</p>
+<p>Why read it:</p>
+<ul>
+<li>Not specifically a state-machine book.</li>
+<li>Teaches how software models should represent the actual domain.</li>
+<li>Important because a state model is only useful if its states and transitions correspond to meaningful business concepts.</li>
+</ul>
+<p>Connection to agent systems:
+The goal should not merely be:
+StateA -> StateB</p>
+<p>It should be:
+PaidOrder -> Refund -> RefundedOrder</p>
+<p>The state system should encode the meaning of the domain.</p>
+</li>
+<li>
+<p>Domain-Specific Languages
+Author: Martin Fowler</p>
+<p>Why read it:</p>
+<ul>
+<li>Useful if state transitions eventually become a specification language for agents.</li>
+<li>Explores ways to build languages that express domain concepts directly.</li>
+<li>Fowler uses state machines as an important DSL example.</li>
+</ul>
+<p>Long-term relevance:
+A future agent-oriented system may use a small language describing:</p>
+<ul>
+<li>valid states</li>
+<li>valid transitions</li>
+<li>capabilities</li>
+<li>guards</li>
+<li>evidence requirements</li>
+</ul>
+</li>
+<li>
+<p>Designing Event-Driven Systems
+Author: Ben Stopford</p>
+<p>Why read it:</p>
+<ul>
+<li>Helps move from individual state machines to distributed/event-driven systems.</li>
+<li>Useful for thinking about systems where state evolves from a history of events.</li>
+<li>Particularly relevant when auditability matters.</li>
+</ul>
+<p>Agent connection:
+Instead of storing only:
+current_state = Approved</p>
+<p>the system could retain:
+Submitted
+-> Reviewed
+-> ApprovalRequested
+-> ApprovalReceived
+-> Approved</p>
+<p>This gives an agent and an auditor evidence for why the current state exists.</p>
+</li>
+<li>
+<p>Practical TLA+
+Author: Hillel Wayne</p>
+<p>Why read it:</p>
+<ul>
+<li>Probably one of the most important books for the agent-state-system idea.</li>
+<li>Teaches formal specification and model checking.</li>
+<li>Helps reason about all possible behaviors rather than just individual test cases.</li>
+</ul>
+<p>Important questions TLA+ encourages:</p>
+<ul>
+<li>Can this forbidden state ever be reached?</li>
+<li>Can payment happen twice?</li>
+<li>Can the system deadlock?</li>
+<li>Is there a path that bypasses approval?</li>
+<li>Does every accepted order eventually reach a terminal state?</li>
+</ul>
+</li>
+</ol>
+<h2 id="if-reading-only-three-books-initially">If reading only three books initially</h2>
+<p>Recommended sequence:</p>
+<ol>
+<li>Practical UML Statecharts in C/C++ — Miro Samek</li>
+<li>Domain-Driven Design — Eric Evans</li>
+<li>Practical TLA+ — Hillel Wayne</li>
+</ol>
+<p>This progression teaches:</p>
+<p>how state machines work
+->
+how state represents domain meaning
+->
+how to mathematically reason about all possible state transitions</p>
+<h1 id="websites-and-online-resources">WEBSITES AND ONLINE RESOURCES</h1>
+<ol>
+<li>
+<p>Statecharts.dev</p>
+<p>Best use:
+Start here.</p>
+<p>Why:</p>
+<ul>
+<li>Clear conceptual explanations of state machines and statecharts.</li>
+<li>Good treatment of hierarchy, events, transitions, and state explosion.</li>
+<li>Helps establish the vocabulary before implementation details get in the way.</li>
+</ul>
+<p>Topics to learn:</p>
+<ul>
+<li>state</li>
+<li>event</li>
+<li>transition</li>
+<li>guard</li>
+<li>action</li>
+<li>hierarchical states</li>
+<li>concurrent/orthogonal states</li>
+<li>history states</li>
+</ul>
+</li>
+<li>
+<p>Stately / XState Documentation</p>
+<p>Best use:
+Turn the concepts into executable and visual models.</p>
+<p>Why:</p>
+<ul>
+<li>Excellent visual approach to state machines.</li>
+<li>XState provides a practical implementation model.</li>
+<li>Useful even if the eventual implementation language is F#, Haskell, Rust, or something purpose-built.</li>
+</ul>
+<p>Exercise:
+Model simple workflows visually:</p>
+<ul>
+<li>order lifecycle</li>
+<li>approval workflow</li>
+<li>software deployment</li>
+<li>user authentication</li>
+<li>agent task execution</li>
+</ul>
+</li>
+<li>
+<p>Game Programming Patterns — State Chapter
+Author: Robert Nystrom</p>
+<p>Best use:
+A very accessible explanation of why state machines are useful in actual software.</p>
+<p>Why:</p>
+<ul>
+<li>Minimal formalism.</li>
+<li>Good intuitive explanation.</li>
+<li>Demonstrates why behavior becomes difficult when state is represented as scattered flags and conditionals.</li>
+</ul>
+<p>Particularly useful for understanding the transition from:</p>
+<pre><code>if walking &#x26;&#x26; !jumping &#x26;&#x26; !ducking ...
+</code></pre>
+<p>to an explicit state model.</p>
+</li>
+<li>
+<p>Learn TLA+</p>
+<p>Best use:
+Move from state-machine implementation into formal reasoning.</p>
+<p>Important topics:</p>
+<ul>
+<li>finite state machines</li>
+<li>actions</li>
+<li>next-state relations</li>
+<li>invariants</li>
+<li>nondeterminism</li>
+<li>concurrency</li>
+<li>temporal properties</li>
+<li>model checking</li>
+</ul>
+<p>Key conceptual shift:</p>
+<p>Normal programming asks:
+What should the program do next?</p>
+<p>State-system thinking asks:
+Given this state, what are all possible next states?</p>
+<p>Formal specification then asks:
+Which of those states must never be reachable?</p>
+</li>
+</ol>
+<h1 id="recommended-learning-order">RECOMMENDED LEARNING ORDER</h1>
+<h2 id="stage-1--state-fundamentals">Stage 1 — State fundamentals</h2>
+<p>Use:</p>
+<ul>
+<li>Statecharts.dev</li>
+<li>Game Programming Patterns: State</li>
+<li>Practical UML Statecharts in C/C++</li>
+</ul>
+<p>Learn:</p>
+<ul>
+<li>What a state actually is</li>
+<li>Events versus commands</li>
+<li>Legal transitions</li>
+<li>Guards</li>
+<li>Actions/effects</li>
+<li>Terminal states</li>
+<li>Why scattered Boolean flags create invalid combinations</li>
+</ul>
+<h2 id="stage-2--statecharts">Stage 2 — Statecharts</h2>
+<p>Use:</p>
+<ul>
+<li>Statecharts.dev</li>
+<li>Stately / XState</li>
+<li>Samek</li>
+</ul>
+<p>Learn:</p>
+<ul>
+<li>Hierarchical states</li>
+<li>Nested states</li>
+<li>Orthogonal/concurrent states</li>
+<li>History</li>
+<li>State explosion</li>
+<li>Composition</li>
+</ul>
+<p>Build several state machines visually.</p>
+<h2 id="stage-3--domain-state">Stage 3 — Domain state</h2>
+<p>Use:</p>
+<ul>
+<li>Domain-Driven Design</li>
+<li>Domain-Specific Languages</li>
+</ul>
+<p>Learn to ask:</p>
+<ul>
+<li>What states actually exist in the domain?</li>
+<li>Which transitions have business meaning?</li>
+<li>Which states should be impossible?</li>
+<li>What evidence is required for a transition?</li>
+</ul>
+<p>Example:</p>
+<p>Instead of:</p>
+<pre><code>Order.Status = "Paid"
+</code></pre>
+<p>prefer a model resembling:</p>
+<pre><code>UnpaidOrder
+    |
+    | PaymentAccepted
+    v
+PaidOrder
+</code></pre>
+<h2 id="stage-4--events-and-history">Stage 4 — Events and history</h2>
+<p>Use:</p>
+<ul>
+<li>Designing Event-Driven Systems</li>
+</ul>
+<p>Learn:</p>
+<ul>
+<li>Events as facts</li>
+<li>State derived from event history</li>
+<li>Auditability</li>
+<li>Event sourcing</li>
+<li>Distributed state</li>
+<li>Eventual consistency</li>
+</ul>
+<p>Think about the distinction between:</p>
+<ul>
+<li>"the current state"
+and</li>
+<li>"the evidence explaining how the system arrived there"</li>
+</ul>
+<h2 id="stage-5--formal-state-transition-systems">Stage 5 — Formal state-transition systems</h2>
+<p>Use:</p>
+<ul>
+<li>Practical TLA+</li>
+<li>Learn TLA+</li>
+<li>Modeling and Verification Using UML Statecharts</li>
+</ul>
+<p>Learn:</p>
+<ul>
+<li>invariants</li>
+<li>safety properties</li>
+<li>liveness properties</li>
+<li>reachability</li>
+<li>deadlocks</li>
+<li>nondeterminism</li>
+<li>model checking</li>
+<li>temporal reasoning</li>
+</ul>
+<h1 id="core-concepts-to-master">CORE CONCEPTS TO MASTER</h1>
+<h2 id="state">State</h2>
+<p>A condition of the system that determines what behavior is currently valid.</p>
+<p>A state should often mean more than stored data.</p>
+<h2 id="event">Event</h2>
+<p>Something that has happened.</p>
+<p>Examples:</p>
+<ul>
+<li>PaymentReceived</li>
+<li>ApprovalGranted</li>
+<li>BuildCompleted</li>
+</ul>
+<h2 id="command">Command</h2>
+<p>A request for something to happen.</p>
+<p>Examples:</p>
+<ul>
+<li>ChargeCustomer</li>
+<li>RequestApproval</li>
+<li>DeployBuild</li>
+</ul>
+<p>Commands can fail.
+Events represent facts that already occurred.</p>
+<h2 id="transition">Transition</h2>
+<p>A legal movement from one state to another.</p>
+<h2 id="guard">Guard</h2>
+<p>A condition that must be satisfied before a transition is legal.</p>
+<h2 id="action--effect">Action / Effect</h2>
+<p>Work that happens as part of a transition or because a transition occurred.</p>
+<h2 id="invariant">Invariant</h2>
+<p>A property that must always remain true.</p>
+<p>Examples:</p>
+<ul>
+<li>Refund amount can never exceed captured payment.</li>
+<li>A deployed build must have passed tests.</li>
+<li>An approved request must have an approver.</li>
+</ul>
+<h2 id="hierarchical-state">Hierarchical State</h2>
+<p>A state containing substates.</p>
+<p>Useful for controlling complexity.</p>
+<h2 id="orthogonal-state">Orthogonal State</h2>
+<p>Independent state dimensions that can evolve concurrently.</p>
+<h2 id="reachability">Reachability</h2>
+<p>Whether some state can be reached through any legal sequence of transitions.</p>
+<h2 id="safety-property">Safety Property</h2>
+<p>Something bad must never happen.</p>
+<p>Example:
+A deployment without approval must never occur.</p>
+<h2 id="liveness-property">Liveness Property</h2>
+<p>Something good must eventually happen.</p>
+<p>Example:
+Every accepted order must eventually be fulfilled or cancelled.</p>
+<h1 id="agent-oriented-connection">AGENT-ORIENTED CONNECTION</h1>
+<p>The core hypothesis to explore is:</p>
+<p>AI agents may become substantially more reliable when they do not directly mutate the world. Instead, they propose typed state transitions inside a system that mechanically determines which transitions are legal.</p>
+<p>Instead of:</p>
+<pre><code>Agent
+  |
+  +-- database()
+  +-- shell()
+  +-- deploy()
+  +-- github()
+</code></pre>
+<p>consider:</p>
+<pre><code>Current State
+     |
+     v
+Legal Transitions
+     |
+     v
+Agent selects transition
+     |
+     v
+Guard / invariant / capability checks
+     |
+     v
+Runtime executes transition
+     |
+     v
+Evidence generated
+     |
+     v
+New State
+</code></pre>
+<p>The agent proposes intent.</p>
+<p>The state machine determines legality.</p>
+<p>The capability system determines authority.</p>
+<p>The executor performs the action.</p>
+<p>The verifier determines whether the expected transition actually occurred.</p>
+<h1 id="three-types-of-state-worth-exploring">THREE TYPES OF STATE WORTH EXPLORING</h1>
+<ol>
+<li>Domain State</li>
+</ol>
+<hr>
+<p>What is currently true about the business/domain.</p>
+<p>Example:</p>
+<pre><code>Draft
+  ->
+Submitted
+  ->
+UnderReview
+  ->
+Approved / Rejected
+</code></pre>
+<h2 id="2-execution-state">2. Execution State</h2>
+<p>What stage an operation or agent task is in.</p>
+<p>Example:</p>
+<pre><code>Planned
+  ->
+Validated
+  ->
+Authorized
+  ->
+Executing
+  ->
+Verified
+  ->
+Completed
+</code></pre>
+<h2 id="3-knowledge--epistemic-state">3. Knowledge / Epistemic State</h2>
+<p>What the system actually knows.</p>
+<p>Possible model:</p>
+<pre><code>Unknown
+Assumed
+Inferred
+Verified
+</code></pre>
+<p>This distinction may be particularly important for AI.</p>
+<p>An agent should not be allowed to treat:</p>
+<pre><code>"I think the tests passed"
+</code></pre>
+<p>as equivalent to:</p>
+<pre><code>"The test runner produced verified evidence that the tests passed."
+</code></pre>
+<h1 id="a-possible-long-term-design-principle">A POSSIBLE LONG-TERM DESIGN PRINCIPLE</h1>
+<p>Agents should not mutate the world directly.</p>
+<p>They should request typed state transitions.</p>
+<p>The system should decide:</p>
+<ul>
+<li>whether the transition exists</li>
+<li>whether its prerequisites are satisfied</li>
+<li>whether the agent possesses the required capability</li>
+<li>whether required evidence exists</li>
+<li>whether invariants remain true</li>
+</ul>
+<p>This turns the programming language/runtime into part of the agent-governance system.</p>
+<h1 id="language-connection">LANGUAGE CONNECTION</h1>
+<p>F#, Haskell, Rust, and related strongly typed languages are interesting because their type systems can encode portions of the state model.</p>
+<p>Example:</p>
+<pre><code>DraftOrder
+    ->
+SubmittedOrder
+    ->
+PaidOrder
+    ->
+FulfilledOrder
+</code></pre>
+<p>instead of:</p>
+<pre><code>Order {
+    status: string
+}
+</code></pre>
+<p>The first representation greatly reduces the number of meaningless states the agent can create.</p>
+<p>F# is particularly interesting as an experimental language because it provides:</p>
+<ul>
+<li>discriminated unions</li>
+<li>exhaustive pattern matching</li>
+<li>immutable values by default</li>
+<li>Option</li>
+<li>Result</li>
+<li>private constructors</li>
+<li>strong type inference</li>
+<li>units of measure</li>
+<li>functional composition</li>
+<li>access to the .NET ecosystem</li>
+</ul>
+<p>Haskell pushes further toward purity and explicit effects.</p>
+<p>However, the larger idea is not simply "use Haskell" or "use F#."</p>
+<p>The larger idea is:</p>
+<pre><code>Make legal system behavior structurally explicit,
+and use deterministic machinery to reject invalid agent behavior.
+</code></pre>
+<h1 id="practical-study-exercises">PRACTICAL STUDY EXERCISES</h1>
+<h2 id="exercise-1-order-lifecycle">Exercise 1: Order Lifecycle</h2>
+<p>Model:</p>
+<pre><code>Draft
+Submitted
+Paid
+Shipped
+Delivered
+Cancelled
+Refunded
+</code></pre>
+<p>Identify:</p>
+<ul>
+<li>legal transitions</li>
+<li>illegal transitions</li>
+<li>guards</li>
+<li>terminal states</li>
+<li>invariants</li>
+</ul>
+<h2 id="exercise-2-deployment-workflow">Exercise 2: Deployment Workflow</h2>
+<p>Model:</p>
+<pre><code>CodeChanged
+Built
+Tested
+Reviewed
+Approved
+Deployable
+Deployed
+</code></pre>
+<p>Try to construct a path where unapproved code gets deployed.</p>
+<p>Then change the model so no such path exists.</p>
+<h2 id="exercise-3-agent-knowledge">Exercise 3: Agent Knowledge</h2>
+<p>Model information as:</p>
+<pre><code>Unknown
+Assumed
+Inferred
+Verified
+</code></pre>
+<p>Create operations that explicitly require Verified information.</p>
+<p>Example:</p>
+<pre><code>deploy :
+    VerifiedBuild ->
+    VerifiedTests ->
+    VerifiedApproval ->
+    Deployment
+</code></pre>
+<h2 id="exercise-4-model-checking">Exercise 4: Model Checking</h2>
+<p>Once comfortable with TLA+, model the deployment workflow.</p>
+<p>Ask the model checker:</p>
+<pre><code>Is there any possible execution where
+Deployed = TRUE
+and
+Approved = FALSE?
+</code></pre>
+<p>That is the bridge from ordinary software architecture into formally constrained agent behavior.</p>
+<h1 id="summary-path">SUMMARY PATH</h1>
+<p>Fastest useful path:</p>
+<ol>
+<li>Statecharts.dev</li>
+<li>Game Programming Patterns — State</li>
+<li>Stately / XState</li>
+<li>Practical UML Statecharts in C/C++</li>
+<li>Domain-Driven Design</li>
+<li>Learn TLA+</li>
+<li>Practical TLA+</li>
+<li>Modeling and Verification Using UML Statecharts</li>
+<li>Designing Event-Driven Systems</li>
+<li>Domain-Specific Languages</li>
+</ol>
+<p>The important conceptual progression is:</p>
+<p>state
+->
+transitions
+->
+statecharts
+->
+domain meaning
+->
+events
+->
+invariants
+->
+formal state-transition systems
+->
+model checking
+->
+agent-constrained execution</p></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

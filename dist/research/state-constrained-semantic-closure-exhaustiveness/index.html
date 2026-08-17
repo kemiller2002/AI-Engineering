@@ -1,0 +1,572 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>state constrained semantic closure exhaustiveness | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">state constrained semantic closure exhaustiveness</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/working-notes/state-constrained-semantic-closure-exhaustiveness.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#state-constrained-architecture-semantic-closure-and-exhaustiveness">State-Constrained Architecture — Semantic Closure and Exhaustiveness</a></li><li><a href="#2-important-f-nuance">2. Important F# Nuance</a></li><li><a href="#rust">Rust</a></li><li><a href="#swift">Swift</a></li><li><a href="#java">Java</a></li><li><a href="#kotlin">Kotlin</a></li><li><a href="#f-">F#</a></li><li><a href="#scala-3">Scala 3</a></li><li><a href="#haskell">Haskell</a></li><li><a href="#c-14">C# 14</a></li><li><a href="#c-15-preview">C# 15 Preview</a></li><li><a href="#typescript">TypeScript</a></li><li><a href="#python">Python</a></li><li><a href="#go">Go</a></li><li><a href="#4-four-forms-of-semantic-closure">4. Four Forms of Semantic Closure</a></li><li><a href="#construction-closure">Construction Closure</a></li><li><a href="#transition-closure">Transition Closure</a></li><li><a href="#interpretation-closure">Interpretation Closure</a></li><li><a href="#authority-closure">Authority Closure</a></li><li><a href="#7-wildcard-default-cases-are-a-major-escape-hatch">7. Wildcard / Default Cases Are a Major Escape Hatch</a></li><li><a href="#9-explicitly-declared-grouping-is-different-from-a-wildcard">9. Explicitly Declared Grouping Is Different From a Wildcard</a></li><li><a href="#10-semantic-compiler-analyzer-implication">10. Semantic Compiler / Analyzer Implication</a></li><li><a href="#11-state-evolution-as-a-compile-time-event">11. State Evolution as a Compile-Time Event</a></li><li><a href="#12-desired-state-evolution-workflow">12. Desired State-Evolution Workflow</a></li><li><a href="#13-difference-between-modeling-and-enforcement">13. Difference Between Modeling and Enforcement</a></li><li><a href="#agent-safe-level-1">Agent-Safe Level 1</a></li><li><a href="#agent-safe-level-2">Agent-Safe Level 2</a></li><li><a href="#agent-safe-level-3">Agent-Safe Level 3</a></li><li><a href="#agent-safe-level-4-">Agent-Safe Level 4+</a></li><li><a href="#17-ai-specific-design-goal">17. AI-Specific Design Goal</a></li> </ol> </aside> <section class="document-body"><h1 id="state-constrained-architecture--semantic-closure-and-exhaustiveness">State-Constrained Architecture — Semantic Closure and Exhaustiveness</h1>
+<p>This note captures the follow-up exploration of exhaustiveness enforcement
+and why it matters for AI-maintained state-constrained systems.</p>
+<p>The key question is not merely:</p>
+<pre><code>Does a language have discriminated unions?
+</code></pre>
+<p>The more important question is:</p>
+<pre><code>When the state model contains N possible cases,
+does the language/toolchain force every consequential interpretation
+of that state to account for all N cases?
+</code></pre>
+<p>If programmers or AI agents must simply remember every condition,
+much of the safety value of explicit state modeling is lost.</p>
+<ol>
+<li>Exhaustiveness Is a First-Class Requirement
+===============================================</li>
+</ol>
+<p>Consider:</p>
+<pre><code>PaymentState =
+    Authorized
+    Captured
+    Refunded
+</code></pre>
+<p>and code that interprets it:</p>
+<pre><code>Authorized -> ...
+Captured   -> ...
+Refunded   -> ...
+</code></pre>
+<p>Now add:</p>
+<pre><code>Voided
+</code></pre>
+<p>The desired behavior is not merely:</p>
+<pre><code>Voided can now be represented.
+</code></pre>
+<p>The desired behavior is:</p>
+<pre><code>Every important place that assumed the old three-case universe
+becomes mechanically visible.
+</code></pre>
+<p>Ideally the compiler/toolchain says:</p>
+<pre><code>This match/switch is now incomplete.
+</code></pre>
+<p>This converts state evolution from a repository-search problem into
+a deterministic repair problem.</p>
+<p>Without exhaustiveness:</p>
+<pre><code>Agent adds new state
+    ->
+Agent must remember/search for every affected conditional
+    ->
+Some interpretations may be missed
+    ->
+Semantic drift can accumulate
+</code></pre>
+<p>With exhaustiveness:</p>
+<pre><code>Agent adds new state
+    ->
+Compiler identifies incomplete interpretations
+    ->
+Agent repairs explicit failures
+    ->
+Compiler acts as a semantic checklist
+</code></pre>
+<h1 id="2-important-f-nuance">2. Important F# Nuance</h1>
+<p>F# is very strong at this because discriminated unions define a closed case set
+and pattern matching understands the entire union.</p>
+<p>However, incomplete pattern matching is typically surfaced as a compiler warning,
+not universally as an unconditional hard error.</p>
+<p>For this architecture, the build should treat incomplete DU matching warnings
+as build failures.</p>
+<p>Therefore the desired F# profile is:</p>
+<pre><code>closed DU
++
+exhaustive pattern warning
++
+warnings-as-errors policy
+</code></pre>
+<p>The important property is still present:
+the compiler knows the case universe and can detect missing interpretations.</p>
+<ol start="3">
+<li>Language Comparison
+======================</li>
+</ol>
+<p>The architectural question is:</p>
+<pre><code>Can the compiler/toolchain force exhaustive interpretation
+of a closed state family?
+</code></pre>
+<p>General practical picture:</p>
+<h2 id="rust">Rust</h2>
+<p>Native enums + match.</p>
+<p>Missing cases are hard compiler errors.</p>
+<p>Strength:</p>
+<pre><code>Excellent.
+</code></pre>
+<p>Adding a state forces existing exhaustive matches to be reconsidered.</p>
+<h2 id="swift">Swift</h2>
+<p>Enums with associated values + exhaustive switch.</p>
+<p>Missing cases are compiler errors.</p>
+<p>Strength:</p>
+<pre><code>Excellent.
+</code></pre>
+<h2 id="java">Java</h2>
+<p>Modern Java sealed classes/interfaces plus pattern matching switch
+can provide compiler-checked exhaustive handling.</p>
+<p>Example conceptual family:</p>
+<pre><code>sealed interface PaymentState
+    permits Authorized, Captured, Refunded
+</code></pre>
+<p>A switch over that sealed family can be checked for completeness.</p>
+<p>Strength:</p>
+<pre><code>Excellent when sealed hierarchies and modern switch expressions
+are used correctly.
+</code></pre>
+<h2 id="kotlin">Kotlin</h2>
+<p>Sealed classes/interfaces plus when expressions provide strong exhaustiveness.</p>
+<p>Example:</p>
+<pre><code>sealed interface PaymentState
+
+Authorized
+Captured
+Refunded
+</code></pre>
+<p>A when expression over the sealed hierarchy can require every case.</p>
+<p>Strength:</p>
+<pre><code>Excellent.
+</code></pre>
+<h2 id="f">F#</h2>
+<p>Discriminated unions provide direct semantic closure.</p>
+<p>Compiler detects incomplete pattern matches.</p>
+<p>For this architecture, incomplete-match warnings should be fatal.</p>
+<p>Strength:</p>
+<pre><code>Excellent with build policy.
+</code></pre>
+<h2 id="scala-3">Scala 3</h2>
+<p>Enums/sealed hierarchies and compiler exhaustivity checking provide
+strong support.</p>
+<p>Strength:</p>
+<pre><code>Excellent.
+</code></pre>
+<h2 id="haskell">Haskell</h2>
+<p>ADTs provide closed state families.</p>
+<p>Incomplete pattern matches are normally warnings,
+but build policy can promote them to errors.</p>
+<p>Strength:</p>
+<pre><code>Excellent with warning policy.
+</code></pre>
+<h2 id="c-14">C# 14</h2>
+<p>C# can model state families using sealed records/classes:</p>
+<pre><code>abstract record PaymentState
+
+sealed record Authorized : PaymentState
+sealed record Captured   : PaymentState
+sealed record Refunded   : PaymentState
+</code></pre>
+<p>But historically C# has not had the same strong compiler knowledge
+that a class hierarchy represents the complete state universe.</p>
+<p>Therefore ordinary class-hierarchy switches are weaker than F#/Rust/Swift/
+modern Java/Kotlin for semantic closure.</p>
+<p>Strength:</p>
+<pre><code>Moderate-to-strong with generated patterns/analyzers.
+</code></pre>
+<p>Useful supplements:</p>
+<pre><code>Roslyn analyzers
+generated exhaustive visitors
+warning policies
+generated state families
+</code></pre>
+<h2 id="c-15-preview">C# 15 Preview</h2>
+<p>Preview C# work introduces union types and closed hierarchies with
+compiler-supported exhaustiveness.</p>
+<p>If these features stabilize substantially as designed,
+C# becomes much stronger for this architecture.</p>
+<p>Potential strength:</p>
+<pre><code>Excellent once stable and verified.
+</code></pre>
+<h2 id="typescript">TypeScript</h2>
+<p>Tagged/discriminated unions are very useful.</p>
+<p>Example:</p>
+<pre><code>type PaymentState =
+    | { kind: "authorized" }
+    | { kind: "captured" }
+    | { kind: "refunded" }
+</code></pre>
+<p>A switch can use a never-based exhaustive check.</p>
+<p>Example conceptually:</p>
+<pre><code>default:
+    assertNever(state)
+</code></pre>
+<p>Adding a new union case then produces a type-check error.</p>
+<p>However the protection depends on the coding pattern and project discipline.</p>
+<p>An agent can weaken it through:</p>
+<pre><code>default branches
+type assertions
+any
+@ts-ignore / similar suppression
+non-strict compiler settings
+</code></pre>
+<p>Strength:</p>
+<pre><code>Good inside a constrained profile.
+</code></pre>
+<p>Less structurally resistant than nominal closed languages.</p>
+<h2 id="python">Python</h2>
+<p>Python can represent closed-looking unions through:</p>
+<pre><code>Enum
+Literal
+Union
+dataclasses
+class hierarchies
+</code></pre>
+<p>Static checkers such as mypy/Pyright can provide some exhaustive analysis.</p>
+<p>But Python runtime execution does not enforce annotations,
+and exhaustiveness depends heavily on external tooling and configuration.</p>
+<p>Strength:</p>
+<pre><code>Weak-to-moderate for authoritative enforcement.
+</code></pre>
+<p>Useful for guidance, but not equivalent to compiler-native closure.</p>
+<h2 id="go">Go</h2>
+<p>Go can simulate a restricted state family through interfaces and
+unexported marker methods.</p>
+<p>Example conceptually:</p>
+<pre><code>type PaymentState interface {
+    paymentState()
+}
+</code></pre>
+<p>This can provide some construction restriction.</p>
+<p>But a type switch can omit a valid implementation and still compile.</p>
+<p>Therefore Go may achieve partial construction closure
+without interpretation closure.</p>
+<p>Strength:</p>
+<pre><code>Weak for exhaustive semantic interpretation.
+</code></pre>
+<h1 id="4-four-forms-of-semantic-closure">4. Four Forms of Semantic Closure</h1>
+<p>A state model is not safe merely because valid states are enumerated.</p>
+<h2 id="construction-closure">Construction Closure</h2>
+<p>Only legal state variants can be created.</p>
+<p>Example:</p>
+<pre><code>PaymentState can only be:
+    Authorized
+    Captured
+    Refunded
+</code></pre>
+<p>This prevents arbitrary values from becoming authoritative state.</p>
+<h2 id="transition-closure">Transition Closure</h2>
+<p>Authoritative state can only change through declared transitions.</p>
+<p>Avoid:</p>
+<pre><code>order.Status = "Shipped"
+</code></pre>
+<p>Prefer:</p>
+<pre><code>Ship(order, capability)
+</code></pre>
+<h2 id="interpretation-closure">Interpretation Closure</h2>
+<p>Whenever code interprets a closed state,
+the full state universe must be accounted for.</p>
+<p>If:</p>
+<pre><code>Chargeback
+</code></pre>
+<p>is added, every consequential interpretation that relied on the old state set
+must be forced to reconsider its behavior.</p>
+<p>This is especially important for AI maintenance.</p>
+<h2 id="authority-closure">Authority Closure</h2>
+<p>Protected states, evidence, capabilities, and trusted events
+cannot be freely fabricated.</p>
+<p>Example:</p>
+<pre><code>Verified&#x3C;FraudClear>
+</code></pre>
+<p>must not be constructible by arbitrary application code.</p>
+<ol start="5">
+<li>Proposed Semantic Closure Model
+==================================</li>
+</ol>
+<p>The architecture should explicitly define:</p>
+<pre><code>SEMANTIC CLOSURE
+</code></pre>
+<ol>
+<li>
+<p>Construction Closure</p>
+<p>Only declared semantic states/claims/capabilities can be constructed.</p>
+</li>
+<li>
+<p>Transition Closure</p>
+<p>Only declared transitions can change authoritative state.</p>
+</li>
+<li>
+<p>Interpretation Closure</p>
+<p>Every consequential interpretation of a closed state family
+must account for the complete family.</p>
+</li>
+<li>
+<p>Authority Closure</p>
+<p>Protected states, evidence, capabilities, and trusted events
+cannot be freely fabricated.</p>
+</li>
+<li>
+<p>Why Interpretation Closure Matters for AI
+=============================================</p>
+</li>
+</ol>
+<p>Traditional maintenance often relies on:</p>
+<pre><code>search repository
+remember related branches
+recognize conventions
+understand historical context
+</code></pre>
+<p>AI agents also perform repository search,
+but missed semantic dependencies are a major source of drift.</p>
+<p>Interpretation closure changes the problem.</p>
+<p>Instead of:</p>
+<pre><code>"Find every place that might care about the new state."
+</code></pre>
+<p>the compiler can say:</p>
+<pre><code>"These specific state interpretations are no longer complete."
+</code></pre>
+<p>That moves work from:</p>
+<pre><code>probabilistic semantic discovery
+</code></pre>
+<p>to:</p>
+<pre><code>deterministic compiler-guided repair
+</code></pre>
+<h1 id="7-wildcard--default-cases-are-a-major-escape-hatch">7. Wildcard / Default Cases Are a Major Escape Hatch</h1>
+<p>Even languages with excellent exhaustive matching can lose much of the benefit
+if code routinely uses catch-all handlers.</p>
+<p>Example:</p>
+<pre><code>match payment with
+| Captured -> CanRefund
+| _        -> CannotRefund
+</code></pre>
+<p>Suppose the original states were:</p>
+<pre><code>Authorized
+Captured
+Refunded
+</code></pre>
+<p>Then later add:</p>
+<pre><code>Chargeback
+</code></pre>
+<p>The catch-all silently interprets Chargeback as:</p>
+<pre><code>CannotRefund
+</code></pre>
+<p>without forcing anyone to reconsider whether that semantic assumption is correct.</p>
+<p>The compiler sees the match as complete.</p>
+<p>But semantically, the code has hidden a future state decision.</p>
+<ol start="8">
+<li>Consequential State Families Should Avoid Catch-Alls
+=======================================================</li>
+</ol>
+<p>For important closed state families, prefer:</p>
+<pre><code>Authorized -> CannotRefund
+Captured   -> CanRefund
+Refunded   -> CannotRefund
+</code></pre>
+<p>Then adding:</p>
+<pre><code>Chargeback
+</code></pre>
+<p>forces reconsideration.</p>
+<p>Working rule:</p>
+<pre><code>Wildcard/default handlers should be forbidden for consequential
+closed state families unless the semantic specification explicitly
+declares that all remaining cases are intentionally equivalent.
+</code></pre>
+<h1 id="9-explicitly-declared-grouping-is-different-from-a-wildcard">9. Explicitly Declared Grouping Is Different From a Wildcard</h1>
+<p>Sometimes several states genuinely share the same behavior.</p>
+<p>That should be expressible explicitly.</p>
+<p>For example:</p>
+<pre><code>Authorized | Refunded -> CannotRefund
+</code></pre>
+<p>is semantically better than:</p>
+<pre><code>_ -> CannotRefund
+</code></pre>
+<p>because the intended equivalence is visible.</p>
+<p>If:</p>
+<pre><code>Chargeback
+</code></pre>
+<p>is later added, it is not silently absorbed.</p>
+<p>The compiler/tooling must ask what Chargeback means.</p>
+<p>Therefore:</p>
+<pre><code>explicit grouping of known cases
+    GOOD
+
+unknown future catch-all
+    DANGEROUS
+</code></pre>
+<h1 id="10-semantic-compiler--analyzer-implication">10. Semantic Compiler / Analyzer Implication</h1>
+<p>The semantic compiler should know which state families are consequential.</p>
+<p>For generated or protected domain code it should enforce:</p>
+<pre><code>no wildcard/default case over closed semantic state families
+</code></pre>
+<p>unless:</p>
+<pre><code>default semantics are explicitly declared in the specification
+</code></pre>
+<p>Possible analyzer errors:</p>
+<pre><code>SC001:
+Wildcard handler forbidden for closed state family PaymentState.
+
+Explicitly enumerate cases or declare semantic equivalence
+in the state specification.
+</code></pre>
+<h1 id="11-state-evolution-as-a-compile-time-event">11. State Evolution as a Compile-Time Event</h1>
+<p>Adding a state should be treated as a semantic schema change.</p>
+<p>Example:</p>
+<pre><code>PaymentState:
+    Authorized
+    Captured
+    Refunded
+</code></pre>
+<p>changes to:</p>
+<pre><code>PaymentState:
+    Authorized
+    Captured
+    Refunded
+    Chargeback
+</code></pre>
+<p>The compiler/toolchain should then identify:</p>
+<pre><code>incomplete handlers
+transition guards that rely on the old state family
+capability derivations
+obligation rules
+planning paths
+generated tests
+policy dependencies
+serialization schemas
+documentation/state diagrams
+</code></pre>
+<h1 id="12-desired-state-evolution-workflow">12. Desired State-Evolution Workflow</h1>
+<p>A safe evolution path should look like:</p>
+<pre><code>Add new state
+    ->
+Semantic compiler updates state universe
+    ->
+Build identifies incomplete interpretations
+    ->
+Generated tests expand
+    ->
+Planning/capability graphs are recalculated
+    ->
+Policy impact is reported
+    ->
+Agent/human resolves every semantic question
+    ->
+Build succeeds
+</code></pre>
+<p>Not:</p>
+<pre><code>Add enum value
+    ->
+Build succeeds
+    ->
+Hope every if/switch was updated
+</code></pre>
+<h1 id="13-difference-between-modeling-and-enforcement">13. Difference Between Modeling and Enforcement</h1>
+<p>A language may let developers represent a closed state family
+without forcing exhaustive interpretation.</p>
+<p>That is only partial safety.</p>
+<p>The architecture should distinguish:</p>
+<pre><code>Can I MODEL the state?
+</code></pre>
+<p>from:</p>
+<pre><code>Does the toolchain ENFORCE complete interpretation of it?
+</code></pre>
+<p>Examples:</p>
+<p>Go:
+can approximate closed construction
+cannot natively force exhaustive type-switch handling</p>
+<p>TypeScript:
+models tagged unions well
+can provide exhaustive handling
+but only when the never-style pattern and strict profile are used</p>
+<p>Python:
+can describe the states
+external type checker may guide handling
+runtime itself does not provide the same enforcement</p>
+<ol start="14">
+<li>Revised Language Evaluation Criteria
+========================================</li>
+</ol>
+<p>Future language research should separately score:</p>
+<ol>
+<li>State construction closure</li>
+<li>Transition closure</li>
+<li>Interpretation/exhaustiveness closure</li>
+<li>Authority construction closure</li>
+<li>Catch-all/default resistance</li>
+<li>State-evolution compiler feedback</li>
+</ol>
+<p>A language with excellent state syntax but weak interpretation closure
+should not receive a high overall semantic-closure rating.</p>
+<ol start="15">
+<li>Revised Agent-Safe Language Profile
+=======================================</li>
+</ol>
+<h2 id="agent-safe-level-1">Agent-Safe Level 1</h2>
+<p>Explicit states and explicit transitions.</p>
+<h2 id="agent-safe-level-2">Agent-Safe Level 2</h2>
+<p>Must include:</p>
+<pre><code>closed state families
+compiler/checker-enforced exhaustiveness
+protected construction
+immutable authoritative state
+explicit expected failures
+</code></pre>
+<p>Additional requirement:</p>
+<pre><code>incomplete semantic matches must fail the build
+</code></pre>
+<h2 id="agent-safe-level-3">Agent-Safe Level 3</h2>
+<p>Must include:</p>
+<pre><code>opaque capabilities
+protected evidence/Verified&#x3C;T>
+version-bound authority
+effect/outcome separation
+trusted event construction
+</code></pre>
+<p>Additional recommendation:</p>
+<pre><code>catch-all handlers forbidden on consequential state families
+</code></pre>
+<h2 id="agent-safe-level-4">Agent-Safe Level 4+</h2>
+<p>Includes stronger capability consumption,
+runtime freshness/revocation,
+and repository/agent governance.</p>
+<ol start="16">
+<li>Strong Design Principle
+===========================</li>
+</ol>
+<p>A closed state model is only truly valuable if evolution of that model
+forces reconsideration of every consequential interpretation of the state.</p>
+<p>This is stronger than:</p>
+<pre><code>Use discriminated unions.
+</code></pre>
+<p>It means:</p>
+<pre><code>The state universe must be closed,
+and changing that universe must mechanically expose stale assumptions.
+</code></pre>
+<h1 id="17-ai-specific-design-goal">17. AI-Specific Design Goal</h1>
+<p>The goal is not merely:</p>
+<pre><code>prevent invalid syntax
+</code></pre>
+<p>or:</p>
+<pre><code>create prettier types
+</code></pre>
+<p>The goal is:</p>
+<pre><code>turn semantic change into deterministic work.
+</code></pre>
+<p>When a state changes:</p>
+<pre><code>compiler errors
+generated analyzer failures
+policy impact reports
+generated tests
+</code></pre>
+<p>should tell the agent where meaning must be reconsidered.</p>
+<p>The agent should not have to remember the entire semantic dependency graph.</p>
+<ol start="18">
+<li>Current Conclusion
+======================</li>
+</ol>
+<p>Discriminated unions are valuable because they often provide two things at once:</p>
+<pre><code>closed state construction
+exhaustive interpretation
+</code></pre>
+<p>But the syntax itself is not the fundamental requirement.</p>
+<p>The fundamental requirement is:</p>
+<pre><code>semantic closure
+</code></pre>
+<p>especially:</p>
+<pre><code>interpretation closure
+</code></pre>
+<p>A language/toolchain is a strong fit for state-constrained AI-maintained software
+when it can make all of these true:</p>
+<pre><code>only legal states can be constructed
+only legal transitions can change state
+every consequential state interpretation is exhaustive
+protected authority cannot be casually fabricated
+</code></pre>
+<p>And when the state universe evolves:</p>
+<pre><code>the compiler/toolchain forces every affected semantic assumption
+back into view.
+</code></pre></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

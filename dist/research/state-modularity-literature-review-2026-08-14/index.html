@@ -1,0 +1,786 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>state modularity literature review 2026 08 14 | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">state modularity literature review 2026 08 14</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/reports/state-modularity-literature-review-2026-08-14.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#scope">SCOPE</a></li><li><a href="#central-hypothesis">CENTRAL HYPOTHESIS</a></li><li><a href="#-2-classical-modularity-supports-the-architectural-premise">======================================================================
+2. CLASSICAL MODULARITY SUPPORTS THE ARCHITECTURAL PREMISE</a></li><li><a href="#-3-typestate-and-session-type-literature-support-action-space-reduction">======================================================================
+3. TYPESTATE AND SESSION-TYPE LITERATURE SUPPORT ACTION-SPACE REDUCTION</a></li><li><a href="#-4-capabilities-support-the-authority-boundary-idea">======================================================================
+4. CAPABILITIES SUPPORT THE AUTHORITY-BOUNDARY IDEA</a></li><li><a href="#-5-the-ai-repository-literature-strongly-supports-selective-context">======================================================================
+5. THE AI REPOSITORY LITERATURE STRONGLY SUPPORTS SELECTIVE CONTEXT</a></li><li><a href="#-6-more-context-is-not-better">======================================================================
+6. MORE CONTEXT IS NOT BETTER</a></li><li><a href="#-7-a-stronger-result-much-of-the-surrounding-source-may-be-unnecessary">======================================================================
+7. A STRONGER RESULT: MUCH OF THE SURROUNDING SOURCE MAY BE UNNECESSARY</a></li><li><a href="#-8-structure-can-reduce-cost-but-can-also-increase-it">======================================================================
+8. STRUCTURE CAN REDUCE COST — BUT CAN ALSO INCREASE IT</a></li><li><a href="#-9-agent-cost-appears-to-be-dominated-by-exploration-waste">======================================================================
+9. AGENT COST APPEARS TO BE DOMINATED BY EXPLORATION WASTE</a></li><li><a href="#-10-repository-instruction-files-are-counterevidence-to-more-explicit-better-">======================================================================
+10. REPOSITORY INSTRUCTION FILES ARE COUNTEREVIDENCE TO &quot;MORE EXPLICIT = BETTER&quot;</a></li><li><a href="#-11-executable-constraints-are-more-promising-than-prose">======================================================================
+11. EXECUTABLE CONSTRAINTS ARE MORE PROMISING THAN PROSE</a></li><li><a href="#-12-formal-methods-provide-the-deepest-theoretical-support">======================================================================
+12. FORMAL METHODS PROVIDE THE DEEPEST THEORETICAL SUPPORT</a></li><li><a href="#-13-the-biggest-assumption-domain-state-is-the-right-partition">======================================================================
+13. THE BIGGEST ASSUMPTION: DOMAIN STATE IS THE RIGHT PARTITION</a></li><li><a href="#-14-cross-module-policy-may-recreate-global-coupling">======================================================================
+14. CROSS-MODULE POLICY MAY RECREATE GLOBAL COUPLING</a></li><li><a href="#-15-state-explosion-is-a-real-risk">======================================================================
+15. STATE EXPLOSION IS A REAL RISK</a></li><li><a href="#-16-event-sourcing-is-a-useful-warning">======================================================================
+16. EVENT SOURCING IS A USEFUL WARNING</a></li><li><a href="#-17-strong-languages-may-matter-but-not-for-the-simple-reason-assumed">======================================================================
+17. STRONG LANGUAGES MAY MATTER, BUT NOT FOR THE SIMPLE REASON ASSUMED</a></li><li><a href="#-18-smaller-model-substitution-is-plausible-but-not-validated-for-this-architecture">======================================================================
+18. SMALLER-MODEL SUBSTITUTION IS PLAUSIBLE BUT NOT VALIDATED FOR THIS ARCHITECTURE</a></li><li><a href="#-19-longitudinal-maintainability-remains-open">======================================================================
+19. LONGITUDINAL MAINTAINABILITY REMAINS OPEN</a></li><li><a href="#-20-revised-causal-model">======================================================================
+20. REVISED CAUSAL MODEL</a></li><li><a href="#-21-hypothesis-assessment">======================================================================
+21. HYPOTHESIS ASSESSMENT</a></li><li><a href="#-22-what-would-most-damage-the-thesis-based-on-existing-literature-">======================================================================
+22. WHAT WOULD MOST DAMAGE THE THESIS, BASED ON EXISTING LITERATURE?</a></li><li><a href="#-23-what-would-make-the-thesis-stronger-without-new-experiments-">======================================================================
+23. WHAT WOULD MAKE THE THESIS STRONGER WITHOUT NEW EXPERIMENTS?</a></li><li><a href="#-24-the-most-important-synthesis">======================================================================
+24. THE MOST IMPORTANT SYNTHESIS</a></li><li><a href="#-25-final-literature-only-verdict">======================================================================
+25. FINAL LITERATURE-ONLY VERDICT</a></li><li><a href="#-primary-high-value-literature-consulted">======================================================================
+PRIMARY / HIGH-VALUE LITERATURE CONSULTED</a></li><li><a href="#evidence-quality-note">EVIDENCE QUALITY NOTE</a></li> </ol> </aside> <section class="document-body"><p>LITERATURE-ONLY DEEP RESEARCH
+STATE-CONSTRAINED MODULARITY, SEMANTIC CONTEXT, AND AI AGENT COST
+Date: 2026-08-14</p>
+<h1 id="scope">SCOPE</h1>
+<p>This report evaluates the hypothesis described in the supplied research mission without
+running new experiments. It relies on published software-engineering, programming-language,
+formal-methods, and AI-agent literature. The purpose is to determine which links in the
+hypothesis are already supported, which are plausible inferences, which are contradicted or
+qualified by existing evidence, and which remain genuinely open.</p>
+<h1 id="central-hypothesis">CENTRAL HYPOTHESIS</h1>
+<p>The proposed causal chain is:</p>
+<pre><code>explicit ownership of consequential state
+    -> stronger semantic module boundaries
+    -> more mechanically identifiable dependencies
+    -> smaller minimum sufficient agent context
+    -> less probabilistic repository exploration
+    -> fewer tokens/tool calls/repair loops
+    -> lower cost per correct completion
+</code></pre>
+<p>The literature does NOT establish this chain end-to-end.</p>
+<p>It does, however, provide substantial evidence for several individual links and identifies
+important conditions under which the chain is likely to fail.</p>
+<p>======================================================================</p>
+<ol>
+<li>EXECUTIVE VERDICT
+======================================================================</li>
+</ol>
+<p>The strongest literature-supported conclusion is:</p>
+<pre><code>STRUCTURED, DETERMINISTIC, TASK-RELEVANT SOFTWARE REPRESENTATIONS
+can make AI coding agents more efficient and more reliable.
+</code></pre>
+<p>This is supported by repository graphs, static dependency analysis, code localization,
+program slicing, context compression, constrained decoding, compiler feedback, and recent
+agent-context studies.</p>
+<p>The literature does NOT yet justify the narrower claim:</p>
+<pre><code>STATE-CONSTRAINED MODULARITY IS ITSELF THE CAUSE OF LOWER AGENT COST.
+</code></pre>
+<p>State ownership is one plausible way of generating high-quality semantic structure.
+It may be a particularly useful one because it can encode facts that ordinary code graphs
+often do not capture: who owns authority, which transitions are legal, what evidence is
+required, which capabilities permit an action, and which obligations remain after an
+uncertain effect.</p>
+<p>But the strongest alternative hypothesis is serious:</p>
+<pre><code>Much or most of the benefit may be achievable using good static analysis,
+repository indexing, dependency graphs, localization models, and context-management
+systems WITHOUT reorganizing the software around explicit state ownership.
+</code></pre>
+<p>Therefore the research thesis should be narrowed to:</p>
+<pre><code>Does state-derived semantic structure contain materially useful information that
+existing code-level structural retrieval cannot recover cheaply and reliably?
+</code></pre>
+<p>If yes, the architecture has an independent AI-economics argument.
+If no, the token/cost benefit belongs mainly to retrieval engineering.</p>
+<h1 id="2-classical-modularity-supports-the-architectural-premise">======================================================================
+2. CLASSICAL MODULARITY SUPPORTS THE ARCHITECTURAL PREMISE</h1>
+<p>Parnas's 1972 information-hiding paper argues that decomposition should be based on hiding
+design decisions likely to change rather than merely dividing execution steps.</p>
+<p>This matters because the proposed semantic-module concept is fundamentally an
+information-hiding claim:</p>
+<pre><code>consumers should need the public state/transition contract,
+not the implementation that realizes it.
+</code></pre>
+<p>The classical literature therefore supports:</p>
+<pre><code>strong interface boundaries can reduce the amount of information another component
+must know.
+</code></pre>
+<p>It does NOT establish:</p>
+<pre><code>an LLM will need fewer tokens.
+</code></pre>
+<p>That transfer from human/program verification modularity to LLM context efficiency must
+be separately justified.</p>
+<p>Related modular verification work strengthens the architectural premise. Separation logic
+and compositional verification exist specifically to make reasoning about large systems
+local: prove facts about a component using a bounded portion of the system and compose
+those facts into global guarantees.</p>
+<p>This is conceptually close to Minimum Sufficient Semantic Context.</p>
+<p>The analogy is legitimate at the level of information dependency:</p>
+<pre><code>local proof/reasoning is possible when interfaces expose sufficient guarantees.
+</code></pre>
+<p>The analogy becomes speculative when translated into:</p>
+<pre><code>fewer language-model tokens.
+</code></pre>
+<h1 id="3-typestate-and-session-type-literature-support-action-space-reduction">======================================================================
+3. TYPESTATE AND SESSION-TYPE LITERATURE SUPPORT ACTION-SPACE REDUCTION</h1>
+<p>Typestate-oriented programming represents objects not only by nominal type but by their
+current state, with state-specific operations and transitions.</p>
+<p>The key result relevant to this research is not merely "state machines are good."</p>
+<p>It is:</p>
+<pre><code>legality can be moved out of informal programmer reasoning and into a machine-checkable
+representation.
+</code></pre>
+<p>Work on typestate and behavioral types shows that programs can be checked for protocol
+conformance. Some compositional typestate work explicitly notes that an object's
+implementation can be modified independently when its public behavioral interface does
+not change.</p>
+<p>Session types provide a parallel body of evidence for communication protocols:
+legal interaction sequences can be made explicit and type checked.</p>
+<p>These literatures strongly support:</p>
+<pre><code>explicit protocols reduce the number of semantically valid actions.
+</code></pre>
+<p>They do NOT establish that an LLM generates fewer tokens or requires less context.</p>
+<p>However, recent LLM code-generation work begins to connect these ideas.</p>
+<p>Type-constrained code generation (2025) uses type-system information during generation.
+It reports more than a 50% reduction in compilation errors and improvements in functional
+correctness across synthesis, translation, and repair tasks.</p>
+<p>Generative compilation (2026) similarly uses compiler feedback on partial programs and
+reports fewer non-compiling outputs and improved functional correctness.</p>
+<p>This is strong adjacent evidence for:</p>
+<pre><code>deterministic semantic constraints can remove invalid branches from probabilistic
+generation.
+</code></pre>
+<p>It makes the "action-space reduction" hypothesis considerably stronger than it was if
+supported only by classical programming-language theory.</p>
+<p>But again, these papers constrain TYPE correctness, not domain transition legality.</p>
+<h1 id="4-capabilities-support-the-authority-boundary-idea">======================================================================
+4. CAPABILITIES SUPPORT THE AUTHORITY-BOUNDARY IDEA</h1>
+<p>Object-capability systems encode authority in explicit references/capabilities rather than
+allowing ambient access to resources.</p>
+<p>Their relevance is structural:</p>
+<pre><code>possession of a capability determines which actions are possible.
+</code></pre>
+<p>This matches the proposed agent architecture in which an agent should receive authority to
+request legal transitions rather than arbitrary mutation rights.</p>
+<p>Capability literature supports the principle that explicit authority boundaries improve
+reasoning about who can affect what.</p>
+<p>This has an important implication for AI agents:</p>
+<pre><code>a capability is not merely documentation for the agent;
+it can be an executable restriction on the agent's possible effects.
+</code></pre>
+<p>That can lower risk even if it does not reduce inference tokens.</p>
+<p>This distinction matters economically. An architectural mechanism can be valuable because
+it makes mistakes impossible or recoverable even if model inference cost is unchanged.</p>
+<h1 id="5-the-ai-repository-literature-strongly-supports-selective-context">======================================================================
+5. THE AI REPOSITORY LITERATURE STRONGLY SUPPORTS SELECTIVE CONTEXT</h1>
+<p>GraphCoder, DraCo, STALL+, RepoGraph, LocAgent, CodeScout, SeeRepo, and related systems
+share a recurring result:</p>
+<pre><code>source-code structure and dependency information improve repository localization
+and/or code generation.
+</code></pre>
+<p>GraphCoder uses control-flow and dependence relations in a code-context graph and reports
+improvements over retrieval baselines.</p>
+<p>DraCo uses extended data-flow analysis and reports improvements in code exact match and
+identifier F1.</p>
+<p>STALL+ finds that file-level static dependency information is particularly useful in
+repository-level completion and that static analysis and RAG can be complementary.</p>
+<p>These findings validate an important premise:</p>
+<pre><code>semantic relevance is not well approximated by physical proximity or lexical
+similarity alone.
+</code></pre>
+<p>This directly supports the proposed move from "files near this file" to
+"things consequentially related to this state/transition."</p>
+<p>But it also creates the central competing explanation:</p>
+<pre><code>maybe ordinary static/data-flow graphs already provide enough structure.
+</code></pre>
+<p>The state-based architecture must outperform or complement these representations to claim
+a unique economic effect.</p>
+<h1 id="6-more-context-is-not-better">======================================================================
+6. MORE CONTEXT IS NOT BETTER</h1>
+<p>Several recent results directly challenge the common assumption that expanding context
+windows eliminates the need for architectural context selection.</p>
+<p>"Context Length Alone Hurts LLM Performance Despite Perfect Retrieval" reports substantial
+performance degradation as context grows even when relevant evidence is perfectly
+retrieved.</p>
+<p>LongCodeBench likewise reports large performance drops in long-context coding tasks.</p>
+<p>"The Limits of Long-Context Reasoning in Automated Bug Fixing" reports that successful
+agent trajectories are often relatively short, while long single-shot contexts perform
+poorly even when relevant files are deliberately included.</p>
+<p>The implication is strong:</p>
+<pre><code>nominal context-window capacity is not equivalent to usable reasoning capacity.
+</code></pre>
+<p>Therefore an architecture that enables reliable context exclusion can have a correctness
+benefit, not merely an input-price benefit.</p>
+<p>This validates the focus on Minimum Sufficient Semantic Context rather than maximum context.</p>
+<h1 id="7-a-stronger-result-much-of-the-surrounding-source-may-be-unnecessary">======================================================================
+7. A STRONGER RESULT: MUCH OF THE SURROUNDING SOURCE MAY BE UNNECESSARY</h1>
+<p>"What Context Does a Coding Agent Actually Need to Act?" (2026) is particularly relevant.</p>
+<p>The study separates localization from action. With the edit location fixed, it varies how
+much surrounding code is supplied.</p>
+<p>Its results suggest:</p>
+<pre><code>the source being edited contains much of the actionable signal;
+surrounding context often contributes less than expected;
+compressed context can match whole-file performance at a fraction of the token volume.
+</code></pre>
+<p>The paper also reports that natural-language summaries of edited code are poor substitutes
+for source code.</p>
+<p>This produces two important conclusions for the state-modularity thesis.</p>
+<p>POSITIVE:</p>
+<pre><code>Once the correct semantic/implementation location is known, the agent may need very
+little unrelated implementation.
+</code></pre>
+<p>NEGATIVE:</p>
+<pre><code>semantic summaries alone may not be sufficient to replace the actual implementation
+being changed.
+</code></pre>
+<p>Therefore the architecture should probably aim for:</p>
+<pre><code>compact semantic contract
+    +
+actual source for the target implementation
+</code></pre>
+<p>rather than attempting to replace source entirely with semantic IR.</p>
+<h1 id="8-structure-can-reduce-cost--but-can-also-increase-it">======================================================================
+8. STRUCTURE CAN REDUCE COST — BUT CAN ALSO INCREASE IT</h1>
+<p>SeeRepo (2026) provides direct evidence that structural repository representations can
+reduce interaction cost while maintaining or improving resolution accuracy in several
+configurations.</p>
+<p>This supports the context-compression theory.</p>
+<p>However, RepoGraph and deterministic-anchoring work reveal the opposite possibility.</p>
+<p>RepoGraph sometimes adds graph context and improves correctness while increasing tokens.</p>
+<p>"How Much Static Structure Do Code Agents Need?" reports that lightweight structural
+annotations can improve localization, shorten trajectories, and reduce run-to-run
+variance while increasing input tokens by roughly 10%.</p>
+<p>This is a crucial correction to the original economic model.</p>
+<p>The relevant quantity is not:</p>
+<pre><code>tokens in initial prompt
+</code></pre>
+<p>It is:</p>
+<pre><code>total cost required to reach a correct result.
+</code></pre>
+<p>A small amount of extra deterministic context can be economically beneficial if it prevents
+multiple rounds of uncertain exploration.</p>
+<p>Thus:</p>
+<pre><code>minimal context != optimal context.
+</code></pre>
+<p>The better target is:</p>
+<pre><code>MINIMUM EXPECTED COST CONTEXT
+</code></pre>
+<p>or:</p>
+<pre><code>MINIMUM SUFFICIENT EXECUTION CONTEXT
+</code></pre>
+<p>where context is justified if its expected reduction in exploration/failure exceeds its
+token cost.</p>
+<h1 id="9-agent-cost-appears-to-be-dominated-by-exploration-waste">======================================================================
+9. AGENT COST APPEARS TO BE DOMINATED BY EXPLORATION WASTE</h1>
+<p>"How Do AI Agents Spend Your Money?" (2026) analyzes trajectories from eight frontier
+models on SWE-bench Verified.</p>
+<p>Its findings are highly relevant:</p>
+<pre><code>agentic coding tasks consume vastly more tokens than ordinary code chat/reasoning;
+input tokens dominate;
+token consumption is highly stochastic;
+identical task types can vary enormously in total consumption;
+spending more tokens does not reliably produce higher accuracy.
+</code></pre>
+<p>The paper reports variation of up to roughly 30x in total tokens across runs on the same
+task.</p>
+<p>This implies that the research should focus less narrowly on static context compression.</p>
+<p>The larger opportunity may be:</p>
+<pre><code>reducing uncertainty in the trajectory.
+</code></pre>
+<p>Explicit state/module semantics could contribute by telling the agent:</p>
+<pre><code>where authority lives
+which transitions exist
+which dependencies matter
+which actions are illegal
+what evidence remains missing
+</code></pre>
+<p>If those facts prevent search and failed edits, the economic gain can be much larger than
+the token size of the semantic contract itself.</p>
+<p>AgentDiet provides further support for this view. It reduces redundant trajectory context
+and reports approximately 39.9%-59.7% lower input-token consumption and 21.1%-35.9% lower
+total computational cost while maintaining performance in its tested settings.</p>
+<p>The lesson is:</p>
+<pre><code>trajectory management is already a proven cost lever.
+</code></pre>
+<p>State architecture must demonstrate that it reduces trajectory entropy, not merely prompt
+length.</p>
+<h1 id="10-repository-instruction-files-are-counterevidence-to-more-explicit--better">======================================================================
+10. REPOSITORY INSTRUCTION FILES ARE COUNTEREVIDENCE TO "MORE EXPLICIT = BETTER"</h1>
+<p>"Evaluating AGENTS.md" (2026) reports that repository-level context files can increase
+agent exploration, testing, reasoning, and total cost by more than 20% without showing the
+simple benefit their advocates might expect.</p>
+<p>This is highly relevant.</p>
+<p>It falsifies the naive version of the hypothesis:</p>
+<pre><code>writing down more architectural knowledge makes agents cheaper.
+</code></pre>
+<p>Why might explicit context hurt?</p>
+<pre><code>it consumes tokens;
+it adds candidate facts to reason about;
+it can make agents over-explore;
+it may be redundant with source;
+it may be stale or overly general;
+it may apply repository-wide when the task is local.
+</code></pre>
+<p>Therefore semantic state information should not become another AGENTS.md.</p>
+<p>The strongest implementation would make it:</p>
+<pre><code>generated
+task sliced
+authoritative
+executable/checkable
+compact
+</code></pre>
+<p>The distinction is between PASSIVE DOCUMENTATION and ACTIVE SEMANTIC STRUCTURE.</p>
+<h1 id="11-executable-constraints-are-more-promising-than-prose">======================================================================
+11. EXECUTABLE CONSTRAINTS ARE MORE PROMISING THAN PROSE</h1>
+<p>Recent work such as ContextCov converts natural-language agent instructions into executable
+checks enforced through AST analysis, runtime command interception, and architectural
+validators.</p>
+<p>This aligns closely with the proposed direction.</p>
+<p>The economic implication is important:</p>
+<pre><code>a rule checked by the environment does not have to be perfectly remembered and
+probabilistically obeyed by the model.
+</code></pre>
+<p>This creates a possible context-elimination mechanism.</p>
+<p>Suppose a repository has 100 architectural restrictions.</p>
+<p>PASSIVE approach:
+put all 100 restrictions in the prompt.</p>
+<p>EXECUTABLE approach:
+enforce all 100 mechanically;
+tell the agent only the restrictions relevant to the current failed/proposed action.</p>
+<p>The second architecture could reduce both prompt size and cognitive branching.</p>
+<p>This is one of the strongest literature-supported paths from architecture to token
+reduction.</p>
+<h1 id="12-formal-methods-provide-the-deepest-theoretical-support">======================================================================
+12. FORMAL METHODS PROVIDE THE DEEPEST THEORETICAL SUPPORT</h1>
+<p>Separation logic, behavioral contracts, assume-guarantee reasoning, and compositional
+verification all address a fundamental scaling problem:</p>
+<pre><code>proving the whole system at once is intractable.
+</code></pre>
+<p>Their solution is to expose sufficient contracts at boundaries so components can be
+reasoned about locally.</p>
+<p>This is almost exactly the desired semantic property for AI context slicing.</p>
+<p>The theoretical parallel is:</p>
+<p>FORMAL VERIFICATION:
+replace global implementation knowledge with local assumptions/guarantees.</p>
+<p>PROPOSED AGENT ARCHITECTURE:
+replace global repository knowledge with local semantic contracts and implementation.</p>
+<p>The literature therefore strongly supports the POSSIBILITY of local semantic sufficiency.</p>
+<p>But an LLM differs from a theorem prover.</p>
+<p>A theorem prover can trust a formally proved interface.
+An LLM may still inspect hidden implementation because it is uncertain, because tests fail,
+or because the task requires non-contractual properties such as style, performance, or
+historical conventions.</p>
+<p>Therefore state contracts can reduce semantic context only for the properties they actually
+capture.</p>
+<h1 id="13-the-biggest-assumption-domain-state-is-the-right-partition">======================================================================
+13. THE BIGGEST ASSUMPTION: DOMAIN STATE IS THE RIGHT PARTITION</h1>
+<p>This is not established.</p>
+<p>A repository has multiple overlapping dependency structures:</p>
+<pre><code>call dependencies
+type dependencies
+data-flow dependencies
+build dependencies
+configuration dependencies
+persistence dependencies
+deployment dependencies
+security dependencies
+domain-state dependencies
+temporal/protocol dependencies
+organizational conventions
+</code></pre>
+<p>A state-derived module graph captures only some of these.</p>
+<p>For domain-heavy transactional software, state authority may correspond closely to
+consequential behavior.</p>
+<p>For:</p>
+<pre><code>numerical software
+compilers
+rendering engines
+machine-learning pipelines
+transformation libraries
+infrastructure code
+</code></pre>
+<p>state ownership may be a weak organizing principle.</p>
+<p>Therefore the architecture should not claim universal applicability.</p>
+<p>A more defensible theory is:</p>
+<pre><code>State ownership is a high-value semantic partition for software in which correctness
+is substantially determined by lifecycle, workflow, authorization, obligations, and
+domain transitions.
+</code></pre>
+<p>This includes much enterprise software.</p>
+<p>It does not include all software.</p>
+<h1 id="14-cross-module-policy-may-recreate-global-coupling">======================================================================
+14. CROSS-MODULE POLICY MAY RECREATE GLOBAL COUPLING</h1>
+<p>The architecture assumes that module-local state ownership creates localization.</p>
+<p>But business rules often depend on conjunctions:</p>
+<pre><code>ship if customer verified
+    AND order approved
+    AND payment captured
+    AND risk accepted
+    AND inventory allocated.
+</code></pre>
+<p>The state may be separately owned, but the policy is inherently cross-module.</p>
+<p>If many important transitions depend on many foreign claims, the semantic dependency graph
+becomes dense.</p>
+<p>Then the architecture has moved coupling from:</p>
+<pre><code>implementation coupling
+</code></pre>
+<p>to:</p>
+<pre><code>policy/contract coupling.
+</code></pre>
+<p>That may still be an improvement because the coupling is explicit and compact.</p>
+<p>But it does not eliminate coupling.</p>
+<p>This is where the hypothesis must be carefully worded:</p>
+<pre><code>state-constrained modularity may COMPRESS coupling rather than remove it.
+</code></pre>
+<p>That is a stronger and more realistic claim.</p>
+<h1 id="15-state-explosion-is-a-real-risk">======================================================================
+15. STATE EXPLOSION IS A REAL RISK</h1>
+<p>Formal state-based methods have long faced state-space growth problems.</p>
+<p>Compositional verification, abstraction, and behavioral types exist partly because global
+state products become difficult to reason about.</p>
+<p>If each domain concern becomes another orthogonal state family and cross-product conditions
+are materialized explicitly, the semantic model can become larger than the source-level
+logic it replaces.</p>
+<p>The architecture therefore needs:</p>
+<pre><code>orthogonal state families
+hierarchical states where appropriate
+derived claims instead of cross-product states
+compositional contracts
+localized policy
+lazy dependency expansion
+</code></pre>
+<p>A monolithic state machine would likely destroy the context advantage.</p>
+<p>The research thesis should be about:</p>
+<pre><code>state ownership + compositional semantic contracts
+</code></pre>
+<p>not:</p>
+<pre><code>one giant state machine.
+</code></pre>
+<h1 id="16-event-sourcing-is-a-useful-warning">======================================================================
+16. EVENT SOURCING IS A USEFUL WARNING</h1>
+<p>Event sourcing is not the same architecture, but its empirical literature is informative
+because it makes state change unusually explicit.</p>
+<p>An empirical characterization based on 19 event-sourced systems and 25 engineers identifies
+real challenges:</p>
+<pre><code>event/schema evolution
+steep learning curve
+tooling limitations
+projection rebuilding
+privacy concerns
+</code></pre>
+<p>This challenges the idea that explicit state history is free.</p>
+<p>Any break-even analysis for state-constrained software must include:</p>
+<pre><code>modeling cost
+migration cost
+tooling
+schema evolution
+training
+governance
+</code></pre>
+<p>The architecture can be economically superior for agents while still being economically
+inferior overall if these costs are high.</p>
+<h1 id="17-strong-languages-may-matter-but-not-for-the-simple-reason-assumed">======================================================================
+17. STRONG LANGUAGES MAY MATTER, BUT NOT FOR THE SIMPLE REASON ASSUMED</h1>
+<p>STALL+ observes that static-analysis integration behaves differently in Java and Python
+because static dependencies are easier to recover in statically structured languages.</p>
+<p>This supports the idea that language choice changes how cheaply repository semantics can
+be extracted.</p>
+<p>Type-constrained generation and generative compilation further show that richer compiler
+semantics can directly constrain AI generation.</p>
+<p>The important mechanism is not:</p>
+<pre><code>weak languages are bad.
+</code></pre>
+<p>It is:</p>
+<pre><code>recoverable semantics reduce uncertainty.
+</code></pre>
+<p>A dynamic language can compensate using:</p>
+<pre><code>schemas
+runtime contracts
+generated metadata
+tests
+architectural validators
+explicit semantic IR.
+</code></pre>
+<p>A strongly typed language can still have poor architectural boundaries and enormous
+implicit domain coupling.</p>
+<p>Therefore:</p>
+<pre><code>language semantics and architecture are separate axes.
+</code></pre>
+<p>The strongest system likely combines both.</p>
+<h1 id="18-smaller-model-substitution-is-plausible-but-not-validated-for-this-architecture">======================================================================
+18. SMALLER-MODEL SUBSTITUTION IS PLAUSIBLE BUT NOT VALIDATED FOR THIS ARCHITECTURE</h1>
+<p>CodeScout (2026) reports that specialized small localization models can outperform much
+larger general models on some repository-localization measures.</p>
+<p>This provides evidence for a broader principle:</p>
+<pre><code>better representation/task specialization can compensate for model size.
+</code></pre>
+<p>It does not prove that a state-constrained module will let a cheap coding model replace a
+frontier coding model end-to-end.</p>
+<p>Still, this remains one of the most economically important hypotheses.</p>
+<p>Why?</p>
+<p>Reducing context on the same expensive model creates linear token savings.</p>
+<p>Moving a task from a frontier model to a much cheaper model can create a multiplicative
+cost change.</p>
+<p>The literature supports pursuing this hypothesis, but not claiming it yet.</p>
+<h1 id="19-longitudinal-maintainability-remains-open">======================================================================
+19. LONGITUDINAL MAINTAINABILITY REMAINS OPEN</h1>
+<p>SWE-CI (2026) evaluates coding agents across long-term repository evolution and reports that
+state-of-the-art models still struggle to sustain code quality over extended change
+sequences.</p>
+<p>This validates the concern that one-shot SWE-bench success is not enough.</p>
+<p>It does NOT show that state ownership prevents architectural erosion.</p>
+<p>Classical modularity theory suggests it might.</p>
+<p>The AI-agent literature has not yet established it.</p>
+<p>Therefore the longitudinal hypothesis remains genuinely open:</p>
+<pre><code>explicit state ownership may make architectural erosion easier to detect and prevent
+because illegal cross-boundary mutations can be mechanically rejected.
+</code></pre>
+<p>That is plausible but unsourced as an empirical outcome.</p>
+<h1 id="20-revised-causal-model">======================================================================
+20. REVISED CAUSAL MODEL</h1>
+<p>The original causal model should be revised.</p>
+<p>ORIGINAL:
+state architecture -> smaller context -> cheaper agents</p>
+<p>BETTER:
+executable semantic structure
+->
+deterministic localization + explicit authority + constrained actions
+->
+less probabilistic exploration + fewer illegal attempts
+->
+smaller effective trajectory
+->
+lower expected cost per correct completion</p>
+<p>State ownership is one mechanism for producing executable semantic structure.</p>
+<p>This revised formulation is better supported by the literature.</p>
+<h1 id="21-hypothesis-assessment">======================================================================
+21. HYPOTHESIS ASSESSMENT</h1>
+<p>H1:
+"Explicit state ownership improves modularity."</p>
+<p>Assessment:
+MODERATELY SUPPORTED BY ADJACENT THEORY.</p>
+<p>Information hiding, typestate, behavioral interfaces, capabilities, separation logic, and
+compositional verification support the mechanisms.</p>
+<p>No literature located directly compares state-owned commercial architecture against
+equivalent conventional architecture on standard modularity metrics.</p>
+<p>H2:
+"Explicit semantic boundaries reduce required agent context."</p>
+<p>Assessment:
+STRONGLY PLAUSIBLE, INDIRECTLY SUPPORTED.</p>
+<p>Repository-structure, dependency-retrieval, and context-minimization research strongly
+supports selective structure.</p>
+<p>The unique value of state-derived structure is unproven.</p>
+<p>H3:
+"Smaller context improves agent correctness."</p>
+<p>Assessment:
+SUPPORTED WITH IMPORTANT QUALIFICATIONS.</p>
+<p>Long-context research shows that more context can hurt.
+But too little context also fails.
+Correctly selected context is the important variable.</p>
+<p>H4:
+"Explicit constraints reduce agent errors."</p>
+<p>Assessment:
+STRONGLY SUPPORTED IN ADJACENT LLM LITERATURE.</p>
+<p>Type-constrained generation, compiler-guided generation, formal verification, and executable
+guardrails all support this.</p>
+<p>Domain-state transition constraints specifically remain untested.</p>
+<p>H5:
+"State-constrained architecture lowers token consumption."</p>
+<p>Assessment:
+UNPROVEN.</p>
+<p>There is strong evidence that better localization and trajectory compression can lower
+tokens.</p>
+<p>There is also evidence that structural metadata can INCREASE tokens.</p>
+<p>The architecture must reduce trajectory cost, not merely add semantics.</p>
+<p>H6:
+"State-constrained architecture lowers total cost per correct task."</p>
+<p>Assessment:
+PLAUSIBLE BUT UNPROVEN.</p>
+<p>Agent-cost literature shows large waste and variance, so there is room for improvement.</p>
+<p>Architecture-specific savings have not been measured.</p>
+<p>H7:
+"State-constrained architecture enables smaller models."</p>
+<p>Assessment:
+PLAUSIBLE, HIGH-VALUE, UNPROVEN.</p>
+<p>Specialized localization models provide adjacent support.</p>
+<p>H8:
+"State ownership prevents AI-induced architectural decay."</p>
+<p>Assessment:
+THEORETICALLY PLAUSIBLE, EMPIRICALLY OPEN.</p>
+<h1 id="22-what-would-most-damage-the-thesis-based-on-existing-literature">======================================================================
+22. WHAT WOULD MOST DAMAGE THE THESIS, BASED ON EXISTING LITERATURE?</h1>
+<p>The thesis becomes weak if any of these are generally true:</p>
+<ol>
+<li>
+<p>STATIC ANALYSIS ALREADY RECOVERS THE SAME DEPENDENCIES.</p>
+<p>Then state architecture adds implementation cost without creating unique agent context.</p>
+</li>
+<li>
+<p>DOMAIN POLICY FAN-OUT IS DENSE.</p>
+<p>Then semantic slices approach repository-wide context.</p>
+</li>
+<li>
+<p>CONTRACTS BECOME PASSIVE DOCUMENTATION.</p>
+<p>AGENTS.md-style evidence suggests they can increase cost rather than reduce it.</p>
+</li>
+<li>
+<p>THE AGENT STILL NEEDS HIDDEN IMPLEMENTATION.</p>
+<p>Compact interfaces cannot replace code when behavior depends on performance,
+side effects, conventions, or implementation-specific bugs.</p>
+</li>
+<li>
+<p>STATE MODELING CREATES MORE SEMANTIC SURFACE THAN IT HIDES.</p>
+<p>State explosion and duplicated metadata can erase context savings.</p>
+</li>
+<li>
+<p>MODEL COST FALLS FASTER THAN MIGRATION COST.</p>
+<p>Pure token savings can become economically irrelevant.</p>
+</li>
+<li>
+<p>TOOL/TEST COST DOMINATES INFERENCE.</p>
+<p>Then token optimization is not the primary economic lever.</p>
+</li>
+<li>
+<p>MOST TASKS ARE CROSS-CUTTING.</p>
+<p>Local semantic ownership then provides little task-level isolation.</p>
+</li>
+</ol>
+<h1 id="23-what-would-make-the-thesis-stronger-without-new-experiments">======================================================================
+23. WHAT WOULD MAKE THE THESIS STRONGER WITHOUT NEW EXPERIMENTS?</h1>
+<p>The literature already suggests several architectural refinements.</p>
+<p>A. DO NOT SEND ALL SEMANTICS TO THE MODEL.</p>
+<p>Store rich semantics mechanically; project only task-relevant facts.</p>
+<p>B. MAKE SEMANTICS EXECUTABLE.</p>
+<p>Prefer compiler/type/validator enforcement over prose instructions.</p>
+<p>C. SEPARATE AUTHORITY FROM KNOWLEDGE.</p>
+<p>The agent should not need to read every rule to be prevented from violating it.</p>
+<p>D. DISTINGUISH LOCAL CONTRACT FROM IMPLEMENTATION.</p>
+<p>Give the agent:
+compact contract for neighbors
+full implementation for the target</p>
+<p>E. USE LAZY EXPANSION.</p>
+<p>Long-context literature strongly supports short focused reasoning steps over large static
+contexts.</p>
+<p>F. TREAT STRUCTURE AS A LOCALIZATION INDEX.</p>
+<p>The semantic graph should first answer:
+"where must I look?"</p>
+<p>not:
+"here is everything the system knows."</p>
+<p>G. OPTIMIZE EXPECTED TRAJECTORY COST, NOT INITIAL PROMPT TOKENS.</p>
+<p>A 500-token contract that prevents a 20,000-token exploration loop is a win.</p>
+<h1 id="24-the-most-important-synthesis">======================================================================
+24. THE MOST IMPORTANT SYNTHESIS</h1>
+<p>The most defensible novel idea is not:</p>
+<pre><code>state machines compress code.
+</code></pre>
+<p>It is:</p>
+<pre><code>EXPLICIT SEMANTIC AUTHORITY CAN TURN SOME REPOSITORY DISCOVERY FROM
+PROBABILISTIC SEARCH INTO DETERMINISTIC GRAPH TRAVERSAL.
+</code></pre>
+<p>That is important.</p>
+<p>Today an agent may ask:</p>
+<pre><code>Where is payment status actually controlled?
+Can this field be changed here?
+What else assumes Captured?
+What happens after a timeout?
+Which module has authority?
+What recovery action remains legal?
+</code></pre>
+<p>In conventional software those answers may require:</p>
+<pre><code>grep
+call tracing
+database inspection
+test reading
+historical inference
+repeated tool calls
+</code></pre>
+<p>In a sufficiently explicit architecture those could become indexed facts:</p>
+<pre><code>Payment owns PaymentLifecycle
+Captured -> PartiallyRefunded is legal through RefundPartial
+RefundPartial requires RefundCapability
+RefundPartial emits PaymentRefunded
+ShipmentPolicy observes PaymentClaim
+Timeout -> OutcomeUnknown
+OutcomeUnknown creates ReconcileRefund obligation
+</code></pre>
+<p>If those facts are authoritative and generated from executable semantics, they can replace
+some probabilistic repository exploration.</p>
+<p>That is the literature-supported bridge between software architecture and inference
+economics.</p>
+<h1 id="25-final-literature-only-verdict">======================================================================
+25. FINAL LITERATURE-ONLY VERDICT</h1>
+<p>The research hypothesis survives serious challenge, but in a narrower and stronger form.</p>
+<p>SUPPORTED:
+selective context is beneficial;
+long context can hurt;
+repository structure improves localization;
+deterministic anchors reduce exploration variance;
+executable constraints reduce invalid generation;
+agent trajectories contain substantial token waste;
+local/compositional reasoning is a well-established software-design principle.</p>
+<p>NOT SUPPORTED:
+state machines automatically reduce tokens;
+state ownership is uniquely better than static dependency graphs;
+semantic modules necessarily reduce total context;
+stronger typing alone solves agent cost;
+smaller modules automatically mean smaller semantic context;
+architectural explicitness by itself lowers cost.</p>
+<p>PLAUSIBLE AND IMPORTANT:
+explicit state ownership may encode domain-level dependencies that code graphs cannot
+cheaply infer;
+capabilities and transition interfaces may reduce action-space entropy;
+obligations may reduce ambiguity after uncertain effects;
+task-specific semantic projections may replace large amounts of exploratory context;
+these mechanisms may allow smaller models or fewer repair loops.</p>
+<p>MAJOR RISK:
+semantic contracts become another verbose documentation layer.</p>
+<p>BEST REVISED CLAIM:</p>
+<pre><code>State-constrained modular architecture may reduce AI-agent execution cost when it
+converts consequential domain dependencies, authority, and legal actions from
+information the model must probabilistically discover into compact,
+machine-generated, mechanically enforceable structure.
+</code></pre>
+<p>That claim is consistent with the current literature.</p>
+<p>The still-unvalidated portion is whether state ownership supplies enough UNIQUE semantic
+information beyond modern code graphs and static analysis to justify its additional
+engineering cost.</p>
+<p>That is the real boundary between an interesting architecture and an economically
+important one.</p>
+<h1 id="primary--high-value-literature-consulted">======================================================================
+PRIMARY / HIGH-VALUE LITERATURE CONSULTED</h1>
+<p>CLASSICAL SOFTWARE / PROGRAMMING LANGUAGES</p>
+<ul>
+<li>D. L. Parnas (1972), "On the Criteria To Be Used in Decomposing Systems into Modules,"
+Communications of the ACM.</li>
+<li>O'Hearn / Reynolds / separation-logic literature on local reasoning.</li>
+<li>Typestate-Oriented Programming (Aldrich et al., 2009).</li>
+<li>Deadlock-Free Typestate-Oriented Programming (Padovani, 2018).</li>
+<li>Multiparty session-type / communicating-automata literature.</li>
+<li>Object-capability security literature.</li>
+<li>Behavioral contracts and modular verification literature.</li>
+</ul>
+<p>AI SOFTWARE ENGINEERING / CONTEXT</p>
+<ul>
+<li>GraphCoder (2024).</li>
+<li>DraCo: Dataflow-Guided Retrieval Augmentation for Repository-Level Code Completion (2024).</li>
+<li>STALL+: Static Analysis for Repository-Level Code Completion (2024).</li>
+<li>Agentless: Demystifying LLM-Based Software Engineering Agents (2024).</li>
+<li>RepoGraph (2024/2025).</li>
+<li>Context Length Alone Hurts LLM Performance Despite Perfect Retrieval (2025).</li>
+<li>LongCodeBench (2025).</li>
+<li>AgentDiet / Reducing Cost of LLM Agents with Trajectory Reduction (2025/2026).</li>
+<li>Evaluating AGENTS.md (2026).</li>
+<li>LLM Agents Can See Code Repositories / SeeRepo (2026).</li>
+<li>How Do AI Agents Spend Your Money? (2026).</li>
+<li>The Limits of Long-Context Reasoning in Automated Bug Fixing (2026).</li>
+<li>What Context Does a Coding Agent Actually Need to Act? (2026).</li>
+<li>How Much Static Structure Do Code Agents Need? (2026).</li>
+<li>Code Isn't Memory: A Structural Codebase Index Inside a Coding Agent (2026).</li>
+<li>CodeScout (2026).</li>
+<li>SWE-CI (2026).</li>
+<li>SWE-ContextBench (2026).</li>
+</ul>
+<p>CONSTRAINT / VERIFICATION</p>
+<ul>
+<li>Type-Constrained Code Generation with Language Models (2025).</li>
+<li>Generative Compilation: On-the-Fly Compiler Feedback as AI Generates Code (2026).</li>
+<li>ContextCov: Executable Constraints from Agent Instructions (2026).</li>
+<li>Lean4Agent (2026).</li>
+</ul>
+<p>ARCHITECTURAL COUNTEREVIDENCE / COST</p>
+<ul>
+<li>Empirical characterization of event-sourced systems and schema evolution (2021).</li>
+<li>Repository instruction/context-file studies showing additional context can increase cost.</li>
+</ul>
+<h1 id="evidence-quality-note">EVIDENCE QUALITY NOTE</h1>
+<p>The classical programming-language and software-modularity sources include peer-reviewed
+ACM/PL literature. A significant portion of the fast-moving 2025-2026 AI-agent evidence is
+available as arXiv/preprint work and should not be treated as equivalent in evidentiary
+weight to mature peer-reviewed literature. The convergence of results across independent
+papers is informative, but architecture-specific causal claims still require caution.</p></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

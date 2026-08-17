@@ -1,0 +1,1662 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>09 probabilistic vs deterministic responsibility boundaries research prompt | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">09 probabilistic vs deterministic responsibility boundaries research prompt</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/prompts/09-probabilistic-vs-deterministic-responsibility-boundaries-research-prompt.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#ai-research-mission-09-probabilistic-vs-deterministic-responsibility-boundaries">AI RESEARCH MISSION 09 — PROBABILISTIC VS DETERMINISTIC RESPONSIBILITY BOUNDARIES</a></li><li><a href="#role">ROLE</a></li><li><a href="#-2-core-principle-to-test">======================================================================
+2. CORE PRINCIPLE TO TEST</a></li><li><a href="#-3-explore-vs-commit">======================================================================
+3. EXPLORE VS COMMIT</a></li><li><a href="#-4-reversibility">======================================================================
+4. REVERSIBILITY</a></li><li><a href="#-5-consequence-severity">======================================================================
+5. CONSEQUENCE SEVERITY</a></li><li><a href="#-6-observability">======================================================================
+6. OBSERVABILITY</a></li><li><a href="#-7-recoverability">======================================================================
+7. RECOVERABILITY</a></li><li><a href="#-8-authority">======================================================================
+8. AUTHORITY</a></li><li><a href="#-9-evidence-vs-decision">======================================================================
+9. EVIDENCE VS DECISION</a></li><li><a href="#-10-ml-score-as-evidence">======================================================================
+10. ML SCORE AS EVIDENCE</a></li><li><a href="#-11-deterministic-threshold-risk">======================================================================
+11. DETERMINISTIC THRESHOLD RISK</a></li><li><a href="#-12-human-judgment">======================================================================
+12. HUMAN JUDGMENT</a></li><li><a href="#-13-decision-support">======================================================================
+13. DECISION SUPPORT</a></li><li><a href="#-14-safe-rl-shielding">======================================================================
+14. SAFE RL / SHIELDING</a></li><li><a href="#-15-reference-monitor">======================================================================
+15. REFERENCE MONITOR</a></li><li><a href="#-16-safety-kernel">======================================================================
+16. SAFETY KERNEL</a></li><li><a href="#-17-simple-trusted-core">======================================================================
+17. SIMPLE TRUSTED CORE</a></li><li><a href="#-18-control-plane-vs-data-plane">======================================================================
+18. CONTROL PLANE VS DATA PLANE</a></li><li><a href="#-19-prediction-vs-policy">======================================================================
+19. PREDICTION VS POLICY</a></li><li><a href="#-20-descriptive-vs-normative">======================================================================
+20. DESCRIPTIVE VS NORMATIVE</a></li><li><a href="#-21-hard-rules-vs-soft-rules">======================================================================
+21. HARD RULES VS SOFT RULES</a></li><li><a href="#-22-constrained-optimization">======================================================================
+22. CONSTRAINED OPTIMIZATION</a></li><li><a href="#-23-lexicographic-priorities">======================================================================
+23. LEXICOGRAPHIC PRIORITIES</a></li><li><a href="#-24-soft-constraints">======================================================================
+24. SOFT CONSTRAINTS</a></li><li><a href="#-25-graceful-degradation">======================================================================
+25. GRACEFUL DEGRADATION</a></li><li><a href="#-26-uncertainty-dependent-capabilities">======================================================================
+26. UNCERTAINTY-DEPENDENT CAPABILITIES</a></li><li><a href="#-27-external-effects">======================================================================
+27. EXTERNAL EFFECTS</a></li><li><a href="#-28-policy-interpretation">======================================================================
+28. POLICY INTERPRETATION</a></li><li><a href="#-29-policy-ambiguity">======================================================================
+29. POLICY AMBIGUITY</a></li><li><a href="#-30-semantic-unknown">======================================================================
+30. SEMANTIC UNKNOWN</a></li><li><a href="#-31-provisional-decisions">======================================================================
+31. PROVISIONAL DECISIONS</a></li><li><a href="#-32-ai-generated-rules">======================================================================
+32. AI-GENERATED RULES</a></li><li><a href="#-33-ai-generated-code">======================================================================
+33. AI-GENERATED CODE</a></li><li><a href="#-34-postconditions">======================================================================
+34. POSTCONDITIONS</a></li><li><a href="#-35-transactional-commit-gate">======================================================================
+35. TRANSACTIONAL COMMIT GATE</a></li><li><a href="#-36-sandboxing">======================================================================
+36. SANDBOXING</a></li><li><a href="#-37-simulation">======================================================================
+37. SIMULATION</a></li><li><a href="#-38-hypothetical-illegal-actions">======================================================================
+38. HYPOTHETICAL ILLEGAL ACTIONS</a></li><li><a href="#-39-tool-exposure-vs-world-model">======================================================================
+39. TOOL EXPOSURE VS WORLD MODEL</a></li><li><a href="#-40-exploration-cost">======================================================================
+40. EXPLORATION COST</a></li><li><a href="#-41-autonomy-levels">======================================================================
+41. AUTONOMY LEVELS</a></li><li><a href="#-42-high-consequence-domains">======================================================================
+42. HIGH-CONSEQUENCE DOMAINS</a></li><li><a href="#-43-healthcare">======================================================================
+43. HEALTHCARE</a></li><li><a href="#-44-finance">======================================================================
+44. FINANCE</a></li><li><a href="#-45-security">======================================================================
+45. SECURITY</a></li><li><a href="#-46-devops">======================================================================
+46. DEVOPS</a></li><li><a href="#-47-research">======================================================================
+47. RESEARCH</a></li><li><a href="#-48-customer-support">======================================================================
+48. CUSTOMER SUPPORT</a></li><li><a href="#-49-consequence-based-boundary">======================================================================
+49. CONSEQUENCE-BASED BOUNDARY</a></li><li><a href="#-50-risk-classification">======================================================================
+50. RISK CLASSIFICATION</a></li><li><a href="#-51-boundary-score">======================================================================
+51. BOUNDARY SCORE</a></li><li><a href="#-52-human-escalation-threshold">======================================================================
+52. HUMAN ESCALATION THRESHOLD</a></li><li><a href="#-53-ai-error-taxonomy">======================================================================
+53. AI ERROR TAXONOMY</a></li><li><a href="#-54-error-containment">======================================================================
+54. ERROR CONTAINMENT</a></li><li><a href="#-55-fault-containment-analogy">======================================================================
+55. FAULT CONTAINMENT ANALOGY</a></li><li><a href="#-56-nondterminism-vs-probabilism">======================================================================
+56. NONDTERMINISM VS PROBABILISM</a></li><li><a href="#-57-deterministic-does-not-mean-correct">======================================================================
+57. DETERMINISTIC DOES NOT MEAN CORRECT</a></li><li><a href="#-58-probabilistic-may-be-superior">======================================================================
+58. PROBABILISTIC MAY BE SUPERIOR</a></li><li><a href="#-59-hybrid-decision-systems">======================================================================
+59. HYBRID DECISION SYSTEMS</a></li><li><a href="#-60-rule-engine-failure-history">======================================================================
+60. RULE ENGINE FAILURE HISTORY</a></li><li><a href="#-61-expert-systems">======================================================================
+61. EXPERT SYSTEMS</a></li><li><a href="#-62-knowledge-acquisition-bottleneck">======================================================================
+62. KNOWLEDGE ACQUISITION BOTTLENECK</a></li><li><a href="#-63-open-policy-world">======================================================================
+63. OPEN POLICY WORLD</a></li><li><a href="#-64-exceptions">======================================================================
+64. EXCEPTIONS</a></li><li><a href="#-65-temporary-exceptions">======================================================================
+65. TEMPORARY EXCEPTIONS</a></li><li><a href="#-66-deterministic-policy-evolution">======================================================================
+66. DETERMINISTIC POLICY EVOLUTION</a></li><li><a href="#-67-ai-policy-interpreter">======================================================================
+67. AI POLICY INTERPRETER</a></li><li><a href="#-68-confidence-based-autonomy">======================================================================
+68. CONFIDENCE-BASED AUTONOMY</a></li><li><a href="#-69-uncertainty-aware-escalation">======================================================================
+69. UNCERTAINTY-AWARE ESCALATION</a></li><li><a href="#-70-multi-model-consensus">======================================================================
+70. MULTI-MODEL CONSENSUS</a></li><li><a href="#-71-verifier-model">======================================================================
+71. VERIFIER MODEL</a></li><li><a href="#-72-formal-verification">======================================================================
+72. FORMAL VERIFICATION</a></li><li><a href="#-73-static-analysis">======================================================================
+73. STATIC ANALYSIS</a></li><li><a href="#-74-runtime-validation">======================================================================
+74. RUNTIME VALIDATION</a></li><li><a href="#-75-policy-engine">======================================================================
+75. POLICY ENGINE</a></li><li><a href="#-76-agent-tool-protocol">======================================================================
+76. AGENT TOOL PROTOCOL</a></li><li><a href="#-77-propose-vs-execute">======================================================================
+77. PROPOSE VS EXECUTE</a></li><li><a href="#-78-transactional-proposal">======================================================================
+78. TRANSACTIONAL PROPOSAL</a></li><li><a href="#-79-rationale">======================================================================
+79. RATIONALE</a></li><li><a href="#-80-explainability">======================================================================
+80. EXPLAINABILITY</a></li><li><a href="#-81-ai-explanation-role">======================================================================
+81. AI EXPLANATION ROLE</a></li><li><a href="#-82-context-cost">======================================================================
+82. CONTEXT COST</a></li><li><a href="#-83-model-size">======================================================================
+83. MODEL SIZE</a></li><li><a href="#-84-output-token-cost">======================================================================
+84. OUTPUT TOKEN COST</a></li><li><a href="#-85-tool-call-cost">======================================================================
+85. TOOL CALL COST</a></li><li><a href="#-86-retry-loops">======================================================================
+86. RETRY LOOPS</a></li><li><a href="#-87-deterministic-overhead">======================================================================
+87. DETERMINISTIC OVERHEAD</a></li><li><a href="#-88-economic-model">======================================================================
+88. ECONOMIC MODEL</a></li><li><a href="#-89-crossover-point">======================================================================
+89. CROSSOVER POINT</a></li><li><a href="#-90-task-categories">======================================================================
+90. TASK CATEGORIES</a></li><li><a href="#-91-experiment-a-fraud">======================================================================
+91. EXPERIMENT A — FRAUD</a></li><li><a href="#-92-experiment-b-payment">======================================================================
+92. EXPERIMENT B — PAYMENT</a></li><li><a href="#-93-experiment-c-deployment">======================================================================
+93. EXPERIMENT C — DEPLOYMENT</a></li><li><a href="#-94-experiment-d-healthcare">======================================================================
+94. EXPERIMENT D — HEALTHCARE</a></li><li><a href="#-95-experiment-e-ambiguous-policy">======================================================================
+95. EXPERIMENT E — AMBIGUOUS POLICY</a></li><li><a href="#-96-experiment-f-wrong-deterministic-rule">======================================================================
+96. EXPERIMENT F — WRONG DETERMINISTIC RULE</a></li><li><a href="#-97-experiment-g-illegal-but-desirable-request">======================================================================
+97. EXPERIMENT G — ILLEGAL BUT DESIRABLE REQUEST</a></li><li><a href="#-98-experiment-h-policy-gap">======================================================================
+98. EXPERIMENT H — POLICY GAP</a></li><li><a href="#-99-metrics">======================================================================
+99. METRICS</a></li><li><a href="#-100-false-block-rate">======================================================================
+100. FALSE BLOCK RATE</a></li><li><a href="#-101-policy-completeness">======================================================================
+101. POLICY COMPLETENESS</a></li><li><a href="#-102-boundary-leakage">======================================================================
+102. BOUNDARY LEAKAGE</a></li><li><a href="#-103-trusted-core-size">======================================================================
+103. TRUSTED CORE SIZE</a></li><li><a href="#-104-decision-latency">======================================================================
+104. DECISION LATENCY</a></li><li><a href="#-105-human-burden">======================================================================
+105. HUMAN BURDEN</a></li><li><a href="#-106-autonomy-efficiency">======================================================================
+106. AUTONOMY EFFICIENCY</a></li><li><a href="#-107-specification-cost">======================================================================
+107. SPECIFICATION COST</a></li><li><a href="#-108-longitudinal-policy-cost">======================================================================
+108. LONGITUDINAL POLICY COST</a></li><li><a href="#-109-current-ai-safety-research">======================================================================
+109. CURRENT AI SAFETY RESEARCH</a></li><li><a href="#-110-high-assurance-systems">======================================================================
+110. HIGH-ASSURANCE SYSTEMS</a></li><li><a href="#-111-expert-system-history">======================================================================
+111. EXPERT SYSTEM HISTORY</a></li><li><a href="#-112-modern-hybrid-systems">======================================================================
+112. MODERN HYBRID SYSTEMS</a></li><li><a href="#-113-decision-theory">======================================================================
+113. DECISION THEORY</a></li><li><a href="#-114-pomdp-mdp">======================================================================
+114. POMDP / MDP</a></li><li><a href="#-115-formal-constraint-satisfaction">======================================================================
+115. FORMAL CONSTRAINT SATISFACTION</a></li><li><a href="#-116-soft-business-judgment">======================================================================
+116. SOFT BUSINESS JUDGMENT</a></li><li><a href="#-117-hard-business-invariant">======================================================================
+117. HARD BUSINESS INVARIANT</a></li><li><a href="#-118-domain-specific-boundary">======================================================================
+118. DOMAIN-SPECIFIC BOUNDARY</a></li><li><a href="#-119-minimum-rule">======================================================================
+119. MINIMUM RULE</a></li><li><a href="#-120-stronger-rule">======================================================================
+120. STRONGER RULE</a></li><li><a href="#-121-weaker-rule">======================================================================
+121. WEAKER RULE</a></li><li><a href="#-122-falsification-conditions">======================================================================
+122. FALSIFICATION CONDITIONS</a></li><li><a href="#-123-counterarguments">======================================================================
+123. COUNTERARGUMENTS</a></li><li><a href="#-124-source-quality">======================================================================
+124. SOURCE QUALITY</a></li><li><a href="#-125-required-output">======================================================================
+125. REQUIRED OUTPUT</a></li><li><a href="#-126-final-verdict-format">======================================================================
+126. FINAL VERDICT FORMAT</a></li><li><a href="#-127-research-standard">======================================================================
+127. RESEARCH STANDARD</a></li> </ol> </aside> <section class="document-body"><h1 id="ai-research-mission-09--probabilistic-vs-deterministic-responsibility-boundaries">AI RESEARCH MISSION 09 — PROBABILISTIC VS DETERMINISTIC RESPONSIBILITY BOUNDARIES</h1>
+<h1 id="role">ROLE</h1>
+<p>Act as a combined:</p>
+<ul>
+<li>AI-agent systems researcher</li>
+<li>safety-critical systems researcher</li>
+<li>formal-methods researcher</li>
+<li>decision-theory researcher</li>
+<li>control-systems researcher</li>
+<li>software-architecture researcher</li>
+<li>policy-systems researcher</li>
+<li>human-factors researcher</li>
+<li>high-assurance systems researcher</li>
+<li>AI inference-cost researcher</li>
+</ul>
+<p>Your task is to investigate where probabilistic AI reasoning should end and
+deterministic software control should begin.</p>
+<p>The architecture under investigation is converging on a principle:</p>
+<pre><code>Exploration may be probabilistic.
+
+Commitment should be constrained.
+</code></pre>
+<p>Candidate probabilistic responsibilities:</p>
+<pre><code>interpretation
+search
+hypothesis generation
+summarization
+recommendation
+optimization
+ranking
+planning among legal options
+explanation
+</code></pre>
+<p>Candidate deterministic responsibilities:</p>
+<pre><code>state ownership
+legal transitions
+authority
+policy
+capability derivation
+invariant enforcement
+evidence requirements
+version checks
+external-effect execution rules
+semantic migration constraints
+</code></pre>
+<p>Do NOT assume this split is correct.</p>
+<p>The goal is to determine:</p>
+<pre><code>which decisions are safe to leave probabilistic,
+which should be deterministically constrained,
+where hybrid approaches are superior,
+and whether moving the boundary changes correctness and cost.
+</code></pre>
+<p>======================================================================</p>
+<ol>
+<li>PRIMARY RESEARCH QUESTION
+======================================================================</li>
+</ol>
+<p>What kinds of reasoning and action should remain probabilistic, and what kinds
+should be deterministically constrained in AI-operated software?</p>
+<p>Subquestions:</p>
+<pre><code>Which mistakes are acceptable?
+
+Which mistakes are recoverable?
+
+Which decisions require authority?
+
+Which actions are irreversible?
+
+Which outcomes can be verified after the fact?
+
+Which decisions are better framed as recommendation rather than commitment?
+
+Which rules must remain deterministic for safety or compliance?
+
+Which deterministic constraints reduce AI model/context cost?
+</code></pre>
+<h1 id="2-core-principle-to-test">======================================================================
+2. CORE PRINCIPLE TO TEST</h1>
+<p>Candidate principle:</p>
+<pre><code>Probabilistic systems may propose.
+Deterministic systems authorize and commit.
+</code></pre>
+<p>Example:</p>
+<p>AI:</p>
+<pre><code>"This transaction looks suspicious."
+</code></pre>
+<p>Deterministic policy:</p>
+<pre><code>RiskScore >= threshold
+    ->
+FraudReviewRequired
+</code></pre>
+<p>Then:</p>
+<pre><code>HoldPayment capability exposed
+</code></pre>
+<p>The model may generate evidence or recommendation.</p>
+<p>The deterministic system decides:</p>
+<pre><code>whether threshold/policy conditions authorize consequence.
+</code></pre>
+<h1 id="3-explore-vs-commit">======================================================================
+3. EXPLORE VS COMMIT</h1>
+<p>Define:</p>
+<p>Exploration:</p>
+<pre><code>no irreversible authoritative consequence
+</code></pre>
+<p>Examples:</p>
+<pre><code>search
+summarize
+hypothesize
+simulate
+score
+rank
+recommend
+draft
+</code></pre>
+<p>Commitment:</p>
+<pre><code>changes authoritative state
+spends money
+grants access
+establishes verified claim
+deploys software
+deletes data
+sends external notification
+makes legal/compliance commitment
+</code></pre>
+<p>Ask whether this distinction is robust enough.</p>
+<h1 id="4-reversibility">======================================================================
+4. REVERSIBILITY</h1>
+<p>A potential decision criterion:</p>
+<pre><code>the less reversible the action,
+the stronger deterministic control should be.
+</code></pre>
+<p>Classify actions:</p>
+<pre><code>trivially reversible
+cheaply reversible
+compensatable
+expensive to reverse
+irreversible
+</code></pre>
+<p>Research:</p>
+<pre><code>safety engineering
+control theory
+transaction systems
+human decision science
+</code></pre>
+<h1 id="5-consequence-severity">======================================================================
+5. CONSEQUENCE SEVERITY</h1>
+<p>Another criterion:</p>
+<pre><code>low consequence
+moderate consequence
+high consequence
+catastrophic consequence
+</code></pre>
+<p>Investigate whether deterministic enforcement threshold should scale with
+consequence.</p>
+<h1 id="6-observability">======================================================================
+6. OBSERVABILITY</h1>
+<p>Some probabilistic errors are easy to detect.</p>
+<p>Example:</p>
+<pre><code>bad recommendation
+</code></pre>
+<p>Others are hard to observe:</p>
+<pre><code>silent policy violation
+</code></pre>
+<p>Potential principle:</p>
+<pre><code>lower observability requires stronger deterministic prevention.
+</code></pre>
+<p>Research safety/security literature.</p>
+<h1 id="7-recoverability">======================================================================
+7. RECOVERABILITY</h1>
+<p>Ask:</p>
+<pre><code>If AI makes wrong decision, can system detect and recover?
+</code></pre>
+<p>If yes:</p>
+<pre><code>more probabilistic freedom may be acceptable.
+</code></pre>
+<p>If no:</p>
+<pre><code>deterministic guard may be required.
+</code></pre>
+<h1 id="8-authority">======================================================================
+8. AUTHORITY</h1>
+<p>Probabilistic reasoning should not itself imply authority.</p>
+<p>Example:</p>
+<p>AI concludes:</p>
+<pre><code>customer probably qualifies
+</code></pre>
+<p>does not imply:</p>
+<pre><code>CanApproveLoan
+</code></pre>
+<p>Authority should be separate.</p>
+<p>Research:</p>
+<pre><code>reference monitors
+authorization
+capability security
+policy enforcement
+</code></pre>
+<h1 id="9-evidence-vs-decision">======================================================================
+9. EVIDENCE VS DECISION</h1>
+<p>Architecture pattern:</p>
+<p>AI/ML:</p>
+<pre><code>generates evidence or assessment
+</code></pre>
+<p>Deterministic policy:</p>
+<pre><code>interprets evidence under declared rules
+</code></pre>
+<p>Example:</p>
+<p>Model outputs:</p>
+<pre><code>fraudScore = 0.87
+</code></pre>
+<p>Policy:</p>
+<pre><code>if fraudScore >= 0.80
+   and modelVersion approved
+   and evidenceFresh
+then RequireFraudReview
+</code></pre>
+<p>Investigate strengths and weaknesses of this pattern.</p>
+<h1 id="10-ml-score-as-evidence">======================================================================
+10. ML SCORE AS EVIDENCE</h1>
+<p>Do not treat a model score as truth.</p>
+<p>Research how regulated systems use:</p>
+<pre><code>risk scores
+confidence
+thresholds
+policy layers
+calibration
+</code></pre>
+<p>Determine whether:</p>
+<pre><code>model output -> evidence
+</code></pre>
+<p>is a generally useful architecture.</p>
+<h1 id="11-deterministic-threshold-risk">======================================================================
+11. DETERMINISTIC THRESHOLD RISK</h1>
+<p>A fixed threshold can be wrong.</p>
+<p>Example:</p>
+<pre><code>score >= 0.8
+</code></pre>
+<p>may create unfair or brittle outcomes.</p>
+<p>Research:</p>
+<pre><code>threshold policy governance
+calibration drift
+model monitoring
+fairness
+context-dependent decision policies
+</code></pre>
+<h1 id="12-human-judgment">======================================================================
+12. HUMAN JUDGMENT</h1>
+<p>Some consequential decisions may require:</p>
+<pre><code>human judgment
+</code></pre>
+<p>not:</p>
+<pre><code>deterministic rule
+</code></pre>
+<p>or:</p>
+<pre><code>AI autonomy
+</code></pre>
+<p>Develop a three-way model:</p>
+<pre><code>probabilistic AI
+deterministic system
+human authority
+</code></pre>
+<p>Question:</p>
+<pre><code>Which layer owns which responsibility?
+</code></pre>
+<h1 id="13-decision-support">======================================================================
+13. DECISION SUPPORT</h1>
+<p>Compare:</p>
+<pre><code>AI decision
+</code></pre>
+<p>vs:</p>
+<pre><code>AI decision support
+</code></pre>
+<p>Examples:</p>
+<pre><code>AI recommends diagnosis
+clinician establishes diagnosis
+
+AI recommends fraud review
+policy/human commits hold
+</code></pre>
+<p>Research evidence on safer deployment patterns.</p>
+<h1 id="14-safe-rl--shielding">======================================================================
+14. SAFE RL / SHIELDING</h1>
+<p>Research:</p>
+<pre><code>shielded reinforcement learning
+constrained MDPs
+safety layers
+runtime shields
+control barrier functions
+</code></pre>
+<p>Potential analogy:</p>
+<pre><code>AI selects action
+deterministic shield removes unsafe choices
+</code></pre>
+<p>Determine transferability to LLM agents.</p>
+<h1 id="15-reference-monitor">======================================================================
+15. REFERENCE MONITOR</h1>
+<p>Classic reference monitor properties:</p>
+<pre><code>complete mediation
+tamper resistance
+verifiability
+</code></pre>
+<p>Ask whether the semantic runtime should act as reference monitor for
+consequential agent actions.</p>
+<h1 id="16-safety-kernel">======================================================================
+16. SAFETY KERNEL</h1>
+<p>Research safety-kernel architectures.</p>
+<p>Potential mapping:</p>
+<pre><code>AI = complex untrusted subsystem
+
+semantic core = small trusted safety kernel
+</code></pre>
+<p>Ask:</p>
+<pre><code>what belongs inside trusted kernel?
+
+what must remain outside to keep kernel small?
+</code></pre>
+<h1 id="17-simple-trusted-core">======================================================================
+17. SIMPLE TRUSTED CORE</h1>
+<p>Potential principle:</p>
+<pre><code>Put only legality and commitment-critical semantics into deterministic core.
+</code></pre>
+<p>Avoid:</p>
+<pre><code>trying to encode all business intelligence there.
+</code></pre>
+<p>Research minimal trusted computing base principles.</p>
+<h1 id="18-control-plane-vs-data-plane">======================================================================
+18. CONTROL PLANE VS DATA PLANE</h1>
+<p>Compare with:</p>
+<pre><code>control plane defines policy
+data plane executes actions
+</code></pre>
+<p>Potential architecture:</p>
+<pre><code>semantic plane defines legality
+agent plane chooses strategy
+execution plane performs effect
+</code></pre>
+<p>Determine usefulness.</p>
+<h1 id="19-prediction-vs-policy">======================================================================
+19. PREDICTION VS POLICY</h1>
+<p>A crucial separation:</p>
+<pre><code>prediction:
+    what is likely?
+
+policy:
+    what should system do?
+</code></pre>
+<p>AI may predict:</p>
+<pre><code>probability of churn = 0.92
+</code></pre>
+<p>Policy may decide:</p>
+<pre><code>offer retention discount if conditions X/Y/Z
+</code></pre>
+<p>Research decision systems.</p>
+<h1 id="20-descriptive-vs-normative">======================================================================
+20. DESCRIPTIVE VS NORMATIVE</h1>
+<p>AI is often good at descriptive inference:</p>
+<pre><code>what appears true
+what may happen
+</code></pre>
+<p>Normative decisions concern:</p>
+<pre><code>what is permitted
+required
+prohibited
+</code></pre>
+<p>Research:</p>
+<pre><code>deontic logic
+normative systems
+policy engines
+</code></pre>
+<p>Question:</p>
+<pre><code>Should normative rules generally be deterministic?
+</code></pre>
+<h1 id="21-hard-rules-vs-soft-rules">======================================================================
+21. HARD RULES VS SOFT RULES</h1>
+<p>Some policies are hard:</p>
+<pre><code>never ship before payment
+</code></pre>
+<p>Others are soft:</p>
+<pre><code>prefer lower-cost supplier
+</code></pre>
+<p>Model:</p>
+<pre><code>constraints
+preferences
+</code></pre>
+<p>Agent optimizes preferences inside hard constraints.</p>
+<p>This maps naturally to constrained optimization.</p>
+<h1 id="22-constrained-optimization">======================================================================
+22. CONSTRAINED OPTIMIZATION</h1>
+<p>Formal pattern:</p>
+<pre><code>maximize utility
+</code></pre>
+<p>subject to:</p>
+<pre><code>legal constraints
+safety constraints
+authority constraints
+</code></pre>
+<p>Research:</p>
+<pre><code>operations research
+constrained planning
+safe RL
+</code></pre>
+<p>This may provide mathematical foundation.</p>
+<h1 id="23-lexicographic-priorities">======================================================================
+23. LEXICOGRAPHIC PRIORITIES</h1>
+<p>Some constraints may dominate preferences.</p>
+<p>Example:</p>
+<pre><code>safety > speed
+legality > profit
+</code></pre>
+<p>Investigate:</p>
+<pre><code>lexicographic optimization
+hierarchical objectives
+</code></pre>
+<h1 id="24-soft-constraints">======================================================================
+24. SOFT CONSTRAINTS</h1>
+<p>Not all boundaries are binary.</p>
+<p>Example:</p>
+<pre><code>prefer review if risk moderate
+</code></pre>
+<p>Research:</p>
+<pre><code>weighted constraints
+fuzzy rules
+utility models
+</code></pre>
+<p>Ask when deterministic binary capability model is too rigid.</p>
+<h1 id="25-graceful-degradation">======================================================================
+25. GRACEFUL DEGRADATION</h1>
+<p>If evidence insufficient:</p>
+<pre><code>system may offer safer reduced capability
+</code></pre>
+<p>Example:</p>
+<pre><code>no automatic approval
+but manual review available
+</code></pre>
+<p>This may be better than:</p>
+<pre><code>all-or-nothing block
+</code></pre>
+<p>Research fallback design.</p>
+<h1 id="26-uncertainty-dependent-capabilities">======================================================================
+26. UNCERTAINTY-DEPENDENT CAPABILITIES</h1>
+<p>Current legal action may depend on uncertainty.</p>
+<p>Example:</p>
+<p>High uncertainty:</p>
+<pre><code>GatherMoreEvidence
+Escalate
+</code></pre>
+<p>Low uncertainty:</p>
+<pre><code>Approve
+</code></pre>
+<p>This connects epistemic state to capability frontier.</p>
+<h1 id="27-external-effects">======================================================================
+27. EXTERNAL EFFECTS</h1>
+<p>Probabilistic AI may choose:</p>
+<pre><code>whether refund is desirable
+</code></pre>
+<p>But execution rules must handle:</p>
+<pre><code>idempotency
+OutcomeUnknown
+authority
+versioning
+</code></pre>
+<p>This illustrates layered responsibility.</p>
+<h1 id="28-policy-interpretation">======================================================================
+28. POLICY INTERPRETATION</h1>
+<p>Can AI interpret natural-language policy?</p>
+<p>Potential pattern:</p>
+<pre><code>AI maps policy document to candidate formal rule
+</code></pre>
+<p>Human/authorized process approves formal rule</p>
+<p>Runtime enforces deterministic form</p>
+<p>Research compliance automation.</p>
+<h1 id="29-policy-ambiguity">======================================================================
+29. POLICY AMBIGUITY</h1>
+<p>Some policies are inherently ambiguous.</p>
+<p>Deterministic encoding may hide ambiguity.</p>
+<p>Architecture should support:</p>
+<pre><code>unresolved policy question
+escalation
+provisional interpretation
+</code></pre>
+<p>Do not force false precision.</p>
+<h1 id="30-semantic-unknown">======================================================================
+30. SEMANTIC UNKNOWN</h1>
+<p>When deterministic core lacks a rule:</p>
+<pre><code>should not invent one
+</code></pre>
+<p>Possible result:</p>
+<pre><code>NoAuthorizedTransition
+RequiresPolicyDecision
+</code></pre>
+<p>This may be safer than agent improvisation.</p>
+<h1 id="31-provisional-decisions">======================================================================
+31. PROVISIONAL DECISIONS</h1>
+<p>Some domains allow temporary decisions.</p>
+<p>Example:</p>
+<pre><code>provisional access
+temporary hold
+</code></pre>
+<p>Could deterministic system support:</p>
+<pre><code>reversible provisional transitions
+</code></pre>
+<p>Research.</p>
+<h1 id="32-ai-generated-rules">======================================================================
+32. AI-GENERATED RULES</h1>
+<p>Should agent be allowed to create new deterministic rule automatically?</p>
+<p>Potentially dangerous.</p>
+<p>Safer:</p>
+<pre><code>propose rule
+analyze impact
+validate
+approve
+activate
+</code></pre>
+<p>Research governance.</p>
+<h1 id="33-ai-generated-code">======================================================================
+33. AI-GENERATED CODE</h1>
+<p>Agent may implement algorithm inside semantic boundary.</p>
+<p>If boundary enforces:</p>
+<pre><code>legal input/output/state effects
+</code></pre>
+<p>then implementation can remain flexible.</p>
+<p>Hypothesis:</p>
+<pre><code>deterministic boundary reduces need to trust generated implementation.
+</code></pre>
+<h1 id="34-postconditions">======================================================================
+34. POSTCONDITIONS</h1>
+<p>Even if agent-generated code is probabilistic, runtime can verify:</p>
+<pre><code>postconditions
+</code></pre>
+<p>before committing result.</p>
+<p>Research:</p>
+<pre><code>design by contract
+proof-carrying code
+transactional validation
+</code></pre>
+<h1 id="35-transactional-commit-gate">======================================================================
+35. TRANSACTIONAL COMMIT GATE</h1>
+<p>Potential architecture:</p>
+<pre><code>AI generates candidate state change
+    ->
+deterministic validator checks
+    ->
+commit
+</code></pre>
+<p>This resembles:</p>
+<pre><code>database transaction validation
+optimistic concurrency
+</code></pre>
+<p>Evaluate.</p>
+<h1 id="36-sandboxing">======================================================================
+36. SANDBOXING</h1>
+<p>AI can explore in sandbox.</p>
+<p>Only validated outputs cross commitment boundary.</p>
+<p>Research:</p>
+<pre><code>sandboxing
+staged execution
+dry-run systems
+deployment previews
+</code></pre>
+<h1 id="37-simulation">======================================================================
+37. SIMULATION</h1>
+<p>Agent may simulate illegal hypothetical actions for planning.</p>
+<p>Important:</p>
+<pre><code>action need not be executable to be thinkable.
+</code></pre>
+<p>Thus:</p>
+<pre><code>runtime capability restriction
+</code></pre>
+<p>should not necessarily limit:</p>
+<pre><code>internal reasoning/simulation
+</code></pre>
+<p>This is important counterpoint.</p>
+<h1 id="38-hypothetical-illegal-actions">======================================================================
+38. HYPOTHETICAL ILLEGAL ACTIONS</h1>
+<p>An agent may need to reason:</p>
+<pre><code>"If refund were allowed, customer would prefer it."
+</code></pre>
+<p>Even when:</p>
+<pre><code>refund currently illegal.
+</code></pre>
+<p>Tool restriction should not erase conceptual knowledge.</p>
+<p>Differentiate:</p>
+<pre><code>executable action frontier
+</code></pre>
+<p>from:</p>
+<pre><code>reasoning model of possible actions.
+</code></pre>
+<h1 id="39-tool-exposure-vs-world-model">======================================================================
+39. TOOL EXPOSURE VS WORLD MODEL</h1>
+<p>Agent may know blocked transitions conceptually via:</p>
+<pre><code>explain_blocked
+</code></pre>
+<p>without being able to invoke them.</p>
+<p>This balances:</p>
+<pre><code>planning knowledge
+execution safety
+</code></pre>
+<p>Research.</p>
+<h1 id="40-exploration-cost">======================================================================
+40. EXPLORATION COST</h1>
+<p>Too much deterministic restriction may cause:</p>
+<pre><code>repeated blocked attempts
+inability to discover alternate plan
+</code></pre>
+<p>Need sufficient explanations:</p>
+<pre><code>why blocked
+what prerequisites missing
+</code></pre>
+<p>This links to planning.</p>
+<h1 id="41-autonomy-levels">======================================================================
+41. AUTONOMY LEVELS</h1>
+<p>Develop levels:</p>
+<p>Level 0:
+AI suggests only</p>
+<p>Level 1:
+AI executes reversible actions</p>
+<p>Level 2:
+AI executes consequential actions inside deterministic constraints</p>
+<p>Level 3:
+AI proposes policy changes but requires approval</p>
+<p>Level 4:
+AI may autonomously revise policy under meta-policy?</p>
+<p>Evaluate where architecture should stop.</p>
+<h1 id="42-high-consequence-domains">======================================================================
+42. HIGH-CONSEQUENCE DOMAINS</h1>
+<p>Study:</p>
+<pre><code>healthcare
+finance
+security
+legal/compliance
+infrastructure
+manufacturing
+scientific research
+</code></pre>
+<p>For each identify:</p>
+<pre><code>probabilistic responsibilities
+deterministic responsibilities
+human responsibilities
+</code></pre>
+<h1 id="43-healthcare">======================================================================
+43. HEALTHCARE</h1>
+<p>Potential pattern:</p>
+<p>AI:</p>
+<pre><code>summarize history
+identify candidate diagnosis
+rank possibilities
+detect contradictions
+</code></pre>
+<p>Deterministic:</p>
+<pre><code>medication interaction checks
+dosage boundaries
+evidence requirements
+authorization
+record provenance
+</code></pre>
+<p>Human:</p>
+<pre><code>diagnosis/treatment decision in many cases
+</code></pre>
+<p>Research actual clinical decision-support guidance.</p>
+<h1 id="44-finance">======================================================================
+44. FINANCE</h1>
+<p>AI:</p>
+<pre><code>fraud inference
+document interpretation
+anomaly detection
+</code></pre>
+<p>Deterministic:</p>
+<pre><code>transaction limits
+authorization
+compliance checks
+ledger posting
+idempotency
+</code></pre>
+<p>Human:</p>
+<pre><code>high-risk exceptions
+</code></pre>
+<h1 id="45-security">======================================================================
+45. SECURITY</h1>
+<p>AI:</p>
+<pre><code>interpret logs
+identify threat
+propose remediation
+</code></pre>
+<p>Deterministic:</p>
+<pre><code>privilege boundaries
+access control
+change approval
+protected operations
+</code></pre>
+<h1 id="46-devops">======================================================================
+46. DEVOPS</h1>
+<p>AI:</p>
+<pre><code>diagnose incident
+propose deployment
+select remediation
+</code></pre>
+<p>Deterministic:</p>
+<pre><code>deployment policy
+change windows
+health gates
+rollback safety
+environment authority
+</code></pre>
+<h1 id="47-research">======================================================================
+47. RESEARCH</h1>
+<p>AI:</p>
+<pre><code>generate hypotheses
+synthesize literature
+propose experiments
+</code></pre>
+<p>Deterministic:</p>
+<pre><code>data provenance
+experiment versioning
+statistical procedure checks
+evidence records
+</code></pre>
+<p>Human/scientific judgment:</p>
+<pre><code>interpretation
+</code></pre>
+<h1 id="48-customer-support">======================================================================
+48. CUSTOMER SUPPORT</h1>
+<p>Lower consequence domain.</p>
+<p>AI may have wider autonomy.</p>
+<p>Deterministic constraints still matter for:</p>
+<pre><code>refunds
+account changes
+legal promises
+</code></pre>
+<p>This demonstrates action-specific rather than domain-wide risk.</p>
+<h1 id="49-consequence-based-boundary">======================================================================
+49. CONSEQUENCE-BASED BOUNDARY</h1>
+<p>Potential rule:</p>
+<pre><code>deterministic strength should attach to action consequence,
+not simply application category.
+</code></pre>
+<p>A support agent can:</p>
+<pre><code>write email freely
+</code></pre>
+<p>but:</p>
+<pre><code>refund $10,000 requires stronger control.
+</code></pre>
+<h1 id="50-risk-classification">======================================================================
+50. RISK CLASSIFICATION</h1>
+<p>Develop decision matrix using:</p>
+<pre><code>consequence
+reversibility
+observability
+authority
+uncertainty
+externality
+regulatory requirement
+</code></pre>
+<p>This may determine control strength.</p>
+<h1 id="51-boundary-score">======================================================================
+51. BOUNDARY SCORE</h1>
+<p>Explore a heuristic:</p>
+<p>ControlStrength = f(
+consequence,
+irreversibility,
+observability,
+uncertainty,
+authority sensitivity
+)</p>
+<p>Do not invent pseudo-precision without evidence.</p>
+<h1 id="52-human-escalation-threshold">======================================================================
+52. HUMAN ESCALATION THRESHOLD</h1>
+<p>When should deterministic system force:</p>
+<pre><code>human review
+</code></pre>
+<p>rather than:</p>
+<pre><code>agent action?
+</code></pre>
+<p>Research high-risk decision systems.</p>
+<h1 id="53-ai-error-taxonomy">======================================================================
+53. AI ERROR TAXONOMY</h1>
+<p>Classify:</p>
+<pre><code>interpretation error
+planning error
+preference error
+legality error
+authority error
+execution error
+evidence error
+policy error
+</code></pre>
+<p>Then map:</p>
+<pre><code>probabilistic vs deterministic mitigation.
+</code></pre>
+<h1 id="54-error-containment">======================================================================
+54. ERROR CONTAINMENT</h1>
+<p>Architecture should allow:</p>
+<pre><code>AI can be wrong in recommendation
+</code></pre>
+<p>without:</p>
+<pre><code>corrupting authoritative state
+</code></pre>
+<p>This may be central safety property.</p>
+<h1 id="55-fault-containment-analogy">======================================================================
+55. FAULT CONTAINMENT ANALOGY</h1>
+<p>Research:</p>
+<pre><code>fault containment zones
+crash-only systems
+microkernels
+safety partitions
+</code></pre>
+<p>Potential mapping:</p>
+<pre><code>probabilistic reasoning is untrusted fault-prone component.
+</code></pre>
+<h1 id="56-nondterminism-vs-probabilism">======================================================================
+56. NONDTERMINISM VS PROBABILISM</h1>
+<p>Be precise:</p>
+<pre><code>probabilistic AI behavior
+</code></pre>
+<p>is not same as:</p>
+<pre><code>nondeterministic concurrent systems
+</code></pre>
+<p>Avoid terminology confusion.</p>
+<h1 id="57-deterministic-does-not-mean-correct">======================================================================
+57. DETERMINISTIC DOES NOT MEAN CORRECT</h1>
+<p>Critical principle:</p>
+<pre><code>deterministic policy can be consistently wrong.
+</code></pre>
+<p>Research:</p>
+<pre><code>policy bugs
+specification errors
+threshold errors
+</code></pre>
+<p>Need independent validation.</p>
+<h1 id="58-probabilistic-may-be-superior">======================================================================
+58. PROBABILISTIC MAY BE SUPERIOR</h1>
+<p>Some tasks cannot be usefully reduced to hard rules.</p>
+<p>Examples:</p>
+<pre><code>fraud detection
+medical differential
+anomaly detection
+prioritization
+</code></pre>
+<p>Over-determinizing may reduce quality.</p>
+<h1 id="59-hybrid-decision-systems">======================================================================
+59. HYBRID DECISION SYSTEMS</h1>
+<p>Research architectures combining:</p>
+<pre><code>ML prediction
+rule engine
+human review
+</code></pre>
+<p>This is likely strongest prior art.</p>
+<h1 id="60-rule-engine-failure-history">======================================================================
+60. RULE ENGINE FAILURE HISTORY</h1>
+<p>Rules can become:</p>
+<pre><code>brittle
+opaque
+contradictory
+hard to maintain
+</code></pre>
+<p>Research historical expert systems and rule engines.</p>
+<p>This is a major warning.</p>
+<h1 id="61-expert-systems">======================================================================
+61. EXPERT SYSTEMS</h1>
+<p>The architecture must not accidentally recreate brittle expert systems.</p>
+<p>Compare:</p>
+<pre><code>knowledge bases
+inference engines
+rule maintenance
+</code></pre>
+<p>Ask what lessons apply.</p>
+<h1 id="62-knowledge-acquisition-bottleneck">======================================================================
+62. KNOWLEDGE ACQUISITION BOTTLENECK</h1>
+<p>Expert systems suffered from:</p>
+<pre><code>difficulty extracting and maintaining rules.
+</code></pre>
+<p>Could AI help generate semantic rules?</p>
+<p>Or:</p>
+<pre><code>amplify incorrect formalization?
+</code></pre>
+<p>Research.</p>
+<h1 id="63-open-policy-world">======================================================================
+63. OPEN POLICY WORLD</h1>
+<p>Not every situation has predeclared rule.</p>
+<p>System must handle:</p>
+<pre><code>policy gap
+</code></pre>
+<p>explicitly.</p>
+<p>Potential result:</p>
+<pre><code>DecisionRequired
+</code></pre>
+<p>not:</p>
+<pre><code>agent silently chooses.
+</code></pre>
+<h1 id="64-exceptions">======================================================================
+64. EXCEPTIONS</h1>
+<p>Real businesses have exceptions.</p>
+<p>A deterministic model needs:</p>
+<pre><code>authorized exception mechanism
+</code></pre>
+<p>Without:</p>
+<pre><code>users bypass system
+</code></pre>
+<p>With too much flexibility:</p>
+<pre><code>control collapses.
+</code></pre>
+<p>Research exception governance.</p>
+<h1 id="65-temporary-exceptions">======================================================================
+65. TEMPORARY EXCEPTIONS</h1>
+<p>Require:</p>
+<pre><code>scope
+authority
+reason
+expiration
+provenance
+</code></pre>
+<p>This preserves semantic integrity.</p>
+<h1 id="66-deterministic-policy-evolution">======================================================================
+66. DETERMINISTIC POLICY EVOLUTION</h1>
+<p>Policies change.</p>
+<p>Need:</p>
+<pre><code>versioning
+migration
+impact analysis
+</code></pre>
+<p>This creates additional cost.</p>
+<p>Include in analysis.</p>
+<h1 id="67-ai-policy-interpreter">======================================================================
+67. AI POLICY INTERPRETER</h1>
+<p>Possible system:</p>
+<pre><code>policy text
+    ->
+AI candidate formalization
+    ->
+deterministic validation/tests
+    ->
+human approval
+    ->
+active policy
+</code></pre>
+<p>Research feasibility.</p>
+<h1 id="68-confidence-based-autonomy">======================================================================
+68. CONFIDENCE-BASED AUTONOMY</h1>
+<p>Some systems allow:</p>
+<pre><code>auto-execute when model confidence > threshold
+</code></pre>
+<p>Research evidence.</p>
+<p>Potential issue:</p>
+<pre><code>LLM confidence poorly calibrated
+</code></pre>
+<p>Avoid naive confidence gating.</p>
+<h1 id="69-uncertainty-aware-escalation">======================================================================
+69. UNCERTAINTY-AWARE ESCALATION</h1>
+<p>Better:</p>
+<pre><code>explicit evidence sufficiency
+policy thresholds
+disagreement detection
+</code></pre>
+<p>rather than:</p>
+<pre><code>model says 95% confident
+</code></pre>
+<p>Research.</p>
+<h1 id="70-multi-model-consensus">======================================================================
+70. MULTI-MODEL CONSENSUS</h1>
+<p>Could multiple models substitute for deterministic constraint?</p>
+<p>Likely not for legality.</p>
+<p>Compare:</p>
+<pre><code>consensus
+self-consistency
+deterministic policy
+</code></pre>
+<h1 id="71-verifier-model">======================================================================
+71. VERIFIER MODEL</h1>
+<p>Use one AI to check another.</p>
+<p>Still probabilistic.</p>
+<p>Compare with:</p>
+<pre><code>deterministic verifier
+</code></pre>
+<p>Determine where AI verification adds value.</p>
+<h1 id="72-formal-verification">======================================================================
+72. FORMAL VERIFICATION</h1>
+<p>Some commitments can be formally verified.</p>
+<p>Example:</p>
+<pre><code>no state transition violates invariant
+</code></pre>
+<p>Others cannot:</p>
+<pre><code>recommendation is wise
+</code></pre>
+<p>Map boundary.</p>
+<h1 id="73-static-analysis">======================================================================
+73. STATIC ANALYSIS</h1>
+<p>Compiler/analyzer can enforce:</p>
+<pre><code>exhaustive handling
+type safety
+forbidden transitions
+</code></pre>
+<p>This externalizes deterministic reasoning.</p>
+<h1 id="74-runtime-validation">======================================================================
+74. RUNTIME VALIDATION</h1>
+<p>Some rules require current data.</p>
+<p>Example:</p>
+<pre><code>freshness
+authority
+balance
+</code></pre>
+<p>Must be runtime checked.</p>
+<h1 id="75-policy-engine">======================================================================
+75. POLICY ENGINE</h1>
+<p>Use policy engine for:</p>
+<pre><code>dynamic rules
+</code></pre>
+<p>but keep:</p>
+<pre><code>semantic state ownership
+</code></pre>
+<p>Compare architectures.</p>
+<h1 id="76-agent-tool-protocol">======================================================================
+76. AGENT TOOL PROTOCOL</h1>
+<p>Potential standard:</p>
+<pre><code>observe_state
+get_capabilities
+get_obligations
+explain_blocked
+propose_transition
+</code></pre>
+<p>This reflects deterministic/probabilistic split.</p>
+<h1 id="77-propose-vs-execute">======================================================================
+77. PROPOSE VS EXECUTE</h1>
+<p>Tool distinction:</p>
+<pre><code>propose_refund
+</code></pre>
+<p>vs:</p>
+<pre><code>execute_refund
+</code></pre>
+<p>Maybe semantic runtime owns execution.</p>
+<p>Investigate.</p>
+<h1 id="78-transactional-proposal">======================================================================
+78. TRANSACTIONAL PROPOSAL</h1>
+<p>Agent submits:</p>
+<pre><code>desired transition
+evidence
+rationale
+</code></pre>
+<p>System validates against:</p>
+<pre><code>current state
+policy
+authority
+versions
+</code></pre>
+<p>Then commits atomically.</p>
+<h1 id="79-rationale">======================================================================
+79. RATIONALE</h1>
+<p>Should agent rationale affect legality?</p>
+<p>Generally:</p>
+<pre><code>no
+</code></pre>
+<p>unless policy explicitly requires explanation/reason code.</p>
+<p>Do not let plausible prose override constraints.</p>
+<h1 id="80-explainability">======================================================================
+80. EXPLAINABILITY</h1>
+<p>Deterministic system can explain:</p>
+<pre><code>why action blocked
+</code></pre>
+<p>This may be more reliable than:</p>
+<pre><code>AI-generated justification.
+</code></pre>
+<h1 id="81-ai-explanation-role">======================================================================
+81. AI EXPLANATION ROLE</h1>
+<p>AI can translate deterministic explanation into human language.</p>
+<p>But underlying reason should remain machine-derived.</p>
+<h1 id="82-context-cost">======================================================================
+82. CONTEXT COST</h1>
+<p>If legality is deterministic, agent need not ingest all legal rules in prompt.</p>
+<p>Potentially send only:</p>
+<pre><code>current legal frontier
+blocked reasons on demand
+</code></pre>
+<p>This may reduce tokens.</p>
+<h1 id="83-model-size">======================================================================
+83. MODEL SIZE</h1>
+<p>Strong deterministic boundary may allow smaller model because model need not
+master:</p>
+<pre><code>compliance rules
+transition legality
+edge-case safety
+</code></pre>
+<p>Test hypothesis.</p>
+<h1 id="84-output-token-cost">======================================================================
+84. OUTPUT TOKEN COST</h1>
+<p>If model doesn't need long justification for legality, output may shrink.</p>
+<p>Measure.</p>
+<h1 id="85-tool-call-cost">======================================================================
+85. TOOL CALL COST</h1>
+<p>Deterministic blocked explanations may reduce:</p>
+<pre><code>trial-and-error tool calls.
+</code></pre>
+<h1 id="86-retry-loops">======================================================================
+86. RETRY LOOPS</h1>
+<p>But overly restrictive core may increase:</p>
+<pre><code>blocked attempts
+refreshes
+escalations
+</code></pre>
+<p>Measure total cost.</p>
+<h1 id="87-deterministic-overhead">======================================================================
+87. DETERMINISTIC OVERHEAD</h1>
+<p>Include:</p>
+<pre><code>policy evaluation
+capability derivation
+semantic runtime
+model maintenance
+migration
+</code></pre>
+<p>Do not hide cost.</p>
+<h1 id="88-economic-model">======================================================================
+88. ECONOMIC MODEL</h1>
+<p>Compare:</p>
+<p>A. high-intelligence model + permissive system</p>
+<p>B. medium model + constrained system</p>
+<p>C. small model + highly constrained system</p>
+<p>Measure:</p>
+<pre><code>cost per correct completion
+</code></pre>
+<h1 id="89-crossover-point">======================================================================
+89. CROSSOVER POINT</h1>
+<p>Find point where:</p>
+<pre><code>stronger deterministic environment
+</code></pre>
+<p>saves enough inference cost to justify implementation.</p>
+<h1 id="90-task-categories">======================================================================
+90. TASK CATEGORIES</h1>
+<p>Test:</p>
+<pre><code>recommendation
+classification
+planning
+state change
+payment
+policy change
+deployment
+evidence verification
+</code></pre>
+<p>Different tasks should have different boundaries.</p>
+<h1 id="91-experiment-a--fraud">======================================================================
+91. EXPERIMENT A — FRAUD</h1>
+<p>Model outputs risk score.</p>
+<p>Compare:</p>
+<p>A. model directly decides hold/release</p>
+<p>B. policy interprets score deterministically</p>
+<p>C. hybrid with gray-zone human review</p>
+<p>Measure safety/cost.</p>
+<h1 id="92-experiment-b--payment">======================================================================
+92. EXPERIMENT B — PAYMENT</h1>
+<p>Agent decides refund desirable.</p>
+<p>Runtime controls:</p>
+<pre><code>eligibility
+amount limit
+authority
+idempotency
+effect state
+</code></pre>
+<p>Measure illegal attempts and cost.</p>
+<h1 id="93-experiment-c--deployment">======================================================================
+93. EXPERIMENT C — DEPLOYMENT</h1>
+<p>Agent proposes deploy.</p>
+<p>Runtime checks:</p>
+<pre><code>tests
+policy
+change window
+approval
+environment health
+</code></pre>
+<p>Measure.</p>
+<h1 id="94-experiment-d--healthcare">======================================================================
+94. EXPERIMENT D — HEALTHCARE</h1>
+<p>Agent suggests diagnosis.</p>
+<p>Deterministic system controls:</p>
+<pre><code>evidence status
+medication interaction
+authority
+documentation requirements
+</code></pre>
+<p>Do not make unsafe medical claims; this is architecture research only.</p>
+<h1 id="95-experiment-e--ambiguous-policy">======================================================================
+95. EXPERIMENT E — AMBIGUOUS POLICY</h1>
+<p>Provide policy that cannot be fully formalized.</p>
+<p>Measure whether system:</p>
+<pre><code>escalates
+</code></pre>
+<p>or:</p>
+<pre><code>forces false precision.
+</code></pre>
+<h1 id="96-experiment-f--wrong-deterministic-rule">======================================================================
+96. EXPERIMENT F — WRONG DETERMINISTIC RULE</h1>
+<p>Intentionally encode bad policy.</p>
+<p>Compare harm with:</p>
+<pre><code>probabilistic system
+</code></pre>
+<p>This tests correlated error.</p>
+<h1 id="97-experiment-g--illegal-but-desirable-request">======================================================================
+97. EXPERIMENT G — ILLEGAL BUT DESIRABLE REQUEST</h1>
+<p>User asks:</p>
+<pre><code>perform action prohibited by current policy
+</code></pre>
+<p>Agent should:</p>
+<pre><code>explain block
+surface escalation/exception path
+</code></pre>
+<p>not:</p>
+<pre><code>improvise.
+</code></pre>
+<h1 id="98-experiment-h--policy-gap">======================================================================
+98. EXPERIMENT H — POLICY GAP</h1>
+<p>No rule covers scenario.</p>
+<p>Correct behavior may be:</p>
+<pre><code>decision required
+</code></pre>
+<p>not:</p>
+<pre><code>automatic action.
+</code></pre>
+<h1 id="99-metrics">======================================================================
+99. METRICS</h1>
+<p>Track:</p>
+<pre><code>Illegal Commitment Rate
+Unauthorized Action Rate
+Wrong-but-Legal Decision Rate
+False Block Rate
+Human Escalation Rate
+Recovery Rate
+Tokens per Correct Completion
+Tool Calls per Correct Completion
+Cost per Correct Completion
+Deterministic Policy Error Rate
+</code></pre>
+<h1 id="100-false-block-rate">======================================================================
+100. FALSE BLOCK RATE</h1>
+<p>A deterministic system can wrongly prevent legitimate action.</p>
+<p>Measure:</p>
+<pre><code>legal/desirable actions incorrectly blocked
+</code></pre>
+<p>This is as important as preventing illegal actions.</p>
+<h1 id="101-policy-completeness">======================================================================
+101. POLICY COMPLETENESS</h1>
+<p>Measure:</p>
+<pre><code>consequential situations covered by explicit policy
+</code></pre>
+<p>Incomplete policy may cause excessive escalation.</p>
+<h1 id="102-boundary-leakage">======================================================================
+102. BOUNDARY LEAKAGE</h1>
+<p>Track cases where:</p>
+<pre><code>probabilistic agent effectively defines legality
+</code></pre>
+<p>through:</p>
+<pre><code>prompt
+workaround
+direct mutation
+</code></pre>
+<p>This undermines architecture.</p>
+<h1 id="103-trusted-core-size">======================================================================
+103. TRUSTED CORE SIZE</h1>
+<p>Metric:</p>
+<pre><code>amount of code/specification that must be trusted for consequential
+correctness
+</code></pre>
+<p>Smaller is generally easier to verify.</p>
+<h1 id="104-decision-latency">======================================================================
+104. DECISION LATENCY</h1>
+<p>Constraints and human escalation may slow decisions.</p>
+<p>Measure tradeoff.</p>
+<h1 id="105-human-burden">======================================================================
+105. HUMAN BURDEN</h1>
+<p>Too many escalations eliminate automation benefit.</p>
+<p>Find balance.</p>
+<h1 id="106-autonomy-efficiency">======================================================================
+106. AUTONOMY EFFICIENCY</h1>
+<p>Possible metric:</p>
+<pre><code>consequential tasks completed without human intervention
+--------------------------------------------------------
+consequential tasks
+</code></pre>
+<p>subject to:</p>
+<pre><code>target correctness.
+</code></pre>
+<h1 id="107-specification-cost">======================================================================
+107. SPECIFICATION COST</h1>
+<p>Deterministic boundaries require:</p>
+<pre><code>modeling
+policy maintenance
+tests
+review
+</code></pre>
+<p>Include in economics.</p>
+<h1 id="108-longitudinal-policy-cost">======================================================================
+108. LONGITUDINAL POLICY COST</h1>
+<p>Rules evolve.</p>
+<p>Measure cumulative maintenance.</p>
+<h1 id="109-current-ai-safety-research">======================================================================
+109. CURRENT AI SAFETY RESEARCH</h1>
+<p>Search:</p>
+<pre><code>constrained agents
+tool-use guardrails
+runtime verification
+policy-enforced agents
+agent sandboxes
+action shields
+safe RL
+LLM agent access control
+formal verification of agent actions
+</code></pre>
+<h1 id="110-high-assurance-systems">======================================================================
+110. HIGH-ASSURANCE SYSTEMS</h1>
+<p>Research:</p>
+<pre><code>reference monitors
+safety kernels
+separation kernels
+avionics partitioning
+medical device safety
+industrial control
+</code></pre>
+<p>Extract transferable principles.</p>
+<h1 id="111-expert-system-history">======================================================================
+111. EXPERT SYSTEM HISTORY</h1>
+<p>Research why rule-based expert systems struggled.</p>
+<p>Avoid recreating:</p>
+<pre><code>brittle knowledge bases
+maintenance bottlenecks
+rule explosion
+</code></pre>
+<h1 id="112-modern-hybrid-systems">======================================================================
+112. MODERN HYBRID SYSTEMS</h1>
+<p>Look for successful:</p>
+<pre><code>ML + rules
+ML + optimization
+ML + verification
+LLM + symbolic systems
+neuro-symbolic architectures
+</code></pre>
+<h1 id="113-decision-theory">======================================================================
+113. DECISION THEORY</h1>
+<p>Use decision theory to distinguish:</p>
+<pre><code>beliefs
+utilities
+constraints
+actions
+</code></pre>
+<p>Possible mapping:</p>
+<pre><code>AI estimates beliefs
+business sets utility/policy
+deterministic system enforces constraints
+</code></pre>
+<p>Evaluate.</p>
+<h1 id="114-pomdp--mdp">======================================================================
+114. POMDP / MDP</h1>
+<p>Compare:</p>
+<pre><code>state uncertainty
+action constraints
+reward optimization
+</code></pre>
+<p>Do not force commercial software into MDP framing unless useful.</p>
+<h1 id="115-formal-constraint-satisfaction">======================================================================
+115. FORMAL CONSTRAINT SATISFACTION</h1>
+<p>Potential model:</p>
+<pre><code>legal actions = constraint satisfaction
+</code></pre>
+<p>Agent:</p>
+<pre><code>optimize within feasible set
+</code></pre>
+<p>This may be clean formalization.</p>
+<h1 id="116-soft-business-judgment">======================================================================
+116. SOFT BUSINESS JUDGMENT</h1>
+<p>Examples:</p>
+<pre><code>prioritize customer goodwill
+choose best vendor
+decide wording
+</code></pre>
+<p>These should likely remain probabilistic.</p>
+<h1 id="117-hard-business-invariant">======================================================================
+117. HARD BUSINESS INVARIANT</h1>
+<p>Examples:</p>
+<pre><code>never pay more than authorized amount
+cannot ship canceled order
+</code></pre>
+<p>These should likely be deterministic.</p>
+<h1 id="118-domain-specific-boundary">======================================================================
+118. DOMAIN-SPECIFIC BOUNDARY</h1>
+<p>The line cannot be universal.</p>
+<p>Create domain-specific framework for deciding.</p>
+<h1 id="119-minimum-rule">======================================================================
+119. MINIMUM RULE</h1>
+<p>Potential generic rule:</p>
+<pre><code>If an action changes authoritative consequential state, it must pass a
+deterministic commitment gate.
+</code></pre>
+<p>Test this.</p>
+<h1 id="120-stronger-rule">======================================================================
+120. STRONGER RULE</h1>
+<p>Alternative:</p>
+<pre><code>Every consequential action must be represented as declared transition.
+</code></pre>
+<p>May be too restrictive.</p>
+<p>Evaluate.</p>
+<h1 id="121-weaker-rule">======================================================================
+121. WEAKER RULE</h1>
+<p>Alternative:</p>
+<pre><code>Only irreversible/high-risk effects require deterministic gate.
+</code></pre>
+<p>Evaluate.</p>
+<h1 id="122-falsification-conditions">======================================================================
+122. FALSIFICATION CONDITIONS</h1>
+<p>The hypothesis should be weakened if:</p>
+<pre><code>deterministic controls do not improve outcome correctness
+</code></pre>
+<p>or:</p>
+<pre><code>false blocks/escalations overwhelm benefits
+</code></pre>
+<p>or:</p>
+<pre><code>policy maintenance dominates
+</code></pre>
+<p>or:</p>
+<pre><code>modern frontier models perform equally safely with lighter constraints
+</code></pre>
+<p>or:</p>
+<pre><code>hybrid systems already solve problem more simply.
+</code></pre>
+<h1 id="123-counterarguments">======================================================================
+123. COUNTERARGUMENTS</h1>
+<p>Actively test:</p>
+<ol>
+<li>Deterministic rules are brittle.</li>
+<li>Business policy is too ambiguous.</li>
+<li>AI can already reason about policy.</li>
+<li>Human review is simpler.</li>
+<li>Constraints harm exploration.</li>
+<li>Rule maintenance becomes expert-system bottleneck.</li>
+<li>Wrong deterministic rules create worse systematic harm.</li>
+<li>Model scores are too poorly calibrated for deterministic thresholds.</li>
+<li>Most actions are reversible enough that strong controls are unnecessary.</li>
+<li>Deterministic runtime creates latency.</li>
+<li>Complex exceptions destroy model simplicity.</li>
+<li>Policy gaps lead to excessive escalation.</li>
+<li>AI verification may be good enough without hard gates.</li>
+<li>Strong boundaries reduce innovation.</li>
+<li>Safe autonomy may require probabilistic risk management, not binary legality.</li>
+</ol>
+<h1 id="124-source-quality">======================================================================
+124. SOURCE QUALITY</h1>
+<p>Prefer:</p>
+<pre><code>primary research
+safety-critical system literature
+formal methods
+control theory
+safe RL
+policy/security architecture
+high-assurance engineering guidance
+</code></pre>
+<p>For current AI systems:</p>
+<pre><code>prefer original papers and official documentation.
+</code></pre>
+<h1 id="125-required-output">======================================================================
+125. REQUIRED OUTPUT</h1>
+<p>Produce:</p>
+<ol>
+<li>Executive verdict</li>
+<li>Exploration vs commitment definition</li>
+<li>Reversibility/consequence framework</li>
+<li>Probabilistic vs deterministic responsibility map</li>
+<li>Human-role map</li>
+<li>Prediction vs policy analysis</li>
+<li>Normative vs descriptive analysis</li>
+<li>Safe RL/action-shield comparison</li>
+<li>Reference-monitor/safety-kernel comparison</li>
+<li>Expert-system warning analysis</li>
+<li>Hybrid ML/rule-system evidence</li>
+<li>Formal constrained-optimization framing</li>
+<li>Evidence/policy boundary</li>
+<li>Capability implications</li>
+<li>Obligation implications</li>
+<li>External-effect implications</li>
+<li>Tool protocol implications</li>
+<li>Domain case studies</li>
+<li>Wrong-rule risk</li>
+<li>False-block risk</li>
+<li>Policy-gap handling</li>
+<li>Exception model</li>
+<li>Human escalation model</li>
+<li>Token/context implications</li>
+<li>Smaller-model hypothesis</li>
+<li>Economic model</li>
+<li>Proposed experiments</li>
+<li>Metrics</li>
+<li>Counterarguments</li>
+<li>What is already established</li>
+<li>What remains speculative</li>
+<li>Architecture changes recommended</li>
+<li>Recommended boundary decision framework</li>
+<li>Final verdict</li>
+</ol>
+<h1 id="126-final-verdict-format">======================================================================
+126. FINAL VERDICT FORMAT</h1>
+<p>Answer:</p>
+<p>Is "exploration permissive, commitment constrained" a defensible architecture principle?
+Strongly supported / Supported / Plausible / Weak / Rejected</p>
+<p>Should legal action availability be deterministic?
+Usually / Often / Context-dependent / Rarely / No</p>
+<p>Should AI/ML outputs generally be treated as evidence rather than authority?
+Yes / Usually / Context-dependent / No</p>
+<p>Should every consequential state mutation pass a deterministic commitment gate?
+Yes / Usually / Context-dependent / No</p>
+<p>Most appropriate role for AI:
+...</p>
+<p>Most appropriate role for deterministic runtime:
+...</p>
+<p>Most appropriate role for humans:
+...</p>
+<p>Best criterion for where to draw boundary:
+...</p>
+<p>Biggest risk of over-determinization:
+...</p>
+<p>Biggest risk of under-constraining:
+...</p>
+<p>Strongest existing architectural analogue:
+...</p>
+<p>Most important missing experiment:
+...</p>
+<p>Most important architecture change suggested by research:
+...</p>
+<h1 id="127-research-standard">======================================================================
+127. RESEARCH STANDARD</h1>
+<p>Be skeptical.</p>
+<p>Do not assume deterministic means correct.</p>
+<p>Do not assume probabilistic means unsafe.</p>
+<p>Do not recreate brittle expert systems.</p>
+<p>Do not hide ambiguous business meaning inside precise-looking rules.</p>
+<p>Do not use model confidence as authority without strong justification.</p>
+<p>Do not force every decision into a binary legal/illegal model if the domain
+requires graded risk or human judgment.</p>
+<p>Do not measure safety without measuring false blocks and human escalation cost.</p>
+<p>The central question is:</p>
+<pre><code>Can AI-operated software safely assign probabilistic models the work they
+are good at—interpretation, inference, search, planning, recommendation—
+while keeping consequential authority, legality, and commitment in a small
+deterministic layer, and does that improve correctness and economics enough
+to justify the additional structure?
+</code></pre></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

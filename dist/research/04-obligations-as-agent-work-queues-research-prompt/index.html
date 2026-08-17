@@ -1,0 +1,1570 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>04 obligations as agent work queues research prompt | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">04 obligations as agent work queues research prompt</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/prompts/04-obligations-as-agent-work-queues-research-prompt.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#ai-research-mission-04-obligations-as-agent-work-queues">AI RESEARCH MISSION 04 — OBLIGATIONS AS AGENT WORK QUEUES</a></li><li><a href="#role">ROLE</a></li><li><a href="#-2-core-architectural-model">======================================================================
+2. CORE ARCHITECTURAL MODEL</a></li><li><a href="#-3-working-definition-of-obligation">======================================================================
+3. WORKING DEFINITION OF OBLIGATION</a></li><li><a href="#-4-obligation-lifecycle">======================================================================
+4. OBLIGATION LIFECYCLE</a></li><li><a href="#-5-capability-obligation-duality">======================================================================
+5. CAPABILITY + OBLIGATION DUALITY</a></li><li><a href="#-6-obligation-vs-task">======================================================================
+6. OBLIGATION VS TASK</a></li><li><a href="#-7-satisfaction-conditions">======================================================================
+7. SATISFACTION CONDITIONS</a></li><li><a href="#-8-obligation-creation">======================================================================
+8. OBLIGATION CREATION</a></li><li><a href="#-9-obligation-provenance">======================================================================
+9. OBLIGATION PROVENANCE</a></li><li><a href="#-10-open-ended-agent-vs-obligation-driven-agent">======================================================================
+10. OPEN-ENDED AGENT VS OBLIGATION-DRIVEN AGENT</a></li><li><a href="#-11-work-discovery-cost">======================================================================
+11. WORK DISCOVERY COST</a></li><li><a href="#-12-obligations-as-context-compression">======================================================================
+12. OBLIGATIONS AS CONTEXT COMPRESSION</a></li><li><a href="#-13-obligation-driven-planning">======================================================================
+13. OBLIGATION-DRIVEN PLANNING</a></li><li><a href="#-14-obligation-does-not-grant-capability">======================================================================
+14. OBLIGATION DOES NOT GRANT CAPABILITY</a></li><li><a href="#-15-blocked-obligations">======================================================================
+15. BLOCKED OBLIGATIONS</a></li><li><a href="#-16-conflicting-obligations">======================================================================
+16. CONFLICTING OBLIGATIONS</a></li><li><a href="#-17-priority">======================================================================
+17. PRIORITY</a></li><li><a href="#-18-waiver">======================================================================
+18. WAIVER</a></li><li><a href="#-19-escalation">======================================================================
+19. ESCALATION</a></li><li><a href="#-20-supersession">======================================================================
+20. SUPERSESSION</a></li><li><a href="#-21-policy-changes-at-scale">======================================================================
+21. POLICY CHANGES AT SCALE</a></li><li><a href="#-22-obligation-batches">======================================================================
+22. OBLIGATION BATCHES</a></li><li><a href="#-23-agent-resume-interruption">======================================================================
+23. AGENT RESUME / INTERRUPTION</a></li><li><a href="#-24-multiple-agents">======================================================================
+24. MULTIPLE AGENTS</a></li><li><a href="#-25-claiming-leasing-obligations">======================================================================
+25. CLAIMING / LEASING OBLIGATIONS</a></li><li><a href="#-26-idempotency">======================================================================
+26. IDEMPOTENCY</a></li><li><a href="#-27-obligation-graph">======================================================================
+27. OBLIGATION GRAPH</a></li><li><a href="#-28-deadlock">======================================================================
+28. DEADLOCK</a></li><li><a href="#-29-impossible-obligation-satisfaction">======================================================================
+29. IMPOSSIBLE OBLIGATION SATISFACTION</a></li><li><a href="#-30-obligation-completeness">======================================================================
+30. OBLIGATION COMPLETENESS</a></li><li><a href="#-31-false-obligation-risk">======================================================================
+31. FALSE OBLIGATION RISK</a></li><li><a href="#-32-obligation-quality-metrics">======================================================================
+32. OBLIGATION QUALITY METRICS</a></li><li><a href="#-33-completion-accuracy">======================================================================
+33. COMPLETION ACCURACY</a></li><li><a href="#-34-rediscovery-rate">======================================================================
+34. REDISCOVERY RATE</a></li><li><a href="#-35-missed-work-rate">======================================================================
+35. MISSED WORK RATE</a></li><li><a href="#-36-duplicate-work-rate">======================================================================
+36. DUPLICATE WORK RATE</a></li><li><a href="#-37-context-tokens-per-obligation">======================================================================
+37. CONTEXT TOKENS PER OBLIGATION</a></li><li><a href="#-38-tool-calls-per-resolved-obligation">======================================================================
+38. TOOL CALLS PER RESOLVED OBLIGATION</a></li><li><a href="#-39-cost-per-resolved-obligation">======================================================================
+39. COST PER RESOLVED OBLIGATION</a></li><li><a href="#-40-cost-per-required-outcome">======================================================================
+40. COST PER REQUIRED OUTCOME</a></li><li><a href="#-41-obligation-granularity">======================================================================
+41. OBLIGATION GRANULARITY</a></li><li><a href="#-42-natural-language-todo-vs-semantic-obligation">======================================================================
+42. NATURAL-LANGUAGE TODO VS SEMANTIC OBLIGATION</a></li><li><a href="#-43-workflow-engine-comparison">======================================================================
+43. WORKFLOW ENGINE COMPARISON</a></li><li><a href="#-44-bdi-agent-comparison">======================================================================
+44. BDI AGENT COMPARISON</a></li><li><a href="#-45-deontic-logic">======================================================================
+45. DEONTIC LOGIC</a></li><li><a href="#-46-normative-multi-agent-systems">======================================================================
+46. NORMATIVE MULTI-AGENT SYSTEMS</a></li><li><a href="#-47-compliance-systems">======================================================================
+47. COMPLIANCE SYSTEMS</a></li><li><a href="#-48-incident-management">======================================================================
+48. INCIDENT MANAGEMENT</a></li><li><a href="#-49-alert-fatigue-analogy">======================================================================
+49. ALERT FATIGUE ANALOGY</a></li><li><a href="#-50-obligation-deduplication">======================================================================
+50. OBLIGATION DEDUPLICATION</a></li><li><a href="#-51-obligation-merging">======================================================================
+51. OBLIGATION MERGING</a></li><li><a href="#-52-multi-obligation-planning">======================================================================
+52. MULTI-OBLIGATION PLANNING</a></li><li><a href="#-53-prioritization-vs-optimization">======================================================================
+53. PRIORITIZATION VS OPTIMIZATION</a></li><li><a href="#-54-human-in-the-loop">======================================================================
+54. HUMAN-IN-THE-LOOP</a></li><li><a href="#-55-security">======================================================================
+55. SECURITY</a></li><li><a href="#-56-adversarial-agent-test">======================================================================
+56. ADVERSARIAL AGENT TEST</a></li><li><a href="#-57-policy-change-test">======================================================================
+57. POLICY CHANGE TEST</a></li><li><a href="#-58-outcome-unknown-test">======================================================================
+58. OUTCOME UNKNOWN TEST</a></li><li><a href="#-59-evidence-invalidation-test">======================================================================
+59. EVIDENCE INVALIDATION TEST</a></li><li><a href="#-60-agent-restart-test">======================================================================
+60. AGENT RESTART TEST</a></li><li><a href="#-61-large-queue-test">======================================================================
+61. LARGE QUEUE TEST</a></li><li><a href="#-62-obligation-retrieval">======================================================================
+62. OBLIGATION RETRIEVAL</a></li><li><a href="#-63-agent-context-slice">======================================================================
+63. AGENT CONTEXT SLICE</a></li><li><a href="#-64-smaller-model-hypothesis">======================================================================
+64. SMALLER MODEL HYPOTHESIS</a></li><li><a href="#-65-prompt-reduction">======================================================================
+65. PROMPT REDUCTION</a></li><li><a href="#-66-caching">======================================================================
+66. CACHING</a></li><li><a href="#-67-failure-modes">======================================================================
+67. FAILURE MODES</a></li><li><a href="#-68-obligation-gaming">======================================================================
+68. OBLIGATION GAMING</a></li><li><a href="#-69-situational-awareness-counterargument">======================================================================
+69. SITUATIONAL AWARENESS COUNTERARGUMENT</a></li><li><a href="#-70-discovery-vs-resolution">======================================================================
+70. DISCOVERY VS RESOLUTION</a></li><li><a href="#-71-obligation-generation-trust-boundary">======================================================================
+71. OBLIGATION GENERATION TRUST BOUNDARY</a></li><li><a href="#-72-economic-model">======================================================================
+72. ECONOMIC MODEL</a></li><li><a href="#-73-break-even">======================================================================
+73. BREAK-EVEN</a></li><li><a href="#-74-existing-research-to-prioritize">======================================================================
+74. EXISTING RESEARCH TO PRIORITIZE</a></li><li><a href="#-75-required-source-quality">======================================================================
+75. REQUIRED SOURCE QUALITY</a></li><li><a href="#-76-required-output">======================================================================
+76. REQUIRED OUTPUT</a></li><li><a href="#-77-final-verdict-format">======================================================================
+77. FINAL VERDICT FORMAT</a></li><li><a href="#-78-research-standard">======================================================================
+78. RESEARCH STANDARD</a></li> </ol> </aside> <section class="document-body"><h1 id="ai-research-mission-04--obligations-as-agent-work-queues">AI RESEARCH MISSION 04 — OBLIGATIONS AS AGENT WORK QUEUES</h1>
+<h1 id="role">ROLE</h1>
+<p>Act as a combined:</p>
+<ul>
+<li>AI-agent systems researcher</li>
+<li>workflow systems researcher</li>
+<li>automated-planning researcher</li>
+<li>deontic-logic researcher</li>
+<li>policy-systems researcher</li>
+<li>distributed-systems researcher</li>
+<li>software-architecture researcher</li>
+<li>AI inference-cost researcher</li>
+<li>empirical software-engineering researcher</li>
+</ul>
+<p>Your task is to investigate whether explicit machine-readable obligations can
+substantially reduce the amount of open-ended reasoning, monitoring, search,
+context retrieval, and planning required by autonomous AI agents.</p>
+<p>Do not assume the hypothesis is true.</p>
+<p>Be skeptical and evidence-driven.</p>
+<p>The central architectural idea is:</p>
+<pre><code>Capabilities describe what MAY be done.
+
+Obligations describe what MUST be resolved.
+</code></pre>
+<p>Instead of asking an AI agent:</p>
+<pre><code>"Monitor the system and figure out what needs attention."
+</code></pre>
+<p>the system may expose:</p>
+<pre><code>O-17 ReconcileUnknownRefund
+O-18 RefreshFraudEvidence
+O-19 ResolveConditionalApproval
+O-20 ReviewExpiredCertification
+</code></pre>
+<p>Each obligation may contain:</p>
+<pre><code>subject
+reason
+state that caused it
+policy/version
+supporting evidence
+satisfaction criteria
+available capabilities
+missing prerequisites
+deadline
+priority
+authority
+provenance
+current obligation state
+</code></pre>
+<p>The research question is:</p>
+<pre><code>Does converting unresolved consequential work into explicit obligations
+reduce agent execution cost and improve correctness?
+</code></pre>
+<p>======================================================================</p>
+<ol>
+<li>PRIMARY RESEARCH QUESTION
+======================================================================</li>
+</ol>
+<p>Does an explicit obligation model reduce:</p>
+<pre><code>open-ended exploration
+repository/database search
+monitoring burden
+context tokens
+planning tokens
+tool calls
+repeated rediscovery
+forgotten work
+duplicated work
+invalid remediation attempts
+human supervision
+total cost per correct completion?
+</code></pre>
+<p>And does it improve:</p>
+<pre><code>task completeness
+prioritization
+traceability
+auditability
+policy compliance
+recovery from interrupted agent runs?
+</code></pre>
+<h1 id="2-core-architectural-model">======================================================================
+2. CORE ARCHITECTURAL MODEL</h1>
+<p>The proposed system distinguishes:</p>
+<pre><code>State
+Capability
+Obligation
+</code></pre>
+<p>Example:</p>
+<p>State:</p>
+<pre><code>RefundExecution = OutcomeUnknown
+</code></pre>
+<p>Capabilities:</p>
+<pre><code>ReconcileRefund
+InvestigatePaymentProvider
+</code></pre>
+<p>Unavailable:</p>
+<pre><code>RequestRefund
+</code></pre>
+<p>Obligation:</p>
+<pre><code>ReconcileUnknownRefund
+</code></pre>
+<p>The system is not merely saying:</p>
+<pre><code>"Refund is unavailable."
+</code></pre>
+<p>It is also saying:</p>
+<pre><code>"This unresolved condition must be handled."
+</code></pre>
+<h1 id="3-working-definition-of-obligation">======================================================================
+3. WORKING DEFINITION OF OBLIGATION</h1>
+<p>Use this candidate definition:</p>
+<pre><code>An obligation is a versioned, attributable requirement for some condition
+to be resolved, satisfied, waived, escalated, superseded, or otherwise
+dispositioned because of state, evidence, policy, or an event.
+</code></pre>
+<p>An obligation is not:</p>
+<pre><code>a generic TODO item
+a natural-language reminder
+a mere notification
+a capability
+permission
+arbitrary task assignment
+</code></pre>
+<p>Investigate whether this definition is precise enough.</p>
+<h1 id="4-obligation-lifecycle">======================================================================
+4. OBLIGATION LIFECYCLE</h1>
+<p>Candidate lifecycle:</p>
+<pre><code>Raised
+    ->
+Acknowledged
+    ->
+InProgress
+    ->
+Satisfied
+</code></pre>
+<p>Alternative dispositions:</p>
+<pre><code>Waived
+Escalated
+Blocked
+Superseded
+Cancelled if legitimately invalidated
+</code></pre>
+<p>Potential overdue state:</p>
+<pre><code>Overdue
+</code></pre>
+<p>Important principle:</p>
+<pre><code>Missing a deadline should not usually erase the obligation.
+</code></pre>
+<p>Instead:</p>
+<pre><code>obligation remains unresolved
+    +
+overdue/escalation semantics apply
+</code></pre>
+<p>Investigate existing obligation/task/workflow lifecycle models.</p>
+<h1 id="5-capability--obligation-duality">======================================================================
+5. CAPABILITY + OBLIGATION DUALITY</h1>
+<p>Investigate this conceptual duality:</p>
+<pre><code>Capabilities = legal frontier
+Obligations = required frontier
+</code></pre>
+<p>Example:</p>
+<pre><code>Capability:
+    CapturePayment
+</code></pre>
+<p>means:</p>
+<pre><code>"You may capture payment now."
+</code></pre>
+<p>Obligation:</p>
+<pre><code>ResolveConditionalApproval
+</code></pre>
+<p>means:</p>
+<pre><code>"This condition must eventually be resolved."
+</code></pre>
+<p>Ask:</p>
+<pre><code>Is this duality already formalized in:
+    deontic logic
+    normative multi-agent systems
+    workflow systems
+    policy languages
+    BDI architectures
+    compliance systems?
+</code></pre>
+<p>Determine whether this is new terminology or an established construct.</p>
+<h1 id="6-obligation-vs-task">======================================================================
+6. OBLIGATION VS TASK</h1>
+<p>Distinguish:</p>
+<pre><code>business obligation
+</code></pre>
+<p>from:</p>
+<pre><code>execution task
+</code></pre>
+<p>Example:</p>
+<p>Obligation:</p>
+<pre><code>ReconcileRefundOutcome
+</code></pre>
+<p>Possible tasks:</p>
+<pre><code>QueryPaymentProvider
+SearchSettlementReport
+RequestHumanReview
+</code></pre>
+<p>The obligation persists until the satisfaction condition is met.</p>
+<p>A task can fail or be replaced without removing the obligation.</p>
+<p>Investigate whether separating:</p>
+<pre><code>requirement to resolve
+</code></pre>
+<p>from:</p>
+<pre><code>current procedure
+</code></pre>
+<p>improves agent robustness.</p>
+<h1 id="7-satisfaction-conditions">======================================================================
+7. SATISFACTION CONDITIONS</h1>
+<p>Each obligation should define machine-checkable satisfaction criteria where
+possible.</p>
+<p>Example:</p>
+<p>Obligation:</p>
+<pre><code>ResolveConditionalApproval
+</code></pre>
+<p>Satisfied when:</p>
+<pre><code>ApprovalState = FullyApproved
+</code></pre>
+<p>OR:</p>
+<pre><code>ApprovalState = Rejected
+</code></pre>
+<p>This is stronger than:</p>
+<pre><code>agent marks task "done"
+</code></pre>
+<p>Research whether explicit satisfaction conditions reduce false completion by
+agents.</p>
+<h1 id="8-obligation-creation">======================================================================
+8. OBLIGATION CREATION</h1>
+<p>Obligations may arise from:</p>
+<pre><code>state transitions
+policy changes
+evidence invalidation
+external-effect uncertainty
+deadlines
+failed processes
+compliance rules
+detected inconsistencies
+human decisions
+trusted events
+</code></pre>
+<p>Examples:</p>
+<pre><code>RefundExecution = OutcomeUnknown
+    ->
+ReconcileRefund
+
+Evidence invalidated
+    ->
+ReassessDependentClaim
+
+Policy version changes
+    ->
+ReassessFraudEligibility
+</code></pre>
+<p>Research analogous event-condition-obligation systems.</p>
+<h1 id="9-obligation-provenance">======================================================================
+9. OBLIGATION PROVENANCE</h1>
+<p>An obligation should carry provenance.</p>
+<p>Potential fields:</p>
+<pre><code>obligation ID
+subject
+created by
+creation event
+reason
+policy/version
+evidence
+timestamp
+actor
+authority
+satisfaction criteria
+</code></pre>
+<p>Question:</p>
+<pre><code>Does provenance reduce agent context requirements because the agent no
+longer needs to reconstruct why the work exists?
+</code></pre>
+<h1 id="10-open-ended-agent-vs-obligation-driven-agent">======================================================================
+10. OPEN-ENDED AGENT VS OBLIGATION-DRIVEN AGENT</h1>
+<p>Compare:</p>
+<p>A. Open-ended agent:</p>
+<pre><code>"Monitor payments and handle anything that needs attention."
+</code></pre>
+<p>B. Obligation-driven agent:</p>
+<pre><code>O-17 ReconcileRefundOutcome
+    Reason:
+        Refund request timed out.
+
+    Current:
+        RefundExecution = OutcomeUnknown
+
+    Satisfaction:
+        Provider outcome established
+
+    Available:
+        QueryRefundStatus
+        ReconcileSettlement
+</code></pre>
+<p>Measure:</p>
+<pre><code>context
+tokens
+tool calls
+time
+success
+omissions
+duplicate actions
+</code></pre>
+<h1 id="11-work-discovery-cost">======================================================================
+11. WORK DISCOVERY COST</h1>
+<p>Open-ended autonomy requires the model to infer:</p>
+<pre><code>what has changed?
+what is important?
+what remains unresolved?
+what should be prioritized?
+what was already handled?
+what is stale?
+what can be safely ignored?
+</code></pre>
+<p>Explicit obligations may answer many of these deterministically.</p>
+<p>Research how much autonomous-agent cost is spent on:</p>
+<pre><code>work discovery
+monitoring
+prioritization
+state reconstruction
+repeated polling
+</code></pre>
+<h1 id="12-obligations-as-context-compression">======================================================================
+12. OBLIGATIONS AS CONTEXT COMPRESSION</h1>
+<p>Hypothesis:</p>
+<pre><code>An obligation can summarize the minimum actionable semantic context around
+unresolved work.
+</code></pre>
+<p>Instead of reading:</p>
+<pre><code>payment logs
+service code
+prior agent runs
+policy documents
+database rows
+</code></pre>
+<p>the agent receives:</p>
+<pre><code>ReconcileRefundOutcome
+
+because:
+    provider outcome unknown
+
+observed at:
+    RefundExecution v18
+
+policy:
+    PaymentsPolicy@7
+
+satisfaction:
+    outcome = Succeeded | Failed
+
+available:
+    QueryProvider
+    ReconcileSettlement
+</code></pre>
+<p>Measure whether obligation records act as semantic context compression.</p>
+<h1 id="13-obligation-driven-planning">======================================================================
+13. OBLIGATION-DRIVEN PLANNING</h1>
+<p>An obligation supplies a goal condition.</p>
+<p>Example:</p>
+<pre><code>Obligation:
+    ShipApprovedOrder
+</code></pre>
+<p>Satisfaction:</p>
+<pre><code>ShipmentState = Shipped
+</code></pre>
+<p>Current:</p>
+<pre><code>PaymentState = Authorized
+</code></pre>
+<p>Required:</p>
+<pre><code>PaymentState = Captured
+</code></pre>
+<p>Legal producer:</p>
+<pre><code>CapturePayment
+</code></pre>
+<p>This naturally creates:</p>
+<pre><code>obligation
+    ->
+satisfaction goal
+    ->
+missing prerequisite
+    ->
+legal transition
+    ->
+next state
+</code></pre>
+<p>Compare with:</p>
+<pre><code>backward chaining
+goal regression
+HTN planning
+BDI intention formation
+workflow scheduling
+</code></pre>
+<h1 id="14-obligation-does-not-grant-capability">======================================================================
+14. OBLIGATION DOES NOT GRANT CAPABILITY</h1>
+<p>Important rule:</p>
+<pre><code>Obligation != authority.
+</code></pre>
+<p>Example:</p>
+<pre><code>Obligation:
+    ReassessDiagnosis
+</code></pre>
+<p>The agent may:</p>
+<pre><code>gather evidence
+propose reassessment
+schedule review
+</code></pre>
+<p>But only an authorized clinician capability may:</p>
+<pre><code>EstablishDiagnosis
+</code></pre>
+<p>Research whether existing normative systems distinguish:</p>
+<pre><code>duty
+</code></pre>
+<p>from:</p>
+<pre><code>permission/authority
+</code></pre>
+<p>and what errors occur when systems do not.</p>
+<h1 id="15-blocked-obligations">======================================================================
+15. BLOCKED OBLIGATIONS</h1>
+<p>An obligation may be valid but currently impossible to satisfy.</p>
+<p>Example:</p>
+<pre><code>ResolveApprovalConditions
+</code></pre>
+<p>Blocked because:</p>
+<pre><code>RequiredEvidence unavailable
+</code></pre>
+<p>or:</p>
+<pre><code>RequiredAuthority unavailable
+</code></pre>
+<p>The obligation should not disappear.</p>
+<p>Possible state:</p>
+<pre><code>Blocked
+</code></pre>
+<p>with:</p>
+<pre><code>blocking prerequisites
+responsible owner
+escalation rules
+</code></pre>
+<p>Investigate whether explicit blocked-state obligations improve agent behavior
+compared with repeated failed attempts.</p>
+<h1 id="16-conflicting-obligations">======================================================================
+16. CONFLICTING OBLIGATIONS</h1>
+<p>Two obligations may conflict.</p>
+<p>Example:</p>
+<pre><code>ReleaseShipmentImmediately
+</code></pre>
+<p>and:</p>
+<pre><code>HoldShipmentForFraudReview
+</code></pre>
+<p>The system should not silently choose.</p>
+<p>Possible representation:</p>
+<pre><code>ObligationConflict {
+    obligations = [A, B]
+    state = Unresolved
+}
+</code></pre>
+<p>Investigate:</p>
+<pre><code>deontic conflicts
+contrary-to-duty obligations
+policy conflicts
+priority rules
+normative multi-agent systems
+</code></pre>
+<p>Question:</p>
+<pre><code>Should conflict resolution be deterministic policy,
+agent reasoning,
+or human escalation?
+</code></pre>
+<h1 id="17-priority">======================================================================
+17. PRIORITY</h1>
+<p>Obligations may have:</p>
+<pre><code>urgency
+severity
+policy priority
+deadline
+business impact
+safety impact
+</code></pre>
+<p>Do not assume a single numeric priority is adequate.</p>
+<p>Research:</p>
+<pre><code>scheduling systems
+incident-management priority
+real-time systems
+multi-objective planning
+deontic priority
+</code></pre>
+<p>Ask:</p>
+<pre><code>Can explicit priority reduce agent deliberation cost?
+</code></pre>
+<p>Or:</p>
+<pre><code>does it merely hide subjective policy decisions?
+</code></pre>
+<h1 id="18-waiver">======================================================================
+18. WAIVER</h1>
+<p>An obligation may be waived.</p>
+<p>Waiver should itself be governed.</p>
+<p>Possible requirements:</p>
+<pre><code>authority
+reason
+policy basis
+expiration
+provenance
+evidence
+</code></pre>
+<p>The agent should not simply mark:</p>
+<pre><code>"not needed"
+</code></pre>
+<p>Investigate:</p>
+<pre><code>compliance exception systems
+waiver workflows
+policy override models
+</code></pre>
+<h1 id="19-escalation">======================================================================
+19. ESCALATION</h1>
+<p>An obligation may require escalation when:</p>
+<pre><code>blocked too long
+deadline passes
+conflicting obligations exist
+authority missing
+risk threshold exceeded
+</code></pre>
+<p>Research whether escalation can be generated deterministically.</p>
+<h1 id="20-supersession">======================================================================
+20. SUPERSESSION</h1>
+<p>A new state or policy may supersede an obligation.</p>
+<p>Example:</p>
+<pre><code>Obligation:
+    CompleteFraudReview
+</code></pre>
+<p>but:</p>
+<pre><code>OrderCancelled
+</code></pre>
+<p>may render it irrelevant.</p>
+<p>Do not simply delete it.</p>
+<p>Record:</p>
+<pre><code>Superseded
+by OrderCancelled@v19
+</code></pre>
+<p>Research temporal/workflow systems for similar semantics.</p>
+<h1 id="21-policy-changes-at-scale">======================================================================
+21. POLICY CHANGES AT SCALE</h1>
+<p>Policy changes may generate enormous obligation populations.</p>
+<p>Example:</p>
+<pre><code>New verification rule affects 500,000 customers.
+</code></pre>
+<p>Do not assume the runtime should immediately instantiate 500,000 heavyweight
+workflow objects.</p>
+<p>Investigate:</p>
+<pre><code>lazy obligation materialization
+policy impact sets
+batch obligations
+obligation rules
+work queues
+event sourcing
+database query-driven task generation
+</code></pre>
+<p>Potential architecture:</p>
+<pre><code>ObligationRule
+    ->
+affected population
+    ->
+lazily materialized instances
+</code></pre>
+<h1 id="22-obligation-batches">======================================================================
+22. OBLIGATION BATCHES</h1>
+<p>Possible construct:</p>
+<pre><code>ObligationBatch
+</code></pre>
+<p>Example:</p>
+<pre><code>ReverifyAccessibilityEvidence
+PolicyChange = VerificationPolicy@12
+Population = 83,219 records
+</code></pre>
+<p>Track:</p>
+<pre><code>total affected
+pending
+in progress
+satisfied
+waived
+escalated
+</code></pre>
+<p>Research scalable compliance/remediation architectures.</p>
+<h1 id="23-agent-resume--interruption">======================================================================
+23. AGENT RESUME / INTERRUPTION</h1>
+<p>Agents may stop because of:</p>
+<pre><code>timeout
+context limit
+model crash
+deployment
+human interruption
+</code></pre>
+<p>Explicit obligations could make resumption easy.</p>
+<p>New agent receives:</p>
+<pre><code>outstanding obligations
+</code></pre>
+<p>rather than reconstructing incomplete work from history.</p>
+<p>Measure:</p>
+<pre><code>recovery tokens
+duplicate actions
+missed work
+</code></pre>
+<p>This may be important for long-running autonomous agents.</p>
+<h1 id="24-multiple-agents">======================================================================
+24. MULTIPLE AGENTS</h1>
+<p>Obligations may provide a coordination layer across agents.</p>
+<p>Example:</p>
+<pre><code>Agent A handles Payment obligations.
+Agent B handles Compliance obligations.
+Agent C handles Customer-support obligations.
+</code></pre>
+<p>Questions:</p>
+<pre><code>How are obligations claimed?
+Can two agents work the same obligation?
+How is lease/ownership handled?
+What happens if an agent disappears?
+Can obligations be split?
+</code></pre>
+<p>Compare with:</p>
+<pre><code>distributed job queues
+actor mailboxes
+task schedulers
+workflow engines
+</code></pre>
+<h1 id="25-claiming--leasing-obligations">======================================================================
+25. CLAIMING / LEASING OBLIGATIONS</h1>
+<p>Potential lifecycle:</p>
+<pre><code>Raised
+    ->
+Claimed(agent, lease)
+    ->
+InProgress
+</code></pre>
+<p>If lease expires:</p>
+<pre><code>obligation becomes claimable again.
+</code></pre>
+<p>Investigate established work-queue semantics.</p>
+<p>Ask:</p>
+<pre><code>Is this merely a job queue?
+</code></pre>
+<p>If not, identify the difference.</p>
+<p>Likely distinction:</p>
+<pre><code>job queue item describes execution work
+</code></pre>
+<p>while:</p>
+<pre><code>obligation describes an unresolved semantic condition.
+</code></pre>
+<h1 id="26-idempotency">======================================================================
+26. IDEMPOTENCY</h1>
+<p>An obligation should not cause duplicate consequential effects.</p>
+<p>Example:</p>
+<pre><code>ReconcileRefund
+</code></pre>
+<p>must not result in:</p>
+<pre><code>second refund
+</code></pre>
+<p>Research how obligation execution interacts with:</p>
+<pre><code>semantic operation IDs
+idempotency keys
+capability versions
+effect state
+</code></pre>
+<h1 id="27-obligation-graph">======================================================================
+27. OBLIGATION GRAPH</h1>
+<p>Obligations may have dependencies.</p>
+<p>Example:</p>
+<pre><code>CompleteShipment
+    requires
+ResolveFraudReview
+</code></pre>
+<p>Possible graph:</p>
+<pre><code>O-1
+  ->
+O-2
+  ->
+O-3
+</code></pre>
+<p>Question:</p>
+<pre><code>Should obligations depend directly on obligations,
+or only on semantic satisfaction conditions?
+</code></pre>
+<p>The latter may be more robust.</p>
+<p>Investigate workflow DAGs and goal-condition planning.</p>
+<h1 id="28-deadlock">======================================================================
+28. DEADLOCK</h1>
+<p>Possible problem:</p>
+<pre><code>Obligation A requires B satisfied.
+
+Obligation B requires A satisfied.
+</code></pre>
+<p>The semantic compiler may detect:</p>
+<pre><code>obligation dependency cycle
+</code></pre>
+<p>But some cycles are legitimate.</p>
+<p>Research:</p>
+<pre><code>workflow deadlock
+Petri-net analysis
+planning dead ends
+wait-for graphs
+model checking
+</code></pre>
+<h1 id="29-impossible-obligation-satisfaction">======================================================================
+29. IMPOSSIBLE OBLIGATION SATISFACTION</h1>
+<p>The semantic system should detect:</p>
+<pre><code>obligation exists
+</code></pre>
+<p>but:</p>
+<pre><code>no legal transition path can satisfy it.
+</code></pre>
+<p>Example:</p>
+<pre><code>MustShipOrder
+</code></pre>
+<p>but:</p>
+<pre><code>every transition to Shipped has been removed by policy.
+</code></pre>
+<p>This should create:</p>
+<pre><code>semantic error
+blocked obligation
+escalation
+</code></pre>
+<p>Research analogous formal reachability checks.</p>
+<h1 id="30-obligation-completeness">======================================================================
+30. OBLIGATION COMPLETENESS</h1>
+<p>Critical question:</p>
+<pre><code>How do we know all required work becomes an obligation?
+</code></pre>
+<p>If the obligation-generation rules are incomplete:</p>
+<pre><code>agents may falsely believe the queue is complete.
+</code></pre>
+<p>Investigate:</p>
+<pre><code>completeness verification
+policy coverage
+event-condition-action systems
+rule coverage
+specification testing
+</code></pre>
+<p>This is a major architectural risk.</p>
+<h1 id="31-false-obligation-risk">======================================================================
+31. FALSE OBLIGATION RISK</h1>
+<p>The opposite error:</p>
+<pre><code>system generates obligations that should not exist.
+</code></pre>
+<p>Consequences:</p>
+<pre><code>unnecessary work
+wasted tokens
+bad user experience
+compliance noise
+</code></pre>
+<p>Measure false-positive obligation cost.</p>
+<h1 id="32-obligation-quality-metrics">======================================================================
+32. OBLIGATION QUALITY METRICS</h1>
+<p>Potential metrics:</p>
+<p>Obligation Precision:</p>
+<pre><code>valid obligations
+-----------------
+all generated obligations
+</code></pre>
+<p>Obligation Recall:</p>
+<pre><code>generated required obligations
+------------------------------
+all truly required obligations
+</code></pre>
+<p>These may be important.</p>
+<h1 id="33-completion-accuracy">======================================================================
+33. COMPLETION ACCURACY</h1>
+<p>Measure:</p>
+<pre><code>obligations agent claims satisfied
+</code></pre>
+<p>versus:</p>
+<pre><code>obligations machine satisfaction criteria confirm satisfied
+</code></pre>
+<p>Metric:</p>
+<pre><code>False Completion Rate
+</code></pre>
+<p>Hypothesis:</p>
+<pre><code>machine-checkable satisfaction should reduce false completion.
+</code></pre>
+<h1 id="34-rediscovery-rate">======================================================================
+34. REDISCOVERY RATE</h1>
+<p>Measure how often an agent re-discovers the same unresolved condition.</p>
+<p>Open-ended systems may repeatedly:</p>
+<pre><code>inspect
+infer
+notice
+decide
+</code></pre>
+<p>Explicit obligation systems should preserve that knowledge.</p>
+<p>Define:</p>
+<pre><code>Rediscovery Rate
+
+    repeated discovery operations
+    ------------------------------
+    unresolved conditions
+</code></pre>
+<h1 id="35-missed-work-rate">======================================================================
+35. MISSED WORK RATE</h1>
+<p>Measure:</p>
+<pre><code>required unresolved conditions never handled
+</code></pre>
+<p>Hypothesis:</p>
+<pre><code>obligation queues reduce omission.
+</code></pre>
+<h1 id="36-duplicate-work-rate">======================================================================
+36. DUPLICATE WORK RATE</h1>
+<p>Measure:</p>
+<pre><code>repeated attempts at the same semantic resolution
+</code></pre>
+<p>Explicit obligation identity may reduce duplicate work.</p>
+<h1 id="37-context-tokens-per-obligation">======================================================================
+37. CONTEXT TOKENS PER OBLIGATION</h1>
+<p>Measure agent context needed to resolve one obligation.</p>
+<p>Compare:</p>
+<p>A. full repository/context exploration</p>
+<p>B. obligation record + relevant semantic slice</p>
+<p>Potential metric:</p>
+<pre><code>Context Tokens Per Resolved Obligation
+</code></pre>
+<h1 id="38-tool-calls-per-resolved-obligation">======================================================================
+38. TOOL CALLS PER RESOLVED OBLIGATION</h1>
+<p>Measure:</p>
+<pre><code>searches
+reads
+API calls
+model calls
+compiler calls
+</code></pre>
+<p>Normalize by:</p>
+<pre><code>correctly resolved obligation
+</code></pre>
+<h1 id="39-cost-per-resolved-obligation">======================================================================
+39. COST PER RESOLVED OBLIGATION</h1>
+<p>Primary economic metric:</p>
+<pre><code>                  total execution cost
+</code></pre>
+<p>CostResolvedObligation = ------------------------
+correctly resolved obligations</p>
+<p>Include:</p>
+<pre><code>model inference
+tools
+retries
+human intervention
+</code></pre>
+<h1 id="40-cost-per-required-outcome">======================================================================
+40. COST PER REQUIRED OUTCOME</h1>
+<p>An even stronger metric:</p>
+<pre><code>total cost
+------------------------
+required semantic outcomes achieved
+</code></pre>
+<p>This avoids rewarding the system for generating too many tiny obligations.</p>
+<h1 id="41-obligation-granularity">======================================================================
+41. OBLIGATION GRANULARITY</h1>
+<p>Investigate granularity.</p>
+<p>Too coarse:</p>
+<pre><code>"Fix account"
+</code></pre>
+<p>Too fine:</p>
+<pre><code>hundreds of micro-obligations
+</code></pre>
+<p>Ask:</p>
+<pre><code>What is the correct semantic granularity?
+</code></pre>
+<p>Possible principle:</p>
+<pre><code>one obligation per independently meaningful unresolved condition.
+</code></pre>
+<h1 id="42-natural-language-todo-vs-semantic-obligation">======================================================================
+42. NATURAL-LANGUAGE TODO VS SEMANTIC OBLIGATION</h1>
+<p>Compare:</p>
+<p>TODO:</p>
+<pre><code>"Check refund"
+</code></pre>
+<p>against:</p>
+<p>Semantic obligation:</p>
+<pre><code>ReconcileRefundOutcome {
+    subject = Payment P81
+    reason = OutcomeUnknown
+    satisfaction = RefundExecution in [Succeeded, Failed]
+    policy = PaymentPolicy@7
+}
+</code></pre>
+<p>Measure:</p>
+<pre><code>model interpretation errors
+tokens
+execution consistency
+</code></pre>
+<h1 id="43-workflow-engine-comparison">======================================================================
+43. WORKFLOW ENGINE COMPARISON</h1>
+<p>This is essential.</p>
+<p>Ask:</p>
+<pre><code>Is the obligation system just a workflow engine?
+</code></pre>
+<p>Compare with:</p>
+<pre><code>Temporal
+Cadence
+Camunda
+BPMN engines
+durable execution
+job queues
+</code></pre>
+<p>Identify what obligations add beyond:</p>
+<pre><code>persisted workflow step
+</code></pre>
+<p>Potential distinctions:</p>
+<pre><code>derived from semantic state
+remain valid independent of current procedure
+satisfaction-condition based
+policy/evidence provenance
+agent control surface
+</code></pre>
+<h1 id="44-bdi-agent-comparison">======================================================================
+44. BDI AGENT COMPARISON</h1>
+<p>Research:</p>
+<pre><code>Beliefs
+Desires
+Intentions
+</code></pre>
+<p>Potential mapping:</p>
+<pre><code>Beliefs -> verified/epistemic state
+Desires/goals -> obligations?
+Intentions -> selected plans/tasks?
+</code></pre>
+<p>Determine whether our obligation model is simply a narrower operational version
+of BDI goals or differs materially.</p>
+<h1 id="45-deontic-logic">======================================================================
+45. DEONTIC LOGIC</h1>
+<p>Research formal notions:</p>
+<pre><code>obligation
+permission
+prohibition
+</code></pre>
+<p>This maps directly to:</p>
+<pre><code>obligation
+capability
+forbidden transition
+</code></pre>
+<p>Investigate:</p>
+<pre><code>contrary-to-duty obligations
+conflicting duties
+defeasible obligations
+temporal obligations
+deadlines
+violations
+</code></pre>
+<p>Determine whether the architecture should explicitly adopt deontic terminology
+or formal semantics.</p>
+<h1 id="46-normative-multi-agent-systems">======================================================================
+46. NORMATIVE MULTI-AGENT SYSTEMS</h1>
+<p>Research systems where agents operate under:</p>
+<pre><code>norms
+obligations
+permissions
+prohibitions
+sanctions
+</code></pre>
+<p>This may be one of the closest intellectual ancestors.</p>
+<p>Ask:</p>
+<pre><code>Do these systems dynamically derive obligations from current state?
+
+Do they use obligations as executable agent work queues?
+
+Do they integrate capabilities/evidence/policy/versioning?
+</code></pre>
+<h1 id="47-compliance-systems">======================================================================
+47. COMPLIANCE SYSTEMS</h1>
+<p>Research:</p>
+<pre><code>regulatory obligations
+control remediation
+audit findings
+policy exceptions
+compliance work queues
+</code></pre>
+<p>These systems may already solve:</p>
+<pre><code>obligation provenance
+waiver
+deadline
+evidence
+satisfaction
+</code></pre>
+<p>Identify reusable ideas.</p>
+<h1 id="48-incident-management">======================================================================
+48. INCIDENT MANAGEMENT</h1>
+<p>Compare with:</p>
+<pre><code>incident tickets
+alerts
+remediation actions
+SLO violations
+</code></pre>
+<p>Question:</p>
+<pre><code>Are obligations simply structured incidents?
+</code></pre>
+<p>If not:</p>
+<pre><code>identify difference between observed issue and required semantic condition.
+</code></pre>
+<h1 id="49-alert-fatigue-analogy">======================================================================
+49. ALERT FATIGUE ANALOGY</h1>
+<p>Poorly generated obligations could become:</p>
+<pre><code>semantic alert fatigue
+</code></pre>
+<p>Research lessons from:</p>
+<pre><code>monitoring alerts
+security alerts
+compliance findings
+</code></pre>
+<p>Potential requirements:</p>
+<pre><code>deduplication
+aggregation
+suppression
+supersession
+priority
+root-cause linkage
+</code></pre>
+<h1 id="50-obligation-deduplication">======================================================================
+50. OBLIGATION DEDUPLICATION</h1>
+<p>Example:</p>
+<pre><code>20 events all imply:
+    RefreshFraudEvidence
+</code></pre>
+<p>Should there be:</p>
+<pre><code>20 obligations
+</code></pre>
+<p>or:</p>
+<pre><code>one obligation with multiple causes?
+</code></pre>
+<p>Investigate semantic identity and deduplication.</p>
+<h1 id="51-obligation-merging">======================================================================
+51. OBLIGATION MERGING</h1>
+<p>Two obligations may be satisfiable by one transition.</p>
+<p>Example:</p>
+<pre><code>RefreshFraudEvidence
+ReassessApproval
+</code></pre>
+<p>A single:</p>
+<pre><code>CompleteFraudReview
+</code></pre>
+<p>may satisfy both.</p>
+<p>Research whether planners can optimize multiple obligations jointly.</p>
+<h1 id="52-multi-obligation-planning">======================================================================
+52. MULTI-OBLIGATION PLANNING</h1>
+<p>Agent may face:</p>
+<pre><code>O1
+O2
+O3
+</code></pre>
+<p>Separate plans may duplicate work.</p>
+<p>Investigate:</p>
+<pre><code>multi-goal planning
+plan reuse
+shared prerequisites
+optimization
+</code></pre>
+<p>The system should not force one-obligation-at-a-time behavior if global planning
+is cheaper.</p>
+<h1 id="53-prioritization-vs-optimization">======================================================================
+53. PRIORITIZATION VS OPTIMIZATION</h1>
+<p>Legality and obligation should remain deterministic where possible.</p>
+<p>Preference may remain probabilistic.</p>
+<p>Example:</p>
+<p>Obligations:</p>
+<pre><code>resolve A
+resolve B
+</code></pre>
+<p>Both must happen.</p>
+<p>Agent may choose order based on:</p>
+<pre><code>cost
+latency
+customer impact
+reversibility
+</code></pre>
+<p>Distinguish:</p>
+<pre><code>required frontier
+</code></pre>
+<p>from:</p>
+<pre><code>optimal scheduling.
+</code></pre>
+<h1 id="54-human-in-the-loop">======================================================================
+54. HUMAN-IN-THE-LOOP</h1>
+<p>Some obligations inherently require judgment.</p>
+<p>Example:</p>
+<pre><code>ReviewConflictingMedicalEvidence
+</code></pre>
+<p>The agent can:</p>
+<pre><code>assemble evidence
+prepare summary
+identify missing facts
+</code></pre>
+<p>But satisfaction may require:</p>
+<pre><code>clinician decision
+</code></pre>
+<p>Research mixed human-agent work queues.</p>
+<h1 id="55-security">======================================================================
+55. SECURITY</h1>
+<p>An obligation should not allow an agent to obtain authority it lacks.</p>
+<p>Example:</p>
+<pre><code>MustCloseAccount
+</code></pre>
+<p>does not imply:</p>
+<pre><code>CanCloseAccount
+</code></pre>
+<p>The system should expose:</p>
+<pre><code>blocked because authorized human approval missing
+</code></pre>
+<p>This may improve safety.</p>
+<h1 id="56-adversarial-agent-test">======================================================================
+56. ADVERSARIAL AGENT TEST</h1>
+<p>Prompt:</p>
+<pre><code>"Clear every outstanding obligation as fast as possible."
+</code></pre>
+<p>Weak design may allow:</p>
+<pre><code>mark satisfied
+waive
+delete
+suppress
+</code></pre>
+<p>Strong design should require:</p>
+<pre><code>satisfaction condition
+authorized waiver
+valid supersession
+</code></pre>
+<p>Measure shortcut attempts.</p>
+<h1 id="57-policy-change-test">======================================================================
+57. POLICY CHANGE TEST</h1>
+<p>Change policy:</p>
+<pre><code>FraudEvidence must be &#x3C; 24h old
+</code></pre>
+<p>to:</p>
+<pre><code>&#x3C; 4h old
+</code></pre>
+<p>Measure whether obligations are generated correctly for affected subjects.</p>
+<p>Compare:</p>
+<pre><code>agent scans records
+</code></pre>
+<p>vs:</p>
+<pre><code>semantic policy impact creates obligations
+</code></pre>
+<h1 id="58-outcome-unknown-test">======================================================================
+58. OUTCOME UNKNOWN TEST</h1>
+<p>Inject:</p>
+<pre><code>payment refund timeout
+</code></pre>
+<p>Compare:</p>
+<p>A. open-ended agent</p>
+<p>B. obligation-driven agent</p>
+<p>Expected obligation:</p>
+<pre><code>ReconcileRefundOutcome
+</code></pre>
+<p>Measure:</p>
+<pre><code>retries
+duplicate effects
+context tokens
+tool calls
+correctness
+</code></pre>
+<h1 id="59-evidence-invalidation-test">======================================================================
+59. EVIDENCE INVALIDATION TEST</h1>
+<p>Invalidate evidence supporting a verified claim.</p>
+<p>Expected:</p>
+<pre><code>claim epistemic state changes
+    ->
+dependent capabilities disappear
+    ->
+obligations created to reassess affected work
+</code></pre>
+<p>Measure whether obligation model makes consequences explicit.</p>
+<h1 id="60-agent-restart-test">======================================================================
+60. AGENT RESTART TEST</h1>
+<p>Interrupt agent mid-task.</p>
+<p>Start a fresh agent.</p>
+<p>Compare:</p>
+<p>A. reconstruct from logs/history</p>
+<p>B. load current obligations/capabilities</p>
+<p>Measure:</p>
+<pre><code>tokens
+tool calls
+duplicate work
+completion rate
+</code></pre>
+<h1 id="61-large-queue-test">======================================================================
+61. LARGE QUEUE TEST</h1>
+<p>Generate:</p>
+<pre><code>10
+100
+1,000
+100,000
+</code></pre>
+<p>obligations.</p>
+<p>Investigate:</p>
+<pre><code>prioritization
+batching
+agent context
+retrieval
+materialization
+queue management
+</code></pre>
+<p>The agent should not receive all obligations at once.</p>
+<h1 id="62-obligation-retrieval">======================================================================
+62. OBLIGATION RETRIEVAL</h1>
+<p>Potential query:</p>
+<pre><code>get_obligations(
+    actorCapabilities,
+    priority,
+    subject,
+    dueWindow
+)
+</code></pre>
+<p>This allows dynamic work slicing.</p>
+<p>Research how work queues and schedulers select tasks.</p>
+<h1 id="63-agent-context-slice">======================================================================
+63. AGENT CONTEXT SLICE</h1>
+<p>For one selected obligation, provide:</p>
+<pre><code>obligation
+subject state
+relevant evidence
+available capabilities
+missing prerequisites
+</code></pre>
+<p>Do not load unrelated system context.</p>
+<p>Measure token reduction.</p>
+<h1 id="64-smaller-model-hypothesis">======================================================================
+64. SMALLER MODEL HYPOTHESIS</h1>
+<p>Compare:</p>
+<pre><code>large model + open-ended monitoring
+</code></pre>
+<p>against:</p>
+<pre><code>smaller model + explicit obligations
+</code></pre>
+<p>Hypothesis:</p>
+<pre><code>explicit work discovery may reduce model capability requirements.
+</code></pre>
+<p>This could be economically significant.</p>
+<h1 id="65-prompt-reduction">======================================================================
+65. PROMPT REDUCTION</h1>
+<p>Compare long operational prompts:</p>
+<pre><code>monitor refunds
+watch fraud
+check expired evidence
+escalate unresolved cases
+never retry unknown refunds
+...
+</code></pre>
+<p>against:</p>
+<pre><code>get_obligations()
+</code></pre>
+<p>Measure prompt size and compliance.</p>
+<h1 id="66-caching">======================================================================
+66. CACHING</h1>
+<p>Obligation schema may be stable.</p>
+<p>Instances are dynamic.</p>
+<p>Investigate:</p>
+<pre><code>schema caching
+compact instance representation
+lazy detail retrieval
+</code></pre>
+<p>Measure effective token cost.</p>
+<h1 id="67-failure-modes">======================================================================
+67. FAILURE MODES</h1>
+<p>Actively test:</p>
+<ol>
+<li>Missing obligations create false confidence.</li>
+<li>Too many obligations create noise.</li>
+<li>Obligations become another task database.</li>
+<li>Satisfaction rules are wrong.</li>
+<li>Agents optimize for clearing queue instead of real outcomes.</li>
+<li>Conflicting obligations deadlock.</li>
+<li>Priority policy is poor.</li>
+<li>Obligations become stale.</li>
+<li>Waiver becomes an escape hatch.</li>
+<li>Humans ignore excessive obligation volume.</li>
+<li>Multi-agent claiming creates race conditions.</li>
+<li>Obligation context is still too large.</li>
+<li>Some work cannot be expressed as explicit satisfaction conditions.</li>
+<li>Policy changes generate unmanageable work bursts.</li>
+<li>Agents need broad situational awareness beyond queued obligations.</li>
+</ol>
+<h1 id="68-obligation-gaming">======================================================================
+68. OBLIGATION GAMING</h1>
+<p>A critical risk:</p>
+<pre><code>agents may optimize the metric rather than the intended outcome.
+</code></pre>
+<p>Examples:</p>
+<pre><code>satisfy easiest interpretation
+trigger waiver
+create state that technically clears obligation
+avoid discovering new obligations
+</code></pre>
+<p>Research:</p>
+<pre><code>Goodhart's law
+reward hacking
+specification gaming
+compliance gaming
+</code></pre>
+<p>Design safeguards.</p>
+<h1 id="69-situational-awareness-counterargument">======================================================================
+69. SITUATIONAL AWARENESS COUNTERARGUMENT</h1>
+<p>Queue-driven agents may become myopic.</p>
+<p>Open-ended monitoring may notice:</p>
+<pre><code>emerging issue not yet represented by an obligation
+</code></pre>
+<p>Therefore investigate a hybrid:</p>
+<pre><code>obligation-driven execution
+    +
+separate anomaly/discovery process
+</code></pre>
+<p>This may preserve both:</p>
+<pre><code>efficiency
+discovery
+</code></pre>
+<h1 id="70-discovery-vs-resolution">======================================================================
+70. DISCOVERY VS RESOLUTION</h1>
+<p>Separate two agent roles:</p>
+<p>A. Discovery</p>
+<pre><code>identify new conditions
+generate candidate evidence/events
+</code></pre>
+<p>B. Resolution</p>
+<pre><code>work explicit obligations
+</code></pre>
+<p>This may reduce open-ended autonomy in high-consequence workflows while still
+allowing exploration.</p>
+<h1 id="71-obligation-generation-trust-boundary">======================================================================
+71. OBLIGATION GENERATION TRUST BOUNDARY</h1>
+<p>Who may create authoritative obligations?</p>
+<p>Possibilities:</p>
+<pre><code>semantic rules
+trusted events
+policy engine
+authorized humans
+</code></pre>
+<p>AI may propose:</p>
+<pre><code>candidate obligation
+</code></pre>
+<p>but should it directly create authoritative obligations?</p>
+<p>Investigate.</p>
+<h1 id="72-economic-model">======================================================================
+72. ECONOMIC MODEL</h1>
+<p>Compare:</p>
+<p>Open-ended autonomy:</p>
+<pre><code>continuous monitoring tokens
+repeated searches
+broad context
+missed work
+duplicate work
+</code></pre>
+<p>Obligation-driven:</p>
+<pre><code>obligation generation cost
+queue storage
+targeted retrieval
+smaller context
+lower rediscovery
+</code></pre>
+<p>Calculate:</p>
+<pre><code>cost per correct resolved outcome
+</code></pre>
+<h1 id="73-break-even">======================================================================
+73. BREAK-EVEN</h1>
+<p>Obligation infrastructure has cost.</p>
+<p>Include:</p>
+<pre><code>modeling
+rule creation
+queue infrastructure
+semantic compiler work
+lifecycle management
+</code></pre>
+<p>Estimate when:</p>
+<pre><code>execution savings
+    +
+reduced defects
+    +
+reduced supervision
+</code></pre>
+<p>exceed that cost.</p>
+<h1 id="74-existing-research-to-prioritize">======================================================================
+74. EXISTING RESEARCH TO PRIORITIZE</h1>
+<p>Search:</p>
+<pre><code>deontic logic
+normative multi-agent systems
+obligations in access-control policy
+BDI agents
+workflow task systems
+goal-condition planning
+event-condition-action rules
+compliance workflow
+remediation systems
+durable execution
+job queues
+task scheduling
+incident management
+alert fatigue
+multi-goal planning
+work stealing
+agent task queues
+autonomous-agent monitoring
+AI operations agents
+LLM long-horizon task completion
+</code></pre>
+<h1 id="75-required-source-quality">======================================================================
+75. REQUIRED SOURCE QUALITY</h1>
+<p>Prefer:</p>
+<pre><code>original papers
+standards
+formal literature
+official workflow-system documentation
+empirical agent studies
+</code></pre>
+<p>Distinguish:</p>
+<pre><code>established concept
+demonstrated AI effect
+architectural inference
+hypothesis
+</code></pre>
+<h1 id="76-required-output">======================================================================
+76. REQUIRED OUTPUT</h1>
+<p>Produce:</p>
+<ol>
+<li>Executive verdict</li>
+<li>Formal definition of obligation</li>
+<li>Capability/obligation duality assessment</li>
+<li>Comparison with deontic logic</li>
+<li>Comparison with normative multi-agent systems</li>
+<li>Comparison with BDI</li>
+<li>Comparison with workflow engines</li>
+<li>Comparison with durable execution/job queues</li>
+<li>Comparison with compliance/remediation systems</li>
+<li>Obligation lifecycle recommendation</li>
+<li>Satisfaction-condition model</li>
+<li>Provenance model</li>
+<li>Conflict model</li>
+<li>Priority/escalation model</li>
+<li>Waiver model</li>
+<li>Supersession model</li>
+<li>Scale/batching model</li>
+<li>Multi-agent claiming model</li>
+<li>Planning implications</li>
+<li>Context-compression implications</li>
+<li>Smaller-model hypothesis</li>
+<li>Token/cost hypothesis</li>
+<li>Security implications</li>
+<li>Gaming risks</li>
+<li>Situational-awareness risks</li>
+<li>Counterarguments</li>
+<li>Proposed experiments</li>
+<li>Metrics</li>
+<li>Economic model</li>
+<li>Break-even model</li>
+<li>What is supported by existing research</li>
+<li>What remains speculative</li>
+<li>Architecture changes recommended</li>
+<li>Final verdict</li>
+</ol>
+<h1 id="77-final-verdict-format">======================================================================
+77. FINAL VERDICT FORMAT</h1>
+<p>Answer:</p>
+<p>Do explicit obligations reduce agent work-discovery cost?
+Strong evidence / Moderate evidence / Weak evidence / No evidence</p>
+<p>Do explicit obligations reduce context/token usage?
+Strong evidence / Moderate evidence / Weak evidence / No evidence</p>
+<p>Do obligations improve completion correctness?
+Strong evidence / Moderate evidence / Weak evidence / No evidence</p>
+<p>Do obligations reduce repeated/duplicate work?
+Strong evidence / Moderate evidence / Weak evidence / No evidence</p>
+<p>Can obligations enable smaller models?
+Strong evidence / Moderate evidence / Weak evidence / No evidence</p>
+<p>Is capability + obligation a useful control surface for agents?
+Yes / Probably / Unclear / Probably not / No</p>
+<p>Closest existing concept:
+...</p>
+<p>Most valuable architectural benefit:
+...</p>
+<p>Biggest correctness risk:
+...</p>
+<p>Biggest economic opportunity:
+...</p>
+<p>Most important missing experiment:
+...</p>
+<p>Recommended obligation lifecycle:
+...</p>
+<p>Recommended distinction between obligation and task:
+...</p>
+<h1 id="78-research-standard">======================================================================
+78. RESEARCH STANDARD</h1>
+<p>Be skeptical.</p>
+<p>Do not assume a work queue is inherently better than autonomous discovery.</p>
+<p>Do not mistake a generic TODO list for a semantic obligation system.</p>
+<p>Do not assume machine-checkable satisfaction is always possible.</p>
+<p>Do not ignore false obligations or missing obligations.</p>
+<p>Do not ignore alert fatigue, queue gaming, priority mistakes, or myopic agents.</p>
+<p>Do not count lower token usage as success if important unresolved conditions are
+missed.</p>
+<p>The central question is:</p>
+<pre><code>Can machine-visible obligations turn open-ended autonomous agent work into
+bounded, attributable, resumable, verifiable semantic work — and does that
+make agents materially cheaper and more reliable?
+</code></pre></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

@@ -2,9 +2,9 @@
 
 ## Summary
 
-- publishable source: 113
+- publishable source: 189
 - generated output: 1
-- ambiguous: 372
+- ambiguous: 379
 - ignored: 3
 
 ## Records
@@ -15,6 +15,7 @@
 - publishable source: `ai-prompts/autonomous-research-agent-repo-archi-and-knowledge.md`
 - publishable source: `ai-prompts/bootstrap/AI-ROS-Bootstrap-Agent.md`
 - publishable source: `ai-prompts/Research-Execution-Package-Specification-v2.md`
+- publishable source: `BOOTSTRAP.md`
 - generated output: `build-reports/content-inventory.md`
 - publishable source: `CHANGELOG.md`
 - publishable source: `content/disciplines/ai-engineering/handbook/agent-architecture-and-coordination.md`
@@ -33,15 +34,35 @@
 - ambiguous: `content/projects/ai-engineering-course/chapter-01/research/research-package-001-notes.md`
 - publishable source: `content/projects/ai-engineering-course/governance/course-constitution.md`
 - publishable source: `content/projects/ai-engineering-course/roadmaps/course-roadmap.md`
+- publishable source: `content/projects/time-entry/architecture/time-entry-large-view-architecture-v0.1.md`
+- publishable source: `content/projects/time-entry/domain/time-entry-state-model-v0.1.md`
 - publishable source: `content/projects/time-entry/README.md`
+- publishable source: `content/projects/time-entry/requirements/time-entry-system-ai-requirements.md`
+- publishable source: `context/ARCHITECTURE.md`
+- publishable source: `context/CURRENT-STATE.md`
+- publishable source: `context/DECISIONS.md`
+- publishable source: `context/KNOWN-RISKS.md`
+- publishable source: `context/RESEARCH-QUEUE.md`
 - publishable source: `current-state.md`
+- publishable source: `docs/00-governance/Agent-Operating-Manual.md`
+- publishable source: `docs/00-governance/AI-Repository-Operating-System.md`
+- publishable source: `docs/00-governance/Engineering-Standards.md`
+- publishable source: `docs/00-governance/Governance-Decision-Log.md`
+- publishable source: `docs/00-governance/README.md`
+- publishable source: `docs/00-governance/Research-Execution-Package-Specification.md`
+- publishable source: `docs/architecture/README.md`
+- publishable source: `docs/architecture/semantic-control/dependency-minimal-browser-kernel-architecture-policy.md`
+- publishable source: `docs/architecture/semantic-control/minimal-typescript-browser-kernel-responsibility-spec.md`
 - publishable source: `docs/architecture/semantic-control/README.md`
+- publishable source: `docs/architecture/semantic-control/zero-authoritative-javascript-web-architecture-spec-v0.1.md`
+- publishable source: `docs/decisions/README.md`
 - publishable source: `docs/governance/000-engineering-constitution.md`
 - publishable source: `docs/mobile/ios/setup/apple-shortcuts-setup.md`
 - publishable source: `docs/mobile/ios/setup/working-copy-setup.md`
 - publishable source: `docs/mobile/ios/shortcuts/ai-ros-launcher.md`
 - publishable source: `docs/mobile/ios/shortcuts/capture-research.md`
 - publishable source: `docs/mobile/ios/workflows/mobile-research-cycle.md`
+- publishable source: `docs/PILOT-MEASUREMENT-PLAN.md`
 - publishable source: `docs/repository/2026-07-23-ai-research-mission-execution.md`
 - publishable source: `docs/repository/2026-07-23-evaluation-research-infrastructure.md`
 - publishable source: `docs/repository/2026-07-28-case-collision-canonicalization.md`
@@ -60,6 +81,20 @@
 - publishable source: `docs/repository/imports/2026-07-22-input-documents-import/VALIDATION.md`
 - publishable source: `docs/repository/imports/2026-08-15-state-machine-documents-organization/DECISIONS.md`
 - publishable source: `docs/repository/imports/2026-08-15-state-machine-documents-organization/VALIDATION.md`
+- publishable source: `docs/work-adapter-contract.md`
+- publishable source: `docs/work-protocol.md`
+- publishable source: `framework/policies/EVIDENCE-POLICY.md`
+- publishable source: `framework/policies/OUTPUT-POLICY.md`
+- publishable source: `framework/policies/RESEARCH-POLICY.md`
+- publishable source: `framework/protocols/ARTIFACT-LIFECYCLE.md`
+- publishable source: `framework/protocols/SUPERSESSION.md`
+- publishable source: `framework/REP-SPECIFICATION.md`
+- publishable source: `framework/standards/ARTIFACT-TIERS.md`
+- publishable source: `framework/standards/CONFIDENCE.md`
+- publishable source: `framework/standards/IDENTIFIERS.md`
+- publishable source: `framework/standards/NAMING-STANDARD.md`
+- publishable source: `framework/standards/TAXONOMY.md`
+- publishable source: `HANDOFF.md`
 - publishable source: `knowledge-platform/Build-Pipeline.md`
 - publishable source: `knowledge-platform/Metadata-Standard.md`
 - publishable source: `knowledge-platform/Migration-Plan.md`
@@ -419,6 +454,7 @@
 - ambiguous: `node_modules/zod-to-json-schema/README.md`
 - ambiguous: `node_modules/zod/README.md`
 - ambiguous: `node_modules/zwitch/readme.md`
+- publishable source: `PROJECT-CHARTER.md`
 - ignored: `prompts/AI-Research-Mission.md`
 - ignored: `prompts/CODEX-Import-Organize-Input-Documents.md`
 - ignored: `prompts/Non-Human-Experimental-Research-Next-Mission.md`
@@ -473,6 +509,7 @@
 - publishable source: `research/frontier/FRONTIER-MASTER.md`
 - publishable source: `research/frontier/investigations/2026-07-30-rfr-009-validation.md`
 - publishable source: `research/frontier/investigations/2026-08-15-rfr-009-metadata-provenance-coverage.md`
+- publishable source: `research/frontier/README.md`
 - publishable source: `research/frontier/records/RFR-001.md`
 - publishable source: `research/frontier/records/RFR-002.md`
 - publishable source: `research/frontier/records/RFR-003.md`
@@ -485,16 +522,62 @@
 - publishable source: `research/frontier/records/RFR-010.md`
 - publishable source: `research/frontier/repository-health.md`
 - publishable source: `research/packages/RP-2026-07-30-NHE-COMPARATIVE-REVIEW.md`
+- publishable source: `research/state-constrained-architecture/experiments/semantic-evolution-cascade/experiment-plan.md`
+- publishable source: `research/state-constrained-architecture/experiments/startup-pivot-resilience-benchmark-specification.md`
+- publishable source: `research/state-constrained-architecture/experiments/startup-pivot-resilience-scenario.md`
+- publishable source: `research/state-constrained-architecture/prompts/01-existing-work-prior-art-novelty-research-prompt.md`
+- publishable source: `research/state-constrained-architecture/prompts/02-capability-action-space-reduction-research-prompt.md`
+- publishable source: `research/state-constrained-architecture/prompts/03-deterministic-environment-vs-model-intelligence-research-prompt.md`
+- publishable source: `research/state-constrained-architecture/prompts/04-obligations-as-agent-work-queues-research-prompt.md`
+- publishable source: `research/state-constrained-architecture/prompts/05-epistemic-state-evidence-agent-truth-control-research-prompt.md`
+- publishable source: `research/state-constrained-architecture/prompts/06-outcome-unknown-external-effects-agent-safety-research-prompt.md`
+- publishable source: `research/state-constrained-architecture/prompts/07-longitudinal-semantic-drift-ai-maintained-software-research-prompt.md`
+- publishable source: `research/state-constrained-architecture/prompts/08-semantic-compilation-specification-drift-research-prompt.md`
+- publishable source: `research/state-constrained-architecture/prompts/09-probabilistic-vs-deterministic-responsibility-boundaries-research-prompt.md`
+- publishable source: `research/state-constrained-architecture/prompts/10-semantic-modularity-vs-ordinary-modularity-ai-agents-research-prompt.md`
+- publishable source: `research/state-constrained-architecture/prompts/11-semantic-compilation-weaker-host-languages-research-prompt.md`
+- publishable source: `research/state-constrained-architecture/prompts/12-standard-semantic-agent-protocol-research-prompt.md`
+- publishable source: `research/state-constrained-architecture/prompts/minimal-browser-abi-research-prompt.md`
+- publishable source: `research/state-constrained-architecture/prompts/state-modularity-agent-context-token-cost-research-prompt.md`
 - publishable source: `research/state-constrained-architecture/README.md`
+- publishable source: `research/state-constrained-architecture/references/state-systems-learning-recommendations.md`
 - publishable source: `research/state-constrained-architecture/reports/01-existing-work-prior-art-novelty-research-report.md`
+- publishable source: `research/state-constrained-architecture/reports/02-capability-action-space-reduction-research-report.md`
+- publishable source: `research/state-constrained-architecture/reports/03-deterministic-environment-vs-model-intelligence-research-report.md`
+- publishable source: `research/state-constrained-architecture/reports/04-obligations-as-agent-work-queues-research-report.md`
+- publishable source: `research/state-constrained-architecture/reports/05-epistemic-state-evidence-agent-truth-control-research-report.md`
+- publishable source: `research/state-constrained-architecture/reports/06-outcome-unknown-external-effects-agent-safety-research-report.md`
+- publishable source: `research/state-constrained-architecture/reports/07-longitudinal-semantic-drift-ai-maintained-software-research-report.md`
+- publishable source: `research/state-constrained-architecture/reports/08-semantic-compilation-specification-drift-research-report.md`
+- publishable source: `research/state-constrained-architecture/reports/09-probabilistic-vs-deterministic-responsibility-boundaries-research-report.md`
+- publishable source: `research/state-constrained-architecture/reports/10-semantic-modularity-vs-ordinary-modularity-ai-agents-research-report.md`
+- publishable source: `research/state-constrained-architecture/reports/11-semantic-compilation-weaker-host-languages-research-report.md`
+- publishable source: `research/state-constrained-architecture/reports/12-standard-semantic-agent-protocol-research-report.md`
+- publishable source: `research/state-constrained-architecture/reports/RP-AI-STATE-COST-2026-A002.md`
 - publishable source: `research/state-constrained-architecture/reports/state-constrained-language-comparison-research-report.md`
+- publishable source: `research/state-constrained-architecture/reports/state-modularity-agent-cost-research-report-2026-08-14.md`
+- publishable source: `research/state-constrained-architecture/reports/state-modularity-literature-review-2026-08-14.md`
+- publishable source: `research/state-constrained-architecture/reports/state-modularity-rework-economics-research-addendum-2026-08-14.md`
+- publishable source: `research/state-constrained-architecture/synthesis/01-12-semantic-control-architecture-research-synthesis.md`
+- publishable source: `research/state-constrained-architecture/working-notes/ai-code-semantic-risk-assessment.md`
+- publishable source: `research/state-constrained-architecture/working-notes/multi-state-data-and-type-explosion.md`
+- publishable source: `research/state-constrained-architecture/working-notes/state-constrained-architecture-continuation-02.md`
+- publishable source: `research/state-constrained-architecture/working-notes/state-constrained-architecture-continuation-03.md`
 - publishable source: `research/state-constrained-architecture/working-notes/state-constrained-architecture-research-outline.md`
+- publishable source: `research/state-constrained-architecture/working-notes/state-constrained-semantic-closure-exhaustiveness.md`
 - publishable source: `research/state-constrained-architecture/working-notes/state-machine-research.md`
 - publishable source: `roadmap.md`
 - ambiguous: `templates/AGENT-HANDOFF.template.md`
 - ambiguous: `templates/CURRENT-STATE.template.md`
 - ambiguous: `templates/DECISION.template.md`
 - ambiguous: `templates/EVIDENCE.template.md`
+- ambiguous: `templates/missions/MISSION-TEMPLATE.md`
 - ambiguous: `templates/RESEARCH-QUESTION.template.md`
+- ambiguous: `templates/research/EVIDENCE-TEMPLATE.md`
+- ambiguous: `templates/research/EXPERIMENT-TEMPLATE.md`
+- ambiguous: `templates/research/HYPOTHESIS-TEMPLATE.md`
+- ambiguous: `templates/research/JOURNAL-TEMPLATE.md`
+- ambiguous: `templates/research/REP-TEMPLATE.md`
+- ambiguous: `templates/research/THEORY-TEMPLATE.md`
 - ambiguous: `templates/THEORY.template.md`
 - publishable source: `tools/evaluation/README.md`

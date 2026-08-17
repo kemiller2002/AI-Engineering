@@ -2,12 +2,116 @@
   "schemaVersion": "1.0",
   "nodes": [
     {
+      "id": "01-existing-work-prior-art-novelty-research-prompt",
+      "title": "01 existing work prior art novelty research prompt",
+      "artifactType": "research-document",
+      "url": "/research/01-existing-work-prior-art-novelty-research-prompt/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/prompts/01-existing-work-prior-art-novelty-research-prompt.md"
+    },
+    {
       "id": "01-existing-work-prior-art-novelty-research-report",
       "title": "01 existing work prior art novelty research report",
       "artifactType": "research-document",
       "url": "/research/01-existing-work-prior-art-novelty-research-report/",
       "researchArea": "General Research",
       "sourcePath": "research/state-constrained-architecture/reports/01-existing-work-prior-art-novelty-research-report.md"
+    },
+    {
+      "id": "02-capability-action-space-reduction-research-prompt",
+      "title": "02 capability action space reduction research prompt",
+      "artifactType": "research-document",
+      "url": "/research/02-capability-action-space-reduction-research-prompt/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/prompts/02-capability-action-space-reduction-research-prompt.md"
+    },
+    {
+      "id": "02-capability-action-space-reduction-research-report",
+      "title": "02 capability action space reduction research report",
+      "artifactType": "research-document",
+      "url": "/research/02-capability-action-space-reduction-research-report/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/reports/02-capability-action-space-reduction-research-report.md"
+    },
+    {
+      "id": "03-deterministic-environment-vs-model-intelligence-research-prompt",
+      "title": "03 deterministic environment vs model intelligence research prompt",
+      "artifactType": "research-document",
+      "url": "/research/03-deterministic-environment-vs-model-intelligence-research-prompt/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/prompts/03-deterministic-environment-vs-model-intelligence-research-prompt.md"
+    },
+    {
+      "id": "04-obligations-as-agent-work-queues-research-prompt",
+      "title": "04 obligations as agent work queues research prompt",
+      "artifactType": "research-document",
+      "url": "/research/04-obligations-as-agent-work-queues-research-prompt/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/prompts/04-obligations-as-agent-work-queues-research-prompt.md"
+    },
+    {
+      "id": "05-epistemic-state-evidence-agent-truth-control-research-prompt",
+      "title": "05 epistemic state evidence agent truth control research prompt",
+      "artifactType": "research-document",
+      "url": "/research/05-epistemic-state-evidence-agent-truth-control-research-prompt/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/prompts/05-epistemic-state-evidence-agent-truth-control-research-prompt.md"
+    },
+    {
+      "id": "06-outcome-unknown-external-effects-agent-safety-research-prompt",
+      "title": "06 outcome unknown external effects agent safety research prompt",
+      "artifactType": "research-document",
+      "url": "/research/06-outcome-unknown-external-effects-agent-safety-research-prompt/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/prompts/06-outcome-unknown-external-effects-agent-safety-research-prompt.md"
+    },
+    {
+      "id": "07-longitudinal-semantic-drift-ai-maintained-software-research-prompt",
+      "title": "07 longitudinal semantic drift ai maintained software research prompt",
+      "artifactType": "research-document",
+      "url": "/research/07-longitudinal-semantic-drift-ai-maintained-software-research-prompt/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/prompts/07-longitudinal-semantic-drift-ai-maintained-software-research-prompt.md"
+    },
+    {
+      "id": "08-semantic-compilation-specification-drift-research-prompt",
+      "title": "08 semantic compilation specification drift research prompt",
+      "artifactType": "research-document",
+      "url": "/research/08-semantic-compilation-specification-drift-research-prompt/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/prompts/08-semantic-compilation-specification-drift-research-prompt.md"
+    },
+    {
+      "id": "09-probabilistic-vs-deterministic-responsibility-boundaries-research-prompt",
+      "title": "09 probabilistic vs deterministic responsibility boundaries research prompt",
+      "artifactType": "research-document",
+      "url": "/research/09-probabilistic-vs-deterministic-responsibility-boundaries-research-prompt/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/prompts/09-probabilistic-vs-deterministic-responsibility-boundaries-research-prompt.md"
+    },
+    {
+      "id": "10-semantic-modularity-vs-ordinary-modularity-ai-agents-research-prompt",
+      "title": "10 semantic modularity vs ordinary modularity ai agents research prompt",
+      "artifactType": "research-document",
+      "url": "/research/10-semantic-modularity-vs-ordinary-modularity-ai-agents-research-prompt/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/prompts/10-semantic-modularity-vs-ordinary-modularity-ai-agents-research-prompt.md"
+    },
+    {
+      "id": "11-semantic-compilation-weaker-host-languages-research-prompt",
+      "title": "11 semantic compilation weaker host languages research prompt",
+      "artifactType": "research-document",
+      "url": "/research/11-semantic-compilation-weaker-host-languages-research-prompt/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/prompts/11-semantic-compilation-weaker-host-languages-research-prompt.md"
+    },
+    {
+      "id": "12-standard-semantic-agent-protocol-research-prompt",
+      "title": "12 standard semantic agent protocol research prompt",
+      "artifactType": "research-document",
+      "url": "/research/12-standard-semantic-agent-protocol-research-prompt/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/prompts/12-standard-semantic-agent-protocol-research-prompt.md"
     },
     {
       "id": "2026-07-22-input-documents-import-inventory",
@@ -18,12 +122,36 @@
       "sourcePath": "docs/repository/imports/2026-07-22-input-documents-import/INVENTORY.md"
     },
     {
-      "id": "agent-operating-instructions",
-      "title": "Agent Operating Instructions",
+      "id": "agent-research-script-minimal-browser-abi-for-strongly-typed-webassembly-applications",
+      "title": "Agent Research Script: Minimal Browser ABI for Strongly Typed WebAssembly Applications",
       "artifactType": "research-document",
-      "url": "/research/agent-operating-instructions/",
+      "url": "/research/agent-research-script-minimal-browser-abi-for-strongly-typed-webassembly-applications/",
       "researchArea": "General Research",
-      "sourcePath": "AGENTS.md"
+      "sourcePath": "research/state-constrained-architecture/prompts/minimal-browser-abi-research-prompt.md"
+    },
+    {
+      "id": "ai-code-semantic-risk-assessment",
+      "title": "ai code semantic risk assessment",
+      "artifactType": "research-document",
+      "url": "/research/ai-code-semantic-risk-assessment/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/working-notes/ai-code-semantic-risk-assessment.md"
+    },
+    {
+      "id": "ai-engineering-architecture-records",
+      "title": "AI Engineering architecture records",
+      "artifactType": "research-document",
+      "url": "/research/ai-engineering-architecture-records/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/architecture/README.md"
+    },
+    {
+      "id": "ai-engineering-architecture",
+      "title": "AI Engineering architecture",
+      "artifactType": "research-document",
+      "url": "/research/ai-engineering-architecture/",
+      "researchArea": "General Research",
+      "sourcePath": "context/ARCHITECTURE.md"
     },
     {
       "id": "ai-engineering-course-constitution",
@@ -34,12 +162,60 @@
       "sourcePath": "content/projects/ai-engineering-course/governance/course-constitution.md"
     },
     {
+      "id": "ai-engineering-current-state",
+      "title": "AI Engineering current state",
+      "artifactType": "research-document",
+      "url": "/research/ai-engineering-current-state/",
+      "researchArea": "General Research",
+      "sourcePath": "context/CURRENT-STATE.md"
+    },
+    {
+      "id": "ai-engineering-decision-navigation",
+      "title": "AI Engineering decision navigation",
+      "artifactType": "research-document",
+      "url": "/research/ai-engineering-decision-navigation/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/decisions/README.md"
+    },
+    {
+      "id": "ai-engineering-decisions",
+      "title": "AI Engineering decisions",
+      "artifactType": "research-document",
+      "url": "/research/ai-engineering-decisions/",
+      "researchArea": "General Research",
+      "sourcePath": "context/DECISIONS.md"
+    },
+    {
       "id": "ai-engineering-handbook",
       "title": "AI Engineering Handbook",
       "artifactType": "research-document",
       "url": "/research/ai-engineering-handbook/",
       "researchArea": "General Research",
       "sourcePath": "content/disciplines/ai-engineering/handbook/agent-architecture-and-coordination.md"
+    },
+    {
+      "id": "ai-engineering-handoff",
+      "title": "AI Engineering handoff",
+      "artifactType": "research-document",
+      "url": "/research/ai-engineering-handoff/",
+      "researchArea": "General Research",
+      "sourcePath": "HANDOFF.md"
+    },
+    {
+      "id": "ai-engineering-known-risks",
+      "title": "AI Engineering known risks",
+      "artifactType": "research-document",
+      "url": "/research/ai-engineering-known-risks/",
+      "researchArea": "General Research",
+      "sourcePath": "context/KNOWN-RISKS.md"
+    },
+    {
+      "id": "ai-engineering-research-frontier",
+      "title": "AI Engineering research frontier",
+      "artifactType": "research-document",
+      "url": "/research/ai-engineering-research-frontier/",
+      "researchArea": "General Research",
+      "sourcePath": "research/frontier/README.md"
     },
     {
       "id": "ai-engineering-research-program",
@@ -50,12 +226,100 @@
       "sourcePath": "content/disciplines/ai-engineering/research-program.md"
     },
     {
+      "id": "ai-engineering-research-queue",
+      "title": "AI Engineering research queue",
+      "artifactType": "research-document",
+      "url": "/research/ai-engineering-research-queue/",
+      "researchArea": "General Research",
+      "sourcePath": "context/RESEARCH-QUEUE.md"
+    },
+    {
       "id": "ai-knowledge-gap-analysis-document-frontier",
       "title": "AI Knowledge Gap Analysis — Document Frontier",
       "artifactType": "research-document",
       "url": "/research/ai-knowledge-gap-analysis-document-frontier/",
       "researchArea": "General Research",
       "sourcePath": "research/frontier/document-frontiers/AI-Knowledge-Gap-Analysis-frontier.md"
+    },
+    {
+      "id": "ai-research-mission-03-deterministic-environments-vs-model-intelligence",
+      "title": "AI Research Mission 03 — Deterministic Environments vs Model Intelligence",
+      "artifactType": "research-document",
+      "url": "/research/ai-research-mission-03-deterministic-environments-vs-model-intelligence/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/reports/03-deterministic-environment-vs-model-intelligence-research-report.md"
+    },
+    {
+      "id": "ai-research-mission-04-obligations-as-agent-work-queues",
+      "title": "AI Research Mission 04 — Obligations as Agent Work Queues",
+      "artifactType": "research-document",
+      "url": "/research/ai-research-mission-04-obligations-as-agent-work-queues/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/reports/04-obligations-as-agent-work-queues-research-report.md"
+    },
+    {
+      "id": "ai-research-mission-05-epistemic-state-evidence-and-agent-truth-control",
+      "title": "AI Research Mission 05 — Epistemic State, Evidence, and Agent Truth Control",
+      "artifactType": "research-document",
+      "url": "/research/ai-research-mission-05-epistemic-state-evidence-and-agent-truth-control/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/reports/05-epistemic-state-evidence-agent-truth-control-research-report.md"
+    },
+    {
+      "id": "ai-research-mission-06-outcome-unknown-effect-uncertainty-and-safe-agent-action",
+      "title": "AI Research Mission 06 — Outcome Unknown, Effect Uncertainty, and Safe Agent Action",
+      "artifactType": "research-document",
+      "url": "/research/ai-research-mission-06-outcome-unknown-effect-uncertainty-and-safe-agent-action/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/reports/06-outcome-unknown-external-effects-agent-safety-research-report.md"
+    },
+    {
+      "id": "ai-research-mission-07-longitudinal-semantic-drift-in-ai-maintained-software",
+      "title": "AI Research Mission 07 — Longitudinal Semantic Drift in AI-Maintained Software",
+      "artifactType": "research-document",
+      "url": "/research/ai-research-mission-07-longitudinal-semantic-drift-in-ai-maintained-software/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/reports/07-longitudinal-semantic-drift-ai-maintained-software-research-report.md"
+    },
+    {
+      "id": "ai-research-mission-08-semantic-compilation-and-specification-drift",
+      "title": "AI Research Mission 08 — Semantic Compilation and Specification Drift",
+      "artifactType": "research-document",
+      "url": "/research/ai-research-mission-08-semantic-compilation-and-specification-drift/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/reports/08-semantic-compilation-specification-drift-research-report.md"
+    },
+    {
+      "id": "ai-research-mission-09-probabilistic-vs-deterministic-responsibility-boundaries",
+      "title": "AI Research Mission 09 — Probabilistic vs Deterministic Responsibility Boundaries",
+      "artifactType": "research-document",
+      "url": "/research/ai-research-mission-09-probabilistic-vs-deterministic-responsibility-boundaries/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/reports/09-probabilistic-vs-deterministic-responsibility-boundaries-research-report.md"
+    },
+    {
+      "id": "ai-research-mission-10-semantic-modularity-vs-ordinary-modularity-for-ai-agents",
+      "title": "AI Research Mission 10 — Semantic Modularity vs Ordinary Modularity for AI Agents",
+      "artifactType": "research-document",
+      "url": "/research/ai-research-mission-10-semantic-modularity-vs-ordinary-modularity-for-ai-agents/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/reports/10-semantic-modularity-vs-ordinary-modularity-ai-agents-research-report.md"
+    },
+    {
+      "id": "ai-research-mission-11-can-semantic-compilation-compensate-for-weaker-host-languages",
+      "title": "AI Research Mission 11 — Can Semantic Compilation Compensate for Weaker Host Languages?",
+      "artifactType": "research-document",
+      "url": "/research/ai-research-mission-11-can-semantic-compilation-compensate-for-weaker-host-languages/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/reports/11-semantic-compilation-weaker-host-languages-research-report.md"
+    },
+    {
+      "id": "ai-research-mission-12-a-standard-semantic-protocol-for-ai-agents",
+      "title": "AI Research Mission 12 — A Standard Semantic Protocol for AI Agents",
+      "artifactType": "research-document",
+      "url": "/research/ai-research-mission-12-a-standard-semantic-protocol-for-ai-agents/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/reports/12-standard-semantic-agent-protocol-research-report.md"
     },
     {
       "id": "ai-research-mission-execution-decision",
@@ -122,6 +386,22 @@
       "sourcePath": "docs/mobile/ios/setup/apple-shortcuts-setup.md"
     },
     {
+      "id": "artifact-lifecycle-protocol",
+      "title": "Artifact Lifecycle Protocol",
+      "artifactType": "research-document",
+      "url": "/research/artifact-lifecycle-protocol/",
+      "researchArea": "General Research",
+      "sourcePath": "framework/protocols/ARTIFACT-LIFECYCLE.md"
+    },
+    {
+      "id": "artifact-tier-standard",
+      "title": "Artifact Tier Standard",
+      "artifactType": "research-document",
+      "url": "/research/artifact-tier-standard/",
+      "researchArea": "General Research",
+      "sourcePath": "framework/standards/ARTIFACT-TIERS.md"
+    },
+    {
       "id": "autonomous-engineering-solution-agent",
       "title": "Autonomous Engineering Solution Agent",
       "artifactType": "research-document",
@@ -162,6 +442,14 @@
       "sourcePath": "CHANGELOG.md"
     },
     {
+      "id": "confidence-standard",
+      "title": "Confidence Standard",
+      "artifactType": "research-document",
+      "url": "/research/confidence-standard/",
+      "researchArea": "General Research",
+      "sourcePath": "framework/standards/CONFIDENCE.md"
+    },
+    {
       "id": "course-roadmap",
       "title": "Course Roadmap",
       "artifactType": "research-document",
@@ -178,12 +466,36 @@
       "sourcePath": "current-state.md"
     },
     {
+      "id": "deep-research-addendum-rework-economics-without-explicit-semantic-constraints",
+      "title": "Deep Research Addendum: Rework Economics Without Explicit Semantic Constraints",
+      "artifactType": "research-document",
+      "url": "/research/deep-research-addendum-rework-economics-without-explicit-semantic-constraints/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/reports/state-modularity-rework-economics-research-addendum-2026-08-14.md"
+    },
+    {
+      "id": "dependency-minimal-browser-kernel-architecture-policy",
+      "title": "Dependency-Minimal Browser Kernel Architecture Policy",
+      "artifactType": "research-document",
+      "url": "/research/dependency-minimal-browser-kernel-architecture-policy/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/architecture/semantic-control/dependency-minimal-browser-kernel-architecture-policy.md"
+    },
+    {
       "id": "DF-2026-0001",
       "title": "Minimum Sufficient Agent Evaluation",
       "artifactType": "decision-framework",
       "url": "/research/df-2026-0001-minimum-sufficient-agent-evaluation/",
       "researchArea": "General Research",
       "sourcePath": "research/evaluation/08-decision-framework.md"
+    },
+    {
+      "id": "DF-ZAJWA-2026-A001",
+      "title": "Zero-Authoritative-JavaScript Web Architecture Specification",
+      "artifactType": "decision-framework",
+      "url": "/research/df-zajwa-2026-a001-zero-authoritative-javascript-web-architecture-specification/",
+      "researchArea": "state-constrained-web-architecture",
+      "sourcePath": "docs/architecture/semantic-control/zero-authoritative-javascript-web-architecture-spec-v0.1.md"
     },
     {
       "id": "EC-000",
@@ -250,12 +562,100 @@
       "sourcePath": "docs/repository/2026-07-28-evaluation-roadmap-execution.md"
     },
     {
+      "id": "evidence-policy",
+      "title": "Evidence Policy",
+      "artifactType": "research-document",
+      "url": "/research/evidence-policy/",
+      "researchArea": "General Research",
+      "sourcePath": "framework/policies/EVIDENCE-POLICY.md"
+    },
+    {
+      "id": "experiment-plan",
+      "title": "experiment plan",
+      "artifactType": "research-document",
+      "url": "/research/experiment-plan/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/experiments/semantic-evolution-cascade/experiment-plan.md"
+    },
+    {
+      "id": "external-work-system-adapter-contract-1-0",
+      "title": "External Work-System Adapter Contract 1.0",
+      "artifactType": "research-document",
+      "url": "/research/external-work-system-adapter-contract-1-0/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/work-adapter-contract.md"
+    },
+    {
       "id": "generated-website",
       "title": "Generated Website",
       "artifactType": "research-document",
       "url": "/research/generated-website/",
       "researchArea": "General Research",
       "sourcePath": "docs/repository/bootstrap-website-placeholder.md"
+    },
+    {
+      "id": "GV-AGENT-001",
+      "title": "Agent Operating Manual",
+      "artifactType": "research-document",
+      "url": "/research/gv-agent-001-agent-operating-manual/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/00-governance/Agent-Operating-Manual.md"
+    },
+    {
+      "id": "GV-DEC-001",
+      "title": "Governance Decision Log",
+      "artifactType": "research-document",
+      "url": "/research/gv-dec-001-governance-decision-log/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/00-governance/Governance-Decision-Log.md"
+    },
+    {
+      "id": "GV-ENG-001",
+      "title": "Engineering Standards",
+      "artifactType": "research-document",
+      "url": "/research/gv-eng-001-engineering-standards/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/00-governance/Engineering-Standards.md"
+    },
+    {
+      "id": "GV-INDEX-001",
+      "title": "Governance Index",
+      "artifactType": "research-document",
+      "url": "/research/gv-index-001-governance-index/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/00-governance/README.md"
+    },
+    {
+      "id": "GV-REP-001",
+      "title": "Research Execution Package Specification",
+      "artifactType": "research-document",
+      "url": "/research/gv-rep-001-research-execution-package-specification/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/00-governance/Research-Execution-Package-Specification.md"
+    },
+    {
+      "id": "GV-ROS-001",
+      "title": "AI Repository Operating System",
+      "artifactType": "research-document",
+      "url": "/research/gv-ros-001-ai-repository-operating-system/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/00-governance/AI-Repository-Operating-System.md"
+    },
+    {
+      "id": "GV-START-001",
+      "title": "Agent Startup Guide",
+      "artifactType": "research-document",
+      "url": "/research/gv-start-001-agent-startup-guide/",
+      "researchArea": "General Research",
+      "sourcePath": "AGENTS.md"
+    },
+    {
+      "id": "identifier-standard",
+      "title": "Identifier Standard",
+      "artifactType": "research-document",
+      "url": "/research/identifier-standard/",
+      "researchArea": "General Research",
+      "sourcePath": "framework/standards/IDENTIFIERS.md"
     },
     {
       "id": "import-decisions",
@@ -338,12 +738,36 @@
       "sourcePath": "knowledge-platform/Migration-Plan.md"
     },
     {
+      "id": "minimal-typescript-browser-kernel-responsibility-specification",
+      "title": "Minimal TypeScript Browser Kernel — Responsibility Specification",
+      "artifactType": "research-document",
+      "url": "/research/minimal-typescript-browser-kernel-responsibility-specification/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/architecture/semantic-control/minimal-typescript-browser-kernel-responsibility-spec.md"
+    },
+    {
       "id": "mobile-research-cycle",
       "title": "Mobile Research Cycle",
       "artifactType": "research-document",
       "url": "/research/mobile-research-cycle/",
       "researchArea": "General Research",
       "sourcePath": "docs/mobile/ios/workflows/mobile-research-cycle.md"
+    },
+    {
+      "id": "multi-state-data-and-type-explosion",
+      "title": "multi state data and type explosion",
+      "artifactType": "research-document",
+      "url": "/research/multi-state-data-and-type-explosion/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/working-notes/multi-state-data-and-type-explosion.md"
+    },
+    {
+      "id": "naming-and-identifier-standard",
+      "title": "Naming and Identifier Standard",
+      "artifactType": "research-document",
+      "url": "/research/naming-and-identifier-standard/",
+      "researchArea": "General Research",
+      "sourcePath": "framework/standards/NAMING-STANDARD.md"
     },
     {
       "id": "next-agent-start-here",
@@ -362,6 +786,30 @@
       "sourcePath": "docs/repository/2026-07-30-non-human-experimental-comparative-review.md"
     },
     {
+      "id": "output-policy",
+      "title": "Output Policy",
+      "artifactType": "research-document",
+      "url": "/research/output-policy/",
+      "researchArea": "General Research",
+      "sourcePath": "framework/policies/OUTPUT-POLICY.md"
+    },
+    {
+      "id": "PILOT-MEASUREMENT-ai-engineering",
+      "title": "AI Engineering ROS Pilot Measurement Plan",
+      "artifactType": "research-document",
+      "url": "/research/pilot-measurement-ai-engineering-ai-engineering-ros-pilot-measurement-plan/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/PILOT-MEASUREMENT-PLAN.md"
+    },
+    {
+      "id": "PROJECT-CHARTER-ai-engineering",
+      "title": "AI Engineering Project Charter",
+      "artifactType": "research-document",
+      "url": "/research/project-charter-ai-engineering-ai-engineering-project-charter/",
+      "researchArea": "General Research",
+      "sourcePath": "PROJECT-CHARTER.md"
+    },
+    {
       "id": "repository-architecture",
       "title": "Repository Architecture",
       "artifactType": "research-document",
@@ -378,12 +826,28 @@
       "sourcePath": "ai-prompts/agents/Repository-Ready-Research-Agent.md"
     },
     {
+      "id": "repository-taxonomy",
+      "title": "Repository Taxonomy",
+      "artifactType": "research-document",
+      "url": "/research/repository-taxonomy/",
+      "researchArea": "General Research",
+      "sourcePath": "framework/standards/TAXONOMY.md"
+    },
+    {
       "id": "research-execution-package-rep-specification",
       "title": "Research Execution Package (REP) Specification",
       "artifactType": "research-document",
       "url": "/research/research-execution-package-rep-specification/",
       "researchArea": "General Research",
       "sourcePath": "ai-prompts/Research-Execution-Package-Specification-v2.md"
+    },
+    {
+      "id": "research-execution-package-specification",
+      "title": "Research Execution Package Specification",
+      "artifactType": "research-document",
+      "url": "/research/research-execution-package-specification/",
+      "researchArea": "General Research",
+      "sourcePath": "framework/REP-SPECIFICATION.md"
     },
     {
       "id": "research-frontier-analysis-decision",
@@ -408,6 +872,22 @@
       "url": "/research/research-package-001/",
       "researchArea": "General Research",
       "sourcePath": "content/projects/ai-engineering-course/chapter-01/research/research-package-001-brief.md"
+    },
+    {
+      "id": "research-policy",
+      "title": "Research Policy",
+      "artifactType": "research-document",
+      "url": "/research/research-policy/",
+      "researchArea": "General Research",
+      "sourcePath": "framework/policies/RESEARCH-POLICY.md"
+    },
+    {
+      "id": "research-report-state-constrained-modularity-context-reduction-and-agent-execution-cost",
+      "title": "Research Report — State-Constrained Modularity, Context Reduction, and Agent Execution Cost",
+      "artifactType": "research-document",
+      "url": "/research/research-report-state-constrained-modularity-context-reduction-and-agent-execution-cost/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/reports/state-modularity-agent-cost-research-report-2026-08-14.md"
     },
     {
       "id": "RFA-2026-001",
@@ -536,6 +1016,22 @@
       "url": "/research/root-case-collision-canonicalization/",
       "researchArea": "General Research",
       "sourcePath": "docs/repository/2026-07-28-case-collision-canonicalization.md"
+    },
+    {
+      "id": "ros-agent-bootstrap",
+      "title": "ROS Agent Bootstrap",
+      "artifactType": "research-document",
+      "url": "/research/ros-agent-bootstrap/",
+      "researchArea": "General Research",
+      "sourcePath": "BOOTSTRAP.md"
+    },
+    {
+      "id": "ros-work-protocol-1-0",
+      "title": "ROS Work Protocol 1.0",
+      "artifactType": "research-document",
+      "url": "/research/ros-work-protocol-1-0/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/work-protocol.md"
     },
     {
       "id": "RP-2026-07-23-001",
@@ -754,6 +1250,14 @@
       "sourcePath": "research/analysis/non-human-experimental-lineage.md"
     },
     {
+      "id": "RP-AI-STATE-COST-2026-A002",
+      "title": "Economic and Inference-Cost Effects of State-Constrained AI-Maintained Software",
+      "artifactType": "research-package",
+      "url": "/research/rp-ai-state-cost-2026-a002-economic-and-inference-cost-effects-of-state-constrained-ai-maintained-software/",
+      "researchArea": "state-constrained-ai-software",
+      "sourcePath": "research/state-constrained-architecture/reports/RP-AI-STATE-COST-2026-A002.md"
+    },
+    {
       "id": "run-ai-ros-bootstrap-with-codex",
       "title": "Run AI-ROS Bootstrap with Codex",
       "artifactType": "research-document",
@@ -794,6 +1298,38 @@
       "sourcePath": "docs/mobile/ios/shortcuts/capture-research.md"
     },
     {
+      "id": "startup-pivot-resilience-benchmark-specification",
+      "title": "startup pivot resilience benchmark specification",
+      "artifactType": "research-document",
+      "url": "/research/startup-pivot-resilience-benchmark-specification/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/experiments/startup-pivot-resilience-benchmark-specification.md"
+    },
+    {
+      "id": "startup-pivot-resilience-scenario",
+      "title": "startup pivot resilience scenario",
+      "artifactType": "research-document",
+      "url": "/research/startup-pivot-resilience-scenario/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/experiments/startup-pivot-resilience-scenario.md"
+    },
+    {
+      "id": "state-constrained-architecture-continuation-02",
+      "title": "state constrained architecture continuation 02",
+      "artifactType": "research-document",
+      "url": "/research/state-constrained-architecture-continuation-02/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/working-notes/state-constrained-architecture-continuation-02.md"
+    },
+    {
+      "id": "state-constrained-architecture-continuation-03",
+      "title": "state constrained architecture continuation 03",
+      "artifactType": "research-document",
+      "url": "/research/state-constrained-architecture-continuation-03/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/working-notes/state-constrained-architecture-continuation-03.md"
+    },
+    {
       "id": "state-constrained-architecture-research-outline",
       "title": "state constrained architecture research outline",
       "artifactType": "research-document",
@@ -816,6 +1352,14 @@
       "url": "/research/state-constrained-language-comparison-research-report/",
       "researchArea": "General Research",
       "sourcePath": "research/state-constrained-architecture/reports/state-constrained-language-comparison-research-report.md"
+    },
+    {
+      "id": "state-constrained-semantic-closure-exhaustiveness",
+      "title": "state constrained semantic closure exhaustiveness",
+      "artifactType": "research-document",
+      "url": "/research/state-constrained-semantic-closure-exhaustiveness/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/working-notes/state-constrained-semantic-closure-exhaustiveness.md"
     },
     {
       "id": "state-machine-documents-organization-decisions",
@@ -842,6 +1386,46 @@
       "sourcePath": "research/state-constrained-architecture/working-notes/state-machine-research.md"
     },
     {
+      "id": "state-modularity-agent-context-token-cost-research-prompt",
+      "title": "state modularity agent context token cost research prompt",
+      "artifactType": "research-document",
+      "url": "/research/state-modularity-agent-context-token-cost-research-prompt/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/prompts/state-modularity-agent-context-token-cost-research-prompt.md"
+    },
+    {
+      "id": "state-modularity-literature-review-2026-08-14",
+      "title": "state modularity literature review 2026 08 14",
+      "artifactType": "research-document",
+      "url": "/research/state-modularity-literature-review-2026-08-14/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/reports/state-modularity-literature-review-2026-08-14.md"
+    },
+    {
+      "id": "state-systems-learning-recommendations",
+      "title": "state systems learning recommendations",
+      "artifactType": "research-document",
+      "url": "/research/state-systems-learning-recommendations/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/references/state-systems-learning-recommendations.md"
+    },
+    {
+      "id": "supersession-and-amendment-protocol",
+      "title": "Supersession and Amendment Protocol",
+      "artifactType": "research-document",
+      "url": "/research/supersession-and-amendment-protocol/",
+      "researchArea": "General Research",
+      "sourcePath": "framework/protocols/SUPERSESSION.md"
+    },
+    {
+      "id": "synthesis-of-ai-research-missions-01-12",
+      "title": "Synthesis of AI Research Missions 01–12",
+      "artifactType": "research-document",
+      "url": "/research/synthesis-of-ai-research-missions-01-12/",
+      "researchArea": "General Research",
+      "sourcePath": "research/state-constrained-architecture/synthesis/01-12-semantic-control-architecture-research-synthesis.md"
+    },
+    {
       "id": "tests",
       "title": "Tests",
       "artifactType": "research-document",
@@ -856,6 +1440,30 @@
       "url": "/research/the-research-relay-system/",
       "researchArea": "General Research",
       "sourcePath": "content/disciplines/ai-engineering/research-relay-system.md"
+    },
+    {
+      "id": "time-entry-system-ai-implementation-requirements",
+      "title": "Time Entry System — AI Implementation Requirements",
+      "artifactType": "research-document",
+      "url": "/research/time-entry-system-ai-implementation-requirements/",
+      "researchArea": "General Research",
+      "sourcePath": "content/projects/time-entry/requirements/time-entry-system-ai-requirements.md"
+    },
+    {
+      "id": "time-entry-system-large-view-architecture-v0-1",
+      "title": "Time Entry System — Large-View Architecture v0.1",
+      "artifactType": "research-document",
+      "url": "/research/time-entry-system-large-view-architecture-v0-1/",
+      "researchArea": "General Research",
+      "sourcePath": "content/projects/time-entry/architecture/time-entry-large-view-architecture-v0.1.md"
+    },
+    {
+      "id": "time-entry-system-state-model-v0-1",
+      "title": "Time Entry System — State Model v0.1",
+      "artifactType": "research-document",
+      "url": "/research/time-entry-system-state-model-v0-1/",
+      "researchArea": "General Research",
+      "sourcePath": "content/projects/time-entry/domain/time-entry-state-model-v0.1.md"
     },
     {
       "id": "time-entry",
@@ -908,13 +1516,46 @@
   ],
   "edges": [],
   "backlinks": {
+    "01-existing-work-prior-art-novelty-research-prompt": [],
     "01-existing-work-prior-art-novelty-research-report": [],
+    "02-capability-action-space-reduction-research-prompt": [],
+    "02-capability-action-space-reduction-research-report": [],
+    "03-deterministic-environment-vs-model-intelligence-research-prompt": [],
+    "04-obligations-as-agent-work-queues-research-prompt": [],
+    "05-epistemic-state-evidence-agent-truth-control-research-prompt": [],
+    "06-outcome-unknown-external-effects-agent-safety-research-prompt": [],
+    "07-longitudinal-semantic-drift-ai-maintained-software-research-prompt": [],
+    "08-semantic-compilation-specification-drift-research-prompt": [],
+    "09-probabilistic-vs-deterministic-responsibility-boundaries-research-prompt": [],
+    "10-semantic-modularity-vs-ordinary-modularity-ai-agents-research-prompt": [],
+    "11-semantic-compilation-weaker-host-languages-research-prompt": [],
+    "12-standard-semantic-agent-protocol-research-prompt": [],
     "2026-07-22-input-documents-import-inventory": [],
-    "agent-operating-instructions": [],
+    "agent-research-script-minimal-browser-abi-for-strongly-typed-webassembly-applications": [],
+    "ai-code-semantic-risk-assessment": [],
+    "ai-engineering-architecture-records": [],
+    "ai-engineering-architecture": [],
     "ai-engineering-course-constitution": [],
+    "ai-engineering-current-state": [],
+    "ai-engineering-decision-navigation": [],
+    "ai-engineering-decisions": [],
     "ai-engineering-handbook": [],
+    "ai-engineering-handoff": [],
+    "ai-engineering-known-risks": [],
+    "ai-engineering-research-frontier": [],
     "ai-engineering-research-program": [],
+    "ai-engineering-research-queue": [],
     "ai-knowledge-gap-analysis-document-frontier": [],
+    "ai-research-mission-03-deterministic-environments-vs-model-intelligence": [],
+    "ai-research-mission-04-obligations-as-agent-work-queues": [],
+    "ai-research-mission-05-epistemic-state-evidence-and-agent-truth-control": [],
+    "ai-research-mission-06-outcome-unknown-effect-uncertainty-and-safe-agent-action": [],
+    "ai-research-mission-07-longitudinal-semantic-drift-in-ai-maintained-software": [],
+    "ai-research-mission-08-semantic-compilation-and-specification-drift": [],
+    "ai-research-mission-09-probabilistic-vs-deterministic-responsibility-boundaries": [],
+    "ai-research-mission-10-semantic-modularity-vs-ordinary-modularity-for-ai-agents": [],
+    "ai-research-mission-11-can-semantic-compilation-compensate-for-weaker-host-languages": [],
+    "ai-research-mission-12-a-standard-semantic-protocol-for-ai-agents": [],
     "ai-research-mission-execution-decision": [],
     "ai-research-operating-system": [],
     "ai-research-roadmap-document-frontier": [],
@@ -923,14 +1564,20 @@
     "ai-ros-evaluation-tools": [],
     "ai-state-of-the-field-document-frontier": [],
     "apple-shortcuts-setup": [],
+    "artifact-lifecycle-protocol": [],
+    "artifact-tier-standard": [],
     "autonomous-engineering-solution-agent": [],
     "autonomous-research-agent-repo-archi-and-knowledge": [],
     "bootstrap-manifest": [],
     "build-pipeline": [],
     "changelog": [],
+    "confidence-standard": [],
     "course-roadmap": [],
     "current-state": [],
+    "deep-research-addendum-rework-economics-without-explicit-semantic-constraints": [],
+    "dependency-minimal-browser-kernel-architecture-policy": [],
     "DF-2026-0001": [],
+    "DF-ZAJWA-2026-A001": [],
     "EC-000": [],
     "evaluation-architecture-and-threat-model-document-frontier": [],
     "evaluation-charter-and-specification-document-frontier": [],
@@ -939,7 +1586,18 @@
     "evaluation-research-journal": [],
     "evaluation-results-and-cycles-document-frontier": [],
     "evaluation-roadmap-execution-decision": [],
+    "evidence-policy": [],
+    "experiment-plan": [],
+    "external-work-system-adapter-contract-1-0": [],
     "generated-website": [],
+    "GV-AGENT-001": [],
+    "GV-DEC-001": [],
+    "GV-ENG-001": [],
+    "GV-INDEX-001": [],
+    "GV-REP-001": [],
+    "GV-ROS-001": [],
+    "GV-START-001": [],
+    "identifier-standard": [],
     "import-decisions": [],
     "knowledge-platform-deliverables": [],
     "knowledge-platform-document-frontier": [],
@@ -950,15 +1608,25 @@
     "lesson-1-working-draft": [],
     "metadata-standard": [],
     "migration-plan": [],
+    "minimal-typescript-browser-kernel-responsibility-specification": [],
     "mobile-research-cycle": [],
+    "multi-state-data-and-type-explosion": [],
+    "naming-and-identifier-standard": [],
     "next-agent-start-here": [],
     "non-human-experimental-comparative-review-decision": [],
+    "output-policy": [],
+    "PILOT-MEASUREMENT-ai-engineering": [],
+    "PROJECT-CHARTER-ai-engineering": [],
     "repository-architecture": [],
     "repository-ready-research-agent": [],
+    "repository-taxonomy": [],
     "research-execution-package-rep-specification": [],
+    "research-execution-package-specification": [],
     "research-frontier-analysis-decision": [],
     "research-integrity-validation-decision": [],
     "research-package-001": [],
+    "research-policy": [],
+    "research-report-state-constrained-modularity-context-reduction-and-agent-execution-cost": [],
     "RFA-2026-001": [],
     "RFI-2026-001": [],
     "RFI-2026-002": [],
@@ -975,6 +1643,8 @@
     "RH-2026-001": [],
     "roadmap": [],
     "root-case-collision-canonicalization": [],
+    "ros-agent-bootstrap": [],
+    "ros-work-protocol-1-0": [],
     "RP-2026-07-23-001": [],
     "RP-2026-07-23-002": [],
     "RP-2026-07-23-003": [],
@@ -1002,19 +1672,33 @@
     "RP-2026-07-30-NHE-FINDINGS": [],
     "RP-2026-07-30-NHE-INVENTORY": [],
     "RP-2026-07-30-NHE-LINEAGE": [],
+    "RP-AI-STATE-COST-2026-A002": [],
     "run-ai-ros-bootstrap-with-codex": [],
     "search-architecture": [],
     "semantic-control-architecture": [],
     "shortcut-specification-ai-ros-launcher": [],
     "shortcut-specification-capture-research": [],
+    "startup-pivot-resilience-benchmark-specification": [],
+    "startup-pivot-resilience-scenario": [],
+    "state-constrained-architecture-continuation-02": [],
+    "state-constrained-architecture-continuation-03": [],
     "state-constrained-architecture-research-outline": [],
     "state-constrained-architecture-research": [],
     "state-constrained-language-comparison-research-report": [],
+    "state-constrained-semantic-closure-exhaustiveness": [],
     "state-machine-documents-organization-decisions": [],
     "state-machine-documents-organization-validation": [],
     "state-machine-research": [],
+    "state-modularity-agent-context-token-cost-research-prompt": [],
+    "state-modularity-literature-review-2026-08-14": [],
+    "state-systems-learning-recommendations": [],
+    "supersession-and-amendment-protocol": [],
+    "synthesis-of-ai-research-missions-01-12": [],
     "tests": [],
     "the-research-relay-system": [],
+    "time-entry-system-ai-implementation-requirements": [],
+    "time-entry-system-large-view-architecture-v0-1": [],
+    "time-entry-system-state-model-v0-1": [],
     "time-entry": [],
     "tools": [],
     "validation-report": [],

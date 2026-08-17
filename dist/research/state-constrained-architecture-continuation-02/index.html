@@ -1,0 +1,1302 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>state constrained architecture continuation 02 | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">state constrained architecture continuation 02</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/working-notes/state-constrained-architecture-continuation-02.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#state-constrained-architecture-continuation-notes">State-Constrained Architecture — Continuation Notes</a></li><li><a href="#part-1-multi-object-state">PART 1 — Multi-Object State</a></li><li><a href="#problem">Problem</a></li><li><a href="#reality-can-create-unwanted-state-combinations">Reality Can Create Unwanted State Combinations</a></li><li><a href="#local-invariants-vs-cross-object-policy">Local Invariants vs Cross-Object Policy</a></li><li><a href="#capabilities-and-obligations">Capabilities and Obligations</a></li><li><a href="#potential-new-primitive-obligation">Potential New Primitive: Obligation</a></li><li><a href="#version-bound-multi-object-capabilities">Version-Bound Multi-Object Capabilities</a></li><li><a href="#optimistic-semantic-concurrency">Optimistic Semantic Concurrency</a></li><li><a href="#cross-object-policy-should-be-declarative">Cross-Object Policy Should Be Declarative</a></li><li><a href="#three-level-multi-object-architecture">Three-Level Multi-Object Architecture</a></li><li><a href="#multi-object-design-rule">Multi-Object Design Rule</a></li><li><a href="#agent-facing-consequence">Agent-Facing Consequence</a></li><li><a href="#part-2-distributed-concurrency-and-unknown-effects">PART 2 — Distributed Concurrency and Unknown Effects</a></li><li><a href="#problem">Problem</a></li><li><a href="#version-bound-capability-works-for-stale-domain-state">Version-Bound Capability Works for Stale Domain State</a></li><li><a href="#domain-versioning-alone-is-not-enough">Domain Versioning Alone Is Not Enough</a></li><li><a href="#explicit-effect-execution-state">Explicit Effect Execution State</a></li><li><a href="#three-interacting-state-dimensions">Three Interacting State Dimensions</a></li><li><a href="#concurrent-legal-actions-can-conflict">Concurrent Legal Actions Can Conflict</a></li><li><a href="#coordination-aggregates">Coordination Aggregates</a></li><li><a href="#coordination-principle">Coordination Principle</a></li><li><a href="#two-stage-external-effects">Two-Stage External Effects</a></li><li><a href="#idempotency">Idempotency</a></li><li><a href="#concurrency-architecture">Concurrency Architecture</a></li><li><a href="#freshness-and-partial-observability">Freshness and Partial Observability</a></li><li><a href="#four-concurrency-defenses">Four Concurrency Defenses</a></li><li><a href="#updated-working-model">Updated Working Model</a></li><li><a href="#part-3-policy-evolution-and-versioning">PART 3 — Policy Evolution and Versioning</a></li><li><a href="#problem">Problem</a></li><li><a href="#policy-version">Policy Version</a></li><li><a href="#capabilities-must-bind-policy-version">Capabilities Must Bind Policy Version</a></li><li><a href="#policy-effective-periods">Policy Effective Periods</a></li><li><a href="#historical-state-must-not-be-silently-reinterpreted">Historical State Must Not Be Silently Reinterpreted</a></li><li><a href="#policy-changes-are-themselves-state-transitions">Policy Changes Are Themselves State Transitions</a></li><li><a href="#three-policy-change-classes">Three Policy Change Classes</a></li><li><a href="#policy-dependencies">Policy Dependencies</a></li><li><a href="#policy-dependency-graph">Policy Dependency Graph</a></li><li><a href="#commercial-importance">Commercial Importance</a></li><li><a href="#policy-should-be-declarative-and-versioned">Policy Should Be Declarative and Versioned</a></li><li><a href="#policy-diff">Policy Diff</a></li><li><a href="#policy-branching">Policy Branching</a></li><li><a href="#core-policy-model">Core Policy Model</a></li><li><a href="#transition-audit-record">Transition Audit Record</a></li><li><a href="#strong-policy-principle">Strong Policy Principle</a></li><li><a href="#example">Example</a></li><li><a href="#next-open-problem">Next Open Problem</a></li><li><a href="#updated-architectural-summary">UPDATED ARCHITECTURAL SUMMARY</a></li><li><a href="#current-high-level-flow">CURRENT HIGH-LEVEL FLOW</a></li><li><a href="#current-working-principles">CURRENT WORKING PRINCIPLES</a></li> </ol> </aside> <section class="document-body"><h1 id="state-constrained-architecture--continuation-notes">State-Constrained Architecture — Continuation Notes</h1>
+<p>This file continues the prior document:</p>
+<pre><code>multi-state-data-and-type-explosion.md
+</code></pre>
+<p>It captures the subsequent exploration of:</p>
+<ul>
+<li>multi-object state</li>
+<li>cross-object policy</li>
+<li>obligations</li>
+<li>version-bound capabilities</li>
+<li>stale snapshots</li>
+<li>concurrent agents</li>
+<li>uncertain external effects</li>
+<li>coordination aggregates</li>
+<li>effect execution state</li>
+<li>freshness requirements</li>
+<li>policy evolution</li>
+<li>policy versioning</li>
+<li>policy snapshots</li>
+<li>reassessment obligations</li>
+<li>policy dependency graphs</li>
+</ul>
+<h1 id="part-1--multi-object-state">PART 1 — Multi-Object State</h1>
+<h2 id="problem">Problem</h2>
+<p>The next stress test considered multiple independently stateful objects:</p>
+<pre><code>Customer
+Order
+Payment
+Shipment
+</code></pre>
+<p>The key question was:</p>
+<pre><code>Can state-constrained architecture remain understandable when
+transitions in one object depend on the state of several others?
+</code></pre>
+<p>A raw combined state space grows quickly.</p>
+<p>Even a small example can produce hundreds of possible snapshots.</p>
+<p>The critical discovery was that cross-object relationships should not automatically be treated as impossible states.</p>
+<h2 id="reality-can-create-unwanted-state-combinations">Reality Can Create Unwanted State Combinations</h2>
+<p>Suppose:</p>
+<pre><code>Customer = Verified
+Order = Approved
+Payment = Captured
+Shipment = Ready
+</code></pre>
+<p>Then later:</p>
+<pre><code>Customer -> Blocked
+</code></pre>
+<p>The resulting combination:</p>
+<pre><code>Customer = Blocked
+Order = Approved
+</code></pre>
+<p>is not necessarily an impossible state.</p>
+<p>It may be an undesirable condition, but reality is allowed to produce it.</p>
+<p>The system must represent the condition accurately.</p>
+<p>The important rule is not:</p>
+<pre><code>"Blocked + Approved can never exist."
+</code></pre>
+<p>The important rule may instead be:</p>
+<pre><code>"A blocked customer cannot proceed to shipment."
+</code></pre>
+<p>This distinction is fundamental.</p>
+<h2 id="local-invariants-vs-cross-object-policy">Local Invariants vs Cross-Object Policy</h2>
+<p>A local aggregate invariant can often be structural.</p>
+<p>Example:</p>
+<pre><code>Payment = Refunded
+</code></pre>
+<p>may require:</p>
+<pre><code>a prior successful payment capture event
+</code></pre>
+<p>That belongs inside the Payment aggregate.</p>
+<p>By contrast, a cross-object rule such as:</p>
+<pre><code>CanShip requires:
+    Customer = Verified
+    Order = Approved
+    Payment = Captured
+    Shipment = Ready
+</code></pre>
+<p>is better understood as cross-object policy.</p>
+<p>Therefore:</p>
+<pre><code>Local invariants
+    constrain what an aggregate itself may represent.
+
+Cross-object policy
+    determines what actions are legal or required
+    based on combinations of independently authoritative states.
+</code></pre>
+<h2 id="capabilities-and-obligations">Capabilities and Obligations</h2>
+<p>The multi-object test exposed another important distinction.</p>
+<p>Cross-object policy may derive two different kinds of outcomes:</p>
+<pre><code>Capabilities
+    What MAY happen.
+
+Obligations
+    What MUST be resolved.
+</code></pre>
+<p>Example:</p>
+<p>Before customer blocking:</p>
+<pre><code>CanShip
+</code></pre>
+<p>After:</p>
+<pre><code>Customer = Blocked
+</code></pre>
+<p>the system may derive:</p>
+<pre><code>CanShip = absent
+</code></pre>
+<p>and also:</p>
+<pre><code>ResolveApprovedOrderForBlockedCustomer
+HoldFulfillment
+EvaluateRefund
+</code></pre>
+<p>These are not permissions.</p>
+<p>They are obligations.</p>
+<p>This suggests a broader architecture:</p>
+<pre><code>                LOCAL STATE MACHINES
+                       |
+         +-------------+-------------+
+         |             |             |
+      Customer       Order        Payment
+         |             |             |
+         +-------------+-------------+
+                       |
+                       v
+               CROSS-OBJECT POLICY
+                       |
+              +--------+--------+
+              |                 |
+              v                 v
+         Capabilities       Obligations
+              |                 |
+              v                 v
+          What MAY          What MUST
+          happen            be resolved
+</code></pre>
+<h2 id="potential-new-primitive-obligation">Potential New Primitive: Obligation</h2>
+<p>The multi-object test suggests that Obligation may deserve first-class treatment.</p>
+<p>Working definition:</p>
+<pre><code>Obligation = a required resolution or follow-up created by
+the current relationship among states, evidence, policy, or events.
+</code></pre>
+<p>Possible lifecycle:</p>
+<pre><code>Raised
+  ->
+Acknowledged
+  ->
+InProgress
+  ->
+Satisfied
+</code></pre>
+<p>or:</p>
+<pre><code>Waived
+Expired
+Escalated
+</code></pre>
+<p>This area still requires deeper exploration.</p>
+<h2 id="version-bound-multi-object-capabilities">Version-Bound Multi-Object Capabilities</h2>
+<p>Suppose a capability is derived from:</p>
+<pre><code>Order@17       = Approved
+Payment@8      = Captured
+Customer@42    = Verified
+Shipment@5     = Ready
+</code></pre>
+<p>Then CanShip should not be a timeless permission.</p>
+<p>It should be bound to the exact state snapshot:</p>
+<pre><code>CanShip {
+    OrderVersion = 17
+    PaymentVersion = 8
+    CustomerVersion = 42
+    ShipmentVersion = 5
+}
+</code></pre>
+<p>If the customer changes:</p>
+<pre><code>Customer@43 = Blocked
+</code></pre>
+<p>then:</p>
+<pre><code>CanShip based on Customer@42
+</code></pre>
+<p>is stale.</p>
+<p>At transition execution time:</p>
+<pre><code>Order      17 == 17  valid
+Payment     8 == 8   valid
+Customer   43 != 42  stale
+Shipment    5 == 5   valid
+</code></pre>
+<p>Result:</p>
+<pre><code>REJECTED
+Stale capability:
+Customer state changed.
+</code></pre>
+<p>This suggests a powerful interpretation:</p>
+<pre><code>A capability is proof that an operation was legal
+against a specific observed state snapshot.
+</code></pre>
+<p>It is not permanent authority.</p>
+<h2 id="optimistic-semantic-concurrency">Optimistic Semantic Concurrency</h2>
+<p>This avoids requiring an agent to hold locks while reasoning.</p>
+<p>The pattern becomes:</p>
+<pre><code>Observe versioned state snapshot
+    ->
+Derive capabilities
+    ->
+Agent reasons
+    ->
+Agent requests transition
+    ->
+Runtime revalidates versions
+    ->
+Execute or reject
+</code></pre>
+<p>This is optimistic concurrency applied to semantic permission.</p>
+<h2 id="cross-object-policy-should-be-declarative">Cross-Object Policy Should Be Declarative</h2>
+<p>A major danger is moving all complexity into one enormous function:</p>
+<pre><code>deriveCapabilities(customer, order, payment, shipment)
+</code></pre>
+<p>with thousands of conditionals.</p>
+<p>That would merely relocate the semantic mess.</p>
+<p>Instead, cross-object rules should ideally be independently declarative.</p>
+<p>Example:</p>
+<pre><code>capability CanShip
+
+depends on:
+    Order
+    Payment
+    Customer
+    Shipment
+
+requires:
+    Order.State = Approved
+    Payment.State = Captured
+    Customer.State = Verified
+    Shipment.State = Ready
+</code></pre>
+<p>Similarly:</p>
+<pre><code>obligation ResolveBlockedCustomerOrder
+
+when:
+    Customer.State = Blocked
+    Order.State = Approved
+
+resolution:
+    HoldFulfillment
+    OR CancelOrder
+    OR Escalate
+</code></pre>
+<p>Such rules become:</p>
+<ul>
+<li>testable</li>
+<li>versionable</li>
+<li>queryable</li>
+<li>explainable</li>
+<li>attributable</li>
+<li>machine-readable</li>
+<li>available to agents</li>
+</ul>
+<h2 id="three-level-multi-object-architecture">Three-Level Multi-Object Architecture</h2>
+<p>A promising model is:</p>
+<p>Level 1 — Aggregate State Machines
+Each object owns its own state and local invariants.</p>
+<p>Level 2 — Cross-Object Policy
+Declarative rules derive:
+capabilities
+obligations
+warnings</p>
+<p>Level 3 — Coordinators
+Long-running cross-object processes become their own stateful aggregates.</p>
+<p>Example coordinator:</p>
+<pre><code>BlockedCustomerResolution
+
+Detected
+    ->
+FulfillmentHoldRequested
+    ->
+FulfillmentHeld
+    ->
+RefundEvaluated
+    ->
+RefundRequired
+    OR
+NoRefundRequired
+    OR
+HumanReviewRequired
+    ->
+Resolved
+</code></pre>
+<p>Important principle:</p>
+<pre><code>Do not hide long-running multi-object behavior inside policy rules.
+</code></pre>
+<p>If coordination has a lifecycle, make the coordination itself stateful.</p>
+<h2 id="multi-object-design-rule">Multi-Object Design Rule</h2>
+<p>Working principle:</p>
+<pre><code>Do not combine independent objects into one giant state machine
+merely because their states affect one another.
+</code></pre>
+<p>Instead:</p>
+<pre><code>Keep authoritative state local.
+
+Derive cross-object capabilities and obligations
+from versioned snapshots.
+
+Promote long-running coordination to a state machine of its own.
+</code></pre>
+<h2 id="agent-facing-consequence">Agent-Facing Consequence</h2>
+<p>An agent should not need to understand every combination in the raw state space.</p>
+<p>It needs:</p>
+<pre><code>current verified state
+legal frontier
+outstanding obligations
+</code></pre>
+<p>Example:</p>
+<pre><code>Current facts:
+
+    Order: Approved
+    Payment: Captured
+    Customer: Blocked
+    Shipment: Ready
+
+Available transitions:
+
+    RefundPayment
+    HoldShipment
+
+Outstanding obligations:
+
+    ResolveBlockedCustomerOrder
+
+Unavailable:
+
+    Ship
+
+Reason:
+
+    Customer is Blocked.
+</code></pre>
+<p>This collapses combinatorial state into an actionable frontier.</p>
+<p>Working insight:</p>
+<pre><code>Agents do not need the complete state space.
+
+They need the current verified state,
+the legal frontier,
+and outstanding obligations.
+</code></pre>
+<h1 id="part-2--distributed-concurrency-and-unknown-effects">PART 2 — Distributed Concurrency and Unknown Effects</h1>
+<h2 id="problem-1">Problem</h2>
+<p>The next stress test introduced:</p>
+<ul>
+<li>stale reads</li>
+<li>concurrent agents</li>
+<li>external side effects</li>
+<li>uncertain external outcomes</li>
+</ul>
+<p>Scenario:</p>
+<pre><code>Customer = Verified @42
+Order = Approved @17
+Payment = Captured @8
+Shipment = Ready @5
+</code></pre>
+<p>The system derives:</p>
+<pre><code>CanShip
+CanRefund
+</code></pre>
+<p>Then:</p>
+<pre><code>Customer -> Blocked @43
+</code></pre>
+<p>Agent A still holds the old CanShip capability.</p>
+<p>Agent B begins a refund.</p>
+<p>The refund provider times out.</p>
+<p>Now:</p>
+<pre><code>Customer = Blocked @43
+Order = Approved @17
+Payment = Captured @8
+Shipment = Ready @5
+
+Refund execution = OutcomeUnknown
+</code></pre>
+<h2 id="version-bound-capability-works-for-stale-domain-state">Version-Bound Capability Works for Stale Domain State</h2>
+<p>Agent A's CanShip was derived from:</p>
+<pre><code>Customer@42
+Order@17
+Payment@8
+Shipment@5
+</code></pre>
+<p>The runtime sees:</p>
+<pre><code>Customer 42 != 43
+</code></pre>
+<p>and rejects shipment.</p>
+<p>This validates version-bound capabilities for stale observed state.</p>
+<h2 id="domain-versioning-alone-is-not-enough">Domain Versioning Alone Is Not Enough</h2>
+<p>A more important hole appeared with the refund.</p>
+<p>The payment provider timed out.</p>
+<p>Locally:</p>
+<pre><code>Payment = Captured
+</code></pre>
+<p>has not changed.</p>
+<p>If capability derivation only inspects domain objects, the system may still derive:</p>
+<pre><code>CanRefund
+</code></pre>
+<p>But the external refund may already have succeeded.</p>
+<p>A second agent could issue another refund.</p>
+<p>Therefore:</p>
+<pre><code>External operation state must itself become authoritative
+and participate in capability derivation.
+</code></pre>
+<h2 id="explicit-effect-execution-state">Explicit Effect Execution State</h2>
+<p>Refund execution should have a lifecycle such as:</p>
+<pre><code>Idle
+  ->
+Requested
+  ->
+Succeeded
+Failed
+OutcomeUnknown
+</code></pre>
+<p>Once refund execution becomes:</p>
+<pre><code>OutcomeUnknown
+</code></pre>
+<p>the legal frontier changes.</p>
+<p>Before:</p>
+<pre><code>Refund
+HoldShipment
+</code></pre>
+<p>After unknown outcome:</p>
+<pre><code>ReconcileRefund
+HoldShipment
+</code></pre>
+<p>And crucially:</p>
+<pre><code>CanRefund
+</code></pre>
+<p>disappears.</p>
+<p>This yields the rule:</p>
+<pre><code>External execution state participates in legality.
+</code></pre>
+<p>Do not derive action capabilities from domain state alone
+when an uncertain external operation is already in flight.</p>
+<h2 id="three-interacting-state-dimensions">Three Interacting State Dimensions</h2>
+<p>The architecture now clearly needs at least:</p>
+<ol>
+<li>
+<p>Domain State</p>
+<p>Customer
+Order
+Payment
+Shipment</p>
+</li>
+<li>
+<p>Execution State</p>
+<p>Refund:
+Idle
+Requested
+OutcomeUnknown
+Succeeded
+Failed</p>
+</li>
+<li>
+<p>Coordination State</p>
+<p>The state of a multi-object decision process
+controlling mutually incompatible actions.</p>
+</li>
+</ol>
+<h2 id="concurrent-legal-actions-can-conflict">Concurrent Legal Actions Can Conflict</h2>
+<p>Consider:</p>
+<pre><code>Agent A receives CanShip
+Agent B receives CanRefund
+</code></pre>
+<p>Both capabilities were legitimately derived from the same snapshot.</p>
+<p>Both version checks can pass at execution time.</p>
+<p>Yet shipping and refunding may be mutually incompatible.</p>
+<p>This reveals:</p>
+<pre><code>Snapshot validation prevents stale actions.
+
+It does not prevent two individually legal actions
+from conflicting when they begin concurrently.
+</code></pre>
+<h2 id="coordination-aggregates">Coordination Aggregates</h2>
+<p>Introduce a small coordinator for the conflict boundary.</p>
+<p>Example:</p>
+<pre><code>FulfillmentDisposition
+
+Open
+  ->
+Shipping
+
+Open
+  ->
+Refunding
+
+Open
+  ->
+Holding
+</code></pre>
+<p>Both agents may initially see:</p>
+<pre><code>BeginShipping
+BeginRefund
+</code></pre>
+<p>But each transition must atomically claim:</p>
+<pre><code>Open
+</code></pre>
+<p>Example:</p>
+<p>Agent A:</p>
+<pre><code>Open@10 -> Shipping@11
+</code></pre>
+<p>Agent B:</p>
+<pre><code>BeginRefund based on Open@10
+</code></pre>
+<p>Runtime:</p>
+<pre><code>REJECTED
+
+Expected:
+    Open@10
+
+Actual:
+    Shipping@11
+</code></pre>
+<p>This serializes only the decision point where operations conflict.</p>
+<p>It avoids a giant distributed transaction across:</p>
+<pre><code>Customer
+Order
+Payment
+Shipment
+</code></pre>
+<h2 id="coordination-principle">Coordination Principle</h2>
+<p>Working rule:</p>
+<pre><code>When multiple individually legal transitions
+cannot safely occur concurrently,
+introduce a small coordination aggregate
+whose state serializes that decision.
+</code></pre>
+<p>Do not lock every related object.</p>
+<p>Serialize the specific semantic conflict boundary.</p>
+<h2 id="two-stage-external-effects">Two-Stage External Effects</h2>
+<p>A request to perform an external effect must not be equivalent to successful domain transition.</p>
+<p>Do not model:</p>
+<pre><code>RequestRefund
+    =
+Payment -> Refunded
+</code></pre>
+<p>Instead:</p>
+<pre><code>Authorize operation
+    ->
+Claim coordination state
+    ->
+Begin effect
+    ->
+External request
+    ->
+Verify or reconcile outcome
+    ->
+Commit domain transition
+</code></pre>
+<p>Example:</p>
+<pre><code>Open
+  ->
+BeginRefund
+  ->
+Refunding
+  ->
+RefundRequested
+  ->
+Provider timeout
+  ->
+RefundOutcomeUnknown
+</code></pre>
+<p>At that point the system does not guess.</p>
+<p>The legal frontier becomes:</p>
+<pre><code>ReconcileRefund
+InvestigateRefund
+HoldShipment
+</code></pre>
+<p>not:</p>
+<pre><code>RetryRefund blindly
+Ship anyway
+</code></pre>
+<h2 id="idempotency">Idempotency</h2>
+<p>External semantic operations need stable identities.</p>
+<p>Example:</p>
+<pre><code>RefundOperationId = R817
+</code></pre>
+<p>A retry should mean:</p>
+<pre><code>Continue/retry operation R817
+</code></pre>
+<p>not:</p>
+<pre><code>Create a new refund.
+</code></pre>
+<p>Principle:</p>
+<pre><code>Retries repeat an operation identity.
+
+They do not create a new semantic operation.
+</code></pre>
+<h2 id="concurrency-architecture">Concurrency Architecture</h2>
+<p>The resulting architecture is:</p>
+<pre><code>      VERSIONED DOMAIN STATE
+               |
+   +-----------+-----------+
+   |           |           |
+Customer     Payment     Shipment
+   |           |           |
+   +-----------+-----------+
+               |
+               v
+        POLICY EVALUATION
+               |
+               v
+      Derived Capabilities
+               |
+               v
+           Agent(s)
+               |
+        propose actions
+               |
+               v
+    COORDINATION AGGREGATE
+               |
+      atomic state claim
+               |
+               v
+        EFFECT EXECUTION
+               |
+      +--------+--------+
+      |        |        |
+      v        v        v
+   Success   Failure   Unknown
+      |                 |
+      v                 v
+domain transition    reconciliation
+</code></pre>
+<h2 id="freshness-and-partial-observability">Freshness and Partial Observability</h2>
+<p>Another distributed-systems problem remains.</p>
+<p>Suppose:</p>
+<pre><code>Customer service reports:
+    Verified @42
+</code></pre>
+<p>but:</p>
+<pre><code>Fraud service already has:
+    Blocked @43
+</code></pre>
+<p>and the policy runtime has not observed @43 yet.</p>
+<p>Version checks cannot detect information that has not yet arrived.</p>
+<p>This is not unique to AI.</p>
+<p>It is a distributed-consistency problem.</p>
+<p>However, the uncertainty can be made explicit.</p>
+<p>A cross-system observation may include:</p>
+<pre><code>value
+source
+version
+observedAt
+freshness
+</code></pre>
+<p>Example:</p>
+<pre><code>FraudStatus:
+    value = Clear
+    version = 88
+    observedAt = 4 seconds ago
+</code></pre>
+<p>Policy could require:</p>
+<pre><code>CanShip requires:
+    FraudStatus age &#x3C; 30 seconds
+</code></pre>
+<p>For high-risk transitions, policy may require synchronous refresh
+rather than accepting a cached observation.</p>
+<p>This suggests:</p>
+<pre><code>Freshness is part of evidence.
+</code></pre>
+<h2 id="four-concurrency-defenses">Four Concurrency Defenses</h2>
+<p>The stress test produced four distinct defenses.</p>
+<ol>
+<li>Version-Bound Capabilities</li>
+</ol>
+<p>Protect against:</p>
+<pre><code>state changed after the agent observed it
+</code></pre>
+<p>2. Coordination Aggregates</p>
+<p>Protect against:</p>
+<pre><code>two individually legal but mutually incompatible
+actions beginning concurrently
+</code></pre>
+<p>3. Explicit Effect State</p>
+<p>Protect against:</p>
+<pre><code>uncertain external operation outcome
+</code></pre>
+<p>4. Freshness Requirements</p>
+<p>Protect against:</p>
+<pre><code>observations that may already be stale
+even though no newer version is locally known
+</code></pre>
+<h2 id="updated-working-model">Updated Working Model</h2>
+<p>The model now includes:</p>
+<pre><code>LOCAL STATE
+    What does each aggregate own?
+
+CROSS-OBJECT POLICY
+    What does the combination permit or require?
+
+CAPABILITY
+    What may happen based on this versioned snapshot?
+
+OBLIGATION
+    What now needs resolution?
+
+COORDINATOR
+    Which competing multi-object process has claimed action?
+
+EFFECT STATE
+    What do we know about the external action?
+
+EVENT
+    What actually happened?
+
+PROVENANCE
+    Why do we believe all of the above?
+</code></pre>
+<p>Important insight:</p>
+<pre><code>Capabilities describe a legal frontier.
+
+Coordinators arbitrate conflicting movement across that frontier.
+</code></pre>
+<h1 id="part-3--policy-evolution-and-versioning">PART 3 — Policy Evolution and Versioning</h1>
+<h2 id="problem-2">Problem</h2>
+<p>The previous architecture assumes the rules are stable.</p>
+<p>Real commercial systems constantly change:</p>
+<ul>
+<li>business rules</li>
+<li>regulatory rules</li>
+<li>risk thresholds</li>
+<li>evidence requirements</li>
+<li>capability requirements</li>
+<li>approval rules</li>
+<li>timing rules</li>
+</ul>
+<p>A transition can be legal under one policy version
+and illegal under another.</p>
+<p>Therefore:</p>
+<pre><code>every consequential transition must preserve
+which policy version made it legal.
+</code></pre>
+<h2 id="policy-version">Policy Version</h2>
+<p>A policy is a versioned set of rules governing transitions.</p>
+<p>Example:</p>
+<pre><code>Policy v12
+
+Approve requires:
+    IdentityVerified
+    ReviewerAssigned
+
+Ship requires:
+    PaymentCaptured
+</code></pre>
+<p>Later:</p>
+<pre><code>Policy v13
+
+Approve requires:
+    IdentityVerified
+    ReviewerAssigned
+    FraudCheckPassed
+
+Ship requires:
+    PaymentCaptured
+    FraudCheckFresh &#x3C; 30 minutes
+</code></pre>
+<h2 id="capabilities-must-bind-policy-version">Capabilities Must Bind Policy Version</h2>
+<p>Suppose:</p>
+<pre><code>CanApprove
+</code></pre>
+<p>was derived under:</p>
+<pre><code>Policy v12
+</code></pre>
+<p>Before execution:</p>
+<pre><code>Policy v13
+</code></pre>
+<p>becomes active.</p>
+<p>The capability should carry:</p>
+<pre><code>CanApprove {
+    policyVersion = 12
+    stateVersions = [...]
+}
+</code></pre>
+<p>At execution the runtime checks:</p>
+<pre><code>Is the state snapshot still valid?
+
+Is the policy snapshot still valid?
+</code></pre>
+<p>If not:</p>
+<pre><code>REJECTED
+
+Capability derived under policy v12.
+
+Current applicable policy requires reevaluation.
+</code></pre>
+<h2 id="policy-effective-periods">Policy Effective Periods</h2>
+<p>Not all transitions use simply "the newest policy."</p>
+<p>Example:</p>
+<pre><code>Applications submitted before October 1:
+    Policy v12
+
+Applications submitted October 1 or later:
+    Policy v13
+</code></pre>
+<p>Therefore policy selection requires context.</p>
+<p>Possible context:</p>
+<pre><code>PolicyContext {
+    jurisdiction
+    effectiveDate
+    transactionDate
+    product
+    customerClass
+    policyVersion
+}
+</code></pre>
+<p>Important question:</p>
+<pre><code>Which policy governs this transition?
+</code></pre>
+<p>is more precise than:</p>
+<pre><code>What is the current policy?
+</code></pre>
+<h2 id="historical-state-must-not-be-silently-reinterpreted">Historical State Must Not Be Silently Reinterpreted</h2>
+<p>Suppose an application was legitimately approved under v12:</p>
+<pre><code>ApplicationApproved
+
+PolicyVersion:
+    12
+
+Evidence:
+    IdentityVerified
+    ReviewerAssigned
+</code></pre>
+<p>Then v13 adds:</p>
+<pre><code>FraudCheckPassed
+</code></pre>
+<p>That should not automatically make the historical approval invalid.</p>
+<p>Unless a policy is explicitly retroactive,
+the historical decision remains valid according to the policy snapshot
+that governed it at the time.</p>
+<p>Therefore important events should preserve:</p>
+<pre><code>transition
+state before
+state after
+policy version
+evidence
+capabilities
+actor
+timestamp
+</code></pre>
+<h2 id="policy-changes-are-themselves-state-transitions">Policy Changes Are Themselves State Transitions</h2>
+<p>Policy should not be changed through arbitrary assignment.</p>
+<p>A policy can have its own lifecycle:</p>
+<pre><code>Draft
+  ->
+Reviewed
+  ->
+Approved
+  ->
+Scheduled
+  ->
+Active
+  ->
+Superseded
+  ->
+Retired
+</code></pre>
+<p>An AI agent may propose:</p>
+<pre><code>Change shipping freshness from 30 minutes to 10 minutes.
+</code></pre>
+<p>But it should not directly rewrite production policy.</p>
+<p>It requests a policy transition.</p>
+<p>This recursively applies the same architecture to the rules themselves.</p>
+<h2 id="three-policy-change-classes">Three Policy Change Classes</h2>
+<p>Policy changes should distinguish at least three effects.</p>
+<ol>
+<li>Prospective Change</li>
+</ol>
+<p>Only future transitions use the new rule.</p>
+<p>Example:</p>
+<pre><code>v13 effective tomorrow
+</code></pre>
+<p>Existing state remains valid.</p>
+<ol start="2">
+<li>Reassessment-Triggering Change</li>
+</ol>
+<p>Existing state remains historically valid,
+but current objects must be reevaluated.</p>
+<p>Example:</p>
+<pre><code>New fraud rule requires all currently Approved
+but unfunded applications to be rechecked.
+</code></pre>
+<p>The system generates obligations:</p>
+<pre><code>ReassessApplication A17
+ReassessApplication A31
+...
+</code></pre>
+<p>It does not silently rewrite those applications.</p>
+<ol start="3">
+<li>Invalidating Change</li>
+</ol>
+<p>Some evidence or prior basis is explicitly invalidated.</p>
+<p>Example:</p>
+<pre><code>Credential issuer X was compromised.
+
+All verifications from issuer X are invalid.
+</code></pre>
+<p>Then:</p>
+<pre><code>Evidence invalidated
+    ->
+Claims downgraded
+    ->
+Capabilities disappear
+    ->
+Obligations generated
+</code></pre>
+<p>This is more precise than saying:</p>
+<pre><code>New policy means old state is wrong.
+</code></pre>
+<h2 id="policy-dependencies">Policy Dependencies</h2>
+<p>Capabilities may depend on multiple policy modules.</p>
+<p>Example:</p>
+<pre><code>CanShip
+</code></pre>
+<p>depends on:</p>
+<pre><code>ShippingPolicy@13
+FraudPolicy@8
+PaymentPolicy@22
+</code></pre>
+<p>The capability should preserve this policy snapshot:</p>
+<pre><code>CanShip {
+    policyDependencies = [
+        ShippingPolicy@13
+        FraudPolicy@8
+        PaymentPolicy@22
+    ]
+}
+</code></pre>
+<p>If only FraudPolicy changes,
+the system can identify exactly which capabilities require reevaluation.</p>
+<h2 id="policy-dependency-graph">Policy Dependency Graph</h2>
+<p>A policy dependency graph may look like:</p>
+<pre><code>Policy
+  ->
+Guard
+  ->
+Capability
+  ->
+Transition
+</code></pre>
+<p>This makes policy impact analysis mechanically possible.</p>
+<h2 id="commercial-importance">Commercial Importance</h2>
+<p>Today, when a business rule changes,
+organizations often ask:</p>
+<pre><code>Where is this rule implemented?
+</code></pre>
+<p>The answer may be scattered across:</p>
+<pre><code>service A
+service B
+UI validation
+database trigger
+batch process
+stored procedure
+tests
+comments
+</code></pre>
+<p>The desired architecture is:</p>
+<pre><code>Policy P17
+    ->
+Guards G4, G9
+    ->
+Capabilities C2, C7
+    ->
+Transitions T3, T11
+</code></pre>
+<p>This could greatly reduce both human and agent search cost.</p>
+<h2 id="policy-should-be-declarative-and-versioned">Policy Should Be Declarative and Versioned</h2>
+<p>Policies should ideally be declarative
+rather than arbitrary executable functions.</p>
+<p>Example:</p>
+<pre><code>policy ShippingEligibility v13
+
+effective:
+    2026-10-01
+
+transition:
+    Ship
+
+requires:
+    Order.State = Approved
+    Payment.State = Captured
+    Customer.FraudState = Clear
+
+requiresFresh:
+    Customer.FraudState &#x3C; 30m
+</code></pre>
+<p>From this, tooling may be able to generate:</p>
+<ul>
+<li>guards</li>
+<li>capability derivation</li>
+<li>agent tool availability</li>
+<li>documentation</li>
+<li>policy-diff reports</li>
+<li>tests</li>
+<li>model-checker rules</li>
+</ul>
+<h2 id="policy-diff">Policy Diff</h2>
+<p>A policy diff from:</p>
+<pre><code>v12 -> v13
+</code></pre>
+<p>should ideally explain:</p>
+<pre><code>Added requirement:
+    FraudCheckPassed
+
+Changed freshness:
+    60 minutes -> 30 minutes
+
+Affected transitions:
+    Approve
+    Ship
+
+Existing objects requiring reassessment:
+    318
+
+Historical events affected:
+    0
+
+Outstanding capabilities invalidated:
+    42
+</code></pre>
+<p>This creates a useful interface for both humans and agents.</p>
+<h2 id="policy-branching">Policy Branching</h2>
+<p>Real organizations rarely have one global policy.</p>
+<p>They may have:</p>
+<pre><code>US policy
+EU policy
+Indiana policy
+Enterprise customer policy
+Legacy customer policy
+Experimental policy
+</code></pre>
+<p>Therefore policy version should not be a single global integer.</p>
+<p>Instead use separately versioned policy modules.</p>
+<p>Example:</p>
+<pre><code>PolicySet {
+    IdentityPolicy
+    FraudPolicy
+    PaymentPolicy
+    ShippingPolicy
+}
+</code></pre>
+<p>A transition evaluates against a policy snapshot:</p>
+<pre><code>PolicySnapshot {
+    IdentityPolicy@7
+    FraudPolicy@12
+    ShippingPolicy@4
+}
+</code></pre>
+<p>This prevents an unrelated policy change
+from invalidating all capabilities.</p>
+<h2 id="core-policy-model">Core Policy Model</h2>
+<p>Working concepts:</p>
+<pre><code>POLICY
+    Versioned rule set.
+
+POLICY CONTEXT
+    Determines which policy applies.
+
+POLICY SNAPSHOT
+    Exact versions used for a decision.
+
+POLICY DEPENDENCIES
+    Which guards, capabilities, and transitions rely on which policies.
+
+POLICY CHANGE
+    Itself governed by state transitions.
+
+POLICY EFFECT
+    Prospective, reassessment-triggering, or invalidating.
+</code></pre>
+<h2 id="transition-audit-record">Transition Audit Record</h2>
+<p>Every consequential transition should preserve something like:</p>
+<pre><code>State snapshot
+Policy snapshot
+Evidence snapshot
+Capability
+Actor
+Result
+Timestamp
+Provenance
+</code></pre>
+<p>This provides historical explainability.</p>
+<h2 id="strong-policy-principle">Strong Policy Principle</h2>
+<p>Working rule:</p>
+<pre><code>A state transition is legal according to
+a specific versioned policy snapshot,
+not according to an abstract notion of
+"the current rules."
+</code></pre>
+<h2 id="example">Example</h2>
+<p>Agent proposes:</p>
+<pre><code>Ship
+</code></pre>
+<p>Runtime evaluates:</p>
+<pre><code>State snapshot:
+    Order@17
+    Payment@8
+    Customer@43
+
+Policy snapshot:
+    ShippingPolicy@13
+    FraudPolicy@8
+
+Evidence:
+    PaymentCaptured E44
+    FraudCheck E51
+
+Capability:
+    CanShip@991
+</code></pre>
+<p>Later, the system can still reconstruct
+why the transition was legal.</p>
+<h2 id="next-open-problem">Next Open Problem</h2>
+<p>A major next issue remains:</p>
+<pre><code>What happens when a policy change generates
+thousands or millions of reassessment obligations?
+</code></pre>
+<p>This introduces new questions about:</p>
+<ul>
+<li>prioritization</li>
+<li>batching</li>
+<li>deadlines</li>
+<li>risk ranking</li>
+<li>conflicting obligations</li>
+<li>resource constraints</li>
+<li>policy-driven work queues</li>
+<li>escalation</li>
+<li>eventual completion</li>
+<li>historical auditability</li>
+</ul>
+<h1 id="updated-architectural-summary">UPDATED ARCHITECTURAL SUMMARY</h1>
+<p>The architecture now contains at least these concepts:</p>
+<pre><code>Local State
+    Authoritative state owned by an aggregate.
+
+Orthogonal State
+    Independent state dimensions.
+
+Derived State
+    State calculated from authoritative state.
+
+Epistemic State
+    Unknown / assumed / inferred / verified / contradicted / invalidated.
+
+Execution State
+    State of an external operation.
+
+Transition
+    Legal state change.
+
+Guard
+    Local condition controlling transition legality.
+
+Invariant
+    Condition that must hold for valid aggregate state.
+
+Cross-Object Policy
+    Rules interpreting combinations of independently authoritative states.
+
+Capability
+    Version-bound proof that an operation was legal for a specific snapshot.
+
+Obligation
+    Required resolution created by current state or policy.
+
+Coordinator
+    Small stateful object that serializes conflicting multi-object processes.
+
+Effect
+    External interaction.
+
+Event
+    Immutable fact that occurred.
+
+Evidence
+    Basis for claims and decisions.
+
+Provenance
+    Why the system believes or did something.
+
+Freshness
+    How current an observation must be.
+
+Policy
+    Versioned rules governing transitions.
+
+Policy Context
+    Determines which policy applies.
+
+Policy Snapshot
+    Exact policy versions used for a decision.
+
+Policy Dependency
+    Relationship from policy to guards, capabilities, and transitions.
+</code></pre>
+<h1 id="current-high-level-flow">CURRENT HIGH-LEVEL FLOW</h1>
+<pre><code>    VERSIONED LOCAL STATE
+             |
+             v
+    EVIDENCE + PROVENANCE
+             |
+             v
+      POLICY SNAPSHOT
+             |
+             v
+  CROSS-OBJECT POLICY
+             |
+      +------+------+
+      |             |
+      v             v
+ Capabilities    Obligations
+      |             |
+      v             v
+    Agent       Required work
+      |
+      v
+Transition request
+      |
+      v
+Version + policy validation
+      |
+      v
+ Coordination claim
+      |
+      v
+  Effect execution
+      |
+  +---+---+
+  |   |   |
+  v   v   v
+Success Failure Unknown
+  |           |
+  v           v
+</code></pre>
+<p>Event      Reconciliation
+|
+v
+New state</p>
+<h1 id="current-working-principles">CURRENT WORKING PRINCIPLES</h1>
+<ol>
+<li>
+<p>Do not create one type for every state combination.</p>
+</li>
+<li>
+<p>Use types for stable structural state.</p>
+</li>
+<li>
+<p>Use orthogonal state values for independent dimensions.</p>
+</li>
+<li>
+<p>Use derived state when possible.</p>
+</li>
+<li>
+<p>Use local invariants for aggregate consistency.</p>
+</li>
+<li>
+<p>Use cross-object policy for relationships among aggregates.</p>
+</li>
+<li>
+<p>Use capabilities for what may legally happen now.</p>
+</li>
+<li>
+<p>Use obligations for what must be resolved.</p>
+</li>
+<li>
+<p>Bind capabilities to exact state versions.</p>
+</li>
+<li>
+<p>Bind capabilities to exact policy snapshots.</p>
+</li>
+<li>
+<p>Revalidate capabilities at execution time.</p>
+</li>
+<li>
+<p>Use coordination aggregates for mutually incompatible concurrent transitions.</p>
+</li>
+<li>
+<p>External effects require explicit execution state.</p>
+</li>
+<li>
+<p>Unknown external outcome must remain Unknown until reconciled.</p>
+</li>
+<li>
+<p>Retries reuse semantic operation identity.</p>
+</li>
+<li>
+<p>Freshness is part of evidence for distributed observations.</p>
+</li>
+<li>
+<p>Historical transitions preserve policy and evidence provenance.</p>
+</li>
+<li>
+<p>Policy changes are themselves governed state transitions.</p>
+</li>
+<li>
+<p>Policy changes may be prospective, reassessment-triggering, or invalidating.</p>
+</li>
+<li>
+<p>Agents should see the current verified state, legal frontier, obligations, and reasons—not the entire theoretical state space.</p>
+</li>
+</ol></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

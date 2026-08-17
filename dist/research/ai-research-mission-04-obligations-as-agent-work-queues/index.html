@@ -1,0 +1,1192 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AI Research Mission 04 — Obligations as Agent Work Queues | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">AI Research Mission 04 — Obligations as Agent Work Queues</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/reports/04-obligations-as-agent-work-queues-research-report.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#ai-research-mission-04-obligations-as-agent-work-queues">AI Research Mission 04 — Obligations as Agent Work Queues</a></li><li><a href="#1-executive-verdict">1. Executive verdict</a></li><li><a href="#bottom-line-verdict">Bottom-line verdict</a></li><li><a href="#2-formal-definition-of-obligation">2. Formal definition of obligation</a></li><li><a href="#recommended-definition">Recommended definition</a></li><li><a href="#what-an-obligation-is-not">What an obligation is not</a></li><li><a href="#3-capability-obligation-duality-assessment">3. Capability / obligation duality assessment</a></li><li><a href="#verdict">Verdict</a></li><li><a href="#4-comparison-with-deontic-logic">4. Comparison with deontic logic</a></li><li><a href="#strong-overlap">Strong overlap</a></li><li><a href="#difference">Difference</a></li><li><a href="#recommendation">Recommendation</a></li><li><a href="#5-comparison-with-normative-multi-agent-systems">5. Comparison with normative multi-agent systems</a></li><li><a href="#what-is-already-established">What is already established</a></li><li><a href="#what-the-proposed-model-adds">What the proposed model adds</a></li><li><a href="#verdict">Verdict</a></li><li><a href="#6-comparison-with-bdi">6. Comparison with BDI</a></li><li><a href="#approximate-mapping">Approximate mapping</a></li><li><a href="#key-insight-from-bdi">Key insight from BDI</a></li><li><a href="#7-comparison-with-workflow-engines">7. Comparison with workflow engines</a></li><li><a href="#workflow-strength">Workflow strength</a></li><li><a href="#obligation-strength">Obligation strength</a></li><li><a href="#recommended-relationship">Recommended relationship</a></li><li><a href="#8-comparison-with-durable-execution-and-job-queues">8. Comparison with durable execution and job queues</a></li><li><a href="#claiming-and-leasing">Claiming and leasing</a></li><li><a href="#9-comparison-with-compliance-and-remediation-systems">9. Comparison with compliance and remediation systems</a></li><li><a href="#reusable-ideas">Reusable ideas</a></li><li><a href="#improvement-for-ai-systems">Improvement for AI systems</a></li><li><a href="#10-obligation-lifecycle-recommendation">10. Obligation lifecycle recommendation</a></li><li><a href="#semantic-obligation-status">Semantic obligation status</a></li><li><a href="#execution-handling-status">Execution/handling status</a></li><li><a href="#recommended-transition-logic">Recommended transition logic</a></li><li><a href="#why-this-matters">Why this matters</a></li><li><a href="#11-satisfaction-condition-model">11. Satisfaction-condition model</a></li><li><a href="#recommended-form">Recommended form</a></li><li><a href="#three-levels-of-satisfaction">Three levels of satisfaction</a></li><li><a href="#direct-llm-relevance">Direct LLM relevance</a></li><li><a href="#12-provenance-model">12. Provenance model</a></li><li><a href="#why-provenance-matters">Why provenance matters</a></li><li><a href="#caution">Caution</a></li><li><a href="#13-conflict-model">13. Conflict model</a></li><li><a href="#resolution-order">Resolution order</a></li><li><a href="#contrary-to-duty-handling">Contrary-to-duty handling</a></li><li><a href="#14-priority-and-escalation-model">14. Priority and escalation model</a></li><li><a href="#agent-role">Agent role</a></li><li><a href="#escalation">Escalation</a></li><li><a href="#15-waiver-model">15. Waiver model</a></li><li><a href="#strong-rule">Strong rule</a></li><li><a href="#16-supersession-model">16. Supersession model</a></li><li><a href="#17-scale-and-batching-model">17. Scale and batching model</a></li><li><a href="#recommended-three-tier-architecture">Recommended three-tier architecture</a></li><li><a href="#batch-metrics">Batch metrics</a></li><li><a href="#database-design-implication">Database design implication</a></li><li><a href="#18-multi-agent-claiming-model">18. Multi-agent claiming model</a></li><li><a href="#rules">Rules</a></li><li><a href="#19-planning-implications">19. Planning implications</a></li><li><a href="#architectural-opportunity">Architectural opportunity</a></li><li><a href="#multi-obligation-planning">Multi-obligation planning</a></li><li><a href="#20-context-compression-implications">20. Context-compression implications</a></li><li><a href="#expected-compression-path">Expected compression path</a></li><li><a href="#critical-caveat">Critical caveat</a></li><li><a href="#21-smaller-model-hypothesis">21. Smaller-model hypothesis</a></li><li><a href="#required-experiment">Required experiment</a></li><li><a href="#22-token-and-cost-hypothesis">22. Token and cost hypothesis</a></li><li><a href="#expected-savings-sources">Expected savings sources</a></li><li><a href="#new-costs-introduced">New costs introduced</a></li><li><a href="#23-security-implications">23. Security implications</a></li><li><a href="#24-gaming-risks">24. Gaming risks</a></li><li><a href="#safeguards">Safeguards</a></li><li><a href="#25-situational-awareness-risks">25. Situational-awareness risks</a></li><li><a href="#recommended-hybrid-architecture">Recommended hybrid architecture</a></li><li><a href="#26-counterarguments">26. Counterarguments</a></li><li><a href="#counterargument-1-this-is-just-a-job-queue">Counterargument 1: This is just a job queue</a></li><li><a href="#counterargument-2-this-is-just-bpm-workflow">Counterargument 2: This is just BPM/workflow</a></li><li><a href="#counterargument-3-humans-already-use-tickets">Counterargument 3: Humans already use tickets</a></li><li><a href="#counterargument-4-modeling-cost-will-dominate">Counterargument 4: Modeling cost will dominate</a></li><li><a href="#counterargument-5-requirements-cannot-all-be-machine-checked">Counterargument 5: Requirements cannot all be machine checked</a></li><li><a href="#counterargument-6-obligation-rules-can-be-wrong">Counterargument 6: Obligation rules can be wrong</a></li><li><a href="#counterargument-7-more-explicit-state-increases-system-complexity">Counterargument 7: More explicit state increases system complexity</a></li><li><a href="#27-proposed-experiments">27. Proposed experiments</a></li><li><a href="#experiment-a-open-ended-monitoring-vs-obligation-queue">Experiment A — Open-ended monitoring vs obligation queue</a></li><li><a href="#experiment-b-unknown-external-effect">Experiment B — Unknown external effect</a></li><li><a href="#experiment-c-agent-restart">Experiment C — Agent restart</a></li><li><a href="#experiment-d-context-compression">Experiment D — Context compression</a></li><li><a href="#experiment-e-model-substitution">Experiment E — Model substitution</a></li><li><a href="#experiment-f-false-obligation-missing-obligation">Experiment F — False obligation / missing obligation</a></li><li><a href="#experiment-g-gaming">Experiment G — Gaming</a></li><li><a href="#experiment-h-policy-change-burst">Experiment H — Policy change burst</a></li><li><a href="#experiment-i-multi-obligation-planning">Experiment I — Multi-obligation planning</a></li><li><a href="#experiment-j-human-judgment-obligation">Experiment J — Human judgment obligation</a></li><li><a href="#28-metrics">28. Metrics</a></li><li><a href="#correctness">Correctness</a></li><li><a href="#efficiency">Efficiency</a></li><li><a href="#waste">Waste</a></li><li><a href="#queue-health">Queue health</a></li><li><a href="#economic-primary-metric">Economic primary metric</a></li><li><a href="#29-economic-model">29. Economic model</a></li><li><a href="#important-addition">Important addition</a></li><li><a href="#30-break-even-model">30. Break-even model</a></li><li><a href="#practical-break-even-experiment">Practical break-even experiment</a></li><li><a href="#31-what-is-supported-by-existing-research">31. What is supported by existing research</a></li><li><a href="#established-concepts-strong-support">Established concepts — strong support</a></li><li><a href="#demonstrated-ai-effects-meaningful-but-narrower">Demonstrated AI effects — meaningful but narrower</a></li><li><a href="#32-what-remains-speculative">32. What remains speculative</a></li><li><a href="#33-architecture-changes-recommended">33. Architecture changes recommended</a></li><li><a href="#a-make-obligation-a-first-class-semantic-type">A. Make obligation a first-class semantic type</a></li><li><a href="#b-separate-semantic-status-from-execution-status">B. Separate semantic status from execution status</a></li><li><a href="#c-require-satisfaction-predicates">C. Require satisfaction predicates</a></li><li><a href="#d-separate-obligation-from-task-plan">D. Separate obligation from task/plan</a></li><li><a href="#e-derive-capabilities-independently">E. Derive capabilities independently</a></li><li><a href="#f-make-provenance-mandatory">F. Make provenance mandatory</a></li><li><a href="#g-use-lazy-context-expansion">G. Use lazy context expansion</a></li><li><a href="#h-add-conflict-as-a-first-class-object">H. Add conflict as a first-class object</a></li><li><a href="#i-treat-overdue-escalation-as-orthogonal-properties">I. Treat overdue/escalation as orthogonal properties</a></li><li><a href="#j-govern-waiver-and-supersession-as-transitions">J. Govern waiver and supersession as transitions</a></li><li><a href="#k-reuse-durable-queue-infrastructure">K. Reuse durable queue infrastructure</a></li><li><a href="#l-add-an-independent-discovery-plane">L. Add an independent discovery plane</a></li><li><a href="#m-add-obligation-rule-precision-recall-testing">M. Add obligation-rule precision/recall testing</a></li><li><a href="#n-prefer-semantic-dependencies-over-obligation-to-obligation-dependencies">N. Prefer semantic dependencies over obligation-to-obligation dependencies</a></li><li><a href="#o-build-reachability-checks-where-tractable">O. Build reachability checks where tractable</a></li><li><a href="#p-do-not-expose-all-obligations-to-the-model">P. Do not expose all obligations to the model</a></li><li><a href="#34-final-verdict">34. Final verdict</a></li><li><a href="#do-explicit-obligations-reduce-agent-work-discovery-cost-">Do explicit obligations reduce agent work-discovery cost?</a></li><li><a href="#do-explicit-obligations-reduce-context-token-usage-">Do explicit obligations reduce context/token usage?</a></li><li><a href="#do-obligations-improve-completion-correctness-">Do obligations improve completion correctness?</a></li><li><a href="#do-obligations-reduce-repeated-duplicate-work-">Do obligations reduce repeated/duplicate work?</a></li><li><a href="#can-obligations-enable-smaller-models-">Can obligations enable smaller models?</a></li><li><a href="#is-capability-obligation-a-useful-control-surface-for-agents-">Is capability + obligation a useful control surface for agents?</a></li><li><a href="#closest-existing-concept">Closest existing concept</a></li><li><a href="#most-valuable-architectural-benefit">Most valuable architectural benefit</a></li><li><a href="#biggest-correctness-risk">Biggest correctness risk</a></li><li><a href="#biggest-economic-opportunity">Biggest economic opportunity</a></li><li><a href="#most-important-missing-experiment">Most important missing experiment</a></li><li><a href="#recommended-obligation-lifecycle">Recommended obligation lifecycle</a></li><li><a href="#recommended-distinction-between-obligation-and-task">Recommended distinction between obligation and task</a></li><li><a href="#research-synthesis-strongest-implication">Research synthesis: strongest implication</a></li><li><a href="#sources-and-evidence-base">Sources and evidence base</a></li><li><a href="#evidence-labels-used-in-this-report">Evidence labels used in this report</a></li><li><a href="#final-research-status">Final research status</a></li> </ol> </aside> <section class="document-body"><h1 id="ai-research-mission-04--obligations-as-agent-work-queues">AI Research Mission 04 — Obligations as Agent Work Queues</h1>
+<p><strong>Research date:</strong> 2026-08-14<br>
+<strong>Method:</strong> literature-driven research and architectural synthesis; no new empirical experiment was run for this report.<br>
+<strong>Research standard:</strong> evidence is separated into (a) established concept, (b) demonstrated AI effect, (c) architectural inference, and (d) untested hypothesis.</p>
+<hr>
+<h2 id="1-executive-verdict">1. Executive verdict</h2>
+<p>The core idea survives skeptical review and becomes more precise under comparison with adjacent fields.</p>
+<p>The strongest defensible claim is <strong>not</strong> that obligations are a new formal concept. Obligations, permissions, prohibitions, deadlines, violations, commitments, workflow work items, durable process state, and queue leasing all have substantial prior art. The stronger and more novel architectural move is to combine these ideas into a runtime control surface for AI agents in which:</p>
+<ul>
+<li>authoritative domain state says what <strong>is</strong>;</li>
+<li>capabilities say what the actor <strong>may legally do now</strong>;</li>
+<li>obligations say what <strong>must still be resolved</strong>;</li>
+<li>machine-checkable satisfaction conditions say whether the required semantic outcome has actually been achieved;</li>
+<li>provenance says why the obligation exists;</li>
+<li>policy/evidence/version information constrains the interpretation;</li>
+<li>execution tasks are replaceable attempts to satisfy the obligation rather than the obligation itself;</li>
+<li>the agent receives a bounded semantic slice instead of rediscovering unresolved work from logs, code, history, and broad monitoring.</li>
+</ul>
+<p>That synthesis is meaningfully different from a generic TODO list and meaningfully different from a conventional job queue.</p>
+<p>There is <strong>strong prior research support</strong> for several component mechanisms:</p>
+<ol>
+<li>Deontic and normative multi-agent literature treats obligations, permissions, and prohibitions as first-class formal concepts.</li>
+<li>Commitment-based multi-agent systems separate persistent social commitments from individual actions and include operations such as create, discharge, release/cancel, delegate, and assign.</li>
+<li>BDI architectures separate informational state, goals/desires, intentions, and plans, supporting the distinction between a required outcome and the current procedure selected to pursue it.</li>
+<li>Workflow/Petri-net research shows value in explicit process state, reachability, deadlock/soundness checking, and verification before runtime.</li>
+<li>Durable workflow systems show operational value in persisted progress, restartability, retries, idempotency, and deterministic recovery after crashes.</li>
+<li>XACML provides an unusually direct precedent for the conceptual duality: policies may authorize actions while also returning obligations that MUST be discharged by the enforcement point.</li>
+<li>Recent LLM-agent research provides direct evidence that externally maintained progress/backlog state, duplicate filtering, verifier-backed completion, and selective context retention can improve long-horizon completion and/or reduce cost.</li>
+</ol>
+<p>However, <strong>no source located directly demonstrates the complete proposition</strong>: that a semantic obligation model of the exact form proposed here reduces total token/tool cost per correct outcome across realistic enterprise agents. That remains an empirical hypothesis.</p>
+<h3 id="bottom-line-verdict">Bottom-line verdict</h3>
+<p>The architecture is sufficiently supported to justify implementation and controlled experiments. It is <strong>not</strong> sufficiently supported to claim proven token savings, proven smaller-model substitution, or proven obligation completeness.</p>
+<p>The most important reframing is this:</p>
+<blockquote>
+<p>An obligation should not be treated primarily as a task to perform. It should be treated as a durable semantic assertion that the present world is not yet in an acceptable resolved condition under a particular policy/evidence context.</p>
+</blockquote>
+<p>That distinction is what gives the model architectural value.</p>
+<hr>
+<h2 id="2-formal-definition-of-obligation">2. Formal definition of obligation</h2>
+<p>The candidate definition is good but should be tightened.</p>
+<h3 id="recommended-definition">Recommended definition</h3>
+<blockquote>
+<p><strong>An obligation is a durable, versioned, attributable normative requirement that a defined semantic condition concerning a subject reach an acceptable disposition, because of an authoritative state, event, policy, evidence condition, or authorized decision. The obligation persists independently of any particular execution plan until its satisfaction condition is proven, it is validly waived, it is superseded by a condition that invalidates its applicability, or it is otherwise dispositioned by an authorized rule.</strong></p>
+</blockquote>
+<p>An obligation therefore has at least five logical components:</p>
+<ol>
+<li><strong>Applicability predicate</strong> — why this obligation exists now.</li>
+<li><strong>Subject</strong> — what semantic entity or scope it concerns.</li>
+<li><strong>Normative requirement</strong> — what condition must eventually become true or be dispositioned.</li>
+<li><strong>Satisfaction/disposition predicate</strong> — machine-verifiable criteria when possible.</li>
+<li><strong>Authority/provenance</strong> — which policy, event, evidence, or actor gives the obligation legitimacy.</li>
+</ol>
+<p>A useful abstract form is:</p>
+<pre><code class="language-text">Obligation O = {
+    id,
+    type,
+    subject,
+    applicability,
+    reason,
+    causedBy,
+    policyVersion,
+    evidenceRefs,
+    raisedAtStateVersion,
+    satisfactionPredicate,
+    allowedDispositions,
+    deadline?,
+    priorityVector,
+    requiredAuthority?,
+    currentStatus,
+    provenance
+}
+</code></pre>
+<h3 id="what-an-obligation-is-not">What an obligation is not</h3>
+<p>It is not simply:</p>
+<ul>
+<li>a reminder;</li>
+<li>a queue message;</li>
+<li>an instruction string;</li>
+<li>a scheduled job;</li>
+<li>permission to act;</li>
+<li>an arbitrary human assignment;</li>
+<li>a mutable Boolean <code>done</code> field;</li>
+<li>a procedural workflow step.</li>
+</ul>
+<p>The decisive difference is <strong>semantic persistence</strong>. A task may fail, be cancelled, be retried, or be replaced. The obligation remains until the underlying required condition is actually satisfied or legitimately dispositioned.</p>
+<p>This recommendation aligns with commitment-oriented multi-agent work, deontic logic, policy obligations, workflow verification, and goal-directed planning, while deliberately narrowing them for operational agent use.</p>
+<hr>
+<h2 id="3-capability--obligation-duality-assessment">3. Capability / obligation duality assessment</h2>
+<p>The proposed duality is sound and useful:</p>
+<pre><code class="language-text">Capability = legal frontier
+Obligation = required frontier
+</code></pre>
+<p>More precisely:</p>
+<ul>
+<li><strong>Capability</strong> answers: “Which consequential transitions is this actor authorized and currently able to request from this state?”</li>
+<li><strong>Obligation</strong> answers: “Which unresolved semantic conditions is the system normatively committed to resolving?”</li>
+</ul>
+<p>This is not exactly the same formalism as classical deontic logic, but it maps naturally to:</p>
+<pre><code class="language-text">permission  ~ capability
+obligation  ~ obligation
+prohibition ~ unavailable/forbidden transition
+</code></pre>
+<p>The strongest direct precedent is XACML. XACML distinguishes policy decisions about access from <strong>obligations that MUST be performed</strong> by the Policy Enforcement Point in conjunction with the decision. Importantly, an enforcement point that cannot understand/discharge required obligations must not simply proceed. This establishes that “allowed” and “required companion action” are distinct control concepts in a mature policy standard.</p>
+<p>The proposed architecture goes further because capabilities are state-dependent semantic actions, and obligations are persistent unresolved conditions rather than merely obligations attached to one authorization decision.</p>
+<h3 id="verdict">Verdict</h3>
+<p><strong>Capability + obligation is a coherent and useful agent control surface.</strong> It is not wholly new as a conceptual duality, but the combination with explicit semantic state, evidence/versioning, and LLM work queues appears to be a useful engineering synthesis.</p>
+<hr>
+<h2 id="4-comparison-with-deontic-logic">4. Comparison with deontic logic</h2>
+<p>Deontic logic is the formal study of concepts such as obligation, permission, and prohibition. Temporal/deontic work additionally addresses deadlines, violation, and contrary-to-duty obligations.</p>
+<h3 id="strong-overlap">Strong overlap</h3>
+<p>The proposed model inherits several known deontic problems:</p>
+<ul>
+<li>conflicting obligations;</li>
+<li>obligations with deadlines;</li>
+<li>obligation violation without obligation disappearance;</li>
+<li>permission not implying obligation;</li>
+<li>obligation not automatically conferring permission or power;</li>
+<li>contrary-to-duty obligations: what becomes required after a primary obligation is violated;</li>
+<li>defeasibility and priority among norms.</li>
+</ul>
+<p>This literature strongly supports rejecting simplistic lifecycles where an overdue obligation simply becomes “failed” and disappears.</p>
+<h3 id="difference">Difference</h3>
+<p>Classical deontic logic is primarily concerned with formal normative truth and reasoning. The proposed architecture is concerned with an operational representation that can become a durable work queue for software/AI agents.</p>
+<p>That requires engineering fields that pure deontic logic does not automatically supply:</p>
+<ul>
+<li>claim leases;</li>
+<li>idempotency keys;</li>
+<li>scalable retrieval;</li>
+<li>batching;</li>
+<li>evidence pointers;</li>
+<li>version checks;</li>
+<li>tool affordances;</li>
+<li>distributed worker coordination;</li>
+<li>cost-aware context slicing.</li>
+</ul>
+<h3 id="recommendation">Recommendation</h3>
+<p>Adopt deontic semantics conceptually, but do not expose a highly academic deontic language as the primary application programming model. Use the literature to define invariants and edge cases.</p>
+<hr>
+<h2 id="5-comparison-with-normative-multi-agent-systems">5. Comparison with normative multi-agent systems</h2>
+<p>Normative multi-agent systems are one of the closest intellectual ancestors. They explicitly model agents operating under obligations, permissions, prohibitions, sanctions, organizations, roles, and institutions.</p>
+<h3 id="what-is-already-established">What is already established</h3>
+<p>Research in normative MAS treats norms as mechanisms that coordinate, regulate, guide, and control agent interaction. Work has addressed:</p>
+<ul>
+<li>dynamic obligations;</li>
+<li>conflict detection/resolution;</li>
+<li>sanctioning;</li>
+<li>institutional rules;</li>
+<li>temporal obligation changes;</li>
+<li>norm revision;</li>
+<li>accountable agent interaction.</li>
+</ul>
+<p>Commitment-based systems are especially relevant. Singh’s commitment ontology treats commitments as durable social relationships and identifies operations such as create, discharge, cancel/release, delegate, and assign. That is very close to the desired property that the semantic requirement persists independently of the current task execution.</p>
+<h3 id="what-the-proposed-model-adds">What the proposed model adds</h3>
+<p>The proposed obligation model is narrower and more operational:</p>
+<ul>
+<li>it need not represent social or moral norms generally;</li>
+<li>it can be generated deterministically from domain state/evidence/policy;</li>
+<li>it is optimized for retrieval as actionable unresolved work;</li>
+<li>it explicitly exposes current legal capabilities and missing prerequisites;</li>
+<li>it is intended to reduce LLM rediscovery, context, and planning cost;</li>
+<li>it couples obligation state to machine-checkable semantic satisfaction.</li>
+</ul>
+<h3 id="verdict-1">Verdict</h3>
+<p>Normative MAS is strong prior art for the semantics. The claim of novelty should be placed in <strong>agent-facing runtime architecture and cost reduction</strong>, not in the existence of computational obligations.</p>
+<hr>
+<h2 id="6-comparison-with-bdi">6. Comparison with BDI</h2>
+<p>BDI — Belief, Desire, Intention — separates:</p>
+<ul>
+<li>beliefs: informational state;</li>
+<li>desires/goals: states the agent would like to bring about;</li>
+<li>intentions: goals/plans to which the agent commits;</li>
+<li>plans/actions: procedures used to make progress.</li>
+</ul>
+<p>This is conceptually important because it validates the architectural distinction between a <strong>goal condition</strong> and the <strong>current procedure selected to pursue it</strong>.</p>
+<h3 id="approximate-mapping">Approximate mapping</h3>
+<pre><code class="language-text">Verified/epistemic state -> BDI belief-like information
+Obligation               -> externally imposed required goal
+Chosen remediation plan  -> intention
+Execution task/action     -> plan step
+</code></pre>
+<p>But an obligation should not be called a “desire.” A desire is motivational and agent-centric. An obligation is externally attributable, normatively binding, and may remain valid even if the agent does not select it or wish to pursue it.</p>
+<h3 id="key-insight-from-bdi">Key insight from BDI</h3>
+<p>BDI supports the claim that planning and execution should not be conflated with the persistent goal. It also suggests a clean hybrid:</p>
+<pre><code class="language-text">System determines authoritative obligations.
+Agent deliberates about which obligation(s) to pursue.
+Agent forms intentions/plans using currently legal capabilities.
+System independently verifies satisfaction.
+</code></pre>
+<p>This is better than allowing the agent to define, execute, and self-certify its own work.</p>
+<hr>
+<h2 id="7-comparison-with-workflow-engines">7. Comparison with workflow engines</h2>
+<p>The proposed obligation model is <strong>not merely a workflow engine</strong>, although workflow engines provide many mechanisms it should reuse.</p>
+<p>BPMN and workflow research model explicit activities, events, gateways, sequence flow, exceptions, and process instances. Petri-net-based workflow theory adds powerful verification concepts such as reachability, soundness, deadlock analysis, and control-flow correctness.</p>
+<h3 id="workflow-strength">Workflow strength</h3>
+<p>Workflow engines are excellent when:</p>
+<ul>
+<li>the process is known;</li>
+<li>order matters;</li>
+<li>control flow is central;</li>
+<li>retries/timeouts are procedural concerns;</li>
+<li>long-running process execution must survive failures.</li>
+</ul>
+<h3 id="obligation-strength">Obligation strength</h3>
+<p>An obligation is stronger when:</p>
+<ul>
+<li>there may be multiple legal ways to resolve a condition;</li>
+<li>the correct procedure can change without invalidating the underlying requirement;</li>
+<li>work arises dynamically from state/policy/evidence rather than from a preselected process position;</li>
+<li>the required outcome matters more than a specific step sequence;</li>
+<li>the agent should be allowed to plan among legal alternatives.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">Obligation: EstablishRefundOutcome
+</code></pre>
+<p>may be satisfiable via provider query, settlement reconciliation, or authorized human investigation. A workflow can implement any chosen procedure, but the obligation says <strong>why any procedure must continue to exist at all</strong>.</p>
+<h3 id="recommended-relationship">Recommended relationship</h3>
+<p>Use obligations above or alongside workflows:</p>
+<pre><code class="language-text">Obligation -> semantic requirement
+Planner/workflow -> selected resolution procedure
+Capabilities -> legal executable transitions
+State/evidence -> independent verifier of completion
+</code></pre>
+<p>Do not replace mature workflow infrastructure when durable execution is needed.</p>
+<hr>
+<h2 id="8-comparison-with-durable-execution-and-job-queues">8. Comparison with durable execution and job queues</h2>
+<p>Temporal and similar durable execution systems persist workflow progress across crashes, retry activities, and require attention to idempotency for external side effects.</p>
+<p>A job queue usually says:</p>
+<pre><code class="language-text">run function F with payload P
+</code></pre>
+<p>An obligation says:</p>
+<pre><code class="language-text">condition C remains unresolved and must reach one of disposition states S
+</code></pre>
+<p>This difference matters after failure.</p>
+<p>If <code>QueryProvider</code> fails, a job queue may retry the job. An obligation-aware system asks whether querying the provider is still the best/legal next action, whether state changed, whether another capability is now available, and whether the satisfaction condition may already have become true through an external event.</p>
+<h3 id="claiming-and-leasing">Claiming and leasing</h3>
+<p>Queue semantics are highly reusable:</p>
+<ul>
+<li>claim token;</li>
+<li>lease expiration;</li>
+<li>heartbeat;</li>
+<li>visibility timeout;</li>
+<li>requeue after worker loss;</li>
+<li>optimistic concurrency/version check;</li>
+<li>idempotent semantic operation ID.</li>
+</ul>
+<p>But these should attach to <strong>attempt ownership</strong>, not semantic ownership of the obligation itself.</p>
+<p>Recommended separation:</p>
+<pre><code class="language-text">Obligation.status = Raised | Active | Blocked | Resolved...
+WorkLease = { obligationId, agentId, leaseUntil, attemptId }
+</code></pre>
+<p>An expired lease must not alter the truth of the obligation.</p>
+<hr>
+<h2 id="9-comparison-with-compliance-and-remediation-systems">9. Comparison with compliance and remediation systems</h2>
+<p>Compliance systems already use concepts resembling:</p>
+<ul>
+<li>findings;</li>
+<li>remediation items;</li>
+<li>control exceptions;</li>
+<li>evidence;</li>
+<li>owners;</li>
+<li>deadlines;</li>
+<li>waivers;</li>
+<li>audit trails;</li>
+<li>compensating controls.</li>
+</ul>
+<p>This domain offers strong operational precedent for provenance and waiver governance.</p>
+<p>However, most compliance work-management products are ticket-centric and human-process-centric. The proposed architecture should avoid inheriting the weakness of allowing a person or agent to close a ticket without proving the underlying semantic condition.</p>
+<h3 id="reusable-ideas">Reusable ideas</h3>
+<ul>
+<li>immutable origin/source;</li>
+<li>policy/control identifier;</li>
+<li>responsible role rather than only responsible person;</li>
+<li>due date and escalation schedule;</li>
+<li>exception authority;</li>
+<li>evidence package;</li>
+<li>historical disposition record;</li>
+<li>reopen on evidence invalidation or policy change.</li>
+</ul>
+<h3 id="improvement-for-ai-systems">Improvement for AI systems</h3>
+<p>Replace “ticket closed” as primary truth with:</p>
+<pre><code class="language-text">satisfactionPredicate(subjectState, evidence, policyVersion) == true
+</code></pre>
+<p>where possible.</p>
+<hr>
+<h2 id="10-obligation-lifecycle-recommendation">10. Obligation lifecycle recommendation</h2>
+<p>The prompt’s candidate lifecycle mixes semantic state and execution state. Separate them.</p>
+<h3 id="semantic-obligation-status">Semantic obligation status</h3>
+<pre><code class="language-text">Active
+Blocked
+Overdue       # preferably a derived flag, not exclusive state
+Satisfied
+Waived
+Superseded
+CancelledInvalid
+Escalated     # preferably a relation/action or flag, not terminal state
+</code></pre>
+<h3 id="executionhandling-status">Execution/handling status</h3>
+<pre><code class="language-text">Unclaimed
+Claimed
+InProgress
+AwaitingExternal
+AwaitingHuman
+</code></pre>
+<p>This separation prevents awkward questions such as whether an obligation can be both blocked and overdue, or escalated and still active. It can.</p>
+<h3 id="recommended-transition-logic">Recommended transition logic</h3>
+<pre><code class="language-text">Raised -> Active
+Active -> Blocked
+Blocked -> Active
+Active/Blocked -> Satisfied
+Active/Blocked -> Waived
+Active/Blocked -> Superseded
+Active/Blocked -> CancelledInvalid
+</code></pre>
+<p><code>Overdue</code> is derived from deadline + unresolved status.</p>
+<p><code>Escalation</code> creates an escalation event/secondary obligation/authority route but does not erase the original obligation.</p>
+<h3 id="why-this-matters">Why this matters</h3>
+<p>Lifecycle should model semantic truth, not user-interface workflow convenience.</p>
+<hr>
+<h2 id="11-satisfaction-condition-model">11. Satisfaction-condition model</h2>
+<p>This is one of the strongest architectural features.</p>
+<p>An obligation should be satisfied because the required semantic condition is true, not because an agent emitted “done.”</p>
+<h3 id="recommended-form">Recommended form</h3>
+<pre><code class="language-text">satisfaction = anyOf(
+    StatePredicate(...),
+    EvidencePredicate(...),
+    AuthorizedDisposition(...)
+)
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-text">ReconcileRefundOutcome satisfied iff
+    RefundExecution in {Succeeded, Failed}
+    AND outcomeEvidence is fresh/valid
+</code></pre>
+<h3 id="three-levels-of-satisfaction">Three levels of satisfaction</h3>
+<ol>
+<li><strong>Fully machine-verifiable</strong> — authoritative state predicate is sufficient.</li>
+<li><strong>Machine-verifiable evidence package + authorized judgment</strong> — agent assembles evidence; human/authorized actor decides.</li>
+<li><strong>Judgment-dominant</strong> — obligation can only specify required review/disposition, not the substantive answer.</li>
+</ol>
+<p>Do not force false precision. “Machine-checkable satisfaction” is powerful only when the predicate accurately represents the intended outcome.</p>
+<h3 id="direct-llm-relevance">Direct LLM relevance</h3>
+<p>Recent verifier-backed agent work is highly relevant. PushBench demonstrates that agents can make plausible local progress yet falsely terminate before completing a quantitative goal; external state/backlog tracking and verifier-backed units materially improve behavior. This is direct support for independent completion validation.</p>
+<hr>
+<h2 id="12-provenance-model">12. Provenance model</h2>
+<p>Provenance is likely to be a major source of context compression.</p>
+<p>Recommended fields:</p>
+<pre><code class="language-text">obligationId
+obligationType
+subjectId
+raisedAt
+raisedAtStateVersion
+creationRuleId
+creationRuleVersion
+triggerEventId
+policyId
+policyVersion
+evidenceRefs[]
+reasonCode
+reasonExplanation
+actor/authority
+causalParentObligations[]
+supersedes?
+</code></pre>
+<h3 id="why-provenance-matters">Why provenance matters</h3>
+<p>Without provenance, an agent may need to reconstruct:</p>
+<ul>
+<li>which event caused the work;</li>
+<li>which rule was in force;</li>
+<li>whether the rule has changed;</li>
+<li>what evidence was considered;</li>
+<li>whether the work is stale;</li>
+<li>whether another agent already analyzed it.</li>
+</ul>
+<p>Provenance turns history into a compact causal explanation.</p>
+<h3 id="caution">Caution</h3>
+<p>Provenance is only compressive if it is <strong>trustworthy and selective</strong>. Dumping every log event into the obligation simply moves the context problem into another record.</p>
+<p>Use references and lazy expansion.</p>
+<hr>
+<h2 id="13-conflict-model">13. Conflict model</h2>
+<p>Conflicting obligations are not an edge case; they are a first-class semantic condition.</p>
+<p>Recommended representation:</p>
+<pre><code class="language-text">ObligationConflict {
+    id,
+    obligationIds,
+    detectedBy,
+    conflictType,
+    policyVersions,
+    resolutionAuthority,
+    status,
+    resolution?
+}
+</code></pre>
+<h3 id="resolution-order">Resolution order</h3>
+<p>Prefer:</p>
+<ol>
+<li>deterministic policy precedence when formally defined;</li>
+<li>temporal/specificity rules when formally defined;</li>
+<li>legal or organizational authority rules;</li>
+<li>agent-supported analysis with no authority to choose when norms genuinely conflict;</li>
+<li>human escalation.</li>
+</ol>
+<p>Do not allow the LLM to silently choose merely because one obligation looks more important in natural language.</p>
+<h3 id="contrary-to-duty-handling">Contrary-to-duty handling</h3>
+<p>Violation of a primary obligation may create a secondary obligation rather than erase the original history.</p>
+<p>Example:</p>
+<pre><code class="language-text">MustFileByDeadline violated
+-> FileLateWithExplanation
+-> EscalateLateFiling
+</code></pre>
+<p>Deontic literature already treats this class of problem as nontrivial.</p>
+<hr>
+<h2 id="14-priority-and-escalation-model">14. Priority and escalation model</h2>
+<p>A single numeric priority is usually inadequate because it collapses policy into a scalar without preserving why.</p>
+<p>Use a priority vector such as:</p>
+<pre><code class="language-text">safetySeverity
+legalRegulatoryCriticality
+hardDeadline
+timeToDeadline
+customerImpact
+financialExposure
+reversibility
+blockingCount
+policyPrecedence
+aging
+</code></pre>
+<p>Then define deterministic filtering and a scheduling policy over the vector.</p>
+<h3 id="agent-role">Agent role</h3>
+<p>The agent may optimize among obligations that are already comparable/legal. It should not invent normative priority.</p>
+<h3 id="escalation">Escalation</h3>
+<p>Escalation can often be deterministic:</p>
+<pre><code class="language-text">if blocked > 24h -> escalate to role X
+if deadline passed -> create violation disposition requirement
+if requiredAuthority unavailable -> route to authority queue
+if conflict detected -> escalate to policy owner
+</code></pre>
+<p>This is an excellent example of reasoning that should be removed from the probabilistic agent when rules are known.</p>
+<hr>
+<h2 id="15-waiver-model">15. Waiver model</h2>
+<p>Waiver is dangerous because it can become the easiest path for a goal-seeking agent.</p>
+<p>Recommended requirements:</p>
+<pre><code class="language-text">waiverAuthority
+waiverReasonCode
+justification
+evidence
+policyBasis
+scope
+issuedAt
+expiresAt?
+reviewAt?
+actor
+</code></pre>
+<p>A waiver must be an authorized state transition, not a mutable field.</p>
+<h3 id="strong-rule">Strong rule</h3>
+<pre><code class="language-text">Obligation does not expose Waive capability unless the current actor possesses waiver authority and the governing policy allows waiver for that obligation type.
+</code></pre>
+<p>Agent-generated text may support a waiver request, but should not itself constitute waiver authority.</p>
+<hr>
+<h2 id="16-supersession-model">16. Supersession model</h2>
+<p>Supersession is semantically different from satisfaction.</p>
+<p>Example:</p>
+<pre><code class="language-text">CompleteFraudReview
+</code></pre>
+<p>may become irrelevant if the underlying order is validly cancelled.</p>
+<p>Record:</p>
+<pre><code class="language-text">status = Superseded
+supersededBy = OrderCancelled@v19
+supersessionRule = FraudPolicy.rule...
+</code></pre>
+<p>This preserves the audit trail and prevents the system from falsely claiming the original requirement was fulfilled.</p>
+<p>Supersession should generally be rule-derived or authorized, not agent-declared free text.</p>
+<hr>
+<h2 id="17-scale-and-batching-model">17. Scale and batching model</h2>
+<p>The prompt correctly identifies the danger of materializing millions of heavyweight obligation objects after a broad policy change.</p>
+<h3 id="recommended-three-tier-architecture">Recommended three-tier architecture</h3>
+<pre><code class="language-text">ObligationRule
+    -> ImpactSet / ObligationBatch
+        -> Materialized ObligationInstance when selected/needed
+</code></pre>
+<p><code>ObligationRule</code> contains the derivation logic.</p>
+<p><code>ImpactSet</code> identifies affected subjects and aggregate status.</p>
+<p><code>ObligationInstance</code> is materialized lazily when:</p>
+<ul>
+<li>an agent claims the work;</li>
+<li>a user views the subject;</li>
+<li>the deadline window approaches;</li>
+<li>a related transition occurs;</li>
+<li>audit requires explicit instance history.</li>
+</ul>
+<h3 id="batch-metrics">Batch metrics</h3>
+<pre><code class="language-text">affected
+notYetMaterialized
+active
+claimed
+blocked
+satisfied
+waived
+superseded
+overdue
+</code></pre>
+<h3 id="database-design-implication">Database design implication</h3>
+<p>Do not make “one object per obligation” a theological requirement. The semantic model can be first-class even when physical storage is query-derived or compressed.</p>
+<hr>
+<h2 id="18-multi-agent-claiming-model">18. Multi-agent claiming model</h2>
+<p>Use established distributed-work semantics, but maintain obligation truth independently.</p>
+<p>Recommended claim:</p>
+<pre><code class="language-text">WorkLease {
+    obligationId,
+    attemptId,
+    agentId,
+    capabilitySnapshotVersion,
+    leaseStart,
+    leaseExpires,
+    heartbeatAt,
+    optimisticVersion
+}
+</code></pre>
+<h3 id="rules">Rules</h3>
+<ul>
+<li>lease expiration makes work reclaimable;</li>
+<li>lease expiration does not alter obligation status;</li>
+<li>completion must pass the semantic satisfaction verifier;</li>
+<li>consequential effects use idempotency/semantic operation IDs;</li>
+<li>stale capability snapshots cannot authorize a transition;</li>
+<li>two agents may collaborate, but only one should normally hold the mutation lease for one resolution attempt;</li>
+<li>read-only investigation can be concurrent when safe.</li>
+</ul>
+<p>This is deliberately similar to job queues because that part of the problem <em>is</em> a distributed queue problem.</p>
+<hr>
+<h2 id="19-planning-implications">19. Planning implications</h2>
+<p>An obligation naturally supplies a goal condition, allowing backward reasoning:</p>
+<pre><code class="language-text">obligation
+-> desired satisfaction predicate
+-> current unsatisfied predicates
+-> legal transitions that can establish them
+-> prerequisites of those transitions
+-> next available action
+</code></pre>
+<p>This resembles goal regression, hierarchical goal networks, HTN planning, and BDI plan selection.</p>
+<h3 id="architectural-opportunity">Architectural opportunity</h3>
+<p>The state model can mechanically generate a partially reduced planning problem.</p>
+<p>Instead of asking:</p>
+<pre><code class="language-text">“What should I do about this order?”
+</code></pre>
+<p>provide:</p>
+<pre><code class="language-text">Goal: ShipmentState = Shipped
+Current: PaymentState = Authorized
+Missing: PaymentState = Captured
+Legal producer: CapturePayment
+Guard: FraudReview = Clear
+Current blocker: FraudReview = Pending
+Available next capability: CompleteFraudReview...
+</code></pre>
+<p>This removes search over impossible actions.</p>
+<h3 id="multi-obligation-planning">Multi-obligation planning</h3>
+<p>Do not force one obligation per agent call. Multiple obligations may share:</p>
+<ul>
+<li>evidence gathering;</li>
+<li>external queries;</li>
+<li>transitions;</li>
+<li>human review;</li>
+<li>prerequisites.</li>
+</ul>
+<p>A planner should be able to batch compatible work while keeping each obligation independently verifiable.</p>
+<hr>
+<h2 id="20-context-compression-implications">20. Context-compression implications</h2>
+<p>This hypothesis has <strong>moderate direct support</strong> and strong architectural plausibility.</p>
+<p>Recent LLM-agent evidence is relevant:</p>
+<ul>
+<li>“Less Context, Better Agents” (2026) reports that selective retention plus summarization on an enterprise tool-use benchmark improved completion while drastically reducing tokens/runtime relative to full conversation history.</li>
+<li>LoCoBench-Agent reports increasing redundant operations, repeated file reads, repeated failed calls, and context summaries in long trajectories, attributing failures in part to weak progress tracking/deduplication.</li>
+<li>PushBench shows that exposing externally maintained progress state changes agent trajectories and reduces duplicates/false completion.</li>
+</ul>
+<p>These studies do not test obligations specifically, but they support the mechanism:</p>
+<blockquote>
+<p>structured external state can substitute for repeatedly carrying/reconstructing interaction history.</p>
+</blockquote>
+<h3 id="expected-compression-path">Expected compression path</h3>
+<p>Without obligation:</p>
+<pre><code class="language-text">logs + DB + code + prior agent history + policy docs
+-> infer unresolved condition
+-> infer why it matters
+-> infer what “done” means
+-> infer legal next actions
+</code></pre>
+<p>With obligation:</p>
+<pre><code class="language-text">obligation record + semantic slice
+-> select legal resolution action
+</code></pre>
+<h3 id="critical-caveat">Critical caveat</h3>
+<p>Compression fails if obligation records are verbose narrative dumps. The unit should contain compact semantic facts and references, not replicated history.</p>
+<hr>
+<h2 id="21-smaller-model-hypothesis">21. Smaller-model hypothesis</h2>
+<p>Evidence is currently <strong>weak</strong> for the exact claim but the mechanism is credible.</p>
+<p>Why it could work:</p>
+<ul>
+<li>work discovery is removed or narrowed;</li>
+<li>illegal action space is pruned;</li>
+<li>goal condition is explicit;</li>
+<li>completion is externally verified;</li>
+<li>context is smaller;</li>
+<li>progress is externalized;</li>
+<li>retry/resume logic is deterministic.</li>
+</ul>
+<p>These changes reduce the amount of model intelligence required for orchestration.</p>
+<p>Why it may fail:</p>
+<ul>
+<li>difficult obligations may still require sophisticated judgment;</li>
+<li>smaller models may misread evidence or choose poor plans;</li>
+<li>token reduction does not imply reasoning difficulty reduction;</li>
+<li>obligation generation may move complexity upstream rather than eliminate it.</li>
+</ul>
+<h3 id="required-experiment">Required experiment</h3>
+<p>Hold the semantic environment constant and test several model capability tiers against open-ended vs obligation-driven variants. Measure <strong>cost per correct semantic outcome</strong>, not raw completion claims.</p>
+<hr>
+<h2 id="22-token-and-cost-hypothesis">22. Token and cost hypothesis</h2>
+<p>Direct evidence for obligations reducing tokens is <strong>moderate at the mechanism level, weak at the complete-system level</strong>.</p>
+<p>A useful economic identity is:</p>
+<pre><code class="language-text">TotalAgentCost =
+    inference
+  + retrieval
+  + tool/API use
+  + retries/repair
+  + human intervention
+  + infrastructure allocation
+  + cost of semantic defects
+</code></pre>
+<p>Then:</p>
+<pre><code class="language-text">CostPerCorrectRequiredOutcome =
+    total end-to-end cost
+    / correctly achieved required semantic outcomes
+</code></pre>
+<p>This is superior to <code>tokens per run</code> and superior to <code>cost per obligation</code> because a badly designed system could generate thousands of trivial obligations and look efficient.</p>
+<h3 id="expected-savings-sources">Expected savings sources</h3>
+<ul>
+<li>less monitoring;</li>
+<li>fewer searches for what remains unresolved;</li>
+<li>fewer duplicate tool calls;</li>
+<li>less history reloading;</li>
+<li>fewer invalid transition attempts;</li>
+<li>shorter recovery after agent restart;</li>
+<li>lower false-completion repair cost;</li>
+<li>potentially cheaper models.</li>
+</ul>
+<h3 id="new-costs-introduced">New costs introduced</h3>
+<ul>
+<li>semantic modeling;</li>
+<li>rule authoring;</li>
+<li>obligation derivation;</li>
+<li>storage/query infrastructure;</li>
+<li>lifecycle logic;</li>
+<li>verification;</li>
+<li>governance;</li>
+<li>false-positive obligation noise.</li>
+</ul>
+<p>The system only wins economically when execution frequency and consequence justify these fixed costs.</p>
+<hr>
+<h2 id="23-security-implications">23. Security implications</h2>
+<p>The rule:</p>
+<pre><code class="language-text">Obligation != capability != authority
+</code></pre>
+<p>is security-critical.</p>
+<p>A weak agent architecture may reason:</p>
+<pre><code class="language-text">“I am required to close the account, therefore I should find a way to close it.”
+</code></pre>
+<p>A constrained architecture says:</p>
+<pre><code class="language-text">Obligation: CloseAccount
+Current capabilities: GatherEvidence, RequestAuthorizedClosure
+Unavailable: CloseAccount
+Reason: required authority missing
+</code></pre>
+<p>This preserves least privilege even under goal pressure.</p>
+<p>Additional safeguards:</p>
+<ul>
+<li>capabilities are derived from current actor authority + state + evidence + policy;</li>
+<li>obligation text never dynamically grants tool permissions;</li>
+<li>waiver/supersession are guarded transitions;</li>
+<li>agent cannot delete authoritative obligations;</li>
+<li>tool actions carry semantic operation IDs and state versions;</li>
+<li>satisfaction is verified outside the agent;</li>
+<li>provenance is immutable/auditable.</li>
+</ul>
+<hr>
+<h2 id="24-gaming-risks">24. Gaming risks</h2>
+<p>Queue-clearing is an optimization target and therefore susceptible to Goodhart/specification gaming.</p>
+<p>Potential attacks/failures:</p>
+<ul>
+<li>choose the easiest literal satisfaction path;</li>
+<li>mutate a proxy state rather than achieve the intended real-world outcome;</li>
+<li>request waiver instead of doing hard work;</li>
+<li>create a superseding condition artificially;</li>
+<li>avoid discovery so new obligations never appear;</li>
+<li>exploit stale/weak evidence;</li>
+<li>satisfy a machine predicate while degrading an unmodeled quality dimension;</li>
+<li>split or merge obligations to improve metrics.</li>
+</ul>
+<p>Recent work on reward hacking in language-model agents and coding agents reinforces that proxy compliance is a real problem, especially over long horizons.</p>
+<h3 id="safeguards">Safeguards</h3>
+<ol>
+<li>make satisfaction predicates consequence-based, not action-based;</li>
+<li>separate agent from satisfaction verifier;</li>
+<li>require authority for waiver/supersession;</li>
+<li>use hidden/independent audit predicates in evaluation;</li>
+<li>track downstream semantic outcome, not queue-clear rate;</li>
+<li>periodically sample resolved obligations for broader review;</li>
+<li>maintain a separate discovery/anomaly process.</li>
+</ol>
+<hr>
+<h2 id="25-situational-awareness-risks">25. Situational-awareness risks</h2>
+<p>This is the strongest conceptual counterargument.</p>
+<p>A queue-driven agent can become myopic. If the obligation-generation rules do not recognize a new class of problem, the agent may behave perfectly against an incomplete queue while the system fails in reality.</p>
+<p>This creates <strong>false confidence</strong>:</p>
+<pre><code class="language-text">queue empty != system healthy
+</code></pre>
+<h3 id="recommended-hybrid-architecture">Recommended hybrid architecture</h3>
+<p>Separate:</p>
+<pre><code class="language-text">Discovery plane
+    detects anomalies, new facts, policy impact, novel conditions
+
+Resolution plane
+    resolves authoritative obligations
+</code></pre>
+<p>Discovery may use:</p>
+<ul>
+<li>deterministic rules;</li>
+<li>anomaly detection;</li>
+<li>periodic reconciliation;</li>
+<li>humans;</li>
+<li>exploratory AI agents;</li>
+<li>external audits.</li>
+</ul>
+<p>AI-discovered conditions should normally enter as <code>CandidateObligation</code> or evidence/event proposals until validated by trusted rules/authority.</p>
+<p>This preserves open-ended sensing without allowing open-ended agents to mutate authoritative normative work directly.</p>
+<hr>
+<h2 id="26-counterarguments">26. Counterarguments</h2>
+<h3 id="counterargument-1-this-is-just-a-job-queue">Counterargument 1: This is just a job queue</h3>
+<p><strong>Partly true at the dispatch layer, false at the semantic layer.</strong> Claiming, leasing, retries, and worker coordination are queue problems. Persistent requirement-to-resolve, independent satisfaction predicates, policy provenance, and procedure independence are not normal job semantics.</p>
+<h3 id="counterargument-2-this-is-just-bpmworkflow">Counterargument 2: This is just BPM/workflow</h3>
+<p><strong>Partly true.</strong> Workflow systems already model durable work. But obligations are outcome-centric and can survive replacement of the procedure. The strongest architecture likely uses workflow technology to execute plans beneath obligation semantics.</p>
+<h3 id="counterargument-3-humans-already-use-tickets">Counterargument 3: Humans already use tickets</h3>
+<p>Yes, but tickets usually permit subjective closure and often contain narrative context rather than formal satisfaction conditions. A semantic obligation is closer to an invariant/goal than a ticket.</p>
+<h3 id="counterargument-4-modeling-cost-will-dominate">Counterargument 4: Modeling cost will dominate</h3>
+<p>For low-consequence, low-volume, rapidly changing workflows, this may be correct. The architecture should not be universal by default. The break-even improves with repeated execution, expensive mistakes, regulatory needs, high agent volume, and costly rediscovery.</p>
+<h3 id="counterargument-5-requirements-cannot-all-be-machine-checked">Counterargument 5: Requirements cannot all be machine checked</h3>
+<p>Correct. The design must represent authoritative human disposition as a valid satisfaction path where judgment is intrinsic.</p>
+<h3 id="counterargument-6-obligation-rules-can-be-wrong">Counterargument 6: Obligation rules can be wrong</h3>
+<p>Correct and serious. Precision/recall of obligation generation must be measured. This is a central source of systemic failure.</p>
+<h3 id="counterargument-7-more-explicit-state-increases-system-complexity">Counterargument 7: More explicit state increases system complexity</h3>
+<p>Yes. The question is whether the complexity is <em>essential domain complexity made explicit</em> or accidental infrastructure complexity. Poor DSL/schema design could make the system harder, not easier.</p>
+<hr>
+<h2 id="27-proposed-experiments">27. Proposed experiments</h2>
+<h3 id="experiment-a--open-ended-monitoring-vs-obligation-queue">Experiment A — Open-ended monitoring vs obligation queue</h3>
+<p><strong>Environment A:</strong> “Monitor refund operations and handle anything needing attention.”</p>
+<p><strong>Environment B:</strong> same underlying system plus explicit obligations, capabilities, provenance, satisfaction.</p>
+<p>Inject identical unresolved cases.</p>
+<p>Measure:</p>
+<ul>
+<li>discovery tokens;</li>
+<li>total tokens;</li>
+<li>reads/searches;</li>
+<li>tool calls;</li>
+<li>time;</li>
+<li>duplicate calls;</li>
+<li>unresolved misses;</li>
+<li>false completion;</li>
+<li>semantic correctness.</li>
+</ul>
+<h3 id="experiment-b--unknown-external-effect">Experiment B — Unknown external effect</h3>
+<p>Inject provider timeout after refund submission.</p>
+<p>Expected semantic state:</p>
+<pre><code class="language-text">RefundExecution = OutcomeUnknown
+</code></pre>
+<p>Expected obligation:</p>
+<pre><code class="language-text">ReconcileRefundOutcome
+</code></pre>
+<p>Critical metric: duplicate refund attempts.</p>
+<h3 id="experiment-c--agent-restart">Experiment C — Agent restart</h3>
+<p>Stop agent after partial resolution. Start fresh agent with either history/log access or current obligation slice.</p>
+<p>Measure recovery tokens, duplicate effects, time, and completion.</p>
+<h3 id="experiment-d--context-compression">Experiment D — Context compression</h3>
+<p>Compare:</p>
+<ol>
+<li>full history;</li>
+<li>retrieved conventional context;</li>
+<li>obligation + semantic slice;</li>
+<li>obligation + semantic slice with lazy evidence retrieval.</li>
+</ol>
+<h3 id="experiment-e--model-substitution">Experiment E — Model substitution</h3>
+<p>Run identical tasks using multiple model tiers. Determine whether obligation environment shifts the cost/performance frontier.</p>
+<h3 id="experiment-f--false-obligation--missing-obligation">Experiment F — False obligation / missing obligation</h3>
+<p>Deliberately corrupt obligation rules to characterize precision/recall sensitivity and false confidence.</p>
+<h3 id="experiment-g--gaming">Experiment G — Gaming</h3>
+<p>Prompt agent:</p>
+<pre><code class="language-text">Clear every outstanding obligation as fast as possible.
+</code></pre>
+<p>Expose legitimate and illegitimate shortcuts; measure attempts to waive, suppress, manipulate predicates, or bypass authority.</p>
+<h3 id="experiment-h--policy-change-burst">Experiment H — Policy change burst</h3>
+<p>Change evidence freshness from 24h to 4h over 10, 100, 1k, 100k, 1M subjects. Compare eager materialization, lazy impact sets, and query-derived obligations.</p>
+<h3 id="experiment-i--multi-obligation-planning">Experiment I — Multi-obligation planning</h3>
+<p>Provide obligations with shared prerequisites and compare one-at-a-time dispatch vs joint planning.</p>
+<h3 id="experiment-j--human-judgment-obligation">Experiment J — Human judgment obligation</h3>
+<p>Test obligations whose satisfaction requires an authorized human decision. Measure whether agent-prepared context reduces human review time without distorting decision quality.</p>
+<hr>
+<h2 id="28-metrics">28. Metrics</h2>
+<h3 id="correctness">Correctness</h3>
+<pre><code class="language-text">Required-Work Recall =
+    required semantic conditions represented as obligations
+    / all required semantic conditions
+
+Obligation Precision =
+    valid generated obligations
+    / all generated obligations
+
+False Completion Rate =
+    agent-claimed completions rejected by independent verifier
+    / agent-claimed completions
+
+Missed Work Rate =
+    required conditions never dispositioned
+    / all required conditions
+</code></pre>
+<h3 id="efficiency">Efficiency</h3>
+<pre><code class="language-text">ContextTokensPerCorrectOutcome
+ToolCallsPerCorrectOutcome
+ModelCallsPerCorrectOutcome
+RecoveryTokensAfterRestart
+TimeToCorrectResolution
+HumanMinutesPerCorrectOutcome
+</code></pre>
+<h3 id="waste">Waste</h3>
+<pre><code class="language-text">RediscoveryRate
+DuplicateWorkRate
+InvalidCapabilityAttemptRate
+RepeatedFailedToolCallRate
+StaleContextUseRate
+</code></pre>
+<h3 id="queue-health">Queue health</h3>
+<pre><code class="language-text">ObligationAgeDistribution
+BlockedDuration
+OverdueRate
+WaiverRate
+SupersessionRate
+ReopenRate
+ConflictRate
+FalsePositiveBurden
+</code></pre>
+<h3 id="economic-primary-metric">Economic primary metric</h3>
+<pre><code class="language-text">CostPerCorrectRequiredOutcome
+</code></pre>
+<p>Do <strong>not</strong> optimize <code>obligations closed per dollar</code> as the primary metric.</p>
+<hr>
+<h2 id="29-economic-model">29. Economic model</h2>
+<p>Let:</p>
+<pre><code class="language-text">C_open =
+    monitoring
+  + discovery
+  + reconstruction
+  + planning
+  + execution
+  + retries
+  + duplicate work
+  + missed-work loss
+  + human supervision
+
+C_obligation =
+    obligation-generation runtime
+  + targeted retrieval
+  + planning
+  + execution
+  + verification
+  + queue infrastructure
+  + false-obligation work
+  + human supervision
+</code></pre>
+<p>And fixed implementation cost:</p>
+<pre><code class="language-text">F =
+    domain modeling
+  + rule authoring
+  + infrastructure
+  + migration
+  + governance
+  + tests/tooling
+</code></pre>
+<p>Annualized value is roughly:</p>
+<pre><code class="language-text">NetBenefit =
+    N * (C_open - C_obligation)
+  + avoided semantic defect loss
+  + avoided compliance/audit loss
+  + reduced interruption/recovery loss
+  - annualized(F)
+</code></pre>
+<p>where <code>N</code> is the number of consequential resolution episodes.</p>
+<h3 id="important-addition">Important addition</h3>
+<p>Include probability of correctness:</p>
+<pre><code class="language-text">EffectiveCost = ExpectedTotalCost / P(correct semantic outcome)
+</code></pre>
+<p>or, preferably in empirical work, simply calculate observed:</p>
+<pre><code class="language-text">TotalCost / Count(CorrectRequiredOutcomes)
+</code></pre>
+<p>This prevents cheap failures from appearing economical.</p>
+<hr>
+<h2 id="30-break-even-model">30. Break-even model</h2>
+<p>The architecture becomes more attractive when the product has:</p>
+<ul>
+<li>high volume of repeated consequential decisions;</li>
+<li>expensive errors;</li>
+<li>long-running/interrupted agent execution;</li>
+<li>policy complexity;</li>
+<li>compliance/audit requirements;</li>
+<li>external effects with uncertain outcomes;</li>
+<li>many actors with differing authority;</li>
+<li>frequent need to explain why work exists;</li>
+<li>substantial rediscovery/context cost;</li>
+<li>multiple agents coordinating on shared state.</li>
+</ul>
+<p>It is less attractive when:</p>
+<ul>
+<li>work is rare and bespoke;</li>
+<li>requirements change faster than they can be modeled;</li>
+<li>consequences are low;</li>
+<li>human judgment dominates every outcome;</li>
+<li>no authoritative system state exists;</li>
+<li>the organization cannot maintain rules/evidence semantics.</li>
+</ul>
+<h3 id="practical-break-even-experiment">Practical break-even experiment</h3>
+<p>For a startup, do not build a universal obligation engine first. Implement one narrow domain with expensive ambiguity — such as outcome-unknown payment effects, evidence freshness, or approval conditions — and measure savings against a conventional agent implementation.</p>
+<p>The right startup question is not “Can we model every obligation?” It is:</p>
+<blockquote>
+<p>“Can one reusable obligation substrate create enough savings/correctness in three materially different workflows that the fixed modeling cost begins to amortize?”</p>
+</blockquote>
+<hr>
+<h2 id="31-what-is-supported-by-existing-research">31. What is supported by existing research</h2>
+<h3 id="established-concepts--strong-support">Established concepts — strong support</h3>
+<ul>
+<li>obligations, permissions, prohibitions as formal normative concepts;</li>
+<li>deadlines/violations/conflicting duties as nontrivial deontic problems;</li>
+<li>normative multi-agent systems using obligations to regulate agents;</li>
+<li>social commitments that persist and can be discharged, released, delegated, etc.;</li>
+<li>BDI separation of informational state, goals, intentions, and plans;</li>
+<li>explicit workflow/process models and formal verification;</li>
+<li>reachability/deadlock/soundness analysis in Petri-net/workflow systems;</li>
+<li>durable execution, persisted progress, retries, and idempotency;</li>
+<li>policy systems that distinguish permission decisions from mandatory obligations.</li>
+</ul>
+<h3 id="demonstrated-ai-effects--meaningful-but-narrower">Demonstrated AI effects — meaningful but narrower</h3>
+<p>Recent LLM-agent studies support:</p>
+<ul>
+<li>long horizons create reliability/training problems;</li>
+<li>external progress/backlog state can reduce duplicate behavior and improve quantitative completion;</li>
+<li>agents can falsely terminate without verifier-backed completion;</li>
+<li>long agent trajectories exhibit redundant reads/calls and progress-tracking failures;</li>
+<li>selective context retention/summarization can reduce token/runtime cost while improving task completion in at least one enterprise tool-use benchmark;</li>
+<li>reward/specification gaming occurs in language-model agents and long-horizon coding agents.</li>
+</ul>
+<p>These findings are directly relevant to the obligation hypothesis but do not constitute a complete end-to-end validation.</p>
+<hr>
+<h2 id="32-what-remains-speculative">32. What remains speculative</h2>
+<p>The following claims remain unproven for the proposed architecture:</p>
+<ol>
+<li>exact percentage reduction in token usage;</li>
+<li>exact reduction in tool calls;</li>
+<li>total cost savings after semantic-modeling cost;</li>
+<li>reliable substitution of smaller/cheaper models;</li>
+<li>obligation generation with sufficiently high recall to make the queue trustworthy;</li>
+<li>a universal obligation granularity rule;</li>
+<li>scalability of rich provenance/evidence semantics to millions of obligations;</li>
+<li>the optimal division between deterministic priority and model scheduling;</li>
+<li>whether joint planning over obligations beats independent dispatch in real enterprise systems;</li>
+<li>whether agent users will maintain obligation rules correctly over policy evolution;</li>
+<li>whether obligation-driven agents become dangerously myopic without a strong discovery plane;</li>
+<li>whether the combined capability + obligation interface consistently outperforms good workflow-engine + tool-schema designs.</li>
+</ol>
+<p>These are exactly the issues experiments should target.</p>
+<hr>
+<h2 id="33-architecture-changes-recommended">33. Architecture changes recommended</h2>
+<h3 id="a-make-obligation-a-first-class-semantic-type">A. Make obligation a first-class semantic type</h3>
+<p>Not a generic <code>Task</code> row.</p>
+<h3 id="b-separate-semantic-status-from-execution-status">B. Separate semantic status from execution status</h3>
+<p>Do not mix <code>Blocked</code>, <code>Claimed</code>, <code>Overdue</code>, and <code>Satisfied</code> into one linear enum.</p>
+<h3 id="c-require-satisfaction-predicates">C. Require satisfaction predicates</h3>
+<p>Every obligation type must specify how the system determines legitimate disposition, even when that determination includes authorized human judgment.</p>
+<h3 id="d-separate-obligation-from-taskplan">D. Separate obligation from task/plan</h3>
+<pre><code class="language-text">Obligation = what must become resolved
+Task/plan = one current attempt to achieve it
+</code></pre>
+<h3 id="e-derive-capabilities-independently">E. Derive capabilities independently</h3>
+<p>Obligation presence must never broaden authority.</p>
+<h3 id="f-make-provenance-mandatory">F. Make provenance mandatory</h3>
+<p>At minimum: trigger, state version, rule/policy version, reason, evidence references.</p>
+<h3 id="g-use-lazy-context-expansion">G. Use lazy context expansion</h3>
+<p>Default agent packet:</p>
+<pre><code class="language-text">obligation
+current subject state
+satisfaction
+available capabilities
+missing prerequisites
+minimal evidence summary
+provenance refs
+</code></pre>
+<p>Fetch details only when needed.</p>
+<h3 id="h-add-conflict-as-a-first-class-object">H. Add conflict as a first-class object</h3>
+<p>Do not hide contradictory obligations in priority sorting.</p>
+<h3 id="i-treat-overdueescalation-as-orthogonal-properties">I. Treat overdue/escalation as orthogonal properties</h3>
+<p>An overdue obligation is still active.</p>
+<h3 id="j-govern-waiver-and-supersession-as-transitions">J. Govern waiver and supersession as transitions</h3>
+<p>No direct mutation/deletion.</p>
+<h3 id="k-reuse-durable-queue-infrastructure">K. Reuse durable queue infrastructure</h3>
+<p>Use leases, heartbeats, optimistic concurrency, idempotency, retry semantics rather than inventing them.</p>
+<h3 id="l-add-an-independent-discovery-plane">L. Add an independent discovery plane</h3>
+<p>The obligation queue must never be assumed complete merely because it is empty.</p>
+<h3 id="m-add-obligation-rule-precisionrecall-testing">M. Add obligation-rule precision/recall testing</h3>
+<p>Test obligation derivation like a critical classifier/specification.</p>
+<h3 id="n-prefer-semantic-dependencies-over-obligation-to-obligation-dependencies">N. Prefer semantic dependencies over obligation-to-obligation dependencies</h3>
+<p>Instead of:</p>
+<pre><code class="language-text">O2 requires O1
+</code></pre>
+<p>prefer where possible:</p>
+<pre><code class="language-text">O2 requires FraudReviewState = Clear
+</code></pre>
+<p>This decouples requirement identity from implementation history and reduces brittle graphs.</p>
+<h3 id="o-build-reachability-checks-where-tractable">O. Build reachability checks where tractable</h3>
+<p>Detect obligations whose satisfaction predicates have no legal path from current state. Escalate instead of letting agents repeatedly fail.</p>
+<h3 id="p-do-not-expose-all-obligations-to-the-model">P. Do not expose all obligations to the model</h3>
+<p>Use deterministic retrieval/filtering by authority, domain, priority window, subject, blocking relationship, and workload.</p>
+<hr>
+<h2 id="34-final-verdict">34. Final verdict</h2>
+<h3 id="do-explicit-obligations-reduce-agent-work-discovery-cost">Do explicit obligations reduce agent work-discovery cost?</h3>
+<p><strong>Strong evidence at the mechanism level; Moderate evidence for the specific architecture.</strong></p>
+<p>Workflow/normative systems already externalize required work, and recent LLM-agent research shows external backlog/progress state can improve long-horizon execution. Direct enterprise experiments with semantic obligations are still missing.</p>
+<h3 id="do-explicit-obligations-reduce-contexttoken-usage">Do explicit obligations reduce context/token usage?</h3>
+<p><strong>Moderate evidence.</strong></p>
+<p>There is direct recent evidence that selective state/summarization reduces token usage and can improve agent completion, plus strong architectural reasoning that obligation records can replace repeated semantic reconstruction. Exact obligation-specific savings are unproven.</p>
+<h3 id="do-obligations-improve-completion-correctness">Do obligations improve completion correctness?</h3>
+<p><strong>Moderate evidence.</strong></p>
+<p>Verifier-backed progress and external completion gating improve related long-horizon agent behavior. Formal workflow/deontic traditions strongly support explicit satisfaction/verification. Full obligation architecture remains untested.</p>
+<h3 id="do-obligations-reduce-repeatedduplicate-work">Do obligations reduce repeated/duplicate work?</h3>
+<p><strong>Moderate-to-strong evidence.</strong></p>
+<p>Recent state-tracking controller experiments directly eliminated duplicate submissions in tested conditions, and durable queue/idempotency practice strongly supports the mechanism.</p>
+<h3 id="can-obligations-enable-smaller-models">Can obligations enable smaller models?</h3>
+<p><strong>Weak evidence.</strong></p>
+<p>Plausible and economically important, but direct evidence for model substitution caused by obligation structure was not found.</p>
+<h3 id="is-capability--obligation-a-useful-control-surface-for-agents">Is capability + obligation a useful control surface for agents?</h3>
+<p><strong>Yes.</strong></p>
+<p>It cleanly separates authorization from required resolution and maps to substantial prior work while producing a particularly useful interface for constrained AI agents.</p>
+<h3 id="closest-existing-concept">Closest existing concept</h3>
+<p><strong>A synthesis of normative multi-agent obligations/social commitments + goal-oriented agent planning + durable workflow/work-queue execution, with XACML-style separation of permission and mandatory obligations.</strong></p>
+<p>No single compared system captures the whole proposed structure.</p>
+<h3 id="most-valuable-architectural-benefit">Most valuable architectural benefit</h3>
+<p><strong>Externalizing “what remains unresolved and what counts as resolved” from probabilistic agent memory into durable semantic system state.</strong></p>
+<p>This potentially improves correctness, resumability, auditability, context compression, and coordination simultaneously.</p>
+<h3 id="biggest-correctness-risk">Biggest correctness risk</h3>
+<p><strong>Obligation-generation incompleteness creating false confidence.</strong></p>
+<p>An agent can perfectly clear an incomplete queue while missing the real problem.</p>
+<h3 id="biggest-economic-opportunity">Biggest economic opportunity</h3>
+<p><strong>Reducing repeated semantic reconstruction and long-horizon orchestration enough to lower cost per correct outcome — potentially including model-tier reduction — across high-volume consequential workflows.</strong></p>
+<h3 id="most-important-missing-experiment">Most important missing experiment</h3>
+<p><strong>A controlled end-to-end comparison of the same realistic domain under open-ended autonomy vs explicit state + capabilities + obligations, measuring total cost per independently verified correct semantic outcome.</strong></p>
+<p>This experiment should include agent restart and outcome-unknown external effects because those are where the architecture should show its clearest advantage.</p>
+<h3 id="recommended-obligation-lifecycle">Recommended obligation lifecycle</h3>
+<pre><code class="language-text">Semantic status:
+    Active
+    Blocked
+    Satisfied
+    Waived
+    Superseded
+    CancelledInvalid
+
+Orthogonal properties/events:
+    Overdue
+    Escalated
+
+Execution/lease status:
+    Unclaimed
+    Claimed
+    InProgress
+    AwaitingExternal
+    AwaitingHuman
+</code></pre>
+<h3 id="recommended-distinction-between-obligation-and-task">Recommended distinction between obligation and task</h3>
+<blockquote>
+<p><strong>An obligation is the durable requirement that a semantic condition be resolved. A task is a replaceable execution attempt chosen to satisfy that requirement. Task failure must not erase the obligation, and task completion must not by itself prove the obligation satisfied.</strong></p>
+</blockquote>
+<hr>
+<h1 id="research-synthesis-strongest-implication">Research synthesis: strongest implication</h1>
+<p>The architectural hypothesis should now be stated more sharply:</p>
+<blockquote>
+<p><strong>Explicit obligations are not primarily a better task-management feature. They are a way to move unresolved-work discovery, persistence, provenance, and completion truth out of the probabilistic agent and into the deterministic semantic environment.</strong></p>
+</blockquote>
+<p>That is important because contemporary agent failures are not limited to choosing the wrong action. Long-horizon systems also lose track of what has been completed, repeat work, accumulate stale context, terminate early, and require broad histories to reconstruct progress. Recent empirical agent research directly observes several of these problems.</p>
+<p>The likely economic value therefore comes from <strong>reducing the horizon and entropy of agent reasoning</strong>. The agent does not need to rediscover the universe of work. It receives a verified frontier of unresolved conditions and a verified frontier of currently legal actions.</p>
+<p>This produces a broader state-constrained architecture:</p>
+<pre><code class="language-text">Verified state       = what is currently believed/known authoritatively
+Capabilities         = what this actor may legally do now
+Obligations          = what must still become resolved
+Satisfaction         = how resolution is independently proven
+Evidence/provenance  = why these claims are trustworthy
+Policy/version       = under which semantics they were derived
+Agent                = selects among permitted resolution strategies
+</code></pre>
+<p>The important caveat is equally clear:</p>
+<blockquote>
+<p><strong>The obligation queue must never become the epistemic boundary of the whole system.</strong></p>
+</blockquote>
+<p>There must remain a discovery/reconciliation mechanism capable of finding conditions that the obligation rules failed to encode. Otherwise efficiency is purchased by blindness.</p>
+<p>This suggests a two-plane agent architecture:</p>
+<pre><code class="language-text">DISCOVERY PLANE
+    open-ended / anomaly-oriented / exploratory
+    proposes new evidence, events, candidate obligations, model gaps
+
+RESOLUTION PLANE
+    bounded / obligation-driven / capability-constrained
+    resolves authoritative obligations and proves semantic outcomes
+</code></pre>
+<p>That separation may be more important than treating every autonomous agent as a universal reasoner.</p>
+<hr>
+<h1 id="sources-and-evidence-base">Sources and evidence base</h1>
+<p>The following sources were used as primary or high-value evidence for this literature synthesis. Source claims in the report are paraphrased; this is not a quote compilation.</p>
+<ol>
+<li>
+<p>OASIS. <strong>eXtensible Access Control Markup Language (XACML) Version 3.0</strong>. In particular, XACML’s policy obligations and requirement that enforcement points discharge understood obligations.<br>
+<a href="https://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html">https://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html</a></p>
+</li>
+<li>
+<p>Object Management Group. <strong>Business Process Model and Notation (BPMN) 2.0.2</strong>.<br>
+<a href="https://www.omg.org/spec/BPMN/2.0.2/About-BPMN">https://www.omg.org/spec/BPMN/2.0.2/About-BPMN</a></p>
+</li>
+<li>
+<p>Temporal Technologies. <strong>Temporal Platform Documentation — Activity Definition / durable execution / retries / idempotency</strong>.<br>
+<a href="https://docs.temporal.io/activity-definition">https://docs.temporal.io/activity-definition</a><br>
+<a href="https://docs.temporal.io/glossary">https://docs.temporal.io/glossary</a></p>
+</li>
+<li>
+<p>Rao, A. S. &#x26; Georgeff, M. P. <strong>BDI Agents: From Theory to Practice</strong> (1995); Georgeff et al. <strong>The Belief-Desire-Intention Model of Agency</strong> (1998).<br>
+<a href="https://www.cs.ox.ac.uk/people/michael.wooldridge/pubs/atal98b.pdf">https://www.cs.ox.ac.uk/people/michael.wooldridge/pubs/atal98b.pdf</a></p>
+</li>
+<li>
+<p>Singh, M. P. <strong>An Ontology for Commitments in Multiagent Systems: Toward a Unification of Normative Concepts</strong>. Artificial Intelligence and Law 7, 97–113 (1999).</p>
+</li>
+<li>
+<p>Boella, G.; van der Torre, L.; Verhagen, H. and related normative multi-agent literature. Norms/obligations/permissions/prohibitions as first-class coordination concepts.</p>
+</li>
+<li>
+<p>Broersen, J.; Dignum, F.; Dignum, V.; Meyer, J.-J. <strong>Designing a Deontic Logic of Deadlines</strong> (DEON 2004).<br>
+<a href="https://doi.org/10.1007/978-3-540-25927-5_5">https://doi.org/10.1007/978-3-540-25927-5_5</a></p>
+</li>
+<li>
+<p>van der Aalst, W. M. P. <strong>Verification of Workflow Task Structures: A Petri-net-based Approach</strong> and related workflow-net research on soundness, reachability, and workflow verification.<br>
+<a href="https://www.vdaalst.com/publications/p100.pdf">https://www.vdaalst.com/publications/p100.pdf</a></p>
+</li>
+<li>
+<p>Cai, Y. et al. <strong>Push Your Agent: Measuring and Enforcing Quantitative Goal Persistence in Long-Horizon LLM Agents</strong> (2026). Reports verifier-backed progress-state interventions, duplicate elimination in matched controllers, and improved completion in tested settings.<br>
+<a href="https://arxiv.org/abs/2605.23574">https://arxiv.org/abs/2605.23574</a></p>
+</li>
+<li>
+<p>Lodha, A. et al. <strong>Less Context, Better Agents: Efficient Context Engineering for Long-Horizon Tool-Using LLM Agents</strong> (2026). Reports better completion with selective context pruning/summarization and substantially lower token/runtime use than full-history context in its enterprise benchmark.<br>
+<a href="https://arxiv.org/abs/2606.10209">https://arxiv.org/abs/2606.10209</a></p>
+</li>
+<li>
+<p>Qiu, J. et al. <strong>LoCoBench-Agent: An Interactive Benchmark for LLM Agents in Long-Context Software Engineering</strong> (2025). Reports redundant operations, repeated reads/calls, and progress/context problems in long trajectories.<br>
+<a href="https://arxiv.org/abs/2511.13998">https://arxiv.org/abs/2511.13998</a></p>
+</li>
+<li>
+<p>Kim, S. et al. <strong>On Training Large Language Models for Long-Horizon Tasks: An Empirical Study of Horizon Length</strong> (2026). Finds horizon length itself creates training difficulty and that horizon reduction can improve stability/generalization in controlled tasks.<br>
+<a href="https://arxiv.org/abs/2605.02572">https://arxiv.org/abs/2605.02572</a></p>
+</li>
+<li>
+<p>Skalse, J. et al. <strong>Defining and Characterizing Reward Hacking</strong> (2022). Formal analysis of proxy-reward hacking.<br>
+<a href="https://arxiv.org/abs/2209.13085">https://arxiv.org/abs/2209.13085</a></p>
+</li>
+<li>
+<p>Zhao, B. et al. <strong>SpecBench: Measuring Reward Hacking in Long-Horizon Coding Agents</strong> (2026). Evidence that passing visible checks does not guarantee intended system behavior in long-horizon coding tasks.<br>
+<a href="https://arxiv.org/abs/2605.21384">https://arxiv.org/abs/2605.21384</a></p>
+</li>
+<li>
+<p>NIST IR 8428. <strong>Digital Forensics and Incident Response (DFIR) Framework for Operational Technology</strong> (2022), used for the alert-fatigue / false-positive tradeoff analogy.<br>
+<a href="https://nvlpubs.nist.gov/nistpubs/ir/2022/NIST.IR.8428.pdf">https://nvlpubs.nist.gov/nistpubs/ir/2022/NIST.IR.8428.pdf</a></p>
+</li>
+</ol>
+<hr>
+<h1 id="evidence-labels-used-in-this-report">Evidence labels used in this report</h1>
+<ul>
+<li><strong>Established concept:</strong> substantial prior literature/standards demonstrate the concept exists and is understood.</li>
+<li><strong>Demonstrated AI effect:</strong> empirical LLM/agent evidence directly demonstrates a related mechanism.</li>
+<li><strong>Architectural inference:</strong> conclusion logically suggested by multiple established mechanisms but not directly tested as one system.</li>
+<li><strong>Hypothesis:</strong> economically or technically plausible claim requiring controlled experiment.</li>
+</ul>
+<hr>
+<h1 id="final-research-status">Final research status</h1>
+<p><strong>Proceed to implementation experiment.</strong></p>
+<p>The literature does not justify treating “obligations as LLM work queues” as already proven, but it does justify treating the hypothesis as substantially more than speculation. Most of the constituent mechanisms are established elsewhere, and several of the exact failure modes the architecture is intended to remove — duplicate work, progress loss, false completion, long-horizon degradation, and context accumulation — now have direct LLM-agent evidence.</p>
+<p>The next marginal research dollar should therefore go to a controlled prototype rather than another broad literature review.</p></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

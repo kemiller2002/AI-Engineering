@@ -1,0 +1,1316 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Synthesis of AI Research Missions 01–12 | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">Synthesis of AI Research Missions 01–12</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/synthesis/01-12-semantic-control-architecture-research-synthesis.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#synthesis-of-ai-research-missions-01-12">Synthesis of AI Research Missions 01–12</a></li><li><a href="#smallest-defensible-architecture-corrections-novelty-and-experimental-program">Smallest Defensible Architecture, Corrections, Novelty, and Experimental Program</a></li><li><a href="#executive-conclusion">Executive conclusion</a></li><li><a href="#part-i-what-survived-all-12-investigations">Part I — What survived all 12 investigations</a></li><li><a href="#1-probabilistic-exploration-deterministic-commitment">1. Probabilistic exploration, deterministic commitment</a></li><li><a href="#2-excellent-ordinary-architecture-remains-the-baseline">2. Excellent ordinary architecture remains the baseline</a></li><li><a href="#3-semantic-islands-not-universal-modeling">3. Semantic islands, not universal modeling</a></li><li><a href="#4-consequential-semantic-identity">4. Consequential semantic identity</a></li><li><a href="#5-explicit-legal-transitions-around-consequential-state">5. Explicit legal transitions around consequential state</a></li><li><a href="#6-dynamic-capabilities-are-one-of-the-strongest-ai-specific-mechanisms">6. Dynamic capabilities are one of the strongest AI-specific mechanisms</a></li><li><a href="#7-obligations-survive-but-as-semantic-requirements-rather-than-tasks">7. Obligations survive, but as semantic requirements rather than tasks</a></li><li><a href="#8-discovery-plane-resolution-plane">8. Discovery plane + resolution plane</a></li><li><a href="#9-epistemic-modeling-survives-but-the-original-enum-should-be-removed">9. Epistemic modeling survives, but the original enum should be removed</a></li><li><a href="#10-unknown-must-remain-distinct-from-false">10. Unknown must remain distinct from false</a></li><li><a href="#11-external-effect-uncertainty-is-real-and-needs-explicit-representation">11. External-effect uncertainty is real and needs explicit representation</a></li><li><a href="#12-semantic-operation-identity">12. Semantic operation identity</a></li><li><a href="#13-outcomeunknown-should-create-unresolved-work">13. OutcomeUnknown should create unresolved work</a></li><li><a href="#14-semantic-dependency-closure-remains-a-high-value-differentiator">14. Semantic dependency closure remains a high-value differentiator</a></li><li><a href="#15-semantic-migration-is-probably-the-strongest-development-time-differentiator">15. Semantic migration is probably the strongest development-time differentiator</a></li><li><a href="#16-wildcards-defaults-are-a-semantic-hazard-in-consequential-closed-worlds">16. Wildcards/defaults are a semantic hazard in consequential closed worlds</a></li><li><a href="#17-one-operational-authority-multiple-independent-oracles">17. One operational authority, multiple independent oracles</a></li><li><a href="#18-semantic-compilation-survives-only-in-narrow-form">18. Semantic compilation survives only in narrow form</a></li><li><a href="#19-do-not-invent-a-new-programming-language">19. Do not invent a new programming language</a></li><li><a href="#20-host-language-matters-but-authority-boundary-enforcement-matters-more">20. Host language matters, but authority-boundary enforcement matters more</a></li><li><a href="#21-semantic-abi-survives-public-standard-does-not-yet">21. Semantic ABI survives, public standard does not—yet</a></li><li><a href="#22-hateoas-is-important-prior-art">22. HATEOAS is important prior art</a></li><li><a href="#part-ii-what-should-be-removed-changed-or-demoted">Part II — What should be removed, changed, or demoted</a></li><li><a href="#remove-reject">Remove / reject</a></li><li><a href="#1-universal-state-machine-framing">1. Universal state-machine framing</a></li><li><a href="#2-universal-semantic-modeling">2. Universal semantic modeling</a></li><li><a href="#3-linear-epistemic-state-enum">3. Linear epistemic-state enum</a></li><li><a href="#4-ternary-universal-effect-algebra">4. Ternary universal effect algebra</a></li><li><a href="#5-generic-public-agent-protocol-as-first-product">5. Generic public &quot;agent protocol&quot; as first product</a></li><li><a href="#6-find-paths-as-mandatory-core-feature">6.  find_paths  as mandatory core feature</a></li><li><a href="#7-obligation-workflow-task">7. Obligation = workflow task</a></li><li><a href="#8-generated-tests-as-proof-of-correctness">8. Generated tests as proof of correctness</a></li><li><a href="#9-strong-language-solves-the-architecture-">9. &quot;Strong language solves the architecture&quot;</a></li><li><a href="#10-semantic-compiler-makes-weak-languages-equivalent-to-strong-languages-">10. &quot;Semantic compiler makes weak languages equivalent to strong languages&quot;</a></li><li><a href="#11-more-deterministic-means-more-correct-">11. &quot;More deterministic means more correct&quot;</a></li><li><a href="#12-smaller-models-are-proven-to-work-">12. &quot;Smaller models are proven to work&quot;</a></li><li><a href="#demote-to-optional-profile-level-concepts">Demote to optional/profile-level concepts</a></li><li><a href="#part-iii-smallest-defensible-architecture">Part III — Smallest defensible architecture</a></li><li><a href="#layer-0-excellent-conventional-architecture">Layer 0 — Excellent conventional architecture</a></li><li><a href="#layer-1-minimal-semantic-source-ir">Layer 1 — Minimal Semantic Source / IR</a></li><li><a href="#semanticid">SemanticId</a></li><li><a href="#subjecttype">SubjectType</a></li><li><a href="#statefamily-statecase">StateFamily / StateCase</a></li><li><a href="#transition">Transition</a></li><li><a href="#requirementexpression">RequirementExpression</a></li><li><a href="#capabilityrule">CapabilityRule</a></li><li><a href="#semanticdependency">SemanticDependency</a></li><li><a href="#semanticmigration">SemanticMigration</a></li><li><a href="#provenance">Provenance</a></li><li><a href="#versions">Versions</a></li><li><a href="#layer-2-build-time-semantic-compiler-analyzer">Layer 2 — Build-time semantic compiler/analyzer</a></li><li><a href="#layer-3-trusted-runtime-semantic-kernel">Layer 3 — Trusted runtime semantic kernel</a></li><li><a href="#layer-4-authoritative-persistence-boundary">Layer 4 — Authoritative persistence boundary</a></li><li><a href="#layer-5-agent-semantic-projection">Layer 5 — Agent semantic projection</a></li><li><a href="#optional-profile-a-obligations">Optional Profile A — Obligations</a></li><li><a href="#optional-profile-b-claims-evidence">Optional Profile B — Claims/Evidence</a></li><li><a href="#optional-profile-c-external-effects">Optional Profile C — External Effects</a></li><li><a href="#part-iv-what-is-genuinely-differentiated">Part IV — What is genuinely differentiated</a></li><li><a href="#low-novelty">Low novelty</a></li><li><a href="#more-defensible-differentiation">More defensible differentiation</a></li><li><a href="#1-one-semantic-authority-shared-by-runtime-and-agent">1. One semantic authority shared by runtime and agent</a></li><li><a href="#2-semantic-dependency-migration-as-ai-change-control">2. Semantic dependency + migration as AI change-control</a></li><li><a href="#3-capability-obligation-dual-frontier">3. Capability/obligation dual frontier</a></li><li><a href="#4-effect-uncertainty-changes-the-affordance-surface">4. Effect uncertainty changes the affordance surface</a></li><li><a href="#5-semantic-structure-as-precomputed-reasoning-context-compression">5. Semantic structure as precomputed reasoning/context compression</a></li><li><a href="#part-v-strongest-remaining-hypotheses">Part V — Strongest remaining hypotheses</a></li><li><a href="#h1-deterministic-commitment-gates-improve-consequential-action-safety">H1 — Deterministic commitment gates improve consequential action safety</a></li><li><a href="#h2-dynamic-legal-action-filtering-improves-agent-correctness-and-efficiency">H2 — Dynamic legal-action filtering improves agent correctness and efficiency</a></li><li><a href="#h3-semantic-dependency-migration-improves-correctness-on-meaning-changing-software-evolution">H3 — Semantic dependency + migration improves correctness on meaning-changing software evolution</a></li><li><a href="#h4-obligations-reduce-long-horizon-work-rediscovery">H4 — Obligations reduce long-horizon work rediscovery</a></li><li><a href="#h5-explicit-claims-evidence-prevent-assumption-laundering">H5 — Explicit claims/evidence prevent assumption laundering</a></li><li><a href="#h6-semantic-context-reduces-total-context-cost">H6 — Semantic context reduces total context cost</a></li><li><a href="#h7-stronger-environment-permits-smaller-cheaper-models">H7 — Stronger environment permits smaller/cheaper models</a></li><li><a href="#h8-semantic-abi-improves-cross-application-agent-portability">H8 — Semantic ABI improves cross-application agent portability</a></li><li><a href="#part-vi-unified-experimental-program">Part VI — Unified experimental program</a></li><li><a href="#domain">Domain</a></li><li><a href="#architecture-variants">Architecture variants</a></li><li><a href="#a-strong-conventional">A — Strong Conventional</a></li><li><a href="#b-semantic-state-transition-core">B — + Semantic State/Transition Core</a></li><li><a href="#c-capability-frontier">C — + Capability Frontier</a></li><li><a href="#d-obligations">D — + Obligations</a></li><li><a href="#e-semantic-dependency">E — + Semantic Dependency</a></li><li><a href="#f-semantic-migration">F — + Semantic Migration</a></li><li><a href="#g-effect-profile">G — + Effect Profile</a></li><li><a href="#h-epistemic-profile">H — + Epistemic Profile</a></li><li><a href="#model-tiers">Model tiers</a></li><li><a href="#task-families">Task families</a></li><li><a href="#1-local-refactor-control-task">1. Local refactor control task</a></li><li><a href="#2-state-addition">2. State addition</a></li><li><a href="#3-state-split">3. State split</a></li><li><a href="#4-cross-module-policy-change">4. Cross-module policy change</a></li><li><a href="#5-evidence-freshness-change">5. Evidence freshness change</a></li><li><a href="#6-external-effect-timeout">6. External-effect timeout</a></li><li><a href="#7-agent-restart">7. Agent restart</a></li><li><a href="#8-tool-space-test">8. Tool-space test</a></li><li><a href="#9-ambiguous-requirement">9. Ambiguous requirement</a></li><li><a href="#10-wrong-semantic-specification">10. Wrong semantic specification</a></li><li><a href="#11-generator-bug">11. Generator bug</a></li><li><a href="#12-sql-bypass">12. SQL bypass</a></li><li><a href="#13-product-pivot">13. Product pivot</a></li><li><a href="#14-longitudinal-sequence">14. Longitudinal sequence</a></li><li><a href="#part-vii-primary-metrics">Part VII — Primary metrics</a></li><li><a href="#correct-completion-rate">Correct Completion Rate</a></li><li><a href="#effective-cost-per-correct-completion">Effective Cost per Correct Completion</a></li><li><a href="#context-acquisition-cost">Context Acquisition Cost</a></li><li><a href="#semantic-change-coverage">Semantic Change Coverage</a></li><li><a href="#semantic-impact-precision">Semantic Impact Precision</a></li><li><a href="#duplicate-effect-rate">Duplicate Effect Rate</a></li><li><a href="#unsafe-retry-rate">Unsafe Retry Rate</a></li><li><a href="#obligation-precision-recall">Obligation Precision / Recall</a></li><li><a href="#false-completion-rate">False Completion Rate</a></li><li><a href="#false-block-rate">False Block Rate</a></li><li><a href="#human-escalation-rate">Human Escalation Rate</a></li><li><a href="#semantic-retention">Semantic Retention</a></li><li><a href="#assumption-survival-rate">Assumption Survival Rate</a></li><li><a href="#environment-leverage-ratio">Environment Leverage Ratio</a></li><li><a href="#part-viii-decision-gates-for-the-research-program">Part VIII — Decision gates for the research program</a></li><li><a href="#gate-1-does-capability-filtering-add-value-">Gate 1 — Does capability filtering add value?</a></li><li><a href="#gate-2-does-semantic-dependency-migration-outperform-strong-conventional-tooling-">Gate 2 — Does semantic dependency/migration outperform strong conventional tooling?</a></li><li><a href="#gate-3-do-obligations-reduce-restart-discovery-cost-">Gate 3 — Do obligations reduce restart/discovery cost?</a></li><li><a href="#gate-4-does-semantic-context-reduce-total-context-cost-">Gate 4 — Does semantic context reduce total context cost?</a></li><li><a href="#gate-5-can-lower-model-tiers-meet-correctness-targets-">Gate 5 — Can lower model tiers meet correctness targets?</a></li><li><a href="#gate-6-does-the-architecture-remain-cheaper-after-modeling-tooling-cost-">Gate 6 — Does the architecture remain cheaper after modeling/tooling cost?</a></li><li><a href="#part-ix-product-implementation-roadmap">Part IX — Product / implementation roadmap</a></li><li><a href="#phase-0-freeze-claims">Phase 0 — Freeze claims</a></li><li><a href="#phase-1-minimal-semantic-kernel">Phase 1 — Minimal semantic kernel</a></li><li><a href="#phase-2-dynamic-typed-tool-projection">Phase 2 — Dynamic typed tool projection</a></li><li><a href="#phase-3-effect-profile">Phase 3 — Effect profile</a></li><li><a href="#phase-4-obligations">Phase 4 — Obligations</a></li><li><a href="#phase-5-longitudinal-coding-benchmark">Phase 5 — Longitudinal coding benchmark</a></li><li><a href="#phase-6-epistemic-profile">Phase 6 — Epistemic profile</a></li><li><a href="#phase-7-cross-language-targets">Phase 7 — Cross-language targets</a></li><li><a href="#phase-8-cross-domain-portability">Phase 8 — Cross-domain portability</a></li><li><a href="#part-x-research-claims-we-can-responsibly-make-now">Part X — Research claims we can responsibly make now</a></li><li><a href="#final-architectural-thesis">Final architectural thesis</a></li> </ol> </aside> <section class="document-body"><h1 id="synthesis-of-ai-research-missions-0112">Synthesis of AI Research Missions 01–12</h1>
+<h2 id="smallest-defensible-architecture-corrections-novelty-and-experimental-program">Smallest Defensible Architecture, Corrections, Novelty, and Experimental Program</h2>
+<p>Date: 2026-08-14</p>
+<h1 id="executive-conclusion">Executive conclusion</h1>
+<p>The 12 research tracks do not support building a universal "state machine architecture," a new general-purpose modeling language, or an application framework intended to describe every part of a system.</p>
+<p>They support a narrower and stronger thesis:</p>
+<blockquote>
+<p>Probabilistic agents should operate against a small executable semantic control layer for consequential state and effects, instead of repeatedly reconstructing legality, authority, unresolved work, evidence quality, and change impact from implementation artifacts.</p>
+</blockquote>
+<p>The architecture should be built on top of excellent ordinary software architecture, not instead of it.</p>
+<p>The strongest design that survives all twelve investigations is:</p>
+<pre><code>ordinary modular software
+    +
+small consequential semantic core
+    +
+deterministic commitment boundary
+    +
+dynamic agent affordance/capability projection
+    +
+semantic dependency + migration checks
+    +
+optional domain profiles for obligations, evidence, and effect uncertainty
+    +
+independent correctness oracles
+</code></pre>
+<p>This is not primarily primitive novelty. Almost every individual mechanism has substantial prior art.</p>
+<p>The potentially differentiated contribution is the composition:</p>
+<pre><code>one authoritative semantic model
+    simultaneously supports:
+        runtime legality
+        agent-visible legal actions
+        unresolved work
+        semantic change impact
+        migration completeness
+        policy/evidence gating
+        effect-safety behavior
+        compact agent context
+</code></pre>
+<p>The commercial/research hypothesis that remains unproven is economic:</p>
+<blockquote>
+<p>Can explicit semantic structure replace enough repeated probabilistic reconstruction that AI agents become materially cheaper per semantically correct completion?</p>
+</blockquote>
+<p>That should now become the primary experimental question.</p>
+<hr>
+<h1 id="part-i--what-survived-all-12-investigations">Part I — What survived all 12 investigations</h1>
+<h2 id="1-probabilistic-exploration-deterministic-commitment">1. Probabilistic exploration, deterministic commitment</h2>
+<p>This is the strongest general principle.</p>
+<p>The deterministic system should own:</p>
+<ul>
+<li>authoritative state mutation;</li>
+<li>legality;</li>
+<li>hard invariants;</li>
+<li>authority;</li>
+<li>version/freshness checks;</li>
+<li>policy conditions that are mechanically decidable;</li>
+<li>protected effect execution rules;</li>
+<li>capability validation;</li>
+<li>semantic migration completeness.</li>
+</ul>
+<p>The AI should own or assist with:</p>
+<ul>
+<li>interpretation;</li>
+<li>search;</li>
+<li>recommendation;</li>
+<li>hypothesis generation;</li>
+<li>design alternatives;</li>
+<li>prioritization among legal choices;</li>
+<li>planning where deterministic planning is not economical;</li>
+<li>explanation;</li>
+<li>identifying possible defects in the semantic model itself.</li>
+</ul>
+<p>The boundary is:</p>
+<pre><code>model proposes / reasons
+    ->
+deterministic commitment gate validates
+    ->
+authoritative change occurs
+</code></pre>
+<p>The important claim is not that deterministic rules are always correct.</p>
+<p>They are not.</p>
+<p>The claim is that probabilistic reasoning should not acquire consequential authority merely by producing plausible output.</p>
+<hr>
+<h2 id="2-excellent-ordinary-architecture-remains-the-baseline">2. Excellent ordinary architecture remains the baseline</h2>
+<p>Good modularity already solves a great deal:</p>
+<ul>
+<li>information hiding;</li>
+<li>bounded contexts;</li>
+<li>aggregate ownership;</li>
+<li>ports/adapters;</li>
+<li>clean dependency direction;</li>
+<li>local invariants;</li>
+<li>strong types;</li>
+<li>architecture tests;</li>
+<li>static dependency graphs;</li>
+<li>repository retrieval;</li>
+<li>code indexing;</li>
+<li>well-defined APIs.</li>
+</ul>
+<p>Therefore semantic architecture should never be compared with a weak CRUD monolith and called a victory.</p>
+<p>The fair comparison is:</p>
+<pre><code>excellent conventional modular architecture
+</code></pre>
+<p>versus:</p>
+<pre><code>excellent conventional modular architecture
+    +
+one semantic mechanism at a time
+</code></pre>
+<p>This changes the research program from:</p>
+<pre><code>"Does semantic architecture beat normal software?"
+</code></pre>
+<p>to:</p>
+<pre><code>"What marginal value remains after normal architecture and tooling have already done their job?"
+</code></pre>
+<p>That is a much stronger scientific question.</p>
+<hr>
+<h2 id="3-semantic-islands-not-universal-modeling">3. Semantic islands, not universal modeling</h2>
+<p>The architecture is most defensible around consequential state.</p>
+<p>Examples:</p>
+<ul>
+<li>payments;</li>
+<li>approvals;</li>
+<li>identity;</li>
+<li>access/security;</li>
+<li>compliance;</li>
+<li>healthcare evidence;</li>
+<li>deployments;</li>
+<li>logistics;</li>
+<li>external commitments.</li>
+</ul>
+<p>Likely low-value areas:</p>
+<ul>
+<li>rendering;</li>
+<li>styling;</li>
+<li>content;</li>
+<li>simple CRUD;</li>
+<li>pure transformations;</li>
+<li>routine formatting;</li>
+<li>ordinary calculations.</li>
+</ul>
+<p>The architecture should therefore support semantic islands:</p>
+<pre><code>ordinary application
+    |
+    +-- ordinary module
+    +-- ordinary module
+    +-- semantic island: Payment
+    +-- semantic island: Identity
+    +-- ordinary module
+</code></pre>
+<p>This sharply reduces tooling and adoption cost.</p>
+<hr>
+<h2 id="4-consequential-semantic-identity">4. Consequential semantic identity</h2>
+<p>Stable semantic identity survived the research strongly.</p>
+<p>A semantic ID distinguishes:</p>
+<ul>
+<li>rename;</li>
+<li>replacement;</li>
+<li>split;</li>
+<li>merge;</li>
+<li>deprecation.</li>
+</ul>
+<p>Example:</p>
+<pre><code>SC-APPROVED
+</code></pre>
+<p>A label changing from "Approved" to "Fully Approved" need not imply semantic replacement.</p>
+<p>But:</p>
+<pre><code>SC-APPROVED
+    ->
+SC-CONDITIONAL-APPROVAL
+SC-FULL-APPROVAL
+</code></pre>
+<p>is a semantic split.</p>
+<p>This matters because textual diffs and repository search cannot reliably distinguish vocabulary change from meaning change.</p>
+<p>Stable semantic IDs should be first-class in the core.</p>
+<hr>
+<h2 id="5-explicit-legal-transitions-around-consequential-state">5. Explicit legal transitions around consequential state</h2>
+<p>The research still supports declared transitions, but only where they matter.</p>
+<p>Do not model every function call as a transition.</p>
+<p>Use transitions for:</p>
+<ul>
+<li>authoritative domain state changes;</li>
+<li>protected external effects;</li>
+<li>high-consequence commitments.</li>
+</ul>
+<p>A transition should have at minimum:</p>
+<ul>
+<li>semantic ID;</li>
+<li>subject/state family;</li>
+<li>source state or applicability predicate;</li>
+<li>target/effect;</li>
+<li>requirements/guards;</li>
+<li>version semantics;</li>
+<li>relevant dependencies.</li>
+</ul>
+<p>The important rule is:</p>
+<blockquote>
+<p>authoritative consequential state should not be freely mutated outside the declared transition boundary.</p>
+</blockquote>
+<hr>
+<h2 id="6-dynamic-capabilities-are-one-of-the-strongest-ai-specific-mechanisms">6. Dynamic capabilities are one of the strongest AI-specific mechanisms</h2>
+<p>Normal APIs answer:</p>
+<pre><code>What operations exist?
+</code></pre>
+<p>Capabilities answer:</p>
+<pre><code>What can this actor legally do now?
+</code></pre>
+<p>That is a significant distinction.</p>
+<p>Capability derivation may depend on:</p>
+<ul>
+<li>current state;</li>
+<li>actor authority;</li>
+<li>policy;</li>
+<li>evidence;</li>
+<li>freshness;</li>
+<li>versions;</li>
+<li>conflicting operations.</li>
+</ul>
+<p>The strongest result from research is not "fewer tools are always better."</p>
+<p>It is:</p>
+<blockquote>
+<p>Deterministic computation should decide which actions are admissible; probabilistic reasoning should choose among admissible actions.</p>
+</blockquote>
+<p>This matches prior art in:</p>
+<ul>
+<li>safe/shielded RL;</li>
+<li>reference monitors;</li>
+<li>capability systems;</li>
+<li>planning preconditions;</li>
+<li>formal policy enforcement.</li>
+</ul>
+<p>The economic advantage of PRE-filtering rather than merely rejecting illegal calls afterward remains unproven and should be tested directly.</p>
+<hr>
+<h2 id="7-obligations-survive-but-as-semantic-requirements-rather-than-tasks">7. Obligations survive, but as semantic requirements rather than tasks</h2>
+<p>The obligation concept became substantially better defined.</p>
+<p>An obligation is not:</p>
+<ul>
+<li>a TODO;</li>
+<li>a job;</li>
+<li>a queue message;</li>
+<li>an agent instruction;</li>
+<li>a mutable "done" bit.</li>
+</ul>
+<p>It is:</p>
+<blockquote>
+<p>a durable semantic assertion that the current world has an unresolved required condition under a particular policy/evidence context.</p>
+</blockquote>
+<p>A task or plan is one attempt to satisfy it.</p>
+<p>Therefore:</p>
+<pre><code>obligation != task
+task failure != obligation failure
+task completion != proof of obligation satisfaction
+</code></pre>
+<p>An obligation should include:</p>
+<ul>
+<li>identity;</li>
+<li>subject;</li>
+<li>applicability/reason;</li>
+<li>provenance;</li>
+<li>policy/version;</li>
+<li>satisfaction/disposition criteria;</li>
+<li>allowed dispositions;</li>
+<li>possibly deadline/escalation information.</li>
+</ul>
+<p>The research also supports separating:</p>
+<p>Semantic obligation status:
+Active
+Blocked
+Satisfied
+Waived
+Superseded
+CancelledInvalid</p>
+<p>from execution/lease status:
+Unclaimed
+Claimed
+InProgress
+AwaitingExternal
+AwaitingHuman</p>
+<p>Overdue and escalation should generally be orthogonal properties/events.</p>
+<hr>
+<h2 id="8-discovery-plane--resolution-plane">8. Discovery plane + resolution plane</h2>
+<p>This is one of the strongest architectural additions produced by the research.</p>
+<p>A pure obligation-driven agent can become dangerously myopic.</p>
+<p>An empty queue does not prove the system is healthy.</p>
+<p>Therefore separate:</p>
+<p>DISCOVERY PLANE
+open-ended
+anomaly-oriented
+exploratory
+proposes:
+new evidence
+candidate obligations
+semantic conflicts
+possible model gaps</p>
+<p>RESOLUTION PLANE
+bounded
+obligation-driven
+capability-constrained
+resolves authoritative work
+validates completion</p>
+<p>This allows open-ended intelligence without giving open-ended reasoning direct authority over consequential state.</p>
+<hr>
+<h2 id="9-epistemic-modeling-survives-but-the-original-enum-should-be-removed">9. Epistemic modeling survives, but the original enum should be removed</h2>
+<p>The original:</p>
+<pre><code>Unknown
+Reported
+Assumed
+Inferred
+Supported
+Verified
+Contradicted
+Invalidated
+</code></pre>
+<p>should NOT be one linear authoritative state machine.</p>
+<p>Those categories mix dimensions:</p>
+<ul>
+<li>origin;</li>
+<li>derivation;</li>
+<li>support;</li>
+<li>contradiction;</li>
+<li>verification;</li>
+<li>evidence validity;</li>
+<li>information absence.</li>
+</ul>
+<p>A better architecture is:</p>
+<p>Claim
+stable proposition identity</p>
+<p>Evidence
+source/provenance
+observed time
+scope
+support/opposition relation
+validity</p>
+<p>Derivation
+reported / inferred / model-generated / imported / etc.</p>
+<p>VerificationRecord
+verification policy
+authority
+evidence set
+time
+policy version</p>
+<p>DerivedEpistemicView
+computed for the current purpose</p>
+<p>Then:</p>
+<pre><code>evidence + provenance + policy + authority + time
+    ->
+verification record
+    ->
+derived usability
+    ->
+capabilities / obligations
+</code></pre>
+<p>The strongest AI-specific purpose is prevention of assumption laundering:</p>
+<pre><code>model guessed X
+    ->
+persisted X
+    ->
+later model sees X
+    ->
+later model assumes X was authoritative
+</code></pre>
+<p>The architecture should interrupt that chain.</p>
+<hr>
+<h2 id="10-unknown-must-remain-distinct-from-false">10. Unknown must remain distinct from false</h2>
+<p>This survived every relevant line of research.</p>
+<p>Absence of evidence cannot silently become false unless a specific closed-world policy says so.</p>
+<p>Likewise:</p>
+<ul>
+<li>contradicted is not automatically false;</li>
+<li>reported is not verified;</li>
+<li>high confidence is not authority;</li>
+<li>repeated copies of one source are not independent evidence.</li>
+</ul>
+<p>This is particularly important in:</p>
+<ul>
+<li>healthcare;</li>
+<li>compliance;</li>
+<li>accessibility;</li>
+<li>fraud;</li>
+<li>security;</li>
+<li>scientific/research systems.</li>
+</ul>
+<hr>
+<h2 id="11-external-effect-uncertainty-is-real-and-needs-explicit-representation">11. External-effect uncertainty is real and needs explicit representation</h2>
+<p>This is one of the best-supported concrete mechanisms.</p>
+<p>A timeout means:</p>
+<pre><code>the caller did not receive a conclusive response
+</code></pre>
+<p>not:</p>
+<pre><code>the effect definitely failed
+</code></pre>
+<p>Therefore:</p>
+<pre><code>transport failure != known business failure
+</code></pre>
+<p>For consequential external actions, the system should represent outcome knowledge explicitly.</p>
+<p>But the original ternary:</p>
+<pre><code>Success
+Failure
+OutcomeUnknown
+</code></pre>
+<p>is too small as a universal algebra.</p>
+<p>Real systems may require:</p>
+<pre><code>Rejected
+Accepted
+Pending
+Succeeded
+KnownFailed
+PartiallySucceeded
+OutcomeUnknown
+ReconciliationConflict
+AdministrativelyResolved
+</code></pre>
+<p>The core invariant is simpler:</p>
+<blockquote>
+<p>Unknown outcome must never be silently collapsed into success or failure.</p>
+</blockquote>
+<hr>
+<h2 id="12-semantic-operation-identity">12. Semantic operation identity</h2>
+<p>External effects should have stable business-operation identity independent of transport attempts.</p>
+<p>Example:</p>
+<pre><code>semanticOperationId = Refund:Payment123:Request17
+</code></pre>
+<p>HTTP retry 1, retry 2, workflow retry 3 are attempts of the same operation.</p>
+<p>This distinction allows:</p>
+<pre><code>RetrySameSemanticOperation
+</code></pre>
+<p>to be different from:</p>
+<pre><code>StartNewSemanticOperation
+</code></pre>
+<p>During OutcomeUnknown, a new semantic operation should normally be unavailable.</p>
+<p>A retry of the same operation may be legal if the provider gives strong idempotency/deduplication guarantees.</p>
+<hr>
+<h2 id="13-outcomeunknown-should-create-unresolved-work">13. OutcomeUnknown should create unresolved work</h2>
+<p>A strong integration pattern is:</p>
+<pre><code>external effect outcome = OutcomeUnknown
+    ->
+remove unsafe new-effect capability
+    ->
+expose observation/reconciliation capabilities
+    ->
+create reconciliation obligation
+</code></pre>
+<p>This composes three separate research areas:</p>
+<ul>
+<li>distributed-system uncertainty;</li>
+<li>capabilities;</li>
+<li>obligations.</li>
+</ul>
+<p>That composition is one of the more interesting system-level elements.</p>
+<hr>
+<h2 id="14-semantic-dependency-closure-remains-a-high-value-differentiator">14. Semantic dependency closure remains a high-value differentiator</h2>
+<p>Ordinary code dependency asks:</p>
+<pre><code>What code references what?
+</code></pre>
+<p>Semantic dependency asks:</p>
+<pre><code>What consequential meaning depends on this meaning?
+</code></pre>
+<p>Example:</p>
+<pre><code>ShipmentEligibility
+    depends on
+PaymentState.Captured
+</code></pre>
+<p>That relation may be indirect and not correspond cleanly to one import/call edge.</p>
+<p>The research consistently identifies semantic dependency as one of the most plausible residual advantages over:</p>
+<ul>
+<li>strong modularity;</li>
+<li>strong typing;</li>
+<li>code search;</li>
+<li>AST graphs;</li>
+<li>program slicing;</li>
+<li>retrieval.</li>
+</ul>
+<p>The main risk is graph incompleteness.</p>
+<p>A semantic graph that omits dependencies creates dangerous false confidence.</p>
+<p>Therefore dependency closure must be measured as recall and precision, not assumed.</p>
+<hr>
+<h2 id="15-semantic-migration-is-probably-the-strongest-development-time-differentiator">15. Semantic migration is probably the strongest development-time differentiator</h2>
+<p>This survived skeptical review particularly well.</p>
+<p>Example:</p>
+<pre><code>Approved
+    ->
+ConditionallyApproved
+FullyApproved
+</code></pre>
+<p>A normal compiler may catch direct exhaustive matches.</p>
+<p>A semantic migration system should force explicit disposition of consequential interpretations.</p>
+<p>For example:</p>
+<pre><code>CanFund:
+    old Approved behavior cannot automatically propagate to both new states.
+</code></pre>
+<p>The critical rule is:</p>
+<blockquote>
+<p>A semantic split invalidates dependent interpretations until they are explicitly redistributed.</p>
+</blockquote>
+<p>This creates deliberate semantic friction exactly where meaning has become ambiguous.</p>
+<p>That is likely much more valuable than merely generating state types.</p>
+<hr>
+<h2 id="16-wildcardsdefaults-are-a-semantic-hazard-in-consequential-closed-worlds">16. Wildcards/defaults are a semantic hazard in consequential closed worlds</h2>
+<p>Example:</p>
+<pre><code>Captured -> CanRefund
+_        -> CannotRefund
+</code></pre>
+<p>Later:</p>
+<pre><code>Disputed
+</code></pre>
+<p>silently becomes:</p>
+<pre><code>Disputed -> CannotRefund
+</code></pre>
+<p>No one explicitly decided that.</p>
+<p>For consequential closed state families, the architecture should reject catch-all interpretation unless the remaining cases have been explicitly declared semantically equivalent for that interpretation.</p>
+<p>This is a good analyzer/compiler rule.</p>
+<hr>
+<h2 id="17-one-operational-authority-multiple-independent-oracles">17. One operational authority, multiple independent oracles</h2>
+<p>This is perhaps the most important correction from the semantic-compilation research.</p>
+<p>If one semantic source generates:</p>
+<ul>
+<li>runtime;</li>
+<li>tests;</li>
+<li>documentation;</li>
+<li>tools;</li>
+<li>policies;</li>
+</ul>
+<p>then all may agree perfectly while the semantic source is wrong.</p>
+<p>Therefore:</p>
+<pre><code>generated consistency != correctness
+</code></pre>
+<p>The architecture needs:</p>
+<p>ONE OPERATIONAL AUTHORITY
+determines what the system actually permits/does</p>
+<p>MULTIPLE INDEPENDENT ORACLES
+challenge whether the authority is correct</p>
+<p>Independent oracles may include:</p>
+<ul>
+<li>domain-owned acceptance examples;</li>
+<li>external regulation/contract requirements;</li>
+<li>independently stated invariants;</li>
+<li>hidden acceptance tests;</li>
+<li>semantic mutation tests;</li>
+<li>production invariants;</li>
+<li>human/domain review;</li>
+<li>differential implementations.</li>
+</ul>
+<p>Generated tests should be described as conformance tests, not independent correctness tests.</p>
+<hr>
+<h2 id="18-semantic-compilation-survives-only-in-narrow-form">18. Semantic compilation survives only in narrow form</h2>
+<p>Historical MDE strongly argues against:</p>
+<pre><code>model entire application
+    ->
+generate everything
+</code></pre>
+<p>The safer model is:</p>
+<pre><code>encode only consequential semantics
+    ->
+generate/validate only artifacts whose independent duplication creates meaningful risk
+</code></pre>
+<p>Good generation targets:</p>
+<ul>
+<li>native state types;</li>
+<li>transition IDs;</li>
+<li>runtime guards;</li>
+<li>capability derivation;</li>
+<li>conformance tests;</li>
+<li>agent capability metadata;</li>
+<li>semantic impact graph;</li>
+<li>structural documentation;</li>
+<li>analyzers.</li>
+</ul>
+<p>Bad initial generation targets:</p>
+<ul>
+<li>business algorithms;</li>
+<li>UI;</li>
+<li>general workflows;</li>
+<li>SQL implementation;</li>
+<li>full persistence;</li>
+<li>full API implementations;</li>
+<li>prose documentation.</li>
+</ul>
+<p>The compiler should first prove one thing:</p>
+<blockquote>
+<p>A consequential semantic change can be made once and its mechanically dependent enforcement/control surfaces remain synchronized.</p>
+</blockquote>
+<hr>
+<h2 id="19-do-not-invent-a-new-programming-language">19. Do not invent a new programming language</h2>
+<p>The language research argues for:</p>
+<pre><code>native language
+    +
+small declarative semantic metadata
+    +
+canonical semantic IR
+    +
+analyzers
+    +
+tiny trusted runtime
+</code></pre>
+<p>Use native strengths when they exist:</p>
+<ul>
+<li>F# DUs;</li>
+<li>Rust enums;</li>
+<li>Kotlin sealed hierarchies;</li>
+<li>Java sealed types;</li>
+<li>modern C# union/closed hierarchy capabilities;</li>
+<li>TypeScript tagged unions.</li>
+</ul>
+<p>The semantic layer should not force all languages down to a weak common denominator.</p>
+<hr>
+<h2 id="20-host-language-matters-but-authority-boundary-enforcement-matters-more">20. Host language matters, but authority-boundary enforcement matters more</h2>
+<p>Strong languages improve:</p>
+<ul>
+<li>local exhaustiveness;</li>
+<li>construction safety;</li>
+<li>immutable modeling;</li>
+<li>diagnostics;</li>
+<li>local authority representation.</li>
+</ul>
+<p>They do not solve:</p>
+<ul>
+<li>stale state;</li>
+<li>policy version;</li>
+<li>evidence freshness;</li>
+<li>distributed capability validity;</li>
+<li>SQL bypass;</li>
+<li>serialization;</li>
+<li>external effects;</li>
+<li>direct operational tool access.</li>
+</ul>
+<p>Therefore:</p>
+<blockquote>
+<p>Put the strongest guarantees at the authority boundary, while exploiting native type-system strength wherever available.</p>
+</blockquote>
+<p>SQL remains a major independent bypass risk.</p>
+<p>A perfect F# or Rust model can still be invalidated by an unrestricted:</p>
+<pre><code>UPDATE Orders SET Status='Shipped'
+</code></pre>
+<p>Therefore authoritative persistence ownership/tool permissions matter more than language purity.</p>
+<hr>
+<h2 id="21-semantic-abi-survives-public-standard-does-notyet">21. Semantic ABI survives, public standard does not—yet</h2>
+<p>The protocol research supports a small internal semantic ABI.</p>
+<p>Do not build a public standard now.</p>
+<p>Likely v0.1 operations:</p>
+<pre><code>inspect(subject, fields?)
+get_obligations(scope, filters?)
+request_transition(capabilityToken, inputs, expectedVersion, operationId?)
+explain(subject, actionOrGoal)
+</code></pre>
+<p>Do NOT initially put in core:</p>
+<pre><code>find_paths
+reconcile_effect
+get_policy_context
+get_evidence
+obligation progress APIs
+</code></pre>
+<p>Those can be resources/capabilities/extensions.</p>
+<p>The strongest agent-facing design is:</p>
+<pre><code>semantic ABI internally
+    ->
+dynamic typed legal tools externally
+</code></pre>
+<p>not a raw generic stringly-typed transition tool.</p>
+<hr>
+<h2 id="22-hateoas-is-important-prior-art">22. HATEOAS is important prior art</h2>
+<p>Dynamic capability exposure is very close to hypermedia affordances.</p>
+<p>That is not a problem.</p>
+<p>The useful extension is:</p>
+<pre><code>hypermedia-style dynamic action discovery
+    +
+actor authority
+    +
+state/version checks
+    +
+evidence/policy
+    +
+obligations
+    +
+protected transition execution
+</code></pre>
+<p>The lesson from HATEOAS is not "this has already failed."</p>
+<p>It is:</p>
+<blockquote>
+<p>Dynamic discovery provides value only when clients can exploit it more effectively than static APIs.</p>
+</blockquote>
+<p>AI agents may change that tradeoff because dynamic affordances are naturally consumable by agents.</p>
+<p>That must still be experimentally demonstrated.</p>
+<hr>
+<h1 id="part-ii--what-should-be-removed-changed-or-demoted">Part II — What should be removed, changed, or demoted</h1>
+<h2 id="remove--reject">Remove / reject</h2>
+<h3 id="1-universal-state-machine-framing">1. Universal state-machine framing</h3>
+<p>Do not describe the whole system as state machines.</p>
+<p>Too narrow semantically and too broad operationally.</p>
+<h3 id="2-universal-semantic-modeling">2. Universal semantic modeling</h3>
+<p>Do not model ordinary algorithms, UI, layout, content, and low-consequence CRUD.</p>
+<h3 id="3-linear-epistemic-state-enum">3. Linear epistemic-state enum</h3>
+<p>Replace with claims/evidence/provenance/verification records + derived view.</p>
+<h3 id="4-ternary-universal-effect-algebra">4. Ternary universal effect algebra</h3>
+<p>Keep OutcomeUnknown as a required distinction, but allow richer effect profiles.</p>
+<h3 id="5-generic-public-agent-protocol-as-first-product">5. Generic public "agent protocol" as first product</h3>
+<p>Keep an internal ABI first.</p>
+<h3 id="6-find_paths-as-mandatory-core-feature">6. <code>find_paths</code> as mandatory core feature</h3>
+<p>Planning is established technology and may be unnecessary for initial proof.</p>
+<h3 id="7-obligation--workflow-task">7. Obligation = workflow task</h3>
+<p>Reject this equivalence.</p>
+<h3 id="8-generated-tests-as-proof-of-correctness">8. Generated tests as proof of correctness</h3>
+<p>They prove conformance only.</p>
+<h3 id="9-strong-language-solves-the-architecture">9. "Strong language solves the architecture"</h3>
+<p>False.</p>
+<h3 id="10-semantic-compiler-makes-weak-languages-equivalent-to-strong-languages">10. "Semantic compiler makes weak languages equivalent to strong languages"</h3>
+<p>Too strong.</p>
+<p>It can approximate authoritative runtime correctness; it cannot equalize local proof strength/ergonomics.</p>
+<h3 id="11-more-deterministic-means-more-correct">11. "More deterministic means more correct"</h3>
+<p>False when the specification is wrong.</p>
+<h3 id="12-smaller-models-are-proven-to-work">12. "Smaller models are proven to work"</h3>
+<p>Not proven.</p>
+<p>This is a high-value experiment.</p>
+<hr>
+<h2 id="demote-to-optionalprofile-level-concepts">Demote to optional/profile-level concepts</h2>
+<ul>
+<li>Evidence/claims: only domains needing epistemic authority.</li>
+<li>Obligations: only domains with durable unresolved work.</li>
+<li>Effect profile: only consequential external effects.</li>
+<li>Policy engine integration: when policy is distinct and dynamic.</li>
+<li>Planning graph: when path search is actually useful.</li>
+<li>Formal model generation: for selected high-consequence components.</li>
+<li>Workflow engine: use existing workflow infrastructure where appropriate.</li>
+</ul>
+<hr>
+<h1 id="part-iii--smallest-defensible-architecture">Part III — Smallest defensible architecture</h1>
+<h2 id="layer-0--excellent-conventional-architecture">Layer 0 — Excellent conventional architecture</h2>
+<p>Required baseline:</p>
+<ul>
+<li>modules/bounded contexts;</li>
+<li>explicit ownership;</li>
+<li>strong types where available;</li>
+<li>architecture tests;</li>
+<li>ordinary APIs;</li>
+<li>persistence discipline;</li>
+<li>normal testing;</li>
+<li>repository indexing/retrieval.</li>
+</ul>
+<p>Do not replace these.</p>
+<hr>
+<h2 id="layer-1--minimal-semantic-source--ir">Layer 1 — Minimal Semantic Source / IR</h2>
+<p>Required core primitives:</p>
+<h3 id="semanticid">SemanticId</h3>
+<p>Stable identity.</p>
+<h3 id="subjecttype">SubjectType</h3>
+<p>What domain thing semantics concern.</p>
+<h3 id="statefamily--statecase">StateFamily / StateCase</h3>
+<p>Only for consequential closed state.</p>
+<h3 id="transition">Transition</h3>
+<p>Declared authoritative semantic change.</p>
+<h3 id="requirementexpression">RequirementExpression</h3>
+<p>Restricted analyzable predicate AST.</p>
+<p>Examples:</p>
+<ul>
+<li>equality;</li>
+<li>membership;</li>
+<li>Boolean composition;</li>
+<li>comparisons;</li>
+<li>freshness/time predicates;</li>
+<li>references to named semantic facts.</li>
+</ul>
+<h3 id="capabilityrule">CapabilityRule</h3>
+<p>Derives currently legal action.</p>
+<h3 id="semanticdependency">SemanticDependency</h3>
+<p>Meaning-level dependency edge.</p>
+<h3 id="semanticmigration">SemanticMigration</h3>
+<p>Explicit split/merge/remove/replace disposition.</p>
+<h3 id="provenance">Provenance</h3>
+<p>Compact source/rationale/version metadata.</p>
+<h3 id="versions">Versions</h3>
+<p>At minimum:</p>
+<ul>
+<li>semantic spec version;</li>
+<li>state version;</li>
+<li>policy version when relevant.</li>
+</ul>
+<p>That is enough for v0.1.</p>
+<hr>
+<h2 id="layer-2--build-time-semantic-compileranalyzer">Layer 2 — Build-time semantic compiler/analyzer</h2>
+<p>Phase 1 checks:</p>
+<ul>
+<li>semantic IDs unique;</li>
+<li>references resolve;</li>
+<li>state families closed;</li>
+<li>consequential interpretation exhaustiveness;</li>
+<li>forbidden wildcard/default;</li>
+<li>transition declarations valid;</li>
+<li>dependencies resolvable;</li>
+<li>migration completeness;</li>
+<li>no stale generated semantic artifacts.</li>
+</ul>
+<p>Generate:</p>
+<ul>
+<li>target-language state types;</li>
+<li>transition identifiers/interfaces;</li>
+<li>runtime rule tables/guards;</li>
+<li>capability-query metadata;</li>
+<li>conformance tests;</li>
+<li>semantic impact report;</li>
+<li>structural Markdown/docs;</li>
+<li>dynamic agent tool metadata.</li>
+</ul>
+<p>Do not generate general business implementation.</p>
+<hr>
+<h2 id="layer-3--trusted-runtime-semantic-kernel">Layer 3 — Trusted runtime semantic kernel</h2>
+<p>This should be small.</p>
+<p>Responsibilities:</p>
+<ul>
+<li>inspect current authoritative state;</li>
+<li>derive current capabilities;</li>
+<li>validate requested transition;</li>
+<li>check actor authority;</li>
+<li>check state/version;</li>
+<li>check policy/version;</li>
+<li>check evidence/freshness when profile is used;</li>
+<li>enforce concurrency;</li>
+<li>enforce effect safety;</li>
+<li>write authoritative transition result;</li>
+<li>create/update derived obligations when profile is used.</li>
+</ul>
+<p>This is effectively a reference monitor for consequential semantic actions.</p>
+<hr>
+<h2 id="layer-4--authoritative-persistence-boundary">Layer 4 — Authoritative persistence boundary</h2>
+<p>Rules:</p>
+<ul>
+<li>no unrestricted semantic-state writes;</li>
+<li>service/module owns writes;</li>
+<li>deserialize through validation;</li>
+<li>ORMs do not expose unrestricted semantic setters;</li>
+<li>SQL/admin overrides explicit, audited, governed;</li>
+<li>agent should not receive arbitrary SQL for authoritative mutation.</li>
+</ul>
+<p>This is essential in mainstream stacks.</p>
+<hr>
+<h2 id="layer-5--agent-semantic-projection">Layer 5 — Agent semantic projection</h2>
+<p>Default operation:</p>
+<pre><code>inspect
+</code></pre>
+<p>returns only an authorized compact projection:</p>
+<ul>
+<li>current semantic state;</li>
+<li>versions;</li>
+<li>current typed legal capabilities;</li>
+<li>subject obligations;</li>
+<li>relevant claim/evidence summary if needed.</li>
+</ul>
+<p>Model-facing actions should normally be dynamic typed tools generated from capability instances.</p>
+<p>Blocked actions remain conceptually visible through:</p>
+<pre><code>explain
+</code></pre>
+<p>so the agent can reason about prerequisites without being allowed to execute them.</p>
+<hr>
+<h2 id="optional-profile-a--obligations">Optional Profile A — Obligations</h2>
+<p>Add:</p>
+<ul>
+<li>obligation rules;</li>
+<li>satisfaction predicates;</li>
+<li>provenance;</li>
+<li>disposition;</li>
+<li>lease/work attempt model;</li>
+<li>conflict representation.</li>
+</ul>
+<p>Do not embed full workflow execution.</p>
+<p>Use existing queues/workflow engines underneath when needed.</p>
+<hr>
+<h2 id="optional-profile-b--claimsevidence">Optional Profile B — Claims/Evidence</h2>
+<p>Add:</p>
+<ul>
+<li>Claim;</li>
+<li>Evidence;</li>
+<li>support/opposition edges;</li>
+<li>origin/derivation;</li>
+<li>VerificationRecord;</li>
+<li>validity/freshness;</li>
+<li>derived epistemic view.</li>
+</ul>
+<p>Do not add one giant knowledge graph platform.</p>
+<hr>
+<h2 id="optional-profile-c--external-effects">Optional Profile C — External Effects</h2>
+<p>Add:</p>
+<ul>
+<li>semantic operation ID;</li>
+<li>invocation attempt records;</li>
+<li>effect outcome knowledge;</li>
+<li>idempotency/retry policy;</li>
+<li>authoritative observation/reconciliation capability;</li>
+<li>OutcomeUnknown support.</li>
+</ul>
+<hr>
+<h1 id="part-iv--what-is-genuinely-differentiated">Part IV — What is genuinely differentiated</h1>
+<h2 id="low-novelty">Low novelty</h2>
+<p>Do not claim novelty for:</p>
+<ul>
+<li>explicit state;</li>
+<li>transitions;</li>
+<li>invariants;</li>
+<li>capabilities;</li>
+<li>obligations;</li>
+<li>evidence;</li>
+<li>provenance;</li>
+<li>planning;</li>
+<li>model generation;</li>
+<li>deterministic agent guards.</li>
+</ul>
+<p>These all have deep prior art.</p>
+<h2 id="more-defensible-differentiation">More defensible differentiation</h2>
+<h3 id="1-one-semantic-authority-shared-by-runtime-and-agent">1. One semantic authority shared by runtime and agent</h3>
+<p>The same semantics answer:</p>
+<p>Runtime:
+Is this action legal?</p>
+<p>Agent:
+What can I legally do now?</p>
+<h3 id="2-semantic-dependency--migration-as-ai-change-control">2. Semantic dependency + migration as AI change-control</h3>
+<p>Meaning change creates explicit required semantic work rather than relying on repository archaeology.</p>
+<h3 id="3-capabilityobligation-dual-frontier">3. Capability/obligation dual frontier</h3>
+<pre><code>MAY frontier
+MUST-resolve frontier
+</code></pre>
+<p>presented directly to agents.</p>
+<h3 id="4-effect-uncertainty-changes-the-affordance-surface">4. Effect uncertainty changes the affordance surface</h3>
+<p>OutcomeUnknown automatically changes what can be done and what must be resolved.</p>
+<h3 id="5-semantic-structure-as-precomputed-reasoningcontext-compression">5. Semantic structure as precomputed reasoning/context compression</h3>
+<p>Pay modeling cost once, reuse the result across many inference episodes.</p>
+<p>This is probably the most commercially significant and least validated claim.</p>
+<hr>
+<h1 id="part-v--strongest-remaining-hypotheses">Part V — Strongest remaining hypotheses</h1>
+<p>Ranked by evidence and strategic value.</p>
+<h2 id="h1--deterministic-commitment-gates-improve-consequential-action-safety">H1 — Deterministic commitment gates improve consequential action safety</h2>
+<p>Evidence: strong.</p>
+<p>Already substantially established.</p>
+<p>Do not spend the first experiment proving only this.</p>
+<hr>
+<h2 id="h2--dynamic-legal-action-filtering-improves-agent-correctness-and-efficiency">H2 — Dynamic legal-action filtering improves agent correctness and efficiency</h2>
+<p>Evidence:</p>
+<ul>
+<li>correctness: strong conceptual / emerging empirical;</li>
+<li>token/cost: moderate mechanism evidence;</li>
+<li>full economic effect: unproven.</li>
+</ul>
+<p>High-value experiment.</p>
+<hr>
+<h2 id="h3--semantic-dependency--migration-improves-correctness-on-meaning-changing-software-evolution">H3 — Semantic dependency + migration improves correctness on meaning-changing software evolution</h2>
+<p>Evidence:</p>
+<ul>
+<li>strong theoretical/engineering rationale;</li>
+<li>direct AI evidence: limited.</li>
+</ul>
+<p>Probably the most important development-time experiment.</p>
+<hr>
+<h2 id="h4--obligations-reduce-long-horizon-work-rediscovery">H4 — Obligations reduce long-horizon work rediscovery</h2>
+<p>Evidence:</p>
+<ul>
+<li>component mechanisms strong;</li>
+<li>complete obligation-specific AI economics unproven.</li>
+</ul>
+<p>Good operational-agent experiment.</p>
+<hr>
+<h2 id="h5--explicit-claimsevidence-prevent-assumption-laundering">H5 — Explicit claims/evidence prevent assumption laundering</h2>
+<p>Evidence:</p>
+<ul>
+<li>knowledge/provenance mechanisms strongly supported;</li>
+<li>exact AI-specific longitudinal effect unproven.</li>
+</ul>
+<p>Good second-phase experiment.</p>
+<hr>
+<h2 id="h6--semantic-context-reduces-total-context-cost">H6 — Semantic context reduces total context cost</h2>
+<p>Evidence:</p>
+<ul>
+<li>repository/context problem strongly established;</li>
+<li>semantic compression directly unproven.</li>
+</ul>
+<p>Core economic hypothesis.</p>
+<hr>
+<h2 id="h7--stronger-environment-permits-smallercheaper-models">H7 — Stronger environment permits smaller/cheaper models</h2>
+<p>Evidence:</p>
+<ul>
+<li>plausible / moderate indirect;</li>
+<li>direct end-to-end evidence weak.</li>
+</ul>
+<p>High strategic value, but should be tested after the architecture shows correctness/context gains.</p>
+<hr>
+<h2 id="h8--semantic-abi-improves-cross-application-agent-portability">H8 — Semantic ABI improves cross-application agent portability</h2>
+<p>Evidence:</p>
+<ul>
+<li>plausible / moderate;</li>
+<li>strong prior art;</li>
+<li>direct cross-domain tests missing.</li>
+</ul>
+<p>Later experiment.</p>
+<hr>
+<h1 id="part-vi--unified-experimental-program">Part VI — Unified experimental program</h1>
+<p>Do not run twelve disconnected experiments.</p>
+<p>Build one benchmark platform that tests multiple hypotheses.</p>
+<h2 id="domain">Domain</h2>
+<p>Use a payment/order/approval domain because it naturally contains:</p>
+<ul>
+<li>closed states;</li>
+<li>authority;</li>
+<li>cross-module dependencies;</li>
+<li>policy;</li>
+<li>obligations;</li>
+<li>external effect uncertainty;</li>
+<li>concurrency;</li>
+<li>semantic migration.</li>
+</ul>
+<p>Example modules:</p>
+<p>Customer
+Identity / Risk</p>
+<p>Payment
+Authorized
+Captured
+Refunding
+Refunded
+Disputed</p>
+<p>Order
+Pending
+Approved
+ConditionalApproval
+Fulfillable
+Cancelled</p>
+<p>Shipment
+Ready
+Shipped</p>
+<p>Effects
+Capture
+Refund
+Shipment creation</p>
+<hr>
+<h2 id="architecture-variants">Architecture variants</h2>
+<h3 id="a--strong-conventional">A — Strong Conventional</h3>
+<ul>
+<li>modular monolith;</li>
+<li>strong typing;</li>
+<li>good docs;</li>
+<li>architecture tests;</li>
+<li>tests;</li>
+<li>repository map/search;</li>
+<li>correct data ownership.</li>
+</ul>
+<h3 id="b---semantic-statetransition-core">B — + Semantic State/Transition Core</h3>
+<ul>
+<li>stable semantic IDs;</li>
+<li>explicit transitions;</li>
+<li>restricted requirements;</li>
+<li>runtime commitment gate.</li>
+</ul>
+<h3 id="c---capability-frontier">C — + Capability Frontier</h3>
+<ul>
+<li>dynamic legal action projection.</li>
+</ul>
+<h3 id="d---obligations">D — + Obligations</h3>
+<ul>
+<li>unresolved semantic work.</li>
+</ul>
+<h3 id="e---semantic-dependency">E — + Semantic Dependency</h3>
+<ul>
+<li>explicit meaning-level dependency graph.</li>
+</ul>
+<h3 id="f---semantic-migration">F — + Semantic Migration</h3>
+<ul>
+<li>state split/merge disposition checker.</li>
+</ul>
+<h3 id="g---effect-profile">G — + Effect Profile</h3>
+<ul>
+<li>OutcomeUnknown;</li>
+<li>operation identity;</li>
+<li>reconciliation obligation.</li>
+</ul>
+<h3 id="h---epistemic-profile">H — + Epistemic Profile</h3>
+<ul>
+<li>claims/evidence/verification for one risk/identity condition.</li>
+</ul>
+<p>This ablation ladder is more informative than comparing "normal vs everything."</p>
+<hr>
+<h2 id="model-tiers">Model tiers</h2>
+<p>Use at least:</p>
+<ul>
+<li>small;</li>
+<li>medium;</li>
+<li>frontier.</li>
+</ul>
+<p>Prefer two model families where practical.</p>
+<p>Goal:</p>
+<p>Find the cheapest model/environment pair that meets target semantic correctness.</p>
+<hr>
+<h2 id="task-families">Task families</h2>
+<h3 id="1-local-refactor-control-task">1. Local refactor control task</h3>
+<p>Replace payment gateway.</p>
+<p>Expected semantic-layer advantage:
+near zero.</p>
+<p>This checks benchmark fairness.</p>
+<h3 id="2-state-addition">2. State addition</h3>
+<p>Add Payment.Disputed.</p>
+<p>Tests exhaustiveness.</p>
+<h3 id="3-state-split">3. State split</h3>
+<p>Approved -> ConditionalApproval | FullApproval.</p>
+<p>Primary semantic migration test.</p>
+<h3 id="4-cross-module-policy-change">4. Cross-module policy change</h3>
+<p>Risk block prevents shipment after payment capture.</p>
+<p>Primary dependency test.</p>
+<h3 id="5-evidence-freshness-change">5. Evidence freshness change</h3>
+<p>24h -> 4h.</p>
+<p>Tests policy/evidence fan-out.</p>
+<h3 id="6-external-effect-timeout">6. External-effect timeout</h3>
+<p>Refund succeeds remotely, response lost.</p>
+<p>Tests OutcomeUnknown.</p>
+<h3 id="7-agent-restart">7. Agent restart</h3>
+<p>New agent resumes unknown effect/obligation.</p>
+<p>Tests externalized work state.</p>
+<h3 id="8-tool-space-test">8. Tool-space test</h3>
+<p>50-100 defined transitions, 3-5 legal now.</p>
+<p>Tests dynamic capability projection.</p>
+<h3 id="9-ambiguous-requirement">9. Ambiguous requirement</h3>
+<p>Forces system to surface PolicyDecisionRequired rather than invent semantics.</p>
+<h3 id="10-wrong-semantic-specification">10. Wrong semantic specification</h3>
+<p>Mandatory adversarial test.</p>
+<p>Tests correlated failure and independent oracles.</p>
+<h3 id="11-generator-bug">11. Generator bug</h3>
+<p>Tests compiler blast radius.</p>
+<h3 id="12-sql-bypass">12. SQL bypass</h3>
+<p>Tests authority boundary.</p>
+<h3 id="13-product-pivot">13. Product pivot</h3>
+<p>Changes hypothesis/workflow while durable semantics remain.</p>
+<p>Tests semantic retention.</p>
+<h3 id="14-longitudinal-sequence">14. Longitudinal sequence</h3>
+<p>50-100 dependent modifications.</p>
+<p>Tests drift/context growth.</p>
+<hr>
+<h1 id="part-vii--primary-metrics">Part VII — Primary metrics</h1>
+<p>The headline metric should be:</p>
+<pre><code>Cost per Semantically Correct Completion
+</code></pre>
+<p>not:</p>
+<pre><code>tokens per run
+</code></pre>
+<p>Raw metrics:</p>
+<ul>
+<li>input tokens;</li>
+<li>cached input tokens;</li>
+<li>output tokens;</li>
+<li>reasoning tokens when available;</li>
+<li>tool calls;</li>
+<li>model calls;</li>
+<li>search calls;</li>
+<li>files read;</li>
+<li>unique files read;</li>
+<li>compiler/analyzer calls;</li>
+<li>tests;</li>
+<li>rejected illegal actions;</li>
+<li>repair cycles;</li>
+<li>wall-clock time;</li>
+<li>human intervention;</li>
+<li>semantic defects;</li>
+<li>escaped defects;</li>
+<li>false blocks;</li>
+<li>obligation misses;</li>
+<li>duplicate effects.</li>
+</ul>
+<p>Derived metrics:</p>
+<h2 id="correct-completion-rate">Correct Completion Rate</h2>
+<pre><code>CCR = correct completions / attempts
+</code></pre>
+<h2 id="effective-cost-per-correct-completion">Effective Cost per Correct Completion</h2>
+<pre><code>ECC = mean execution cost / CCR
+</code></pre>
+<h2 id="context-acquisition-cost">Context Acquisition Cost</h2>
+<p>Tokens/tool calls before first semantically relevant action/edit.</p>
+<h2 id="semantic-change-coverage">Semantic Change Coverage</h2>
+<pre><code>surfaced affected interpretations
+/
+actually affected interpretations
+</code></pre>
+<h2 id="semantic-impact-precision">Semantic Impact Precision</h2>
+<pre><code>surfaced interpretations actually affected
+/
+all surfaced interpretations
+</code></pre>
+<h2 id="duplicate-effect-rate">Duplicate Effect Rate</h2>
+<h2 id="unsafe-retry-rate">Unsafe Retry Rate</h2>
+<h2 id="obligation-precision--recall">Obligation Precision / Recall</h2>
+<h2 id="false-completion-rate">False Completion Rate</h2>
+<h2 id="false-block-rate">False Block Rate</h2>
+<h2 id="human-escalation-rate">Human Escalation Rate</h2>
+<h2 id="semantic-retention">Semantic Retention</h2>
+<pre><code>previously validated semantics retained
+/
+prior semantics expected to survive
+</code></pre>
+<h2 id="assumption-survival-rate">Assumption Survival Rate</h2>
+<h2 id="environment-leverage-ratio">Environment Leverage Ratio</h2>
+<pre><code>recurring agent/defect savings
+/
+amortized semantic infrastructure cost
+</code></pre>
+<hr>
+<h1 id="part-viii--decision-gates-for-the-research-program">Part VIII — Decision gates for the research program</h1>
+<h2 id="gate-1--does-capability-filtering-add-value">Gate 1 — Does capability filtering add value?</h2>
+<p>If not:</p>
+<p>Do not build sophisticated capability projection.</p>
+<p>Keep runtime commitment gate only.</p>
+<h2 id="gate-2--does-semantic-dependencymigration-outperform-strong-conventional-tooling">Gate 2 — Does semantic dependency/migration outperform strong conventional tooling?</h2>
+<p>If not:</p>
+<p>Reduce semantic compiler sharply.</p>
+<h2 id="gate-3--do-obligations-reduce-restartdiscovery-cost">Gate 3 — Do obligations reduce restart/discovery cost?</h2>
+<p>If not:</p>
+<p>Use ordinary workflow/task infrastructure.</p>
+<h2 id="gate-4--does-semantic-context-reduce-total-context-cost">Gate 4 — Does semantic context reduce total context cost?</h2>
+<p>If not:</p>
+<p>Stop positioning context compression as economic differentiator.</p>
+<h2 id="gate-5--can-lower-model-tiers-meet-correctness-targets">Gate 5 — Can lower model tiers meet correctness targets?</h2>
+<p>If not:</p>
+<p>Do not claim model substitution.</p>
+<h2 id="gate-6--does-the-architecture-remain-cheaper-after-modelingtooling-cost">Gate 6 — Does the architecture remain cheaper after modeling/tooling cost?</h2>
+<p>If not:</p>
+<p>Limit it to high-consequence safety use cases.</p>
+<hr>
+<h1 id="part-ix--product--implementation-roadmap">Part IX — Product / implementation roadmap</h1>
+<h2 id="phase-0--freeze-claims">Phase 0 — Freeze claims</h2>
+<p>Do not add more primitives before experiments.</p>
+<h2 id="phase-1--minimal-semantic-kernel">Phase 1 — Minimal semantic kernel</h2>
+<p>Build only:</p>
+<ul>
+<li>stable semantic IDs;</li>
+<li>state cases;</li>
+<li>transitions;</li>
+<li>requirements;</li>
+<li>capability derivation;</li>
+<li>semantic dependencies;</li>
+<li>migration checker;</li>
+<li>runtime commitment gate;</li>
+<li>inspect;</li>
+<li>request_transition;</li>
+<li>explain.</li>
+</ul>
+<h2 id="phase-2--dynamic-typed-tool-projection">Phase 2 — Dynamic typed tool projection</h2>
+<p>Benchmark:</p>
+<ul>
+<li>static bespoke tools;</li>
+<li>raw semantic ABI;</li>
+<li>dynamic typed capabilities.</li>
+</ul>
+<h2 id="phase-3--effect-profile">Phase 3 — Effect profile</h2>
+<p>Implement one real/simulated non-atomic external effect.</p>
+<h2 id="phase-4--obligations">Phase 4 — Obligations</h2>
+<p>Add one durable unresolved-work case:
+ReconcileRefundOutcome</p>
+<h2 id="phase-5--longitudinal-coding-benchmark">Phase 5 — Longitudinal coding benchmark</h2>
+<p>Run state split / cross-module evolution.</p>
+<h2 id="phase-6--epistemic-profile">Phase 6 — Epistemic profile</h2>
+<p>Only after the core is stable.</p>
+<p>Implement claims/evidence for one consequential decision.</p>
+<h2 id="phase-7--cross-language-targets">Phase 7 — Cross-language targets</h2>
+<p>Start with mainstream targets where enterprise adoption matters.</p>
+<p>A reasonable initial set:</p>
+<ul>
+<li>C#</li>
+<li>TypeScript</li>
+</ul>
+<p>Use F# as a reference implementation/semantic design oracle if useful.</p>
+<p>Do not support many languages until the IR earns its value.</p>
+<h2 id="phase-8--cross-domain-portability">Phase 8 — Cross-domain portability</h2>
+<p>Second domain:</p>
+<ul>
+<li>deployment,</li>
+<li>healthcare simulation,</li>
+<li>compliance,
+or logistics.</li>
+</ul>
+<p>Only after the first domain demonstrates value.</p>
+<hr>
+<h1 id="part-x--research-claims-we-can-responsibly-make-now">Part X — Research claims we can responsibly make now</h1>
+<p>Supported strongly enough to state:</p>
+<ol>
+<li>Deterministic enforcement can prevent classes of illegal agent actions.</li>
+<li>Current tool choice and context retrieval are meaningful agent bottlenecks.</li>
+<li>Long-horizon software evolution is materially harder than isolated coding tasks.</li>
+<li>Unknown external outcomes are a real and distinct systems condition.</li>
+<li>Good conventional modularity already provides substantial context/change isolation.</li>
+<li>Generated agreement does not establish specification correctness.</li>
+<li>Semantic state/effect/policy abstractions should be applied selectively to consequential behavior.</li>
+<li>Strong host-language guarantees help but cannot replace authoritative runtime/persistence boundaries.</li>
+<li>The architecture has substantial prior art at the primitive level.</li>
+</ol>
+<p>Reasonable but unproven:</p>
+<ol>
+<li>Dynamic state-conditioned capabilities materially lower total agent cost.</li>
+<li>Semantic dependency/migration materially reduce AI maintenance drift.</li>
+<li>Obligations materially reduce long-horizon agent work-discovery cost.</li>
+<li>Semantic context materially reduces token usage.</li>
+<li>Smaller models can match larger models under stronger environments.</li>
+<li>A stable semantic ABI materially improves cross-domain portability.</li>
+<li>The full composition creates a commercially meaningful advantage over simpler combinations.</li>
+</ol>
+<hr>
+<h1 id="final-architectural-thesis">Final architectural thesis</h1>
+<p>The strongest version of the idea after all twelve investigations is:</p>
+<blockquote>
+<p>Probabilistic agents should not be responsible for repeatedly reconstructing consequential software semantics from incidental implementation artifacts when those semantics can be made explicit once and enforced deterministically.</p>
+</blockquote>
+<p>A good system should therefore expose to an agent:</p>
+<pre><code>what is authoritatively true enough for this purpose,
+what the actor may legally do now,
+what remains unresolved,
+why an action is blocked,
+and how a requested consequential transition will be validated.
+</code></pre>
+<p>It should NOT attempt to encode all intelligence, all workflows, or the whole application.</p>
+<p>The deterministic layer is not there to replace intelligence.</p>
+<p>It defines the boundary at which probabilistic intelligence acquires authority.</p>
+<p>The research program should now stop expanding the theory and start measuring the residual hypotheses against excellent conventional software.</p>
+<p>The decisive commercial metric is:</p>
+<blockquote>
+<p>cost per semantically correct completion over time.</p>
+</blockquote>
+<p>If the architecture wins there, the value is larger than safer agent code.</p>
+<p>It means explicit semantics function as reusable precomputed reasoning.</p>
+<p>If it does not, the architecture should be narrowed to the specific safety mechanisms that still produce measurable value.</p></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

@@ -1,0 +1,915 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>01 existing work prior art novelty research prompt | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">01 existing work prior art novelty research prompt</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/prompts/01-existing-work-prior-art-novelty-research-prompt.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#ai-research-mission-are-we-reinventing-existing-work-">AI RESEARCH MISSION — ARE WE REINVENTING EXISTING WORK?</a></li><li><a href="#role">ROLE</a></li><li><a href="#-2-main-research-question">======================================================================
+2. MAIN RESEARCH QUESTION</a></li><li><a href="#-3-required-areas-to-investigate">======================================================================
+3. REQUIRED AREAS TO INVESTIGATE</a></li><li><a href="#-4-primitive-by-primitive-lineage-map">======================================================================
+4. PRIMITIVE-BY-PRIMITIVE LINEAGE MAP</a></li><li><a href="#-5-semantic-closure">======================================================================
+5. SEMANTIC CLOSURE</a></li><li><a href="#-6-state-evolution-and-semantic-migration">======================================================================
+6. STATE EVOLUTION AND SEMANTIC MIGRATION</a></li><li><a href="#-7-capabilities">======================================================================
+7. CAPABILITIES</a></li><li><a href="#-8-obligations">======================================================================
+8. OBLIGATIONS</a></li><li><a href="#-9-epistemic-state-and-evidence">======================================================================
+9. EPISTEMIC STATE AND EVIDENCE</a></li><li><a href="#-10-effect-outcome-unknown">======================================================================
+10. EFFECT OUTCOME UNKNOWN</a></li><li><a href="#-11-coordinators-and-concurrency">======================================================================
+11. COORDINATORS AND CONCURRENCY</a></li><li><a href="#-12-planning">======================================================================
+12. PLANNING</a></li><li><a href="#-13-agent-world-model-and-action-space">======================================================================
+13. AGENT WORLD MODEL AND ACTION SPACE</a></li><li><a href="#-14-semantic-compiler">======================================================================
+14. SEMANTIC COMPILER</a></li><li><a href="#-15-trusted-specification-boundary">======================================================================
+15. TRUSTED SPECIFICATION BOUNDARY</a></li><li><a href="#-16-modularity-and-startup-pivotability">======================================================================
+16. MODULARITY AND STARTUP PIVOTABILITY</a></li><li><a href="#-17-language-level-antecedents">======================================================================
+17. LANGUAGE-LEVEL ANTECEDENTS</a></li><li><a href="#-18-where-existing-approaches-are-stronger">======================================================================
+18. WHERE EXISTING APPROACHES ARE STRONGER</a></li><li><a href="#-19-where-the-proposed-architecture-is-broader">======================================================================
+19. WHERE THE PROPOSED ARCHITECTURE IS BROADER</a></li><li><a href="#-20-combination-novelty">======================================================================
+20. COMBINATION NOVELTY</a></li><li><a href="#-21-build-an-overlap-matrix">======================================================================
+21. BUILD AN OVERLAP MATRIX</a></li><li><a href="#-22-system-level-comparison">======================================================================
+22. SYSTEM-LEVEL COMPARISON</a></li><li><a href="#-23-search-for-terminology-we-may-be-missing">======================================================================
+23. SEARCH FOR TERMINOLOGY WE MAY BE MISSING</a></li><li><a href="#-24-ai-specific-prior-art">======================================================================
+24. AI-SPECIFIC PRIOR ART</a></li><li><a href="#-25-falsification-questions">======================================================================
+25. FALSIFICATION QUESTIONS</a></li><li><a href="#-26-value-even-if-not-novel">======================================================================
+26. VALUE EVEN IF NOT NOVEL</a></li><li><a href="#-27-source-quality">======================================================================
+27. SOURCE QUALITY</a></li><li><a href="#-28-required-output">======================================================================
+28. REQUIRED OUTPUT</a></li><li><a href="#-29-final-verdict-format">======================================================================
+29. FINAL VERDICT FORMAT</a></li><li><a href="#-30-research-standard">======================================================================
+30. RESEARCH STANDARD</a></li> </ol> </aside> <section class="document-body"><h1 id="ai-research-mission--are-we-reinventing-existing-work">AI RESEARCH MISSION — ARE WE REINVENTING EXISTING WORK?</h1>
+<h1 id="role">ROLE</h1>
+<p>Act as a combined programming-languages researcher, formal-methods researcher,
+distributed-systems researcher, software-architecture researcher, AI-agent
+systems researcher, security/capability-systems researcher, workflow/planning
+researcher, and empirical software-engineering researcher.</p>
+<p>Your task is to determine whether the architecture described below is:</p>
+<ol>
+<li>genuinely novel,</li>
+<li>mostly a recombination of established ideas,</li>
+<li>substantially equivalent to an existing framework or research tradition,</li>
+<li>weaker than existing approaches in important ways,</li>
+<li>or potentially valuable specifically because it unifies known mechanisms
+for AI-operated software.</li>
+</ol>
+<p>Do not try to validate the idea. Try to locate its intellectual ancestors and
+strongest competitors. Be skeptical. If an existing system already does
+80–100% of this, say so clearly. If the novelty lies mostly in composition,
+integration, or application to AI agents, say that clearly. Do not use novelty
+as a synonym for value.</p>
+<p>======================================================================</p>
+<ol>
+<li>ARCHITECTURE UNDER INVESTIGATION
+======================================================================</li>
+</ol>
+<p>The proposed architecture is built around explicit semantic control of
+consequential software behavior.</p>
+<p>Core ideas:</p>
+<ul>
+<li>Important domain state is explicit.</li>
+<li>Legal transitions are explicit.</li>
+<li>Invalid or illegal states should be difficult or impossible to represent.</li>
+<li>Consequential interpretations of closed state families should be exhaustive.</li>
+<li>Agents request legal transitions rather than directly mutating authoritative state.</li>
+<li>Authoritative state has one semantic owner.</li>
+<li>Cross-module interaction occurs through transitions, trusted events,
+capabilities, obligations, semantic contracts, and coordinators.</li>
+<li>Capabilities expose only actions currently legal.</li>
+<li>Capabilities may be bound to state versions, evidence versions, policy
+versions, freshness constraints, and authority.</li>
+<li>Obligations expose unresolved work that must be satisfied, waived, escalated,
+or otherwise resolved.</li>
+<li>Claims have epistemic status such as Unknown, Reported, Assumed, Inferred,
+Supported, Verified, Contradicted, and Invalidated.</li>
+<li>Evidence supports or challenges claims.</li>
+<li>External effects explicitly represent success, failure, and outcome unknown.</li>
+<li>OutcomeUnknown removes unsafe retry capability and may create a
+reconciliation obligation.</li>
+<li>Mutually incompatible concurrent actions may be serialized through a small
+coordination aggregate.</li>
+<li>Important state changes preserve provenance: prior state, resulting state,
+evidence, actor, authority, policy snapshot, versions, and timestamp.</li>
+<li>Policies are versioned.</li>
+<li>Historical transitions remain attributable to the policy version under which
+they were legal.</li>
+<li>Semantic changes should mechanically expose stale assumptions through
+compiler errors, analyzer diagnostics, generated tests, dependency impact
+reports, and semantic migration requirements.</li>
+<li>State splits and merges require explicit semantic redistribution.</li>
+<li>Consequential wildcard/default handling should be prohibited unless
+equivalence is explicitly declared.</li>
+<li>Semantic dependency closure means every consequential semantic dependency is
+machine-visible and traversable.</li>
+<li>Durable semantic modules own authoritative state.</li>
+<li>Product orchestration and current product hypotheses remain replaceable.</li>
+<li>Agents may receive current verified state, available capabilities,
+outstanding obligations, missing prerequisites, relevant evidence, and the
+legal transition graph.</li>
+<li>The same semantic specification may generate runtime guards, state types,
+capabilities, obligations, agent tools, tests, planning graphs, policy impact
+reports, documentation, and analyzers.</li>
+</ul>
+<p>Possible long-term characterization:</p>
+<pre><code>a semantic compiler for agent-operated software
+</code></pre>
+<h1 id="2-main-research-question">======================================================================
+2. MAIN RESEARCH QUESTION</h1>
+<p>What existing fields, systems, languages, frameworks, papers, standards, and
+research traditions already solve all or part of this problem?</p>
+<p>Build a lineage map.</p>
+<p>Do not ask merely "Is there something similar?"</p>
+<p>Ask:</p>
+<ul>
+<li>Which specific mechanism came from where?</li>
+<li>Which existing systems already have stronger formal guarantees?</li>
+<li>Which existing fields already combine several of these ideas?</li>
+<li>Which parts appear genuinely uncommon?</li>
+<li>Is AI-agent integration the primary novelty?</li>
+<li>Is the semantic compiler concept already present under another name?</li>
+</ul>
+<h1 id="3-required-areas-to-investigate">======================================================================
+3. REQUIRED AREAS TO INVESTIGATE</h1>
+<p>At minimum investigate:</p>
+<ol>
+<li>Typestate</li>
+<li>Behavioral types</li>
+<li>Session types</li>
+<li>Protocol types</li>
+<li>Algebraic data types / discriminated unions</li>
+<li>Statecharts</li>
+<li>Hierarchical state machines</li>
+<li>Petri nets</li>
+<li>Colored Petri nets</li>
+<li>Workflow engines</li>
+<li>BPMN / business process modeling</li>
+<li>Process calculi</li>
+<li>Actor systems</li>
+<li>Event sourcing</li>
+<li>CQRS</li>
+<li>DDD aggregates</li>
+<li>Domain events</li>
+<li>Sagas / process managers</li>
+<li>Capability-based security</li>
+<li>Object-capability systems</li>
+<li>Authorization policy engines</li>
+<li>Policy-as-code systems</li>
+<li>Deontic logic</li>
+<li>Obligation policy systems</li>
+<li>BDI agents</li>
+<li>Automated planning</li>
+<li>STRIPS / PDDL</li>
+<li>HTN planning</li>
+<li>State-space planning</li>
+<li>MDPs / POMDPs</li>
+<li>Action masking</li>
+<li>Tool/action-space restriction in LLM agents</li>
+<li>Formal verification</li>
+<li>TLA+</li>
+<li>Alloy</li>
+<li>PlusCal</li>
+<li>Model checking</li>
+<li>Refinement types</li>
+<li>Dependent types</li>
+<li>Effect systems</li>
+<li>Linear types</li>
+<li>Affine types</li>
+<li>Ownership systems</li>
+<li>Rust-style ownership/capability patterns</li>
+<li>Proof-carrying code</li>
+<li>Design by contract</li>
+<li>Hoare logic</li>
+<li>Preconditions/postconditions/invariants</li>
+<li>Rule engines</li>
+<li>Decision tables</li>
+<li>Truth-maintenance systems</li>
+<li>Belief revision systems</li>
+<li>Epistemic logic</li>
+<li>Knowledge provenance</li>
+<li>Data lineage</li>
+<li>Evidence-based reasoning systems</li>
+<li>Event-condition-action systems</li>
+<li>Distributed transaction theory</li>
+<li>Idempotency/reconciliation patterns</li>
+<li>Exactly-once / uncertain-outcome systems</li>
+<li>Software product lines</li>
+<li>Feature models</li>
+<li>Modular architecture / information hiding</li>
+<li>Ports and adapters</li>
+<li>Clean architecture</li>
+<li>Modular monoliths</li>
+<li>Semantic APIs / semantic contracts</li>
+<li>Agent tool protocols</li>
+<li>Agent planning frameworks</li>
+<li>AI coding-agent context/retrieval systems</li>
+</ol>
+<h1 id="4-primitive-by-primitive-lineage-map">======================================================================
+4. PRIMITIVE-BY-PRIMITIVE LINEAGE MAP</h1>
+<p>For each proposed primitive:</p>
+<pre><code>Subject
+State
+StateFamily
+StateCase
+Transition
+Guard / Requirement
+Invariant
+Claim
+EpistemicState
+Evidence
+Capability
+Obligation
+Effect
+EffectOutcome
+Event
+Authority
+Policy
+Coordinator
+Provenance
+SemanticDependency
+SemanticMigration
+</code></pre>
+<p>identify:</p>
+<ul>
+<li>closest historical/research equivalent</li>
+<li>strongest existing implementation tradition</li>
+<li>important differences</li>
+<li>whether our primitive is redundant</li>
+<li>whether our primitive is weaker</li>
+<li>whether our primitive adds useful composition</li>
+</ul>
+<p>Do not group these too coarsely.</p>
+<h1 id="5-semantic-closure">======================================================================
+5. SEMANTIC CLOSURE</h1>
+<p>The architecture currently distinguishes:</p>
+<ol>
+<li>
+<p>Construction Closure
+Only declared semantic states can be constructed.</p>
+</li>
+<li>
+<p>Transition Closure
+Authoritative state can only change through declared transitions.</p>
+</li>
+<li>
+<p>Interpretation Closure
+Consequential interpretations of a closed state family must account for the
+full current state universe.</p>
+</li>
+<li>
+<p>Authority Closure
+Protected evidence, states, capabilities, and trusted events cannot be
+freely fabricated.</p>
+</li>
+<li>
+<p>Dependency Closure
+Every consequential semantic dependency is machine-visible.</p>
+</li>
+</ol>
+<p>Investigate whether these five dimensions already exist as a combined concept
+in the literature. If not, identify separate antecedents.</p>
+<p>Ask whether "Semantic Closure" is a useful synthesis or merely new terminology.</p>
+<h1 id="6-state-evolution-and-semantic-migration">======================================================================
+6. STATE EVOLUTION AND SEMANTIC MIGRATION</h1>
+<p>Investigate prior work on schema/model evolution where a state is added,
+removed, split, merged, renamed, or reinterpreted and dependent rules must be
+revisited.</p>
+<p>Look at:</p>
+<ul>
+<li>database schema evolution</li>
+<li>protocol evolution</li>
+<li>type evolution</li>
+<li>API evolution</li>
+<li>model-driven engineering</li>
+<li>software product-line evolution</li>
+<li>ontology evolution</li>
+<li>graph schema evolution</li>
+<li>workflow evolution</li>
+<li>business-process migration</li>
+</ul>
+<p>Central question:</p>
+<pre><code>Is there existing work that forces every dependent semantic interpretation
+to be explicitly redistributed when a state is split?
+</code></pre>
+<p>Example:</p>
+<pre><code>Approved
+</code></pre>
+<p>becomes:</p>
+<pre><code>ConditionallyApproved
+FullyApproved
+</code></pre>
+<p>Existing dependencies on Approved must not automatically apply to both.</p>
+<p>Find the closest existing concept.</p>
+<h1 id="7-capabilities">======================================================================
+7. CAPABILITIES</h1>
+<p>Research capabilities deeply.</p>
+<p>Proposed capability semantics:</p>
+<pre><code>CanShip is not merely permission.
+</code></pre>
+<p>It may encode proof that:</p>
+<pre><code>Order state was Approved
+Payment state was Captured
+Customer was Verified
+Fraud evidence was fresh
+Policy version P was applicable
+</code></pre>
+<p>at specific versions.</p>
+<p>The capability may become stale if those versions change.</p>
+<p>Ask whether this is best understood as:</p>
+<ul>
+<li>object capability</li>
+<li>bearer capability</li>
+<li>lease</li>
+<li>optimistic concurrency token</li>
+<li>typestate witness</li>
+<li>proof object</li>
+<li>dependent pair</li>
+<li>refinement witness</li>
+<li>revocable authority token</li>
+<li>affine/linear resource</li>
+<li>some combination</li>
+</ul>
+<p>Compare with:</p>
+<ul>
+<li>affine/linear resources</li>
+<li>single-use tokens</li>
+<li>revocable capabilities</li>
+<li>cryptographic macaroons</li>
+<li>OAuth/scoped tokens</li>
+<li>object capabilities</li>
+<li>proof-carrying authorization</li>
+</ul>
+<h1 id="8-obligations">======================================================================
+8. OBLIGATIONS</h1>
+<p>Proposed duality:</p>
+<pre><code>Capabilities = what MAY happen.
+Obligations = what MUST be resolved.
+</code></pre>
+<p>Obligation definition:</p>
+<pre><code>A versioned, attributable requirement for some condition to be resolved,
+satisfied, waived, escalated, or otherwise handled because of state,
+evidence, policy, or an event.
+</code></pre>
+<p>Investigate:</p>
+<ul>
+<li>deontic logic</li>
+<li>obligation policies</li>
+<li>compliance systems</li>
+<li>workflow task models</li>
+<li>BDI agents</li>
+<li>business rules</li>
+<li>norm-governed multi-agent systems</li>
+<li>policy languages</li>
+<li>incident/remediation systems</li>
+</ul>
+<p>Ask:</p>
+<ul>
+<li>Is capability + obligation as an agent control surface already established?</li>
+<li>Are there formal systems that expose both permissions and duties?</li>
+<li>Do any expose them dynamically from current state and policy?</li>
+</ul>
+<h1 id="9-epistemic-state-and-evidence">======================================================================
+9. EPISTEMIC STATE AND EVIDENCE</h1>
+<p>Investigate whether the architecture's explicit epistemic states correspond to
+existing formalisms.</p>
+<p>Candidate states:</p>
+<pre><code>Unknown
+Reported
+Assumed
+Inferred
+Supported
+Verified
+Contradicted
+Invalidated
+</code></pre>
+<p>Compare with:</p>
+<ul>
+<li>epistemic logic</li>
+<li>belief revision</li>
+<li>truth-maintenance systems</li>
+<li>provenance systems</li>
+<li>evidence theory</li>
+<li>Bayesian belief</li>
+<li>Dempster-Shafer</li>
+<li>argumentation frameworks</li>
+<li>scientific workflow provenance</li>
+<li>clinical evidence systems</li>
+</ul>
+<p>Important principle:</p>
+<pre><code>Time and repetition do not increase epistemic authority.
+Evidence does.
+</code></pre>
+<p>Ask:</p>
+<ul>
+<li>Is this already captured formally elsewhere?</li>
+<li>Are confidence and provenance being mixed incorrectly?</li>
+<li>Should epistemic state be a lattice rather than a simple state machine?</li>
+<li>What stronger existing models should replace the current formulation?</li>
+</ul>
+<h1 id="10-effect-outcome-unknown">======================================================================
+10. EFFECT OUTCOME UNKNOWN</h1>
+<p>Investigate:</p>
+<pre><code>Success
+Failure
+OutcomeUnknown
+</code></pre>
+<p>as a first-class effect model.</p>
+<p>Compare with:</p>
+<ul>
+<li>distributed transaction theory</li>
+<li>uncertain commits</li>
+<li>two generals problem</li>
+<li>network partitions</li>
+<li>retry semantics</li>
+<li>idempotency</li>
+<li>reconciliation</li>
+<li>sagas</li>
+<li>payment transaction systems</li>
+<li>at-least-once delivery</li>
+<li>exactly-once claims</li>
+<li>failure detectors</li>
+</ul>
+<p>Ask:</p>
+<ul>
+<li>Is OutcomeUnknown already a standard concept under another name?</li>
+<li>Should every consequential external effect expose this state?</li>
+<li>When is binary success/failure sufficient?</li>
+<li>Are there stronger models of partial/uncertain effects?</li>
+</ul>
+<h1 id="11-coordinators-and-concurrency">======================================================================
+11. COORDINATORS AND CONCURRENCY</h1>
+<p>Proposed concept:</p>
+<pre><code>Two actions may each be individually legal against the same snapshot but
+mutually incompatible if executed concurrently.
+</code></pre>
+<p>Example:</p>
+<pre><code>Ship
+Refund
+</code></pre>
+<p>Possible solution:</p>
+<pre><code>Open -> Shipping | Refunding | Holding
+</code></pre>
+<p>Compare with:</p>
+<ul>
+<li>locks</li>
+<li>compare-and-swap</li>
+<li>serializable transactions</li>
+<li>sagas</li>
+<li>process managers</li>
+<li>reservation systems</li>
+<li>escrow</li>
+<li>actor mailboxes</li>
+<li>synchronization protocols</li>
+<li>linearizability</li>
+</ul>
+<p>Ask whether the coordinator is a true semantic primitive or simply conventional
+concurrency control that should remain an implementation technique.</p>
+<h1 id="12-planning">======================================================================
+12. PLANNING</h1>
+<p>The proposed semantic model may generate plans.</p>
+<p>Example:</p>
+<p>Goal:
+CanShip</p>
+<p>Missing:
+PaymentCaptured</p>
+<p>Legal producer:
+CapturePayment</p>
+<p>Then:
+CapturePayment -> CanShip -> Ship</p>
+<p>Compare with:</p>
+<ul>
+<li>STRIPS</li>
+<li>PDDL</li>
+<li>HTN planning</li>
+<li>graph search</li>
+<li>goal regression</li>
+<li>backward chaining</li>
+<li>rule engines</li>
+<li>dependency solvers</li>
+<li>build systems</li>
+<li>workflow engines</li>
+<li>BDI planning</li>
+<li>planning under uncertainty</li>
+</ul>
+<p>Important question:</p>
+<pre><code>Does the semantic compiler become a planning domain model?
+</code></pre>
+<p>If yes:</p>
+<ul>
+<li>Is this simply PDDL/STRIPS expressed as business semantics?</li>
+<li>What does our model add?</li>
+<li>Do evidence, authority, policy version, capabilities, obligations, external
+uncertainty, and provenance materially differentiate it?</li>
+<li>Does an existing planner already handle all of these?</li>
+</ul>
+<h1 id="13-agent-world-model-and-action-space">======================================================================
+13. AGENT WORLD MODEL AND ACTION SPACE</h1>
+<p>Investigate whether exposing:</p>
+<pre><code>current verified state
+legal transitions
+capabilities
+obligations
+missing prerequisites
+evidence
+policy snapshot
+</code></pre>
+<p>is equivalent to known agent-environment representations.</p>
+<p>Compare with:</p>
+<ul>
+<li>BDI belief/desire/intention models</li>
+<li>MDP state/action models</li>
+<li>POMDP belief state</li>
+<li>tool graphs</li>
+<li>affordance models</li>
+<li>action masking</li>
+<li>world models</li>
+<li>constrained agents</li>
+</ul>
+<p>Also research current LLM systems that dynamically expose tools, mask illegal
+actions, select tools from dependency graphs, infer missing prerequisites, or
+narrow tool inventories based on state.</p>
+<p>Determine whether the agent-facing portion is already independently emerging.</p>
+<h1 id="14-semantic-compiler">======================================================================
+14. SEMANTIC COMPILER</h1>
+<p>Investigate prior systems where one semantic/model source generates:</p>
+<pre><code>runtime code
+validation
+tests
+documentation
+workflow logic
+planning models
+APIs
+policy enforcement
+analyzers
+</code></pre>
+<p>Compare with:</p>
+<ul>
+<li>model-driven engineering</li>
+<li>executable specifications</li>
+<li>DSLs</li>
+<li>code generation</li>
+<li>language workbenches</li>
+<li>state-machine compilers</li>
+<li>protocol compilers</li>
+<li>schema compilers</li>
+<li>policy compilers</li>
+<li>formal-specification code generation</li>
+</ul>
+<p>Question:</p>
+<pre><code>Is "semantic compiler" meaningfully distinct, or is this model-driven
+engineering / executable specification applied to AI-operated systems?
+</code></pre>
+<h1 id="15-trusted-specification-boundary">======================================================================
+15. TRUSTED SPECIFICATION BOUNDARY</h1>
+<p>The proposed architecture separates:</p>
+<p>Tier 1:
+semantic specification / legality</p>
+<p>Tier 2:
+trusted deterministic implementations</p>
+<p>Tier 3:
+probabilistic agents</p>
+<p>Agents may propose semantic changes but cannot silently redefine Tier 1.</p>
+<p>Investigate prior work on:</p>
+<ul>
+<li>reference monitors</li>
+<li>trusted computing bases</li>
+<li>safety kernels</li>
+<li>policy decision points</li>
+<li>policy enforcement points</li>
+<li>control/data plane separation</li>
+<li>verified kernels</li>
+<li>proof-carrying code</li>
+</ul>
+<p>Ask:</p>
+<ul>
+<li>Is the semantic specification effectively a reference monitor?</li>
+<li>Is the runtime a policy enforcement point?</li>
+<li>Is there an established security architecture that maps directly?</li>
+</ul>
+<h1 id="16-modularity-and-startup-pivotability">======================================================================
+16. MODULARITY AND STARTUP PIVOTABILITY</h1>
+<p>Proposed module rule:</p>
+<pre><code>one semantic owner per authoritative state.
+</code></pre>
+<p>Other modules may observe, request transitions, consume events, and depend on
+contracts but may not directly mutate the state.</p>
+<p>Compare with:</p>
+<ul>
+<li>DDD aggregate ownership</li>
+<li>actor ownership</li>
+<li>database ownership</li>
+<li>object encapsulation</li>
+<li>information hiding</li>
+<li>microservice data ownership</li>
+<li>capability discipline</li>
+</ul>
+<p>Also compare the durable/provisional/experimental distinction with:</p>
+<ul>
+<li>software product lines</li>
+<li>feature models</li>
+<li>variability management</li>
+<li>evolutionary architecture</li>
+<li>hexagonal architecture</li>
+<li>clean architecture</li>
+<li>modular monoliths</li>
+<li>DDD</li>
+<li>information hiding</li>
+</ul>
+<p>Ask whether state-constrained semantic modularity adds material pivotability
+beyond strong ordinary modularity.</p>
+<h1 id="17-language-level-antecedents">======================================================================
+17. LANGUAGE-LEVEL ANTECEDENTS</h1>
+<p>Compare how the architecture maps into:</p>
+<pre><code>Rust
+F#
+Haskell
+Scala
+Swift
+Kotlin
+Java
+C#
+TypeScript
+</code></pre>
+<p>Focus on:</p>
+<ul>
+<li>ADTs</li>
+<li>sealed types</li>
+<li>exhaustive pattern matching</li>
+<li>phantom types</li>
+<li>GADTs</li>
+<li>refinement types</li>
+<li>dependent types</li>
+<li>typestate patterns</li>
+<li>ownership</li>
+<li>affine/linear types</li>
+<li>modules</li>
+<li>visibility</li>
+</ul>
+<p>Ask:</p>
+<ul>
+<li>Which parts need a semantic compiler because ordinary language typing cannot
+express them?</li>
+<li>Which parts are already better handled by existing type systems?</li>
+</ul>
+<h1 id="18-where-existing-approaches-are-stronger">======================================================================
+18. WHERE EXISTING APPROACHES ARE STRONGER</h1>
+<p>Create a section titled exactly:</p>
+<pre><code>WHERE EXISTING APPROACHES ARE STRONGER THAN THE PROPOSED ARCHITECTURE
+</code></pre>
+<p>For each feature, identify any prior system that gives stronger guarantees.</p>
+<p>Do not hide these cases.</p>
+<p>Example:</p>
+<pre><code>Rust affine ownership may provide stronger non-duplication guarantees than
+generated capability wrappers.
+</code></pre>
+<h1 id="19-where-the-proposed-architecture-is-broader">======================================================================
+19. WHERE THE PROPOSED ARCHITECTURE IS BROADER</h1>
+<p>Identify where existing approaches intentionally solve narrower problems.</p>
+<p>Example:</p>
+<pre><code>typestate may constrain protocol state but not capture policy snapshots,
+obligations, evidence provenance, or agent tool exposure.
+</code></pre>
+<p>Be precise.</p>
+<h1 id="20-combination-novelty">======================================================================
+20. COMBINATION NOVELTY</h1>
+<p>Distinguish:</p>
+<p>A. Primitive novelty
+Is any core primitive actually new?</p>
+<p>B. Combination novelty
+Is the combination unusual?</p>
+<p>C. System novelty
+Is compiling one specification into runtime enforcement + agent world model
++ planning + impact analysis unusual?</p>
+<p>D. Application novelty
+Is applying these ideas specifically to AI-maintained/AI-operated
+commercial software new?</p>
+<p>E. Economic novelty
+Is treating semantic structure as context/action-space compression for
+reducing AI inference cost new?</p>
+<h1 id="21-build-an-overlap-matrix">======================================================================
+21. BUILD AN OVERLAP MATRIX</h1>
+<p>Create a table.</p>
+<p>Rows:
+proposed architecture concepts</p>
+<p>Columns:
+Typestate
+Session Types
+DDD
+Event Sourcing
+CQRS
+Sagas
+Capability Security
+Deontic/Policy Systems
+Workflow/BPMN
+STRIPS/PDDL
+BDI
+TLA+
+Alloy
+Effect Systems
+Model-Driven Engineering
+AI Tool Graphs
+Other strong matches discovered</p>
+<p>Use:
+Full
+Strong
+Partial
+Weak
+None</p>
+<p>For every Full or Strong entry, explain why.</p>
+<h1 id="22-system-level-comparison">======================================================================
+22. SYSTEM-LEVEL COMPARISON</h1>
+<p>Find actual systems, frameworks, languages, standards, or research projects
+that combine multiple relevant features.</p>
+<p>For each report:</p>
+<pre><code>name
+origin
+year
+current status
+purpose
+primitives
+guarantees
+workflow model
+policy model
+capability model
+planning model
+evidence/provenance model
+agent integration
+code generation
+semantic evolution support
+</code></pre>
+<p>Rank similarity to the proposed architecture.</p>
+<h1 id="23-search-for-terminology-we-may-be-missing">======================================================================
+23. SEARCH FOR TERMINOLOGY WE MAY BE MISSING</h1>
+<p>Search beyond the terminology used here.</p>
+<p>Candidate terms:</p>
+<pre><code>executable domain model
+behavioral contract system
+protocol-aware policy engine
+normative multi-agent system
+capability-aware workflow
+stateful reference monitor
+executable ontology
+semantic state machine
+policy-guided planning
+proof-carrying workflow
+typed workflow
+stateful authorization
+dynamic authorization
+usage control
+trust management
+semantic orchestration
+</code></pre>
+<p>Find unfamiliar terminology that may better describe the architecture.</p>
+<h1 id="24-ai-specific-prior-art">======================================================================
+24. AI-SPECIFIC PRIOR ART</h1>
+<p>Search current work on:</p>
+<pre><code>agent operating systems
+constrained AI agents
+AI policy enforcement
+verified agent actions
+typed agent tools
+capability-limited agents
+tool graphs
+world models
+symbolic planning for LLMs
+formal methods for LLM agents
+runtime verification of agents
+agent action verification
+agent state machines
+policy-aware agents
+safe tool calling
+</code></pre>
+<p>Determine whether any project already exposes:</p>
+<pre><code>current state
+legal actions
+obligations
+prerequisites
+evidence
+policy
+</code></pre>
+<p>as a unified agent interface.</p>
+<h1 id="25-falsification-questions">======================================================================
+25. FALSIFICATION QUESTIONS</h1>
+<p>Try to falsify claims of novelty.</p>
+<p>Ask:</p>
+<ol>
+<li>Could this simply be DDD + typestate + sagas + policy-as-code?</li>
+<li>Could it simply be a workflow engine with richer metadata?</li>
+<li>Could it simply be a planning domain with access control?</li>
+<li>Could it simply be a model-driven architecture tool?</li>
+<li>Could it simply be a reference monitor around LLM tools?</li>
+<li>Could capability + obligation already be standard in normative agents?</li>
+<li>Could epistemic state be better modeled by existing truth-maintenance or
+belief systems?</li>
+<li>Could semantic migration already exist in ontology/model evolution?</li>
+<li>Could agent action masking provide the main AI benefit without the broader
+architecture?</li>
+<li>Could ordinary modularity plus good retrieval provide most of the context
+savings without semantic compilation?</li>
+</ol>
+<h1 id="26-value-even-if-not-novel">======================================================================
+26. VALUE EVEN IF NOT NOVEL</h1>
+<p>If the architecture is mostly a recombination, investigate whether the
+combination may still be valuable because existing mechanisms are usually
+fragmented across:</p>
+<pre><code>language type systems
+workflow engines
+authorization systems
+planners
+observability
+prompts
+tool descriptions
+</code></pre>
+<p>Ask:</p>
+<ul>
+<li>Would unifying them under one semantic model reduce integration drift?</li>
+<li>Is that enough to justify a research/product program without primitive novelty?</li>
+</ul>
+<h1 id="27-source-quality">======================================================================
+27. SOURCE QUALITY</h1>
+<p>Prefer:</p>
+<pre><code>original research papers
+foundational papers
+official specifications
+language documentation
+standards
+authoritative books
+official project documentation
+</code></pre>
+<p>For technical claims, prefer primary sources.</p>
+<p>For each important claim:</p>
+<pre><code>provide citation
+publication year
+explain exactly what the source supports
+</code></pre>
+<p>Do not cite a source merely because its title sounds related.</p>
+<p>Research both foundational history and current work through the present date.</p>
+<h1 id="28-required-output">======================================================================
+28. REQUIRED OUTPUT</h1>
+<p>Produce:</p>
+<ol>
+<li>Executive verdict</li>
+<li>One-paragraph description of the proposed architecture</li>
+<li>Historical lineage</li>
+<li>Primitive-by-primitive lineage map</li>
+<li>Five semantic-closure dimensions compared to prior work</li>
+<li>Typestate / behavioral-type comparison</li>
+<li>Session/protocol-type comparison</li>
+<li>DDD / aggregate / event-sourcing comparison</li>
+<li>Capability-security comparison</li>
+<li>Obligation / deontic / normative-system comparison</li>
+<li>Workflow/BPMN/statechart/Petri-net comparison</li>
+<li>Planning/STRIPS/PDDL/BDI comparison</li>
+<li>Epistemic-state/evidence comparison</li>
+<li>Distributed-effect uncertainty comparison</li>
+<li>Formal-methods comparison</li>
+<li>Model-driven engineering / executable-spec comparison</li>
+<li>Semantic evolution/migration comparison</li>
+<li>Modularity/pivotability comparison</li>
+<li>Current AI-agent/tool-graph comparison</li>
+<li>Strongest existing systems discovered</li>
+<li>Where prior work is stronger</li>
+<li>Where the proposed architecture is broader</li>
+<li>What appears genuinely unusual</li>
+<li>What appears to be renamed prior art</li>
+<li>Overlap matrix</li>
+<li>Combination-novelty assessment</li>
+<li>AI-specific novelty assessment</li>
+<li>Economic/context-compression novelty assessment</li>
+<li>Major risks</li>
+<li>Recommended terminology changes</li>
+<li>Research areas we should adopt rather than reinvent</li>
+<li>Research areas where a new implementation may be justified</li>
+<li>Final verdict</li>
+</ol>
+<h1 id="29-final-verdict-format">======================================================================
+29. FINAL VERDICT FORMAT</h1>
+<p>End with:</p>
+<p>Primitive novelty:
+Low / Medium / High</p>
+<p>Combination novelty:
+Low / Medium / High</p>
+<p>System-level novelty:
+Low / Medium / High</p>
+<p>AI-agent application novelty:
+Low / Medium / High</p>
+<p>Economic/context-optimization novelty:
+Low / Medium / High</p>
+<p>Risk of reinventing an existing system:
+Low / Medium / High</p>
+<p>Most similar existing approach:
+...</p>
+<p>Strongest prior art we should build on:
+...</p>
+<p>Most defensible differentiator:
+...</p>
+<p>Weakest originality claim:
+...</p>
+<p>Most important architecture change suggested by prior art:
+...</p>
+<h1 id="30-research-standard">======================================================================
+30. RESEARCH STANDARD</h1>
+<p>Be adversarial toward novelty claims.</p>
+<p>Do not reward new terminology.
+Do not treat integration as primitive invention.
+Do not assume AI makes an old architecture new.</p>
+<p>At the same time, do not dismiss a system merely because its primitives are
+established. Valuable systems often integrate previously separate ideas around
+a new operating environment.</p>
+<p>The central question is:</p>
+<pre><code>What, if anything, is actually new or unusually valuable about combining
+explicit state ownership, transition legality, capabilities, obligations,
+evidence, policy, effect uncertainty, semantic dependency closure,
+semantic migration, planning, and constrained AI-agent actions under one
+executable semantic model?
+</code></pre></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

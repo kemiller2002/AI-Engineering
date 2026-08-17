@@ -1,0 +1,898 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Research Report — State-Constrained Modularity, Context Reduction, and Agent Execution Cost | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">Research Report — State-Constrained Modularity, Context Reduction, and Agent Execution Cost</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/reports/state-modularity-agent-cost-research-report-2026-08-14.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#research-report-state-constrained-modularity-context-reduction-and-agent-execution-cost">Research Report — State-Constrained Modularity, Context Reduction, and Agent Execution Cost</a></li><li><a href="#1-executive-conclusion">1. Executive conclusion</a></li><li><a href="#current-verdict">Current verdict</a></li><li><a href="#2-research-status-labels">2. Research status labels</a></li><li><a href="#3-state-of-existing-research">3. State of existing research</a></li><li><a href="#3-1-classical-modularity">3.1 Classical modularity</a></li><li><a href="#3-2-typestate-and-legal-operation-modeling">3.2 Typestate and legal-operation modeling</a></li><li><a href="#3-3-repository-retrieval-and-structural-context">3.3 Repository retrieval and structural context</a></li><li><a href="#3-4-what-the-literature-establishes">3.4 What the literature establishes</a></li><li><a href="#3-5-what-the-literature-does-not-establish">3.5 What the literature does not establish</a></li><li><a href="#4-theory-connecting-state-ownership-to-agent-cost">4. Theory connecting state ownership to agent cost</a></li><li><a href="#link-a-explicit-state-ownership-stronger-semantic-boundaries">Link A — explicit state ownership -&gt; stronger semantic boundaries</a></li><li><a href="#link-b-stronger-boundaries-smaller-dependency-closure">Link B — stronger boundaries -&gt; smaller dependency closure</a></li><li><a href="#link-c-smaller-dependency-closure-smaller-mssc">Link C — smaller dependency closure -&gt; smaller MSSC</a></li><li><a href="#link-d-smaller-mssc-fewer-tokens-tool-calls">Link D — smaller MSSC -&gt; fewer tokens/tool calls</a></li><li><a href="#link-e-smaller-action-space-fewer-failures">Link E — smaller action space -&gt; fewer failures</a></li><li><a href="#link-f-fewer-failures-lower-cost-per-correct-completion">Link F — fewer failures -&gt; lower cost per correct completion</a></li><li><a href="#5-definition-of-semantic-module">5. Definition of semantic module</a></li><li><a href="#6-minimum-sufficient-semantic-context-mssc-">6. Minimum Sufficient Semantic Context (MSSC)</a></li><li><a href="#definition">Definition</a></li><li><a href="#important-distinction">Important distinction</a></li><li><a href="#7-semantic-dependency-context-slicing-model">7. Semantic dependency/context-slicing model</a></li><li><a href="#node-types">Node types</a></li><li><a href="#edge-types">Edge types</a></li><li><a href="#initial-slice-algorithm">Initial slice algorithm</a></li><li><a href="#8-metrics">8. Metrics</a></li><li><a href="#context-size-ratio">Context Size Ratio</a></li><li><a href="#context-reduction">Context Reduction</a></li><li><a href="#implementation-exposure-ratio">Implementation Exposure Ratio</a></li><li><a href="#semantic-dependency-fan-out">Semantic Dependency Fan-Out</a></li><li><a href="#semantic-transitive-fan-out">Semantic Transitive Fan-Out</a></li><li><a href="#module-escape-rate">Module Escape Rate</a></li><li><a href="#lazy-expansion-count">Lazy Expansion Count</a></li><li><a href="#tokens-per-correct-completion">Tokens Per Correct Completion</a></li><li><a href="#dollars-per-correct-completion">Dollars Per Correct Completion</a></li><li><a href="#semantic-correctness">Semantic Correctness</a></li><li><a href="#9-experimental-architecture">9. Experimental architecture</a></li><li><a href="#a-conventional-competent-implementation">A. Conventional competent implementation</a></li><li><a href="#b-state-constrained-semantic-implementation">B. State-constrained semantic implementation</a></li><li><a href="#recommended-language-matrix">Recommended language matrix</a></li><li><a href="#10-required-task-suite">10. Required task suite</a></li><li><a href="#11-context-strategies-to-compare">11. Context strategies to compare</a></li><li><a href="#strategy-a-broad-repository-agent">Strategy A — broad repository agent</a></li><li><a href="#strategy-b-lexical-search-retrieval">Strategy B — lexical/search retrieval</a></li><li><a href="#strategy-c-static-dependency-retrieval">Strategy C — static dependency retrieval</a></li><li><a href="#strategy-d-semantic-dependency-slice">Strategy D — semantic dependency slice</a></li><li><a href="#strategy-e-semantic-slice-lazy-expansion">Strategy E — semantic slice + lazy expansion</a></li><li><a href="#12-tokenizer-experiment-design">12. Tokenizer experiment design</a></li><li><a href="#this-execution">This execution</a></li><li><a href="#required-implementation">Required implementation</a></li><li><a href="#13-semantic-representation-experiment">13. Semantic representation experiment</a></li><li><a href="#source-form">Source form</a></li><li><a href="#test-form">Test form</a></li><li><a href="#prose-form">Prose form</a></li><li><a href="#verbose-semantic-ir">Verbose semantic IR</a></li><li><a href="#compact-agent-projection">Compact agent projection</a></li><li><a href="#14-cost-model">14. Cost model</a></li><li><a href="#cost-per-correct-completion">Cost per correct completion</a></li><li><a href="#15-current-verified-model-price-snapshot">15. Current verified model-price snapshot</a></li><li><a href="#openai-standard-short-context-pricing">OpenAI standard short-context pricing</a></li><li><a href="#anthropic">Anthropic</a></li><li><a href="#16-adjacent-empirical-cost-sensitivity">16. Adjacent empirical cost sensitivity</a></li><li><a href="#scale-implication">Scale implication</a></li><li><a href="#17-the-more-important-economic-hypothesis-model-substitution">17. The more important economic hypothesis: model substitution</a></li><li><a href="#18-caching-implications">18. Caching implications</a></li><li><a href="#19-break-even-model">19. Break-even model</a></li><li><a href="#20-key-counterevidence-failure-modes">20. Key counterevidence / failure modes</a></li><li><a href="#20-1-structural-metadata-can-increase-tokens">20.1 Structural metadata can increase tokens</a></li><li><a href="#20-2-larger-dependency-closure-can-hurt-performance">20.2 Larger dependency closure can hurt performance</a></li><li><a href="#20-3-summarization-can-lose-important-information">20.3 Summarization can lose important information</a></li><li><a href="#20-4-most-real-changes-may-cross-semantic-boundaries">20.4 Most real changes may cross semantic boundaries</a></li><li><a href="#20-5-language-semantics-may-confound-architecture">20.5 Language semantics may confound architecture</a></li><li><a href="#20-6-cheap-models-weaken-pure-token-economics">20.6 Cheap models weaken pure token economics</a></li><li><a href="#20-7-output-reasoning-and-tools-may-dominate">20.7 Output/reasoning and tools may dominate</a></li><li><a href="#20-8-semantic-tooling-itself-can-decay">20.8 Semantic tooling itself can decay</a></li><li><a href="#21-falsification-criteria">21. Falsification criteria</a></li><li><a href="#22-strong-result-criteria">22. Strong-result criteria</a></li><li><a href="#23-recommended-pilot">23. Recommended pilot</a></li><li><a href="#repository">Repository</a></li><li><a href="#variants">Variants</a></li><li><a href="#first-12-tasks">First 12 tasks</a></li><li><a href="#runs">Runs</a></li><li><a href="#models">Models</a></li><li><a href="#primary-outcomes">Primary outcomes</a></li><li><a href="#secondary-outcomes">Secondary outcomes</a></li><li><a href="#24-research-queue">24. Research queue</a></li><li><a href="#priority-1-highest-falsification-and-economic-value">Priority 1 — highest falsification and economic value</a></li><li><a href="#priority-2">Priority 2</a></li><li><a href="#priority-3">Priority 3</a></li><li><a href="#25-most-important-next-experiment">25. Most important next experiment</a></li><li><a href="#architecture">Architecture</a></li><li><a href="#retrieval">Retrieval</a></li><li><a href="#26-final-verdict">26. Final verdict</a></li><li><a href="#what-is-empirically-supported">What is empirically supported</a></li><li><a href="#what-is-strongly-plausible">What is strongly plausible</a></li><li><a href="#what-remains-unproven">What remains unproven</a></li><li><a href="#bottom-line">Bottom line</a></li><li><a href="#primary-sources-consulted">Primary sources consulted</a></li> </ol> </aside> <section class="document-body"><h1 id="research-report--state-constrained-modularity-context-reduction-and-agent-execution-cost">Research Report — State-Constrained Modularity, Context Reduction, and Agent Execution Cost</h1>
+<p><strong>Execution date:</strong> 2026-08-14<br>
+<strong>Research specification:</strong>
+<a href="/research/state-modularity-agent-context-token-cost-research-prompt/"><code>state-modularity-agent-context-token-cost-research-prompt.md</code></a></p>
+<h2 id="1-executive-conclusion">1. Executive conclusion</h2>
+<h3 id="current-verdict">Current verdict</h3>
+<p><strong>Promising, but not yet proven.</strong></p>
+<p>The available evidence supports a narrower claim with reasonable confidence:</p>
+<blockquote>
+<p>Mechanically supplied structural information and selective repository context can reduce coding-agent exploration, context consumption, and sometimes total cost without sacrificing correctness.</p>
+</blockquote>
+<p>There is direct empirical support for graph-guided retrieval, dependency-aware retrieval, static-analysis-assisted prompting, hierarchical localization, and structured repository representations.</p>
+<p>There is <strong>not yet direct empirical evidence</strong> establishing the stronger causal claim:</p>
+<blockquote>
+<p>Explicit ownership of consequential domain state and legal transitions produces stronger semantic module boundaries that reduce total tokens and dollars per correct agent task.</p>
+</blockquote>
+<p>That stronger claim is plausible and now experimentally well motivated, but remains a hypothesis.</p>
+<p>The important synthesis is that state-constrained architecture could contribute something that existing repository graphs generally do not: a <strong>higher-level semantic dependency graph derived from domain authority, legal transitions, capabilities, obligations, claims, and effects</strong>, rather than primarily from source-level references/imports/dataflow.</p>
+<p>If that graph reliably identifies a smaller sufficient context than code-level retrieval, it could create three simultaneous effects:</p>
+<ol>
+<li><strong>Context compression</strong> — fewer irrelevant implementation tokens.</li>
+<li><strong>Action-space reduction</strong> — fewer plausible but illegal edits/actions.</li>
+<li><strong>Localization improvement</strong> — fewer repository-search and repair iterations.</li>
+</ol>
+<p>The economics are likely to be dominated by the second and third effects, and potentially by <strong>smaller-model substitution</strong>, rather than raw input-token reduction alone.</p>
+<hr>
+<h2 id="2-research-status-labels">2. Research status labels</h2>
+<p>This report uses four evidence labels:</p>
+<ul>
+<li><strong>MEASURED — EXTERNAL:</strong> directly measured in published work.</li>
+<li><strong>SOURCED:</strong> supported by primary literature or official provider documentation.</li>
+<li><strong>INFERENCE:</strong> a conclusion connecting sourced evidence to the proposed architecture.</li>
+<li><strong>HYPOTHESIS:</strong> requires direct testing.</li>
+</ul>
+<p>No percentage in this report is presented as a measured benefit of state-constrained architecture unless such an experiment has actually been run.</p>
+<hr>
+<h2 id="3-state-of-existing-research">3. State of existing research</h2>
+<h3 id="31-classical-modularity">3.1 Classical modularity</h3>
+<p>Parnas's 1972 information-hiding work established a critical principle: good decomposition hides design decisions rather than simply mirroring procedural steps. The purpose is to reduce the amount of knowledge that must cross module boundaries and localize the effect of change.</p>
+<p><strong>SOURCED:</strong> D. L. Parnas, <em>On the Criteria To Be Used in Decomposing Systems into Modules</em>, Communications of the ACM, 1972.</p>
+<p>This supports the architectural half of the theory: a module is valuable when a change inside it does not require consumers to understand the hidden decision.</p>
+<p>It does <strong>not</strong> by itself establish that an LLM consumes fewer tokens.</p>
+<h3 id="32-typestate-and-legal-operation-modeling">3.2 Typestate and legal-operation modeling</h3>
+<p>Typestate research formalizes the fact that available operations depend on an object's state. Later typestate-oriented programming work makes legal operation availability an explicit property of the programming model.</p>
+<p><strong>SOURCED:</strong> Strom &#x26; Yemini typestate line of work; Aldrich et al. typestate-oriented programming; subsequent work on typestate and borrowing.</p>
+<p>This supports the proposition that state-dependent legality can be encoded mechanically rather than rediscovered by an agent.</p>
+<p>It does <strong>not</strong> show an inference-cost reduction.</p>
+<h3 id="33-repository-retrieval-and-structural-context">3.3 Repository retrieval and structural context</h3>
+<p>Current AI software-engineering research provides much more direct evidence for the context side of the hypothesis.</p>
+<h4 id="graphcoder">GraphCoder</h4>
+<p>GraphCoder uses a code-context graph containing control-flow and data/control dependence to retrieve repository-specific context. It reported higher code and identifier exact-match performance than retrieval baselines.</p>
+<p><strong>MEASURED — EXTERNAL:</strong> GraphCoder, arXiv:2406.07003.</p>
+<h4 id="draco">DraCo</h4>
+<p>DraCo constructs a repository-specific context graph from extended dataflow analysis and retrieves relevant background knowledge for completion. It reported average improvements of 3.43 percentage points in exact match and 3.27 points in identifier F1 over the state-of-the-art comparison in its evaluation.</p>
+<p><strong>MEASURED — EXTERNAL:</strong> DraCo, arXiv:2405.19782.</p>
+<h4 id="stall">STALL+</h4>
+<p>STALL+ studies static-analysis integration in repository-level code completion. It reports that file-level dependency information in the prompting phase is particularly effective and that static analysis and RAG can be complementary and cost-effective.</p>
+<p><strong>MEASURED — EXTERNAL:</strong> STALL+, arXiv:2406.10018.</p>
+<p>A notable result is that static-analysis value differs between Java and Python because static dependency analysis is more reliable in the statically structured setting. This is directly relevant to the separate hypothesis that stronger language semantics may improve agent context selection.</p>
+<h4 id="repograph">RepoGraph</h4>
+<p>RepoGraph builds repository-wide structural graphs and adds graph-derived context to existing software-engineering systems.</p>
+<p>Published results include:</p>
+<ul>
+<li>average relative performance improvement reported across integrated systems: <strong>32.8%</strong></li>
+<li>Agentless baseline: <strong>27.33% resolve</strong>, <strong>42,376 tokens</strong>, <strong>$0.34</strong></li>
+<li>Agentless + RepoGraph: <strong>29.67% resolve</strong>, <strong>47,323 tokens</strong>, <strong>$0.39</strong></li>
+<li>SWE-agent baseline: <strong>18.33% resolve</strong>, <strong>245,008 tokens</strong>, <strong>$2.51</strong></li>
+<li>SWE-agent + RepoGraph: <strong>20.33% resolve</strong>, <strong>262,512 tokens</strong>, <strong>$2.69</strong></li>
+</ul>
+<p>This is extremely useful counterevidence to a simplistic "structure always saves tokens" claim. RepoGraph sometimes improved correctness while <strong>increasing</strong> tokens and cost.</p>
+<p>RepoGraph also tested graph representation size:</p>
+<ul>
+<li>1-hop flattened: ~<strong>2,310.7 tokens</strong></li>
+<li>1-hop summarized: ~<strong>717.5 tokens</strong></li>
+<li>2-hop flattened: ~<strong>10,505.3 tokens</strong></li>
+<li>2-hop summarized: ~<strong>1,229.2 tokens</strong></li>
+</ul>
+<p>The 2-hop flattened version performed worse than the 1-hop variants. More structural information was not automatically better.</p>
+<p><strong>MEASURED — EXTERNAL:</strong> RepoGraph, arXiv:2410.14684.</p>
+<h4 id="agentless">Agentless</h4>
+<p>Agentless uses a deliberately simple three-stage pipeline: localization, repair, validation. On SWE-bench Lite it reported:</p>
+<ul>
+<li><strong>32.0%</strong> resolved</li>
+<li><strong>78,166</strong> average tokens</li>
+<li><strong>$0.70</strong> average historical inference cost</li>
+</ul>
+<p>Compared with SWE-agent results reported in the same paper, the simple localized pipeline used dramatically fewer tokens while remaining competitive or better on that benchmark.</p>
+<p><strong>MEASURED — EXTERNAL:</strong> Agentless, arXiv:2407.01489.</p>
+<p>This supports a general lesson: reducing autonomous exploration and making localization explicit can materially alter cost per task.</p>
+<h4 id="seerepo--llm-agents-can-see-code-repositories">SeeRepo / "LLM Agents Can See Code Repositories"</h4>
+<p>A 2026 study tested structural repository visualization as supplementary context on SWE-bench Verified. For GPT-5-mini, the reported comparison was:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th align="right">Pass@1</th>
+<th align="right">Input tokens</th>
+<th align="right">Output tokens</th>
+<th align="right">Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Text baseline</td>
+<td align="right">55.0%</td>
+<td align="right">193,157</td>
+<td align="right">8,188</td>
+<td align="right">$0.031</td>
+</tr>
+<tr>
+<td>+ graph view</td>
+<td align="right">55.4%</td>
+<td align="right">144,403</td>
+<td align="right">6,958</td>
+<td align="right">$0.023</td>
+</tr>
+</tbody>
+</table>
+<p>That is roughly:</p>
+<ul>
+<li><strong>25% fewer input tokens</strong></li>
+<li><strong>15% fewer output tokens</strong></li>
+<li><strong>26% lower reported cost</strong></li>
+<li>no observed accuracy loss in that configuration</li>
+</ul>
+<p>The authors attribute much of the gain to better localization and fewer redundant navigation steps.</p>
+<p>Across evaluated models, cost changes varied; one configuration reduced cost substantially with a small accuracy decline, emphasizing the need for cost-per-correct-completion rather than token count alone.</p>
+<p><strong>MEASURED — EXTERNAL:</strong> <em>LLM Agents Can See Code Repositories</em>, arXiv:2606.14061.</p>
+<h3 id="34-what-the-literature-establishes">3.4 What the literature establishes</h3>
+<p>The literature supports:</p>
+<ol>
+<li>Repository structure is useful to LLMs.</li>
+<li>Retrieval quality matters more than raw repository size.</li>
+<li>Explicit localization can shorten trajectories.</li>
+<li>Static dependencies can improve completion.</li>
+<li>Structured context can reduce tokens in some systems.</li>
+<li>More context can hurt.</li>
+<li>Representation format materially changes token cost.</li>
+<li>Tool/agent complexity can add cost without proportional correctness gains.</li>
+</ol>
+<h3 id="35-what-the-literature-does-not-establish">3.5 What the literature does not establish</h3>
+<p>The literature does not yet establish:</p>
+<ol>
+<li>Domain state ownership is the best semantic partition.</li>
+<li>State-transition contracts produce smaller MSSC than code graphs.</li>
+<li>Capabilities/obligations reduce repair loops.</li>
+<li>Semantic module boundaries remain stable under repeated AI edits.</li>
+<li>State-constrained systems have lower total lifecycle cost.</li>
+<li>They enable reliable substitution of a smaller model.</li>
+</ol>
+<p>Those are the key research gaps.</p>
+<hr>
+<h2 id="4-theory-connecting-state-ownership-to-agent-cost">4. Theory connecting state ownership to agent cost</h2>
+<p>The proposed causal chain should be tested as separate links:</p>
+<h3 id="link-a--explicit-state-ownership---stronger-semantic-boundaries">Link A — explicit state ownership -> stronger semantic boundaries</h3>
+<p>If exactly one module owns an authoritative state family, other code must observe, request transitions, or consume events rather than mutate it arbitrarily.</p>
+<p><strong>INFERENCE:</strong> this should reduce hidden write coupling.</p>
+<h3 id="link-b--stronger-boundaries---smaller-dependency-closure">Link B — stronger boundaries -> smaller dependency closure</h3>
+<p>If consequential dependencies are declared as transition guards, capabilities, obligations, claims, events, and effects, the system can derive a semantic dependency graph.</p>
+<p><strong>HYPOTHESIS:</strong> the graph may be smaller and more task-relevant than repository-wide lexical or import retrieval.</p>
+<h3 id="link-c--smaller-dependency-closure---smaller-mssc">Link C — smaller dependency closure -> smaller MSSC</h3>
+<p>If an agent receives the owned module plus declared consequential dependencies, it may not need unrelated implementation.</p>
+<p><strong>HYPOTHESIS.</strong></p>
+<h3 id="link-d--smaller-mssc---fewer-tokenstool-calls">Link D — smaller MSSC -> fewer tokens/tool calls</h3>
+<p>This relationship has adjacent empirical support from repository-localization research, but must be measured for the proposed architecture.</p>
+<h3 id="link-e--smaller-action-space---fewer-failures">Link E — smaller action space -> fewer failures</h3>
+<p>If illegal states and transitions cannot be constructed, some classes of hallucinated edits become compiler/validator failures instead of silently valid code.</p>
+<p><strong>HYPOTHESIS with strong programming-language plausibility; not yet measured economically.</strong></p>
+<h3 id="link-f--fewer-failures---lower-cost-per-correct-completion">Link F — fewer failures -> lower cost per correct completion</h3>
+<p>Mathematically true if the added validation/retrieval overhead is smaller than the avoided retry cost.</p>
+<p>Whether that condition holds is empirical.</p>
+<hr>
+<h2 id="5-definition-of-semantic-module">5. Definition of semantic module</h2>
+<p>A useful working definition:</p>
+<blockquote>
+<p>A <strong>semantic module</strong> is the smallest architectural unit that owns one or more authoritative state families and controls consequential changes to them through declared transitions, while exposing only the claims, events, capabilities, obligations, and effect contracts required by other modules.</p>
+</blockquote>
+<p>A semantic module contains:</p>
+<ul>
+<li>authoritative state families</li>
+<li>legal state cases</li>
+<li>legal transitions</li>
+<li>transition guards/invariants</li>
+<li>transition inputs</li>
+<li>evidence requirements</li>
+<li>capabilities</li>
+<li>obligations</li>
+<li>emitted trusted events</li>
+<li>effect ports</li>
+<li>public claims</li>
+<li>module version/hash</li>
+<li>declared semantic dependencies</li>
+<li>mapping to implementation locations</li>
+</ul>
+<p>A semantic module should not expose:</p>
+<ul>
+<li>arbitrary status mutation</li>
+<li>raw table mutation as an inter-module API</li>
+<li>private SDK details</li>
+<li>private persistence mechanics</li>
+<li>irrelevant internal helper functions</li>
+</ul>
+<p>This definition deliberately separates <strong>semantic ownership</strong> from deployment. A semantic module may live inside a modular monolith.</p>
+<hr>
+<h2 id="6-minimum-sufficient-semantic-context-mssc">6. Minimum Sufficient Semantic Context (MSSC)</h2>
+<h3 id="definition">Definition</h3>
+<blockquote>
+<p><strong>MSSC</strong> is the smallest mechanically or empirically identified context set from which an agent can complete a specific task while satisfying the required semantic correctness criteria.</p>
+</blockquote>
+<p>MSSC is task-dependent.</p>
+<p>Represent it as:</p>
+<p><code>MSSC(T) = {semantic nodes + required implementation + direct evidence needed to satisfy task T}</code></p>
+<p>Measure:</p>
+<ul>
+<li>uncached input tokens</li>
+<li>cached input tokens</li>
+<li>bytes</li>
+<li>files</li>
+<li>implementation files</li>
+<li>contracts</li>
+<li>semantic graph nodes</li>
+<li>modules</li>
+<li>tool calls required to obtain the context</li>
+</ul>
+<h3 id="important-distinction">Important distinction</h3>
+<p>The smallest successful context from one run is not necessarily the true MSSC. A rigorous estimate requires repeated ablation:</p>
+<ol>
+<li>find a successful context</li>
+<li>remove one context element</li>
+<li>repeat task</li>
+<li>test correctness</li>
+<li>continue until additional removals materially reduce success</li>
+</ol>
+<p>This converts MSSC from an architectural assertion into an experimental variable.</p>
+<hr>
+<h2 id="7-semantic-dependencycontext-slicing-model">7. Semantic dependency/context-slicing model</h2>
+<p>Model the semantic system as a typed directed graph.</p>
+<h3 id="node-types">Node types</h3>
+<ul>
+<li>Module</li>
+<li>StateFamily</li>
+<li>StateCase</li>
+<li>Transition</li>
+<li>Guard</li>
+<li>Capability</li>
+<li>Obligation</li>
+<li>Claim</li>
+<li>Event</li>
+<li>Policy</li>
+<li>Effect</li>
+<li>EvidenceType</li>
+<li>ImplementationUnit</li>
+</ul>
+<h3 id="edge-types">Edge types</h3>
+<ul>
+<li>owns</li>
+<li>exports</li>
+<li>requests</li>
+<li>requires</li>
+<li>authorizes</li>
+<li>observes</li>
+<li>emits</li>
+<li>satisfies</li>
+<li>blocks</li>
+<li>triggers</li>
+<li>affects</li>
+<li>implementedBy</li>
+<li>dependsOn</li>
+</ul>
+<h3 id="initial-slice-algorithm">Initial slice algorithm</h3>
+<p>For task <code>T</code>:</p>
+<ol>
+<li>map task terms to candidate semantic subjects</li>
+<li>identify owning module(s)</li>
+<li>include affected state families/transitions</li>
+<li>include guards/capabilities/obligations on those transitions</li>
+<li>include exported contracts changed by the task</li>
+<li>include consumers of changed exported semantics</li>
+<li>include implementation units for selected semantic nodes</li>
+<li>exclude implementation behind unchanged neighboring contracts</li>
+<li>execute</li>
+<li>lazily expand only on:</li>
+</ol>
+<ul>
+<li>compiler diagnostics</li>
+<li>failed tests</li>
+<li>unresolved declared dependencies</li>
+<li>explicit tool request by the agent</li>
+</ul>
+<p>This is more conservative than "load only the module." It intentionally includes consequential consumers when a public contract changes.</p>
+<hr>
+<h2 id="8-metrics">8. Metrics</h2>
+<h3 id="context-size-ratio">Context Size Ratio</h3>
+<p><code>CSR = semantic-context tokens / conventional-context tokens</code></p>
+<h3 id="context-reduction">Context Reduction</h3>
+<p><code>CR = 1 - CSR</code></p>
+<h3 id="implementation-exposure-ratio">Implementation Exposure Ratio</h3>
+<p><code>IER = unrelated implementation tokens supplied / total implementation tokens supplied</code></p>
+<h3 id="semantic-dependency-fan-out">Semantic Dependency Fan-Out</h3>
+<p>Number of directly affected semantic modules.</p>
+<h3 id="semantic-transitive-fan-out">Semantic Transitive Fan-Out</h3>
+<p>Number of modules in the consequential dependency closure.</p>
+<h3 id="module-escape-rate">Module Escape Rate</h3>
+<p>Percentage of tasks initially classified local that require an additional module.</p>
+<h3 id="lazy-expansion-count">Lazy Expansion Count</h3>
+<p>Number of additional semantic slices retrieved after first execution.</p>
+<h3 id="tokens-per-correct-completion">Tokens Per Correct Completion</h3>
+<p><code>TPC = total tokens across all attempts / correct completions</code></p>
+<h3 id="dollars-per-correct-completion">Dollars Per Correct Completion</h3>
+<p><code>DPC = total measured execution cost / correct completions</code></p>
+<h3 id="semantic-correctness">Semantic Correctness</h3>
+<p>A completion is correct only when it satisfies:</p>
+<ul>
+<li>functional tests</li>
+<li>semantic invariants</li>
+<li>transition legality</li>
+<li>declared obligations</li>
+<li>relevant integration tests</li>
+<li>no forbidden direct state mutation</li>
+</ul>
+<p>Compilation alone is insufficient.</p>
+<hr>
+<h2 id="9-experimental-architecture">9. Experimental architecture</h2>
+<p>Construct equivalent commerce domains in two implementations.</p>
+<h3 id="a-conventional-competent-implementation">A. Conventional competent implementation</h3>
+<p>Use normal commercial patterns, not a straw man:</p>
+<ul>
+<li>services</li>
+<li>status enums</li>
+<li>repositories</li>
+<li>validation</li>
+<li>tests</li>
+<li>ORM</li>
+<li>events where natural</li>
+<li>ordinary module/package boundaries</li>
+</ul>
+<p>Allow realistic distributed rule placement.</p>
+<h3 id="b-state-constrained-semantic-implementation">B. State-constrained semantic implementation</h3>
+<p>Same business behavior, but:</p>
+<ul>
+<li>single owner per authoritative state family</li>
+<li>typed/explicit legal transitions</li>
+<li>protected write paths</li>
+<li>generated semantic contracts</li>
+<li>declared cross-module claims/events</li>
+<li>explicit capabilities</li>
+<li>explicit obligations</li>
+<li>semantic dependency graph</li>
+<li>implementation mapping</li>
+</ul>
+<h3 id="recommended-language-matrix">Recommended language matrix</h3>
+<p>Start with C# and F# or C# alone with two architectural styles, because using a completely different language risks confounding architecture with language.</p>
+<p>Then add TypeScript as a secondary experiment to test whether weaker static semantics increase escape rate and retrieval burden.</p>
+<p>Do not begin by comparing F# against JavaScript and attribute all differences to state ownership.</p>
+<hr>
+<h2 id="10-required-task-suite">10. Required task suite</h2>
+<p>Use at least these task classes:</p>
+<ol>
+<li>local transition addition</li>
+<li>local state addition</li>
+<li>internal adapter refactor</li>
+<li>exported contract change</li>
+<li>cross-module policy change</li>
+<li>state split</li>
+<li>post-event blocking rule</li>
+<li>unknown external effect</li>
+<li>persistence replacement</li>
+<li>cross-cutting reporting requirement</li>
+</ol>
+<p>Include deliberately difficult tasks in which semantic boundaries are expected to provide little advantage.</p>
+<hr>
+<h2 id="11-context-strategies-to-compare">11. Context strategies to compare</h2>
+<p>For the same architecture and task:</p>
+<h3 id="strategy-a--broad-repository-agent">Strategy A — broad repository agent</h3>
+<p>Normal repository search/navigation.</p>
+<h3 id="strategy-b--lexicalsearch-retrieval">Strategy B — lexical/search retrieval</h3>
+<p>Text/symbol search.</p>
+<h3 id="strategy-c--static-dependency-retrieval">Strategy C — static dependency retrieval</h3>
+<p>Imports/calls/type relationships.</p>
+<h3 id="strategy-d--semantic-dependency-slice">Strategy D — semantic dependency slice</h3>
+<p>State/transition/capability/obligation graph.</p>
+<h3 id="strategy-e--semantic-slice--lazy-expansion">Strategy E — semantic slice + lazy expansion</h3>
+<p>Minimum initial semantic context; additional retrieval only when required.</p>
+<p>The key comparison is not merely conventional architecture vs state architecture. It is a factorial design:</p>
+<p><code>architecture × retrieval strategy × model</code></p>
+<p>That allows separation of:</p>
+<ul>
+<li>architecture effect</li>
+<li>retrieval effect</li>
+<li>interaction effect</li>
+</ul>
+<hr>
+<h2 id="12-tokenizer-experiment-design">12. Tokenizer experiment design</h2>
+<p>The research specification correctly requires actual model tokenizers.</p>
+<h3 id="this-execution">This execution</h3>
+<p>An attempt was made to install an OpenAI-compatible tokenizer locally. The execution environment had no network package access and no compatible tokenizer package already installed.</p>
+<p>Therefore <strong>no tokenizer-derived measurements are being reported here</strong>. Character or word-count proxies would violate the requested research standard.</p>
+<h3 id="required-implementation">Required implementation</h3>
+<p>For each provider/model:</p>
+<ol>
+<li>use provider tokenizer/token-count API or officially supported tokenizer</li>
+<li>store tokenizer/model version</li>
+<li>tokenize:
+<ul>
+<li>implementation</li>
+<li>tests</li>
+<li>prose docs</li>
+<li>verbose semantic JSON</li>
+<li>compact semantic IR</li>
+<li>generated agent projection</li>
+</ul>
+</li>
+<li>store raw count and content hash</li>
+<li>rerun when provider tokenizer changes</li>
+</ol>
+<p>This matters because Anthropic's current pricing documentation states that Claude 4.7+ uses a newer tokenizer that can produce approximately 30% more tokens for the same text, depending on workload.</p>
+<hr>
+<h2 id="13-semantic-representation-experiment">13. Semantic representation experiment</h2>
+<p>For the same rule:</p>
+<blockquote>
+<p>Ship only if Customer is Verified, Order is Approved, Payment is Captured, and Shipment is Ready.</p>
+</blockquote>
+<p>Compare:</p>
+<h3 id="source-form">Source form</h3>
+<p>Full implementation + guard calls + associated types.</p>
+<h3 id="test-form">Test form</h3>
+<p>Tests encoding all valid/invalid combinations.</p>
+<h3 id="prose-form">Prose form</h3>
+<p>Natural-language rules.</p>
+<h3 id="verbose-semantic-ir">Verbose semantic IR</h3>
+<p>Structured identifiers, provenance, versions, dependencies.</p>
+<h3 id="compact-agent-projection">Compact agent projection</h3>
+<p>Example:</p>
+<pre><code class="language-text">Shipment.Ship
+requires:
+  Customer=Verified
+  Order=Approved
+  Payment=Captured
+  Shipment=Ready
+effects:
+  Shipment -> Shipped
+</code></pre>
+<p>The winning representation is not necessarily the smallest token count. It must maximize:</p>
+<p><code>correct task completions / total token-and-tool cost</code></p>
+<hr>
+<h2 id="14-cost-model">14. Cost model</h2>
+<p>For one attempt:</p>
+<p><code>AttemptCost = U*Pu + C*Pc + W*Pw + O*Po + ToolCost + ComputeCost</code></p>
+<p>Where:</p>
+<ul>
+<li><code>U</code> = uncached input tokens</li>
+<li><code>C</code> = cached input tokens</li>
+<li><code>W</code> = cache-write tokens where provider charges separately</li>
+<li><code>O</code> = output/reasoning-billed tokens</li>
+<li><code>Pu/Pc/Pw/Po</code> = prices per token</li>
+</ul>
+<p>For repeated attempts:</p>
+<p><code>TaskCost = sum(AttemptCost_i) + retrieval + CI + human-intervention cost</code></p>
+<h3 id="cost-per-correct-completion">Cost per correct completion</h3>
+<p>For a population:</p>
+<p><code>DPC = total task execution cost / number of semantically correct completions</code></p>
+<p>This should be the primary economic metric.</p>
+<hr>
+<h2 id="15-current-verified-model-price-snapshot">15. Current verified model-price snapshot</h2>
+<p>Prices below are provider-published API prices as of 2026-08-14 and should be treated as time-stamped inputs, not constants.</p>
+<h3 id="openai-standard-short-context-pricing">OpenAI standard short-context pricing</h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th align="right">Input / 1M</th>
+<th align="right">Cached input / 1M</th>
+<th align="right">Cache write / 1M</th>
+<th align="right">Output / 1M</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPT-5.6 Sol</td>
+<td align="right">$5.00</td>
+<td align="right">$0.50</td>
+<td align="right">$6.25</td>
+<td align="right">$30.00</td>
+</tr>
+<tr>
+<td>GPT-5.6 Terra</td>
+<td align="right">$2.00</td>
+<td align="right">$0.20</td>
+<td align="right">$2.50</td>
+<td align="right">$12.00</td>
+</tr>
+<tr>
+<td>GPT-5.6 Luna</td>
+<td align="right">$0.20</td>
+<td align="right">$0.02</td>
+<td align="right">$0.25</td>
+<td align="right">$1.20</td>
+</tr>
+</tbody>
+</table>
+<p>Long-context pricing is higher.</p>
+<h3 id="anthropic">Anthropic</h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th align="right">Input / 1M</th>
+<th align="right">Cache hit / 1M</th>
+<th align="right">Output / 1M</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude Opus 5</td>
+<td align="right">$5.00</td>
+<td align="right">$0.50</td>
+<td align="right">$25.00</td>
+</tr>
+<tr>
+<td>Claude Sonnet 5</td>
+<td align="right">$2.00</td>
+<td align="right">$0.20</td>
+<td align="right">$10.00</td>
+</tr>
+<tr>
+<td>Claude Haiku 4.5</td>
+<td align="right">$1.00</td>
+<td align="right">$0.10</td>
+<td align="right">$5.00</td>
+</tr>
+</tbody>
+</table>
+<p>Cache-write prices differ from cache-hit prices and must be counted explicitly.</p>
+<hr>
+<h2 id="16-adjacent-empirical-cost-sensitivity">16. Adjacent empirical cost sensitivity</h2>
+<p>This is <strong>not a state-constrained architecture result</strong>.</p>
+<p>Use the measured GPT-5-mini token counts from the 2026 SeeRepo experiment only to estimate the order of magnitude of structural-context savings under today's price schedules.</p>
+<p>Measured external token counts:</p>
+<ul>
+<li>baseline: 193,157 input; 8,188 output</li>
+<li>graph-assisted: 144,403 input; 6,958 output</li>
+</ul>
+<p>If those exact token volumes were priced today at the listed uncached rates:</p>
+<table>
+<thead>
+<tr>
+<th>Model price schedule</th>
+<th align="right">Baseline</th>
+<th align="right">Graph-assisted</th>
+<th align="right">Difference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPT-5.6 Sol</td>
+<td align="right">~$1.211</td>
+<td align="right">~$0.931</td>
+<td align="right">~$0.281</td>
+</tr>
+<tr>
+<td>GPT-5.6 Terra</td>
+<td align="right">~$0.485</td>
+<td align="right">~$0.372</td>
+<td align="right">~$0.112</td>
+</tr>
+<tr>
+<td>GPT-5.6 Luna</td>
+<td align="right">~$0.0485</td>
+<td align="right">~$0.0372</td>
+<td align="right">~$0.0112</td>
+</tr>
+<tr>
+<td>Claude Sonnet 5</td>
+<td align="right">~$0.468</td>
+<td align="right">~$0.358</td>
+<td align="right">~$0.110</td>
+</tr>
+<tr>
+<td>Claude Haiku 4.5</td>
+<td align="right">~$0.234</td>
+<td align="right">~$0.179</td>
+<td align="right">~$0.055</td>
+</tr>
+</tbody>
+</table>
+<p>The percent reduction is about 23–24% under these simplified price substitutions.</p>
+<p>Again: this table demonstrates economic sensitivity to token volume. It does <strong>not</strong> demonstrate that state-modular architecture will achieve the same reduction.</p>
+<h3 id="scale-implication">Scale implication</h3>
+<p>At 10,000 tasks/day, a $0.11 reduction per task is roughly $1,100/day before retries, tool cost, caching, CI, or human cost.</p>
+<p>But at GPT-5.6 Luna pricing, the same token reduction is only around one cent per task.</p>
+<p>Therefore the architecture's financial case cannot rest on input-token compression alone as model prices fall.</p>
+<hr>
+<h2 id="17-the-more-important-economic-hypothesis-model-substitution">17. The more important economic hypothesis: model substitution</h2>
+<p>The current OpenAI short-context price spread is large:</p>
+<ul>
+<li>GPT-5.6 Sol input/output: $5 / $30 per MTok</li>
+<li>GPT-5.6 Luna input/output: $0.20 / $1.20 per MTok</li>
+</ul>
+<p>If a constrained semantic representation allows a cheaper model to achieve the same semantic correctness, the model substitution effect could be much larger than shaving 20–30% from context on the same model.</p>
+<p>This should become a first-class experiment.</p>
+<p>Required comparison:</p>
+<ol>
+<li>frontier model + conventional retrieval</li>
+<li>frontier model + semantic slice</li>
+<li>medium model + semantic slice</li>
+<li>small model + semantic slice</li>
+</ol>
+<p>The strongest economically meaningful result would be:</p>
+<blockquote>
+<p>smaller model + semantic constraints ≥ larger model + conventional context in semantic correctness, at materially lower DPC.</p>
+</blockquote>
+<hr>
+<h2 id="18-caching-implications">18. Caching implications</h2>
+<p>State/module contracts are unusually cache-friendly if they are:</p>
+<ul>
+<li>stable</li>
+<li>deterministically generated</li>
+<li>ordered consistently</li>
+<li>versioned</li>
+<li>placed in stable prompt prefixes</li>
+</ul>
+<p>Current provider pricing makes cache hits roughly one tenth of ordinary input price for several models.</p>
+<p>This means two architectural choices interact:</p>
+<ol>
+<li>reduce how much context is needed</li>
+<li>make the remaining repeated context stable enough to cache</li>
+</ol>
+<p>However cache writes are not free. The experiment must count:</p>
+<ul>
+<li>cache-write cost</li>
+<li>cache-read cost</li>
+<li>cache lifetime</li>
+<li>invalidation frequency</li>
+<li>number of reuses before invalidation</li>
+</ul>
+<p>A frequently changing semantic contract may save fewer dollars than expected.</p>
+<hr>
+<h2 id="19-break-even-model">19. Break-even model</h2>
+<p>Let:</p>
+<ul>
+<li><code>E0</code> = upfront engineering cost of semantic architecture/tooling</li>
+<li><code>S</code> = measured savings per correct agent task</li>
+<li><code>N</code> = correct agent tasks per month attributable to the system</li>
+</ul>
+<p>Simple break-even:</p>
+<p><code>months = E0 / (S * N)</code></p>
+<p>This is intentionally incomplete.</p>
+<p>A better model includes:</p>
+<p><code>NetMonthlyBenefit = inference savings + retry savings + defect savings + human-review savings - semantic-tooling operations</code></p>
+<p>Then:</p>
+<p><code>BreakEvenMonths = E0 / NetMonthlyBenefit</code></p>
+<p>No break-even claim should be made until the task experiments yield DPC measurements.</p>
+<hr>
+<h2 id="20-key-counterevidence--failure-modes">20. Key counterevidence / failure modes</h2>
+<h3 id="201-structural-metadata-can-increase-tokens">20.1 Structural metadata can increase tokens</h3>
+<p>RepoGraph provides direct evidence: adding graph context increased average tokens in some successful integrations.</p>
+<p><strong>Consequence:</strong> semantic contracts must be measured as part of context, not treated as free metadata.</p>
+<h3 id="202-larger-dependency-closure-can-hurt-performance">20.2 Larger dependency closure can hurt performance</h3>
+<p>RepoGraph's flattened 2-hop context was much larger and performed worse than smaller variants.</p>
+<p><strong>Consequence:</strong> transitive closure must be relevance-aware; "all dependencies" is not an acceptable algorithm.</p>
+<h3 id="203-summarization-can-lose-important-information">20.3 Summarization can lose important information</h3>
+<p>RepoGraph found that summarization helped larger graph contexts but slightly hurt a compact 1-hop context.</p>
+<p><strong>Consequence:</strong> generated agent views should be deterministic projections where possible, not free-form LLM summaries.</p>
+<h3 id="204-most-real-changes-may-cross-semantic-boundaries">20.4 Most real changes may cross semantic boundaries</h3>
+<p>If module escape rate is high, savings collapse.</p>
+<p><strong>Falsification target:</strong> explicitly measure task-locality distribution on real maintenance histories.</p>
+<h3 id="205-language-semantics-may-confound-architecture">20.5 Language semantics may confound architecture</h3>
+<p>Static-analysis work suggests structural retrieval behaves differently in Java and Python.</p>
+<p><strong>Consequence:</strong> architecture and language must be varied independently.</p>
+<h3 id="206-cheap-models-weaken-pure-token-economics">20.6 Cheap models weaken pure token economics</h3>
+<p>As per-token prices decline, architectural migration justified solely by input savings may not break even.</p>
+<p><strong>Consequence:</strong> correctness, model substitution, reduced tool calls, and maintenance benefits are necessary parts of the business case.</p>
+<h3 id="207-outputreasoning-and-tools-may-dominate">20.7 Output/reasoning and tools may dominate</h3>
+<p>If most cost comes from repeated reasoning, CI, web/tool calls, or large outputs, input compression has limited effect.</p>
+<h3 id="208-semantic-tooling-itself-can-decay">20.8 Semantic tooling itself can decay</h3>
+<p>A semantic IR that is hand-maintained can become another stale documentation layer.</p>
+<p><strong>Requirement:</strong> the strongest design generates the agent contract from executable/validated architecture rather than requiring duplicate truth.</p>
+<hr>
+<h2 id="21-falsification-criteria">21. Falsification criteria</h2>
+<p>Before full experiment execution, reject or substantially weaken the <strong>economic</strong> hypothesis if one or more of these persist across realistic task distributions:</p>
+<ol>
+<li>semantic context is not smaller after counting all contracts/IR</li>
+<li>DPC is not lower</li>
+<li>module escape rate is high enough that lazy expansion approximates broad retrieval</li>
+<li>semantically constrained agents need more repair cycles</li>
+<li>semantic contract maintenance adds more engineering cost than agent savings</li>
+<li>smaller models do not benefit disproportionately</li>
+<li>ordinary static dependency retrieval performs equally well at lower architectural cost</li>
+<li>longitudinal changes cause semantic dependency fan-out to grow at the same rate as the conventional system</li>
+</ol>
+<p>No arbitrary numeric rejection threshold should be chosen until pilot variance is measured.</p>
+<hr>
+<h2 id="22-strong-result-criteria">22. Strong-result criteria</h2>
+<p>A strong result requires all of the following:</p>
+<ul>
+<li>repeated realistic repository tasks</li>
+<li>matched business behavior</li>
+<li>multiple task types</li>
+<li>multiple runs</li>
+<li>statistically meaningful correctness comparison</li>
+<li>measured total input/output tokens</li>
+<li>measured tool calls</li>
+<li>measured repair loops</li>
+<li>semantic metadata fully charged to the constrained architecture</li>
+<li>no reduction in semantic correctness</li>
+<li>lower DPC</li>
+<li>evidence across local and cross-module tasks</li>
+<li>longitudinal persistence</li>
+</ul>
+<p>An especially strong result would also show smaller-model substitution.</p>
+<hr>
+<h2 id="23-recommended-pilot">23. Recommended pilot</h2>
+<h3 id="repository">Repository</h3>
+<p>Create a medium commerce system with:</p>
+<ul>
+<li>Customer</li>
+<li>Order</li>
+<li>Payment</li>
+<li>Risk</li>
+<li>Shipment</li>
+<li>Refund</li>
+<li>Notification</li>
+</ul>
+<p>Target 15–30 KLOC initially—large enough to force cross-file navigation without making experiment iteration expensive.</p>
+<h3 id="variants">Variants</h3>
+<ul>
+<li>conventional competent modular code</li>
+<li>state-constrained semantic code</li>
+</ul>
+<h3 id="first-12-tasks">First 12 tasks</h3>
+<p>Use 4 local, 4 boundary-changing, 4 deliberately cross-cutting tasks.</p>
+<h3 id="runs">Runs</h3>
+<p>For each:</p>
+<ul>
+<li>3–5 repetitions per architecture/retrieval/model cell for pilot</li>
+<li>fresh sessions</li>
+<li>randomized order</li>
+<li>same tests</li>
+<li>same tool rights</li>
+<li>same task wording</li>
+</ul>
+<h3 id="models">Models</h3>
+<p>Use one frontier, one mid-tier, one inexpensive model.</p>
+<h3 id="primary-outcomes">Primary outcomes</h3>
+<ol>
+<li>semantic correctness</li>
+<li>DPC</li>
+<li>input tokens</li>
+<li>total tokens</li>
+<li>tool calls</li>
+<li>repository reads</li>
+<li>module escape rate</li>
+<li>repair cycles</li>
+</ol>
+<h3 id="secondary-outcomes">Secondary outcomes</h3>
+<ul>
+<li>elapsed latency</li>
+<li>files changed</li>
+<li>integration defects</li>
+<li>direct forbidden mutation attempts</li>
+<li>cache reuse</li>
+</ul>
+<hr>
+<h2 id="24-research-queue">24. Research queue</h2>
+<h3 id="priority-1--highest-falsification-and-economic-value">Priority 1 — highest falsification and economic value</h3>
+<ol>
+<li>
+<p><strong>Does semantic dependency slicing beat ordinary static dependency slicing?</strong></p>
+<ul>
+<li>falsification value: very high</li>
+<li>economic importance: very high</li>
+<li>feasibility: high</li>
+</ul>
+</li>
+<li>
+<p><strong>What is the module escape rate on real commercial maintenance tasks?</strong></p>
+<ul>
+<li>falsification value: very high</li>
+<li>economic importance: very high</li>
+<li>feasibility: medium</li>
+</ul>
+</li>
+<li>
+<p><strong>Can a smaller model with a semantic slice match a larger model with conventional retrieval?</strong></p>
+<ul>
+<li>falsification value: high</li>
+<li>economic importance: extremely high</li>
+<li>feasibility: high</li>
+</ul>
+</li>
+<li>
+<p><strong>Does state ownership reduce repair loops rather than merely input context?</strong></p>
+<ul>
+<li>falsification value: high</li>
+<li>economic importance: very high</li>
+<li>feasibility: high</li>
+</ul>
+</li>
+</ol>
+<h3 id="priority-2">Priority 2</h3>
+<ol start="5">
+<li>Which semantic contract representation minimizes DPC rather than tokens alone?</li>
+<li>How much semantic metadata can be deterministically generated from types/state definitions?</li>
+<li>How often do capability and obligation nodes add context that ordinary code graphs miss?</li>
+<li>How does C#/F# compare with TypeScript under the same semantic architecture?</li>
+<li>How cache-stable are module contracts under normal maintenance?</li>
+<li>Does semantic graph density grow more slowly over 50 sequential AI changes?</li>
+</ol>
+<h3 id="priority-3">Priority 3</h3>
+<ol start="11">
+<li>Can semantic boundaries improve parallel-agent independence?</li>
+<li>What is the effect of shared-database write ownership?</li>
+<li>Does a modular monolith outperform weakly bounded microservices for agent context?</li>
+<li>Can historical Git changes be used to estimate "true" semantic locality before building the full benchmark?</li>
+</ol>
+<hr>
+<h2 id="25-most-important-next-experiment">25. Most important next experiment</h2>
+<p>The most valuable next step is <strong>not</strong> to build the entire proposed research program at once.</p>
+<p>Run a discriminating 2×2 pilot:</p>
+<h3 id="architecture">Architecture</h3>
+<ul>
+<li>conventional</li>
+<li>state-constrained</li>
+</ul>
+<h3 id="retrieval">Retrieval</h3>
+<ul>
+<li>ordinary static/code-graph slice</li>
+<li>semantic state/transition slice</li>
+</ul>
+<p>Use the same model.</p>
+<p>Why this experiment matters:</p>
+<p>If the semantic architecture does not outperform ordinary dependency-aware retrieval, then most of the token-saving thesis belongs to better retrieval/context engineering—not to state ownership.</p>
+<p>If it does outperform ordinary retrieval, then the architecture is contributing information that code-level graphs cannot cheaply reconstruct.</p>
+<p>That is the causal question the research program must answer.</p>
+<hr>
+<h2 id="26-final-verdict">26. Final verdict</h2>
+<h3 id="what-is-empirically-supported">What is empirically supported</h3>
+<p><strong>Supported:</strong></p>
+<ul>
+<li>repository localization matters</li>
+<li>graph/dependency information improves many repository-level AI tasks</li>
+<li>structured context can reduce navigation and tokens</li>
+<li>too much context can reduce performance</li>
+<li>representation size matters</li>
+<li>simple constrained workflows can be cheaper than unconstrained agent exploration</li>
+<li>static dependency information can improve repository-level code generation</li>
+<li>structural context has produced measured cost reductions in recent agent experiments</li>
+</ul>
+<h3 id="what-is-strongly-plausible">What is strongly plausible</h3>
+<p><strong>Inference:</strong></p>
+<ul>
+<li>explicit state ownership can provide a semantic dependency graph richer than imports/calls</li>
+<li>legal transitions can reduce the set of plausible agent actions</li>
+<li>deterministic semantic contracts may be more cacheable and less drift-prone than prose summaries</li>
+</ul>
+<h3 id="what-remains-unproven">What remains unproven</h3>
+<p><strong>Hypothesis:</strong></p>
+<ul>
+<li>state-constrained modularity reduces MSSC</li>
+<li>it lowers total tokens on real maintenance tasks</li>
+<li>it lowers cost per correct completion</li>
+<li>it retains the advantage on cross-module changes</li>
+<li>it remains economical after architecture/tooling cost</li>
+<li>it enables smaller-model substitution</li>
+</ul>
+<h3 id="bottom-line">Bottom line</h3>
+<p>The hypothesis deserves serious experimentation.</p>
+<p>The strongest evidence discovered in this execution does <strong>not</strong> justify saying:</p>
+<blockquote>
+<p>"State machines make AI agents cheaper."</p>
+</blockquote>
+<p>It does justify saying:</p>
+<blockquote>
+<p>"Current software-agent research shows that structured, selective representations of repository dependencies can reduce exploration and sometimes substantially reduce token/cost while maintaining correctness. Explicit state ownership and transition contracts are a credible candidate for producing a more semantic and mechanically reliable version of that context structure, but their incremental economic value over existing code/dependency retrieval still needs to be measured."</p>
+</blockquote>
+<p>That is a stronger research position because it exposes the real competitor:</p>
+<blockquote>
+<p><strong>state-derived semantic slicing vs ordinary dependency-aware retrieval</strong></p>
+</blockquote>
+<p>—not state architecture vs dumping an entire repository into a model.</p>
+<p>If state-derived slicing wins that comparison, the economic thesis becomes much more credible.</p>
+<hr>
+<h2 id="primary-sources-consulted">Primary sources consulted</h2>
+<ol>
+<li>D. L. Parnas. <em>On the Criteria To Be Used in Decomposing Systems into Modules.</em> Communications of the ACM, 1972.</li>
+<li>Liu et al. <em>GraphCoder: Enhancing Repository-Level Code Completion via Code Context Graph-based Retrieval and Language Model.</em> arXiv:2406.07003.</li>
+<li>Cheng et al. <em>Dataflow-Guided Retrieval Augmentation for Repository-Level Code Completion (DraCo).</em> arXiv:2405.19782.</li>
+<li>Liu et al. <em>STALL+: Boosting LLM-based Repository-level Code Completion with Static Analysis.</em> arXiv:2406.10018.</li>
+<li>Ouyang et al. <em>RepoGraph: Enhancing AI Software Engineering with Repository-level Code Graph.</em> arXiv:2410.14684.</li>
+<li>Xia et al. <em>Agentless: Demystifying LLM-based Software Engineering Agents.</em> arXiv:2407.01489.</li>
+<li>Yang et al. <em>SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering.</em> arXiv:2405.15793.</li>
+<li><em>LLM Agents Can See Code Repositories.</em> arXiv:2606.14061.</li>
+<li>OpenAI. <em>API Pricing.</em> Accessed 2026-08-14.</li>
+<li>Anthropic. <em>Claude Platform Pricing.</em> Accessed 2026-08-14.</li>
+<li>Google. <em>Gemini Developer API Pricing.</em> Accessed 2026-08-14.</li>
+</ol></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

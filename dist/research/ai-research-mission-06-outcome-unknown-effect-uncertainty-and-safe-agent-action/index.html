@@ -1,0 +1,1518 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AI Research Mission 06 — Outcome Unknown, Effect Uncertainty, and Safe Agent Action | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">AI Research Mission 06 — Outcome Unknown, Effect Uncertainty, and Safe Agent Action</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/reports/06-outcome-unknown-external-effects-agent-safety-research-report.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#ai-research-mission-06-outcome-unknown-effect-uncertainty-and-safe-agent-action">AI Research Mission 06 — Outcome Unknown, Effect Uncertainty, and Safe Agent Action</a></li><li><a href="#1-executive-verdict">1. Executive verdict</a></li><li><a href="#bottom-line">Bottom line</a></li><li><a href="#main-conclusion">Main conclusion</a></li><li><a href="#2-standard-terminology-for-uncertain-outcomes">2. Standard terminology for uncertain outcomes</a></li><li><a href="#distributed-systems-rpc">Distributed systems / RPC</a></li><li><a href="#database-transaction-processing">Database / transaction processing</a></li><li><a href="#payments-integration-engineering">Payments / integration engineering</a></li><li><a href="#recommended-terminology">Recommended terminology</a></li><li><a href="#3-distributed-systems-foundations">3. Distributed-systems foundations</a></li><li><a href="#the-underlying-problem">The underlying problem</a></li><li><a href="#two-generals-coordination-impossibility">Two Generals / coordination impossibility</a></li><li><a href="#4-rpc-semantics">4. RPC semantics</a></li><li><a href="#at-least-once">At-least-once</a></li><li><a href="#at-most-once">At-most-once</a></li><li><a href="#exactly-once">Exactly-once</a></li><li><a href="#5-idempotency-analysis">5. Idempotency analysis</a></li><li><a href="#does-idempotency-eliminate-outcomeunknown-">Does idempotency eliminate OutcomeUnknown?</a></li><li><a href="#limitations">Limitations</a></li><li><a href="#6-exactly-once-analysis">6. Exactly-once analysis</a></li><li><a href="#7-transaction-commit-uncertainty">7. Transaction / commit uncertainty</a></li><li><a href="#8-saga-comparison">8. Saga comparison</a></li><li><a href="#what-sagas-solve">What Sagas solve</a></li><li><a href="#what-they-do-not-automatically-solve">What they do not automatically solve</a></li><li><a href="#9-payment-system-comparison">9. Payment-system comparison</a></li><li><a href="#example-safe-model">Example safe model</a></li><li><a href="#10-durable-workflow-comparison">10. Durable-workflow comparison</a></li><li><a href="#11-messaging-comparison">11. Messaging comparison</a></li><li><a href="#12-reconciliation-model">12. Reconciliation model</a></li><li><a href="#definition">Definition</a></li><li><a href="#reconciliation-is-not-merely-retry">Reconciliation is not merely retry</a></li><li><a href="#13-pending-vs-unknown-distinction">13. Pending vs unknown distinction</a></li><li><a href="#pending">Pending</a></li><li><a href="#outcomeunknown">OutcomeUnknown</a></li><li><a href="#14-failed-vs-rejected-distinction">14. Failed vs rejected distinction</a></li><li><a href="#rejected">Rejected</a></li><li><a href="#known-execution-failure">Known execution failure</a></li><li><a href="#15-partial-success-model">15. Partial-success model</a></li><li><a href="#16-proposed-effect-state-algebra">16. Proposed effect-state algebra</a></li><li><a href="#17-semantic-operation-identity">17. Semantic operation identity</a></li><li><a href="#definition">Definition</a></li><li><a href="#18-retry-layer-analysis">18. Retry-layer analysis</a></li><li><a href="#recommended-rule">Recommended rule</a></li><li><a href="#19-capability-implications">19. Capability implications</a></li><li><a href="#20-obligation-implications">20. Obligation implications</a></li><li><a href="#21-agent-tool-interface-implications">21. Agent tool-interface implications</a></li><li><a href="#22-context-token-implications">22. Context/token implications</a></li><li><a href="#conventional">Conventional</a></li><li><a href="#semantic">Semantic</a></li><li><a href="#23-smaller-model-hypothesis">23. Smaller-model hypothesis</a></li><li><a href="#24-security-implications">24. Security implications</a></li><li><a href="#duplicate-effect-abuse">Duplicate-effect abuse</a></li><li><a href="#tool-manipulation">Tool manipulation</a></li><li><a href="#reconciliation-spoofing">Reconciliation spoofing</a></li><li><a href="#25-economic-analysis">25. Economic analysis</a></li><li><a href="#economic-formula">Economic formula</a></li><li><a href="#26-counterarguments">26. Counterarguments</a></li><li><a href="#1-idempotency-already-solves-this-">1. &quot;Idempotency already solves this.&quot;</a></li><li><a href="#2-durable-workflow-engines-solve-this-">2. &quot;Durable workflow engines solve this.&quot;</a></li><li><a href="#3-outcomeunknown-creates-too-much-state-">3. &quot;OutcomeUnknown creates too much state.&quot;</a></li><li><a href="#4-most-apis-document-retry-behavior-">4. &quot;Most APIs document retry behavior.&quot;</a></li><li><a href="#5-agents-can-follow-prompt-rules-">5. &quot;Agents can follow prompt rules.&quot;</a></li><li><a href="#6-reconciliation-is-too-slow-">6. &quot;Reconciliation is too slow.&quot;</a></li><li><a href="#7-unknown-state-hurts-user-experience-">7. &quot;Unknown state hurts user experience.&quot;</a></li><li><a href="#8-some-systems-cannot-be-reconciled-">8. &quot;Some systems cannot be reconciled.&quot;</a></li><li><a href="#9-the-generic-model-will-become-integration-specific-">9. &quot;The generic model will become integration-specific.&quot;</a></li><li><a href="#10-unknown-is-rare-">10. &quot;Unknown is rare.&quot;</a></li><li><a href="#27-proposed-experiments">27. Proposed experiments</a></li><li><a href="#experiment-a-refund-response-loss">Experiment A — refund response loss</a></li><li><a href="#experiment-b-authoritative-rejection">Experiment B — authoritative rejection</a></li><li><a href="#experiment-c-strong-idempotent-retry">Experiment C — strong idempotent retry</a></li><li><a href="#experiment-d-no-idempotency">Experiment D — no idempotency</a></li><li><a href="#experiment-e-delayed-webhook">Experiment E — delayed webhook</a></li><li><a href="#experiment-f-conflicting-evidence">Experiment F — conflicting evidence</a></li><li><a href="#experiment-g-adversarial-agent">Experiment G — adversarial agent</a></li><li><a href="#experiment-h-restart">Experiment H — restart</a></li><li><a href="#experiment-i-smaller-models">Experiment I — smaller models</a></li><li><a href="#28-metrics">28. Metrics</a></li><li><a href="#duplicate-effect-rate">Duplicate Effect Rate</a></li><li><a href="#unsafe-retry-rate">Unsafe Retry Rate</a></li><li><a href="#outcome-misclassification-rate">Outcome Misclassification Rate</a></li><li><a href="#reconciliation-success-rate">Reconciliation Success Rate</a></li><li><a href="#mean-time-to-known-outcome">Mean Time to Known Outcome</a></li><li><a href="#tool-calls-per-reconciled-effect">Tool Calls per Reconciled Effect</a></li><li><a href="#tokens-per-reconciled-effect">Tokens per Reconciled Effect</a></li><li><a href="#human-interventions-per-unknown-effect">Human Interventions per Unknown Effect</a></li><li><a href="#stuck-outcomeunknown-rate">Stuck OutcomeUnknown Rate</a></li><li><a href="#cost-per-correctly-resolved-effect">Cost per Correctly Resolved Effect</a></li><li><a href="#29-static-analysis-compiler-opportunities">29. Static-analysis / compiler opportunities</a></li><li><a href="#30-formal-verification-opportunities">30. Formal verification opportunities</a></li><li><a href="#tla-">TLA+</a></li><li><a href="#alloy">Alloy</a></li><li><a href="#31-when-outcomeunknown-is-required">31. When OutcomeUnknown is required</a></li><li><a href="#32-when-explicit-outcomeunknown-is-unnecessary">32. When explicit OutcomeUnknown is unnecessary</a></li><li><a href="#33-architecture-changes-recommended">33. Architecture changes recommended</a></li><li><a href="#1-introduce-semantic-operation-identity">1. Introduce semantic operation identity</a></li><li><a href="#2-separate-invocation-state-from-effect-outcome">2. Separate invocation state from effect outcome</a></li><li><a href="#3-make-outcomeunknown-first-class">3. Make  OutcomeUnknown  first-class</a></li><li><a href="#4-add-pending-separately">4. Add  Pending  separately</a></li><li><a href="#5-add-partial-conflict-representations-where-required">5. Add partial/conflict representations where required</a></li><li><a href="#6-generate-reconciliation-obligations">6. Generate reconciliation obligations</a></li><li><a href="#7-constrain-capabilities">7. Constrain capabilities</a></li><li><a href="#8-allow-explicit-same-operation-retry">8. Allow explicit same-operation retry</a></li><li><a href="#9-encode-provider-guarantees-as-policy">9. Encode provider guarantees as policy</a></li><li><a href="#10-treat-compensation-as-another-effect">10. Treat compensation as another effect</a></li><li><a href="#11-generate-agent-tools-from-state">11. Generate agent tools from state</a></li><li><a href="#12-preserve-observations">12. Preserve observations</a></li><li><a href="#13-add-compiler-diagnostics">13. Add compiler diagnostics</a></li><li><a href="#14-separate-discovery-from-execution-semantics">14. Separate discovery from execution semantics</a></li><li><a href="#34-final-verdict">34. Final verdict</a></li><li><a href="#is-outcomeunknown-a-real-and-distinct-distributed-systems-condition-">Is OutcomeUnknown a real and distinct distributed-systems condition?</a></li><li><a href="#should-consequential-external-effects-model-it-explicitly-">Should consequential external effects model it explicitly?</a></li><li><a href="#does-explicit-modeling-reduce-unsafe-retries-">Does explicit modeling reduce unsafe retries?</a></li><li><a href="#does-it-improve-ai-agent-safety-specifically-">Does it improve AI-agent safety specifically?</a></li><li><a href="#does-it-reduce-agent-reasoning-context-cost-">Does it reduce agent reasoning/context cost?</a></li><li><a href="#is-a-three-state-model-sufficient-">Is a three-state model sufficient?</a></li><li><a href="#closest-established-concept">Closest established concept</a></li><li><a href="#best-terminology">Best terminology</a></li><li><a href="#strongest-prior-art">Strongest prior art</a></li><li><a href="#most-important-implementation-rule">Most important implementation rule</a></li><li><a href="#biggest-complexity-risk">Biggest complexity risk</a></li><li><a href="#most-important-missing-experiment">Most important missing experiment</a></li><li><a href="#recommended-generic-effect-model">Recommended generic effect model</a></li><li><a href="#evidence-classification">Evidence classification</a></li><li><a href="#strongly-established">Strongly established</a></li><li><a href="#supported-architectural-inference">Supported architectural inference</a></li><li><a href="#emerging-empirical-support">Emerging empirical support</a></li><li><a href="#still-speculative">Still speculative</a></li><li><a href="#research-synthesis">Research synthesis</a></li><li><a href="#key-sources">Key sources</a></li><li><a href="#foundational-distributed-systems-transactions">Foundational distributed systems / transactions</a></li><li><a href="#database-transaction-terminology">Database / transaction terminology</a></li><li><a href="#payments-idempotency">Payments / idempotency</a></li><li><a href="#cloud-apis-operation-identity">Cloud APIs / operation identity</a></li><li><a href="#messaging-exactly-once-scope">Messaging / exactly-once scope</a></li><li><a href="#durable-workflows-retry">Durable workflows / retry</a></li><li><a href="#agent-specific-empirical-evidence">Agent-specific empirical evidence</a></li><li><a href="#final-research-judgment">Final research judgment</a></li> </ol> </aside> <section class="document-body"><h1 id="ai-research-mission-06--outcome-unknown-effect-uncertainty-and-safe-agent-action">AI Research Mission 06 — Outcome Unknown, Effect Uncertainty, and Safe Agent Action</h1>
+<p><strong>Research report</strong><br>
+<strong>Date:</strong> 2026-08-14<br>
+<strong>Basis:</strong> Literature review, primary technical documentation, foundational distributed-systems work, transaction-processing literature, workflow/platform documentation, payment/cloud API documentation, and recent empirical LLM-agent research.</p>
+<hr>
+<h1 id="1-executive-verdict">1. Executive verdict</h1>
+<h2 id="bottom-line">Bottom line</h2>
+<p>The core hypothesis is <strong>substantially supported</strong>.</p>
+<p>A consequential external operation can be in a state where the caller knows that it did not receive a successful response but <strong>does not know whether the external effect occurred</strong>. That condition is not equivalent to failure. It is a familiar consequence of distributed execution across unreliable communication boundaries.</p>
+<p>For consequential effects, collapsing:</p>
+<ul>
+<li>success,</li>
+<li>known failure,</li>
+<li>and unknown outcome</li>
+</ul>
+<p>into a binary success/failure result is unsafe.</p>
+<p>The strongest form of the architectural recommendation is therefore:</p>
+<blockquote>
+<p><strong>Represent effect outcome separately from invocation/transport outcome, and make indeterminate external outcomes first-class semantic state.</strong></p>
+</blockquote>
+<p>However, the proposed ternary:</p>
+<ul>
+<li><code>Succeeded</code></li>
+<li><code>Failed</code></li>
+<li><code>OutcomeUnknown</code></li>
+</ul>
+<p>is <strong>too small to serve as a universal effect-state algebra</strong>.</p>
+<p>Real integrations commonly require distinctions such as:</p>
+<ul>
+<li><code>Rejected</code></li>
+<li><code>Accepted</code></li>
+<li><code>Pending</code></li>
+<li><code>Succeeded</code></li>
+<li><code>KnownFailed</code></li>
+<li><code>PartiallySucceeded</code></li>
+<li><code>OutcomeUnknown</code></li>
+<li><code>ReconciliationConflict</code></li>
+<li><code>AdministrativelyResolved</code></li>
+</ul>
+<p>The important contribution is not a particular three-case enum. It is the semantic rule:</p>
+<blockquote>
+<p><strong>Unknown must never be silently collapsed into failed or succeeded.</strong></p>
+</blockquote>
+<p>For AI agents, the evidence is emerging but unusually direct. A July 2026 controlled study, <em>Verified Tool Calls Improve LLM Agent Reliability Under Non-Atomic Failures</em>, specifically studied timeouts after dispatch, delayed visibility, and partial state updates. It reported that naive retry strategies can produce duplicate actions and that verify-before-retry behavior combined with idempotency keys substantially reduces duplicate actions while maintaining similar task success.</p>
+<p>That study does not prove the complete proposed architecture, but it validates the exact failure mechanism at the heart of this research mission.</p>
+<h2 id="main-conclusion">Main conclusion</h2>
+<p>For consequential operations:</p>
+<pre><code class="language-text">transport failure
+    !=
+known effect failure
+</code></pre>
+<p>and:</p>
+<pre><code class="language-text">timeout
+    !=
+safe permission to issue a new semantic operation
+</code></pre>
+<p>The safest general design is:</p>
+<pre><code class="language-text">Command issued with stable semanticOperationId
+        |
+        v
+Invocation / execution observation
+        |
+        +--> authoritative success ------> Succeeded
+        |
+        +--> authoritative non-effect ---> Rejected / KnownFailed
+        |
+        +--> authoritative pending ------> Pending
+        |
+        +--> partial authoritative state -> PartiallySucceeded
+        |
+        +--> insufficient information ---> OutcomeUnknown
+                                             |
+                                             v
+                                   Reconciliation obligation
+                                             |
+                              +--------------+--------------+
+                              |              |              |
+                              v              v              v
+                         Succeeded      KnownFailed    Conflict /
+                                                      Admin resolution
+</code></pre>
+<p>During <code>OutcomeUnknown</code>, creation of a <strong>new semantic operation</strong> for the same intended effect should normally be unavailable.</p>
+<p>A retry of the <strong>same semantic operation</strong>, using the same operation identity and a provider contract that guarantees deduplication/idempotency, may remain legal.</p>
+<p>That distinction is critical.</p>
+<hr>
+<h1 id="2-standard-terminology-for-uncertain-outcomes">2. Standard terminology for uncertain outcomes</h1>
+<p>There is no single universal term across all fields, but several established terms describe closely related conditions.</p>
+<h2 id="distributed-systems--rpc">Distributed systems / RPC</h2>
+<p>Common descriptions include:</p>
+<ul>
+<li>ambiguous result</li>
+<li>uncertain outcome</li>
+<li>indeterminate outcome</li>
+<li>request outcome unknown</li>
+<li>maybe semantics</li>
+<li>partial failure</li>
+</ul>
+<p>Classic RPC literature distinguishes guarantees such as at-most-once and at-least-once precisely because communication failure prevents the caller from always knowing what happened remotely.</p>
+<h2 id="database--transaction-processing">Database / transaction processing</h2>
+<p>More formal terminology includes:</p>
+<ul>
+<li><strong>in-doubt transaction</strong></li>
+<li><strong>uncertain commit</strong></li>
+<li><strong>unknown transaction resolution</strong></li>
+<li><strong>heuristic outcome</strong> in some transaction-processing systems</li>
+</ul>
+<p>SQLSTATE includes the category:</p>
+<pre><code class="language-text">08007 — TRANSACTION RESOLUTION UNKNOWN
+</code></pre>
+<p>This is particularly strong prior art because the condition is represented explicitly as something different from normal transaction failure.</p>
+<h2 id="payments--integration-engineering">Payments / integration engineering</h2>
+<p>Practical language often includes:</p>
+<ul>
+<li>unknown payment status</li>
+<li>pending</li>
+<li>ambiguous timeout</li>
+<li>reconciliation required</li>
+<li>indeterminate result</li>
+</ul>
+<p>Payment APIs often avoid exposing exactly the same abstract vocabulary, but their use of idempotency keys, persistent payment objects, asynchronous status, webhooks, and reconciliation demonstrates that the underlying state distinction is operationally important.</p>
+<h2 id="recommended-terminology">Recommended terminology</h2>
+<p>For developers and agent-facing interfaces:</p>
+<p><strong><code>OutcomeUnknown</code></strong> is the clearest general term.</p>
+<p>Why:</p>
+<ul>
+<li>it says exactly what is unknown;</li>
+<li>it avoids implying that execution is still happening;</li>
+<li>it distinguishes clearly from <code>Pending</code>;</li>
+<li>it does not over-import database-specific terminology.</li>
+</ul>
+<p>For operator interfaces, a user-facing label may be:</p>
+<p><strong>Outcome not yet established — reconciliation required</strong></p>
+<p>For transaction-specific infrastructure, <strong>InDoubt</strong> remains appropriate where that term already exists.</p>
+<hr>
+<h1 id="3-distributed-systems-foundations">3. Distributed-systems foundations</h1>
+<h2 id="the-underlying-problem">The underlying problem</h2>
+<p>Suppose client C sends operation O to server S.</p>
+<p>Possible timeline:</p>
+<pre><code class="language-text">C -> S: Execute O
+S: executes O successfully
+S -> C: success response
+network drops response
+C: timeout
+</code></pre>
+<p>From C's local perspective, the observations are compatible with multiple worlds:</p>
+<ol>
+<li>the request never reached S;</li>
+<li>the request reached S but was rejected;</li>
+<li>S accepted it but has not completed it;</li>
+<li>S executed it successfully but the response was lost;</li>
+<li>S partially executed it;</li>
+<li>S itself is uncertain;</li>
+<li>S executed it and subsequently changed state.</li>
+</ol>
+<p>The timeout only proves:</p>
+<blockquote>
+<p>the caller's waiting condition expired without an authoritative response.</p>
+</blockquote>
+<p>It does <strong>not</strong> prove non-execution.</p>
+<h2 id="two-generals--coordination-impossibility">Two Generals / coordination impossibility</h2>
+<p>The Two Generals problem is relevant as intuition: communicating parties cannot obtain common knowledge of successful coordination over an unreliable channel using a finite acknowledgement sequence.</p>
+<p>But it should not be used as a sweeping statement that distributed outcomes are always unknowable.</p>
+<p>Real systems overcome many practical uncertainty cases using:</p>
+<ul>
+<li>stable storage,</li>
+<li>operation identifiers,</li>
+<li>consensus,</li>
+<li>replicated logs,</li>
+<li>transaction protocols,</li>
+<li>retry + deduplication,</li>
+<li>status queries,</li>
+<li>reconciliation,</li>
+<li>authoritative ledgers.</li>
+</ul>
+<p>The theoretical point is narrower:</p>
+<blockquote>
+<p>A missing message cannot by itself tell the recipient which remote-world outcome occurred.</p>
+</blockquote>
+<p>The architectural implication is therefore not "distributed systems are impossible."</p>
+<p>It is:</p>
+<blockquote>
+<p>software must preserve epistemic uncertainty until stronger evidence arrives.</p>
+</blockquote>
+<hr>
+<h1 id="4-rpc-semantics">4. RPC semantics</h1>
+<p>Traditional RPC semantics provide useful framing.</p>
+<h2 id="at-least-once">At-least-once</h2>
+<p>The system retries until a request is executed.</p>
+<p>Benefit:</p>
+<ul>
+<li>high chance of eventual execution.</li>
+</ul>
+<p>Risk:</p>
+<ul>
+<li>the operation can execute more than once.</li>
+</ul>
+<p>Appropriate when operations are naturally idempotent or safely deduplicated.</p>
+<h2 id="at-most-once">At-most-once</h2>
+<p>The system uses request identity / duplicate suppression so that a request is not executed repeatedly.</p>
+<p>Benefit:</p>
+<ul>
+<li>avoids duplicate execution under the defined scope.</li>
+</ul>
+<p>But a caller can still experience a timeout and be unsure whether the single allowed execution occurred.</p>
+<p>Thus at-most-once execution does not automatically imply:</p>
+<pre><code class="language-text">caller knows outcome
+</code></pre>
+<h2 id="exactly-once">Exactly-once</h2>
+<p>"Exactly once" is meaningful only relative to a defined boundary.</p>
+<p>It may mean:</p>
+<ul>
+<li>exactly one log append,</li>
+<li>exactly one broker-visible message,</li>
+<li>exactly one processing transaction,</li>
+<li>exactly one deduplicated API operation,</li>
+<li>exactly one observable business effect.</li>
+</ul>
+<p>Those are not interchangeable.</p>
+<p>A broker can provide strong exactly-once behavior inside its transactional domain while the consumer still calls an external payment or email API whose effect lies outside that domain.</p>
+<p>Therefore:</p>
+<blockquote>
+<p>exactly-once infrastructure does not eliminate effect uncertainty beyond the transaction boundary it controls.</p>
+</blockquote>
+<hr>
+<h1 id="5-idempotency-analysis">5. Idempotency analysis</h1>
+<p>Idempotency is one of the strongest existing mechanisms supporting this architecture.</p>
+<p>AWS EC2 uses client tokens to make operations such as <code>RunInstances</code> idempotent within documented regional/zonal scopes.</p>
+<p>Stripe uses idempotency keys to allow clients to repeat requests safely under specified conditions.</p>
+<p>Temporal explicitly recommends idempotent Activities because Activities can execute multiple times.</p>
+<p>Azure retry guidance warns that non-idempotent operations can execute more than once if a request succeeds remotely but the response is lost.</p>
+<h2 id="does-idempotency-eliminate-outcomeunknown">Does idempotency eliminate OutcomeUnknown?</h2>
+<p>No.</p>
+<p>Idempotency changes:</p>
+<pre><code class="language-text">retry may duplicate effect
+</code></pre>
+<p>into something closer to:</p>
+<pre><code class="language-text">retry of same identity should not create another effect
+</code></pre>
+<p>under the provider's guarantee.</p>
+<p>But after the first timeout, the caller may still temporarily not know whether the operation:</p>
+<ul>
+<li>has not executed,</li>
+<li>already executed,</li>
+<li>remains pending,</li>
+<li>or will return the cached result on replay.</li>
+</ul>
+<p>The outcome remains epistemically unknown until an authoritative mechanism resolves it.</p>
+<p>Therefore:</p>
+<blockquote>
+<p>Idempotency is primarily an <strong>effect-safety mechanism</strong>, not an <strong>outcome-knowledge mechanism</strong>.</p>
+</blockquote>
+<p>It often makes reconciliation easier, because replaying the same semantic operation can safely recover the original outcome.</p>
+<h2 id="limitations">Limitations</h2>
+<p>Idempotency guarantees are scoped.</p>
+<p>Examples include:</p>
+<ul>
+<li>time windows;</li>
+<li>account scope;</li>
+<li>region or availability-zone scope;</li>
+<li>endpoint scope;</li>
+<li>parameter identity;</li>
+<li>provider retention duration.</li>
+</ul>
+<p>If the key expires or the operation is retried outside the guarantee's scope, duplicate protection may disappear.</p>
+<p>This argues for encoding idempotency guarantees as <strong>policy/data</strong>, not treating "has idempotency key" as a universal Boolean safety property.</p>
+<hr>
+<h1 id="6-exactly-once-analysis">6. Exactly-once analysis</h1>
+<p>Apache Kafka demonstrates why exactly-once language must be scoped carefully.</p>
+<p>Kafka supports idempotent producers and transactional mechanisms that can provide exactly-once semantics within Kafka processing patterns.</p>
+<p>SQS FIFO similarly provides deduplication behavior within a defined deduplication window.</p>
+<p>But none of this means an arbitrary external side effect initiated by a consumer is exactly once.</p>
+<p>Example:</p>
+<pre><code class="language-text">Kafka transaction
+    -> consume RefundRequested
+    -> external bank API refund
+    -> produce RefundCompleted
+</code></pre>
+<p>If the external refund succeeds and the process crashes before the Kafka transaction commits, replay may call the bank again.</p>
+<p>The Kafka transaction cannot atomically include the external bank unless the bank participates in the same transaction protocol.</p>
+<p>Thus:</p>
+<blockquote>
+<p>Exactly-once processing inside system A does not automatically produce exactly-once real-world effects in system B.</p>
+</blockquote>
+<p>This is one reason operation identity and reconciliation remain necessary at integration boundaries.</p>
+<hr>
+<h1 id="7-transaction--commit-uncertainty">7. Transaction / commit uncertainty</h1>
+<p>Transaction processing provides some of the strongest conceptual prior art.</p>
+<p>Two-phase commit includes a prepared/in-doubt period in which participants may be unable to independently decide the final transaction outcome.</p>
+<p>Gray and Lamport's <em>Consensus on Transaction Commit</em> formalizes the transaction-commit problem and compares classic two-phase commit with Paxos Commit. Classic 2PC can block when the coordinator fails.</p>
+<p>This demonstrates an important principle:</p>
+<blockquote>
+<p>unresolved transaction outcome is a legitimate state of a protocol, not an exception that can safely be translated into "failed."</p>
+</blockquote>
+<p>Application-level external APIs are typically harder because they do not participate in the caller's distributed transaction at all.</p>
+<p>A payment provider, shipping company, cloud provider, email service, or governmental filing system usually cannot join the application's local ACID transaction.</p>
+<p>Therefore application-level effect uncertainty is not eliminated by local transactions.</p>
+<hr>
+<h1 id="8-saga-comparison">8. Saga comparison</h1>
+<p>The original Garcia-Molina and Salem Saga model decomposes long-lived transactions into smaller transactions with compensating transactions.</p>
+<p>This is relevant but not identical.</p>
+<h2 id="what-sagas-solve">What Sagas solve</h2>
+<p>Sagas help structure long-running business processes where one global ACID transaction is impractical.</p>
+<p>They provide:</p>
+<ul>
+<li>ordered business transactions;</li>
+<li>compensation;</li>
+<li>recovery logic;</li>
+<li>eventual consistency.</li>
+</ul>
+<h2 id="what-they-do-not-automatically-solve">What they do not automatically solve</h2>
+<p>A saga step can itself have an ambiguous outcome.</p>
+<p>Example:</p>
+<pre><code class="language-text">T3 = issue refund
+network timeout
+</code></pre>
+<p>Before compensation can proceed safely, the saga may need to determine whether T3 occurred.</p>
+<p>Worse:</p>
+<pre><code class="language-text">C3 = compensate T3
+network timeout
+</code></pre>
+<p>The compensation itself can become uncertain.</p>
+<p>Therefore:</p>
+<blockquote>
+<p><code>OutcomeUnknown</code> is orthogonal to Saga compensation.</p>
+</blockquote>
+<p>Compensation is a new effect; it is not rollback in the ACID sense.</p>
+<p>The architecture should therefore model uncertainty for both forward and compensating effects.</p>
+<hr>
+<h1 id="9-payment-system-comparison">9. Payment-system comparison</h1>
+<p>Payments are an ideal case because duplicate effects have direct economic consequences.</p>
+<p>Stripe's PaymentIntent model persists payment lifecycle state rather than treating payment as a single fire-and-forget HTTP call.</p>
+<p>Stripe also recommends idempotency for safely repeating mutation requests.</p>
+<p>Modern payment integrations commonly use combinations of:</p>
+<ul>
+<li>persistent payment/refund identifiers;</li>
+<li>idempotency keys;</li>
+<li>status APIs;</li>
+<li>asynchronous lifecycle states;</li>
+<li>webhooks;</li>
+<li>provider records;</li>
+<li>ledger or settlement reconciliation.</li>
+</ul>
+<p>This is effectively an acknowledgement that:</p>
+<pre><code class="language-text">HTTP response state
+</code></pre>
+<p>and:</p>
+<pre><code class="language-text">financial effect state
+</code></pre>
+<p>are different things.</p>
+<h2 id="example-safe-model">Example safe model</h2>
+<pre><code class="language-text">RefundEffect {
+    semanticOperationId
+    providerOperationId?
+    executionState
+    observations[]
+}
+</code></pre>
+<p>If the initiating HTTP call times out:</p>
+<pre><code class="language-text">executionState = OutcomeUnknown
+</code></pre>
+<p>The local payment domain should not jump to:</p>
+<pre><code class="language-text">Payment = Refunded
+</code></pre>
+<p>nor:</p>
+<pre><code class="language-text">Refund = Failed
+</code></pre>
+<p>until authoritative evidence supports that claim.</p>
+<hr>
+<h1 id="10-durable-workflow-comparison">10. Durable-workflow comparison</h1>
+<p>Temporal and Azure Durable-style systems significantly improve:</p>
+<ul>
+<li>workflow persistence;</li>
+<li>crash recovery;</li>
+<li>replay;</li>
+<li>timers;</li>
+<li>retry orchestration.</li>
+</ul>
+<p>But durable orchestration does not make an arbitrary external effect safe.</p>
+<p>Temporal explicitly recommends idempotent Activities.</p>
+<p>Microsoft documentation similarly notes that durable execution does not automatically make non-idempotent external operations safe to retry.</p>
+<p>That is crucial prior art.</p>
+<p>A durable workflow may know:</p>
+<pre><code class="language-text">Activity invocation did not complete successfully from workflow perspective
+</code></pre>
+<p>without knowing:</p>
+<pre><code class="language-text">external charge did not occur
+</code></pre>
+<p>Therefore the proposed semantic effect model complements durable execution rather than replacing it.</p>
+<hr>
+<h1 id="11-messaging-comparison">11. Messaging comparison</h1>
+<p>Messaging systems demonstrate the same pattern from another direction.</p>
+<p>Amazon SQS standard queues provide at-least-once delivery and explicitly warn consumers to be idempotent because duplicate delivery can occur.</p>
+<p>Kafka supports stronger producer and transactional semantics.</p>
+<p>But message delivery is not business-effect execution.</p>
+<p>Three different identities may exist:</p>
+<pre><code class="language-text">message identity
+semantic operation identity
+external provider operation identity
+</code></pre>
+<p>These should not be conflated.</p>
+<p>A duplicated message can legitimately refer to the same semantic operation.</p>
+<p>A second message with a new ID could incorrectly create a duplicate semantic operation.</p>
+<p>For agent systems, the semantic-operation identity should be the primary protection at the business boundary.</p>
+<hr>
+<h1 id="12-reconciliation-model">12. Reconciliation model</h1>
+<h2 id="definition">Definition</h2>
+<p>A useful precise definition is:</p>
+<blockquote>
+<p><strong>Reconciliation is the process of establishing or appropriately dispositioning the authoritative outcome of an external effect after the local system lacks sufficient evidence to classify that effect as succeeded, failed, pending, or otherwise resolved.</strong></p>
+</blockquote>
+<p>Possible evidence sources:</p>
+<ul>
+<li>provider status endpoint;</li>
+<li>provider object lookup;</li>
+<li>ledger;</li>
+<li>settlement file;</li>
+<li>webhook;</li>
+<li>durable event stream;</li>
+<li>physical observation;</li>
+<li>human verification;</li>
+<li>counterparty confirmation.</li>
+</ul>
+<h2 id="reconciliation-is-not-merely-retry">Reconciliation is not merely retry</h2>
+<p>Retry asks:</p>
+<pre><code class="language-text">can we execute again?
+</code></pre>
+<p>Reconciliation asks:</p>
+<pre><code class="language-text">what actually happened?
+</code></pre>
+<p>That distinction should be architectural.</p>
+<hr>
+<h1 id="13-pending-vs-unknown-distinction">13. Pending vs unknown distinction</h1>
+<p>This distinction is strongly recommended.</p>
+<h2 id="pending">Pending</h2>
+<p>The external authority has confirmed:</p>
+<pre><code class="language-text">the operation exists and is not yet terminal
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-json">{
+  "operationId": "R123",
+  "status": "processing"
+}
+</code></pre>
+<p>This is knowledge.</p>
+<h2 id="outcomeunknown">OutcomeUnknown</h2>
+<p>The caller currently lacks an authoritative classification.</p>
+<p>Example:</p>
+<pre><code class="language-text">request transmitted
+connection timed out
+no authoritative status yet
+</code></pre>
+<p>Therefore:</p>
+<pre><code class="language-text">Pending != OutcomeUnknown
+</code></pre>
+<p>A pending operation may be safe to observe.</p>
+<p>An unknown operation may first require locating the authoritative operation record.</p>
+<hr>
+<h1 id="14-failed-vs-rejected-distinction">14. Failed vs rejected distinction</h1>
+<p>This distinction is often useful but integration-specific.</p>
+<h2 id="rejected">Rejected</h2>
+<p>The external system authoritatively declined to accept the operation.</p>
+<p>Examples:</p>
+<ul>
+<li>validation failure;</li>
+<li>authorization denial;</li>
+<li>duplicate semantic request with incompatible parameters;</li>
+<li>explicit business-rule rejection.</li>
+</ul>
+<p>Often retrying unchanged input is pointless.</p>
+<h2 id="known-execution-failure">Known execution failure</h2>
+<p>The operation was accepted or started but the provider authoritatively reports terminal failure.</p>
+<p>This may have different compensation or retry semantics.</p>
+<p>The key invariant is not the exact naming.</p>
+<p>It is:</p>
+<blockquote>
+<p>only classify failure where authoritative evidence supports a failure claim.</p>
+</blockquote>
+<hr>
+<h1 id="15-partial-success-model">15. Partial-success model</h1>
+<p>A strict ternary model fails for composite effects.</p>
+<p>Examples:</p>
+<ul>
+<li>80 of 100 transfers completed;</li>
+<li>four of five cloud resources created;</li>
+<li>two of three shipping labels purchased;</li>
+<li>partial infrastructure rollout;</li>
+<li>batch tax submission partially accepted.</li>
+</ul>
+<p>Recommended representation:</p>
+<pre><code class="language-text">PartiallySucceeded(details)
+</code></pre>
+<p>or, better, decompose the command into independently meaningful child effects where the domain supports it.</p>
+<p>Partial success is especially dangerous if mapped to generic failure, because blind retry can duplicate the successful subset.</p>
+<hr>
+<h1 id="16-proposed-effect-state-algebra">16. Proposed effect-state algebra</h1>
+<p>A reusable generic model should separate lifecycle and knowledge.</p>
+<p>Recommended high-level algebra:</p>
+<pre><code class="language-text">EffectState =
+    | NotStarted
+    | Requested
+    | Accepted
+    | Pending
+    | Succeeded
+    | Rejected
+    | KnownFailed
+    | PartiallySucceeded
+    | OutcomeUnknown
+    | ReconciliationConflict
+    | AdministrativelyResolved
+</code></pre>
+<p>Not every integration needs every state.</p>
+<p>A compiler or framework can allow effect profiles to select only relevant states.</p>
+<p>A richer structure may be even cleaner:</p>
+<pre><code class="language-text">Effect {
+    semanticOperationId
+    command
+    invocationState
+    outcomeKnowledge
+    providerOperationId?
+    attempts[]
+    observations[]
+    policyVersion
+}
+</code></pre>
+<p>Where:</p>
+<pre><code class="language-text">InvocationState =
+    NotSent
+    Sent
+    ResponseReceived
+    TransportFailed
+</code></pre>
+<p>and:</p>
+<pre><code class="language-text">OutcomeKnowledge =
+    Unknown
+    Pending
+    Succeeded
+    Rejected
+    Failed
+    Partial
+    Conflict
+    AdministrativelyResolved
+</code></pre>
+<p>This avoids treating transport state as domain truth.</p>
+<hr>
+<h1 id="17-semantic-operation-identity">17. Semantic operation identity</h1>
+<p>This is one of the strongest architectural recommendations.</p>
+<h2 id="definition-1">Definition</h2>
+<blockquote>
+<p>A semantic operation ID identifies the intended business effect independently of individual transport attempts.</p>
+</blockquote>
+<p>Example:</p>
+<pre><code class="language-text">Refund:
+    payment = P123
+    amount = 50.00
+    initiatingBusinessRequest = R17
+</code></pre>
+<p>might produce:</p>
+<pre><code class="language-text">semanticOperationId = refund:P123:R17
+</code></pre>
+<p>Transport attempts:</p>
+<pre><code class="language-text">HTTP attempt 1
+HTTP attempt 2
+SDK retry 3
+</code></pre>
+<p>all remain attempts of the <strong>same semantic operation</strong>.</p>
+<p>The agent should not create:</p>
+<pre><code class="language-text">refund:P123:R18
+</code></pre>
+<p>merely because attempt 1 timed out.</p>
+<p>This pattern closely resembles:</p>
+<ul>
+<li>Stripe idempotency keys;</li>
+<li>AWS client tokens;</li>
+<li>message deduplication IDs;</li>
+<li>transaction IDs;</li>
+<li>workflow/activity IDs.</li>
+</ul>
+<p>The architectural contribution is to elevate that identity to the semantic domain layer rather than leaving it as incidental HTTP middleware.</p>
+<hr>
+<h1 id="18-retry-layer-analysis">18. Retry-layer analysis</h1>
+<p>Retries commonly occur at many levels:</p>
+<ol>
+<li>network library;</li>
+<li>HTTP stack;</li>
+<li>SDK;</li>
+<li>service client;</li>
+<li>application service;</li>
+<li>workflow engine;</li>
+<li>agent.</li>
+</ol>
+<p>This creates retry amplification.</p>
+<p>An agent may see one timeout and call a tool again, unaware that:</p>
+<ul>
+<li>the SDK already retried;</li>
+<li>the gateway retried;</li>
+<li>the workflow retried;</li>
+<li>the provider completed the first request.</li>
+</ul>
+<p>Therefore agent-facing tools should not expose raw retry decisions unless the agent possesses the semantic guarantees necessary to make them.</p>
+<h2 id="recommended-rule">Recommended rule</h2>
+<p>Transport-level retry policy should be encoded centrally.</p>
+<p>Agent-visible action should distinguish:</p>
+<pre><code class="language-text">RetrySameSemanticOperation
+</code></pre>
+<p>from:</p>
+<pre><code class="language-text">StartNewSemanticOperation
+</code></pre>
+<p>These are fundamentally different capabilities.</p>
+<hr>
+<h1 id="19-capability-implications">19. Capability implications</h1>
+<p>The state-constrained capability model fits this problem extremely well.</p>
+<p>Before effect:</p>
+<pre><code class="language-text">Available:
+    StartRefund
+</code></pre>
+<p>After authoritative failure where policy permits retry:</p>
+<pre><code class="language-text">Available:
+    StartRefund
+</code></pre>
+<p>After <code>OutcomeUnknown</code>:</p>
+<pre><code class="language-text">Unavailable:
+    StartNewRefund
+
+Available:
+    QueryRefundStatus
+    ReconcileRefund
+    EscalateRefund
+</code></pre>
+<p>Potentially:</p>
+<pre><code class="language-text">RetrySameRefundOperation
+</code></pre>
+<p>but only where:</p>
+<ul>
+<li>same semantic operation ID is retained;</li>
+<li>provider guarantee supports deduplication/idempotency;</li>
+<li>retry policy permits it.</li>
+</ul>
+<p>This is stronger than prompting the agent:</p>
+<pre><code class="language-text">Be careful not to retry a refund after certain kinds of timeout.
+</code></pre>
+<p>The unsafe action can be structurally absent.</p>
+<hr>
+<h1 id="20-obligation-implications">20. Obligation implications</h1>
+<p>The natural companion rule is:</p>
+<pre><code class="language-text">EffectOutcome = OutcomeUnknown
+    ->
+ReconcileEffectOutcome obligation
+</code></pre>
+<p>The obligation should contain:</p>
+<ul>
+<li>semantic operation ID;</li>
+<li>effect type;</li>
+<li>subject;</li>
+<li>last known execution state;</li>
+<li>provider operation ID if known;</li>
+<li>authoritative evidence sources;</li>
+<li>reconciliation policy;</li>
+<li>available capabilities;</li>
+<li>deadline;</li>
+<li>escalation path;</li>
+<li>policy version.</li>
+</ul>
+<p>Satisfaction should be machine-checkable where possible:</p>
+<pre><code class="language-text">outcome in {
+    Succeeded,
+    Rejected,
+    KnownFailed,
+    AdministrativelyResolved
+}
+</code></pre>
+<p>A timeout should therefore not merely remove one capability.</p>
+<p>It should create explicit unresolved work.</p>
+<hr>
+<h1 id="21-agent-tool-interface-implications">21. Agent tool-interface implications</h1>
+<p>Raw exceptions are a poor abstraction for consequential agent actions.</p>
+<p>Weak interface:</p>
+<pre><code class="language-text">refund(...) -> throws TimeoutError
+</code></pre>
+<p>The model must infer:</p>
+<ul>
+<li>whether request was sent;</li>
+<li>whether it was accepted;</li>
+<li>whether it executed;</li>
+<li>whether it is safe to retry.</li>
+</ul>
+<p>Better interface:</p>
+<pre><code class="language-text">RefundAttemptResult {
+    semanticOperationId
+    transportStatus
+    effectOutcome
+    authoritative
+    providerOperationId?
+    availableNextActions[]
+}
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-text">effectOutcome = OutcomeUnknown
+authoritative = false
+
+availableNextActions =
+    QueryRefundStatus
+    ReconcileSettlement
+</code></pre>
+<p>The agent receives semantic meaning rather than protocol residue.</p>
+<p>This is especially important because language models are trained to interpret "error" and "failure" conversationally, while distributed systems require more precise distinctions.</p>
+<hr>
+<h1 id="22-contexttoken-implications">22. Context/token implications</h1>
+<p>This hypothesis is plausible but not yet strongly quantified.</p>
+<p>Compare two contexts.</p>
+<h2 id="conventional">Conventional</h2>
+<p>Agent receives:</p>
+<ul>
+<li>timeout stack trace;</li>
+<li>API docs;</li>
+<li>refund history;</li>
+<li>SDK retry policy;</li>
+<li>provider logs;</li>
+<li>payment records;</li>
+<li>prior attempts;</li>
+<li>prompt rules.</li>
+</ul>
+<p>It must infer the operational state.</p>
+<h2 id="semantic">Semantic</h2>
+<p>Agent receives:</p>
+<pre><code class="language-text">RefundEffect:
+    OutcomeUnknown
+    semanticOperationId = X
+
+Obligation:
+    EstablishRefundOutcome
+
+Available:
+    QueryProvider
+    ReconcileSettlement
+
+Forbidden:
+    StartNewRefund
+</code></pre>
+<p>The second representation is a form of semantic compression.</p>
+<p>It removes the need for the model to repeatedly reconstruct the critical fact:</p>
+<blockquote>
+<p>we do not yet know whether the refund happened.</p>
+</blockquote>
+<p>The expected benefits are:</p>
+<ul>
+<li>fewer context tokens;</li>
+<li>fewer documentation lookups;</li>
+<li>fewer invalid retry attempts;</li>
+<li>fewer reasoning branches.</li>
+</ul>
+<p>Direct empirical token-cost evidence for this exact architecture is still weak.</p>
+<hr>
+<h1 id="23-smaller-model-hypothesis">23. Smaller-model hypothesis</h1>
+<p>The hypothesis is plausible:</p>
+<pre><code class="language-text">strong semantic environment + smaller model
+</code></pre>
+<p>may outperform:</p>
+<pre><code class="language-text">weak environment + larger model
+</code></pre>
+<p>for safety-critical recovery tasks.</p>
+<p>Why?</p>
+<p>The larger model is otherwise required to infer:</p>
+<ul>
+<li>failure semantics;</li>
+<li>retry safety;</li>
+<li>idempotency contract;</li>
+<li>unresolved work;</li>
+<li>correct next action.</li>
+</ul>
+<p>If the environment supplies those facts deterministically, the remaining problem becomes narrower.</p>
+<p>However, this remains a <strong>research hypothesis</strong>, not an established result.</p>
+<p>The 2026 verification-aware tool-call study supports the general direction: reliability improved through stronger tool semantics without changing the underlying model.</p>
+<p>A controlled cross-model experiment remains necessary.</p>
+<hr>
+<h1 id="24-security-implications">24. Security implications</h1>
+<p>Explicit effect identity and uncertainty handling improve security in several ways.</p>
+<h2 id="duplicate-effect-abuse">Duplicate-effect abuse</h2>
+<p>An attacker may intentionally create ambiguous client conditions and request repeat operations.</p>
+<p>Examples:</p>
+<ul>
+<li>repeat refund;</li>
+<li>repeat payout;</li>
+<li>repeat coupon issuance;</li>
+<li>repeat provisioning;</li>
+<li>duplicate entitlement.</li>
+</ul>
+<p>Stable semantic operation identity can prevent a new consequential effect from being created while an earlier one remains unresolved.</p>
+<h2 id="tool-manipulation">Tool manipulation</h2>
+<p>An agent receiving adversarial instruction:</p>
+<pre><code class="language-text">keep retrying until it works
+</code></pre>
+<p>should still lack the capability to create a new semantic operation while outcome is unknown.</p>
+<h2 id="reconciliation-spoofing">Reconciliation spoofing</h2>
+<p>Reconciliation itself becomes a trust boundary.</p>
+<p>The system must define which evidence sources are authoritative.</p>
+<p>A random webhook payload should not automatically resolve financial truth unless:</p>
+<ul>
+<li>authenticity is verified;</li>
+<li>the provider contract treats it as authoritative;</li>
+<li>ordering/version checks are satisfied.</li>
+</ul>
+<hr>
+<h1 id="25-economic-analysis">25. Economic analysis</h1>
+<p>The explicit model adds cost:</p>
+<ul>
+<li>state modeling;</li>
+<li>semantic operation IDs;</li>
+<li>status persistence;</li>
+<li>reconciliation logic;</li>
+<li>queue/obligation infrastructure;</li>
+<li>provider-specific policies;</li>
+<li>observability.</li>
+</ul>
+<p>The savings come from:</p>
+<ul>
+<li>avoided duplicate payments/refunds;</li>
+<li>avoided duplicate infrastructure;</li>
+<li>lower incident cost;</li>
+<li>fewer manual reconciliations;</li>
+<li>fewer support cases;</li>
+<li>fewer agent retries;</li>
+<li>reduced supervision;</li>
+<li>less context reconstruction.</li>
+</ul>
+<h2 id="economic-formula">Economic formula</h2>
+<p>A useful comparison is:</p>
+<pre><code class="language-text">Expected Conventional Cost =
+    NormalExecutionCost
+  + P(Ambiguity) * (
+        DuplicateEffectCost
+      + IncidentCost
+      + HumanReconciliationCost
+      + CustomerImpact
+      + AgentRecoveryCost
+    )
+</code></pre>
+<p>versus:</p>
+<pre><code class="language-text">Expected Explicit-Uncertainty Cost =
+    NormalExecutionCost
+  + ModelingAmortization
+  + P(Ambiguity) * (
+        ReconciliationCost
+      + AddedLatencyCost
+      + HumanEscalationCost
+    )
+</code></pre>
+<p>The model is especially attractive where:</p>
+<pre><code class="language-text">P(Ambiguity) * Consequence
+</code></pre>
+<p>is materially larger than reconciliation overhead.</p>
+<p>For a $100,000 payout, even rare ambiguity matters.</p>
+<p>For a disposable analytics event, it probably does not.</p>
+<hr>
+<h1 id="26-counterarguments">26. Counterarguments</h1>
+<h2 id="1-idempotency-already-solves-this">1. "Idempotency already solves this."</h2>
+<p>Partially false.</p>
+<p>Idempotency can make retry of the same semantic operation safe.</p>
+<p>It does not necessarily tell the caller the current outcome.</p>
+<p>It also has scope, retention, and provider-contract limits.</p>
+<p><strong>Conclusion:</strong> idempotency reduces the need to block retries but does not eliminate outcome uncertainty.</p>
+<h2 id="2-durable-workflow-engines-solve-this">2. "Durable workflow engines solve this."</h2>
+<p>False as a general claim.</p>
+<p>Temporal and Azure documentation explicitly require external activities to be idempotent because durable replay/retry does not make external non-idempotent effects safe.</p>
+<p><strong>Conclusion:</strong> durable execution solves local workflow continuity, not arbitrary external outcome ambiguity.</p>
+<h2 id="3-outcomeunknown-creates-too-much-state">3. "OutcomeUnknown creates too much state."</h2>
+<p>Potentially true.</p>
+<p>The answer is not to force every operation into an elaborate model.</p>
+<p>Use risk-based effect classification and reusable primitives.</p>
+<h2 id="4-most-apis-document-retry-behavior">4. "Most APIs document retry behavior."</h2>
+<p>Even well-documented providers use idempotency because retry behavior is not trivial.</p>
+<p>Documentation must also be correctly interpreted at every retry layer.</p>
+<p>Encoding the contract once in an effect policy is more robust than asking every agent to reread it.</p>
+<h2 id="5-agents-can-follow-prompt-rules">5. "Agents can follow prompt rules."</h2>
+<p>Possible, but structurally weaker.</p>
+<p>A prompt is advisory.</p>
+<p>A capability restriction is enforceable.</p>
+<p>Recent 2026 empirical work on non-atomic tool failures provides direct evidence that naive agent retry behavior can duplicate actions.</p>
+<h2 id="6-reconciliation-is-too-slow">6. "Reconciliation is too slow."</h2>
+<p>Sometimes.</p>
+<p>Strong idempotency can allow immediate retry of the <strong>same semantic operation</strong>, avoiding a full reconciliation delay.</p>
+<p>The architecture should not equate <code>OutcomeUnknown</code> with "never retry."</p>
+<h2 id="7-unknown-state-hurts-user-experience">7. "Unknown state hurts user experience."</h2>
+<p>It can.</p>
+<p>But falsely reporting failure or success can be worse.</p>
+<p>Interfaces should communicate:</p>
+<pre><code class="language-text">We're confirming the transaction outcome.
+Do not submit again.
+</code></pre>
+<h2 id="8-some-systems-cannot-be-reconciled">8. "Some systems cannot be reconciled."</h2>
+<p>True.</p>
+<p>Those require terminal administrative dispositions such as:</p>
+<pre><code class="language-text">PermanentlyIndeterminate
+WrittenOff
+AdministrativelyResolved
+</code></pre>
+<p>with authority and provenance.</p>
+<h2 id="9-the-generic-model-will-become-integration-specific">9. "The generic model will become integration-specific."</h2>
+<p>Partly true.</p>
+<p>The generic invariant can be shared:</p>
+<pre><code class="language-text">unknown != failure
+</code></pre>
+<p>while effect profiles define provider-specific states and evidence sources.</p>
+<h2 id="10-unknown-is-rare">10. "Unknown is rare."</h2>
+<p>Frequency alone is insufficient.</p>
+<p>Expected consequence matters.</p>
+<p>Rare duplicate monetary or physical-world effects can dominate cost.</p>
+<hr>
+<h1 id="27-proposed-experiments">27. Proposed experiments</h1>
+<h2 id="experiment-a--refund-response-loss">Experiment A — refund response loss</h2>
+<p>Provider executes refund, response is dropped.</p>
+<p>Compare:</p>
+<p>A. generic exception handling<br>
+B. explicit OutcomeUnknown + restricted capabilities</p>
+<p>Measure:</p>
+<ul>
+<li>duplicate refund rate;</li>
+<li>retry count;</li>
+<li>tokens;</li>
+<li>tool calls;</li>
+<li>resolution time;</li>
+<li>correctness.</li>
+</ul>
+<h2 id="experiment-b--authoritative-rejection">Experiment B — authoritative rejection</h2>
+<p>Provider rejects refund before effect.</p>
+<p>Expected:</p>
+<pre><code class="language-text">Rejected / KnownFailed
+</code></pre>
+<p>not <code>OutcomeUnknown</code>.</p>
+<p>Measure false-unknown rate and unnecessary reconciliation.</p>
+<h2 id="experiment-c--strong-idempotent-retry">Experiment C — strong idempotent retry</h2>
+<p>Provider supports durable dedupe.</p>
+<p>After timeout, expose only:</p>
+<pre><code class="language-text">RetrySameSemanticOperation
+</code></pre>
+<p>Measure:</p>
+<ul>
+<li>latency;</li>
+<li>duplicate rate;</li>
+<li>reconciliation avoidance.</li>
+</ul>
+<h2 id="experiment-d--no-idempotency">Experiment D — no idempotency</h2>
+<p>Timeout with non-idempotent API.</p>
+<p>Architecture should remove new-operation capability.</p>
+<h2 id="experiment-e--delayed-webhook">Experiment E — delayed webhook</h2>
+<p>Timeout:</p>
+<pre><code class="language-text">OutcomeUnknown
+</code></pre>
+<p>Later trusted webhook:</p>
+<pre><code class="language-text">Succeeded
+</code></pre>
+<p>Verify no duplicate action occurred.</p>
+<h2 id="experiment-f--conflicting-evidence">Experiment F — conflicting evidence</h2>
+<p>Webhook says succeeded; provider status says failed.</p>
+<p>Expected:</p>
+<pre><code class="language-text">ReconciliationConflict
+</code></pre>
+<p>not arbitrary selection.</p>
+<h2 id="experiment-g--adversarial-agent">Experiment G — adversarial agent</h2>
+<p>Prompt:</p>
+<pre><code class="language-text">Keep retrying until it succeeds.
+</code></pre>
+<p>Measure whether the architecture prevents duplicate semantic effects.</p>
+<h2 id="experiment-h--restart">Experiment H — restart</h2>
+<p>Crash agent after timeout.</p>
+<p>New agent receives either:</p>
+<p>A. logs/history<br>
+B. explicit effect + reconciliation obligation</p>
+<p>Measure:</p>
+<ul>
+<li>context tokens;</li>
+<li>duplicate attempts;</li>
+<li>completion correctness.</li>
+</ul>
+<h2 id="experiment-i--smaller-models">Experiment I — smaller models</h2>
+<p>Run the same tasks with multiple model classes.</p>
+<p>Compare:</p>
+<pre><code class="language-text">raw errors + broad tools
+</code></pre>
+<p>with:</p>
+<pre><code class="language-text">semantic effect results + constrained capabilities
+</code></pre>
+<p>Measure cost per correctly resolved effect.</p>
+<hr>
+<h1 id="28-metrics">28. Metrics</h1>
+<p>Primary metrics:</p>
+<h3 id="duplicate-effect-rate">Duplicate Effect Rate</h3>
+<pre><code class="language-text">duplicated consequential effects
+---------------------------------
+semantic effect requests
+</code></pre>
+<h3 id="unsafe-retry-rate">Unsafe Retry Rate</h3>
+<pre><code class="language-text">unsafe retry attempts
+---------------------
+uncertain outcomes
+</code></pre>
+<h3 id="outcome-misclassification-rate">Outcome Misclassification Rate</h3>
+<p>Track separately:</p>
+<ul>
+<li>unknown -> failed;</li>
+<li>unknown -> succeeded;</li>
+<li>failure -> unknown;</li>
+<li>pending -> unknown;</li>
+<li>partial -> failure.</li>
+</ul>
+<h3 id="reconciliation-success-rate">Reconciliation Success Rate</h3>
+<pre><code class="language-text">authoritatively resolved unknown outcomes
+-----------------------------------------
+unknown outcomes requiring reconciliation
+</code></pre>
+<h3 id="mean-time-to-known-outcome">Mean Time to Known Outcome</h3>
+<p>Time from initial ambiguity to authoritative resolution.</p>
+<h3 id="tool-calls-per-reconciled-effect">Tool Calls per Reconciled Effect</h3>
+<h3 id="tokens-per-reconciled-effect">Tokens per Reconciled Effect</h3>
+<h3 id="human-interventions-per-unknown-effect">Human Interventions per Unknown Effect</h3>
+<h3 id="stuck-outcomeunknown-rate">Stuck OutcomeUnknown Rate</h3>
+<h3 id="cost-per-correctly-resolved-effect">Cost per Correctly Resolved Effect</h3>
+<p>The most important economic metric is not cheapest first attempt.</p>
+<p>It is:</p>
+<pre><code class="language-text">total execution + remediation cost
+----------------------------------
+correctly resolved consequential effects
+</code></pre>
+<hr>
+<h1 id="29-static-analysis--compiler-opportunities">29. Static-analysis / compiler opportunities</h1>
+<p>The proposed architecture is unusually suitable for static diagnostics.</p>
+<p>Recommended diagnostics:</p>
+<pre><code class="language-text">SC-EFFECT-001
+Consequential external effect has no OutcomeUnknown branch.
+</code></pre>
+<pre><code class="language-text">SC-EFFECT-002
+OutcomeUnknown has no reconciliation or authorized terminal path.
+</code></pre>
+<pre><code class="language-text">SC-EFFECT-003
+New semantic operation is legal while an equivalent prior operation remains OutcomeUnknown.
+</code></pre>
+<pre><code class="language-text">SC-EFFECT-004
+Effect marked automatically retryable without declared idempotency/deduplication guarantee.
+</code></pre>
+<pre><code class="language-text">SC-EFFECT-005
+Succeeded state can be reached without authoritative evidence.
+</code></pre>
+<pre><code class="language-text">SC-EFFECT-006
+KnownFailed can be reached from a transport timeout without authoritative failure evidence.
+</code></pre>
+<pre><code class="language-text">SC-EFFECT-007
+Retry creates a new semanticOperationId.
+</code></pre>
+<pre><code class="language-text">SC-EFFECT-008
+Consequential effect lacks stable operation identity.
+</code></pre>
+<pre><code class="language-text">SC-EFFECT-009
+Reconciliation evidence source has no declared authority/freshness policy.
+</code></pre>
+<pre><code class="language-text">SC-EFFECT-010
+Compensating effect lacks uncertainty handling.
+</code></pre>
+<p>These checks could catch dangerous integration semantics before an AI agent is involved.</p>
+<hr>
+<h1 id="30-formal-verification-opportunities">30. Formal verification opportunities</h1>
+<p>TLA+ and Alloy are both plausible tools.</p>
+<h2 id="tla">TLA+</h2>
+<p>Particularly suitable for:</p>
+<ul>
+<li>transition systems;</li>
+<li>retries;</li>
+<li>concurrent observations;</li>
+<li>distributed protocol behavior;</li>
+<li>liveness;</li>
+<li>safety invariants.</li>
+</ul>
+<p>Example safety property:</p>
+<pre><code class="language-text">NoDuplicateSemanticEffect ==
+    for every semanticOperationId,
+    consequential business effect count &#x3C;= 1
+</code></pre>
+<p>Possible invariant:</p>
+<pre><code class="language-text">OutcomeUnknown(op)
+    =>
+not CanStartEquivalentNewOperation(op.subject)
+</code></pre>
+<p>Possible liveness property:</p>
+<pre><code class="language-text">OutcomeUnknown(op)
+    ~>
+Resolved(op) \/ Escalated(op)
+</code></pre>
+<p>assuming reconciliation mechanisms eventually respond.</p>
+<p>Gray and Lamport's use of TLA+ for transaction commit provides particularly relevant precedent.</p>
+<h2 id="alloy">Alloy</h2>
+<p>Useful for:</p>
+<ul>
+<li>state-space relationships;</li>
+<li>reachability;</li>
+<li>missing legal paths;</li>
+<li>contradictory capability policies;</li>
+<li>bounded counterexamples.</li>
+</ul>
+<p>A compiler could model-check:</p>
+<ul>
+<li>every unknown state has a legal resolution path;</li>
+<li>success requires authoritative evidence;</li>
+<li>duplicate semantic operations cannot coexist under defined uniqueness rules.</li>
+</ul>
+<hr>
+<h1 id="31-when-outcomeunknown-is-required">31. When OutcomeUnknown is required</h1>
+<p>Explicit unknown outcome handling should normally be required when all or most of these apply:</p>
+<ol>
+<li>External write crosses a failure boundary.</li>
+<li>Effect is consequential.</li>
+<li>Duplicate execution matters.</li>
+<li>Caller cannot atomically commit with provider.</li>
+<li>Provider response can be lost after effect execution.</li>
+<li>Retry is not inherently harmless.</li>
+<li>Effect may be asynchronous.</li>
+<li>External truth can differ from local invocation result.</li>
+</ol>
+<p>Strong examples:</p>
+<ul>
+<li>charge;</li>
+<li>refund;</li>
+<li>payout;</li>
+<li>transfer;</li>
+<li>shipment;</li>
+<li>tax filing;</li>
+<li>medical order transmission;</li>
+<li>access/credential change;</li>
+<li>account closure;</li>
+<li>cloud provisioning;</li>
+<li>production deployment;</li>
+<li>destructive infrastructure operation.</li>
+</ul>
+<hr>
+<h1 id="32-when-explicit-outcomeunknown-is-unnecessary">32. When explicit OutcomeUnknown is unnecessary</h1>
+<p>A full semantic effect record is probably unnecessary when:</p>
+<ul>
+<li>operation is a pure read;</li>
+<li>repeated execution has no meaningful consequence;</li>
+<li>provider offers a truly authoritative synchronous transaction within the same trust/transaction domain;</li>
+<li>lost acknowledgement cannot cause harmful duplicate effects;</li>
+<li>the effect is intentionally best-effort;</li>
+<li>the cost of tracking uncertainty exceeds its consequence.</li>
+</ul>
+<p>Examples may include:</p>
+<ul>
+<li>disposable telemetry;</li>
+<li>cache warming;</li>
+<li>some analytics events;</li>
+<li>low-value non-critical notifications;</li>
+<li>stateless read requests.</li>
+</ul>
+<p>Even here, ordinary transient-error handling may remain useful.</p>
+<p>The architecture should therefore classify <strong>effects by consequence</strong>, not universally impose heavyweight reconciliation.</p>
+<hr>
+<h1 id="33-architecture-changes-recommended">33. Architecture changes recommended</h1>
+<h2 id="1-introduce-semantic-operation-identity">1. Introduce semantic operation identity</h2>
+<p>Every consequential external write should have stable semantic identity.</p>
+<h2 id="2-separate-invocation-state-from-effect-outcome">2. Separate invocation state from effect outcome</h2>
+<p>Do not allow:</p>
+<pre><code class="language-text">TimeoutError -> Failed
+</code></pre>
+<p>as a default domain translation.</p>
+<h2 id="3-make-outcomeunknown-first-class">3. Make <code>OutcomeUnknown</code> first-class</h2>
+<p>It should be representable in:</p>
+<ul>
+<li>domain integration model;</li>
+<li>tool result;</li>
+<li>persistence;</li>
+<li>UI;</li>
+<li>policy;</li>
+<li>audit history.</li>
+</ul>
+<h2 id="4-add-pending-separately">4. Add <code>Pending</code> separately</h2>
+<p>Confirmed pending is knowledge, not uncertainty.</p>
+<h2 id="5-add-partialconflict-representations-where-required">5. Add partial/conflict representations where required</h2>
+<p>Do not distort rich external outcomes into ternary states.</p>
+<h2 id="6-generate-reconciliation-obligations">6. Generate reconciliation obligations</h2>
+<pre><code class="language-text">OutcomeUnknown
+    ->
+ReconcileEffectOutcome
+</code></pre>
+<h2 id="7-constrain-capabilities">7. Constrain capabilities</h2>
+<p>While unknown, default to:</p>
+<ul>
+<li>observe;</li>
+<li>reconcile;</li>
+<li>escalate.</li>
+</ul>
+<p>Hide:</p>
+<ul>
+<li>create new equivalent semantic effect.</li>
+</ul>
+<h2 id="8-allow-explicit-same-operation-retry">8. Allow explicit same-operation retry</h2>
+<p>Only when provider policy guarantees safe deduplication/idempotency.</p>
+<h2 id="9-encode-provider-guarantees-as-policy">9. Encode provider guarantees as policy</h2>
+<p>Example:</p>
+<pre><code class="language-text">EffectPolicy {
+    provider
+    idempotencyScope
+    idempotencyRetention
+    sameOperationRetryAllowed
+    authoritativeStatusSource
+    webhookAuthority
+    reconciliationStrategy
+    uncertaintyDeadline
+}
+</code></pre>
+<h2 id="10-treat-compensation-as-another-effect">10. Treat compensation as another effect</h2>
+<p>Compensation can itself become unknown.</p>
+<h2 id="11-generate-agent-tools-from-state">11. Generate agent tools from state</h2>
+<p>Expose only legal tools for the current effect state.</p>
+<h2 id="12-preserve-observations">12. Preserve observations</h2>
+<p>Store:</p>
+<ul>
+<li>what was attempted;</li>
+<li>when;</li>
+<li>operation identity;</li>
+<li>transport result;</li>
+<li>provider response;</li>
+<li>reconciliation observations;</li>
+<li>source authority;</li>
+<li>timestamps/version.</li>
+</ul>
+<h2 id="13-add-compiler-diagnostics">13. Add compiler diagnostics</h2>
+<p>Especially:</p>
+<ul>
+<li>missing unknown branch;</li>
+<li>missing reconciliation path;</li>
+<li>retry without idempotency;</li>
+<li>new operation allowed while unknown.</li>
+</ul>
+<h2 id="14-separate-discovery-from-execution-semantics">14. Separate discovery from execution semantics</h2>
+<p>Raw logs may help discovery, but authoritative effect state should control consequential action.</p>
+<hr>
+<h1 id="34-final-verdict">34. Final verdict</h1>
+<h2 id="is-outcomeunknown-a-real-and-distinct-distributed-systems-condition">Is OutcomeUnknown a real and distinct distributed-systems condition?</h2>
+<p><strong>Strongly established</strong></p>
+<p>The condition appears across RPC semantics, transaction processing, database error taxonomies, distributed commit, payment integration, messaging, and cloud API design.</p>
+<h2 id="should-consequential-external-effects-model-it-explicitly">Should consequential external effects model it explicitly?</h2>
+<p><strong>Yes</strong></p>
+<p>For consequential effects crossing unreliable external boundaries, the distinction should be explicit somewhere in the authoritative execution model.</p>
+<h2 id="does-explicit-modeling-reduce-unsafe-retries">Does explicit modeling reduce unsafe retries?</h2>
+<p><strong>Strong evidence</strong></p>
+<p>Distributed-system practice strongly supports the mechanism through idempotency, deduplication, retry contracts, and transaction identity. Recent agent-specific empirical work directly reports duplicate-action reductions from verification-aware retry behavior.</p>
+<h2 id="does-it-improve-ai-agent-safety-specifically">Does it improve AI-agent safety specifically?</h2>
+<p><strong>Moderate evidence</strong></p>
+<p>There is now direct experimental evidence on non-atomic tool failures and duplicate actions, but the research base is still small and does not yet validate this complete architecture across real production environments.</p>
+<h2 id="does-it-reduce-agent-reasoningcontext-cost">Does it reduce agent reasoning/context cost?</h2>
+<p><strong>Weak-to-moderate evidence</strong></p>
+<p>The mechanism is credible: semantic state eliminates repeated reconstruction of timeout/retry meaning. But direct quantitative evidence for token reduction from an <code>OutcomeUnknown</code> control surface remains limited.</p>
+<h2 id="is-a-three-state-model-sufficient">Is a three-state model sufficient?</h2>
+<p><strong>Sometimes</strong></p>
+<p>Three states are enough to establish the critical principle, but not enough as a universal external-effect model.</p>
+<h2 id="closest-established-concept">Closest established concept</h2>
+<p><strong>In-doubt / uncertain transaction outcome combined with idempotent operation identity and reconciliation</strong></p>
+<h2 id="best-terminology">Best terminology</h2>
+<p><strong>OutcomeUnknown</strong> for general developer/agent architecture.</p>
+<p>Use <strong>InDoubt</strong> for transaction-specific contexts where that language is already established.</p>
+<h2 id="strongest-prior-art">Strongest prior art</h2>
+<p>A combination of:</p>
+<ul>
+<li>transaction-resolution-unknown / in-doubt transaction semantics;</li>
+<li>classic RPC execution semantics;</li>
+<li>Gray &#x26; Lamport transaction commit work;</li>
+<li>idempotency tokens in AWS and Stripe;</li>
+<li>durable workflow requirements for idempotent external Activities;</li>
+<li>messaging deduplication semantics;</li>
+<li>recent verification-aware LLM tool-call research.</li>
+</ul>
+<h2 id="most-important-implementation-rule">Most important implementation rule</h2>
+<blockquote>
+<p><strong>A transport failure must never by itself authorize a new consequential semantic operation.</strong></p>
+</blockquote>
+<p>Determine whether the same operation can be safely retried or whether its outcome must first be reconciled.</p>
+<h2 id="biggest-complexity-risk">Biggest complexity risk</h2>
+<p>Over-modeling every integration and producing a state explosion of provider-specific execution states.</p>
+<p>The solution is a reusable generic effect primitive plus risk-based effect profiles.</p>
+<h2 id="most-important-missing-experiment">Most important missing experiment</h2>
+<p>A controlled benchmark comparing:</p>
+<pre><code class="language-text">raw exception + broad retry tools
+</code></pre>
+<p>against:</p>
+<pre><code class="language-text">typed effect outcome + semantic operation identity + dynamically constrained capabilities + reconciliation obligation
+</code></pre>
+<p>across:</p>
+<ul>
+<li>refund;</li>
+<li>cloud provisioning;</li>
+<li>message delivery;</li>
+<li>deployment;</li>
+</ul>
+<p>with multiple LLM sizes.</p>
+<p>Primary outcomes:</p>
+<ul>
+<li>duplicate effect rate;</li>
+<li>unsafe retry rate;</li>
+<li>correctness;</li>
+<li>tokens;</li>
+<li>tool calls;</li>
+<li>recovery latency;</li>
+<li>total cost per correct outcome.</li>
+</ul>
+<h2 id="recommended-generic-effect-model">Recommended generic effect model</h2>
+<pre><code class="language-text">Effect&#x3C;TCommand, TResult, TFailure> {
+    semanticOperationId
+    command
+    policyVersion
+    executionState
+    providerOperationId?
+    attempts
+    observations
+    reconciliationState
+}
+</code></pre>
+<p>with an outcome family approximately:</p>
+<pre><code class="language-text">NotStarted
+Requested
+Accepted
+Pending
+Succeeded
+Rejected
+KnownFailed
+PartiallySucceeded
+OutcomeUnknown
+ReconciliationConflict
+AdministrativelyResolved
+</code></pre>
+<p>The exact states should be selected by effect profile rather than imposed universally.</p>
+<hr>
+<h1 id="evidence-classification">Evidence classification</h1>
+<h2 id="strongly-established">Strongly established</h2>
+<ul>
+<li>Timeouts do not prove remote non-execution.</li>
+<li>Distributed calls can have ambiguous/unknown outcomes.</li>
+<li>Transaction systems explicitly represent unresolved/in-doubt conditions.</li>
+<li>Idempotency/deduplication is necessary for many safe retry scenarios.</li>
+<li>Durable workflows do not automatically make arbitrary external effects safe to retry.</li>
+<li>Message systems can redeliver and therefore require idempotent processing.</li>
+<li>Compensation is a new semantic action rather than literal rollback.</li>
+<li>Operation identity is a standard mechanism across major production systems.</li>
+</ul>
+<h2 id="supported-architectural-inference">Supported architectural inference</h2>
+<ul>
+<li><code>OutcomeUnknown</code> should become a reusable semantic state in agent-oriented architectures.</li>
+<li>Capability restriction after unknown outcome is stronger than prompt-only guidance.</li>
+<li>An explicit reconciliation obligation is a natural durable representation of unresolved effect truth.</li>
+<li>Agent tools should expose semantic effect results rather than raw transport exceptions.</li>
+<li>Static analyzers can detect missing uncertainty/reconciliation paths.</li>
+</ul>
+<h2 id="emerging-empirical-support">Emerging empirical support</h2>
+<ul>
+<li>Verification-before-retry and idempotency-aware tool handling can reduce duplicate actions by LLM agents under non-atomic failures.</li>
+</ul>
+<h2 id="still-speculative">Still speculative</h2>
+<ul>
+<li>Exact token savings.</li>
+<li>Exact cost reduction.</li>
+<li>Smaller-model substitution.</li>
+<li>Optimal generic effect-state algebra.</li>
+<li>The degree to which one compiler-generated abstraction can cover diverse providers without excessive complexity.</li>
+</ul>
+<hr>
+<h1 id="research-synthesis">Research synthesis</h1>
+<p>The most important conceptual change produced by this research is that the architecture should <strong>not</strong> model external execution primarily as an error-handling problem.</p>
+<p>It is an epistemic-state problem.</p>
+<p>After a timeout, the key question is not:</p>
+<pre><code class="language-text">Did the call fail?
+</code></pre>
+<p>It is:</p>
+<pre><code class="language-text">What do we currently know about the external effect?
+</code></pre>
+<p>That suggests a more general principle for agent-safe software:</p>
+<blockquote>
+<p><strong>Authoritative state should represent not only what the system believes happened, but the strength and source of the evidence supporting that belief.</strong></p>
+</blockquote>
+<p><code>OutcomeUnknown</code> is therefore not merely an extra error enum.</p>
+<p>It is the external-effect counterpart of epistemic state.</p>
+<p>And once that is explicit, the rest of the architecture follows naturally:</p>
+<pre><code class="language-text">uncertain outcome
+    ->
+restricted capabilities
+    ->
+reconciliation obligation
+    ->
+authoritative observation
+    ->
+resolved semantic state
+</code></pre>
+<p>This is substantially more defensible than allowing either ordinary software or an AI agent to infer:</p>
+<pre><code class="language-text">timeout = failure = retry
+</code></pre>
+<p>That inference is exactly where duplicate consequential effects are born.</p>
+<hr>
+<h1 id="key-sources">Key sources</h1>
+<h2 id="foundational-distributed-systems--transactions">Foundational distributed systems / transactions</h2>
+<ol>
+<li>
+<p>Andrew D. Birrell and Bruce Jay Nelson, <strong>Implementing Remote Procedure Calls</strong>.<br>
+Cornell course copy:<br>
+<a href="https://www.cs.cornell.edu/courses/cs614/2006fa/Slides/Implementing%20Remote%20Procedure%20Calls.pdf">https://www.cs.cornell.edu/courses/cs614/2006fa/Slides/Implementing%20Remote%20Procedure%20Calls.pdf</a></p>
+</li>
+<li>
+<p>Jim Gray and Leslie Lamport, <strong>Consensus on Transaction Commit</strong>.<br>
+Microsoft Research:<br>
+<a href="https://www.microsoft.com/en-us/research/publication/consensus-on-transaction-commit/">https://www.microsoft.com/en-us/research/publication/consensus-on-transaction-commit/</a><br>
+arXiv:<br>
+<a href="https://arxiv.org/abs/cs/0408036">https://arxiv.org/abs/cs/0408036</a></p>
+</li>
+<li>
+<p>Hector Garcia-Molina and Kenneth Salem, <strong>Sagas</strong>. ACM SIGMOD 1987.<br>
+<a href="https://dl.acm.org/doi/10.1145/38713.38742">https://dl.acm.org/doi/10.1145/38713.38742</a></p>
+</li>
+</ol>
+<h2 id="database--transaction-terminology">Database / transaction terminology</h2>
+<ol start="4">
+<li>PostgreSQL error codes — includes <strong>08007 TRANSACTION RESOLUTION UNKNOWN</strong>.<br>
+<a href="https://www.postgresql.org/docs/8.0/errcodes-appendix.html">https://www.postgresql.org/docs/8.0/errcodes-appendix.html</a></li>
+</ol>
+<h2 id="payments--idempotency">Payments / idempotency</h2>
+<ol start="5">
+<li>
+<p>Stripe, <strong>Designing robust and predictable APIs with idempotency</strong>.<br>
+<a href="https://stripe.com/blog/idempotency">https://stripe.com/blog/idempotency</a></p>
+</li>
+<li>
+<p>Stripe, <strong>Payment Intents API</strong>.<br>
+<a href="https://docs.stripe.com/payments/payment-intents">https://docs.stripe.com/payments/payment-intents</a></p>
+</li>
+<li>
+<p>Stripe, <strong>Error handling</strong>.<br>
+<a href="https://docs.stripe.com/error-handling">https://docs.stripe.com/error-handling</a></p>
+</li>
+</ol>
+<h2 id="cloud-apis--operation-identity">Cloud APIs / operation identity</h2>
+<ol start="8">
+<li>
+<p>AWS EC2, <strong>Ensuring idempotency in Amazon EC2 API requests</strong>.<br>
+<a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html</a></p>
+</li>
+<li>
+<p>AWS EC2, <strong>RunInstances API</strong>.<br>
+<a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html</a></p>
+</li>
+</ol>
+<h2 id="messaging--exactly-once-scope">Messaging / exactly-once scope</h2>
+<ol start="10">
+<li>
+<p>Apache Kafka documentation.<br>
+<a href="https://kafka.apache.org/documentation/">https://kafka.apache.org/documentation/</a></p>
+</li>
+<li>
+<p>Apache Kafka producer configuration — idempotence.<br>
+<a href="https://kafka.apache.org/41/configuration/producer-configs/">https://kafka.apache.org/41/configuration/producer-configs/</a></p>
+</li>
+<li>
+<p>Amazon SQS, <strong>At-least-once delivery</strong>.<br>
+<a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues-at-least-once-delivery.html">https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues-at-least-once-delivery.html</a></p>
+</li>
+<li>
+<p>Amazon SQS, <strong>Exactly-once processing in FIFO queues</strong>.<br>
+<a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html</a></p>
+</li>
+</ol>
+<h2 id="durable-workflows--retry">Durable workflows / retry</h2>
+<ol start="14">
+<li>
+<p>Temporal, <strong>Activity Definition — Idempotency</strong>.<br>
+<a href="https://docs.temporal.io/activity-definition">https://docs.temporal.io/activity-definition</a></p>
+</li>
+<li>
+<p>Microsoft Azure Architecture Center, <strong>Retry pattern</strong>.<br>
+<a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/retry">https://learn.microsoft.com/en-us/azure/architecture/patterns/retry</a></p>
+</li>
+<li>
+<p>Microsoft Azure Architecture Center, <strong>Compensating Transaction pattern</strong>.<br>
+<a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/compensating-transaction">https://learn.microsoft.com/en-us/azure/architecture/patterns/compensating-transaction</a></p>
+</li>
+<li>
+<p>Microsoft Azure Architecture Center, <strong>Saga pattern</strong>.<br>
+<a href="https://learn.microsoft.com/en-us/azure/architecture/patterns/saga">https://learn.microsoft.com/en-us/azure/architecture/patterns/saga</a></p>
+</li>
+</ol>
+<h2 id="agent-specific-empirical-evidence">Agent-specific empirical evidence</h2>
+<ol start="18">
+<li>
+<p>Isham Kalappurackal Mansoor, Abhishek Phadke, Pratip Rana,<br>
+<strong>Verified Tool Calls Improve LLM Agent Reliability Under Non-Atomic Failures</strong>, 2026.<br>
+<a href="https://arxiv.org/abs/2608.02645">https://arxiv.org/abs/2608.02645</a></p>
+<p>Important limitation: this is recent empirical research and should be treated as emerging evidence rather than a mature literature base.</p>
+</li>
+<li>
+<p>Abel Yagubyan,<br>
+<strong>How Consistent Are LLM Agents? Measuring Behavioral Reproducibility in Multi-Step Tool-Calling Pipelines</strong>, 2026.<br>
+<a href="https://arxiv.org/abs/2605.28840">https://arxiv.org/abs/2605.28840</a></p>
+</li>
+</ol>
+<hr>
+<h1 id="final-research-judgment">Final research judgment</h1>
+<p>The research mission's central hypothesis survives skeptical review.</p>
+<p>The weakest claim would be:</p>
+<blockquote>
+<p>Add an <code>OutcomeUnknown</code> enum case.</p>
+</blockquote>
+<p>The stronger and better-supported architectural conclusion is:</p>
+<blockquote>
+<p><strong>Consequential external operations need explicit semantic representation of what is known about their effects, stable operation identity across retries, and deterministic restrictions on what actions are legal while the outcome remains unresolved.</strong></p>
+</blockquote>
+<p>That model is well aligned with decades of distributed-systems practice and increasingly aligned with the specific failure modes of autonomous AI agents.</p>
+<p>The remaining research question is no longer mainly:</p>
+<pre><code class="language-text">Is OutcomeUnknown real?
+</code></pre>
+<p>It is.</p>
+<p>The important unresolved question is:</p>
+<pre><code class="language-text">How much correctness, token, latency, supervision, and economic benefit
+does a first-class effect-uncertainty control surface provide to AI agents
+compared with conventional idempotency + retry implementations?
+</code></pre>
+<p>That is experimentally testable.</p></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

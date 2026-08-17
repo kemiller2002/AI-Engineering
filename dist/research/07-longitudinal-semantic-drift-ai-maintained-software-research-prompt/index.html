@@ -1,0 +1,1705 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>07 longitudinal semantic drift ai maintained software research prompt | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">07 longitudinal semantic drift ai maintained software research prompt</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/prompts/07-longitudinal-semantic-drift-ai-maintained-software-research-prompt.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#ai-research-mission-07-longitudinal-semantic-drift-in-ai-maintained-software">AI RESEARCH MISSION 07 — LONGITUDINAL SEMANTIC DRIFT IN AI-MAINTAINED SOFTWARE</a></li><li><a href="#role">ROLE</a></li><li><a href="#-2-define-semantic-drift">======================================================================
+2. DEFINE SEMANTIC DRIFT</a></li><li><a href="#-3-intentional-change-vs-drift">======================================================================
+3. INTENTIONAL CHANGE VS DRIFT</a></li><li><a href="#-4-ai-specific-mechanism">======================================================================
+4. AI-SPECIFIC MECHANISM</a></li><li><a href="#-5-artifact-authority-confusion">======================================================================
+5. ARTIFACT AUTHORITY CONFUSION</a></li><li><a href="#-6-design-rationale-loss">======================================================================
+6. DESIGN RATIONALE LOSS</a></li><li><a href="#-7-knowledge-degradation">======================================================================
+7. KNOWLEDGE DEGRADATION</a></li><li><a href="#-8-requirements-traceability">======================================================================
+8. REQUIREMENTS TRACEABILITY</a></li><li><a href="#-9-architecture-erosion">======================================================================
+9. ARCHITECTURE EROSION</a></li><li><a href="#-10-technical-debt">======================================================================
+10. TECHNICAL DEBT</a></li><li><a href="#-11-assumption-debt">======================================================================
+11. ASSUMPTION DEBT</a></li><li><a href="#-12-semantic-debt">======================================================================
+12. SEMANTIC DEBT</a></li><li><a href="#-13-longitudinal-agent-benchmarks">======================================================================
+13. LONGITUDINAL AGENT BENCHMARKS</a></li><li><a href="#-14-one-shot-benchmark-limitation">======================================================================
+14. ONE-SHOT BENCHMARK LIMITATION</a></li><li><a href="#-15-error-compounding">======================================================================
+15. ERROR COMPOUNDING</a></li><li><a href="#-16-path-dependence">======================================================================
+16. PATH DEPENDENCE</a></li><li><a href="#-17-copy-pattern-amplification">======================================================================
+17. COPY-PATTERN AMPLIFICATION</a></li><li><a href="#-18-false-consensus-from-repetition">======================================================================
+18. FALSE CONSENSUS FROM REPETITION</a></li><li><a href="#-19-test-entrenchment">======================================================================
+19. TEST ENTRENCHMENT</a></li><li><a href="#-20-generated-test-advantage">======================================================================
+20. GENERATED TEST ADVANTAGE</a></li><li><a href="#-21-database-semantic-drift">======================================================================
+21. DATABASE SEMANTIC DRIFT</a></li><li><a href="#-22-api-contract-entrenchment">======================================================================
+22. API CONTRACT ENTRENCHMENT</a></li><li><a href="#-23-hyrum-s-law">======================================================================
+23. Hyrum&#39;s Law</a></li><li><a href="#-24-prompt-agent-instruction-drift">======================================================================
+24. PROMPT / AGENT INSTRUCTION DRIFT</a></li><li><a href="#-25-documentation-drift">======================================================================
+25. DOCUMENTATION DRIFT</a></li><li><a href="#-26-generated-summary-drift">======================================================================
+26. GENERATED SUMMARY DRIFT</a></li><li><a href="#-27-semantic-authority">======================================================================
+27. SEMANTIC AUTHORITY</a></li><li><a href="#-28-trusted-specification-vs-implementation">======================================================================
+28. TRUSTED SPECIFICATION VS IMPLEMENTATION</a></li><li><a href="#-29-semantic-ids">======================================================================
+29. SEMANTIC IDS</a></li><li><a href="#-30-semantic-migration">======================================================================
+30. SEMANTIC MIGRATION</a></li><li><a href="#-31-wildcard-default-drift">======================================================================
+31. WILDCARD / DEFAULT DRIFT</a></li><li><a href="#-32-semantic-change-coverage">======================================================================
+32. SEMANTIC CHANGE COVERAGE</a></li><li><a href="#-33-dependency-closure">======================================================================
+33. DEPENDENCY CLOSURE</a></li><li><a href="#-34-provenance">======================================================================
+34. PROVENANCE</a></li><li><a href="#-35-decision-records">======================================================================
+35. DECISION RECORDS</a></li><li><a href="#-36-policy-versioning">======================================================================
+36. POLICY VERSIONING</a></li><li><a href="#-37-epistemic-state">======================================================================
+37. EPISTEMIC STATE</a></li><li><a href="#-38-agent-generated-assumption">======================================================================
+38. AGENT-GENERATED ASSUMPTION</a></li><li><a href="#-39-assumption-review-obligation">======================================================================
+39. ASSUMPTION REVIEW OBLIGATION</a></li><li><a href="#-40-semantic-diff">======================================================================
+40. SEMANTIC DIFF</a></li><li><a href="#-41-semantic-change-log">======================================================================
+41. SEMANTIC CHANGE LOG</a></li><li><a href="#-42-context-compression-over-time">======================================================================
+42. CONTEXT COMPRESSION OVER TIME</a></li><li><a href="#-43-context-growth-rate">======================================================================
+43. CONTEXT GROWTH RATE</a></li><li><a href="#-44-semantic-context-half-life">======================================================================
+44. SEMANTIC CONTEXT HALF-LIFE</a></li><li><a href="#-45-longitudinal-token-economics">======================================================================
+45. LONGITUDINAL TOKEN ECONOMICS</a></li><li><a href="#-46-agent-reset">======================================================================
+46. AGENT RESET</a></li><li><a href="#-47-persistent-agent-memory">======================================================================
+47. PERSISTENT AGENT MEMORY</a></li><li><a href="#-48-human-institutional-memory">======================================================================
+48. HUMAN-INSTITUTIONAL MEMORY</a></li><li><a href="#-49-organizational-scale">======================================================================
+49. ORGANIZATIONAL SCALE</a></li><li><a href="#-50-multi-agent-semantic-conflict">======================================================================
+50. MULTI-AGENT SEMANTIC CONFLICT</a></li><li><a href="#-51-parallel-change-experiment">======================================================================
+51. PARALLEL CHANGE EXPERIMENT</a></li><li><a href="#-52-code-generation-volume">======================================================================
+52. CODE GENERATION VOLUME</a></li><li><a href="#-53-legacy-system-implication">======================================================================
+53. LEGACY SYSTEM IMPLICATION</a></li><li><a href="#-54-semantic-reverse-engineering">======================================================================
+54. SEMANTIC REVERSE ENGINEERING</a></li><li><a href="#-55-wrong-semantic-specification">======================================================================
+55. WRONG SEMANTIC SPECIFICATION</a></li><li><a href="#-56-semantic-rigidity">======================================================================
+56. SEMANTIC RIGIDITY</a></li><li><a href="#-57-over-modeling">======================================================================
+57. OVER-MODELING</a></li><li><a href="#-58-minimum-semantic-core">======================================================================
+58. MINIMUM SEMANTIC CORE</a></li><li><a href="#-59-formal-methods">======================================================================
+59. FORMAL METHODS</a></li><li><a href="#-60-semantic-test-oracle">======================================================================
+60. SEMANTIC TEST ORACLE</a></li><li><a href="#-61-experiment-sequential-changes">======================================================================
+61. EXPERIMENT — SEQUENTIAL CHANGES</a></li><li><a href="#-62-task-design">======================================================================
+62. TASK DESIGN</a></li><li><a href="#-63-hidden-assumptions">======================================================================
+63. HIDDEN ASSUMPTIONS</a></li><li><a href="#-64-temporary-workaround-test">======================================================================
+64. TEMPORARY WORKAROUND TEST</a></li><li><a href="#-65-bug-as-feature-test">======================================================================
+65. BUG-AS-FEATURE TEST</a></li><li><a href="#-66-stale-test-test">======================================================================
+66. STALE TEST TEST</a></li><li><a href="#-67-copy-paste-propagation-test">======================================================================
+67. COPY-PASTE PROPAGATION TEST</a></li><li><a href="#-68-renaming-vs-semantic-change">======================================================================
+68. RENAMING VS SEMANTIC CHANGE</a></li><li><a href="#-69-policy-version-test">======================================================================
+69. POLICY VERSION TEST</a></li><li><a href="#-70-product-pivot-test">======================================================================
+70. PRODUCT PIVOT TEST</a></li><li><a href="#-71-agent-handoff-test">======================================================================
+71. AGENT HANDOFF TEST</a></li><li><a href="#-72-different-model-handoff">======================================================================
+72. DIFFERENT MODEL HANDOFF</a></li><li><a href="#-73-agent-explanation-test">======================================================================
+73. AGENT EXPLANATION TEST</a></li><li><a href="#-74-drift-metrics">======================================================================
+74. DRIFT METRICS</a></li><li><a href="#-75-semantic-entropy">======================================================================
+75. SEMANTIC ENTROPY</a></li><li><a href="#-76-context-reconstruction-cost">======================================================================
+76. CONTEXT RECONSTRUCTION COST</a></li><li><a href="#-77-repair-cost-of-old-assumptions">======================================================================
+77. REPAIR COST OF OLD ASSUMPTIONS</a></li><li><a href="#-78-semantic-fan-out-growth">======================================================================
+78. SEMANTIC FAN-OUT GROWTH</a></li><li><a href="#-79-duplicated-rule-count">======================================================================
+79. DUPLICATED RULE COUNT</a></li><li><a href="#-80-authority-violation-count">======================================================================
+80. AUTHORITY VIOLATION COUNT</a></li><li><a href="#-81-cost-per-semantically-correct-change">======================================================================
+81. COST PER SEMANTICALLY CORRECT CHANGE</a></li><li><a href="#-82-longitudinal-cost">======================================================================
+82. LONGITUDINAL COST</a></li><li><a href="#-83-cost-growth-slope">======================================================================
+83. COST GROWTH SLOPE</a></li><li><a href="#-84-semantic-retention">======================================================================
+84. SEMANTIC RETENTION</a></li><li><a href="#-85-change-correctness-vs-retention">======================================================================
+85. CHANGE CORRECTNESS VS RETENTION</a></li><li><a href="#-86-architectural-erosion">======================================================================
+86. ARCHITECTURAL EROSION</a></li><li><a href="#-87-constraint-erosion">======================================================================
+87. CONSTRAINT EROSION</a></li><li><a href="#-88-architecture-self-defense">======================================================================
+88. ARCHITECTURE SELF-DEFENSE</a></li><li><a href="#-89-human-review-load">======================================================================
+89. HUMAN REVIEW LOAD</a></li><li><a href="#-90-current-ai-research">======================================================================
+90. CURRENT AI RESEARCH</a></li><li><a href="#-91-human-software-maintenance-literature">======================================================================
+91. HUMAN SOFTWARE MAINTENANCE LITERATURE</a></li><li><a href="#-92-lehman-s-laws">======================================================================
+92. LEHMAN&#39;S LAWS</a></li><li><a href="#-93-software-entropy-terminology">======================================================================
+93. SOFTWARE ENTROPY TERMINOLOGY</a></li><li><a href="#-94-human-vs-ai-comparison">======================================================================
+94. HUMAN VS AI COMPARISON</a></li><li><a href="#-95-ai-advantage-counterargument">======================================================================
+95. AI ADVANTAGE COUNTERARGUMENT</a></li><li><a href="#-96-retrieval-counterargument">======================================================================
+96. RETRIEVAL COUNTERARGUMENT</a></li><li><a href="#-97-memory-counterargument">======================================================================
+97. MEMORY COUNTERARGUMENT</a></li><li><a href="#-98-documentation-counterargument">======================================================================
+98. DOCUMENTATION COUNTERARGUMENT</a></li><li><a href="#-99-ddd-counterargument">======================================================================
+99. DDD COUNTERARGUMENT</a></li><li><a href="#-100-strong-types-counterargument">======================================================================
+100. STRONG TYPES COUNTERARGUMENT</a></li><li><a href="#-101-formal-spec-counterargument">======================================================================
+101. FORMAL SPEC COUNTERARGUMENT</a></li><li><a href="#-102-semantic-core-change-rate">======================================================================
+102. SEMANTIC CORE CHANGE RATE</a></li><li><a href="#-103-volatility-classification">======================================================================
+103. VOLATILITY CLASSIFICATION</a></li><li><a href="#-104-promotion-of-semantics">======================================================================
+104. PROMOTION OF SEMANTICS</a></li><li><a href="#-105-deprecation">======================================================================
+105. DEPRECATION</a></li><li><a href="#-106-orphan-detection">======================================================================
+106. ORPHAN DETECTION</a></li><li><a href="#-107-dead-semantic-code">======================================================================
+107. DEAD SEMANTIC CODE</a></li><li><a href="#-108-semantic-health-report">======================================================================
+108. SEMANTIC HEALTH REPORT</a></li><li><a href="#-109-ai-cost-of-semantic-health">======================================================================
+109. AI COST OF SEMANTIC HEALTH</a></li><li><a href="#-110-longitudinal-benchmark-design">======================================================================
+110. LONGITUDINAL BENCHMARK DESIGN</a></li><li><a href="#-111-pre-registration">======================================================================
+111. PRE-REGISTRATION</a></li><li><a href="#-112-ablation">======================================================================
+112. ABLATION</a></li><li><a href="#-113-model-scale-experiment">======================================================================
+113. MODEL-SCALE EXPERIMENT</a></li><li><a href="#-114-context-limit-experiment">======================================================================
+114. CONTEXT-LIMIT EXPERIMENT</a></li><li><a href="#-115-repository-scale-experiment">======================================================================
+115. REPOSITORY-SCALE EXPERIMENT</a></li><li><a href="#-116-product-pivot-experiment">======================================================================
+116. PRODUCT-PIVOT EXPERIMENT</a></li><li><a href="#-117-semantic-bug-injection">======================================================================
+117. SEMANTIC BUG INJECTION</a></li><li><a href="#-118-specification-correction">======================================================================
+118. SPECIFICATION CORRECTION</a></li><li><a href="#-119-strong-success-criteria">======================================================================
+119. STRONG SUCCESS CRITERIA</a></li><li><a href="#-120-falsification-conditions">======================================================================
+120. FALSIFICATION CONDITIONS</a></li><li><a href="#-121-required-source-quality">======================================================================
+121. REQUIRED SOURCE QUALITY</a></li><li><a href="#-122-required-output">======================================================================
+122. REQUIRED OUTPUT</a></li><li><a href="#-123-final-verdict-format">======================================================================
+123. FINAL VERDICT FORMAT</a></li><li><a href="#-124-research-standard">======================================================================
+124. RESEARCH STANDARD</a></li> </ol> </aside> <section class="document-body"><h1 id="ai-research-mission-07--longitudinal-semantic-drift-in-ai-maintained-software">AI RESEARCH MISSION 07 — LONGITUDINAL SEMANTIC DRIFT IN AI-MAINTAINED SOFTWARE</h1>
+<h1 id="role">ROLE</h1>
+<p>Act as a combined:</p>
+<ul>
+<li>AI-agent systems researcher</li>
+<li>software-maintenance researcher</li>
+<li>software-architecture researcher</li>
+<li>technical-debt researcher</li>
+<li>program-comprehension researcher</li>
+<li>software-evolution researcher</li>
+<li>formal-methods researcher</li>
+<li>empirical software-engineering researcher</li>
+<li>AI inference-cost researcher</li>
+</ul>
+<p>Your task is to investigate whether AI-maintained software is especially
+vulnerable to longitudinal semantic drift, and whether explicit semantic
+authority can reduce that drift over repeated changes.</p>
+<p>Do not assume the hypothesis is true.</p>
+<p>Be skeptical and evidence-driven.</p>
+<p>The central hypothesis is:</p>
+<pre><code>AI agents may amplify accidental implementation assumptions because later
+agents often cannot reliably distinguish:
+
+    intentional domain semantics
+    historical implementation accidents
+    temporary workarounds
+    stale tests
+    copied assumptions
+    incidental database structure
+    prior AI guesses
+</code></pre>
+<p>As these artifacts survive, later agents may interpret them as authoritative
+truth.</p>
+<p>This may create a compounding process:</p>
+<pre><code>ambiguous requirement
+    ->
+plausible implementation assumption
+    ->
+persisted code/test/schema
+    ->
+later agent treats artifact as truth
+    ->
+new dependent implementation
+    ->
+assumption becomes harder to distinguish and remove
+</code></pre>
+<p>The proposed architecture attempts to interrupt this process by preserving
+semantic authority outside incidental implementation.</p>
+<p>Potential mechanisms:</p>
+<pre><code>explicit state ownership
+explicit legal transitions
+semantic contracts
+provenance
+epistemic state
+semantic dependency closure
+explicit migrations
+exhaustive interpretation
+versioned policy
+generated impact analysis
+protected authoritative state
+obligations for unresolved semantic work
+</code></pre>
+<p>======================================================================</p>
+<ol>
+<li>PRIMARY RESEARCH QUESTION
+======================================================================</li>
+</ol>
+<p>Does repeated AI-driven maintenance cause software semantics to drift away from
+original or intended business meaning more quickly than conventional human-led
+maintenance?</p>
+<p>If so:</p>
+<pre><code>What mechanisms cause the drift?
+
+Is the effect actually stronger for AI agents?
+
+How can it be measured?
+
+Can explicit semantic structure reduce it?
+
+Does reduced drift also reduce long-term token/context cost?
+</code></pre>
+<h1 id="2-define-semantic-drift">======================================================================
+2. DEFINE SEMANTIC DRIFT</h1>
+<p>Develop a precise definition.</p>
+<p>Candidate:</p>
+<pre><code>Semantic drift is the accumulation of system behavior, rules, assumptions,
+dependencies, or representations that diverge from currently intended
+domain meaning without an explicit, reviewed semantic decision.
+</code></pre>
+<p>Examples:</p>
+<pre><code>old temporary status becomes permanent business rule
+duplicated validation logic diverges
+workaround becomes API contract
+test encodes outdated interpretation
+database column meaning changes informally
+AI introduces fallback behavior that later code depends on
+obsolete product assumption survives after pivot
+</code></pre>
+<p>Distinguish semantic drift from:</p>
+<pre><code>ordinary code churn
+architecture drift
+technical debt
+defect accumulation
+requirements change
+intentional evolution
+</code></pre>
+<h1 id="3-intentional-change-vs-drift">======================================================================
+3. INTENTIONAL CHANGE VS DRIFT</h1>
+<p>A system changing meaning is not automatically drifting.</p>
+<p>Example:</p>
+<pre><code>business intentionally changes refund policy
+</code></pre>
+<p>is:</p>
+<pre><code>semantic evolution
+</code></pre>
+<p>not:</p>
+<pre><code>semantic drift
+</code></pre>
+<p>Drift occurs when change becomes embedded without explicit semantic decision or
+without corresponding dependency updates.</p>
+<p>Develop criteria for distinguishing:</p>
+<pre><code>intended evolution
+accidental reinterpretation
+stale dependency
+implementation artifact
+</code></pre>
+<h1 id="4-ai-specific-mechanism">======================================================================
+4. AI-SPECIFIC MECHANISM</h1>
+<p>Investigate whether AI agents create a distinctive risk because they infer
+intent from artifacts.</p>
+<p>Possible process:</p>
+<pre><code>Agent sees code
+    ->
+code appears internally consistent
+    ->
+agent assumes behavior is intentional
+    ->
+agent preserves or extends it
+</code></pre>
+<p>Humans may also do this.</p>
+<p>Question:</p>
+<pre><code>Is this actually an AI-specific effect,
+or simply normal software archaeology accelerated by automation?
+</code></pre>
+<p>Do not overclaim.</p>
+<h1 id="5-artifact-authority-confusion">======================================================================
+5. ARTIFACT AUTHORITY CONFUSION</h1>
+<p>Potential agent mistake:</p>
+<pre><code>"This test exists, therefore this is the business rule."
+</code></pre>
+<p>But test may represent:</p>
+<pre><code>obsolete behavior
+accidental implementation
+bug regression
+temporary workaround
+</code></pre>
+<p>Likewise:</p>
+<pre><code>database field
+endpoint
+comment
+enum
+branch
+prompt
+migration
+</code></pre>
+<p>may be treated as semantic authority.</p>
+<p>Research program-comprehension literature around:</p>
+<pre><code>intent inference
+maintenance assumptions
+code archaeology
+design rationale loss
+</code></pre>
+<h1 id="6-design-rationale-loss">======================================================================
+6. DESIGN RATIONALE LOSS</h1>
+<p>Research established work on loss of:</p>
+<pre><code>rationale
+architecture decisions
+requirement traceability
+design intent
+</code></pre>
+<p>Ask whether AI agents worsen this because they consume artifacts without
+institutional memory.</p>
+<p>Potential solution:</p>
+<pre><code>machine-visible provenance and semantic decision records
+</code></pre>
+<h1 id="7-knowledge-degradation">======================================================================
+7. KNOWLEDGE DEGRADATION</h1>
+<p>Study how domain knowledge degrades as:</p>
+<pre><code>original developers leave
+documentation becomes stale
+tests diverge
+architecture evolves
+business rules duplicate
+</code></pre>
+<p>Compare human-maintained systems with AI-maintained systems.</p>
+<h1 id="8-requirements-traceability">======================================================================
+8. REQUIREMENTS TRACEABILITY</h1>
+<p>Research:</p>
+<pre><code>requirements traceability
+architecture traceability
+change-impact analysis
+traceability matrices
+model-driven trace links
+</code></pre>
+<p>Question:</p>
+<pre><code>Does semantic dependency closure solve an old traceability problem in a
+more operational form?
+</code></pre>
+<h1 id="9-architecture-erosion">======================================================================
+9. ARCHITECTURE EROSION</h1>
+<p>Research:</p>
+<pre><code>architectural drift
+architectural erosion
+software decay
+dependency violations
+layering erosion
+modularity degradation
+</code></pre>
+<p>Separate:</p>
+<pre><code>structural erosion
+</code></pre>
+<p>from:</p>
+<pre><code>semantic erosion
+</code></pre>
+<p>A system may preserve package boundaries while its business meaning drifts.</p>
+<h1 id="10-technical-debt">======================================================================
+10. TECHNICAL DEBT</h1>
+<p>Compare semantic drift with:</p>
+<pre><code>technical debt
+design debt
+requirements debt
+architectural debt
+knowledge debt
+documentation debt
+</code></pre>
+<p>Ask whether:</p>
+<pre><code>semantic debt
+</code></pre>
+<p>or:</p>
+<pre><code>assumption debt
+</code></pre>
+<p>is a useful distinct concept.</p>
+<h1 id="11-assumption-debt">======================================================================
+11. ASSUMPTION DEBT</h1>
+<p>Candidate definition:</p>
+<pre><code>Assumption Debt is consequential system behavior that depends on
+propositions whose status, rationale, provenance, or authority is not
+explicit enough to determine whether they remain valid.
+</code></pre>
+<p>Examples:</p>
+<pre><code>"This customer type can never refund"
+"This field is always populated"
+"This state cannot occur after shipment"
+"This service is authoritative"
+</code></pre>
+<p>Research whether similar terminology already exists.</p>
+<h1 id="12-semantic-debt">======================================================================
+12. SEMANTIC DEBT</h1>
+<p>Potential definition:</p>
+<pre><code>Semantic Debt is the future cost created when consequential domain meaning
+is encoded implicitly, ambiguously, redundantly, or inconsistently.
+</code></pre>
+<p>Measure:</p>
+<pre><code>number of implicit assumptions
+duplicated business rules
+untraceable policy decisions
+stale semantic dependencies
+ambiguous state meanings
+</code></pre>
+<p>Challenge whether this is truly distinct from existing debt categories.</p>
+<h1 id="13-longitudinal-agent-benchmarks">======================================================================
+13. LONGITUDINAL AGENT BENCHMARKS</h1>
+<p>Research current benchmarks that test:</p>
+<pre><code>repeated repository modification
+multi-step maintenance
+long-horizon coding agents
+sequential issue resolution
+repository evolution
+agent-generated code over time
+</code></pre>
+<p>Do not focus only on one-shot SWE-bench-style tasks.</p>
+<p>Look for systems like:</p>
+<pre><code>SWE-EVO
+longitudinal coding benchmarks
+repository evolution benchmarks
+continuous software engineering agents
+</code></pre>
+<p>Identify whether semantic drift is currently measured.</p>
+<h1 id="14-one-shot-benchmark-limitation">======================================================================
+14. ONE-SHOT BENCHMARK LIMITATION</h1>
+<p>Most coding benchmarks evaluate:</p>
+<pre><code>task at T
+    ->
+correct patch
+</code></pre>
+<p>But real maintenance is:</p>
+<pre><code>T1 patch
+    ->
+T2 patch depends on T1
+    ->
+T3 agent interprets T1+T2
+    ->
+...
+    ->
+T50
+</code></pre>
+<p>Investigate why one-shot benchmarks may hide compounding semantic error.</p>
+<h1 id="15-error-compounding">======================================================================
+15. ERROR COMPOUNDING</h1>
+<p>Develop a model.</p>
+<p>Suppose each change has probability:</p>
+<pre><code>p = introducing a latent semantic assumption
+</code></pre>
+<p>and probability:</p>
+<pre><code>q = later changes depending on that assumption
+</code></pre>
+<p>Over many tasks:</p>
+<pre><code>hidden semantic dependency count may grow nonlinearly.
+</code></pre>
+<p>Do not invent a mathematical law without evidence.</p>
+<p>Develop candidate models and testable predictions.</p>
+<h1 id="16-path-dependence">======================================================================
+16. PATH DEPENDENCE</h1>
+<p>Software evolution is path-dependent.</p>
+<p>Later architecture depends on earlier decisions.</p>
+<p>AI may increase path dependence if:</p>
+<pre><code>it optimizes locally
+it copies existing patterns
+it treats precedent as intent
+</code></pre>
+<p>Research:</p>
+<pre><code>path dependence in software engineering
+architectural lock-in
+design inertia
+</code></pre>
+<h1 id="17-copy-pattern-amplification">======================================================================
+17. COPY-PATTERN AMPLIFICATION</h1>
+<p>AI coding agents often imitate repository patterns.</p>
+<p>That is useful.</p>
+<p>But if pattern is wrong:</p>
+<pre><code>wrong pattern may propagate faster.
+</code></pre>
+<p>Research:</p>
+<pre><code>in-context pattern copying
+code completion behavior
+repository style imitation
+defect propagation
+</code></pre>
+<p>Question:</p>
+<pre><code>Does AI accelerate both good architecture and bad architecture?
+</code></pre>
+<h1 id="18-false-consensus-from-repetition">======================================================================
+18. FALSE CONSENSUS FROM REPETITION</h1>
+<p>If five modules contain same assumption, later agent may infer:</p>
+<pre><code>"This must be intentional."
+</code></pre>
+<p>But all five may descend from:</p>
+<pre><code>one accidental implementation.
+</code></pre>
+<p>This parallels evidence-lineage issues.</p>
+<p>Provenance could expose:</p>
+<pre><code>all five derive from same semantic decision or same copied artifact.
+</code></pre>
+<h1 id="19-test-entrenchment">======================================================================
+19. TEST ENTRENCHMENT</h1>
+<p>Tests can preserve bugs or obsolete semantics.</p>
+<p>Agent sees failing test after changing behavior and may:</p>
+<pre><code>restore stale behavior
+</code></pre>
+<p>rather than:</p>
+<pre><code>update obsolete test
+</code></pre>
+<p>Research test maintenance and test-code co-evolution.</p>
+<h1 id="20-generated-test-advantage">======================================================================
+20. GENERATED TEST ADVANTAGE</h1>
+<p>If tests are generated from semantic specification:</p>
+<pre><code>semantics change
+    ->
+generated tests change
+</code></pre>
+<p>This may reduce stale-test authority.</p>
+<p>But it creates:</p>
+<pre><code>specification single-point-of-failure risk
+</code></pre>
+<p>Study both.</p>
+<h1 id="21-database-semantic-drift">======================================================================
+21. DATABASE SEMANTIC DRIFT</h1>
+<p>Database schemas often preserve historical assumptions.</p>
+<p>Examples:</p>
+<pre><code>nullable status field
+magic values
+overloaded columns
+derived flags
+denormalized state
+</code></pre>
+<p>Agents may infer semantics from schema.</p>
+<p>Research:</p>
+<pre><code>schema evolution
+data semantics
+legacy-system archaeology
+</code></pre>
+<h1 id="22-api-contract-entrenchment">======================================================================
+22. API CONTRACT ENTRENCHMENT</h1>
+<p>Temporary API behavior may become external contract.</p>
+<p>Example:</p>
+<pre><code>undocumented null
+fallback
+error code
+ordering
+</code></pre>
+<p>Once clients depend on it:</p>
+<pre><code>implementation accident becomes semantic reality.
+</code></pre>
+<p>Research Hyrum's Law and API evolution.</p>
+<h1 id="23-hyrums-law">======================================================================
+23. Hyrum's Law</h1>
+<p>Investigate the relevance of:</p>
+<pre><code>"With a sufficient number of users of an API, every observable behavior
+will be depended on by somebody."
+</code></pre>
+<p>Question:</p>
+<pre><code>Do AI agents effectively become another class of API consumer that can
+accidentally stabilize incidental behavior?
+</code></pre>
+<h1 id="24-prompt--agent-instruction-drift">======================================================================
+24. PROMPT / AGENT INSTRUCTION DRIFT</h1>
+<p>Semantic behavior may be distributed across:</p>
+<pre><code>code
+system prompts
+tool descriptions
+agent instructions
+runbooks
+</code></pre>
+<p>These can drift separately.</p>
+<p>Research whether semantic compilation could reduce this fragmentation.</p>
+<h1 id="25-documentation-drift">======================================================================
+25. DOCUMENTATION DRIFT</h1>
+<p>AI-generated documentation may create additional authority artifacts.</p>
+<p>Potential cycle:</p>
+<pre><code>code assumption
+    ->
+AI writes documentation
+    ->
+later agent reads documentation
+    ->
+assumption gains perceived legitimacy
+</code></pre>
+<p>Study this risk.</p>
+<h1 id="26-generated-summary-drift">======================================================================
+26. GENERATED SUMMARY DRIFT</h1>
+<p>Repository summaries are attractive for context compression.</p>
+<p>But summaries may become stale.</p>
+<p>Hypothesis:</p>
+<pre><code>compiler-generated semantic summaries are safer than AI-written summaries
+because they derive from current authoritative semantics.
+</code></pre>
+<p>Research this distinction.</p>
+<h1 id="27-semantic-authority">======================================================================
+27. SEMANTIC AUTHORITY</h1>
+<p>Proposed architectural rule:</p>
+<pre><code>consequential meaning should have an explicit authority source.
+</code></pre>
+<p>Examples:</p>
+<pre><code>state definitions
+transition declarations
+policy rules
+evidence requirements
+semantic IDs
+migration decisions
+</code></pre>
+<p>Implementation artifacts should not silently redefine these.</p>
+<h1 id="28-trusted-specification-vs-implementation">======================================================================
+28. TRUSTED SPECIFICATION VS IMPLEMENTATION</h1>
+<p>Potential hierarchy:</p>
+<p>Tier 1:
+semantic specification</p>
+<p>Tier 2:
+generated/trusted enforcement</p>
+<p>Tier 3:
+application implementation</p>
+<p>Tier 4:
+probabilistic agent output</p>
+<p>Ask whether this hierarchy prevents reverse inference:</p>
+<pre><code>implementation accident -> domain truth
+</code></pre>
+<h1 id="29-semantic-ids">======================================================================
+29. SEMANTIC IDS</h1>
+<p>Stable semantic identifiers may distinguish:</p>
+<pre><code>rename
+</code></pre>
+<p>from:</p>
+<pre><code>replacement
+</code></pre>
+<p>from:</p>
+<pre><code>state split
+</code></pre>
+<p>from:</p>
+<pre><code>state merge
+</code></pre>
+<p>Example:</p>
+<pre><code>SC-APPROVED
+</code></pre>
+<p>renamed label:</p>
+<pre><code>Fully Approved
+</code></pre>
+<p>vs:</p>
+<pre><code>semantic split into new identities
+</code></pre>
+<p>Research model/version identity systems.</p>
+<h1 id="30-semantic-migration">======================================================================
+30. SEMANTIC MIGRATION</h1>
+<p>Current proposed rule:</p>
+<pre><code>a state split invalidates every dependent consequential interpretation
+until explicitly redistributed.
+</code></pre>
+<p>Example:</p>
+<pre><code>Approved
+    ->
+ConditionallyApproved
+FullyApproved
+</code></pre>
+<p>Dependencies on Approved must receive explicit disposition.</p>
+<p>Question:</p>
+<pre><code>Does this reduce semantic drift by forcing meaning redistribution?
+</code></pre>
+<h1 id="31-wildcard--default-drift">======================================================================
+31. WILDCARD / DEFAULT DRIFT</h1>
+<p>Example:</p>
+<pre><code>Captured -> CanRefund
+_        -> CannotRefund
+</code></pre>
+<p>Add:</p>
+<pre><code>Disputed
+</code></pre>
+<p>System silently interprets:</p>
+<pre><code>Disputed -> CannotRefund
+</code></pre>
+<p>That may be accidental semantic drift.</p>
+<p>Proposed rule:</p>
+<pre><code>prohibit wildcard/default for consequential closed state families unless
+equivalence is declared.
+</code></pre>
+<p>Research whether language/compiler literature supports this concern.</p>
+<h1 id="32-semantic-change-coverage">======================================================================
+32. SEMANTIC CHANGE COVERAGE</h1>
+<p>Use metric:</p>
+<pre><code>    consequential interpretations mechanically surfaced
+</code></pre>
+<p>SCC = -------------------------------------------------------
+consequential interpretations actually affected</p>
+<p>Investigate whether SCC predicts longitudinal drift.</p>
+<p>Hypothesis:</p>
+<pre><code>higher SCC
+    ->
+fewer stale interpretations
+    ->
+lower semantic debt growth
+</code></pre>
+<h1 id="33-dependency-closure">======================================================================
+33. DEPENDENCY CLOSURE</h1>
+<p>If semantic dependency graph is complete:</p>
+<pre><code>change to state/policy
+    ->
+all dependent semantics surfaced
+</code></pre>
+<p>If incomplete:</p>
+<pre><code>hidden dependencies survive
+</code></pre>
+<p>Research relation to:</p>
+<pre><code>change-impact analysis
+traceability completeness
+program slicing
+dependency graphs
+</code></pre>
+<h1 id="34-provenance">======================================================================
+34. PROVENANCE</h1>
+<p>Every important semantic rule may need provenance:</p>
+<pre><code>why introduced
+requirement/source
+actor
+date
+policy
+related evidence
+migration history
+</code></pre>
+<p>Question:</p>
+<pre><code>How much provenance is useful before it becomes bureaucratic noise?
+</code></pre>
+<h1 id="35-decision-records">======================================================================
+35. DECISION RECORDS</h1>
+<p>Compare with:</p>
+<pre><code>ADRs
+architecture decision records
+design rationale systems
+</code></pre>
+<p>Potential difference:</p>
+<pre><code>ADRs are prose
+</code></pre>
+<p>whereas:</p>
+<pre><code>semantic provenance is machine-linked to actual rules.
+</code></pre>
+<h1 id="36-policy-versioning">======================================================================
+36. POLICY VERSIONING</h1>
+<p>Without versioning:</p>
+<pre><code>new policy may silently reinterpret old decisions.
+</code></pre>
+<p>With:</p>
+<pre><code>PaymentPolicy@7
+</code></pre>
+<p>historical transition can remain attributable.</p>
+<p>Research whether policy versioning reduces semantic ambiguity over time.</p>
+<h1 id="37-epistemic-state">======================================================================
+37. EPISTEMIC STATE</h1>
+<p>AI assumption should perhaps remain:</p>
+<pre><code>Assumed
+</code></pre>
+<p>until evidence promotes it.</p>
+<p>This prevents:</p>
+<pre><code>repeated persistence -> false verification
+</code></pre>
+<p>Connect this research with explicit epistemic architecture.</p>
+<h1 id="38-agent-generated-assumption">======================================================================
+38. AGENT-GENERATED ASSUMPTION</h1>
+<p>Potential rule:</p>
+<pre><code>if agent introduces a consequential new proposition not supported by
+existing semantic authority:
+
+    record as proposed assumption
+</code></pre>
+<p>rather than:</p>
+<pre><code>    silently encode it
+</code></pre>
+<p>Could this be practical?</p>
+<h1 id="39-assumption-review-obligation">======================================================================
+39. ASSUMPTION REVIEW OBLIGATION</h1>
+<p>A consequential assumption might create:</p>
+<pre><code>obligation:
+    ValidateAssumption
+</code></pre>
+<p>This could prevent long-term silent accumulation.</p>
+<p>But too many obligations may overwhelm development.</p>
+<p>Research threshold criteria.</p>
+<h1 id="40-semantic-diff">======================================================================
+40. SEMANTIC DIFF</h1>
+<p>Conventional git diff shows:</p>
+<pre><code>text changes
+</code></pre>
+<p>Potential semantic diff shows:</p>
+<pre><code>added state
+removed transition
+changed authority
+changed evidence requirement
+added obligation
+policy impact
+</code></pre>
+<p>Question:</p>
+<pre><code>Can semantic diffs improve AI and human review?
+</code></pre>
+<h1 id="41-semantic-change-log">======================================================================
+41. SEMANTIC CHANGE LOG</h1>
+<p>Maintain:</p>
+<pre><code>semantic version
+migration
+rationale
+impact
+</code></pre>
+<p>This may provide compact historical context to later agents.</p>
+<p>Compare with:</p>
+<pre><code>changelogs
+schema migrations
+migration metadata
+ontology evolution
+</code></pre>
+<h1 id="42-context-compression-over-time">======================================================================
+42. CONTEXT COMPRESSION OVER TIME</h1>
+<p>Conventional maintenance may require increasing context because historical
+semantics become harder to reconstruct.</p>
+<p>Semantic architecture may let agent read:</p>
+<pre><code>current semantic specification
+migration history relevant to changed concept
+</code></pre>
+<p>instead of:</p>
+<pre><code>years of repository archaeology
+</code></pre>
+<p>This is a major token-cost hypothesis.</p>
+<h1 id="43-context-growth-rate">======================================================================
+43. CONTEXT GROWTH RATE</h1>
+<p>Define:</p>
+<pre><code>context tokens required per maintenance task over system age
+</code></pre>
+<p>Hypothesis A:</p>
+<p>Conventional:</p>
+<pre><code>context/task grows with repository history and coupling
+</code></pre>
+<p>Hypothesis B:</p>
+<p>Semantic:</p>
+<pre><code>context/task grows more slowly because current semantics and dependencies
+remain explicit
+</code></pre>
+<p>Measure slope, not just absolute cost.</p>
+<h1 id="44-semantic-context-half-life">======================================================================
+44. SEMANTIC CONTEXT HALF-LIFE</h1>
+<p>Explore concept:</p>
+<pre><code>How long does an AI-generated repository summary remain safe before enough
+semantic changes make it misleading?
+</code></pre>
+<p>Compare:</p>
+<pre><code>AI summary
+generated semantic contract
+</code></pre>
+<p>Potential metric:</p>
+<pre><code>summary validity after N semantic changes
+</code></pre>
+<h1 id="45-longitudinal-token-economics">======================================================================
+45. LONGITUDINAL TOKEN ECONOMICS</h1>
+<p>Model:</p>
+<pre><code>task 1
+task 10
+task 50
+task 100
+task 500
+</code></pre>
+<p>Measure:</p>
+<pre><code>tokens
+files read
+searches
+repair loops
+defects
+</code></pre>
+<p>Question:</p>
+<pre><code>Does semantic architecture flatten the cost curve?
+</code></pre>
+<h1 id="46-agent-reset">======================================================================
+46. AGENT RESET</h1>
+<p>Use fresh agent context on every task.</p>
+<p>This simulates lack of persistent human memory.</p>
+<p>Then compare architectures.</p>
+<p>This may expose value of explicit semantics.</p>
+<h1 id="47-persistent-agent-memory">======================================================================
+47. PERSISTENT AGENT MEMORY</h1>
+<p>Also test with memory.</p>
+<p>Question:</p>
+<pre><code>Does good agent memory eliminate the architecture advantage?
+</code></pre>
+<p>Counterargument:</p>
+<pre><code>memory itself may preserve stale assumptions.
+</code></pre>
+<p>Research.</p>
+<h1 id="48-human-institutional-memory">======================================================================
+48. HUMAN-INSTITUTIONAL MEMORY</h1>
+<p>Human teams have:</p>
+<pre><code>senior developers
+Slack history
+tribal knowledge
+code review
+architectural intuition
+</code></pre>
+<p>AI-heavy organizations may weaken those stabilizers.</p>
+<p>Investigate whether this changes architecture requirements.</p>
+<h1 id="49-organizational-scale">======================================================================
+49. ORGANIZATIONAL SCALE</h1>
+<p>Semantic drift may worsen with:</p>
+<pre><code>more agents
+more teams
+more parallel changes
+</code></pre>
+<p>Measure cross-agent precedent propagation.</p>
+<h1 id="50-multi-agent-semantic-conflict">======================================================================
+50. MULTI-AGENT SEMANTIC CONFLICT</h1>
+<p>Agent A and Agent B independently modify related concepts.</p>
+<p>Without shared semantic authority:</p>
+<pre><code>both patches may be locally plausible
+combined meaning inconsistent
+</code></pre>
+<p>Semantic graph could expose conflict.</p>
+<h1 id="51-parallel-change-experiment">======================================================================
+51. PARALLEL CHANGE EXPERIMENT</h1>
+<p>Give two agents:</p>
+<p>A:
+add partial refunds</p>
+<p>B:
+change dispute handling</p>
+<p>Both affect Payment semantics.</p>
+<p>Measure:</p>
+<pre><code>merge conflicts
+semantic conflicts
+hidden incompatibilities
+</code></pre>
+<p>Compare architectures.</p>
+<h1 id="52-code-generation-volume">======================================================================
+52. CODE GENERATION VOLUME</h1>
+<p>If AI lowers marginal code-generation cost:</p>
+<pre><code>organizations may create more code
+</code></pre>
+<p>which could increase:</p>
+<pre><code>semantic surface area
+maintenance burden
+</code></pre>
+<p>Hypothesis:</p>
+<pre><code>AI makes semantic architecture more important because code volume ceases to
+be the main scarcity; understanding does.
+</code></pre>
+<p>Research whether empirical data supports this.</p>
+<h1 id="53-legacy-system-implication">======================================================================
+53. LEGACY SYSTEM IMPLICATION</h1>
+<p>Legacy code lacks explicit semantic authority.</p>
+<p>AI agents must reconstruct meaning from:</p>
+<pre><code>code
+tests
+schemas
+comments
+behavior
+</code></pre>
+<p>Question:</p>
+<pre><code>Does AI make legacy semantic debt economically visible through token/tool cost?
+</code></pre>
+<p>This may be a strategic application.</p>
+<h1 id="54-semantic-reverse-engineering">======================================================================
+54. SEMANTIC REVERSE ENGINEERING</h1>
+<p>Potential migration approach:</p>
+<pre><code>infer candidate semantic model from legacy code
+    ->
+human validates
+    ->
+establish authoritative semantic layer
+</code></pre>
+<p>Research model extraction and program comprehension.</p>
+<h1 id="55-wrong-semantic-specification">======================================================================
+55. WRONG SEMANTIC SPECIFICATION</h1>
+<p>A major counterargument:</p>
+<pre><code>explicit semantic authority can preserve wrong meaning more strongly.
+</code></pre>
+<p>If specification wrong:</p>
+<pre><code>compiler
+tests
+capabilities
+agents
+</code></pre>
+<p>may all reinforce it.</p>
+<p>Study correlated failure.</p>
+<h1 id="56-semantic-rigidity">======================================================================
+56. SEMANTIC RIGIDITY</h1>
+<p>Explicit rules may discourage healthy change.</p>
+<p>Developers may avoid changing semantics because migrations are expensive.</p>
+<p>This could create:</p>
+<pre><code>architecture conservatism
+product rigidity
+</code></pre>
+<p>Research similar problems in strongly governed systems.</p>
+<h1 id="57-over-modeling">======================================================================
+57. OVER-MODELING</h1>
+<p>If too much product hypothesis is encoded:</p>
+<pre><code>semantic drift may decrease
+</code></pre>
+<p>but:</p>
+<pre><code>pivot cost may increase
+</code></pre>
+<p>Connect with startup pivotability research.</p>
+<h1 id="58-minimum-semantic-core">======================================================================
+58. MINIMUM SEMANTIC CORE</h1>
+<p>Potential principle:</p>
+<pre><code>only consequential, validated semantics belong in trusted core.
+</code></pre>
+<p>This may balance:</p>
+<pre><code>drift resistance
+adaptability
+</code></pre>
+<p>Research how to identify that boundary.</p>
+<h1 id="59-formal-methods">======================================================================
+59. FORMAL METHODS</h1>
+<p>Model checking could ensure:</p>
+<pre><code>transitions remain reachable
+invariants hold
+</code></pre>
+<p>But it does not ensure:</p>
+<pre><code>rules reflect business intent
+</code></pre>
+<p>Clarify role.</p>
+<h1 id="60-semantic-test-oracle">======================================================================
+60. SEMANTIC TEST ORACLE</h1>
+<p>To measure drift experimentally, need independent reference semantics.</p>
+<p>Create hidden canonical business specification.</p>
+<p>Agent repositories do not see full oracle.</p>
+<p>After each change:</p>
+<pre><code>evaluate behavior against reference
+</code></pre>
+<p>This distinguishes:</p>
+<pre><code>repository self-consistency
+</code></pre>
+<p>from:</p>
+<pre><code>true semantic correctness.
+</code></pre>
+<h1 id="61-experiment--sequential-changes">======================================================================
+61. EXPERIMENT — SEQUENTIAL CHANGES</h1>
+<p>Create same V1 in:</p>
+<p>A. conventional architecture
+B. semantic architecture</p>
+<p>Apply:</p>
+<pre><code>50 sequential feature/maintenance tasks
+</code></pre>
+<p>Each later task starts from prior result.</p>
+<p>Measure drift.</p>
+<h1 id="62-task-design">======================================================================
+62. TASK DESIGN</h1>
+<p>Include:</p>
+<pre><code>state additions
+state splits
+policy changes
+UI changes
+bug fixes
+cross-module changes
+ambiguous requirements
+temporary workarounds
+external-effect changes
+product pivots
+</code></pre>
+<p>Some tasks should intentionally introduce opportunities for accidental assumptions.</p>
+<h1 id="63-hidden-assumptions">======================================================================
+63. HIDDEN ASSUMPTIONS</h1>
+<p>Insert ambiguous tasks such as:</p>
+<pre><code>"Allow premium customers to cancel later."
+</code></pre>
+<p>Do not define:</p>
+<pre><code>exact cutoff
+</code></pre>
+<p>unless agent asks or architecture surfaces ambiguity.</p>
+<p>Observe whether unsupported choices become durable precedent.</p>
+<h1 id="64-temporary-workaround-test">======================================================================
+64. TEMPORARY WORKAROUND TEST</h1>
+<p>Task explicitly says:</p>
+<pre><code>temporary workaround until provider fixes API
+</code></pre>
+<p>Later tasks should reveal whether workaround becomes permanent semantic rule.</p>
+<p>Measure architectures.</p>
+<h1 id="65-bug-as-feature-test">======================================================================
+65. BUG-AS-FEATURE TEST</h1>
+<p>Introduce a bug that remains for several iterations.</p>
+<p>Later agent sees it.</p>
+<p>Does agent preserve it as expected behavior?</p>
+<p>Then reveal canonical intent.</p>
+<p>Measure correction cost.</p>
+<h1 id="66-stale-test-test">======================================================================
+66. STALE TEST TEST</h1>
+<p>Leave an outdated test after intended policy change.</p>
+<p>Observe whether agent:</p>
+<pre><code>changes code back
+</code></pre>
+<p>or:</p>
+<pre><code>updates stale test
+</code></pre>
+<p>Semantic architecture should help distinguish authority.</p>
+<h1 id="67-copy-paste-propagation-test">======================================================================
+67. COPY-PASTE PROPAGATION TEST</h1>
+<p>Introduce one questionable pattern.</p>
+<p>Later tasks affect neighboring modules.</p>
+<p>Measure how many copies appear after N changes.</p>
+<h1 id="68-renaming-vs-semantic-change">======================================================================
+68. RENAMING VS SEMANTIC CHANGE</h1>
+<p>Test:</p>
+<pre><code>rename state only
+</code></pre>
+<p>vs:</p>
+<pre><code>split state meaning
+</code></pre>
+<p>Without semantic IDs, agent may confuse them.</p>
+<p>Measure impact.</p>
+<h1 id="69-policy-version-test">======================================================================
+69. POLICY VERSION TEST</h1>
+<p>Change policy twice.</p>
+<p>Then ask agent to explain historical action.</p>
+<p>Can it distinguish:</p>
+<pre><code>valid under old policy
+</code></pre>
+<p>from:</p>
+<pre><code>currently invalid?
+</code></pre>
+<h1 id="70-product-pivot-test">======================================================================
+70. PRODUCT PIVOT TEST</h1>
+<p>Invalidate a major product assumption.</p>
+<p>Measure:</p>
+<pre><code>how much obsolete semantics remain accidentally active
+</code></pre>
+<p>after pivot.</p>
+<h1 id="71-agent-handoff-test">======================================================================
+71. AGENT HANDOFF TEST</h1>
+<p>Every 5 tasks switch to fresh model/session.</p>
+<p>Measure:</p>
+<pre><code>reconstruction cost
+semantic errors
+preserved intent
+</code></pre>
+<p>This simulates real agent turnover.</p>
+<h1 id="72-different-model-handoff">======================================================================
+72. DIFFERENT MODEL HANDOFF</h1>
+<p>Use different model families over time.</p>
+<p>Question:</p>
+<pre><code>Does explicit semantics reduce model-specific interpretation variance?
+</code></pre>
+<h1 id="73-agent-explanation-test">======================================================================
+73. AGENT EXPLANATION TEST</h1>
+<p>After task N ask:</p>
+<pre><code>"Why is this rule true?"
+</code></pre>
+<p>Score answer against:</p>
+<pre><code>actual semantic provenance
+</code></pre>
+<p>not:</p>
+<pre><code>plausible explanation
+</code></pre>
+<p>This tests whether rationale remains reconstructable.</p>
+<h1 id="74-drift-metrics">======================================================================
+74. DRIFT METRICS</h1>
+<p>Develop metrics such as:</p>
+<p>Semantic Drift Rate:</p>
+<pre><code>unintended semantic deviations
+------------------------------
+maintenance tasks
+</code></pre>
+<p>Assumption Accumulation:</p>
+<pre><code>unresolved consequential assumptions after N tasks
+</code></pre>
+<p>Stale Dependency Rate:</p>
+<pre><code>affected interpretations not updated
+</code></pre>
+<p>Rationale Recovery Accuracy:</p>
+<pre><code>correctly explained semantic decisions
+---------------------------------------
+tested decisions
+</code></pre>
+<h1 id="75-semantic-entropy">======================================================================
+75. SEMANTIC ENTROPY</h1>
+<p>Explore but do not assume usefulness.</p>
+<p>Potential notion:</p>
+<pre><code>number of plausible interpretations of system behavior available to a new
+agent from repository artifacts
+</code></pre>
+<p>Explicit semantics should reduce ambiguity.</p>
+<p>Find a measurable proxy rather than vague metaphor.</p>
+<h1 id="76-context-reconstruction-cost">======================================================================
+76. CONTEXT RECONSTRUCTION COST</h1>
+<p>Measure:</p>
+<pre><code>files read
+searches
+tokens
+tool calls
+</code></pre>
+<p>required before first correct edit.</p>
+<p>Track over repository age.</p>
+<h1 id="77-repair-cost-of-old-assumptions">======================================================================
+77. REPAIR COST OF OLD ASSUMPTIONS</h1>
+<p>When hidden assumption finally discovered:</p>
+<pre><code>how many files/tests/modules must change?
+</code></pre>
+<p>This may measure compounding debt.</p>
+<h1 id="78-semantic-fan-out-growth">======================================================================
+78. SEMANTIC FAN-OUT GROWTH</h1>
+<p>Track number of dependents per semantic rule over time.</p>
+<p>If hidden rules gain dependents:</p>
+<pre><code>correction becomes expensive.
+</code></pre>
+<p>Dependency closure may make growth visible earlier.</p>
+<h1 id="79-duplicated-rule-count">======================================================================
+79. DUPLICATED RULE COUNT</h1>
+<p>Track same business rule encoded in:</p>
+<pre><code>services
+UI
+tests
+SQL
+prompts
+</code></pre>
+<p>Semantic compilation may reduce duplication.</p>
+<h1 id="80-authority-violation-count">======================================================================
+80. AUTHORITY VIOLATION COUNT</h1>
+<p>Track cases where implementation introduces semantic behavior outside
+authoritative specification.</p>
+<p>This may be a key erosion metric.</p>
+<h1 id="81-cost-per-semantically-correct-change">======================================================================
+81. COST PER SEMANTICALLY CORRECT CHANGE</h1>
+<p>Primary economic metric:</p>
+<pre><code>                total maintenance cost
+</code></pre>
+<p>CostCorrectChange = -----------------------------
+correct semantic changes</p>
+<p>Include:</p>
+<pre><code>inference
+tools
+retries
+human correction
+defect repair
+</code></pre>
+<h1 id="82-longitudinal-cost">======================================================================
+82. LONGITUDINAL COST</h1>
+<p>Compute cumulative:</p>
+<pre><code>total tokens
+total tool calls
+total defects
+total human interventions
+total cost
+</code></pre>
+<p>Do not evaluate only per-task average.</p>
+<h1 id="83-cost-growth-slope">======================================================================
+83. COST GROWTH SLOPE</h1>
+<p>Fit:</p>
+<pre><code>task index -> context/cost
+</code></pre>
+<p>Question:</p>
+<pre><code>does conventional cost grow faster?
+</code></pre>
+<p>This may be more valuable than static benchmark comparison.</p>
+<h1 id="84-semantic-retention">======================================================================
+84. SEMANTIC RETENTION</h1>
+<p>Measure intended prior business rules preserved correctly after N changes.</p>
+<p>Metric:</p>
+<pre><code>correctly retained validated semantics
+--------------------------------------
+validated semantics expected to survive
+</code></pre>
+<h1 id="85-change-correctness-vs-retention">======================================================================
+85. CHANGE CORRECTNESS VS RETENTION</h1>
+<p>A patch may correctly implement new feature but accidentally break old semantics.</p>
+<p>Score both:</p>
+<pre><code>task correctness
+semantic retention
+</code></pre>
+<h1 id="86-architectural-erosion">======================================================================
+86. ARCHITECTURAL EROSION</h1>
+<p>Track:</p>
+<pre><code>cross-module writes
+dependency cycles
+wildcard/default introductions
+unowned state
+duplicated policies
+direct effect calls
+bypasses
+</code></pre>
+<p>Measure whether AI gradually defeats constraints.</p>
+<h1 id="87-constraint-erosion">======================================================================
+87. CONSTRAINT EROSION</h1>
+<p>Agents may weaken architecture to complete tasks faster.</p>
+<p>Examples:</p>
+<pre><code>make constructor public
+add wildcard
+suppress analyzer
+bypass capability
+mutate database directly
+</code></pre>
+<p>Track frequency.</p>
+<h1 id="88-architecture-self-defense">======================================================================
+88. ARCHITECTURE SELF-DEFENSE</h1>
+<p>A strong semantic architecture should make erosion itself visible.</p>
+<p>Examples:</p>
+<pre><code>compile error
+analyzer diagnostic
+failing generated test
+</code></pre>
+<p>Measure how often attempts are blocked mechanically.</p>
+<h1 id="89-human-review-load">======================================================================
+89. HUMAN REVIEW LOAD</h1>
+<p>Over time, do reviewers need to understand increasing repository context?</p>
+<p>Semantic architecture may produce:</p>
+<pre><code>small semantic diff
+impact report
+</code></pre>
+<p>Measure human review minutes if practical.</p>
+<h1 id="90-current-ai-research">======================================================================
+90. CURRENT AI RESEARCH</h1>
+<p>Search current research on:</p>
+<pre><code>long-horizon coding agents
+repository evolution
+persistent agent memory
+self-generated context
+autonomous software maintenance
+codebase drift
+AI technical debt
+agent-generated technical debt
+iterative code generation
+model collapse analogies only if directly relevant
+software archaeology with LLMs
+</code></pre>
+<p>Avoid speculative analogy where evidence is weak.</p>
+<h1 id="91-human-software-maintenance-literature">======================================================================
+91. HUMAN SOFTWARE MAINTENANCE LITERATURE</h1>
+<p>Research foundational work on:</p>
+<pre><code>Lehman's laws of software evolution
+software entropy
+architectural erosion
+technical debt
+program comprehension
+change impact
+software aging
+maintenance cost curves
+</code></pre>
+<p>Determine which established findings already predict the problem.</p>
+<h1 id="92-lehmans-laws">======================================================================
+92. LEHMAN'S LAWS</h1>
+<p>Investigate whether laws of software evolution are relevant.</p>
+<p>Do not assume AI changes them.</p>
+<p>Ask:</p>
+<pre><code>Does AI accelerate change rate without changing underlying erosion dynamics?
+</code></pre>
+<h1 id="93-software-entropy-terminology">======================================================================
+93. SOFTWARE ENTROPY TERMINOLOGY</h1>
+<p>"Software entropy" is often used loosely.</p>
+<p>Avoid adopting it unless precisely defined.</p>
+<p>Prefer measurable terms:</p>
+<pre><code>semantic drift
+dependency growth
+assumption accumulation
+architectural violations
+</code></pre>
+<h1 id="94-human-vs-ai-comparison">======================================================================
+94. HUMAN VS AI COMPARISON</h1>
+<p>If possible compare:</p>
+<pre><code>human maintenance
+AI maintenance
+human+AI
+</code></pre>
+<p>Do not claim AI is worse without evidence.</p>
+<p>AI may actually improve consistency in some contexts.</p>
+<h1 id="95-ai-advantage-counterargument">======================================================================
+95. AI ADVANTAGE COUNTERARGUMENT</h1>
+<p>LLMs can search entire repositories quickly and may preserve consistency better
+than humans.</p>
+<p>Semantic architecture may therefore provide smaller incremental benefit than
+expected.</p>
+<p>Test this seriously.</p>
+<h1 id="96-retrieval-counterargument">======================================================================
+96. RETRIEVAL COUNTERARGUMENT</h1>
+<p>Modern repository indexing, embeddings, graph retrieval, and agent memory may
+already solve much of semantic reconstruction.</p>
+<p>Compare:</p>
+<pre><code>retrieval improvements
+</code></pre>
+<p>against:</p>
+<pre><code>explicit semantic authority
+</code></pre>
+<p>Question:</p>
+<pre><code>Is the main issue finding information or knowing which information is
+authoritative?
+</code></pre>
+<h1 id="97-memory-counterargument">======================================================================
+97. MEMORY COUNTERARGUMENT</h1>
+<p>Persistent project memory may preserve rationale.</p>
+<p>But memory can become:</p>
+<pre><code>stale
+contradictory
+unverified
+</code></pre>
+<p>Compare memory systems with semantic provenance.</p>
+<h1 id="98-documentation-counterargument">======================================================================
+98. DOCUMENTATION COUNTERARGUMENT</h1>
+<p>Could high-quality docs/ADRs solve the problem cheaply?</p>
+<p>Compare:</p>
+<pre><code>prose governance
+</code></pre>
+<p>against:</p>
+<pre><code>machine-enforced semantics
+</code></pre>
+<p>Measure maintenance burden and drift.</p>
+<h1 id="99-ddd-counterargument">======================================================================
+99. DDD COUNTERARGUMENT</h1>
+<p>Could strong DDD aggregates and modularity solve most of this?</p>
+<p>Identify incremental value of:</p>
+<pre><code>dependency closure
+migration enforcement
+epistemic status
+capabilities/obligations
+generated semantic context
+</code></pre>
+<h1 id="100-strong-types-counterargument">======================================================================
+100. STRONG TYPES COUNTERARGUMENT</h1>
+<p>Maybe:</p>
+<pre><code>F#/Rust + good modeling
+</code></pre>
+<p>already solves much of longitudinal drift.</p>
+<p>Determine where a semantic compiler adds value beyond type system.</p>
+<h1 id="101-formal-spec-counterargument">======================================================================
+101. FORMAL SPEC COUNTERARGUMENT</h1>
+<p>Maybe existing formal methods already solve drift better.</p>
+<p>Compare:</p>
+<pre><code>TLA+
+Alloy
+refinement types
+proof assistants
+</code></pre>
+<p>Question:</p>
+<pre><code>Is our architecture primarily a usability/adoption layer over known formal ideas?
+</code></pre>
+<h1 id="102-semantic-core-change-rate">======================================================================
+102. SEMANTIC CORE CHANGE RATE</h1>
+<p>If semantic model changes constantly:</p>
+<pre><code>trusted spec may provide little stability.
+</code></pre>
+<p>Measure:</p>
+<pre><code>semantic churn
+</code></pre>
+<p>Hypothesis:</p>
+<pre><code>durable semantic core should change slower than implementation.
+</code></pre>
+<h1 id="103-volatility-classification">======================================================================
+103. VOLATILITY CLASSIFICATION</h1>
+<p>Classify:</p>
+<pre><code>durable
+provisional
+experimental
+</code></pre>
+<p>Track whether experimental concepts accidentally migrate into durable core.</p>
+<p>This connects startup pivotability to drift.</p>
+<h1 id="104-promotion-of-semantics">======================================================================
+104. PROMOTION OF SEMANTICS</h1>
+<p>Potential rule:</p>
+<pre><code>experimental -> provisional -> durable
+</code></pre>
+<p>Promotion requires:</p>
+<pre><code>evidence
+repeated use
+explicit review
+</code></pre>
+<p>Investigate whether this is useful or bureaucratic.</p>
+<h1 id="105-deprecation">======================================================================
+105. DEPRECATION</h1>
+<p>Semantic concept removal should include:</p>
+<pre><code>dependency impact
+migration
+historical provenance
+</code></pre>
+<p>Avoid leaving zombie semantics.</p>
+<h1 id="106-orphan-detection">======================================================================
+106. ORPHAN DETECTION</h1>
+<p>After product pivot:</p>
+<pre><code>semantic modules/states no longer referenced
+</code></pre>
+<p>Compiler could report:</p>
+<pre><code>orphaned semantics
+</code></pre>
+<p>This may prevent obsolete meaning surviving indefinitely.</p>
+<h1 id="107-dead-semantic-code">======================================================================
+107. DEAD SEMANTIC CODE</h1>
+<p>Static dead code is not same as:</p>
+<pre><code>semantically obsolete code
+</code></pre>
+<p>A feature may still be reachable but no longer intended.</p>
+<p>Need provenance/product decision context.</p>
+<h1 id="108-semantic-health-report">======================================================================
+108. SEMANTIC HEALTH REPORT</h1>
+<p>Potential periodic report:</p>
+<pre><code>unresolved assumptions
+orphaned states
+unused capabilities
+blocked obligations
+policy-version skew
+wildcard violations
+dependency cycles
+high fan-out semantic nodes
+stale evidence
+</code></pre>
+<p>Could this act as architecture drift monitoring?</p>
+<h1 id="109-ai-cost-of-semantic-health">======================================================================
+109. AI COST OF SEMANTIC HEALTH</h1>
+<p>If semantic health report lets agent target issues directly:</p>
+<pre><code>less repository scanning
+</code></pre>
+<p>Potential recurring maintenance savings.</p>
+<h1 id="110-longitudinal-benchmark-design">======================================================================
+110. LONGITUDINAL BENCHMARK DESIGN</h1>
+<p>Recommended benchmark:</p>
+<p>Repositories:</p>
+<pre><code>A. competent conventional modular monolith
+B. state-constrained semantic modular monolith
+</code></pre>
+<p>Initial functionality identical.</p>
+<p>Run:</p>
+<pre><code>50–100 sequential changes
+</code></pre>
+<p>with:</p>
+<pre><code>fresh agent session each task
+same model/settings
+hidden semantic oracle
+periodic adversarial ambiguity
+</code></pre>
+<p>Record all metrics.</p>
+<h1 id="111-pre-registration">======================================================================
+111. PRE-REGISTRATION</h1>
+<p>Before experiment freeze:</p>
+<pre><code>task sequence
+hidden oracle
+evaluation criteria
+semantic retention rules
+allowed architecture constraints
+stopping conditions
+</code></pre>
+<p>Prevent hindsight bias.</p>
+<h1 id="112-ablation">======================================================================
+112. ABLATION</h1>
+<p>Test semantic architecture without:</p>
+<pre><code>provenance
+dependency closure
+migration enforcement
+exhaustive matching
+epistemic state
+</code></pre>
+<p>Determine which mechanisms actually reduce drift.</p>
+<h1 id="113-model-scale-experiment">======================================================================
+113. MODEL-SCALE EXPERIMENT</h1>
+<p>Test:</p>
+<pre><code>small model
+medium model
+frontier model
+</code></pre>
+<p>Question:</p>
+<pre><code>does semantic structure reduce drift especially for smaller models?
+</code></pre>
+<h1 id="114-context-limit-experiment">======================================================================
+114. CONTEXT-LIMIT EXPERIMENT</h1>
+<p>Artificially constrain context budget.</p>
+<p>Semantic architecture may degrade more gracefully if it can select relevant
+semantic slices.</p>
+<h1 id="115-repository-scale-experiment">======================================================================
+115. REPOSITORY-SCALE EXPERIMENT</h1>
+<p>Test systems of increasing size.</p>
+<p>Question:</p>
+<pre><code>does drift/context advantage increase with scale?
+</code></pre>
+<h1 id="116-product-pivot-experiment">======================================================================
+116. PRODUCT-PIVOT EXPERIMENT</h1>
+<p>Apply major business pivot after 30 maintenance tasks.</p>
+<p>Measure:</p>
+<pre><code>obsolete assumptions remaining
+reusable semantics
+agent context
+migration cost
+</code></pre>
+<p>This connects two research tracks.</p>
+<h1 id="117-semantic-bug-injection">======================================================================
+117. SEMANTIC BUG INJECTION</h1>
+<p>Insert one incorrect semantic rule intentionally.</p>
+<p>Observe:</p>
+<pre><code>does architecture amplify wrong specification more than conventional code?
+</code></pre>
+<p>This is essential falsification.</p>
+<h1 id="118-specification-correction">======================================================================
+118. SPECIFICATION CORRECTION</h1>
+<p>Later correct semantic rule.</p>
+<p>Measure:</p>
+<pre><code>how completely dependents are surfaced and repaired.
+</code></pre>
+<p>This tests whether explicit authority also makes correcting central mistakes easier.</p>
+<h1 id="119-strong-success-criteria">======================================================================
+119. STRONG SUCCESS CRITERIA</h1>
+<p>A strong result would show over many sequential tasks:</p>
+<pre><code>lower semantic drift rate
+higher semantic retention
+fewer hidden assumptions
+lower context growth
+fewer files read
+fewer repair loops
+lower cumulative cost
+fewer architectural bypasses
+</code></pre>
+<p>And benefits persist after:</p>
+<pre><code>product change
+agent handoff
+model change
+</code></pre>
+<h1 id="120-falsification-conditions">======================================================================
+120. FALSIFICATION CONDITIONS</h1>
+<p>The hypothesis should be weakened if:</p>
+<pre><code>AI-maintained conventional systems do not drift materially faster
+</code></pre>
+<p>or:</p>
+<pre><code>semantic architecture does not reduce drift
+</code></pre>
+<p>or:</p>
+<pre><code>wrong semantic specifications create worse correlated failures
+</code></pre>
+<p>or:</p>
+<pre><code>architecture constraints are routinely weakened by agents
+</code></pre>
+<p>or:</p>
+<pre><code>semantic maintenance cost dominates
+</code></pre>
+<p>or:</p>
+<pre><code>high-quality retrieval/docs/memory provide equivalent benefit more cheaply.
+</code></pre>
+<h1 id="121-required-source-quality">======================================================================
+121. REQUIRED SOURCE QUALITY</h1>
+<p>Prefer:</p>
+<pre><code>foundational software-evolution research
+primary empirical software-engineering studies
+architecture erosion literature
+requirements traceability research
+current long-horizon agent benchmarks
+official benchmark papers
+</code></pre>
+<p>Clearly distinguish:</p>
+<pre><code>established human-software findings
+AI-specific evidence
+architecture inference
+speculation
+</code></pre>
+<h1 id="122-required-output">======================================================================
+122. REQUIRED OUTPUT</h1>
+<p>Produce:</p>
+<ol>
+<li>Executive verdict</li>
+<li>Definition of semantic drift</li>
+<li>Intentional evolution vs drift</li>
+<li>Human software-evolution literature</li>
+<li>Architecture erosion literature</li>
+<li>Technical/semantic/assumption debt comparison</li>
+<li>Requirements/design-rationale loss</li>
+<li>AI-specific drift mechanisms</li>
+<li>Evidence for AI pattern propagation</li>
+<li>Test/documentation/schema entrenchment</li>
+<li>Hyrum's Law implications</li>
+<li>Semantic authority model</li>
+<li>Provenance implications</li>
+<li>Semantic migration implications</li>
+<li>Dependency-closure implications</li>
+<li>Epistemic-state implications</li>
+<li>Longitudinal context-cost hypothesis</li>
+<li>Persistent memory/retrieval counterarguments</li>
+<li>Formal methods/strong-type counterarguments</li>
+<li>Wrong-specification risk</li>
+<li>Over-modeling/rigidity risk</li>
+<li>Metrics</li>
+<li>Longitudinal benchmark design</li>
+<li>Ablation plan</li>
+<li>Economic model</li>
+<li>What is already supported</li>
+<li>What remains speculative</li>
+<li>Architecture changes recommended</li>
+<li>Highest-value experiment</li>
+<li>Final verdict</li>
+</ol>
+<h1 id="123-final-verdict-format">======================================================================
+123. FINAL VERDICT FORMAT</h1>
+<p>Answer:</p>
+<p>Does longitudinal semantic drift exist in conventional software?
+Strongly established / Established / Moderate evidence / Weak evidence</p>
+<p>Is there evidence AI agents amplify it?
+Strong / Moderate / Weak / No direct evidence</p>
+<p>Does explicit semantic authority plausibly reduce it?
+Strong / Moderate / Weak / Unclear</p>
+<p>Does semantic dependency closure plausibly reduce stale assumptions?
+Strong / Moderate / Weak / Unclear</p>
+<p>Does provenance plausibly reduce rationale loss?
+Strong / Moderate / Weak / Unclear</p>
+<p>Does semantic architecture plausibly reduce long-run agent context cost?
+Strong / Moderate / Weak / Unclear</p>
+<p>Biggest AI-specific drift mechanism:
+...</p>
+<p>Strongest existing research analogue:
+...</p>
+<p>Most dangerous architecture failure mode:
+...</p>
+<p>Most important missing evidence:
+...</p>
+<p>Best longitudinal metric:
+...</p>
+<p>Best first experiment:
+...</p>
+<p>Most important architecture change suggested by research:
+...</p>
+<h1 id="124-research-standard">======================================================================
+124. RESEARCH STANDARD</h1>
+<p>Be skeptical.</p>
+<p>Do not call ordinary software evolution an AI-specific problem without evidence.</p>
+<p>Do not assume surviving code represents intended meaning.</p>
+<p>Do not assume tests or documentation are semantic authority.</p>
+<p>Do not assume explicit specifications are automatically correct.</p>
+<p>Do not treat architectural rigidity as a virtue.</p>
+<p>Do not measure only defects at the end; measure how hidden assumptions accumulate
+and how maintenance/context cost changes over time.</p>
+<p>The central question is:</p>
+<pre><code>Does explicit, machine-visible semantic authority prevent repeated AI
+maintenance from turning temporary assumptions and implementation accidents
+into durable system truth — and does that materially reduce long-term
+correctness risk and agent execution cost?
+</code></pre></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

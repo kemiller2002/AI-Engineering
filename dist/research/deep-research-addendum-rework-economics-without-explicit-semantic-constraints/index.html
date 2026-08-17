@@ -1,0 +1,801 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Deep Research Addendum: Rework Economics Without Explicit Semantic Constraints | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">Deep Research Addendum: Rework Economics Without Explicit Semantic Constraints</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/reports/state-modularity-rework-economics-research-addendum-2026-08-14.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#deep-research-addendum-rework-economics-without-explicit-semantic-constraints">Deep Research Addendum: Rework Economics Without Explicit Semantic Constraints</a></li><li><a href="#executive-conclusion">Executive Conclusion</a></li><li><a href="#1-the-original-cost-model-is-incomplete">1. The Original Cost Model Is Incomplete</a></li><li><a href="#-c-task-">[
+C_{task}</a></li><li><a href="#-c-change-">[
+C_{change}</a></li><li><a href="#2-six-different-kinds-of-rework">2. Six Different Kinds of Rework</a></li><li><a href="#2-1-agent-trajectory-rework">2.1 Agent-Trajectory Rework</a></li><li><a href="#3-implementation-rework">3. Implementation Rework</a></li><li><a href="#4-review-rework">4. Review Rework</a></li><li><a href="#5-integration-rework">5. Integration Rework</a></li><li><a href="#6-production-rework">6. Production Rework</a></li><li><a href="#7-architectural-rework">7. Architectural Rework</a></li><li><a href="#change-amplification">Change Amplification</a></li><li><a href="#8-the-expanded-savings-model">8. The Expanded Savings Model</a></li><li><a href="#9-we-need-to-separate-rework-types">9. We Need to Separate Rework Types</a></li><li><a href="#9-1-unavoidable-adaptive-rework">9.1 Unavoidable / Adaptive Rework</a></li><li><a href="#9-2-semantic-rework">9.2 Semantic Rework</a></li><li><a href="#10-new-metric-semantic-rework-rate">10. New Metric: Semantic Rework Rate</a></li><li><a href="#semantic-rework-rate-srr-">Semantic Rework Rate (SRR)</a></li><li><a href="#agent-semantic-rework-rate-asrr-">Agent Semantic Rework Rate (ASRR)</a></li><li><a href="#11-rework-can-compound">11. Rework Can Compound</a></li><li><a href="#12-semantic-architecture-as-a-ratchet">12. Semantic Architecture as a Ratchet</a></li><li><a href="#13-constraint-based-context-elimination">13. Constraint-Based Context Elimination</a></li><li><a href="#constraint-based-context-elimination">Constraint-Based Context Elimination</a></li><li><a href="#conventional-prompt">Conventional prompt</a></li><li><a href="#constrained-semantic-state">Constrained semantic state</a></li><li><a href="#14-dora-s-ai-as-amplifier-framing-strengthens-the-thesis">14. DORA&#39;s &quot;AI as Amplifier&quot; Framing Strengthens the Thesis</a></li><li><a href="#15-provisional-ranking-of-economic-effects">15. Provisional Ranking of Economic Effects</a></li><li><a href="#1-avoided-rework-failed-trajectories">1. Avoided rework / failed trajectories</a></li><li><a href="#2-avoided-human-verification">2. Avoided human verification</a></li><li><a href="#3-avoided-architectural-degradation">3. Avoided architectural degradation</a></li><li><a href="#4-smaller-model-substitution">4. Smaller-model substitution</a></li><li><a href="#5-fewer-tool-calls-and-repository-reads">5. Fewer tool calls and repository reads</a></li><li><a href="#6-raw-input-token-savings">6. Raw input-token savings</a></li><li><a href="#16-revised-economic-thesis">16. Revised Economic Thesis</a></li><li><a href="#17-strongest-validated-mechanisms-from-existing-literature">17. Strongest Validated Mechanisms from Existing Literature</a></li><li><a href="#supported">Supported</a></li><li><a href="#strongly-plausible">Strongly plausible</a></li><li><a href="#not-yet-established">Not yet established</a></li><li><a href="#18-the-critical-remaining-research-question">18. The Critical Remaining Research Question</a></li><li><a href="#19-recommended-updated-cost-model">19. Recommended Updated Cost Model</a></li><li><a href="#initial-production-cost">Initial production cost</a></li><li><a href="#agent-rework">Agent rework</a></li><li><a href="#human-rework">Human rework</a></li><li><a href="#integration-rework">Integration rework</a></li><li><a href="#production-rework">Production rework</a></li><li><a href="#architectural-rework">Architectural rework</a></li><li><a href="#future-change-amplification">Future-change amplification</a></li><li><a href="#20-final-verdict">20. Final Verdict</a></li><li><a href="#literature-referenced-in-the-analysis">Literature Referenced in the Analysis</a></li> </ol> </aside> <section class="document-body"><h1 id="deep-research-addendum-rework-economics-without-explicit-semantic-constraints">Deep Research Addendum: Rework Economics Without Explicit Semantic Constraints</h1>
+<p><strong>Date:</strong> 2026-08-14<br>
+<strong>Scope:</strong> Literature-based synthesis only. No new experiments were run.<br>
+<strong>Research focus:</strong> Factor the cost of rework into the economic case for explicit state ownership, legal transitions, invariants, capabilities, obligations, and semantic dependency modeling.</p>
+<hr>
+<h2 id="executive-conclusion">Executive Conclusion</h2>
+<p>Once rework is included, the economic hypothesis becomes substantially more important than the token-saving hypothesis by itself.</p>
+<p>But there is an important constraint: we cannot take broad software-industry claims such as “30–50% of software effort is rework” and assume that the proposed architecture eliminates that amount of cost. Much rework comes from changed requirements, product learning, infrastructure failures, dependency changes, UX problems, misunderstood customer needs, and other causes that explicit semantic constraints would not prevent.</p>
+<p>The better question is:</p>
+<blockquote>
+<p><strong>How much rework is caused by uncertainty about consequential system behavior—and how much of that uncertainty could be eliminated by explicit state ownership, legal transitions, invariants, dependencies, capabilities, and obligations?</strong></p>
+</blockquote>
+<p>That creates a much stronger and more defensible economic model.</p>
+<p>The core conclusion is:</p>
+<blockquote>
+<p><strong>AI makes software change dramatically cheaper to generate, but not necessarily cheaper to understand, verify, repair, or maintain. As change volume rises, rework can become the limiting cost. Explicit semantic ownership and mechanically enforced transitions may shift correctness work from repeated probabilistic discovery and repair into deterministic validation before the change propagates.</strong></p>
+</blockquote>
+<p>The key economic metric should therefore be:</p>
+<p>[
+\boxed{\text{Cost of Correct Change}}
+]</p>
+<p>rather than:</p>
+<p>[
+\text{Cost of Code Generation}
+]</p>
+<p>Raw token savings remain relevant, but they may be one of the smaller economic effects.</p>
+<hr>
+<h1 id="1-the-original-cost-model-is-incomplete">1. The Original Cost Model Is Incomplete</h1>
+<p>A narrow AI-agent cost model might look like:</p>
+<h1 id="c_task">[
+C_{task}</h1>
+<p>C_{tokens}
++
+C_{tools}
++
+C_{tests}
++
+C_{retries}
+]</p>
+<p>That is too small.</p>
+<p>A more realistic model is:</p>
+<h1 id="c_change">[
+C_{change}</h1>
+<p>C_{initial}
++
+C_{agent\ rework}
++
+C_{review\ rework}
++
+C_{integration\ rework}
++
+C_{production\ rework}
++
+C_{architecture\ rework}
++
+C_{future\ change\ amplification}
+]</p>
+<p>The last several terms may eventually dwarf inference spend.</p>
+<p>DORA's current work explicitly measures <strong>deployment rework rate</strong>: the percentage of deployments consisting of unplanned work to fix bugs. DORA added this because change-failure rate was only an indirect proxy for how much remediation teams were doing.</p>
+<p>That supports an important distinction:</p>
+<blockquote>
+<p><strong>Productive change and corrective change are not economically equivalent.</strong></p>
+</blockquote>
+<hr>
+<h1 id="2-six-different-kinds-of-rework">2. Six Different Kinds of Rework</h1>
+<p>The proposed architecture should be evaluated against different categories of rework separately.</p>
+<p>Not all rework is addressable by better semantic structure.</p>
+<hr>
+<h2 id="21-agent-trajectory-rework">2.1 Agent-Trajectory Rework</h2>
+<p>This is the most immediate form of AI rework:</p>
+<blockquote>
+<p>search → guess → edit → test → fail → search more → reconsider → edit again</p>
+</blockquote>
+<p>Current coding-agent literature shows that this can be enormous.</p>
+<p>AgentLens studied successful SWE trajectories and reported radically different computational paths leading to the same binary “pass.”</p>
+<p>Examples reported in the study include:</p>
+<ul>
+<li>minimal successful solutions averaging about <strong>34K tokens</strong></li>
+<li>brute-force convergence averaging about <strong>857K tokens</strong></li>
+<li>excessive-exploration trajectories averaging about <strong>1.38 million tokens</strong></li>
+<li>one agent consuming <strong>2.62 million tokens for a one-line fix</strong></li>
+</ul>
+<p>The important implication is not merely that agents use many tokens.</p>
+<p>It is:</p>
+<blockquote>
+<p><strong>A large fraction of agent cost may be probabilistic exploration rather than productive implementation.</strong></p>
+</blockquote>
+<p>This is already rework.</p>
+<p>It simply occurs inside the agent rather than appearing as a ticket or human correction.</p>
+<p>A state-constrained semantic system could theoretically replace some of this search.</p>
+<p>Instead of:</p>
+<blockquote>
+<p>“Find out what controls refunds.”</p>
+</blockquote>
+<p>the agent could query:</p>
+<pre><code class="language-text">RefundExecution owner?
+</code></pre>
+<p>and receive:</p>
+<pre><code class="language-text">Owner: Payment
+
+Current:
+    OutcomeUnknown
+
+Legal:
+    ReconcileRefund
+    InvestigateRefund
+
+Forbidden:
+    RequestRefund
+
+Obligation:
+    ReconcileRefund
+</code></pre>
+<p>Potentially unnecessary work then disappears:</p>
+<ul>
+<li>repository search</li>
+<li>status inference</li>
+<li>retry reasoning</li>
+<li>duplicate-effect speculation</li>
+<li>trial edits</li>
+<li>failed tests</li>
+<li>repeated tool calls</li>
+</ul>
+<p>The key economic quantity becomes:</p>
+<blockquote>
+<p><strong>probabilistic work that never occurs</strong></p>
+</blockquote>
+<p>rather than merely:</p>
+<blockquote>
+<p>tokens removed from the initial prompt</p>
+</blockquote>
+<hr>
+<h1 id="3-implementation-rework">3. Implementation Rework</h1>
+<p>Implementation rework occurs when the first attempted change is incomplete or incorrect.</p>
+<p>Recent real-world AI-agent evidence shows that this remains significant.</p>
+<p>A 2026 study examined roughly <strong>33,000 agent-authored GitHub pull requests</strong>.</p>
+<p>Unmerged PRs tended to:</p>
+<ul>
+<li>touch more files</li>
+<li>make larger changes</li>
+<li>fail CI more often</li>
+</ul>
+<p>Bug-fix and performance tasks were among the harder categories.</p>
+<p>A separate analysis of <strong>8,106 AI-agent fix PRs</strong> found test failures among the common reasons agent-generated fixes failed to integrate.</p>
+<p>This distinction matters because generated code may be:</p>
+<ul>
+<li>syntactically correct</li>
+<li>locally reasonable</li>
+<li>stylistically acceptable</li>
+</ul>
+<p>and still be semantically wrong.</p>
+<p>Typical causes include:</p>
+<ul>
+<li>misunderstanding lifecycle state</li>
+<li>violating a hidden precondition</li>
+<li>missing a downstream consumer</li>
+<li>modifying data owned elsewhere</li>
+<li>misunderstanding partial failure</li>
+<li>omitting required recovery behavior</li>
+</ul>
+<p>Those are precisely the categories explicit semantic structure attempts to expose.</p>
+<p>A conventional loop may be:</p>
+<pre><code class="language-text">first implementation
+    ↓
+review/test failure
+    ↓
+second implementation
+</code></pre>
+<p>A constrained system attempts to move toward:</p>
+<pre><code class="language-text">legal semantic transition
+    ↓
+valid implementation attempt
+</code></pre>
+<p>But this architecture cannot eliminate all implementation rework.</p>
+<p>It will not inherently prevent:</p>
+<ul>
+<li>wrong algorithms</li>
+<li>poor UI choices</li>
+<li>malformed SQL</li>
+<li>performance regressions</li>
+<li>memory leaks</li>
+<li>races not modeled semantically</li>
+<li>misunderstood feature intent</li>
+</ul>
+<p>Therefore the economic model needs an <strong>addressable rework fraction</strong> rather than assuming all rework is preventable.</p>
+<hr>
+<h1 id="4-review-rework">4. Review Rework</h1>
+<p>Human review may be more economically important than raw AI-generation cost.</p>
+<p>Consider:</p>
+<ul>
+<li>AI writes a change in 5 minutes</li>
+<li>senior engineer spends 25 minutes understanding it</li>
+<li>engineer finds a domain violation</li>
+<li>sends it back</li>
+<li>another agent run rewrites it</li>
+<li>engineer rereads it</li>
+<li>integration tests expose another assumption</li>
+</ul>
+<p>The production cost was not 5 minutes.</p>
+<p>It was the complete loop.</p>
+<p>DORA describes part of this dynamic as a <strong>verification tax</strong>:</p>
+<blockquote>
+<p>time saved in code generation can be spent again auditing generated changes.</p>
+</blockquote>
+<p>METR's randomized study of experienced open-source developers working in repositories they already knew found that, using early-2025 AI tools, participants took <strong>19% longer</strong> with AI in that experiment.</p>
+<p>That result should not be generalized indiscriminately to all 2026 AI development.</p>
+<p>But it clearly demonstrates the mechanism:</p>
+<blockquote>
+<p><strong>Generation acceleration can be overwhelmed by verification and interaction cost.</strong></p>
+</blockquote>
+<p>A semantic architecture could potentially change the nature of review.</p>
+<p>Instead of asking:</p>
+<blockquote>
+<p>Is this state modification actually legal?</p>
+</blockquote>
+<p>a validator could answer that mechanically.</p>
+<p>Instead of reviewing:</p>
+<pre><code class="language-text">if payment.Status == "Captured" ...
+</code></pre>
+<p>against a mental reconstruction of the full payment lifecycle, a reviewer might inspect:</p>
+<pre><code class="language-text">Transition:
+    Captured -> PartiallyRefunded
+
+Guard:
+    RefundableBalance > 0
+
+Effect:
+    IssueRefund
+
+Produces:
+    RefundRequested
+</code></pre>
+<p>while a semantic validator has already checked the structural legality.</p>
+<p>That does not remove review.</p>
+<p>It may shift review from:</p>
+<blockquote>
+<p>“Did this violate the system?”</p>
+</blockquote>
+<p>toward:</p>
+<blockquote>
+<p>“Is this the business behavior we actually want?”</p>
+</blockquote>
+<p>That distinction could be economically significant because senior-engineer attention is much more expensive than inference tokens.</p>
+<hr>
+<h1 id="5-integration-rework">5. Integration Rework</h1>
+<p>Integration rework may be one of the strongest differentiators between explicit semantic ownership and ordinary AI-assisted coding.</p>
+<p>Consider adding:</p>
+<pre><code class="language-text">PartiallyRefunded
+</code></pre>
+<p>to a payment lifecycle.</p>
+<p>The local code change may be trivial.</p>
+<p>But now the repository may contain assumptions such as:</p>
+<pre><code class="language-text">Payment.Status == Refunded
+Payment.Status != Captured
+switch(payment.Status)
+CASE WHEN payment_status
+eligibleForShipment()
+calculateOrderBalance()
+</code></pre>
+<p>Some dependencies will be obvious.</p>
+<p>Some will not.</p>
+<p>Research on semantic and historical change coupling exists precisely because important dependencies are often not completely represented by basic structural dependencies.</p>
+<p>A standard call graph may tell us:</p>
+<pre><code class="language-text">Order -> Payment
+</code></pre>
+<p>but not necessarily why.</p>
+<p>A semantic model could represent:</p>
+<pre><code class="language-text">ShipmentEligibility
+requires:
+    PaymentClaim = Captured
+</code></pre>
+<p>If the meaning of <code>Captured</code> changes, the semantic system can potentially produce an impact report:</p>
+<pre><code class="language-text">Consumers affected:
+
+ShipmentEligibility
+OrderCompletion
+RefundEligibility
+RevenueRecognition
+</code></pre>
+<p>That is not merely context compression.</p>
+<p>It is:</p>
+<blockquote>
+<p><strong>rework prevention through change-impact completeness</strong></p>
+</blockquote>
+<p>Without strong semantics, the maintenance loop may become:</p>
+<pre><code class="language-text">implement locally
+    ↓
+discover consumer
+    ↓
+fix consumer
+    ↓
+discover another test
+    ↓
+fix test
+    ↓
+production edge case
+    ↓
+hotfix
+</code></pre>
+<p>The desired constrained loop is:</p>
+<pre><code class="language-text">compute semantic impact closure
+    ↓
+perform affected changes
+    ↓
+validate closure
+</code></pre>
+<p>The value is that some downstream repair work becomes planned work.</p>
+<hr>
+<h1 id="6-production-rework">6. Production Rework</h1>
+<p>Production rework is conceptually more expensive because the semantic mistake has escaped the development loop.</p>
+<p>DORA's AI-era findings are relevant here.</p>
+<p>Its research has found that increased AI adoption can correlate with higher individual productivity-related measures while also creating pressure on delivery stability.</p>
+<p>DORA increasingly frames AI as an <strong>amplifier</strong> of the underlying software-delivery system.</p>
+<p>Teams with:</p>
+<ul>
+<li>strong automated testing</li>
+<li>fast feedback</li>
+<li>loose coupling</li>
+<li>healthy delivery systems</li>
+</ul>
+<p>are better positioned to translate AI acceleration into actual delivery performance.</p>
+<p>Weak systems can translate increased change volume into increased instability.</p>
+<p>This supports a deeper architectural concern:</p>
+<p>[
+\text{change generation rate} \uparrow
+]</p>
+<p>does not imply:</p>
+<p>[
+\text{system understanding rate} \uparrow
+]</p>
+<p>AI can therefore increase the rate at which:</p>
+<ul>
+<li>defects</li>
+<li>architectural inconsistencies</li>
+<li>hidden coupling</li>
+<li>invalid assumptions</li>
+</ul>
+<p>enter the system.</p>
+<p>A state-constrained architecture attempts to change the relationship:</p>
+<p>[
+\text{AI change rate} \uparrow
+]</p>
+<p>while mechanically constraining:</p>
+<p>[
+\text{illegal semantic change rate}
+]</p>
+<p>That could be more economically important than reducing an individual prompt by tens of thousands of tokens.</p>
+<hr>
+<h1 id="7-architectural-rework">7. Architectural Rework</h1>
+<p>Architectural rework is the long-tail cost.</p>
+<p>Traditional architecture research already establishes that architectural technical debt can increase future maintenance and evolution cost.</p>
+<p>Architecture erosion has an established literature concerned with:</p>
+<ul>
+<li>detection</li>
+<li>repair</li>
+<li>prevention</li>
+<li>future change cost</li>
+<li>structural degradation</li>
+</ul>
+<p>A longitudinal architectural-debt study describes a familiar pattern:</p>
+<ol>
+<li>quick changes initially increase responsiveness</li>
+<li>shortcuts accumulate</li>
+<li>future changes require more effort</li>
+<li>organizations eventually undertake substantial architectural repair</li>
+</ol>
+<p>AI potentially increases the rate at which this process occurs.</p>
+<p>Suppose AI reduces the local cost of a change from:</p>
+<pre><code class="language-text">2 hours -> 20 minutes
+</code></pre>
+<p>but the cheap change introduces hidden coupling.</p>
+<p>Later, another task now requires:</p>
+<pre><code class="language-text">3 hours instead of 20 minutes
+</code></pre>
+<p>The first task looked productive.</p>
+<p>The software system became less productive.</p>
+<p>This is:</p>
+<h2 id="change-amplification">Change Amplification</h2>
+<p>A local modification increases the cost or semantic reach of future modifications.</p>
+<p>This may ultimately be more dangerous than obvious hallucination because each individual change can look locally correct.</p>
+<hr>
+<h1 id="8-the-expanded-savings-model">8. The Expanded Savings Model</h1>
+<p>The initial economic theory focused heavily on token reduction.</p>
+<p>A more complete model is:</p>
+<p>[
+\begin{aligned}
+Savings = {} &#x26;
+AgentExplorationAvoided \
+&#x26;+ FailedAttemptAvoided \
+&#x26;+ ReviewReworkAvoided \
+&#x26;+ IntegrationReworkAvoided \
+&#x26;+ ProductionReworkAvoided \
+&#x26;+ ArchitectureRepairAvoided \
+&#x26;+ FutureChangeAmplificationAvoided \
+&#x26;+ TokenSavings
+\end{aligned}
+]</p>
+<p>Raw token reduction may turn out to be one of the smaller terms.</p>
+<p>The largest possible benefits may instead come from:</p>
+<ul>
+<li>fewer failed trajectories</li>
+<li>less human verification</li>
+<li>fewer missed dependencies</li>
+<li>fewer production repairs</li>
+<li>slower architectural decay</li>
+<li>cheaper future changes</li>
+</ul>
+<hr>
+<h1 id="9-we-need-to-separate-rework-types">9. We Need to Separate Rework Types</h1>
+<p>It would be incorrect to label all repeated work as avoidable architecture failure.</p>
+<p>Two broad categories matter.</p>
+<hr>
+<h2 id="91-unavoidable--adaptive-rework">9.1 Unavoidable / Adaptive Rework</h2>
+<p>Examples:</p>
+<pre><code class="language-text">changed requirement
+new business information
+unexpected external event
+intentional redesign
+market learning
+product discovery
+customer feedback
+</code></pre>
+<p>The proposed architecture probably does not substantially reduce these.</p>
+<p>In many cases, this is productive learning.</p>
+<hr>
+<h2 id="92-semantic-rework">9.2 Semantic Rework</h2>
+<p>A more useful category is:</p>
+<blockquote>
+<p><strong>Work performed because consequential state, legal actions, authority, dependencies, or recovery requirements were incorrectly inferred, incompletely discovered, or violated.</strong></p>
+</blockquote>
+<p>Examples:</p>
+<pre><code class="language-text">wrong owner modified
+illegal state reached
+hidden invariant violated
+consumer overlooked
+partial failure misunderstood
+required recovery missed
+duplicate action performed
+cross-module assumption missed
+architecture boundary bypassed
+</code></pre>
+<p>This is the portion of rework the proposed architecture plausibly addresses.</p>
+<hr>
+<h1 id="10-new-metric-semantic-rework-rate">10. New Metric: Semantic Rework Rate</h1>
+<p>Define:</p>
+<h2 id="semantic-rework-rate-srr">Semantic Rework Rate (SRR)</h2>
+<p>[
+SRR =
+\frac
+{\text{engineering effort spent correcting semantic misunderstandings}}
+{\text{total engineering effort}}
+]</p>
+<p>For AI-assisted work, define:</p>
+<h2 id="agent-semantic-rework-rate-asrr">Agent Semantic Rework Rate (ASRR)</h2>
+<p>[
+ASRR =
+\frac
+{\text{agent + human effort correcting agent semantic mistakes}}
+{\text{total AI-assisted change effort}}
+]</p>
+<p>Potential inputs include:</p>
+<ul>
+<li>repeated agent calls</li>
+<li>unnecessary repository/tool exploration</li>
+<li>failed tests</li>
+<li>reverted edits</li>
+<li>reviewer corrections</li>
+<li>missed consumers</li>
+<li>integration repair</li>
+<li>production hotfixes</li>
+<li>architectural cleanup</li>
+</ul>
+<p>This may be a more useful KPI than:</p>
+<pre><code class="language-text">tokens per task
+</code></pre>
+<p>because it captures the real economic burden.</p>
+<hr>
+<h1 id="11-rework-can-compound">11. Rework Can Compound</h1>
+<p>There is a deeper risk when AI modifies a codebase repeatedly.</p>
+<p>Suppose an unconstrained agent introduces an invalid abstraction today.</p>
+<p>Tomorrow:</p>
+<ol>
+<li>another agent reads it</li>
+<li>assumes it is intentional</li>
+<li>builds another feature around it</li>
+<li>a third agent sees two examples</li>
+<li>the third agent infers that this is the established pattern</li>
+</ol>
+<p>The mistake becomes repository evidence.</p>
+<p>The feedback loop becomes:</p>
+<p>[
+Bad\ Change
+\rightarrow
+Repository\ Evidence
+\rightarrow
+Agent\ Learns\ Pattern
+\rightarrow
+More\ Bad\ Changes
+]</p>
+<p>This is qualitatively important.</p>
+<p>The codebase becomes simultaneously:</p>
+<ul>
+<li>the product</li>
+<li>documentation</li>
+<li>architectural evidence</li>
+<li>context substrate for the next agent</li>
+</ul>
+<p>That means architectural erosion can become <strong>self-reinforcing under AI maintenance</strong>.</p>
+<p>Long-horizon agent benchmarks such as SWE-EVO and other sustained-evolution work exist because isolated one-shot correctness does not capture this problem.</p>
+<hr>
+<h1 id="12-semantic-architecture-as-a-ratchet">12. Semantic Architecture as a Ratchet</h1>
+<p>Explicit semantic authority could potentially act as an architectural ratchet.</p>
+<p>Conceptually:</p>
+<pre><code class="language-text">legal architecture
+      ↓
+agent change
+      ↓
+semantic validator
+   ↙         ↘
+valid      rejected
+  ↓
+repository remains
+inside semantic envelope
+</code></pre>
+<p>The model does not need to become progressively better at remembering the architecture.</p>
+<p>The architecture prevents certain classes of change from leaving the legal region.</p>
+<p>That suggests another important economic mechanism:</p>
+<blockquote>
+<p><strong>Preventing debt propagation may be more valuable than fixing individual mistakes faster.</strong></p>
+</blockquote>
+<hr>
+<h1 id="13-constraint-based-context-elimination">13. Constraint-Based Context Elimination</h1>
+<p>This changes the meaning of context reduction.</p>
+<p>Without mechanical enforcement, the agent needs context partly to answer:</p>
+<blockquote>
+<p>What can I safely do?</p>
+</blockquote>
+<p>With enforcement, some of that becomes:</p>
+<blockquote>
+<p>The system will not allow illegal actions.</p>
+</blockquote>
+<p>That creates a different kind of compression.</p>
+<p>Call it:</p>
+<h2 id="constraint-based-context-elimination">Constraint-Based Context Elimination</h2>
+<p>If an invariant is mechanically enforced, the model may not require the complete explanation of that invariant in every task.</p>
+<p>For example:</p>
+<h3 id="conventional-prompt">Conventional prompt</h3>
+<pre><code class="language-text">Do not refund a payment twice.
+If a previous refund timed out, do not assume it failed.
+Check the provider before retrying.
+...
+</code></pre>
+<h3 id="constrained-semantic-state">Constrained semantic state</h3>
+<pre><code class="language-text">RefundExecution=OutcomeUnknown
+
+Available:
+    ReconcileRefund
+
+RequestRefund:
+    unavailable
+</code></pre>
+<p>The latter reduces both:</p>
+<ul>
+<li>cognitive search</li>
+<li>opportunity for rework</li>
+</ul>
+<p>This is more than documentation compression.</p>
+<p>It transfers responsibility from probabilistic reasoning to the execution environment.</p>
+<hr>
+<h1 id="14-doras-ai-as-amplifier-framing-strengthens-the-thesis">14. DORA's "AI as Amplifier" Framing Strengthens the Thesis</h1>
+<p>DORA's recent work increasingly frames AI as an amplifier.</p>
+<p>AI does not automatically create high-performing software organizations.</p>
+<p>Organizations with:</p>
+<ul>
+<li>strong delivery systems</li>
+<li>loose coupling</li>
+<li>strong testing</li>
+<li>fast feedback</li>
+</ul>
+<p>are positioned to benefit more.</p>
+<p>Weak systems may experience instability as AI increases throughput.</p>
+<p>The proposed architecture extends that logic:</p>
+<blockquote>
+<p><strong>If AI amplifies the architecture, then architecture that makes consequential legality machine-enforceable should matter disproportionately in an AI-heavy organization.</strong></p>
+</blockquote>
+<p>This is an inference from DORA's evidence.</p>
+<p>DORA did not directly test explicit state ownership or semantic-transition architectures.</p>
+<p>But the implication is consistent with its findings.</p>
+<hr>
+<h1 id="15-provisional-ranking-of-economic-effects">15. Provisional Ranking of Economic Effects</h1>
+<p>Based on the literature, the effects should be considered separately.</p>
+<h2 id="1-avoided-rework--failed-trajectories">1. Avoided rework / failed trajectories</h2>
+<p>Potentially enormous.</p>
+<p>Current agent trajectories already show orders-of-magnitude variation between direct and exploratory successful paths.</p>
+<h2 id="2-avoided-human-verification">2. Avoided human verification</h2>
+<p>Potentially very large.</p>
+<p>Senior-engineer review time is much more expensive than inference tokens.</p>
+<h2 id="3-avoided-architectural-degradation">3. Avoided architectural degradation</h2>
+<p>Potentially the largest long-term benefit.</p>
+<p>Also the hardest to measure and currently the most speculative.</p>
+<h2 id="4-smaller-model-substitution">4. Smaller-model substitution</h2>
+<p>Still potentially enormous.</p>
+<p>If semantics enable a cheaper model to perform the same task reliably, the economic effect may dwarf same-model token compression.</p>
+<h2 id="5-fewer-tool-calls-and-repository-reads">5. Fewer tool calls and repository reads</h2>
+<p>Meaningful and directly tied to deterministic localization.</p>
+<h2 id="6-raw-input-token-savings">6. Raw input-token savings</h2>
+<p>Real, but increasingly likely to be one of the least important economic effects.</p>
+<hr>
+<h1 id="16-revised-economic-thesis">16. Revised Economic Thesis</h1>
+<p>The thesis should no longer be framed primarily as:</p>
+<blockquote>
+<p>State-constrained architecture makes AI cheaper because it uses fewer tokens.</p>
+</blockquote>
+<p>A stronger version is:</p>
+<blockquote>
+<p><strong>AI makes software change dramatically cheaper to generate, but not necessarily cheaper to understand, verify, repair, or maintain. As change volume rises, rework can become the limiting cost. Explicit semantic ownership and mechanically enforced transitions may shift correctness work from repeated probabilistic discovery and repair into deterministic validation before the change propagates.</strong></p>
+</blockquote>
+<p>The primary economic target becomes:</p>
+<p>[
+\boxed{\text{Cost of Correct Change}}
+]</p>
+<p>rather than:</p>
+<p>[
+\text{Cost of Code Generation}
+]</p>
+<p>Token reduction becomes one consequence of a broader reduction in uncertainty and repair work.</p>
+<hr>
+<h1 id="17-strongest-validated-mechanisms-from-existing-literature">17. Strongest Validated Mechanisms from Existing Literature</h1>
+<p>The literature supports several component mechanisms.</p>
+<h3 id="supported">Supported</h3>
+<ul>
+<li>software rework is economically significant</li>
+<li>agent trajectories can contain very large amounts of redundant exploration</li>
+<li>failed and inefficient agent trajectories can consume orders of magnitude more computation</li>
+<li>AI-authored changes still fail CI and integration</li>
+<li>human verification can erase some generation-time productivity gains</li>
+<li>architectural debt increases future change cost</li>
+<li>long-horizon AI maintenance remains difficult</li>
+<li>AI can amplify weaknesses in an organization's software-delivery system</li>
+</ul>
+<h3 id="strongly-plausible">Strongly plausible</h3>
+<ul>
+<li>explicit semantic ownership can improve change-impact analysis</li>
+<li>legal transitions can reject invalid edits earlier</li>
+<li>obligations can reduce ambiguity after uncertain effects</li>
+<li>capabilities can prevent unauthorized state mutation</li>
+<li>semantic impact closure can reduce missed consumers</li>
+<li>executable architecture can reduce the amount of domain legality that must live in an LLM prompt</li>
+</ul>
+<h3 id="not-yet-established">Not yet established</h3>
+<ul>
+<li>the percentage of total software rework that is semantic rework</li>
+<li>the fraction of semantic rework preventable by this architecture</li>
+<li>the actual reduction in ASRR</li>
+<li>the reduction in human review time</li>
+<li>the reduction in downstream hotfixes</li>
+<li>the reduction in long-term architectural erosion</li>
+<li>the dollar value of avoided change amplification</li>
+<li>whether state-derived semantics outperform modern static analysis enough to justify implementation cost</li>
+</ul>
+<hr>
+<h1 id="18-the-critical-remaining-research-question">18. The Critical Remaining Research Question</h1>
+<p>The most important number is no longer simply:</p>
+<blockquote>
+<p>How many context tokens disappear?</p>
+</blockquote>
+<p>It is:</p>
+<blockquote>
+<p><strong>What fraction of software rework is semantic rework that a state/transition/capability architecture could make impossible, mechanically visible, or immediately detectable?</strong></p>
+</blockquote>
+<p>That number connects:</p>
+<ul>
+<li>architecture</li>
+<li>agent behavior</li>
+<li>human review</li>
+<li>integration reliability</li>
+<li>production stability</li>
+<li>long-term maintenance</li>
+<li>economics</li>
+</ul>
+<p>It may be one of the most important questions in the entire research program.</p>
+<hr>
+<h1 id="19-recommended-updated-cost-model">19. Recommended Updated Cost Model</h1>
+<p>For each AI-assisted change, future analysis should track:</p>
+<h2 id="initial-production-cost">Initial production cost</h2>
+<ul>
+<li>agent input tokens</li>
+<li>agent output tokens</li>
+<li>reasoning tokens</li>
+<li>tool calls</li>
+<li>CI/test cost</li>
+<li>elapsed time</li>
+</ul>
+<h2 id="agent-rework">Agent rework</h2>
+<ul>
+<li>failed attempts</li>
+<li>repeated searches</li>
+<li>repeated file reads</li>
+<li>rejected patches</li>
+<li>redundant tool calls</li>
+<li>additional model calls</li>
+</ul>
+<h2 id="human-rework">Human rework</h2>
+<ul>
+<li>review time</li>
+<li>reviewer corrections</li>
+<li>clarification cycles</li>
+<li>manual repair</li>
+<li>re-review time</li>
+</ul>
+<h2 id="integration-rework">Integration rework</h2>
+<ul>
+<li>CI failures</li>
+<li>missed dependency fixes</li>
+<li>regression repairs</li>
+<li>additional integration patches</li>
+</ul>
+<h2 id="production-rework">Production rework</h2>
+<ul>
+<li>hotfixes</li>
+<li>rollback effort</li>
+<li>incident response</li>
+<li>data repair</li>
+<li>recovery activity</li>
+</ul>
+<h2 id="architectural-rework">Architectural rework</h2>
+<ul>
+<li>boundary repair</li>
+<li>coupling removal</li>
+<li>later refactors caused by earlier changes</li>
+<li>repeated semantic inconsistency cleanup</li>
+</ul>
+<h2 id="future-change-amplification">Future-change amplification</h2>
+<p>Estimate whether prior changes increase:</p>
+<ul>
+<li>files touched per task</li>
+<li>semantic fan-out</li>
+<li>retrieval context</li>
+<li>tool calls</li>
+<li>repair loops</li>
+<li>human review time</li>
+<li>cost per correct change</li>
+</ul>
+<hr>
+<h1 id="20-final-verdict">20. Final Verdict</h1>
+<p>Factoring rework into the research makes the proposed architecture more economically interesting, not less.</p>
+<p>However, the argument must remain narrow.</p>
+<p>We should not claim:</p>
+<blockquote>
+<p>explicit state architecture eliminates software rework.</p>
+</blockquote>
+<p>The defensible claim is:</p>
+<blockquote>
+<p><strong>Explicit semantic ownership may reduce a specific and economically important class of rework: work caused by uncertainty about consequential state, authority, legal transitions, dependencies, and required recovery actions.</strong></p>
+</blockquote>
+<p>The larger economic opportunity may therefore come from:</p>
+<ul>
+<li>reducing probabilistic exploration</li>
+<li>preventing semantically illegal changes</li>
+<li>exposing impact before implementation</li>
+<li>reducing human verification</li>
+<li>preventing integration repair</li>
+<li>stopping architectural mistakes from becoming future repository evidence</li>
+<li>limiting change amplification</li>
+</ul>
+<p>rather than from raw prompt compression alone.</p>
+<p>The strongest overall theory is now:</p>
+<p>[
+\text{Executable Semantic Structure}
+\rightarrow
+\text{Less Uncertainty}
+\rightarrow
+\text{Less Rework}
+\rightarrow
+\text{Lower Cost of Correct Change}
+]</p>
+<p>That is the economic thesis worth carrying forward.</p>
+<hr>
+<h1 id="literature-referenced-in-the-analysis">Literature Referenced in the Analysis</h1>
+<p>The preceding synthesis drew on the following classes of literature and recent research:</p>
+<ul>
+<li>Boehm / Basili software-defect and rework economics</li>
+<li>DORA software-delivery performance and deployment-rework research</li>
+<li>DORA AI-era work on AI as an amplifier of software-delivery systems</li>
+<li>METR randomized research on AI-assisted developer productivity</li>
+<li>AgentLens research on coding-agent trajectory efficiency</li>
+<li>recent trajectory analysis of failed and redundant AI-agent behavior</li>
+<li>empirical studies of AI-agent-authored GitHub pull requests</li>
+<li>research on failed AI-agent repair PRs</li>
+<li>semantic and historical change-coupling research</li>
+<li>architectural technical debt and architecture-erosion literature</li>
+<li>longitudinal architectural-debt studies</li>
+<li>SWE-EVO and long-horizon software-evolution agent benchmarks</li>
+</ul>
+<p>Evidence from these sources supports the existence and economic significance of rework, trajectory waste, verification burden, integration failure, and architectural degradation.</p>
+<p>It does <strong>not</strong> directly establish the amount of rework that the proposed semantic state architecture would eliminate.</p>
+<p>That remains the critical unmeasured variable.</p></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

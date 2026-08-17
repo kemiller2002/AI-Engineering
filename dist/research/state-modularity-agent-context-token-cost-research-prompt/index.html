@@ -1,0 +1,1305 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>state modularity agent context token cost research prompt | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">state modularity agent context token cost research prompt</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/prompts/state-modularity-agent-context-token-cost-research-prompt.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#ai-research-mission-state-constrained-modularity-context-reduction-and-agent-execution-cost">AI RESEARCH MISSION — STATE-CONSTRAINED MODULARITY, CONTEXT REDUCTION, AND AGENT EXECUTION COST</a></li><li><a href="#role">ROLE</a></li><li><a href="#-primary-hypothesis">======================================================================
+PRIMARY HYPOTHESIS</a></li><li><a href="#-core-research-question">======================================================================
+CORE RESEARCH QUESTION</a></li><li><a href="#-important-distinction">======================================================================
+IMPORTANT DISTINCTION</a></li><li><a href="#-part-1-research-what-software-modularity-already-tells-us">======================================================================
+PART 1 — RESEARCH WHAT SOFTWARE MODULARITY ALREADY TELLS US</a></li><li><a href="#-part-2-define-semantic-module">======================================================================
+PART 2 — DEFINE SEMANTIC MODULE</a></li><li><a href="#-part-3-module-ownership-of-state">======================================================================
+PART 3 — MODULE OWNERSHIP OF STATE</a></li><li><a href="#-part-4-cross-module-contracts">======================================================================
+PART 4 — CROSS-MODULE CONTRACTS</a></li><li><a href="#-part-5-context-graph">======================================================================
+PART 5 — CONTEXT GRAPH</a></li><li><a href="#-part-6-define-minimum-sufficient-agent-context">======================================================================
+PART 6 — DEFINE MINIMUM SUFFICIENT AGENT CONTEXT</a></li><li><a href="#-part-7-context-reduction-ratio">======================================================================
+PART 7 — CONTEXT REDUCTION RATIO</a></li><li><a href="#-part-8-token-economics">======================================================================
+PART 8 — TOKEN ECONOMICS</a></li><li><a href="#-part-9-cost-per-correct-task">======================================================================
+PART 9 — COST PER CORRECT TASK</a></li><li><a href="#-part-10-modularity-experiment">======================================================================
+PART 10 — MODULARITY EXPERIMENT</a></li><li><a href="#-part-11-domain-size">======================================================================
+PART 11 — DOMAIN SIZE</a></li><li><a href="#-part-12-experiment-local-change">======================================================================
+PART 12 — EXPERIMENT: LOCAL CHANGE</a></li><li><a href="#-part-13-experiment-cross-module-change">======================================================================
+PART 13 — EXPERIMENT: CROSS-MODULE CHANGE</a></li><li><a href="#-part-14-experiment-state-split">======================================================================
+PART 14 — EXPERIMENT: STATE SPLIT</a></li><li><a href="#-part-15-experiment-new-business-rule">======================================================================
+PART 15 — EXPERIMENT: NEW BUSINESS RULE</a></li><li><a href="#-part-16-experiment-unknown-effect">======================================================================
+PART 16 — EXPERIMENT: UNKNOWN EFFECT</a></li><li><a href="#-part-17-experiment-module-internal-refactor">======================================================================
+PART 17 — EXPERIMENT: MODULE INTERNAL REFACTOR</a></li><li><a href="#-part-18-experiment-contract-change">======================================================================
+PART 18 — EXPERIMENT: CONTRACT CHANGE</a></li><li><a href="#-part-19-context-loading-strategies">======================================================================
+PART 19 — CONTEXT LOADING STRATEGIES</a></li><li><a href="#-part-20-lazy-context-expansion">======================================================================
+PART 20 — LAZY CONTEXT EXPANSION</a></li><li><a href="#-part-21-tokenization-itself">======================================================================
+PART 21 — TOKENIZATION ITSELF</a></li><li><a href="#-part-22-semantic-context-compression">======================================================================
+PART 22 — SEMANTIC CONTEXT COMPRESSION</a></li><li><a href="#-part-23-agent-specific-view">======================================================================
+PART 23 — AGENT-SPECIFIC VIEW</a></li><li><a href="#-part-24-module-summarization-without-drift">======================================================================
+PART 24 — MODULE SUMMARIZATION WITHOUT DRIFT</a></li><li><a href="#-part-25-cross-module-information-hiding">======================================================================
+PART 25 — CROSS-MODULE INFORMATION HIDING</a></li><li><a href="#-part-26-token-savings-at-repository-scale">======================================================================
+PART 26 — TOKEN SAVINGS AT REPOSITORY SCALE</a></li><li><a href="#-part-27-economic-scenarios">======================================================================
+PART 27 — ECONOMIC SCENARIOS</a></li><li><a href="#-part-28-break-even-analysis">======================================================================
+PART 28 — BREAK-EVEN ANALYSIS</a></li><li><a href="#-part-29-smaller-model-hypothesis">======================================================================
+PART 29 — SMALLER MODEL HYPOTHESIS</a></li><li><a href="#-part-30-cache-effects">======================================================================
+PART 30 — CACHE EFFECTS</a></li><li><a href="#-part-31-parallel-agents">======================================================================
+PART 31 — PARALLEL AGENTS</a></li><li><a href="#-part-32-modular-monolith-vs-microservices">======================================================================
+PART 32 — MODULAR MONOLITH VS MICROSERVICES</a></li><li><a href="#-part-33-database-coupling">======================================================================
+PART 33 — DATABASE COUPLING</a></li><li><a href="#-part-34-what-can-break-the-token-savings-">======================================================================
+PART 34 — WHAT CAN BREAK THE TOKEN SAVINGS?</a></li><li><a href="#-part-35-modularity-metrics">======================================================================
+PART 35 — MODULARITY METRICS</a></li><li><a href="#-part-36-experimental-control-requirements">======================================================================
+PART 36 — EXPERIMENTAL CONTROL REQUIREMENTS</a></li><li><a href="#-part-37-longitudinal-test">======================================================================
+PART 37 — LONGITUDINAL TEST</a></li><li><a href="#-part-38-research-existing-ai-agent-evidence">======================================================================
+PART 38 — RESEARCH EXISTING AI-AGENT EVIDENCE</a></li><li><a href="#-part-39-tokenizer-experiments">======================================================================
+PART 39 — TOKENIZER EXPERIMENTS</a></li><li><a href="#-part-40-cost-calculator">======================================================================
+PART 40 — COST CALCULATOR</a></li><li><a href="#-part-41-falsification-criteria">======================================================================
+PART 41 — FALSIFICATION CRITERIA</a></li><li><a href="#-part-42-strong-result-criteria">======================================================================
+PART 42 — STRONG RESULT CRITERIA</a></li><li><a href="#-part-43-required-output">======================================================================
+PART 43 — REQUIRED OUTPUT</a></li><li><a href="#-part-44-research-queue">======================================================================
+PART 44 — RESEARCH QUEUE</a></li><li><a href="#-final-question">======================================================================
+FINAL QUESTION</a></li><li><a href="#-research-standard">======================================================================
+RESEARCH STANDARD</a></li> </ol> </aside> <section class="document-body"><h1 id="ai-research-mission--state-constrained-modularity-context-reduction-and-agent-execution-cost">AI RESEARCH MISSION — STATE-CONSTRAINED MODULARITY, CONTEXT REDUCTION, AND AGENT EXECUTION COST</h1>
+<h1 id="role">ROLE</h1>
+<p>Act as a combined:</p>
+<ul>
+<li>AI-agent systems researcher</li>
+<li>software architecture researcher</li>
+<li>modularity / information-hiding researcher</li>
+<li>programming-language researcher</li>
+<li>compiler and static-analysis researcher</li>
+<li>AI inference-cost researcher</li>
+<li>empirical software-engineering researcher</li>
+</ul>
+<p>Your task is to investigate whether explicit state-transition architecture can improve software modularity in a way that materially reduces the context an AI coding or operational agent must consume.</p>
+<p>The economic question is central:</p>
+<pre><code>Can state-constrained modular architecture reduce token consumption,
+model calls, tool calls, repository reads, repair loops, and ultimately
+dollars spent per correct agent task?
+</code></pre>
+<p>Do NOT assume the hypothesis is true.</p>
+<p>Try to falsify it.</p>
+<p>Separate:</p>
+<pre><code>architectural correctness benefits
+</code></pre>
+<p>from:</p>
+<pre><code>token/context benefits
+</code></pre>
+<p>from:</p>
+<pre><code>total economic benefits.
+</code></pre>
+<h1 id="primary-hypothesis">======================================================================
+PRIMARY HYPOTHESIS</h1>
+<p>Investigate this hypothesis:</p>
+<pre><code>Explicit state, legal transitions, invariants, capabilities, obligations,
+and semantic dependencies may create stronger module boundaries.
+</code></pre>
+<p>Those boundaries may allow an agent to work with a much smaller semantic slice
+of the software system.</p>
+<p>Instead of providing an agent with:</p>
+<pre><code>a large repository
+many implementation files
+broad documentation
+database schemas
+scattered business rules
+tests
+API handlers
+historical conventions
+</code></pre>
+<p>the system may be able to provide:</p>
+<pre><code>the relevant module
+its current authoritative state
+its legal transitions
+its public transition interface
+required evidence
+available capabilities
+outstanding obligations
+declared dependencies
+contracts for neighboring modules
+</code></pre>
+<p>If true, this could make state-constrained architecture function as:</p>
+<pre><code>semantic partitioning
+    +
+context compression
+    +
+action-space reduction
+</code></pre>
+<h1 id="core-research-question">======================================================================
+CORE RESEARCH QUESTION</h1>
+<p>Does explicit state-transition architecture make it easier to separate
+commercial software into semantically independent modules such that an AI agent
+can correctly modify or operate one module while loading substantially less
+context from the rest of the system?</p>
+<p>If yes:</p>
+<pre><code>How much context can be eliminated?
+
+How many tokens can be saved?
+
+How much money can be saved?
+
+Does the improvement persist after including:
+    semantic schemas
+    interfaces
+    dependency metadata
+    compiler feedback
+    cross-module queries
+    additional tool calls?
+
+Does correctness improve at the same time?
+
+At what scale does the approach become economically meaningful?
+</code></pre>
+<h1 id="important-distinction">======================================================================
+IMPORTANT DISTINCTION</h1>
+<p>Do not assume:</p>
+<pre><code>smaller source module = smaller agent context.
+</code></pre>
+<p>A physically small module may still require understanding many external rules.</p>
+<p>Likewise:</p>
+<pre><code>a larger module with strong semantic contracts may require very little
+external context.
+</code></pre>
+<p>Therefore study:</p>
+<pre><code>SEMANTIC CONTEXT SIZE
+</code></pre>
+<p>rather than merely:</p>
+<pre><code>lines of code per module.
+</code></pre>
+<h1 id="part-1--research-what-software-modularity-already-tells-us">======================================================================
+PART 1 — RESEARCH WHAT SOFTWARE MODULARITY ALREADY TELLS US</h1>
+<p>Research established work on:</p>
+<ul>
+<li>information hiding</li>
+<li>modular programming</li>
+<li>separation of concerns</li>
+<li>cohesion and coupling</li>
+<li>abstract data types</li>
+<li>domain-driven design bounded contexts</li>
+<li>functional core / imperative shell</li>
+<li>object capability systems</li>
+<li>algebraic data types</li>
+<li>state machines</li>
+<li>typestate</li>
+<li>protocol/state types</li>
+<li>session types</li>
+<li>effect systems</li>
+<li>actor systems</li>
+<li>event sourcing</li>
+<li>workflow systems</li>
+<li>microservices</li>
+<li>modular monoliths</li>
+<li>package/module systems</li>
+<li>component contracts</li>
+<li>API design</li>
+</ul>
+<p>Focus on mechanisms that reduce the amount of information a developer must
+understand in order to safely change one part of a system.</p>
+<p>Ask:</p>
+<pre><code>Is this analogous to what AI coding agents need?
+</code></pre>
+<p>Do not simply assume human cognitive modularity transfers directly to LLM
+context efficiency.</p>
+<p>Identify where the analogy is justified and where it is speculative.</p>
+<h1 id="part-2--define-semantic-module">======================================================================
+PART 2 — DEFINE SEMANTIC MODULE</h1>
+<p>Develop a precise working definition of a semantic module.</p>
+<p>Candidate definition:</p>
+<pre><code>A semantic module owns authoritative state and exposes changes to that
+state only through a declared transition boundary.
+</code></pre>
+<p>A module may contain:</p>
+<pre><code>owned subject types
+authoritative state families
+legal transitions
+invariants
+capability derivation
+obligations
+trusted events
+effect ports
+public claims
+version information
+explicit dependencies
+</code></pre>
+<p>It should hide implementation details that external agents do not need.</p>
+<p>Example:</p>
+<pre><code>Payment Module
+</code></pre>
+<p>Owns:
+PaymentLifecycle
+RefundExecution
+Payment evidence
+payment effects</p>
+<p>Exposes:
+CapturePayment
+RequestRefund
+ReconcileRefund
+payment capabilities
+trusted payment events</p>
+<p>Does NOT expose:
+arbitrary mutable Payment.Status
+raw database mutation
+Stripe SDK internals
+unrelated order internals</p>
+<h1 id="part-3--module-ownership-of-state">======================================================================
+PART 3 — MODULE OWNERSHIP OF STATE</h1>
+<p>Investigate whether authoritative-state ownership naturally defines module
+boundaries.</p>
+<p>Test this rule:</p>
+<pre><code>One authoritative state family should have one semantic owner.
+</code></pre>
+<p>Other modules may:</p>
+<pre><code>observe it
+depend on it
+react to events from it
+request transitions through it
+</code></pre>
+<p>but should not mutate it directly.</p>
+<p>Ask whether this reduces coupling.</p>
+<p>Compare:</p>
+<p>CONVENTIONAL:</p>
+<pre><code>Order service changes Payment.Status
+Payment service changes Order.Status
+Shipping code checks customer flags
+UI writes approval fields
+SQL jobs mutate status columns
+</code></pre>
+<p>against:</p>
+<p>STATE-OWNED:</p>
+<pre><code>Payment owns PaymentState
+Order owns OrderState
+Customer owns CustomerState
+Shipment owns ShipmentState
+</code></pre>
+<p>Cross-module operations occur through:</p>
+<pre><code>transitions
+events
+capabilities
+obligations
+coordinators
+</code></pre>
+<h1 id="part-4--cross-module-contracts">======================================================================
+PART 4 — CROSS-MODULE CONTRACTS</h1>
+<p>Determine the minimum information one module must expose to another.</p>
+<p>Candidate semantic contract:</p>
+<pre><code>Module identity
+
+exported states / claims
+
+exported trusted events
+
+requestable transitions
+
+capability requirements
+
+effect contracts
+
+obligations relevant to consumers
+
+version/hash
+</code></pre>
+<p>Avoid exposing internal implementation unnecessarily.</p>
+<p>Ask:</p>
+<pre><code>Could an AI agent modify the Payment module while receiving only:
+
+    Payment semantic contract
+    Payment implementation
+    contracts of direct dependencies
+
+instead of the complete repository?
+</code></pre>
+<h1 id="part-5--context-graph">======================================================================
+PART 5 — CONTEXT GRAPH</h1>
+<p>Model the repository as a semantic dependency graph.</p>
+<p>Nodes may include:</p>
+<pre><code>Module
+StateCase
+Transition
+Capability
+Obligation
+Claim
+Event
+Policy
+Effect
+</code></pre>
+<p>Edges:</p>
+<pre><code>owns
+requires
+produces
+observes
+authorizes
+satisfies
+triggers
+dependsOn
+</code></pre>
+<p>For a requested change, calculate the transitive semantic impact.</p>
+<p>Then construct the smallest relevant context slice.</p>
+<p>Example task:</p>
+<pre><code>"Add partial refunds."
+</code></pre>
+<p>Potential context slice:</p>
+<pre><code>Payment module
+RefundExecution state
+Refund capability
+payment policy
+payment effect contract
+Order contract if refund changes order eligibility
+</code></pre>
+<p>Do NOT automatically include:</p>
+<pre><code>Shipping implementation
+Customer UI
+unrelated reporting
+authentication internals
+</code></pre>
+<p>Test whether semantic dependency closure can safely determine this slice.</p>
+<h1 id="part-6--define-minimum-sufficient-agent-context">======================================================================
+PART 6 — DEFINE MINIMUM SUFFICIENT AGENT CONTEXT</h1>
+<p>Create a measurable concept:</p>
+<pre><code>Minimum Sufficient Semantic Context (MSSC)
+</code></pre>
+<p>Definition:</p>
+<pre><code>The smallest context set from which an agent can complete a requested
+task with the required semantic correctness.
+</code></pre>
+<p>Measure MSSC using:</p>
+<pre><code>tokens
+bytes
+files
+semantic nodes
+modules
+</code></pre>
+<p>Distinguish:</p>
+<pre><code>Actual Context Supplied
+</code></pre>
+<p>from:</p>
+<pre><code>Minimum Sufficient Context
+</code></pre>
+<p>and:</p>
+<pre><code>Full Repository Context.
+</code></pre>
+<h1 id="part-7--context-reduction-ratio">======================================================================
+PART 7 — CONTEXT REDUCTION RATIO</h1>
+<p>Define:</p>
+<pre><code>    tokens in minimum sufficient semantic context
+</code></pre>
+<p>CSR = ------------------------------------------------
+tokens in conventional task context</p>
+<p>Call this:</p>
+<pre><code>Context Size Ratio (CSR)
+</code></pre>
+<p>or propose a better name.</p>
+<p>Also calculate:</p>
+<pre><code>Context Reduction = 1 - CSR
+</code></pre>
+<p>Example:</p>
+<pre><code>conventional context:
+    80,000 tokens
+
+semantic module context:
+    12,000 tokens
+
+CSR:
+    0.15
+
+context reduction:
+    85%
+</code></pre>
+<p>Do NOT invent expected percentages.</p>
+<p>Measure them experimentally.</p>
+<h1 id="part-8--token-economics">======================================================================
+PART 8 — TOKEN ECONOMICS</h1>
+<p>For each experiment record actual model usage where possible:</p>
+<pre><code>input tokens
+output tokens
+cached input tokens
+reasoning tokens if exposed
+model calls
+</code></pre>
+<p>Calculate:</p>
+<pre><code>input-token cost
+output-token cost
+total inference cost
+</code></pre>
+<p>Use actual current model pricing when conducting the research.</p>
+<p>Record:</p>
+<pre><code>provider
+model
+pricing date
+input price
+cached input price
+output price
+</code></pre>
+<p>Do not assume one model or one vendor.</p>
+<p>Build calculations so prices can be substituted later.</p>
+<h1 id="part-9--cost-per-correct-task">======================================================================
+PART 9 — COST PER CORRECT TASK</h1>
+<p>Token cost alone is insufficient.</p>
+<p>Calculate:</p>
+<pre><code>                total agent cost across attempts
+</code></pre>
+<p>CostCorrect = -----------------------------------------------
+number of semantically correct completions</p>
+<p>Include where measurable:</p>
+<pre><code>inference
+tool usage
+retrieval
+test/CI execution
+human intervention
+repair attempts
+</code></pre>
+<p>A modular architecture that saves tokens but produces more integration errors
+may be economically worse.</p>
+<p>Likewise, an architecture that uses slightly more tokens but greatly reduces
+failure may be economically superior.</p>
+<h1 id="part-10--modularity-experiment">======================================================================
+PART 10 — MODULARITY EXPERIMENT</h1>
+<p>Construct the same domain system in at least two forms.</p>
+<p>A. CONVENTIONAL / IMPLICIT SYSTEM</p>
+<p>Characteristics:</p>
+<pre><code>shared mutable entities
+status fields/enums
+rules distributed through services
+cross-module database access
+broad repository knowledge required
+</code></pre>
+<p>B. STATE-CONSTRAINED MODULAR SYSTEM</p>
+<p>Characteristics:</p>
+<pre><code>explicit state ownership
+explicit transitions
+protected mutation
+module contracts
+explicit dependencies
+capabilities
+obligations
+semantic dependency graph
+</code></pre>
+<p>Keep business functionality equivalent.</p>
+<p>Do not intentionally make the conventional implementation bad.</p>
+<p>It should represent competent normal commercial software.</p>
+<h1 id="part-11--domain-size">======================================================================
+PART 11 — DOMAIN SIZE</h1>
+<p>Use a domain large enough for modularity to matter.</p>
+<p>Suggested modules:</p>
+<pre><code>Customer
+Order
+Payment
+Fraud/Risk
+Shipment
+Refund
+Notification
+</code></pre>
+<p>Potential states:</p>
+<p>Customer:
+Unverified
+Verified
+Blocked</p>
+<p>Order:
+Draft
+Submitted
+Approved
+Cancelled
+Completed</p>
+<p>Payment:
+None
+Authorized
+Captured
+Refunded</p>
+<p>Shipment:
+NotReady
+Ready
+Shipped
+Delivered</p>
+<p>RefundExecution:
+Idle
+Requested
+Succeeded
+Failed
+OutcomeUnknown</p>
+<p>Include cross-module rules.</p>
+<p>Example:</p>
+<pre><code>Shipment may ship only when:
+    Customer Verified
+    Order Approved
+    Payment Captured
+    Shipment Ready
+</code></pre>
+<h1 id="part-12--experiment-local-change">======================================================================
+PART 12 — EXPERIMENT: LOCAL CHANGE</h1>
+<p>Task:</p>
+<pre><code>Add a new local Payment state or transition.
+</code></pre>
+<p>Example:</p>
+<pre><code>Payment gains PartiallyRefunded.
+</code></pre>
+<p>Measure what an agent needs to inspect.</p>
+<p>Conventional system:</p>
+<pre><code>repository searches
+files read
+context tokens
+tests
+repair loops
+</code></pre>
+<p>State-modular system:</p>
+<pre><code>Payment module
+semantic impact report
+direct dependency contracts
+affected consumers
+</code></pre>
+<p>Question:</p>
+<pre><code>Does semantic ownership contain the change?
+</code></pre>
+<h1 id="part-13--experiment-cross-module-change">======================================================================
+PART 13 — EXPERIMENT: CROSS-MODULE CHANGE</h1>
+<p>Task:</p>
+<pre><code>Allow shipping for a new order category only when payment and fraud
+conditions are satisfied.
+</code></pre>
+<p>This intentionally crosses boundaries.</p>
+<p>Measure whether semantic modularity still reduces context or whether
+cross-module dependencies eliminate the advantage.</p>
+<p>This experiment is important for falsification.</p>
+<h1 id="part-14--experiment-state-split">======================================================================
+PART 14 — EXPERIMENT: STATE SPLIT</h1>
+<p>Use:</p>
+<pre><code>Approved
+</code></pre>
+<p>split into:</p>
+<pre><code>ConditionallyApproved
+FullyApproved
+</code></pre>
+<p>Measure:</p>
+<pre><code>modules touched
+semantic dependencies surfaced
+context tokens
+files read
+repair cycles
+missed assumptions
+</code></pre>
+<p>Compare full repository search against semantic dependency slicing.</p>
+<h1 id="part-15--experiment-new-business-rule">======================================================================
+PART 15 — EXPERIMENT: NEW BUSINESS RULE</h1>
+<p>Example:</p>
+<pre><code>Block shipment when Customer becomes Blocked after payment capture.
+</code></pre>
+<p>Measure whether the agent can operate with:</p>
+<pre><code>Customer contract
+Shipment contract
+cross-module policy/coordinator
+</code></pre>
+<p>without needing internal implementations of unrelated modules.</p>
+<h1 id="part-16--experiment-unknown-effect">======================================================================
+PART 16 — EXPERIMENT: UNKNOWN EFFECT</h1>
+<p>Inject:</p>
+<pre><code>Refund API timeout
+</code></pre>
+<p>Compare whether the agent needs broad repository reasoning to determine
+safe recovery.</p>
+<p>State-constrained system should expose:</p>
+<pre><code>RefundExecution = OutcomeUnknown
+
+obligations:
+    ReconcileRefund
+
+legal frontier:
+    no new refund
+    reconcile/investigate
+</code></pre>
+<p>Measure context and token cost.</p>
+<h1 id="part-17--experiment-module-internal-refactor">======================================================================
+PART 17 — EXPERIMENT: MODULE INTERNAL REFACTOR</h1>
+<p>Change implementation without changing the semantic contract.</p>
+<p>Example:</p>
+<pre><code>replace Payment gateway adapter
+</code></pre>
+<p>or:</p>
+<pre><code>change payment persistence implementation
+</code></pre>
+<p>Hypothesis:</p>
+<pre><code>no other module context should be necessary.
+</code></pre>
+<p>Test whether the agent can reliably perform such work using only:</p>
+<pre><code>module implementation
+semantic contract
+effect interface
+</code></pre>
+<p>This may be where modularity produces the largest context savings.</p>
+<h1 id="part-18--experiment-contract-change">======================================================================
+PART 18 — EXPERIMENT: CONTRACT CHANGE</h1>
+<p>Change an exported semantic contract.</p>
+<p>Example:</p>
+<pre><code>Payment introduces PartiallyCaptured.
+</code></pre>
+<p>The semantic dependency graph should identify affected consumers.</p>
+<p>Measure whether:</p>
+<pre><code>only dependent modules
+</code></pre>
+<p>must enter agent context.</p>
+<p>Compare against broad repository retrieval.</p>
+<h1 id="part-19--context-loading-strategies">======================================================================
+PART 19 — CONTEXT LOADING STRATEGIES</h1>
+<p>Compare at least:</p>
+<p>Strategy A:
+Entire repository / very broad retrieval</p>
+<p>Strategy B:
+Conventional search-based retrieval</p>
+<p>Strategy C:
+static module boundary retrieval</p>
+<p>Strategy D:
+semantic dependency slice</p>
+<p>Strategy E:
+semantic dependency slice + lazy expansion</p>
+<p>Lazy expansion means:</p>
+<pre><code>start with the smallest semantic context
+retrieve additional modules only when a declared dependency or compiler
+diagnostic shows they are necessary.
+</code></pre>
+<p>Measure total tokens across the entire task, not just the first prompt.</p>
+<h1 id="part-20--lazy-context-expansion">======================================================================
+PART 20 — LAZY CONTEXT EXPANSION</h1>
+<p>This may be a particularly important optimization.</p>
+<p>Potential algorithm:</p>
+<pre><code>1. Parse task.
+2. Map task to semantic subjects/modules.
+3. Load their semantic contracts.
+4. Load impacted implementation.
+5. Calculate dependency closure.
+6. Include direct consequential dependencies.
+7. Execute.
+8. If compiler/runtime exposes another dependency:
+       fetch only that semantic slice.
+9. Continue.
+</code></pre>
+<p>Compare against preloading all potentially related code.</p>
+<h1 id="part-21--tokenization-itself">======================================================================
+PART 21 — TOKENIZATION ITSELF</h1>
+<p>Study actual tokenizer behavior.</p>
+<p>Do not assume:</p>
+<pre><code>fewer characters = proportionally fewer tokens.
+</code></pre>
+<p>Measure token counts for:</p>
+<pre><code>source code
+JSON semantic IR
+compact semantic IR
+generated contracts
+natural-language documentation
+tool schemas
+</code></pre>
+<p>Test different representations of the same semantic information.</p>
+<p>Example:</p>
+<p>Verbose JSON:</p>
+<pre><code>{
+  "stateFamily": "PaymentLifecycle",
+  "state": "Captured"
+}
+</code></pre>
+<p>Compact representation:</p>
+<pre><code>PaymentLifecycle=Captured
+</code></pre>
+<p>Binary or highly compressed formats may save storage but are not necessarily
+useful to an LLM.</p>
+<p>Find representations that optimize:</p>
+<pre><code>token count
+readability
+model comprehension
+reliable generation
+</code></pre>
+<h1 id="part-22--semantic-context-compression">======================================================================
+PART 22 — SEMANTIC CONTEXT COMPRESSION</h1>
+<p>Compare the token size required to convey the same business rule using:</p>
+<p>A. source implementation</p>
+<p>B. tests</p>
+<p>C. prose documentation</p>
+<p>D. semantic IR</p>
+<p>E. generated compact agent view</p>
+<p>Example rule:</p>
+<pre><code>Shipment can occur only when:
+    Order Approved
+    Payment Captured
+    Customer Verified
+    Shipment Ready
+</code></pre>
+<p>Measure tokenization of each representation.</p>
+<p>Then test whether the model actually performs equally well with the shorter
+representation.</p>
+<p>Compression that reduces understanding is not useful.</p>
+<h1 id="part-23--agent-specific-view">======================================================================
+PART 23 — AGENT-SPECIFIC VIEW</h1>
+<p>Investigate generating a compact agent-facing representation from the richer IR.</p>
+<p>The full IR may be ideal for compilers but unnecessarily verbose for inference.</p>
+<p>Example:</p>
+<p>FULL SEMANTIC MODEL:
+detailed IDs
+provenance
+policy metadata
+relations
+versions</p>
+<p>AGENT SLICE:</p>
+<pre><code>Shipment S17
+
+Current:
+    Ready
+
+Requires Ship:
+    Order=Approved
+    Payment=Captured
+    Customer=Verified
+
+Blocked because:
+    Customer=Blocked
+
+Available:
+    HoldShipment
+    RequestCustomerReview
+
+Obligations:
+    ResolveCustomerEligibility
+</code></pre>
+<p>Question:</p>
+<pre><code>Can a compact generated agent projection preserve semantic correctness
+while drastically reducing tokens?
+</code></pre>
+<h1 id="part-24--module-summarization-without-drift">======================================================================
+PART 24 — MODULE SUMMARIZATION WITHOUT DRIFT</h1>
+<p>Traditional AI repository summaries can become stale.</p>
+<p>Investigate whether semantic summaries generated directly from the semantic IR
+avoid this problem.</p>
+<p>Compare:</p>
+<pre><code>AI-written module summary
+</code></pre>
+<p>against:</p>
+<pre><code>compiler-generated semantic contract
+</code></pre>
+<p>Measure:</p>
+<pre><code>token size
+completeness
+drift after state changes
+correctness for agent tasks
+</code></pre>
+<h1 id="part-25--cross-module-information-hiding">======================================================================
+PART 25 — CROSS-MODULE INFORMATION HIDING</h1>
+<p>Test whether agents unnecessarily inspect implementation details when semantic
+contracts are available.</p>
+<p>For each task record:</p>
+<pre><code>modules whose source was read
+modules whose contract was read
+modules actually modified
+</code></pre>
+<p>Define:</p>
+<pre><code>Implementation Exposure Ratio
+
+    unrelated implementation tokens supplied
+</code></pre>
+<p>IER = --------------------------------------------
+total implementation tokens supplied</p>
+<p>Lower may be better if correctness is maintained.</p>
+<h1 id="part-26--token-savings-at-repository-scale">======================================================================
+PART 26 — TOKEN SAVINGS AT REPOSITORY SCALE</h1>
+<p>Model several repository sizes.</p>
+<p>For example:</p>
+<pre><code>50k LOC
+250k LOC
+1M LOC
+5M LOC
+</code></pre>
+<p>Do not assume agents ever load all LOC.</p>
+<p>Instead estimate/measure typical retrieved context per task.</p>
+<p>Then model semantic slices such as:</p>
+<pre><code>local module
+module + 1 dependency
+module + 3 dependencies
+large cross-cutting change
+</code></pre>
+<p>Calculate distributions rather than one average.</p>
+<h1 id="part-27--economic-scenarios">======================================================================
+PART 27 — ECONOMIC SCENARIOS</h1>
+<p>Using current verified model prices, calculate example economics for:</p>
+<pre><code>100 agent tasks/day
+1,000 agent tasks/day
+10,000 agent tasks/day
+</code></pre>
+<p>For each architecture calculate:</p>
+<pre><code>average input tokens/task
+average output tokens/task
+average retries/task
+average model calls/task
+correctness rate
+cost per correct completion
+</code></pre>
+<p>Then:</p>
+<pre><code>daily cost
+monthly cost
+annual cost
+</code></pre>
+<p>Run multiple scenarios.</p>
+<p>Example categories:</p>
+<pre><code>conservative savings
+moderate savings
+large savings
+</code></pre>
+<p>Do not fabricate savings.</p>
+<p>Base scenarios on measured experiment results.</p>
+<h1 id="part-28--break-even-analysis">======================================================================
+PART 28 — BREAK-EVEN ANALYSIS</h1>
+<p>State-constrained modularity has implementation cost.</p>
+<p>Include:</p>
+<pre><code>domain modeling
+semantic compiler/tooling
+module boundary work
+migrations
+training
+generated contracts
+governance
+</code></pre>
+<p>Estimate:</p>
+<pre><code>upfront engineering cost
+</code></pre>
+<p>against:</p>
+<pre><code>recurring inference savings
+maintenance savings
+defect reduction
+</code></pre>
+<p>Calculate:</p>
+<pre><code>number of agent tasks to break even
+</code></pre>
+<p>and:</p>
+<pre><code>months to break even
+</code></pre>
+<p>under different usage levels.</p>
+<h1 id="part-29--smaller-model-hypothesis">======================================================================
+PART 29 — SMALLER MODEL HYPOTHESIS</h1>
+<p>Test a potentially larger economic effect:</p>
+<pre><code>Does semantic modularity allow a smaller/cheaper model to perform a task
+that otherwise requires a larger model?
+</code></pre>
+<p>Compare:</p>
+<pre><code>large model + broad repository context
+</code></pre>
+<p>against:</p>
+<pre><code>smaller model + constrained semantic module context
+</code></pre>
+<p>Measure:</p>
+<pre><code>semantic correctness
+token usage
+retries
+cost per correct completion
+</code></pre>
+<p>If supported, model substitution may produce larger savings than token
+compression alone.</p>
+<h1 id="part-30--cache-effects">======================================================================
+PART 30 — CACHE EFFECTS</h1>
+<p>Modular semantic contracts may be stable.</p>
+<p>Investigate:</p>
+<pre><code>prompt caching
+cached module contracts
+stable semantic IR prefixes
+incremental state/context updates
+</code></pre>
+<p>Measure whether modular architecture increases the percentage of context that
+can be cached across tasks.</p>
+<p>This could materially change economics.</p>
+<h1 id="part-31--parallel-agents">======================================================================
+PART 31 — PARALLEL AGENTS</h1>
+<p>Explicit module boundaries may allow agents to work independently.</p>
+<p>Test:</p>
+<pre><code>Agent A -> Payment
+Agent B -> Shipment
+Agent C -> Customer
+</code></pre>
+<p>with semantic contracts between them.</p>
+<p>Compare with agents sharing a broad mutable code surface.</p>
+<p>Measure:</p>
+<pre><code>context duplication
+merge conflicts
+semantic conflicts
+coordination messages/tokens
+rework
+</code></pre>
+<p>Question:</p>
+<pre><code>Does modularity reduce per-agent context enough to offset coordination cost?
+</code></pre>
+<h1 id="part-32--modular-monolith-vs-microservices">======================================================================
+PART 32 — MODULAR MONOLITH VS MICROSERVICES</h1>
+<p>Do not confuse semantic modularity with network deployment architecture.</p>
+<p>Compare:</p>
+<pre><code>modular monolith with strong state ownership
+</code></pre>
+<p>against:</p>
+<pre><code>microservices with weak semantic boundaries
+</code></pre>
+<p>and possibly:</p>
+<pre><code>microservices with strong semantic boundaries.
+</code></pre>
+<p>Hypothesis:</p>
+<pre><code>semantic modularity may matter more to agent context than physical service
+separation.
+</code></pre>
+<h1 id="part-33--database-coupling">======================================================================
+PART 33 — DATABASE COUPLING</h1>
+<p>Investigate one major source of broken modularity:</p>
+<pre><code>shared database tables
+</code></pre>
+<p>Test whether semantic modules can remain meaningful if multiple modules can
+directly mutate the same tables.</p>
+<p>Likely architectural question:</p>
+<pre><code>Does authoritative state ownership require write ownership even when
+physical storage remains shared?
+</code></pre>
+<p>Measure agent context implications.</p>
+<h1 id="part-34--what-can-break-the-token-savings">======================================================================
+PART 34 — WHAT CAN BREAK THE TOKEN SAVINGS?</h1>
+<p>Actively look for failure modes:</p>
+<ol>
+<li>
+<p>Semantic contracts become huge.</p>
+</li>
+<li>
+<p>Cross-module dependencies are dense.</p>
+</li>
+<li>
+<p>Most commercial changes are cross-cutting.</p>
+</li>
+<li>
+<p>Agents repeatedly fetch hidden implementation anyway.</p>
+</li>
+<li>
+<p>Generated IR uses more tokens than source summaries.</p>
+</li>
+<li>
+<p>Compiler diagnostics create additional loops.</p>
+</li>
+<li>
+<p>Module boundaries require duplicated semantic descriptions.</p>
+</li>
+<li>
+<p>State machines fragment simple logic excessively.</p>
+</li>
+<li>
+<p>Policy modules create indirect coupling.</p>
+</li>
+<li>
+<p>Agent retrieval systems already achieve similar context reduction without
+state-constrained architecture.</p>
+</li>
+<li>
+<p>Repository context is cheap because caching dominates.</p>
+</li>
+<li>
+<p>Output/reasoning tokens dominate input-token savings.</p>
+</li>
+<li>
+<p>Tool latency dominates inference cost.</p>
+</li>
+<li>
+<p>Correctness gains are small.</p>
+</li>
+<li>
+<p>Semantic compiler maintenance costs exceed token savings.</p>
+</li>
+</ol>
+<p>Design empirical tests for each.</p>
+<h1 id="part-35--modularity-metrics">======================================================================
+PART 35 — MODULARITY METRICS</h1>
+<p>Create and evaluate useful metrics.</p>
+<p>Possible metrics:</p>
+<p>SEMANTIC MODULE CONTEXT SIZE
+Tokens needed to understand one module's consequential behavior.</p>
+<p>SEMANTIC DEPENDENCY FAN-OUT
+Number of other modules directly affected by a semantic change.</p>
+<p>SEMANTIC TRANSITIVE FAN-OUT
+Total impacted modules through dependency closure.</p>
+<p>CONTEXT SIZE RATIO
+semantic task context / conventional task context</p>
+<p>CONTEXT REDUCTION
+1 - context size ratio</p>
+<p>IMPLEMENTATION EXPOSURE
+implementation tokens outside the modified semantic module</p>
+<p>CONTRACT-TO-IMPLEMENTATION RATIO
+contract tokens required / hidden implementation tokens</p>
+<p>TOKENS PER CORRECT COMPLETION</p>
+<p>DOLLARS PER CORRECT COMPLETION</p>
+<p>MODULE ESCAPE RATE
+percentage of tasks that initially look local but require context outside
+the module.</p>
+<p>LAZY EXPANSION RATE
+number of additional semantic slices fetched after initial context.</p>
+<h1 id="part-36--experimental-control-requirements">======================================================================
+PART 36 — EXPERIMENTAL CONTROL REQUIREMENTS</h1>
+<p>Be careful about confounders.</p>
+<p>Keep constant where possible:</p>
+<pre><code>business behavior
+task wording
+model
+temperature/settings
+tool availability
+test suite
+repository size
+documentation quality
+</code></pre>
+<p>Randomize:</p>
+<pre><code>task order
+</code></pre>
+<p>Repeat runs.</p>
+<p>Use fresh agent sessions where appropriate.</p>
+<p>Do not let one architecture receive better documentation unless the
+documentation is itself part of the architecture being tested.</p>
+<h1 id="part-37--longitudinal-test">======================================================================
+PART 37 — LONGITUDINAL TEST</h1>
+<p>Run repeated changes.</p>
+<p>For example:</p>
+<pre><code>50 sequential domain changes
+</code></pre>
+<p>Measure whether module boundaries remain stable or decay.</p>
+<p>Important question:</p>
+<pre><code>Does state ownership resist architectural erosion under repeated AI
+modifications?
+</code></pre>
+<p>Track:</p>
+<pre><code>cross-module dependencies
+module context size
+tokens/task
+semantic fan-out
+direct mutation attempts
+bypasses
+architectural drift
+</code></pre>
+<p>The strongest hypothesis would predict that context requirements grow more
+slowly in the constrained modular system.</p>
+<h1 id="part-38--research-existing-ai-agent-evidence">======================================================================
+PART 38 — RESEARCH EXISTING AI-AGENT EVIDENCE</h1>
+<p>Search current primary research and official technical work on:</p>
+<pre><code>coding-agent context windows
+repository retrieval
+context engineering
+codebase indexing
+repository maps
+agent memory
+dependency-aware retrieval
+graph-based code retrieval
+compiler-guided coding agents
+typed tool interfaces
+program slicing
+static analysis for LLM coding
+modular code generation
+multi-agent software engineering
+context compression
+inference cost optimization
+</code></pre>
+<p>Look specifically for empirical measures involving:</p>
+<pre><code>tokens
+retrieved files
+trajectory length
+tool calls
+cost
+success rate
+</code></pre>
+<p>Distinguish:</p>
+<pre><code>direct evidence
+</code></pre>
+<p>from:</p>
+<pre><code>adjacent evidence
+</code></pre>
+<p>from:</p>
+<pre><code>architectural inference.
+</code></pre>
+<h1 id="part-39--tokenizer-experiments">======================================================================
+PART 39 — TOKENIZER EXPERIMENTS</h1>
+<p>Use actual tokenizers for representative current models where available.</p>
+<p>Tokenize:</p>
+<pre><code>whole implementation files
+module-level implementation
+semantic contracts
+IR
+compact agent projections
+</code></pre>
+<p>Calculate actual token differences.</p>
+<p>Do not estimate token counts from word or character counts when a tokenizer is
+available.</p>
+<h1 id="part-40--cost-calculator">======================================================================
+PART 40 — COST CALCULATOR</h1>
+<p>Produce a reusable cost model.</p>
+<p>Inputs:</p>
+<pre><code>tasks per period
+average uncached input tokens
+average cached input tokens
+output tokens
+average retries
+model input price
+cached input price
+output price
+correctness rate
+</code></pre>
+<p>Outputs:</p>
+<pre><code>cost per attempt
+expected cost per correct completion
+daily cost
+monthly cost
+annual cost
+</code></pre>
+<p>Allow conventional and state-modular architectures to be compared side by side.</p>
+<h1 id="part-41--falsification-criteria">======================================================================
+PART 41 — FALSIFICATION CRITERIA</h1>
+<p>Before seeing results, define conditions that would weaken or reject the
+economic hypothesis.</p>
+<p>Examples:</p>
+<p>Reject or substantially weaken the token-saving hypothesis if:</p>
+<pre><code>semantic context is not materially smaller
+</code></pre>
+<p>or:</p>
+<pre><code>additional semantic metadata offsets repository savings
+</code></pre>
+<p>or:</p>
+<pre><code>cross-module expansion occurs on most tasks
+</code></pre>
+<p>or:</p>
+<pre><code>correctness does not improve
+</code></pre>
+<p>or:</p>
+<pre><code>total cost per correct completion is not reduced
+</code></pre>
+<p>or:</p>
+<pre><code>upfront engineering cost has an impractical break-even period.
+</code></pre>
+<p>Define numerical thresholds only after pilot measurements provide a rational
+basis.</p>
+<h1 id="part-42--strong-result-criteria">======================================================================
+PART 42 — STRONG RESULT CRITERIA</h1>
+<p>Define what evidence would justify the claim:</p>
+<pre><code>"State-constrained modular architecture makes AI agents cheaper to run."
+</code></pre>
+<p>Require more than one small benchmark.</p>
+<p>A strong result should show, across multiple realistic tasks:</p>
+<pre><code>materially smaller context
+fewer input tokens
+no reduction in semantic correctness
+lower cost per correct completion
+repeatability
+persistence over sequential maintenance
+acceptable upfront/break-even cost
+</code></pre>
+<p>An even stronger result would show:</p>
+<pre><code>smaller models achieving equivalent correctness.
+</code></pre>
+<h1 id="part-43--required-output">======================================================================
+PART 43 — REQUIRED OUTPUT</h1>
+<p>Produce a research report containing:</p>
+<ol>
+<li>
+<p>Executive conclusion</p>
+</li>
+<li>
+<p>State of existing research</p>
+</li>
+<li>
+<p>Theory connecting:
+state ownership
+modularity
+semantic dependency
+agent context size
+token usage
+cost</p>
+</li>
+<li>
+<p>Definition of semantic module</p>
+</li>
+<li>
+<p>Definition of Minimum Sufficient Semantic Context</p>
+</li>
+<li>
+<p>Semantic dependency/context-slicing model</p>
+</li>
+<li>
+<p>Experimental architecture</p>
+</li>
+<li>
+<p>Tokenizer experiment design</p>
+</li>
+<li>
+<p>Cost model</p>
+</li>
+<li>
+<p>Cost-per-correct-completion model</p>
+</li>
+<li>
+<p>Pilot experiments</p>
+</li>
+<li>
+<p>Results tables</p>
+</li>
+<li>
+<p>Module-local vs cross-module results</p>
+</li>
+<li>
+<p>Smaller-model results if practical</p>
+</li>
+<li>
+<p>Caching implications</p>
+</li>
+<li>
+<p>Longitudinal implications</p>
+</li>
+<li>
+<p>Counterevidence and failure modes</p>
+</li>
+<li>
+<p>Break-even analysis</p>
+</li>
+<li>
+<p>What is empirically supported</p>
+</li>
+<li>
+<p>What remains speculative</p>
+</li>
+<li>
+<p>Recommended next experiments</p>
+</li>
+<li>
+<p>Final verdict</p>
+</li>
+</ol>
+<h1 id="part-44--research-queue">======================================================================
+PART 44 — RESEARCH QUEUE</h1>
+<p>As research progresses, maintain a research queue.</p>
+<p>For every meaningful finding:</p>
+<pre><code>ask what uncertainty it creates
+
+add follow-up questions
+
+rank them by:
+    falsification value
+    economic importance
+    architectural importance
+    experimental feasibility
+</code></pre>
+<p>Do not stop when the initial questions are answered.</p>
+<p>Look for results that challenge the architecture.</p>
+<h1 id="final-question">======================================================================
+FINAL QUESTION</h1>
+<p>The final question is not:</p>
+<pre><code>"Are state machines good?"
+</code></pre>
+<p>It is:</p>
+<pre><code>Can explicit ownership of consequential state and transitions create
+semantic module boundaries strong enough that an AI agent can safely
+operate on a small, mechanically selected portion of a software system?
+</code></pre>
+<p>And if so:</p>
+<pre><code>How many context tokens disappear?
+
+How much total agent execution cost disappears?
+
+How much does cost per correct completion improve?
+
+At what software scale and agent volume does the additional architecture
+pay for itself?
+</code></pre>
+<h1 id="research-standard">======================================================================
+RESEARCH STANDARD</h1>
+<p>Be skeptical.</p>
+<p>Do not turn architectural elegance into assumed economic benefit.</p>
+<p>Measure actual tokenization.</p>
+<p>Measure actual context retrieval.</p>
+<p>Measure actual model cost.</p>
+<p>Measure correctness.</p>
+<p>Count retries.</p>
+<p>Count cross-module escapes.</p>
+<p>Include all semantic metadata in the token accounting.</p>
+<p>Use current verified model prices for cost calculations.</p>
+<p>Prefer primary research and reproducible experiments.</p>
+<p>Clearly label:</p>
+<pre><code>measured result
+sourced result
+inference
+hypothesis
+</code></pre>
+<p>The desired outcome is not confirmation.</p>
+<p>The desired outcome is a credible answer to whether semantic modularity can
+become an inference-cost optimization technique for AI-operated software.</p></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

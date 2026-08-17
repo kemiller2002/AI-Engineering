@@ -12,6 +12,8 @@
 ## Publishing
 
 - [x] Add a reproducible research-publisher build and GitHub Pages deployment workflow
+- [x] Normalize Markdown-formatted research and architecture documents to `.md`
+  so the canonical state-constrained corpus is included in publisher discovery
 - [ ] Confirm the first successful deployment from the `main` branch
 - [ ] Assign unique canonical IDs and URLs to the excluded legacy split handbook and course-note documents
 

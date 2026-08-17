@@ -52,6 +52,9 @@ contained exploratory baselines only for pilots that pass.
 
 ## Completed Work
 
+- Normalized 45 Markdown-formatted state-constrained research, semantic-control
+  architecture, and Time Entry documents to publishable `.md` paths and repaired
+  their repository references.
 - Extended RFR-009 with measured metadata coverage across 131 authored Markdown
   artifacts and diagnostic relationship-target validation; seven calibrated
   integrity tests pass without imposing strict legacy metadata migration.

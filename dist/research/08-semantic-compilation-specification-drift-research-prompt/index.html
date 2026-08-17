@@ -1,0 +1,1746 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>08 semantic compilation specification drift research prompt | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">08 semantic compilation specification drift research prompt</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/prompts/08-semantic-compilation-specification-drift-research-prompt.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#ai-research-mission-08-semantic-compilation-and-specification-drift">AI RESEARCH MISSION 08 — SEMANTIC COMPILATION AND SPECIFICATION DRIFT</a></li><li><a href="#role">ROLE</a></li><li><a href="#-2-the-drift-problem">======================================================================
+2. THE DRIFT PROBLEM</a></li><li><a href="#-3-define-specification-drift">======================================================================
+3. DEFINE SPECIFICATION DRIFT</a></li><li><a href="#-4-representation-multiplicity">======================================================================
+4. REPRESENTATION MULTIPLICITY</a></li><li><a href="#-5-single-source-of-truth">======================================================================
+5. SINGLE SOURCE OF TRUTH</a></li><li><a href="#-6-semantic-source-vs-implementation-source">======================================================================
+6. SEMANTIC SOURCE VS IMPLEMENTATION SOURCE</a></li><li><a href="#-7-model-driven-engineering">======================================================================
+7. MODEL-DRIVEN ENGINEERING</a></li><li><a href="#-8-dsls">======================================================================
+8. DSLs</a></li><li><a href="#-9-executable-specifications">======================================================================
+9. EXECUTABLE SPECIFICATIONS</a></li><li><a href="#-10-schema-first-systems">======================================================================
+10. SCHEMA-FIRST SYSTEMS</a></li><li><a href="#-11-protocol-compilers">======================================================================
+11. PROTOCOL COMPILERS</a></li><li><a href="#-12-policy-as-code">======================================================================
+12. POLICY-AS-CODE</a></li><li><a href="#-13-infrastructure-as-code-analogy">======================================================================
+13. INFRASTRUCTURE AS CODE ANALOGY</a></li><li><a href="#-14-database-migrations">======================================================================
+14. DATABASE MIGRATIONS</a></li><li><a href="#-15-test-generation">======================================================================
+15. TEST GENERATION</a></li><li><a href="#-16-oracle-correlation-risk">======================================================================
+16. ORACLE CORRELATION RISK</a></li><li><a href="#-17-generated-documentation">======================================================================
+17. GENERATED DOCUMENTATION</a></li><li><a href="#-18-ai-written-documentation-vs-generated-documentation">======================================================================
+18. AI-WRITTEN DOCUMENTATION VS GENERATED DOCUMENTATION</a></li><li><a href="#-19-agent-tool-generation">======================================================================
+19. AGENT TOOL GENERATION</a></li><li><a href="#-20-tool-availability">======================================================================
+20. TOOL AVAILABILITY</a></li><li><a href="#-21-prompt-generation">======================================================================
+21. PROMPT GENERATION</a></li><li><a href="#-22-runtime-guard-generation">======================================================================
+22. RUNTIME GUARD GENERATION</a></li><li><a href="#-23-client-validation">======================================================================
+23. CLIENT VALIDATION</a></li><li><a href="#-24-sql-data-layer-generation">======================================================================
+24. SQL / DATA-LAYER GENERATION</a></li><li><a href="#-25-api-contract-generation">======================================================================
+25. API CONTRACT GENERATION</a></li><li><a href="#-26-planning-graph-generation">======================================================================
+26. PLANNING GRAPH GENERATION</a></li><li><a href="#-27-impact-analysis-generation">======================================================================
+27. IMPACT ANALYSIS GENERATION</a></li><li><a href="#-28-semantic-migration">======================================================================
+28. SEMANTIC MIGRATION</a></li><li><a href="#-29-round-trip-engineering">======================================================================
+29. ROUND-TRIP ENGINEERING</a></li><li><a href="#-30-generated-vs-handwritten-code-boundary">======================================================================
+30. GENERATED VS HANDWRITTEN CODE BOUNDARY</a></li><li><a href="#-31-escape-hatches">======================================================================
+31. ESCAPE HATCHES</a></li><li><a href="#-32-specification-rigidity">======================================================================
+32. SPECIFICATION RIGIDITY</a></li><li><a href="#-33-semantic-model-bloat">======================================================================
+33. SEMANTIC MODEL BLOAT</a></li><li><a href="#-34-minimum-semantic-core">======================================================================
+34. MINIMUM SEMANTIC CORE</a></li><li><a href="#-35-specification-complexity">======================================================================
+35. SPECIFICATION COMPLEXITY</a></li><li><a href="#-36-change-amplification">======================================================================
+36. CHANGE AMPLIFICATION</a></li><li><a href="#-37-semantic-diff">======================================================================
+37. SEMANTIC DIFF</a></li><li><a href="#-38-version-control">======================================================================
+38. VERSION CONTROL</a></li><li><a href="#-39-reproducible-generation">======================================================================
+39. REPRODUCIBLE GENERATION</a></li><li><a href="#-40-compiler-versioning">======================================================================
+40. COMPILER VERSIONING</a></li><li><a href="#-41-semantic-hash">======================================================================
+41. SEMANTIC HASH</a></li><li><a href="#-42-drift-detection">======================================================================
+42. DRIFT DETECTION</a></li><li><a href="#-43-handwritten-artifact-drift">======================================================================
+43. HANDWRITTEN ARTIFACT DRIFT</a></li><li><a href="#-44-conformance-testing">======================================================================
+44. CONFORMANCE TESTING</a></li><li><a href="#-45-formal-refinement">======================================================================
+45. FORMAL REFINEMENT</a></li><li><a href="#-46-generated-types">======================================================================
+46. GENERATED TYPES</a></li><li><a href="#-47-cross-language-semantic-consistency">======================================================================
+47. CROSS-LANGUAGE SEMANTIC CONSISTENCY</a></li><li><a href="#-48-weak-language-compensation">======================================================================
+48. WEAK LANGUAGE COMPENSATION</a></li><li><a href="#-49-sql-semantic-drift">======================================================================
+49. SQL SEMANTIC DRIFT</a></li><li><a href="#-50-policy-drift">======================================================================
+50. POLICY DRIFT</a></li><li><a href="#-51-test-drift">======================================================================
+51. TEST DRIFT</a></li><li><a href="#-52-documentation-drift">======================================================================
+52. DOCUMENTATION DRIFT</a></li><li><a href="#-53-prompt-drift">======================================================================
+53. PROMPT DRIFT</a></li><li><a href="#-54-tool-schema-drift">======================================================================
+54. TOOL-SCHEMA DRIFT</a></li><li><a href="#-55-policy-explanations">======================================================================
+55. POLICY EXPLANATIONS</a></li><li><a href="#-56-traceability">======================================================================
+56. TRACEABILITY</a></li><li><a href="#-57-change-impact">======================================================================
+57. CHANGE IMPACT</a></li><li><a href="#-58-agent-context-compression">======================================================================
+58. AGENT CONTEXT COMPRESSION</a></li><li><a href="#-59-minimum-sufficient-semantic-view">======================================================================
+59. MINIMUM SUFFICIENT SEMANTIC VIEW</a></li><li><a href="#-60-tokenization">======================================================================
+60. TOKENIZATION</a></li><li><a href="#-61-economic-hypothesis">======================================================================
+61. ECONOMIC HYPOTHESIS</a></li><li><a href="#-62-upfront-cost">======================================================================
+62. UPFRONT COST</a></li><li><a href="#-63-maintenance-cost-of-compiler">======================================================================
+63. MAINTENANCE COST OF COMPILER</a></li><li><a href="#-64-target-language-evolution">======================================================================
+64. TARGET-LANGUAGE EVOLUTION</a></li><li><a href="#-65-generated-bugs">======================================================================
+65. GENERATED BUGS</a></li><li><a href="#-66-wrong-specification">======================================================================
+66. WRONG SPECIFICATION</a></li><li><a href="#-67-independent-oracles">======================================================================
+67. INDEPENDENT ORACLES</a></li><li><a href="#-68-mutation-testing-of-specification">======================================================================
+68. MUTATION TESTING OF SPECIFICATION</a></li><li><a href="#-69-specification-review">======================================================================
+69. SPECIFICATION REVIEW</a></li><li><a href="#-70-role-of-ai">======================================================================
+70. ROLE OF AI</a></li><li><a href="#-71-semantic-change-authority">======================================================================
+71. SEMANTIC CHANGE AUTHORITY</a></li><li><a href="#-72-specification-provenance">======================================================================
+72. SPECIFICATION PROVENANCE</a></li><li><a href="#-73-examples-as-specification">======================================================================
+73. EXAMPLES AS SPECIFICATION</a></li><li><a href="#-74-property-based-testing">======================================================================
+74. PROPERTY-BASED TESTING</a></li><li><a href="#-75-model-checking">======================================================================
+75. MODEL CHECKING</a></li><li><a href="#-76-specification-language-expressiveness">======================================================================
+76. SPECIFICATION LANGUAGE EXPRESSIVENESS</a></li><li><a href="#-77-decidability-analyzability">======================================================================
+77. DECIDABILITY / ANALYZABILITY</a></li><li><a href="#-78-escape-to-host-code">======================================================================
+78. ESCAPE TO HOST CODE</a></li><li><a href="#-79-opaque-semantic-escapes">======================================================================
+79. OPAQUE SEMANTIC ESCAPES</a></li><li><a href="#-80-semantic-coverage">======================================================================
+80. SEMANTIC COVERAGE</a></li><li><a href="#-81-derivation-coverage">======================================================================
+81. DERIVATION COVERAGE</a></li><li><a href="#-82-drift-incident-rate">======================================================================
+82. DRIFT INCIDENT RATE</a></li><li><a href="#-83-duplicate-rule-count">======================================================================
+83. DUPLICATE RULE COUNT</a></li><li><a href="#-84-rule-fan-out">======================================================================
+84. RULE FAN-OUT</a></li><li><a href="#-85-change-error-rate">======================================================================
+85. CHANGE ERROR RATE</a></li><li><a href="#-86-agent-search-cost">======================================================================
+86. AGENT SEARCH COST</a></li><li><a href="#-87-smaller-model-hypothesis">======================================================================
+87. SMALLER MODEL HYPOTHESIS</a></li><li><a href="#-88-cross-team-consistency">======================================================================
+88. CROSS-TEAM CONSISTENCY</a></li><li><a href="#-89-monorepo-vs-multirepo">======================================================================
+89. MONOREPO VS MULTIREPO</a></li><li><a href="#-90-distributed-semantic-versions">======================================================================
+90. DISTRIBUTED SEMANTIC VERSIONS</a></li><li><a href="#-91-rolling-deployments">======================================================================
+91. ROLLING DEPLOYMENTS</a></li><li><a href="#-92-backward-compatibility">======================================================================
+92. BACKWARD COMPATIBILITY</a></li><li><a href="#-93-product-experimentation">======================================================================
+93. PRODUCT EXPERIMENTATION</a></li><li><a href="#-94-experimental-semantic-layer">======================================================================
+94. EXPERIMENTAL SEMANTIC LAYER</a></li><li><a href="#-95-generated-vs-interpreted-runtime">======================================================================
+95. GENERATED VS INTERPRETED RUNTIME</a></li><li><a href="#-96-hybrid">======================================================================
+96. HYBRID</a></li><li><a href="#-97-reference-monitor-analogy">======================================================================
+97. REFERENCE MONITOR ANALOGY</a></li><li><a href="#-98-security">======================================================================
+98. SECURITY</a></li><li><a href="#-99-auditability">======================================================================
+99. AUDITABILITY</a></li><li><a href="#-100-regulatory-change">======================================================================
+100. REGULATORY CHANGE</a></li><li><a href="#-101-experiment-a-rule-change">======================================================================
+101. EXPERIMENT A — RULE CHANGE</a></li><li><a href="#-102-experiment-b-state-addition">======================================================================
+102. EXPERIMENT B — STATE ADDITION</a></li><li><a href="#-103-experiment-c-state-split">======================================================================
+103. EXPERIMENT C — STATE SPLIT</a></li><li><a href="#-104-experiment-d-policy-change">======================================================================
+104. EXPERIMENT D — POLICY CHANGE</a></li><li><a href="#-105-experiment-e-tool-change">======================================================================
+105. EXPERIMENT E — TOOL CHANGE</a></li><li><a href="#-106-experiment-f-wrong-spec">======================================================================
+106. EXPERIMENT F — WRONG SPEC</a></li><li><a href="#-107-experiment-g-generator-bug">======================================================================
+107. EXPERIMENT G — GENERATOR BUG</a></li><li><a href="#-108-experiment-h-manual-artifact-edit">======================================================================
+108. EXPERIMENT H — MANUAL ARTIFACT EDIT</a></li><li><a href="#-109-experiment-i-agent-task">======================================================================
+109. EXPERIMENT I — AGENT TASK</a></li><li><a href="#-110-experiment-j-longitudinal">======================================================================
+110. EXPERIMENT J — LONGITUDINAL</a></li><li><a href="#-111-metrics">======================================================================
+111. METRICS</a></li><li><a href="#-112-specification-drift-rate">======================================================================
+112. SPECIFICATION DRIFT RATE</a></li><li><a href="#-113-derivation-coverage">======================================================================
+113. DERIVATION COVERAGE</a></li><li><a href="#-114-independent-validation-coverage">======================================================================
+114. INDEPENDENT VALIDATION COVERAGE</a></li><li><a href="#-115-economic-model">======================================================================
+115. ECONOMIC MODEL</a></li><li><a href="#-116-break-even">======================================================================
+116. BREAK-EVEN</a></li><li><a href="#-117-startup-vs-enterprise">======================================================================
+117. STARTUP VS ENTERPRISE</a></li><li><a href="#-118-high-consequence-vs-low-consequence">======================================================================
+118. HIGH-CONSEQUENCE VS LOW-CONSEQUENCE</a></li><li><a href="#-119-counterarguments">======================================================================
+119. COUNTERARGUMENTS</a></li><li><a href="#-120-falsification-conditions">======================================================================
+120. FALSIFICATION CONDITIONS</a></li><li><a href="#-121-existing-systems-to-study">======================================================================
+121. EXISTING SYSTEMS TO STUDY</a></li><li><a href="#-122-ai-specific-systems">======================================================================
+122. AI-SPECIFIC SYSTEMS</a></li><li><a href="#-123-source-quality">======================================================================
+123. SOURCE QUALITY</a></li><li><a href="#-124-required-output">======================================================================
+124. REQUIRED OUTPUT</a></li><li><a href="#-125-final-verdict-format">======================================================================
+125. FINAL VERDICT FORMAT</a></li><li><a href="#-126-research-standard">======================================================================
+126. RESEARCH STANDARD</a></li> </ol> </aside> <section class="document-body"><h1 id="ai-research-mission-08--semantic-compilation-and-specification-drift">AI RESEARCH MISSION 08 — SEMANTIC COMPILATION AND SPECIFICATION DRIFT</h1>
+<h1 id="role">ROLE</h1>
+<p>Act as a combined:</p>
+<ul>
+<li>software-architecture researcher</li>
+<li>programming-languages researcher</li>
+<li>compiler / DSL researcher</li>
+<li>model-driven engineering researcher</li>
+<li>formal-methods researcher</li>
+<li>requirements-engineering researcher</li>
+<li>test-engineering researcher</li>
+<li>AI-agent systems researcher</li>
+<li>empirical software-engineering researcher</li>
+<li>AI inference-cost researcher</li>
+</ul>
+<p>Your task is to investigate whether a single authoritative semantic model can
+reduce specification drift across software artifacts.</p>
+<p>The architecture under investigation proposes that important business semantics
+should be represented once in an executable semantic specification and then used
+to generate or constrain:</p>
+<pre><code>runtime guards
+state types
+legal transitions
+capabilities
+obligations
+policy checks
+agent tool availability
+generated tests
+planning graphs
+semantic dependency reports
+migration checks
+documentation
+API contracts
+analyzers
+</code></pre>
+<p>The central hypothesis is:</p>
+<pre><code>When the same semantic rule is independently expressed in many artifacts,
+those artifacts drift.
+
+When derivative artifacts are generated or mechanically validated from one
+authoritative semantic source, cross-representation drift decreases.
+</code></pre>
+<p>Do NOT assume this hypothesis is true.</p>
+<p>A single semantic source may instead create:</p>
+<pre><code>correlated failure
+over-centralization
+specification rigidity
+catastrophic propagation of a wrong rule
+excessive tooling complexity
+</code></pre>
+<p>The goal is to determine whether semantic compilation improves correctness and
+agent economics enough to justify those risks.</p>
+<p>======================================================================</p>
+<ol>
+<li>PRIMARY RESEARCH QUESTION
+======================================================================</li>
+</ol>
+<p>Does compiling multiple software artifacts from one authoritative semantic model
+reduce:</p>
+<pre><code>rule duplication
+inconsistent validation
+stale tests
+stale documentation
+contradictory agent instructions
+policy drift
+tool-schema drift
+semantic reconstruction cost
+AI-agent context requirements
+maintenance effort
+total cost per correct change?
+</code></pre>
+<p>And does it improve:</p>
+<pre><code>semantic consistency
+change impact visibility
+auditability
+long-term maintainability
+agent reliability?
+</code></pre>
+<h1 id="2-the-drift-problem">======================================================================
+2. THE DRIFT PROBLEM</h1>
+<p>A single business rule may currently exist independently in:</p>
+<pre><code>product requirements
+backend code
+frontend code
+SQL constraints
+tests
+API validation
+documentation
+runbooks
+policy documents
+agent prompts
+tool descriptions
+monitoring logic
+</code></pre>
+<p>Example rule:</p>
+<pre><code>An order may ship only when:
+    Order = Approved
+    Payment = Captured
+    Customer = Verified
+    Shipment = Ready
+</code></pre>
+<p>Possible independent implementations:</p>
+<pre><code>backend if statement
+frontend button enablement
+database procedure
+integration test
+agent prompt
+workflow engine condition
+</code></pre>
+<p>Research how often these representations drift in normal systems.</p>
+<h1 id="3-define-specification-drift">======================================================================
+3. DEFINE SPECIFICATION DRIFT</h1>
+<p>Develop a precise definition.</p>
+<p>Candidate:</p>
+<pre><code>Specification drift occurs when two or more artifacts that are intended to
+represent the same semantic rule cease to agree.
+</code></pre>
+<p>Examples:</p>
+<pre><code>UI allows action backend rejects
+test expects old state behavior
+prompt says action is legal when runtime rejects it
+policy document differs from code
+tool description says retry is safe but implementation changed
+database validation omits new state
+</code></pre>
+<p>Distinguish from:</p>
+<pre><code>intentional versioning
+gradual rollout
+backward compatibility
+different context-specific policies
+</code></pre>
+<h1 id="4-representation-multiplicity">======================================================================
+4. REPRESENTATION MULTIPLICITY</h1>
+<p>Investigate the general problem:</p>
+<pre><code>one meaning
+many representations
+</code></pre>
+<p>This appears in:</p>
+<pre><code>schema duplication
+protocol definitions
+validation logic
+API/client generation
+infrastructure configuration
+policy-as-code
+code/documentation synchronization
+</code></pre>
+<p>Ask:</p>
+<pre><code>Is semantic drift primarily caused by duplicate representation?
+</code></pre>
+<h1 id="5-single-source-of-truth">======================================================================
+5. SINGLE SOURCE OF TRUTH</h1>
+<p>Research the phrase carefully.</p>
+<p>"Single source of truth" is often used loosely.</p>
+<p>Distinguish:</p>
+<pre><code>authoritative specification
+</code></pre>
+<p>from:</p>
+<pre><code>one database
+one document
+one repository
+</code></pre>
+<p>The relevant concept is:</p>
+<pre><code>one authoritative semantic definition
+</code></pre>
+<p>with possibly many generated projections.</p>
+<h1 id="6-semantic-source-vs-implementation-source">======================================================================
+6. SEMANTIC SOURCE VS IMPLEMENTATION SOURCE</h1>
+<p>Do not assume source code itself is the best semantic source.</p>
+<p>Compare:</p>
+<p>A. implementation code is authoritative</p>
+<p>B. tests are authoritative</p>
+<p>C. API schema is authoritative</p>
+<p>D. model/DSL is authoritative</p>
+<p>E. formal specification is authoritative</p>
+<p>For each ask:</p>
+<pre><code>expressive power
+readability
+auditability
+executability
+derivability
+drift risk
+AI usability
+</code></pre>
+<h1 id="7-model-driven-engineering">======================================================================
+7. MODEL-DRIVEN ENGINEERING</h1>
+<p>Research deeply:</p>
+<pre><code>Model-Driven Engineering
+Model-Driven Architecture
+executable models
+code generation
+metamodels
+model transformations
+round-trip engineering
+</code></pre>
+<p>Ask:</p>
+<pre><code>Is semantic compilation simply MDE applied to AI-operated software?
+</code></pre>
+<p>Identify:</p>
+<pre><code>known benefits
+known failure modes
+adoption history
+why MDE succeeded or failed commercially
+</code></pre>
+<h1 id="8-dsls">======================================================================
+8. DSLs</h1>
+<p>Research domain-specific languages used to express:</p>
+<pre><code>state machines
+workflows
+policies
+contracts
+protocols
+schemas
+</code></pre>
+<p>Compare:</p>
+<pre><code>textual DSL
+JSON/YAML model
+embedded DSL
+host-language API
+graphical model
+</code></pre>
+<p>Evaluate:</p>
+<pre><code>semantic precision
+tooling
+versioning
+readability
+token cost
+agent generation accuracy
+</code></pre>
+<h1 id="9-executable-specifications">======================================================================
+9. EXECUTABLE SPECIFICATIONS</h1>
+<p>Research:</p>
+<pre><code>executable specifications
+specification by example
+formal executable models
+behavior-driven development
+</code></pre>
+<p>Question:</p>
+<pre><code>When does executable specification reduce drift?
+
+When does it simply become another implementation layer?
+</code></pre>
+<h1 id="10-schema-first-systems">======================================================================
+10. SCHEMA-FIRST SYSTEMS</h1>
+<p>Compare with:</p>
+<pre><code>OpenAPI
+GraphQL schemas
+Protocol Buffers
+Avro
+JSON Schema
+database schema generation
+</code></pre>
+<p>These already demonstrate:</p>
+<pre><code>one declaration
+    ->
+many generated artifacts
+</code></pre>
+<p>Ask what lessons apply to domain semantics.</p>
+<h1 id="11-protocol-compilers">======================================================================
+11. PROTOCOL COMPILERS</h1>
+<p>Study systems such as:</p>
+<pre><code>protobuf
+Thrift
+gRPC IDLs
+</code></pre>
+<p>They generate:</p>
+<pre><code>types
+serialization
+clients
+servers
+</code></pre>
+<p>This reduces certain forms of drift.</p>
+<p>But they do not usually encode:</p>
+<pre><code>legal state transitions
+obligations
+policy
+evidence
+</code></pre>
+<p>Identify the incremental layer proposed here.</p>
+<h1 id="12-policy-as-code">======================================================================
+12. POLICY-AS-CODE</h1>
+<p>Research:</p>
+<pre><code>OPA/Rego
+Cedar
+XACML
+authorization policy systems
+</code></pre>
+<p>These centralize policy and generate/enforce decisions.</p>
+<p>Ask:</p>
+<pre><code>what types of drift do they solve?
+what types remain?
+</code></pre>
+<h1 id="13-infrastructure-as-code-analogy">======================================================================
+13. INFRASTRUCTURE AS CODE ANALOGY</h1>
+<p>IaC replaced:</p>
+<pre><code>manual configuration
+</code></pre>
+<p>with:</p>
+<pre><code>declarative source
+</code></pre>
+<p>This improved reproducibility but introduced:</p>
+<pre><code>configuration complexity
+drift detection
+state synchronization
+</code></pre>
+<p>Research useful analogies without overextending them.</p>
+<h1 id="14-database-migrations">======================================================================
+14. DATABASE MIGRATIONS</h1>
+<p>Schema migration systems provide:</p>
+<pre><code>explicit version transitions
+ordered history
+</code></pre>
+<p>Potential analogy:</p>
+<pre><code>semantic migrations
+</code></pre>
+<p>Research lessons from:</p>
+<pre><code>Flyway
+Liquibase
+migration-based schema evolution
+</code></pre>
+<h1 id="15-test-generation">======================================================================
+15. TEST GENERATION</h1>
+<p>If semantic specification says:</p>
+<pre><code>legal transitions = X
+</code></pre>
+<p>generate tests:</p>
+<pre><code>every X succeeds when prerequisites hold
+illegal transitions fail
+every state has required interpretations
+</code></pre>
+<p>Question:</p>
+<pre><code>Does generated testing reduce test drift?
+</code></pre>
+<p>Potential downside:</p>
+<pre><code>generated tests merely confirm generator/spec is self-consistent.
+</code></pre>
+<h1 id="16-oracle-correlation-risk">======================================================================
+16. ORACLE CORRELATION RISK</h1>
+<p>Critical issue:</p>
+<pre><code>If implementation and tests are generated from same wrong spec,
+they agree perfectly while both are wrong.
+</code></pre>
+<p>This is correlated failure.</p>
+<p>Research:</p>
+<pre><code>N-version programming
+independent test oracles
+mutation testing
+differential testing
+property-based testing
+</code></pre>
+<p>The system needs independent correctness checks.</p>
+<h1 id="17-generated-documentation">======================================================================
+17. GENERATED DOCUMENTATION</h1>
+<p>Potentially generate:</p>
+<pre><code>state diagrams
+transition docs
+capability docs
+policy impact docs
+agent-readable summaries
+</code></pre>
+<p>Hypothesis:</p>
+<pre><code>generated docs stay structurally current.
+</code></pre>
+<p>But:</p>
+<pre><code>generated docs may omit rationale
+business context
+nuance
+</code></pre>
+<p>Research limitations.</p>
+<h1 id="18-ai-written-documentation-vs-generated-documentation">======================================================================
+18. AI-WRITTEN DOCUMENTATION VS GENERATED DOCUMENTATION</h1>
+<p>Compare:</p>
+<p>A. AI summarizes repository</p>
+<p>B. semantic compiler renders current model</p>
+<p>Measure:</p>
+<pre><code>completeness
+staleness
+hallucinated rules
+token size
+maintenance cost
+</code></pre>
+<h1 id="19-agent-tool-generation">======================================================================
+19. AGENT TOOL GENERATION</h1>
+<p>Semantic source may generate current tool interfaces.</p>
+<p>Example:</p>
+<p>Transition:</p>
+<pre><code>CapturePayment
+</code></pre>
+<p>can generate:</p>
+<pre><code>runtime handler
+tool schema
+capability rule
+documentation
+</code></pre>
+<p>This may eliminate drift between:</p>
+<pre><code>what tool says it does
+</code></pre>
+<p>and:</p>
+<pre><code>what runtime allows.
+</code></pre>
+<h1 id="20-tool-availability">======================================================================
+20. TOOL AVAILABILITY</h1>
+<p>Current semantic state could generate:</p>
+<pre><code>visible legal tools
+</code></pre>
+<p>rather than exposing all tools.</p>
+<p>This connects specification compilation with action-space reduction.</p>
+<p>Research whether a shared source reduces:</p>
+<pre><code>tool description/runtime mismatch.
+</code></pre>
+<h1 id="21-prompt-generation">======================================================================
+21. PROMPT GENERATION</h1>
+<p>Could semantic specification generate agent instructions?</p>
+<p>Examples:</p>
+<pre><code>legal action constraints
+blocked reasons
+current policy summary
+</code></pre>
+<p>Potential benefit:</p>
+<pre><code>fewer hand-maintained prompts
+</code></pre>
+<p>Risk:</p>
+<pre><code>prompts become verbose or brittle.
+</code></pre>
+<h1 id="22-runtime-guard-generation">======================================================================
+22. RUNTIME GUARD GENERATION</h1>
+<p>Transition definition:</p>
+<pre><code>Ship requires:
+    OrderApproved
+    PaymentCaptured
+</code></pre>
+<p>could generate:</p>
+<pre><code>runtime precondition
+capability derivation
+tests
+agent blocked explanation
+</code></pre>
+<p>This is core hypothesis.</p>
+<p>Research code-generation reliability.</p>
+<h1 id="23-client-validation">======================================================================
+23. CLIENT VALIDATION</h1>
+<p>Frontend may receive generated semantic projection.</p>
+<p>But client validation must not replace server authority.</p>
+<p>Research how to avoid:</p>
+<pre><code>duplicated client/server semantics
+</code></pre>
+<p>without trusting client enforcement.</p>
+<h1 id="24-sql--data-layer-generation">======================================================================
+24. SQL / DATA-LAYER GENERATION</h1>
+<p>Can some invariants become:</p>
+<pre><code>database constraints
+generated queries
+</code></pre>
+<p>while others remain application-level?</p>
+<p>Research limitations.</p>
+<p>Do not force all domain semantics into SQL.</p>
+<h1 id="25-api-contract-generation">======================================================================
+25. API CONTRACT GENERATION</h1>
+<p>Semantic transitions might generate API operations.</p>
+<p>Question:</p>
+<pre><code>Should API map 1:1 to semantic transitions?
+</code></pre>
+<p>Potentially dangerous if:</p>
+<pre><code>API concerns differ from domain operations.
+</code></pre>
+<p>Research abstraction boundaries.</p>
+<h1 id="26-planning-graph-generation">======================================================================
+26. PLANNING GRAPH GENERATION</h1>
+<p>If transitions declare:</p>
+<pre><code>preconditions
+effects
+</code></pre>
+<p>then planner graph can be generated.</p>
+<p>This may eliminate drift between:</p>
+<pre><code>executable system
+</code></pre>
+<p>and:</p>
+<pre><code>planning model.
+</code></pre>
+<p>This is particularly important for AI agents.</p>
+<h1 id="27-impact-analysis-generation">======================================================================
+27. IMPACT ANALYSIS GENERATION</h1>
+<p>A semantic dependency graph can produce:</p>
+<pre><code>affected capabilities
+affected obligations
+affected transitions
+affected policies
+</code></pre>
+<p>when semantics change.</p>
+<p>Research:</p>
+<pre><code>model transformation impact analysis
+dependency tracing
+incremental compilation
+</code></pre>
+<h1 id="28-semantic-migration">======================================================================
+28. SEMANTIC MIGRATION</h1>
+<p>When:</p>
+<pre><code>Approved
+</code></pre>
+<p>splits into:</p>
+<pre><code>ConditionallyApproved
+FullyApproved
+</code></pre>
+<p>compiler may require explicit redistribution of every dependent semantic rule.</p>
+<p>This prevents old rule inheritance.</p>
+<p>Research analogous model evolution systems.</p>
+<h1 id="29-round-trip-engineering">======================================================================
+29. ROUND-TRIP ENGINEERING</h1>
+<p>MDE often struggled with:</p>
+<pre><code>generated code edited manually
+model/code synchronization
+round-trip engineering
+</code></pre>
+<p>Question:</p>
+<pre><code>Should generated semantic artifacts be editable?
+</code></pre>
+<p>Likely:</p>
+<pre><code>no
+</code></pre>
+<p>or:</p>
+<pre><code>only through controlled extension points.
+</code></pre>
+<p>Research lessons.</p>
+<h1 id="30-generated-vs-handwritten-code-boundary">======================================================================
+30. GENERATED VS HANDWRITTEN CODE BOUNDARY</h1>
+<p>Potential rule:</p>
+<p>Generated:</p>
+<pre><code>semantic types
+transition interfaces
+validators
+contracts
+analyzers
+</code></pre>
+<p>Handwritten:</p>
+<pre><code>implementation algorithms
+adapters
+UI
+integration code
+</code></pre>
+<p>Research how to preserve developer control.</p>
+<h1 id="31-escape-hatches">======================================================================
+31. ESCAPE HATCHES</h1>
+<p>Every generator eventually needs exceptions.</p>
+<p>Danger:</p>
+<pre><code>bypass becomes normal path.
+</code></pre>
+<p>Design possible:</p>
+<pre><code>explicit override
+justification
+expiration
+review
+provenance
+</code></pre>
+<p>Research exception governance.</p>
+<h1 id="32-specification-rigidity">======================================================================
+32. SPECIFICATION RIGIDITY</h1>
+<p>A central semantic model may make change harder.</p>
+<p>Potential symptoms:</p>
+<pre><code>every feature requires DSL change
+generator update
+migration
+regenerated artifacts
+</code></pre>
+<p>This may reduce startup agility.</p>
+<p>Study historical MDE failures.</p>
+<h1 id="33-semantic-model-bloat">======================================================================
+33. SEMANTIC MODEL BLOAT</h1>
+<p>If specification grows to describe everything:</p>
+<pre><code>UI layout
+integration details
+algorithms
+persistence
+</code></pre>
+<p>it becomes:</p>
+<pre><code>universal programming language
+</code></pre>
+<p>and loses benefit.</p>
+<p>Identify correct scope.</p>
+<h1 id="34-minimum-semantic-core">======================================================================
+34. MINIMUM SEMANTIC CORE</h1>
+<p>Hypothesis:</p>
+<p>Only encode:</p>
+<pre><code>consequential state
+legal transitions
+invariants
+authority
+evidence
+policy
+effect semantics
+dependencies
+</code></pre>
+<p>Do not encode:</p>
+<pre><code>ordinary computation
+presentation
+incidental implementation
+</code></pre>
+<p>Research whether this avoids MDE overreach.</p>
+<h1 id="35-specification-complexity">======================================================================
+35. SPECIFICATION COMPLEXITY</h1>
+<p>Measure:</p>
+<pre><code>semantic model LOC/tokens
+generated artifact LOC
+manual implementation LOC
+</code></pre>
+<p>Potential metric:</p>
+<pre><code>semantic compression ratio
+
+    semantic specification tokens
+</code></pre>
+<p>SCR = --------------------------------
+equivalent semantic implementation tokens</p>
+<p>But smaller specification is not automatically better.</p>
+<h1 id="36-change-amplification">======================================================================
+36. CHANGE AMPLIFICATION</h1>
+<p>One semantic edit may regenerate many files.</p>
+<p>That can appear as:</p>
+<pre><code>large diff
+</code></pre>
+<p>even if semantic change is small.</p>
+<p>Research generated-code review challenges.</p>
+<h1 id="37-semantic-diff">======================================================================
+37. SEMANTIC DIFF</h1>
+<p>Potential solution:</p>
+<pre><code>review semantic diff
+</code></pre>
+<p>instead of:</p>
+<pre><code>generated code diff
+</code></pre>
+<p>Generated artifacts can be mechanically verified.</p>
+<p>Investigate tooling patterns.</p>
+<h1 id="38-version-control">======================================================================
+38. VERSION CONTROL</h1>
+<p>Should generated files be committed?</p>
+<p>Compare:</p>
+<pre><code>commit generated artifacts
+</code></pre>
+<p>vs:</p>
+<pre><code>generate during build
+</code></pre>
+<p>Tradeoffs:</p>
+<pre><code>reviewability
+reproducibility
+merge conflicts
+build complexity
+</code></pre>
+<h1 id="39-reproducible-generation">======================================================================
+39. REPRODUCIBLE GENERATION</h1>
+<p>Generator must be deterministic.</p>
+<p>Same:</p>
+<pre><code>semantic model
+compiler version
+</code></pre>
+<p>should produce same:</p>
+<pre><code>artifacts
+</code></pre>
+<p>Research reproducible builds.</p>
+<h1 id="40-compiler-versioning">======================================================================
+40. COMPILER VERSIONING</h1>
+<p>Generated behavior depends on:</p>
+<pre><code>semantic spec version
+semantic compiler version
+target generator version
+</code></pre>
+<p>Historical provenance may need all three.</p>
+<h1 id="41-semantic-hash">======================================================================
+41. SEMANTIC HASH</h1>
+<p>Possible artifact metadata:</p>
+<pre><code>SemanticHash
+SpecVersion
+IRVersion
+GeneratorVersion
+</code></pre>
+<p>This enables:</p>
+<pre><code>drift detection
+</code></pre>
+<p>Research analogous content-addressed systems.</p>
+<h1 id="42-drift-detection">======================================================================
+42. DRIFT DETECTION</h1>
+<p>Build could verify:</p>
+<pre><code>generated artifact semantic hash == current model
+</code></pre>
+<p>If not:</p>
+<pre><code>stale generated artifact
+</code></pre>
+<p>This mechanically detects one type of drift.</p>
+<h1 id="43-handwritten-artifact-drift">======================================================================
+43. HANDWRITTEN ARTIFACT DRIFT</h1>
+<p>Not everything will be generated.</p>
+<p>Need analyzers to verify:</p>
+<pre><code>handwritten adapter respects semantic contract
+</code></pre>
+<p>Research contract checking.</p>
+<h1 id="44-conformance-testing">======================================================================
+44. CONFORMANCE TESTING</h1>
+<p>Generated conformance suite may test handwritten implementations.</p>
+<p>Example:</p>
+<pre><code>adapter must implement effect idempotency rules
+</code></pre>
+<p>This creates boundary verification.</p>
+<h1 id="45-formal-refinement">======================================================================
+45. FORMAL REFINEMENT</h1>
+<p>Explore whether implementation can be viewed as refinement of semantic model.</p>
+<p>Research:</p>
+<pre><code>refinement mappings
+simulation relations
+formal refinement
+executable refinement
+</code></pre>
+<p>Could provide stronger guarantees but may be too expensive.</p>
+<h1 id="46-generated-types">======================================================================
+46. GENERATED TYPES</h1>
+<p>Target languages may differ.</p>
+<p>Compiler may generate:</p>
+<pre><code>F# DUs
+Rust enums
+Java sealed types
+C# unions/sealed patterns
+TypeScript tagged unions
+</code></pre>
+<p>Question:</p>
+<pre><code>how much semantic equivalence survives across languages?
+</code></pre>
+<h1 id="47-cross-language-semantic-consistency">======================================================================
+47. CROSS-LANGUAGE SEMANTIC CONSISTENCY</h1>
+<p>A shared semantic IR could generate types/contracts for:</p>
+<pre><code>backend
+frontend
+mobile
+agent tools
+</code></pre>
+<p>This may reduce cross-language drift.</p>
+<p>Research protocol/schema generation analogues.</p>
+<h1 id="48-weak-language-compensation">======================================================================
+48. WEAK LANGUAGE COMPENSATION</h1>
+<p>Semantic compiler might compensate for languages with weaker exhaustive/type
+features.</p>
+<p>Example:</p>
+<pre><code>TypeScript analyzer generated from semantic model
+</code></pre>
+<p>Question:</p>
+<pre><code>can generator enforce enough to match stronger languages?
+</code></pre>
+<p>This overlaps language research.</p>
+<h1 id="49-sql-semantic-drift">======================================================================
+49. SQL SEMANTIC DRIFT</h1>
+<p>SQL often contains duplicated business meaning in:</p>
+<pre><code>stored procedures
+triggers
+queries
+status filters
+</code></pre>
+<p>Can semantic compiler detect/generate some of this?</p>
+<p>Be careful not to overpromise static SQL analysis.</p>
+<h1 id="50-policy-drift">======================================================================
+50. POLICY DRIFT</h1>
+<p>Same policy may exist in:</p>
+<pre><code>docs
+code
+agent prompt
+SQL
+UI
+</code></pre>
+<p>Policy compiler could generate:</p>
+<pre><code>runtime check
+explanation
+tool constraint
+audit metadata
+</code></pre>
+<p>Research existing policy systems.</p>
+<h1 id="51-test-drift">======================================================================
+51. TEST DRIFT</h1>
+<p>Measure:</p>
+<pre><code>tests inconsistent with current semantic spec
+</code></pre>
+<p>Potential categories:</p>
+<pre><code>stale expected state
+stale allowed action
+missing new case
+outdated policy
+</code></pre>
+<p>Compiler could regenerate or invalidate tests.</p>
+<h1 id="52-documentation-drift">======================================================================
+52. DOCUMENTATION DRIFT</h1>
+<p>Measure:</p>
+<pre><code>docs describing obsolete state/transition
+</code></pre>
+<p>Generated docs should eliminate structural drift.</p>
+<p>But rationale prose may still drift.</p>
+<h1 id="53-prompt-drift">======================================================================
+53. PROMPT DRIFT</h1>
+<p>Agent instructions frequently encode business rules manually.</p>
+<p>Example:</p>
+<pre><code>"Never retry unknown refund."
+</code></pre>
+<p>If semantic runtime already blocks this:</p>
+<pre><code>prompt rule may be redundant.
+</code></pre>
+<p>Semantic compilation may allow shorter prompts.</p>
+<h1 id="54-tool-schema-drift">======================================================================
+54. TOOL-SCHEMA DRIFT</h1>
+<p>Tool descriptions can become stale after API/runtime changes.</p>
+<p>Generated schemas reduce this risk.</p>
+<p>Measure:</p>
+<pre><code>invalid tool calls
+mismatched parameters
+unavailable operations
+</code></pre>
+<h1 id="55-policy-explanations">======================================================================
+55. POLICY EXPLANATIONS</h1>
+<p>Runtime should be able to explain:</p>
+<pre><code>action blocked because:
+    Payment != Captured
+</code></pre>
+<p>from same semantic rule.</p>
+<p>This avoids separate hand-written explanation logic.</p>
+<h1 id="56-traceability">======================================================================
+56. TRACEABILITY</h1>
+<p>Semantic element may link to:</p>
+<pre><code>requirement
+policy
+generated tests
+runtime guard
+tool
+documentation
+</code></pre>
+<p>This creates machine-readable traceability.</p>
+<p>Compare with traditional requirements traceability systems.</p>
+<h1 id="57-change-impact">======================================================================
+57. CHANGE IMPACT</h1>
+<p>When semantic rule changes, compiler knows derivative artifacts.</p>
+<p>This is stronger than text search.</p>
+<p>Research whether MDE already provides this strongly.</p>
+<h1 id="58-agent-context-compression">======================================================================
+58. AGENT CONTEXT COMPRESSION</h1>
+<p>One semantic model may present rule compactly.</p>
+<p>Instead of agent reading:</p>
+<pre><code>backend guard
+frontend guard
+tests
+docs
+SQL
+</code></pre>
+<p>it reads:</p>
+<pre><code>one semantic contract
+</code></pre>
+<p>This may reduce context.</p>
+<p>Measure actual tokens.</p>
+<h1 id="59-minimum-sufficient-semantic-view">======================================================================
+59. MINIMUM SUFFICIENT SEMANTIC VIEW</h1>
+<p>Full semantic IR may be verbose.</p>
+<p>Generate agent-facing projection:</p>
+<pre><code>state
+legal transitions
+requirements
+obligations
+dependencies
+</code></pre>
+<p>This may be much smaller.</p>
+<h1 id="60-tokenization">======================================================================
+60. TOKENIZATION</h1>
+<p>Compare token cost of same rule expressed as:</p>
+<pre><code>source code
+tests
+docs
+JSON IR
+compact DSL
+generated agent view
+</code></pre>
+<p>Use actual tokenizers where possible.</p>
+<h1 id="61-economic-hypothesis">======================================================================
+61. ECONOMIC HYPOTHESIS</h1>
+<p>Potential savings:</p>
+<pre><code>fewer repository reads
+fewer duplicated updates
+fewer stale artifacts
+fewer model calls
+fewer repair loops
+lower human review cost
+</code></pre>
+<p>Against:</p>
+<pre><code>model/compiler development
+specification maintenance
+generator maintenance
+migrations
+training
+</code></pre>
+<h1 id="62-upfront-cost">======================================================================
+62. UPFRONT COST</h1>
+<p>Model:</p>
+<pre><code>build semantic compiler
+define IR
+create generators
+integrate CI
+</code></pre>
+<p>This cost may be high.</p>
+<p>Estimate break-even.</p>
+<h1 id="63-maintenance-cost-of-compiler">======================================================================
+63. MAINTENANCE COST OF COMPILER</h1>
+<p>Generators themselves become critical infrastructure.</p>
+<p>Need:</p>
+<pre><code>tests
+versioning
+backward compatibility
+debugging
+</code></pre>
+<p>This cost must not be hidden.</p>
+<h1 id="64-target-language-evolution">======================================================================
+64. TARGET-LANGUAGE EVOLUTION</h1>
+<p>Language versions change.</p>
+<p>Example:</p>
+<pre><code>C# adds native unions
+</code></pre>
+<p>Generator may need change.</p>
+<p>Semantic IR should remain stable if possible.</p>
+<h1 id="65-generated-bugs">======================================================================
+65. GENERATED BUGS</h1>
+<p>A generator bug may affect:</p>
+<pre><code>every generated artifact
+</code></pre>
+<p>This is correlated implementation failure.</p>
+<p>Mitigation:</p>
+<pre><code>generator tests
+golden files
+differential generation
+target compiler checks
+independent conformance tests
+</code></pre>
+<h1 id="66-wrong-specification">======================================================================
+66. WRONG SPECIFICATION</h1>
+<p>Most dangerous scenario:</p>
+<pre><code>semantic rule itself is wrong
+</code></pre>
+<p>Then:</p>
+<pre><code>runtime
+tests
+docs
+agent tools
+</code></pre>
+<p>may all agree incorrectly.</p>
+<p>This is the key falsification concern.</p>
+<h1 id="67-independent-oracles">======================================================================
+67. INDEPENDENT ORACLES</h1>
+<p>Need mechanisms outside semantic spec.</p>
+<p>Examples:</p>
+<pre><code>hidden acceptance tests
+business examples
+formal invariants
+production observations
+human domain review
+external regulation
+</code></pre>
+<p>Research architecture of independent verification.</p>
+<h1 id="68-mutation-testing-of-specification">======================================================================
+68. MUTATION TESTING OF SPECIFICATION</h1>
+<p>Could mutate semantic rules:</p>
+<pre><code>invert guard
+remove state
+weaken authority
+</code></pre>
+<p>Tests should fail.</p>
+<p>This tests whether external tests independently validate spec.</p>
+<h1 id="69-specification-review">======================================================================
+69. SPECIFICATION REVIEW</h1>
+<p>Semantic changes may deserve higher review than implementation changes.</p>
+<p>Possible workflow:</p>
+<pre><code>semantic diff
+    ->
+domain review
+    ->
+compiler
+    ->
+generated changes
+</code></pre>
+<p>Research high-assurance configuration review.</p>
+<h1 id="70-role-of-ai">======================================================================
+70. ROLE OF AI</h1>
+<p>AI may propose semantic changes.</p>
+<p>But should agent be allowed to:</p>
+<pre><code>directly commit semantic authority?
+</code></pre>
+<p>Potential safer flow:</p>
+<pre><code>agent proposes
+impact report generated
+reviewer/authorized process approves
+</code></pre>
+<p>Investigate governance.</p>
+<h1 id="71-semantic-change-authority">======================================================================
+71. SEMANTIC CHANGE AUTHORITY</h1>
+<p>Different semantic layers may require different approval:</p>
+<pre><code>state addition
+policy change
+authority change
+evidence rule change
+</code></pre>
+<p>This could become governance-heavy.</p>
+<p>Find minimal viable process.</p>
+<h1 id="72-specification-provenance">======================================================================
+72. SPECIFICATION PROVENANCE</h1>
+<p>Each semantic rule may record:</p>
+<pre><code>source
+rationale
+issue
+policy
+actor
+date
+</code></pre>
+<p>This may improve future agent comprehension.</p>
+<h1 id="73-examples-as-specification">======================================================================
+73. EXAMPLES AS SPECIFICATION</h1>
+<p>Could executable examples complement abstract semantic model?</p>
+<p>Example:</p>
+<pre><code>Given Payment=Authorized
+When Capture
+Then Payment=Captured
+</code></pre>
+<p>Research example-driven specification.</p>
+<h1 id="74-property-based-testing">======================================================================
+74. PROPERTY-BASED TESTING</h1>
+<p>Semantic model may generate properties:</p>
+<pre><code>no illegal transition
+no duplicate refund
+no shipment before captured payment
+</code></pre>
+<p>Property-based testing may provide stronger independent coverage.</p>
+<h1 id="75-model-checking">======================================================================
+75. MODEL CHECKING</h1>
+<p>Semantic model may be translated to:</p>
+<pre><code>TLA+
+Alloy
+model checker
+</code></pre>
+<p>This could detect:</p>
+<pre><code>deadlocks
+unreachable obligations
+unsafe concurrency
+</code></pre>
+<p>Research whether generation is feasible/useful.</p>
+<h1 id="76-specification-language-expressiveness">======================================================================
+76. SPECIFICATION LANGUAGE EXPRESSIVENESS</h1>
+<p>Danger:</p>
+<pre><code>too weak -> cannot express important rules
+</code></pre>
+<p>too strong -> becomes general-purpose language, difficult to analyze</p>
+<p>Find useful bounded expressiveness.</p>
+<h1 id="77-decidability--analyzability">======================================================================
+77. DECIDABILITY / ANALYZABILITY</h1>
+<p>A restricted requirement AST may enable:</p>
+<pre><code>dependency extraction
+reachability
+migration analysis
+</code></pre>
+<p>Arbitrary code callbacks would destroy this.</p>
+<p>Research tradeoff.</p>
+<h1 id="78-escape-to-host-code">======================================================================
+78. ESCAPE TO HOST CODE</h1>
+<p>Some rules may require complex computation.</p>
+<p>Potential construct:</p>
+<pre><code>external predicate
+</code></pre>
+<p>But then compiler cannot fully inspect semantics.</p>
+<p>Track opaque dependencies explicitly.</p>
+<h1 id="79-opaque-semantic-escapes">======================================================================
+79. OPAQUE SEMANTIC ESCAPES</h1>
+<p>Metric:</p>
+<pre><code>percentage of consequential rules implemented as opaque host-language code
+</code></pre>
+<p>High value may undermine benefits.</p>
+<h1 id="80-semantic-coverage">======================================================================
+80. SEMANTIC COVERAGE</h1>
+<p>Define:</p>
+<pre><code>consequential business rules represented in semantic model
+----------------------------------------------------------
+all consequential business rules
+</code></pre>
+<p>Call:</p>
+<pre><code>Semantic Coverage
+</code></pre>
+<p>Need a way to estimate denominator.</p>
+<h1 id="81-derivation-coverage">======================================================================
+81. DERIVATION COVERAGE</h1>
+<p>How many derivative artifacts come from semantic source?</p>
+<p>Examples:</p>
+<pre><code>runtime guard
+tests
+docs
+tools
+policy explanation
+</code></pre>
+<p>High coverage may reduce drift.</p>
+<h1 id="82-drift-incident-rate">======================================================================
+82. DRIFT INCIDENT RATE</h1>
+<p>Measure:</p>
+<pre><code>cross-artifact inconsistencies detected
+---------------------------------------
+semantic changes
+</code></pre>
+<p>Compare architectures.</p>
+<h1 id="83-duplicate-rule-count">======================================================================
+83. DUPLICATE RULE COUNT</h1>
+<p>Count independent manual copies of same rule.</p>
+<p>Hypothesis:</p>
+<pre><code>semantic compilation reduces this.
+</code></pre>
+<h1 id="84-rule-fan-out">======================================================================
+84. RULE FAN-OUT</h1>
+<p>One semantic rule may influence:</p>
+<pre><code>12 artifacts
+</code></pre>
+<p>Without generation:</p>
+<pre><code>12 manual updates
+</code></pre>
+<p>With generation:</p>
+<pre><code>1 semantic edit + regeneration
+</code></pre>
+<p>Measure change amplification.</p>
+<h1 id="85-change-error-rate">======================================================================
+85. CHANGE ERROR RATE</h1>
+<p>When rule changes, measure:</p>
+<pre><code>derivative artifacts missed
+stale behavior
+repair loops
+</code></pre>
+<h1 id="86-agent-search-cost">======================================================================
+86. AGENT SEARCH COST</h1>
+<p>Agent asked:</p>
+<pre><code>"Change refund eligibility."
+</code></pre>
+<p>Conventional:</p>
+<pre><code>search code/tests/docs/tool schemas
+</code></pre>
+<p>Semantic:</p>
+<pre><code>modify rule
+impact report generated
+</code></pre>
+<p>Measure:</p>
+<pre><code>files read
+tokens
+searches
+</code></pre>
+<h1 id="87-smaller-model-hypothesis">======================================================================
+87. SMALLER MODEL HYPOTHESIS</h1>
+<p>A smaller model may safely perform routine change if compiler identifies all
+affected artifacts.</p>
+<p>Compare:</p>
+<pre><code>frontier model + conventional repository
+</code></pre>
+<p>with:</p>
+<pre><code>smaller model + semantic compiler
+</code></pre>
+<p>Measure cost/correctness.</p>
+<h1 id="88-cross-team-consistency">======================================================================
+88. CROSS-TEAM CONSISTENCY</h1>
+<p>Different teams may work in:</p>
+<pre><code>web
+backend
+agent automation
+</code></pre>
+<p>Shared semantic source could prevent divergent interpretations.</p>
+<p>Research organizational benefits.</p>
+<h1 id="89-monorepo-vs-multirepo">======================================================================
+89. MONOREPO VS MULTIREPO</h1>
+<p>Semantic spec may be shared across repositories via:</p>
+<pre><code>versioned package/artifact
+</code></pre>
+<p>Potential drift between versions.</p>
+<p>Research schema-package governance.</p>
+<h1 id="90-distributed-semantic-versions">======================================================================
+90. DISTRIBUTED SEMANTIC VERSIONS</h1>
+<p>Different services may temporarily run:</p>
+<pre><code>spec v7
+spec v8
+</code></pre>
+<p>Need compatibility strategy.</p>
+<p>This complicates "single source" in distributed systems.</p>
+<h1 id="91-rolling-deployments">======================================================================
+91. ROLLING DEPLOYMENTS</h1>
+<p>During deployment:</p>
+<pre><code>old and new semantic versions coexist.
+</code></pre>
+<p>Transitions/events may cross versions.</p>
+<p>Research protocol evolution.</p>
+<h1 id="92-backward-compatibility">======================================================================
+92. BACKWARD COMPATIBILITY</h1>
+<p>Semantic change may need:</p>
+<pre><code>dual-read
+dual-write
+version negotiation
+</code></pre>
+<p>Generator cannot magically solve compatibility.</p>
+<h1 id="93-product-experimentation">======================================================================
+93. PRODUCT EXPERIMENTATION</h1>
+<p>Do not encode transient experiment rules into durable semantic core unless
+necessary.</p>
+<p>Otherwise semantic compiler reduces pivotability.</p>
+<p>Connect to startup research.</p>
+<h1 id="94-experimental-semantic-layer">======================================================================
+94. EXPERIMENTAL SEMANTIC LAYER</h1>
+<p>Possible:</p>
+<pre><code>experimental semantic rules
+</code></pre>
+<p>with weaker guarantees / short lifecycle.</p>
+<p>Investigate if this helps avoid over-centralization.</p>
+<h1 id="95-generated-vs-interpreted-runtime">======================================================================
+95. GENERATED VS INTERPRETED RUNTIME</h1>
+<p>Semantic model can be:</p>
+<p>A. compiled to target code</p>
+<p>B. interpreted by generic runtime</p>
+<p>Compare:</p>
+<pre><code>performance
+debuggability
+deployment
+versioning
+drift
+</code></pre>
+<h1 id="96-hybrid">======================================================================
+96. HYBRID</h1>
+<p>Possible:</p>
+<pre><code>compile types/contracts
+interpret policies
+</code></pre>
+<p>Research benefits.</p>
+<h1 id="97-reference-monitor-analogy">======================================================================
+97. REFERENCE MONITOR ANALOGY</h1>
+<p>If all consequential actions consult semantic runtime:</p>
+<pre><code>it resembles reference monitor.
+</code></pre>
+<p>Generated artifacts must not become alternate bypass paths.</p>
+<h1 id="98-security">======================================================================
+98. SECURITY</h1>
+<p>If semantic compiler generates authority rules incorrectly:</p>
+<pre><code>broad security failure
+</code></pre>
+<p>Need rigorous generator assurance.</p>
+<h1 id="99-auditability">======================================================================
+99. AUDITABILITY</h1>
+<p>Semantic compiler can trace:</p>
+<pre><code>rule
+    ->
+generated guard
+    ->
+action decision
+    ->
+policy version
+</code></pre>
+<p>This could significantly improve audits.</p>
+<h1 id="100-regulatory-change">======================================================================
+100. REGULATORY CHANGE</h1>
+<p>Policy changes often require updating:</p>
+<pre><code>application logic
+docs
+tests
+workflows
+</code></pre>
+<p>Semantic compilation may reduce compliance drift.</p>
+<p>Use as case study.</p>
+<h1 id="101-experiment-a--rule-change">======================================================================
+101. EXPERIMENT A — RULE CHANGE</h1>
+<p>Rule:</p>
+<pre><code>Refund allowed within 30 days
+</code></pre>
+<p>Change to:</p>
+<pre><code>14 days
+</code></pre>
+<p>Compare:</p>
+<p>A. conventional competent system</p>
+<p>B. semantic compiler</p>
+<p>Measure:</p>
+<pre><code>artifacts updated
+misses
+tokens
+tests
+agent calls
+</code></pre>
+<h1 id="102-experiment-b--state-addition">======================================================================
+102. EXPERIMENT B — STATE ADDITION</h1>
+<p>Add:</p>
+<pre><code>PaymentState.Disputed
+</code></pre>
+<p>Measure all dependent interpretations.</p>
+<p>Semantic compiler should surface/generate changes.</p>
+<h1 id="103-experiment-c--state-split">======================================================================
+103. EXPERIMENT C — STATE SPLIT</h1>
+<p>Approved -></p>
+<pre><code>ConditionallyApproved
+FullyApproved
+</code></pre>
+<p>Measure semantic redistribution and derivative artifacts.</p>
+<h1 id="104-experiment-d--policy-change">======================================================================
+104. EXPERIMENT D — POLICY CHANGE</h1>
+<p>Fraud evidence freshness:</p>
+<pre><code>24h -> 4h
+</code></pre>
+<p>Measure:</p>
+<pre><code>runtime rule
+agent tools
+docs
+tests
+obligations
+</code></pre>
+<h1 id="105-experiment-e--tool-change">======================================================================
+105. EXPERIMENT E — TOOL CHANGE</h1>
+<p>Rename/restructure transition.</p>
+<p>Measure:</p>
+<pre><code>agent tool schema
+runtime
+docs
+</code></pre>
+<p>Does semantic source eliminate mismatch?</p>
+<h1 id="106-experiment-f--wrong-spec">======================================================================
+106. EXPERIMENT F — WRONG SPEC</h1>
+<p>Intentionally encode wrong rule.</p>
+<p>Observe:</p>
+<pre><code>generated artifacts become consistently wrong
+</code></pre>
+<p>Measure whether independent tests detect it.</p>
+<p>This is essential.</p>
+<h1 id="107-experiment-g--generator-bug">======================================================================
+107. EXPERIMENT G — GENERATOR BUG</h1>
+<p>Introduce generator defect.</p>
+<p>Measure blast radius and detection.</p>
+<h1 id="108-experiment-h--manual-artifact-edit">======================================================================
+108. EXPERIMENT H — MANUAL ARTIFACT EDIT</h1>
+<p>Modify generated/runtime artifact without spec.</p>
+<p>Build should detect drift.</p>
+<h1 id="109-experiment-i--agent-task">======================================================================
+109. EXPERIMENT I — AGENT TASK</h1>
+<p>Ask agent:</p>
+<pre><code>change shipment eligibility
+</code></pre>
+<p>Compare context/search/cost.</p>
+<h1 id="110-experiment-j--longitudinal">======================================================================
+110. EXPERIMENT J — LONGITUDINAL</h1>
+<p>Run:</p>
+<pre><code>50 semantic changes
+</code></pre>
+<p>Measure:</p>
+<pre><code>drift incidents
+duplicate rules
+context growth
+generated artifact errors
+</code></pre>
+<h1 id="111-metrics">======================================================================
+111. METRICS</h1>
+<p>Track:</p>
+<pre><code>Specification Drift Incidents
+Duplicate Semantic Rule Count
+Semantic Coverage
+Derivation Coverage
+Stale Artifact Count
+Rule Change Fan-Out
+Missed Artifact Rate
+Agent Files Read
+Context Tokens
+Tool Calls
+Repair Cycles
+Human Review Time
+Cost per Correct Semantic Change
+</code></pre>
+<h1 id="112-specification-drift-rate">======================================================================
+112. SPECIFICATION DRIFT RATE</h1>
+<p>Define:</p>
+<pre><code>inconsistent derivative artifacts
+---------------------------------
+semantic changes
+</code></pre>
+<p>Compare systems.</p>
+<h1 id="113-derivation-coverage">======================================================================
+113. DERIVATION COVERAGE</h1>
+<p>Define:</p>
+<pre><code>derivative artifacts generated/validated from semantic source
+-------------------------------------------------------------
+derivative artifacts representing semantic rules
+</code></pre>
+<p>Higher may reduce drift.</p>
+<h1 id="114-independent-validation-coverage">======================================================================
+114. INDEPENDENT VALIDATION COVERAGE</h1>
+<p>Need metric:</p>
+<pre><code>semantic rules independently checked
+-------------------------------
+semantic rules
+</code></pre>
+<p>High derivation without independent validation may create false confidence.</p>
+<h1 id="115-economic-model">======================================================================
+115. ECONOMIC MODEL</h1>
+<p>Conventional cost:</p>
+<pre><code>repeated search
+multiple edits
+stale artifacts
+repair
+defects
+</code></pre>
+<p>Semantic compiler cost:</p>
+<pre><code>initial tooling
+semantic edit
+regeneration
+compiler maintenance
+independent validation
+</code></pre>
+<p>Calculate cumulative break-even.</p>
+<h1 id="116-break-even">======================================================================
+116. BREAK-EVEN</h1>
+<p>Model over:</p>
+<pre><code>10
+100
+1,000
+10,000
+</code></pre>
+<p>semantic changes.</p>
+<p>Question:</p>
+<pre><code>At what change volume/system lifespan does semantic compilation pay off?
+</code></pre>
+<h1 id="117-startup-vs-enterprise">======================================================================
+117. STARTUP VS ENTERPRISE</h1>
+<p>Startup:</p>
+<pre><code>high change rate
+high pivot risk
+small team
+</code></pre>
+<p>Enterprise:</p>
+<pre><code>large codebase
+many teams
+compliance
+slower semantics
+</code></pre>
+<p>Benefits/costs may differ.</p>
+<h1 id="118-high-consequence-vs-low-consequence">======================================================================
+118. HIGH-CONSEQUENCE VS LOW-CONSEQUENCE</h1>
+<p>Semantic compiler likely more justified for:</p>
+<pre><code>payments
+healthcare
+compliance
+deployment
+security
+</code></pre>
+<p>Less justified for:</p>
+<pre><code>visual presentation
+simple content
+</code></pre>
+<p>Develop threshold guidance.</p>
+<h1 id="119-counterarguments">======================================================================
+119. COUNTERARGUMENTS</h1>
+<p>Actively test:</p>
+<ol>
+<li>This is just model-driven engineering, which has known adoption problems.</li>
+<li>One wrong spec creates systemic failure.</li>
+<li>Generator maintenance exceeds drift savings.</li>
+<li>Strong types/tests already solve enough.</li>
+<li>Good documentation and code review are cheaper.</li>
+<li>Modern AI can update multiple representations reliably.</li>
+<li>Generated artifacts are harder to debug.</li>
+<li>Semantic DSL becomes a second programming language.</li>
+<li>Developers bypass generator under deadline pressure.</li>
+<li>Generated code creates noisy diffs.</li>
+<li>Distributed versioning destroys single-source assumptions.</li>
+<li>Business semantics are too nuanced for DSLs.</li>
+<li>Specification becomes bottleneck.</li>
+<li>Product iteration slows.</li>
+<li>Independent validation still requires duplicate expression, reintroducing drift.</li>
+</ol>
+<h1 id="120-falsification-conditions">======================================================================
+120. FALSIFICATION CONDITIONS</h1>
+<p>The hypothesis should be weakened if:</p>
+<pre><code>drift rates are already low in competent conventional systems
+</code></pre>
+<p>or:</p>
+<pre><code>generated artifacts do not materially reduce missed updates
+</code></pre>
+<p>or:</p>
+<pre><code>wrong-spec correlated failures dominate
+</code></pre>
+<p>or:</p>
+<pre><code>semantic compiler maintenance exceeds savings
+</code></pre>
+<p>or:</p>
+<pre><code>agents still need same repository context
+</code></pre>
+<p>or:</p>
+<pre><code>simpler schema/policy/test generation achieves most benefit.
+</code></pre>
+<h1 id="121-existing-systems-to-study">======================================================================
+121. EXISTING SYSTEMS TO STUDY</h1>
+<p>Research:</p>
+<pre><code>Model-Driven Engineering
+UML executable models
+state-machine generators
+Yakindu/itemis CREATE
+SCXML
+protobuf
+OpenAPI generators
+GraphQL schema tooling
+OPA
+Cedar
+XACML
+TLA+/PlusCal
+Alloy
+DSL workbenches
+JetBrains MPS
+Xtext
+language-oriented programming
+database schema compilers
+protocol compilers
+workflow compilers
+</code></pre>
+<h1 id="122-ai-specific-systems">======================================================================
+122. AI-SPECIFIC SYSTEMS</h1>
+<p>Search current work on:</p>
+<pre><code>generating tool schemas from APIs
+agent tool registries
+typed tool systems
+policy-controlled agents
+executable agent specifications
+agent runtime contracts
+code generation for AI tools
+semantic context generation
+</code></pre>
+<p>Determine whether unified semantic compilation for AI already exists.</p>
+<h1 id="123-source-quality">======================================================================
+123. SOURCE QUALITY</h1>
+<p>Prefer:</p>
+<pre><code>foundational MDE research
+primary empirical studies
+official compiler/tool docs
+formal methods literature
+requirements traceability studies
+current AI-agent research
+</code></pre>
+<p>Distinguish:</p>
+<pre><code>established result
+empirical evidence
+architectural inference
+speculation
+</code></pre>
+<h1 id="124-required-output">======================================================================
+124. REQUIRED OUTPUT</h1>
+<p>Produce:</p>
+<ol>
+<li>Executive verdict</li>
+<li>Definition of specification drift</li>
+<li>Evidence that duplicated semantics drift</li>
+<li>Model-driven engineering comparison</li>
+<li>Executable-spec comparison</li>
+<li>DSL comparison</li>
+<li>Schema/protocol compiler comparison</li>
+<li>Policy-as-code comparison</li>
+<li>Generated-test analysis</li>
+<li>Documentation generation analysis</li>
+<li>Agent tool-generation analysis</li>
+<li>Prompt-generation analysis</li>
+<li>Runtime-guard generation analysis</li>
+<li>Planning-graph generation analysis</li>
+<li>Impact-analysis generation</li>
+<li>Semantic migration analysis</li>
+<li>Round-trip engineering lessons</li>
+<li>Generated/handwritten boundary recommendation</li>
+<li>Specification expressiveness recommendation</li>
+<li>Semantic coverage model</li>
+<li>Drift metrics</li>
+<li>AI context/token implications</li>
+<li>Smaller-model hypothesis</li>
+<li>Wrong-spec risk</li>
+<li>Generator-bug risk</li>
+<li>Independent-validation model</li>
+<li>Security/audit implications</li>
+<li>Startup/enterprise differences</li>
+<li>Counterarguments</li>
+<li>Proposed experiments</li>
+<li>Economic model</li>
+<li>Break-even analysis</li>
+<li>What is already established</li>
+<li>What remains speculative</li>
+<li>Architecture changes recommended</li>
+<li>Minimum viable semantic compiler scope</li>
+<li>Final verdict</li>
+</ol>
+<h1 id="125-final-verdict-format">======================================================================
+125. FINAL VERDICT FORMAT</h1>
+<p>Answer:</p>
+<p>Does duplicate representation materially cause semantic drift?
+Strong evidence / Moderate evidence / Weak evidence / No evidence</p>
+<p>Does generation from one semantic source reduce drift?
+Strong evidence / Moderate evidence / Weak evidence / No evidence</p>
+<p>Does semantic compilation plausibly reduce AI-agent context cost?
+Strong / Moderate / Weak / Unclear</p>
+<p>Does it plausibly enable smaller models?
+Strong / Moderate / Weak / Unclear</p>
+<p>Is the concept fundamentally:
+Model-driven engineering / executable specification / meaningfully distinct / hybrid</p>
+<p>Most valuable generated artifact:
+...</p>
+<p>Most dangerous correlated-failure mode:
+...</p>
+<p>Best independent validation mechanism:
+...</p>
+<p>Most important lesson from historical MDE:
+...</p>
+<p>Minimum semantic scope worth centralizing:
+...</p>
+<p>Biggest economic opportunity:
+...</p>
+<p>Biggest adoption risk:
+...</p>
+<p>Most important missing experiment:
+...</p>
+<h1 id="126-research-standard">======================================================================
+126. RESEARCH STANDARD</h1>
+<p>Be skeptical.</p>
+<p>Do not treat "single source of truth" as automatically beneficial.</p>
+<p>Do not count generated consistency as correctness.</p>
+<p>Do not let tests generated from the same specification serve as the only oracle.</p>
+<p>Do not ignore the historical limitations of model-driven engineering.</p>
+<p>Do not turn the semantic model into a universal programming language.</p>
+<p>Do not assume all derivative artifacts should be generated.</p>
+<p>Do not ignore compiler/generator maintenance cost.</p>
+<p>The central question is:</p>
+<pre><code>Can a narrowly scoped authoritative semantic specification eliminate enough
+duplicated business meaning that runtime behavior, tests, policies,
+documentation, and AI-agent tools remain synchronized — while avoiding the
+correlated-failure and complexity traps that have historically limited
+model-driven systems?
+</code></pre></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

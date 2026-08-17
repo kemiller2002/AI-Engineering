@@ -1,0 +1,1038 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Time Entry System — AI Implementation Requirements | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">Time Entry System — AI Implementation Requirements</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>content/projects/time-entry/requirements/time-entry-system-ai-requirements.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#time-entry-system-ai-implementation-requirements">Time Entry System — AI Implementation Requirements</a></li><li><a href="#purpose">Purpose</a></li><li><a href="#part-a-business-and-product-requirements">PART A — BUSINESS AND PRODUCT REQUIREMENTS</a></li><li><a href="#1-native-time-unit">1. Native time unit</a></li><li><a href="#br-time-001-six-minute-unit">BR-TIME-001 — Six-minute unit</a></li><li><a href="#2-time-blocks">2. Time blocks</a></li><li><a href="#br-time-010-time-entries-are-blocks">BR-TIME-010 — Time entries are blocks</a></li><li><a href="#br-time-011-six-minute-grid">BR-TIME-011 — Six-minute grid</a></li><li><a href="#br-time-012-no-cross-midnight-entry">BR-TIME-012 — No cross-midnight entry</a></li><li><a href="#br-time-013-no-overlapping-active-time">BR-TIME-013 — No overlapping active time</a></li><li><a href="#3-persons">3. Persons</a></li><li><a href="#br-person-001">BR-PERSON-001</a></li><li><a href="#4-projects">4. Projects</a></li><li><a href="#br-project-001">BR-PROJECT-001</a></li><li><a href="#br-project-002-stable-identity">BR-PROJECT-002 — Stable identity</a></li><li><a href="#br-project-003-status">BR-PROJECT-003 — Status</a></li><li><a href="#5-labels">5. Labels</a></li><li><a href="#br-label-001">BR-LABEL-001</a></li><li><a href="#br-label-002">BR-LABEL-002</a></li><li><a href="#6-description">6. Description</a></li><li><a href="#br-desc-001">BR-DESC-001</a></li><li><a href="#7-create-entry">7. Create entry</a></li><li><a href="#br-entry-001">BR-ENTRY-001</a></li><li><a href="#8-correct-entry">8. Correct entry</a></li><li><a href="#br-correct-001">BR-CORRECT-001</a></li><li><a href="#br-correct-002">BR-CORRECT-002</a></li><li><a href="#br-correct-003">BR-CORRECT-003</a></li><li><a href="#9-split-entry">9. Split entry</a></li><li><a href="#br-split-001">BR-SPLIT-001</a></li><li><a href="#br-split-002-split-requirements">BR-SPLIT-002 — Split requirements</a></li><li><a href="#br-split-003-provenance">BR-SPLIT-003 — Provenance</a></li><li><a href="#br-split-004-source-ceases-to-count">BR-SPLIT-004 — Source ceases to count</a></li><li><a href="#10-adjust-split-boundary-later-feature">10. Adjust split boundary — later feature</a></li><li><a href="#br-split-010">BR-SPLIT-010</a></li><li><a href="#11-merge-later-feature">11. Merge — later feature</a></li><li><a href="#br-merge-001">BR-MERGE-001</a></li><li><a href="#12-void-delete">12. Void/delete</a></li><li><a href="#br-void-001">BR-VOID-001</a></li><li><a href="#br-void-002">BR-VOID-002</a></li><li><a href="#13-views">13. Views</a></li><li><a href="#br-view-001-day-view">BR-VIEW-001 — Day view</a></li><li><a href="#br-view-002-week-view">BR-VIEW-002 — Week view</a></li><li><a href="#14-reporting-and-search">14. Reporting and search</a></li><li><a href="#br-report-001">BR-REPORT-001</a></li><li><a href="#br-report-002">BR-REPORT-002</a></li><li><a href="#br-report-003">BR-REPORT-003</a></li><li><a href="#br-report-004">BR-REPORT-004</a></li><li><a href="#15-initial-business-scope">15. Initial business scope</a></li><li><a href="#16-payroll-boundary">16. Payroll boundary</a></li><li><a href="#part-b-domain-rules-and-invariants">PART B — DOMAIN RULES AND INVARIANTS</a></li><li><a href="#core-time-invariants">Core time invariants</a></li><li><a href="#inv-time-001">INV-TIME-001</a></li><li><a href="#inv-time-002">INV-TIME-002</a></li><li><a href="#inv-time-003">INV-TIME-003</a></li><li><a href="#inv-time-004">INV-TIME-004</a></li><li><a href="#inv-time-005">INV-TIME-005</a></li><li><a href="#inv-time-006">INV-TIME-006</a></li><li><a href="#inv-time-007">INV-TIME-007</a></li><li><a href="#inv-time-008">INV-TIME-008</a></li><li><a href="#inv-time-009">INV-TIME-009</a></li><li><a href="#inv-time-010">INV-TIME-010</a></li><li><a href="#split-invariants">Split invariants</a></li><li><a href="#inv-split-001">INV-SPLIT-001</a></li><li><a href="#inv-split-002">INV-SPLIT-002</a></li><li><a href="#inv-split-003">INV-SPLIT-003</a></li><li><a href="#inv-split-004">INV-SPLIT-004</a></li><li><a href="#inv-split-005">INV-SPLIT-005</a></li><li><a href="#inv-split-006">INV-SPLIT-006</a></li><li><a href="#inv-split-007">INV-SPLIT-007</a></li><li><a href="#project-invariants">Project invariants</a></li><li><a href="#inv-project-001">INV-PROJECT-001</a></li><li><a href="#inv-project-002">INV-PROJECT-002</a></li><li><a href="#inv-project-003">INV-PROJECT-003</a></li><li><a href="#label-invariants">Label invariants</a></li><li><a href="#inv-label-001">INV-LABEL-001</a></li><li><a href="#inv-label-002">INV-LABEL-002</a></li><li><a href="#part-c-architecture-and-implementation-requirements">PART C — ARCHITECTURE AND IMPLEMENTATION REQUIREMENTS</a></li><li><a href="#17-domain-model-rule">17. Domain-model rule</a></li><li><a href="#ar-001-application-specific-semantics">AR-001 — Application-specific semantics</a></li><li><a href="#ar-002-genericize-mechanics-only">AR-002 — Genericize mechanics only</a></li><li><a href="#18-wasm-typescript-boundary">18. WASM / TypeScript boundary</a></li><li><a href="#ar-wasm-001-wasm-owns-business-semantics">AR-WASM-001 — WASM owns business semantics</a></li><li><a href="#ar-ts-001-typescript-owns-browser-platform-mechanics">AR-TS-001 — TypeScript owns browser/platform mechanics</a></li><li><a href="#ar-ts-002-ephemeral-ui-state-is-allowed">AR-TS-002 — Ephemeral UI state is allowed</a></li><li><a href="#19-minimal-dependencies">19. Minimal dependencies</a></li><li><a href="#ar-dep-001">AR-DEP-001</a></li><li><a href="#20-persistence">20. Persistence</a></li><li><a href="#21-json-partitioning">21. JSON partitioning</a></li><li><a href="#22-weekly-json-shape">22. Weekly JSON shape</a></li><li><a href="#23-identity">23. Identity</a></li><li><a href="#24-github-optimistic-concurrency">24. GitHub optimistic concurrency</a></li><li><a href="#25-conflict-resolution">25. Conflict resolution</a></li><li><a href="#26-one-semantic-operation-one-logical-write-where-possible">26. One semantic operation, one logical write where possible</a></li><li><a href="#27-git-history-and-audit">27. Git history and audit</a></li><li><a href="#28-github-authentication">28. GitHub authentication</a></li><li><a href="#29-remote-efficiency">29. Remote efficiency</a></li><li><a href="#30-synchronization-state-is-not-business-state">30. Synchronization state is not business state</a></li><li><a href="#31-unknown-github-write-outcome">31. Unknown GitHub write outcome</a></li><li><a href="#32-keep-current-business-state-minimal">32. Keep current business state minimal</a></li><li><a href="#33-initial-semantic-operations">33. Initial semantic operations</a></li><li><a href="#34-capability-behavior">34. Capability behavior</a></li><li><a href="#35-diagnostics">35. Diagnostics</a></li><li><a href="#part-d-acceptance-criteria">PART D — ACCEPTANCE CRITERIA</a></li><li><a href="#ac-001-valid-entry">AC-001 — Valid entry</a></li><li><a href="#ac-002-invalid-start">AC-002 — Invalid start</a></li><li><a href="#ac-003-overlap">AC-003 — Overlap</a></li><li><a href="#ac-004-split">AC-004 — Split</a></li><li><a href="#ac-005-correct-one-split-child">AC-005 — Correct one split child</a></li><li><a href="#ac-006-archived-project">AC-006 — Archived project</a></li><li><a href="#ac-007-void">AC-007 — Void</a></li><li><a href="#ac-008-concurrent-github-edit">AC-008 — Concurrent GitHub edit</a></li><li><a href="#ac-009-unknown-write-outcome">AC-009 — Unknown write outcome</a></li><li><a href="#ac-010-typescript-wasm-boundary">AC-010 — TypeScript/WASM boundary</a></li><li><a href="#part-e-non-goals">PART E — NON-GOALS</a></li><li><a href="#part-f-open-design-decisions">PART F — OPEN DESIGN DECISIONS</a></li><li><a href="#part-g-future-semantic-architecture-experiments">PART G — FUTURE SEMANTIC-ARCHITECTURE EXPERIMENTS</a></li><li><a href="#approval-locking">Approval / locking</a></li><li><a href="#semantic-migration">Semantic migration</a></li><li><a href="#obligations">Obligations</a></li><li><a href="#external-effect">External effect</a></li><li><a href="#ai-facing-capabilities">AI-facing capabilities</a></li><li><a href="#part-h-implementation-guidance">PART H — IMPLEMENTATION GUIDANCE</a></li><li><a href="#simplicity-rule">Simplicity rule</a></li><li><a href="#testing-rule">Testing rule</a></li><li><a href="#independent-domain-acceptance-tests">Independent domain/acceptance tests</a></li><li><a href="#structural-conformance-tests">Structural/conformance tests</a></li><li><a href="#final-directive-to-implementing-ai">FINAL DIRECTIVE TO IMPLEMENTING AI</a></li> </ol> </aside> <section class="document-body"><h1 id="time-entry-system--ai-implementation-requirements">Time Entry System — AI Implementation Requirements</h1>
+<p>Date: 2026-08-14
+Status: Initial implementation specification</p>
+<h2 id="purpose">Purpose</h2>
+<p>Build a simple, reliable time-entry application for recording project work in exact six-minute increments.</p>
+<p>This document intentionally separates:</p>
+<ol>
+<li>Business/Product Requirements</li>
+<li>Domain Rules and Invariants</li>
+<li>Architecture/Implementation Requirements</li>
+<li>Acceptance Criteria</li>
+<li>Non-Goals and Future Experiments</li>
+</ol>
+<p>An implementing AI must not blur these categories.</p>
+<p>A business requirement defines what the application must mean or do.
+An architectural requirement defines how this implementation is currently intended to satisfy those business requirements.</p>
+<p>Core principles:</p>
+<blockquote>
+<p>Genericize the mechanics. Specialize the semantics.</p>
+</blockquote>
+<blockquote>
+<p>If metadata required to explain a generic abstraction approaches the complexity of the domain model it replaces, the abstraction has failed.</p>
+</blockquote>
+<p>Do not build a generic timekeeping platform or generic state-machine framework.</p>
+<hr>
+<h1 id="part-a--business-and-product-requirements">PART A — BUSINESS AND PRODUCT REQUIREMENTS</h1>
+<h2 id="1-native-time-unit">1. Native time unit</h2>
+<h3 id="br-time-001--six-minute-unit">BR-TIME-001 — Six-minute unit</h3>
+<p>The authoritative unit of time is six minutes.</p>
+<pre><code>1 unit  = 6 minutes = 0.1 hour
+5 units = 30 minutes = 0.5 hour
+10 units = 60 minutes = 1.0 hour
+</code></pre>
+<p>Store and calculate authoritative duration as integer six-minute units.</p>
+<p>Do not store authoritative duration as floating-point decimal hours.</p>
+<p>Reasons:</p>
+<ul>
+<li>exact arithmetic;</li>
+<li>no rounding ambiguity;</li>
+<li>exact splitting;</li>
+<li>exact totals;</li>
+<li>direct match to intended reporting.</li>
+</ul>
+<hr>
+<h2 id="2-time-blocks">2. Time blocks</h2>
+<h3 id="br-time-010--time-entries-are-blocks">BR-TIME-010 — Time entries are blocks</h3>
+<p>A time entry represents a specific block of work time.</p>
+<p>A time entry contains:</p>
+<ul>
+<li>stable entry ID;</li>
+<li>person;</li>
+<li>date;</li>
+<li>start time;</li>
+<li>duration in six-minute units;</li>
+<li>project;</li>
+<li>non-blank description;</li>
+<li>zero or more labels.</li>
+</ul>
+<p>End time is derived from start + duration.</p>
+<h3 id="br-time-011--six-minute-grid">BR-TIME-011 — Six-minute grid</h3>
+<p>Start times must fall on six-minute boundaries:</p>
+<pre><code>09:00
+09:06
+09:12
+09:18
+</code></pre>
+<p>Duration must be one or more whole units.</p>
+<h3 id="br-time-012--no-cross-midnight-entry">BR-TIME-012 — No cross-midnight entry</h3>
+<p>One entry may not span two calendar days.</p>
+<p>Work crossing midnight must be represented as two entries.</p>
+<h3 id="br-time-013--no-overlapping-active-time">BR-TIME-013 — No overlapping active time</h3>
+<p>Active entries for the same person may not overlap.</p>
+<p>The same six-minute unit may not be counted twice for one person.</p>
+<p>If overlapping allocation is ever allowed, it must be an explicit later business rule.</p>
+<hr>
+<h2 id="3-persons">3. Persons</h2>
+<h3 id="br-person-001">BR-PERSON-001</h3>
+<p>Every time entry belongs to exactly one person.</p>
+<p>Minimum person data:</p>
+<pre><code>personId
+displayName
+active
+</code></pre>
+<p>GitHub identity may be associated with the person, but GitHub identity is not automatically the business-domain identity.</p>
+<hr>
+<h2 id="4-projects">4. Projects</h2>
+<h3 id="br-project-001">BR-PROJECT-001</h3>
+<p>Every active time entry belongs to exactly one project.</p>
+<p>Project is a first-class business concept, not merely a string label.</p>
+<h3 id="br-project-002--stable-identity">BR-PROJECT-002 — Stable identity</h3>
+<p>Projects have stable IDs independent of names.</p>
+<p>Recommended fields:</p>
+<pre><code>projectId
+code
+name
+description?
+status
+</code></pre>
+<h3 id="br-project-003--status">BR-PROJECT-003 — Status</h3>
+<p>Initial project status:</p>
+<pre><code>Active
+Archived
+</code></pre>
+<p>Active projects may receive new entries.</p>
+<p>Archived projects:</p>
+<ul>
+<li>remain historically resolvable;</li>
+<li>remain reportable;</li>
+<li>cannot receive ordinary new entries.</li>
+</ul>
+<p>Do not add additional project states until they change legitimate future behavior.</p>
+<hr>
+<h2 id="5-labels">5. Labels</h2>
+<h3 id="br-label-001">BR-LABEL-001</h3>
+<p>Labels are distinct from projects.</p>
+<p>Project answers:</p>
+<pre><code>What body of work was this for?
+</code></pre>
+<p>Label answers:</p>
+<pre><code>What kind of work was performed?
+</code></pre>
+<p>Example:</p>
+<pre><code>Project: HelixNote
+Labels: Architecture, Research, UI
+</code></pre>
+<h3 id="br-label-002">BR-LABEL-002</h3>
+<p>An entry may have zero or more labels.</p>
+<p>Labels have stable IDs independent of names.</p>
+<p>Suggested fields:</p>
+<pre><code>labelId
+name
+description?
+active
+</code></pre>
+<p>Inactive labels remain historically resolvable but should not normally be assignable to new entries.</p>
+<hr>
+<h2 id="6-description">6. Description</h2>
+<h3 id="br-desc-001">BR-DESC-001</h3>
+<p>Every active entry must have a non-blank human-readable description.</p>
+<p>Description answers:</p>
+<pre><code>What work was actually performed?
+</code></pre>
+<p>Example:</p>
+<pre><code>Research semantic dependency handling for state splits
+</code></pre>
+<p>Project and labels do not replace the description.</p>
+<hr>
+<h2 id="7-create-entry">7. Create entry</h2>
+<h3 id="br-entry-001">BR-ENTRY-001</h3>
+<p>The user must be able to manually create a time block.</p>
+<p>Required:</p>
+<ul>
+<li>date;</li>
+<li>start;</li>
+<li>duration or end;</li>
+<li>project;</li>
+<li>description.</li>
+</ul>
+<p>Optional:</p>
+<ul>
+<li>labels.</li>
+</ul>
+<p>All domain rules must be validated before acceptance.</p>
+<hr>
+<h2 id="8-correct-entry">8. Correct entry</h2>
+<h3 id="br-correct-001">BR-CORRECT-001</h3>
+<p>An existing entry can be corrected.</p>
+<p>Correction may change:</p>
+<ul>
+<li>start;</li>
+<li>duration;</li>
+<li>project;</li>
+<li>labels;</li>
+<li>description.</li>
+</ul>
+<p>Correction must preserve all domain invariants.</p>
+<h3 id="br-correct-002">BR-CORRECT-002</h3>
+<p>The business operation is conceptually:</p>
+<pre><code>CorrectTimeEntry
+</code></pre>
+<p>not an unrestricted arbitrary persistence PATCH.</p>
+<p>The UI may edit fields, but the resulting domain change must be validated as one legitimate correction.</p>
+<h3 id="br-correct-003">BR-CORRECT-003</h3>
+<p>Corrections must not erase prior recorded values from history.</p>
+<p>The current version is authoritative for current reporting, while historical versions remain recoverable through audit/persistence history.</p>
+<p>A correction reason may initially be optional.</p>
+<hr>
+<h2 id="9-split-entry">9. Split entry</h2>
+<h3 id="br-split-001">BR-SPLIT-001</h3>
+<p>The user must be able to split one time block into two adjacent blocks.</p>
+<p>Example:</p>
+<p>Original:</p>
+<pre><code>09:00–10:30
+15 units
+</code></pre>
+<p>Split at 10:00:</p>
+<pre><code>09:00–10:00
+10 units
+
+10:00–10:30
+5 units
+</code></pre>
+<h3 id="br-split-002--split-requirements">BR-SPLIT-002 — Split requirements</h3>
+<p>A valid split:</p>
+<ul>
+<li>occurs strictly inside the original interval;</li>
+<li>occurs on a six-minute boundary;</li>
+<li>creates two non-zero blocks;</li>
+<li>preserves total duration exactly;</li>
+<li>preserves original interval coverage exactly;</li>
+<li>creates no gap;</li>
+<li>creates no overlap;</li>
+<li>preserves person and date.</li>
+</ul>
+<p>Children initially inherit:</p>
+<ul>
+<li>project;</li>
+<li>labels;</li>
+<li>description.</li>
+</ul>
+<p>Either child may then be corrected independently.</p>
+<h3 id="br-split-003--provenance">BR-SPLIT-003 — Provenance</h3>
+<p>Both child entries retain explicit provenance linking them to the source entry.</p>
+<p>Do not rely only on visual similarity or Git history.</p>
+<h3 id="br-split-004--source-ceases-to-count">BR-SPLIT-004 — Source ceases to count</h3>
+<p>After split, the original source entry must no longer contribute to totals.</p>
+<p>Do not destructively erase historical meaning merely to simplify current totals.</p>
+<hr>
+<h2 id="10-adjust-split-boundary--later-feature">10. Adjust split boundary — later feature</h2>
+<h3 id="br-split-010">BR-SPLIT-010</h3>
+<p>Later, allow the split point between two adjacent split-derived entries to move.</p>
+<p>Example:</p>
+<pre><code>09:00–10:00
+10:00–11:00
+</code></pre>
+<p>becomes:</p>
+<pre><code>09:00–09:48
+09:48–11:00
+</code></pre>
+<p>Requirements:</p>
+<ul>
+<li>combined interval unchanged;</li>
+<li>each result >= 1 unit;</li>
+<li>split remains on six-minute boundary;</li>
+<li>no overlap introduced.</li>
+</ul>
+<p>May be deferred beyond v0.1.</p>
+<hr>
+<h2 id="11-merge--later-feature">11. Merge — later feature</h2>
+<h3 id="br-merge-001">BR-MERGE-001</h3>
+<p>Later, support merging adjacent entries.</p>
+<p>Minimum:</p>
+<ul>
+<li>same person;</li>
+<li>same date;</li>
+<li>first ends exactly where second begins.</li>
+</ul>
+<p>If project, labels, or descriptions differ, do not silently choose values.</p>
+<p>Resulting metadata must be explicitly selected.</p>
+<p>May be deferred beyond v0.1.</p>
+<hr>
+<h2 id="12-voiddelete">12. Void/delete</h2>
+<h3 id="br-void-001">BR-VOID-001</h3>
+<p>Persisted/reported history should not be silently erased.</p>
+<p>A persisted entry removed from current totals should be voided/superseded/corrected rather than destructively deleted.</p>
+<p>A voided entry:</p>
+<ul>
+<li>remains historically recoverable;</li>
+<li>contributes zero to current totals.</li>
+</ul>
+<h3 id="br-void-002">BR-VOID-002</h3>
+<p>An unsaved entry that never became meaningful persisted history may simply be discarded.</p>
+<p>Do not create a complex Draft lifecycle unless required later.</p>
+<hr>
+<h2 id="13-views">13. Views</h2>
+<h3 id="br-view-001--day-view">BR-VIEW-001 — Day view</h3>
+<p>Provide a chronological daily timeline.</p>
+<p>Show:</p>
+<ul>
+<li>start;</li>
+<li>end;</li>
+<li>duration;</li>
+<li>project;</li>
+<li>description;</li>
+<li>labels;</li>
+<li>correction/void status where relevant.</li>
+</ul>
+<p>Splitting should be visually understandable.</p>
+<h3 id="br-view-002--week-view">BR-VIEW-002 — Week view</h3>
+<p>Provide a week-oriented view with:</p>
+<ul>
+<li>total per day;</li>
+<li>total for week;</li>
+<li>entries accessible/grouped by day.</li>
+</ul>
+<p>Week is a primary review/reporting unit.</p>
+<hr>
+<h2 id="14-reporting-and-search">14. Reporting and search</h2>
+<h3 id="br-report-001">BR-REPORT-001</h3>
+<p>Totals must derive exclusively from integer six-minute units.</p>
+<p>Initial totals:</p>
+<ul>
+<li>day;</li>
+<li>week;</li>
+<li>project;</li>
+<li>label.</li>
+</ul>
+<h3 id="br-report-002">BR-REPORT-002</h3>
+<p>Support date-range reporting.</p>
+<h3 id="br-report-003">BR-REPORT-003</h3>
+<p>Support description text search.</p>
+<h3 id="br-report-004">BR-REPORT-004</h3>
+<p>Useful filters:</p>
+<ul>
+<li>date range;</li>
+<li>project;</li>
+<li>label;</li>
+<li>person when applicable;</li>
+<li>text.</li>
+</ul>
+<p>Search/filter should normally operate locally on already retrieved data when practical.</p>
+<hr>
+<h2 id="15-initial-business-scope">15. Initial business scope</h2>
+<p>Version 0.1 includes:</p>
+<ul>
+<li>Person</li>
+<li>Project</li>
+<li>Label</li>
+<li>manual blocks</li>
+<li>six-minute native units</li>
+<li>required description</li>
+<li>project assignment</li>
+<li>labels</li>
+<li>correction</li>
+<li>split</li>
+<li>void</li>
+<li>no overlap</li>
+<li>day view</li>
+<li>week view</li>
+<li>exact totals</li>
+<li>basic filtering/search</li>
+</ul>
+<p>Do not add approval, billing, payroll, invoicing, budgets, timers, or complicated permissions until explicitly required.</p>
+<hr>
+<h2 id="16-payroll-boundary">16. Payroll boundary</h2>
+<p>This is initially a project/work-time allocation system, not an authoritative payroll time clock.</p>
+<p>Do not silently treat these records as statutory wage/payroll truth.</p>
+<p>If payroll, overtime, employee clocking, or wage compliance enters scope, revisit the domain and legal requirements explicitly.</p>
+<h1 id="part-b--domain-rules-and-invariants">PART B — DOMAIN RULES AND INVARIANTS</h1>
+<h2 id="core-time-invariants">Core time invariants</h2>
+<h3 id="inv-time-001">INV-TIME-001</h3>
+<pre><code>durationUnits > 0
+</code></pre>
+<h3 id="inv-time-002">INV-TIME-002</h3>
+<p>Duration is an integer number of six-minute units.</p>
+<h3 id="inv-time-003">INV-TIME-003</h3>
+<p>Start time lies on a six-minute boundary.</p>
+<h3 id="inv-time-004">INV-TIME-004</h3>
+<p>An entry does not cross a calendar-day boundary.</p>
+<h3 id="inv-time-005">INV-TIME-005</h3>
+<p>Active entries for the same person do not overlap.</p>
+<h3 id="inv-time-006">INV-TIME-006</h3>
+<p>Every active entry references an existing project.</p>
+<h3 id="inv-time-007">INV-TIME-007</h3>
+<p>New ordinary entries reference active projects only.</p>
+<h3 id="inv-time-008">INV-TIME-008</h3>
+<p>Every label reference resolves to a known label.</p>
+<h3 id="inv-time-009">INV-TIME-009</h3>
+<p>Description is not blank/whitespace.</p>
+<h3 id="inv-time-010">INV-TIME-010</h3>
+<p>Voided/superseded entries do not count in totals.</p>
+<h2 id="split-invariants">Split invariants</h2>
+<h3 id="inv-split-001">INV-SPLIT-001</h3>
+<p>Split point > original start.</p>
+<h3 id="inv-split-002">INV-SPLIT-002</h3>
+<p>Split point &#x3C; original end.</p>
+<h3 id="inv-split-003">INV-SPLIT-003</h3>
+<p>Split point lies on six-minute boundary.</p>
+<h3 id="inv-split-004">INV-SPLIT-004</h3>
+<p>Left duration + right duration = original duration exactly.</p>
+<h3 id="inv-split-005">INV-SPLIT-005</h3>
+<p>Children exactly cover original interval with no gap or overlap.</p>
+<h3 id="inv-split-006">INV-SPLIT-006</h3>
+<p>Source entry ceases contributing to totals.</p>
+<h3 id="inv-split-007">INV-SPLIT-007</h3>
+<p>Both children preserve source-entry provenance.</p>
+<h2 id="project-invariants">Project invariants</h2>
+<h3 id="inv-project-001">INV-PROJECT-001</h3>
+<p>Project identity survives rename.</p>
+<h3 id="inv-project-002">INV-PROJECT-002</h3>
+<p>Archived projects remain historically resolvable.</p>
+<h3 id="inv-project-003">INV-PROJECT-003</h3>
+<p>Archived projects cannot receive ordinary new time.</p>
+<h2 id="label-invariants">Label invariants</h2>
+<h3 id="inv-label-001">INV-LABEL-001</h3>
+<p>Label identity survives rename.</p>
+<h3 id="inv-label-002">INV-LABEL-002</h3>
+<p>Inactive labels remain historically resolvable.</p>
+<h1 id="part-c--architecture-and-implementation-requirements">PART C — ARCHITECTURE AND IMPLEMENTATION REQUIREMENTS</h1>
+<h2 id="17-domain-model-rule">17. Domain-model rule</h2>
+<h3 id="ar-001--application-specific-semantics">AR-001 — Application-specific semantics</h3>
+<p>Model this application directly.</p>
+<p>Preferred concepts:</p>
+<pre><code>TimeEntry
+Person
+Project
+Label
+CorrectTimeEntry
+SplitTimeEntry
+VoidTimeEntry
+</code></pre>
+<p>Do not implement application meaning as:</p>
+<pre><code>GenericStateMachine&#x3C;TimeEntry>
+</code></pre>
+<p>or a large generic metadata structure describing states/transitions/rules.</p>
+<h3 id="ar-002--genericize-mechanics-only">AR-002 — Genericize mechanics only</h3>
+<p>Generic/shared machinery may support:</p>
+<ul>
+<li>semantic IDs;</li>
+<li>transition validation;</li>
+<li>version checking;</li>
+<li>capability derivation;</li>
+<li>dependency tracking;</li>
+<li>structured diagnostics;</li>
+<li>persistence adapters;</li>
+<li>serialization;</li>
+<li>synchronization.</li>
+</ul>
+<p>It must not define generic business meaning.</p>
+<hr>
+<h2 id="18-wasm--typescript-boundary">18. WASM / TypeScript boundary</h2>
+<p>The UI is an experiment in:</p>
+<ul>
+<li>application/domain semantics in WASM;</li>
+<li>minimal browser/platform kernel in TypeScript.</li>
+</ul>
+<p>Do not add SPA or client-state frameworks unless genuinely necessary.</p>
+<h3 id="ar-wasm-001--wasm-owns-business-semantics">AR-WASM-001 — WASM owns business semantics</h3>
+<p>WASM owns:</p>
+<ul>
+<li>TimeEntry types;</li>
+<li>Project types;</li>
+<li>Label types;</li>
+<li>six-minute unit;</li>
+<li>validation;</li>
+<li>overlap detection;</li>
+<li>splitting;</li>
+<li>correction validation;</li>
+<li>void/supersede behavior;</li>
+<li>totals;</li>
+<li>capability derivation;</li>
+<li>domain projections;</li>
+<li>validation of persistence data into domain types where practical.</li>
+</ul>
+<p>Business rules must not be independently duplicated in TypeScript.</p>
+<h3 id="ar-ts-001--typescript-owns-browserplatform-mechanics">AR-TS-001 — TypeScript owns browser/platform mechanics</h3>
+<p>TypeScript owns:</p>
+<ul>
+<li>WASM bootstrap;</li>
+<li>DOM events;</li>
+<li>DOM rendering/update;</li>
+<li>browser routing/history if needed;</li>
+<li>fetch;</li>
+<li>GitHub API communication;</li>
+<li>authentication handoff;</li>
+<li>local browser cache;</li>
+<li>serialization/bridge;</li>
+<li>ephemeral UI state.</li>
+</ul>
+<p>TypeScript must not become a second business/domain implementation.</p>
+<h3 id="ar-ts-002--ephemeral-ui-state-is-allowed">AR-TS-002 — Ephemeral UI state is allowed</h3>
+<p>Examples:</p>
+<ul>
+<li>selected tab;</li>
+<li>open dialog;</li>
+<li>route;</li>
+<li>focus;</li>
+<li>scroll position;</li>
+<li>temporary form state.</li>
+</ul>
+<p>UI state must not redefine domain truth.</p>
+<hr>
+<h2 id="19-minimal-dependencies">19. Minimal dependencies</h2>
+<h3 id="ar-dep-001">AR-DEP-001</h3>
+<p>Default to no external libraries unless necessary.</p>
+<p>Prefer:</p>
+<ul>
+<li>browser APIs;</li>
+<li>language/runtime standard libraries;</li>
+<li>native WASM facilities;</li>
+<li>explicit simple code.</li>
+</ul>
+<p>Do not add frameworks solely for convenience.</p>
+<hr>
+<h2 id="20-persistence">20. Persistence</h2>
+<p>GitHub is the persistent datastore.</p>
+<p>JSON files are the persistent representation.</p>
+<p>GitHub JSON is not the domain model.</p>
+<p>Required flow:</p>
+<pre><code>GitHub JSON
+    -> parse
+    -> schema validate
+    -> construct application-specific domain types
+    -> apply domain operations
+    -> serialize
+    -> persist to GitHub
+</code></pre>
+<p>Do not treat arbitrary raw JSON/dictionaries as authoritative domain state.</p>
+<hr>
+<h2 id="21-json-partitioning">21. JSON partitioning</h2>
+<p>Avoid:</p>
+<ul>
+<li>one giant time-entries.json;</li>
+<li>one entry file per record in one flat directory.</li>
+</ul>
+<p>Recommended initial organization:</p>
+<pre><code>/data/
+    projects/
+        &#x3C;project-id>.json
+
+    labels/
+        labels.json
+
+    people/
+        &#x3C;person-id>/
+            &#x3C;year>/
+                &#x3C;month>/
+                    &#x3C;week-start>.json
+</code></pre>
+<p>Example:</p>
+<pre><code>/data/people/kevin/2026/08/2026-08-10.json
+</code></pre>
+<p>Week is the recommended time-entry persistence boundary because it aligns with:</p>
+<ul>
+<li>normal review;</li>
+<li>weekly totals;</li>
+<li>overlap validation;</li>
+<li>later approval;</li>
+<li>conflict scope;</li>
+<li>Git write locality.</li>
+</ul>
+<hr>
+<h2 id="22-weekly-json-shape">22. Weekly JSON shape</h2>
+<p>Recommended concept:</p>
+<pre><code>{
+  "schemaVersion": 1,
+  "semanticVersion": 1,
+  "personId": "kevin",
+  "weekStarting": "2026-08-10",
+  "documentRevision": 17,
+  "entries": [...]
+}
+</code></pre>
+<p>schemaVersion describes physical persistence representation.</p>
+<p>semanticVersion describes business interpretation.</p>
+<p>Do not assume they are permanently the same concept.</p>
+<hr>
+<h2 id="23-identity">23. Identity</h2>
+<p>Every entry, project, label, and person needs a stable unique ID.</p>
+<p>Entry identity survives ordinary corrections.</p>
+<p>Split creates new child entry IDs and records source provenance.</p>
+<p>Never use array position as identity.</p>
+<hr>
+<h2 id="24-github-optimistic-concurrency">24. GitHub optimistic concurrency</h2>
+<p>When loading a GitHub JSON document, retain its current file/blob SHA or equivalent version.</p>
+<p>Saving should conceptually be:</p>
+<pre><code>save(expectedVersion, updatedDocument)
+</code></pre>
+<p>If remote content changed since load, do not silently overwrite.</p>
+<p>Return a conflict and reconcile.</p>
+<p>Never use last-write-wins for semantic data.</p>
+<hr>
+<h2 id="25-conflict-resolution">25. Conflict resolution</h2>
+<p>On version conflict:</p>
+<ol>
+<li>fetch current remote state;</li>
+<li>compare against expected base;</li>
+<li>identify whether changes are semantically independent;</li>
+<li>merge only when explicitly safe;</li>
+<li>otherwise surface a deliberate conflict.</li>
+</ol>
+<p>Likely safe example:</p>
+<pre><code>local changes description on Entry A
+remote adds unrelated Entry B
+</code></pre>
+<p>Likely semantic conflict:</p>
+<pre><code>local splits Entry A
+remote changes Entry A duration
+</code></pre>
+<p>Do not use a generic JSON merge as proof of semantic safety.</p>
+<hr>
+<h2 id="26-one-semantic-operation-one-logical-write-where-possible">26. One semantic operation, one logical write where possible</h2>
+<p>Operations within one weekly document should be persisted as one logical GitHub update.</p>
+<p>SplitTimeEntry should not require separate remote delete/create operations if all affected entries belong to one week file.</p>
+<p>If a later operation genuinely needs multi-file atomic change, evaluate Git blob/tree/commit/ref APIs so one Git commit represents the complete change.</p>
+<p>Do not build multi-file transaction machinery before required.</p>
+<hr>
+<h2 id="27-git-history-and-audit">27. Git history and audit</h2>
+<p>Use Git commits as durable persistence/audit history.</p>
+<p>Examples:</p>
+<pre><code>time: add 1.5h to HelixNote on 2026-08-14
+time: split TE-923 at 10:00
+time: correct TE-924 project HelixNote -> Echelon
+project: archive HELIX
+</code></pre>
+<p>Do not rewrite Git history to hide corrections.</p>
+<hr>
+<h2 id="28-github-authentication">28. GitHub authentication</h2>
+<p>For a trusted single-user experiment, a fine-grained GitHub token restricted to the data repository may be acceptable.</p>
+<p>Do not:</p>
+<ul>
+<li>hard-code a broad token into source;</li>
+<li>assume a browser-embedded long-lived PAT is suitable for multi-user production.</li>
+</ul>
+<p>Future multi-user options may include:</p>
+<ul>
+<li>GitHub App;</li>
+<li>OAuth;</li>
+<li>short-lived user tokens;</li>
+<li>tiny token exchange/proxy.</li>
+</ul>
+<p>GitHub remains the datastore unless business requirements change.</p>
+<hr>
+<h2 id="29-remote-efficiency">29. Remote efficiency</h2>
+<p>Do not make a GitHub request for every UI interaction.</p>
+<p>Preferred flow:</p>
+<pre><code>load relevant week
+    -> validate into domain state
+    -> operate locally
+    -> persist meaningful semantic changes
+</code></pre>
+<p>Use local caching.</p>
+<p>Search/filter already retrieved data locally.</p>
+<hr>
+<h2 id="30-synchronization-state-is-not-business-state">30. Synchronization state is not business state</h2>
+<p>Synchronization may have states like:</p>
+<pre><code>Clean
+ModifiedLocally
+Saving
+SaveFailed
+SaveOutcomeUnknown
+Conflict
+</code></pre>
+<p>These are execution/synchronization states.</p>
+<p>They are not TimeEntry business states.</p>
+<p>Keep dimensions separate.</p>
+<hr>
+<h2 id="31-unknown-github-write-outcome">31. Unknown GitHub write outcome</h2>
+<p>A lost connection after sending a GitHub write does not prove the write failed.</p>
+<p>If the response is indeterminate:</p>
+<pre><code>SaveOutcomeUnknown
+</code></pre>
+<p>Then:</p>
+<ol>
+<li>inspect repository/branch/file/commit state;</li>
+<li>determine whether the intended write occurred;</li>
+<li>only then decide whether another write is appropriate.</li>
+</ol>
+<p>Do not convert timeout directly into authoritative failure.</p>
+<p>This is intentionally a real test of external-effect uncertainty handling.</p>
+<hr>
+<h2 id="32-keep-current-business-state-minimal">32. Keep current business state minimal</h2>
+<p>Do not introduce:</p>
+<pre><code>Draft
+Submitted
+Approved
+Locked
+Billed
+</code></pre>
+<p>until they affect legitimate future actions.</p>
+<p>States must be earned.</p>
+<p>A state deserves to exist when its value changes what may legally happen next.</p>
+<hr>
+<h2 id="33-initial-semantic-operations">33. Initial semantic operations</h2>
+<p>Likely initial TimeEntry operations:</p>
+<pre><code>CreateTimeEntry
+CorrectTimeEntry
+SplitTimeEntry
+VoidTimeEntry
+</code></pre>
+<p>Do not create a semantic transition for every UI field unless behavior genuinely differs.</p>
+<p>Likely project operations:</p>
+<pre><code>CreateProject
+CorrectProject
+ArchiveProject
+ReactivateProject
+</code></pre>
+<p>Only include ReactivateProject if that behavior is intentionally allowed.</p>
+<hr>
+<h2 id="34-capability-behavior">34. Capability behavior</h2>
+<p>The domain/runtime should be able to determine currently legal actions.</p>
+<p>Example active entry:</p>
+<pre><code>Correct
+Split
+Void
+</code></pre>
+<p>Example archived project, if reactivation allowed:</p>
+<pre><code>Reactivate
+</code></pre>
+<p>UI or AI code should not independently rediscover legality from scattered rules.</p>
+<hr>
+<h2 id="35-diagnostics">35. Diagnostics</h2>
+<p>Validation errors should be structured.</p>
+<p>Avoid:</p>
+<pre><code>Invalid entry
+</code></pre>
+<p>Prefer:</p>
+<pre><code>TIME_OVERLAP
+ExistingEntry: TE-122
+ConflictInterval: 09:30–10:00
+</code></pre>
+<p>or:</p>
+<pre><code>INVALID_SPLIT_POINT
+SplitPoint: 09:57
+Reason: NotOnSixMinuteBoundary
+</code></pre>
+<p>Diagnostics should serve both UI and future AI use.</p>
+<h1 id="part-d--acceptance-criteria">PART D — ACCEPTANCE CRITERIA</h1>
+<h2 id="ac-001--valid-entry">AC-001 — Valid entry</h2>
+<p>Given:</p>
+<ul>
+<li>active Project P1;</li>
+</ul>
+<p>When creating:</p>
+<ul>
+<li>date 2026-08-14;</li>
+<li>start 09:00;</li>
+<li>duration 10 units;</li>
+<li>project P1;</li>
+<li>description "Architecture research";</li>
+</ul>
+<p>Then:</p>
+<ul>
+<li>entry accepted;</li>
+<li>end = 10:00;</li>
+<li>total = exactly 1.0 hour;</li>
+<li>authoritative persisted duration = 10 units.</li>
+</ul>
+<h2 id="ac-002--invalid-start">AC-002 — Invalid start</h2>
+<p>Given start 09:05:</p>
+<p>Then:</p>
+<ul>
+<li>reject entry;</li>
+<li>return six-minute-boundary diagnostic.</li>
+</ul>
+<h2 id="ac-003--overlap">AC-003 — Overlap</h2>
+<p>Given existing:</p>
+<pre><code>09:00–10:00
+</code></pre>
+<p>When adding:</p>
+<pre><code>09:48–10:30
+</code></pre>
+<p>for same person:</p>
+<p>Then:</p>
+<ul>
+<li>reject;</li>
+<li>identify conflicting interval/entry.</li>
+</ul>
+<h2 id="ac-004--split">AC-004 — Split</h2>
+<p>Given:</p>
+<pre><code>TE-100
+09:00–10:30
+15 units
+Project A
+Labels [Research]
+Description "Semantic architecture"
+</code></pre>
+<p>When split at 10:00:</p>
+<p>Then:</p>
+<ul>
+<li>create two current entries;</li>
+<li>intervals 09:00–10:00 and 10:00–10:30;</li>
+<li>units 10 and 5;</li>
+<li>units sum to 15;</li>
+<li>both retain source provenance TE-100;</li>
+<li>source no longer contributes to totals;</li>
+<li>no gap;</li>
+<li>no overlap.</li>
+</ul>
+<h2 id="ac-005--correct-one-split-child">AC-005 — Correct one split child</h2>
+<p>After AC-004, change second child project to Project B.</p>
+<p>Then:</p>
+<ul>
+<li>first child stays Project A;</li>
+<li>second child is Project B;</li>
+<li>total remains 15 units;</li>
+<li>correction remains recoverable in history.</li>
+</ul>
+<h2 id="ac-006--archived-project">AC-006 — Archived project</h2>
+<p>Given Project A is Archived:</p>
+<p>When creating new ordinary time against Project A:</p>
+<p>Then reject.</p>
+<p>Historical entries referencing Project A remain displayable/reportable.</p>
+<h2 id="ac-007--void">AC-007 — Void</h2>
+<p>Given active entry = 10 units.</p>
+<p>When voided:</p>
+<p>Then:</p>
+<ul>
+<li>entry remains historically recoverable;</li>
+<li>current totals decrease exactly 10 units;</li>
+<li>persistence history records the operation.</li>
+</ul>
+<h2 id="ac-008--concurrent-github-edit">AC-008 — Concurrent GitHub edit</h2>
+<p>Given Client A loaded week at SHA-1.</p>
+<p>Client B saves a change producing SHA-2.</p>
+<p>When Client A saves against SHA-1:</p>
+<p>Then:</p>
+<ul>
+<li>do not overwrite SHA-2;</li>
+<li>return conflict;</li>
+<li>require refresh/reconciliation.</li>
+</ul>
+<h2 id="ac-009--unknown-write-outcome">AC-009 — Unknown write outcome</h2>
+<p>Given a GitHub write is sent and the response is lost:</p>
+<p>Then:</p>
+<ul>
+<li>do not immediately assume failure;</li>
+<li>mark synchronization outcome unknown;</li>
+<li>inspect remote state;</li>
+<li>decide retry/new operation only after reconciliation.</li>
+</ul>
+<h2 id="ac-010--typescriptwasm-boundary">AC-010 — TypeScript/WASM boundary</h2>
+<p>When a user requests a split:</p>
+<p>TypeScript may:</p>
+<ul>
+<li>capture user input;</li>
+<li>invoke WASM;</li>
+<li>render the result.</li>
+</ul>
+<p>TypeScript must not independently:</p>
+<ul>
+<li>calculate authoritative legal split points;</li>
+<li>implement duration invariants;</li>
+<li>implement overlap rules;</li>
+<li>mutate domain state without domain/WASM validation.</li>
+</ul>
+<h1 id="part-e--non-goals">PART E — NON-GOALS</h1>
+<p>Do not implement unless separately requested:</p>
+<ul>
+<li>payroll;</li>
+<li>wage/time-clock compliance;</li>
+<li>billing rates;</li>
+<li>invoicing;</li>
+<li>payment processing;</li>
+<li>expense tracking;</li>
+<li>employee scheduling;</li>
+<li>approval workflow;</li>
+<li>overtime calculation;</li>
+<li>running timers;</li>
+<li>calendar sync;</li>
+<li>broad external integrations;</li>
+<li>generic workflow engine;</li>
+<li>generic state-machine framework;</li>
+<li>universal semantic DSL;</li>
+<li>generalized rules engine;</li>
+<li>React;</li>
+<li>Redux;</li>
+<li>Angular;</li>
+<li>Vue;</li>
+<li>large UI framework;</li>
+<li>unnecessary dependency stack.</li>
+</ul>
+<hr>
+<h1 id="part-f--open-design-decisions">PART F — OPEN DESIGN DECISIONS</h1>
+<p>The implementation AI may choose the simplest reasonable option for:</p>
+<ul>
+<li>exact WASM implementation language;</li>
+<li>JSON property names;</li>
+<li>ID format;</li>
+<li>HTML/CSS structure;</li>
+<li>UI organization;</li>
+<li>repository name;</li>
+<li>cache mechanism;</li>
+<li>commit-message exact formatting;</li>
+<li>route structure;</li>
+<li>serialization API shape;</li>
+<li>minor file partition refinements.</li>
+</ul>
+<p>These are implementation details unless given business meaning later.</p>
+<p>Do not silently invent business rules for:</p>
+<ul>
+<li>approval;</li>
+<li>billing;</li>
+<li>locking;</li>
+<li>multi-user permissions;</li>
+<li>timers;</li>
+<li>payroll;</li>
+<li>overlapping time;</li>
+<li>cross-day entry;</li>
+<li>deletion of meaningful history;</li>
+<li>auto-merging conflicting entries;</li>
+<li>automatic semantic-conflict resolution.</li>
+</ul>
+<p>If a missing business decision is required, surface it explicitly.</p>
+<hr>
+<h1 id="part-g--future-semantic-architecture-experiments">PART G — FUTURE SEMANTIC-ARCHITECTURE EXPERIMENTS</h1>
+<p>These are later experiments, not v0.1 requirements.</p>
+<h2 id="approval--locking">Approval / locking</h2>
+<p>Potential future state:</p>
+<pre><code>Draft
+Submitted
+Approved
+Locked
+</code></pre>
+<p>Only introduce when actual business behavior needs it.</p>
+<h2 id="semantic-migration">Semantic migration</h2>
+<p>Possible future change:</p>
+<pre><code>Approved
+    ->
+ManagerApproved
+ClientApproved
+</code></pre>
+<p>or:</p>
+<pre><code>InternallyApproved
+ReadyForBilling
+</code></pre>
+<p>The system should require explicit reconsideration of dependent meanings such as:</p>
+<pre><code>CanEdit
+CanInvoice
+CanExport
+CanClosePeriod
+</code></pre>
+<p>Do not silently inherit old behavior.</p>
+<h2 id="obligations">Obligations</h2>
+<p>Possible:</p>
+<pre><code>Timesheet submitted
+    ->
+obligation:
+    ReceiveAuthorizedDisposition
+</code></pre>
+<p>Possible dispositions:</p>
+<pre><code>Approved
+Rejected
+Withdrawn
+</code></pre>
+<p>The obligation is the required semantic condition, not the task assigned to a worker/agent.</p>
+<h2 id="external-effect">External effect</h2>
+<p>GitHub persistence already gives a real test:</p>
+<pre><code>save sent
+    ->
+response lost
+    ->
+outcome unknown
+    ->
+reconciliation
+</code></pre>
+<h2 id="ai-facing-capabilities">AI-facing capabilities</h2>
+<p>Later:</p>
+<pre><code>inspect(TimeEntry TE-100)
+</code></pre>
+<p>could return:</p>
+<pre><code>state:
+    active
+
+capabilities:
+    Correct
+    Split
+    Void
+</code></pre>
+<p>An AI should not need unrestricted mutation or repository archaeology to discover legal actions.</p>
+<h1 id="part-h--implementation-guidance">PART H — IMPLEMENTATION GUIDANCE</h1>
+<p>Recommended implementation order:</p>
+<ol>
+<li>domain types;</li>
+<li>six-minute unit;</li>
+<li>invariants;</li>
+<li>Person/Project/Label;</li>
+<li>create entry;</li>
+<li>correct entry;</li>
+<li>split entry;</li>
+<li>void entry;</li>
+<li>totals;</li>
+<li>weekly JSON schema;</li>
+<li>GitHub read;</li>
+<li>version-aware GitHub write;</li>
+<li>synchronization/conflict handling;</li>
+<li>WASM API;</li>
+<li>minimal TypeScript browser kernel;</li>
+<li>day/week UI;</li>
+<li>filters/search;</li>
+<li>history display if needed.</li>
+</ol>
+<h2 id="simplicity-rule">Simplicity rule</h2>
+<p>Prefer the smallest solution that directly represents the domain.</p>
+<p>Do not pre-build:</p>
+<ul>
+<li>hypothetical reusable platform abstractions;</li>
+<li>multi-tenancy;</li>
+<li>billing;</li>
+<li>approval;</li>
+<li>generic state engines;</li>
+<li>generic metadata engines;</li>
+<li>generalized workflow infrastructure.</li>
+</ul>
+<h2 id="testing-rule">Testing rule</h2>
+<p>Maintain two conceptual classes of tests.</p>
+<h3 id="independent-domainacceptance-tests">Independent domain/acceptance tests</h3>
+<p>These express desired product behavior:</p>
+<ul>
+<li>six-minute intervals;</li>
+<li>no overlap;</li>
+<li>split preserves coverage/duration;</li>
+<li>archived project rejects new time;</li>
+<li>void removes entry from totals.</li>
+</ul>
+<h3 id="structuralconformance-tests">Structural/conformance tests</h3>
+<p>These test implementation consistency:</p>
+<ul>
+<li>serialization round trip;</li>
+<li>version checks;</li>
+<li>GitHub conflicts;</li>
+<li>WASM/TS contract;</li>
+<li>generated/projection consistency if generation is later introduced.</li>
+</ul>
+<p>Do not treat tests derived from the same implementation metadata as independent proof that a business rule is correct.</p>
+<hr>
+<h1 id="final-directive-to-implementing-ai">FINAL DIRECTIVE TO IMPLEMENTING AI</h1>
+<p>Build the application described by the business requirements.</p>
+<p>Do not build a generic timekeeping platform.</p>
+<p>Do not build a generic state-machine framework.</p>
+<p>Do not move application meaning into metadata for reuse.</p>
+<p>Do not reproduce domain/business logic independently in TypeScript and WASM.</p>
+<p>Keep product semantics:</p>
+<ul>
+<li>application-specific;</li>
+<li>explicit;</li>
+<li>typed;</li>
+<li>easy to inspect.</li>
+</ul>
+<p>Use generic infrastructure only for mechanics that are genuinely reusable.</p>
+<p>The product has two purposes:</p>
+<ol>
+<li>provide a useful six-minute project time-entry system;</li>
+<li>serve as a controlled experiment for application-specific semantic state, a minimal TypeScript browser kernel, WASM-owned domain semantics, GitHub JSON persistence, capability derivation, conflict handling, and explicit uncertain external outcomes.</li>
+</ol>
+<p>When abstraction convenience conflicts with semantic clarity or correctness, prefer semantic clarity and correctness.</p></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

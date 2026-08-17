@@ -1,0 +1,1788 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AI Research Mission 12 — A Standard Semantic Protocol for AI Agents | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">AI Research Mission 12 — A Standard Semantic Protocol for AI Agents</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/reports/12-standard-semantic-agent-protocol-research-report.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#ai-research-mission-12-a-standard-semantic-protocol-for-ai-agents">AI Research Mission 12 — A Standard Semantic Protocol for AI Agents</a></li><li><a href="#1-executive-verdict">1. Executive verdict</a></li><li><a href="#bottom-line">Bottom line</a></li><li><a href="#static-bespoke-tools">Static bespoke tools</a></li><li><a href="#raw-generic-protocol">Raw generic protocol</a></li><li><a href="#recommended-hybrid">Recommended hybrid</a></li><li><a href="#strongest-conceptual-prior-art">Strongest conceptual prior art</a></li><li><a href="#relationship-to-mcp">Relationship to MCP</a></li><li><a href="#overall-verdict">Overall verdict</a></li><li><a href="#2-minimal-semantic-protocol-definition">2. Minimal semantic protocol definition</a></li><li><a href="#core-read-operation">Core read operation</a></li><li><a href="#core-write-operation">Core write operation</a></li><li><a href="#core-work-discovery-operation">Core work-discovery operation</a></li><li><a href="#optional-explanation-operation">Optional explanation operation</a></li><li><a href="#recommended-minimal-v0-1">Recommended minimal v0.1</a></li><li><a href="#3-tool-api-vs-semantic-protocol">3. Tool API vs semantic protocol</a></li><li><a href="#static-tool-api">Static tool API</a></li><li><a href="#semantic-protocol">Semantic protocol</a></li><li><a href="#4-mcp-comparison">4. MCP comparison</a></li><li><a href="#what-mcp-standardizes">What MCP standardizes</a></li><li><a href="#what-mcp-does-not-standardize">What MCP does not standardize</a></li><li><a href="#recommended-relationship">Recommended relationship</a></li><li><a href="#5-hateoas-hypermedia-comparison">5. HATEOAS / hypermedia comparison</a></li><li><a href="#example">Example</a></li><li><a href="#incremental-value-of-semantic-capability-model">Incremental value of semantic capability model</a></li><li><a href="#6-affordance-comparison">6. Affordance comparison</a></li><li><a href="#affordance">Affordance</a></li><li><a href="#capability">Capability</a></li><li><a href="#7-fipa-kqml-comparison">7. FIPA / KQML comparison</a></li><li><a href="#lesson">Lesson</a></li><li><a href="#important-lesson-from-acl-systems">Important lesson from ACL systems</a></li><li><a href="#8-bdi-comparison">8. BDI comparison</a></li><li><a href="#9-strips-pddl-planner-comparison">9. STRIPS / PDDL / planner comparison</a></li><li><a href="#what-pddl-provides-conceptually">What PDDL provides conceptually</a></li><li><a href="#what-commercial-semantic-systems-additionally-require">What commercial semantic systems additionally require</a></li><li><a href="#10-workflow-engine-comparison">10. Workflow-engine comparison</a></li><li><a href="#workflow-step">Workflow step</a></li><li><a href="#semantic-capability">Semantic capability</a></li><li><a href="#obligation">Obligation</a></li><li><a href="#11-capability-security-comparison">11. Capability-security comparison</a></li><li><a href="#12-cqrs-command-query-comparison">12. CQRS / command-query comparison</a></li><li><a href="#query-side">Query side</a></li><li><a href="#command-side">Command side</a></li><li><a href="#13-generic-transition-vs-typed-tool-comparison">13. Generic transition vs typed tool comparison</a></li><li><a href="#generic">Generic</a></li><li><a href="#advantages">Advantages</a></li><li><a href="#disadvantages">Disadvantages</a></li><li><a href="#typed-domain-tool">Typed domain tool</a></li><li><a href="#advantages">Advantages</a></li><li><a href="#disadvantages">Disadvantages</a></li><li><a href="#best-solution">Best solution</a></li><li><a href="#14-raw-protocol-vs-dynamic-typed-tool-projection">14. Raw protocol vs dynamic typed-tool projection</a></li><li><a href="#15-state-inspection-model">15. State-inspection model</a></li><li><a href="#principle">Principle</a></li><li><a href="#16-capability-model">16. Capability model</a></li><li><a href="#capability-type">Capability type</a></li><li><a href="#capability-instance">Capability instance</a></li><li><a href="#17-obligation-model">17. Obligation model</a></li><li><a href="#18-block-explanation-model">18. Block-explanation model</a></li><li><a href="#security-caveat">Security caveat</a></li><li><a href="#19-planning-path-model">19. Planning / path model</a></li><li><a href="#20-transition-request-model">20. Transition-request model</a></li><li><a href="#21-effect-outcome-model">21. Effect/outcome model</a></li><li><a href="#22-evidence-policy-model">22. Evidence / policy model</a></li><li><a href="#23-versioning-concurrency-model">23. Versioning / concurrency model</a></li><li><a href="#24-security-model">24. Security model</a></li><li><a href="#authenticated-actor">Authenticated actor</a></li><li><a href="#complete-mediation">Complete mediation</a></li><li><a href="#unforgeable-or-server-validated-capability-instances">Unforgeable or server-validated capability instances</a></li><li><a href="#runtime-revalidation">Runtime revalidation</a></li><li><a href="#tool-isolation">Tool isolation</a></li><li><a href="#idempotent-semantic-operation-identity">Idempotent semantic operation identity</a></li><li><a href="#25-privacy-disclosure-model">25. Privacy / disclosure model</a></li><li><a href="#partial-observability">Partial observability</a></li><li><a href="#26-cross-domain-portability-analysis">26. Cross-domain portability analysis</a></li><li><a href="#payments">Payments</a></li><li><a href="#deployment">Deployment</a></li><li><a href="#healthcare">Healthcare</a></li><li><a href="#compliance">Compliance</a></li><li><a href="#travel">Travel</a></li><li><a href="#27-token-context-analysis">27. Token / context analysis</a></li><li><a href="#semantic-protocol-mechanism">Semantic protocol mechanism</a></li><li><a href="#28-caching-cold-start-analysis">28. Caching / cold-start analysis</a></li><li><a href="#cold-start">Cold start</a></li><li><a href="#warm-start">Warm start</a></li><li><a href="#29-smaller-model-hypothesis">29. Smaller-model hypothesis</a></li><li><a href="#30-multi-agent-implications">30. Multi-agent implications</a></li><li><a href="#31-federated-system-implications">31. Federated-system implications</a></li><li><a href="#central-semantic-router">Central semantic router</a></li><li><a href="#module-local-protocols">Module-local protocols</a></li><li><a href="#32-runtime-vs-development-profiles">32. Runtime vs development profiles</a></li><li><a href="#runtime-profile">Runtime profile</a></li><li><a href="#development-profile">Development profile</a></li><li><a href="#33-protocol-versioning-strategy">33. Protocol versioning strategy</a></li><li><a href="#34-minimal-v0-1-recommendation">34. Minimal v0.1 recommendation</a></li><li><a href="#operation-1">Operation 1</a></li><li><a href="#operation-2">Operation 2</a></li><li><a href="#operation-3">Operation 3</a></li><li><a href="#operation-4">Operation 4</a></li><li><a href="#do-not-initially-include">Do not initially include</a></li><li><a href="#35-counterarguments">35. Counterarguments</a></li><li><a href="#1-mcp-normal-tools-already-solves-this-">1. &quot;MCP + normal tools already solves this.&quot;</a></li><li><a href="#2-this-is-just-hateoas-">2. &quot;This is just HATEOAS.&quot;</a></li><li><a href="#3-generic-transition-calls-are-less-type-safe-">3. &quot;Generic transition calls are less type safe.&quot;</a></li><li><a href="#4-discovery-adds-calls-">4. &quot;Discovery adds calls.&quot;</a></li><li><a href="#5-natural-language-tools-are-already-good-enough-">5. &quot;Natural-language tools are already good enough.&quot;</a></li><li><a href="#6-bespoke-apis-are-easier-to-debug-">6. &quot;Bespoke APIs are easier to debug.&quot;</a></li><li><a href="#7-universal-protocols-become-lowest-common-denominator-abstractions-">7. &quot;Universal protocols become lowest-common-denominator abstractions.&quot;</a></li><li><a href="#8-domain-semantics-cannot-be-standardized-">8. &quot;Domain semantics cannot be standardized.&quot;</a></li><li><a href="#9-generic-ids-become-stringly-typed-">9. &quot;Generic IDs become stringly typed.&quot;</a></li><li><a href="#10-planning-should-remain-agent-side-">10. &quot;Planning should remain agent-side.&quot;</a></li><li><a href="#11-find-paths-may-hide-bad-semantics-">11. &quot; find_paths  may hide bad semantics.&quot;</a></li><li><a href="#12-capability-tokens-complicate-development-">12. &quot;Capability tokens complicate development.&quot;</a></li><li><a href="#13-cross-service-semantics-explode-complexity-">13. &quot;Cross-service semantics explode complexity.&quot;</a></li><li><a href="#14-blocked-explanations-leak-secrets-">14. &quot;Blocked explanations leak secrets.&quot;</a></li><li><a href="#15-standardization-is-premature-">15. &quot;Standardization is premature.&quot;</a></li><li><a href="#16-dynamic-typed-tools-solve-most-of-it-">16. &quot;Dynamic typed tools solve most of it.&quot;</a></li><li><a href="#17-workflow-engines-already-expose-next-steps-">17. &quot;Workflow engines already expose next steps.&quot;</a></li><li><a href="#18-bdi-planners-already-expose-similar-structures-">18. &quot;BDI/planners already expose similar structures.&quot;</a></li><li><a href="#19-tool-schema-cost-may-be-negligible-with-caching-">19. &quot;Tool schema cost may be negligible with caching.&quot;</a></li><li><a href="#20-smaller-models-still-need-domain-knowledge-">20. &quot;Smaller models still need domain knowledge.&quot;</a></li><li><a href="#36-proposed-experiments">36. Proposed experiments</a></li><li><a href="#experiment-a-100-actions-3-legal">Experiment A — 100 actions, 3 legal</a></li><li><a href="#experiment-b-new-domain-cold-start">Experiment B — new-domain cold start</a></li><li><a href="#experiment-c-cross-domain-transfer">Experiment C — cross-domain transfer</a></li><li><a href="#experiment-d-blocked-action">Experiment D — blocked action</a></li><li><a href="#experiment-e-stale-state">Experiment E — stale state</a></li><li><a href="#experiment-f-outcomeunknown">Experiment F — OutcomeUnknown</a></li><li><a href="#experiment-g-work-discovery">Experiment G — work discovery</a></li><li><a href="#experiment-h-forged-capability">Experiment H — forged capability</a></li><li><a href="#experiment-i-generic-vs-typed-parameters">Experiment I — generic vs typed parameters</a></li><li><a href="#experiment-j-caching">Experiment J — caching</a></li><li><a href="#37-metrics">37. Metrics</a></li><li><a href="#tokens-per-correct-completion">Tokens per Correct Completion</a></li><li><a href="#tool-calls-per-correct-completion">Tool Calls per Correct Completion</a></li><li><a href="#model-calls-per-correct-completion">Model Calls per Correct Completion</a></li><li><a href="#cost-per-correct-completion">Cost per Correct Completion</a></li><li><a href="#illegal-transition-request-rate">Illegal Transition Request Rate</a></li><li><a href="#stale-capability-attempt-rate">Stale Capability Attempt Rate</a></li><li><a href="#parameter-error-rate">Parameter Error Rate</a></li><li><a href="#obligation-resolution-rate">Obligation Resolution Rate</a></li><li><a href="#average-legal-frontier-size">Average Legal Frontier Size</a></li><li><a href="#tool-schema-exposure-tokens">Tool Schema Exposure Tokens</a></li><li><a href="#cold-start-context-cost">Cold-Start Context Cost</a></li><li><a href="#warm-task-context-cost">Warm-Task Context Cost</a></li><li><a href="#protocol-reuse-ratio">Protocol Reuse Ratio</a></li><li><a href="#cross-domain-adaptation-cost">Cross-Domain Adaptation Cost</a></li><li><a href="#round-trip-latency">Round-Trip Latency</a></li><li><a href="#38-economic-model">38. Economic model</a></li><li><a href="#39-what-is-already-established-prior-art">39. What is already established prior art</a></li><li><a href="#strongly-established">Strongly established</a></li><li><a href="#important-2026-evidence">Important 2026 evidence</a></li><li><a href="#40-what-appears-genuinely-useful-new">40. What appears genuinely useful/new</a></li><li><a href="#41-public-standard-or-internal-abi-">41. Public standard or internal ABI?</a></li><li><a href="#recommendation">Recommendation</a></li><li><a href="#42-architecture-changes-recommended">42. Architecture changes recommended</a></li><li><a href="#1-reframe-protocol-as-semantic-abi">1. Reframe protocol as semantic ABI</a></li><li><a href="#2-use-mcp-as-one-transport-option">2. Use MCP as one transport option</a></li><li><a href="#3-make-hateoas-lineage-explicit">3. Make HATEOAS lineage explicit</a></li><li><a href="#4-separate-affordance-from-capability">4. Separate affordance from capability</a></li><li><a href="#5-prefer-four-operation-v0-1">5. Prefer four-operation v0.1</a></li><li><a href="#6-make-dynamic-typed-tools-the-default-model-facing-projection">6. Make dynamic typed tools the default model-facing projection</a></li><li><a href="#7-keep-schemas-lazy">7. Keep schemas lazy</a></li><li><a href="#8-include-explicit-versioning">8. Include explicit versioning</a></li><li><a href="#9-use-server-authoritative-capability-instances">9. Use server-authoritative capability instances</a></li><li><a href="#10-treat-reconciliation-as-a-semantic-capability">10. Treat reconciliation as a semantic capability</a></li><li><a href="#11-keep-planning-optional">11. Keep planning optional</a></li><li><a href="#12-support-compact-authorized-projections">12. Support compact authorized projections</a></li><li><a href="#13-separate-runtime-and-development-profiles">13. Separate runtime and development profiles</a></li><li><a href="#14-instrument-protocol-behavior">14. Instrument protocol behavior</a></li><li><a href="#15-benchmark-three-architectures">15. Benchmark three architectures</a></li><li><a href="#43-final-verdict">43. Final verdict</a></li><li><a href="#can-a-small-semantic-interaction-grammar-generalize-across-domains-">Can a small semantic interaction grammar generalize across domains?</a></li><li><a href="#does-it-reduce-application-specific-tool-complexity-">Does it reduce application-specific tool complexity?</a></li><li><a href="#does-it-reduce-agent-context-token-cost-">Does it reduce agent context/token cost?</a></li><li><a href="#does-it-improve-action-correctness-">Does it improve action correctness?</a></li><li><a href="#does-it-enable-model-portability-across-applications-">Does it enable model portability across applications?</a></li><li><a href="#is-the-closest-prior-art-primarily-">Is the closest prior art primarily?</a></li><li><a href="#best-protocol-architecture">Best protocol architecture</a></li><li><a href="#minimum-core-operations">Minimum core operations</a></li><li><a href="#most-important-operation">Most important operation</a></li><li><a href="#most-redundant-proposed-operation">Most redundant proposed operation</a></li><li><a href="#strongest-existing-analogue">Strongest existing analogue</a></li><li><a href="#most-important-lesson-from-hateoas">Most important lesson from HATEOAS</a></li><li><a href="#most-important-lesson-from-agent-communication-languages">Most important lesson from agent communication languages</a></li><li><a href="#most-important-security-requirement">Most important security requirement</a></li><li><a href="#biggest-economic-opportunity">Biggest economic opportunity</a></li><li><a href="#biggest-abstraction-risk">Biggest abstraction risk</a></li><li><a href="#best-first-experiment">Best first experiment</a></li><li><a href="#should-this-initially-be-">Should this initially be?</a></li><li><a href="#research-synthesis">Research synthesis</a></li><li><a href="#standardization-vs-type-safety">Standardization vs type safety</a></li><li><a href="#small-protocol-vs-domain-expressiveness">Small protocol vs domain expressiveness</a></li><li><a href="#hateoas-vs-capability-security">HATEOAS vs capability security</a></li><li><a href="#planner-vs-model-reasoning">Planner vs model reasoning</a></li><li><a href="#mcp-vs-semantic-control">MCP vs semantic control</a></li><li><a href="#key-sources">Key sources</a></li><li><a href="#model-context-protocol">Model Context Protocol</a></li><li><a href="#rest-hateoas">REST / HATEOAS</a></li><li><a href="#fipa-agent-communication">FIPA agent communication</a></li><li><a href="#planning">Planning</a></li><li><a href="#current-llm-tool-use-research">Current LLM tool-use research</a></li><li><a href="#capability-security">Capability security</a></li><li><a href="#final-research-judgment">Final research judgment</a></li> </ol> </aside> <section class="document-body"><h1 id="ai-research-mission-12--a-standard-semantic-protocol-for-ai-agents">AI Research Mission 12 — A Standard Semantic Protocol for AI Agents</h1>
+<p><strong>Research report</strong><br>
+<strong>Date:</strong> 2026-08-14<br>
+<strong>Method:</strong> Primary protocol specifications, REST/hypermedia literature, FIPA agent-communication standards, planning literature, capability-security literature, official MCP documentation, and current LLM tool-use research.</p>
+<hr>
+<h1 id="1-executive-verdict">1. Executive verdict</h1>
+<h2 id="bottom-line">Bottom line</h2>
+<p>The hypothesis is <strong>plausible and partially supported by strong prior art</strong>, but the best implementation is probably <strong>not a raw generic protocol exposed directly to the model</strong>.</p>
+<p>The strongest design that emerges from the literature is:</p>
+<pre><code class="language-text">Semantic runtime / reference monitor
+        |
+        | stable internal semantic ABI
+        |
+        +--> inspect current semantic state
+        +--> derive current capabilities
+        +--> expose unresolved obligations
+        +--> validate requested transitions
+        +--> explain blocked actions
+        +--> track uncertain effects
+        |
+        v
+Dynamic agent projection
+        |
+        +--> only currently legal typed tools
+        +--> compact state/context
+        +--> lazy evidence/policy expansion
+</code></pre>
+<p>In other words:</p>
+<blockquote>
+<p><strong>Use a small semantic protocol internally, but expose dynamically generated typed capability tools to the model whenever doing so improves type safety and usability.</strong></p>
+</blockquote>
+<p>This is stronger than either extreme:</p>
+<h3 id="static-bespoke-tools">Static bespoke tools</h3>
+<pre><code class="language-text">refund_payment
+capture_payment
+ship_order
+cancel_order
+reopen_claim
+...
+</code></pre>
+<p>These create a large, mostly static action vocabulary and often expose operations that are irrelevant or illegal in the current state.</p>
+<h3 id="raw-generic-protocol">Raw generic protocol</h3>
+<pre><code class="language-text">request_transition(
+    subject="P42",
+    transition="TRANS-PAYMENT-REFUND",
+    inputs={...}
+)
+</code></pre>
+<p>This reduces the number of tool names but can become stringly typed, harder to debug, and more prone to parameter/runtime mistakes.</p>
+<h3 id="recommended-hybrid">Recommended hybrid</h3>
+<p>The runtime internally represents:</p>
+<pre><code class="language-text">CapabilityInstance {
+    semanticId
+    subject
+    inputSchema
+    stateVersion
+    policyVersion
+    authority
+}
+</code></pre>
+<p>and projects only current capabilities as agent tools:</p>
+<pre><code class="language-text">refund_payment_P42(amount, reason)
+</code></pre>
+<p>or a structured equivalent.</p>
+<p>The agent therefore gets:</p>
+<ul>
+<li>small action frontier;</li>
+<li>typed inputs;</li>
+<li>current legality;</li>
+<li>less schema context;</li>
+<li>no need to know implementation details.</li>
+</ul>
+<p>The semantic ABI remains stable beneath the projection.</p>
+<h2 id="strongest-conceptual-prior-art">Strongest conceptual prior art</h2>
+<p>The closest historical analogue is <strong>HATEOAS / hypermedia affordances</strong>.</p>
+<p>REST's hypermedia constraint says the server should communicate available next interactions dynamically through representations rather than requiring clients to hard-code the entire application interaction graph.</p>
+<p>That is extremely close to:</p>
+<pre><code class="language-text">get_capabilities(subject)
+</code></pre>
+<p>The important difference is that the proposed system strengthens ordinary hypermedia by incorporating:</p>
+<ul>
+<li>actor-specific authority;</li>
+<li>semantic state versions;</li>
+<li>evidence;</li>
+<li>obligations;</li>
+<li>policy;</li>
+<li>effect uncertainty;</li>
+<li>planning prerequisites;</li>
+<li>deterministic transition validation.</li>
+</ul>
+<p>Current 2026 IETF work explicitly applies HATEOAS-style in-band capability discovery to LLM agents operating constrained RESTful environments, making this more than a historical analogy.</p>
+<h2 id="relationship-to-mcp">Relationship to MCP</h2>
+<p>MCP is complementary rather than competitive.</p>
+<p>MCP standardizes:</p>
+<ul>
+<li>protocol connectivity;</li>
+<li>tools;</li>
+<li>resources;</li>
+<li>prompts;</li>
+<li>authorization infrastructure;</li>
+<li>tasks/extensions in newer specifications.</li>
+</ul>
+<p>It does <strong>not</strong> standardize:</p>
+<ul>
+<li>domain state semantics;</li>
+<li>currently legal transitions;</li>
+<li>obligations;</li>
+<li>satisfaction criteria;</li>
+<li>policy/evidence semantics;</li>
+<li>effect uncertainty;</li>
+<li>legal path planning.</li>
+</ul>
+<p>Therefore the clean layering is:</p>
+<pre><code class="language-text">MCP
+    = transport/tool interoperability layer
+
+Semantic Agent Protocol
+    = authoritative domain-control layer
+</code></pre>
+<p>The semantic protocol could itself be exposed through MCP.</p>
+<h2 id="overall-verdict">Overall verdict</h2>
+<p>A small semantic interaction grammar can probably generalize across domains <strong>at the level of interaction structure</strong>, not domain vocabulary.</p>
+<p>The protocol should standardize:</p>
+<pre><code class="language-text">how to inspect
+how to discover legal action
+how to discover unresolved work
+how to request consequential change
+</code></pre>
+<p>It should <strong>not</strong> standardize:</p>
+<pre><code class="language-text">what "Refund", "Diagnosis", "Deployment", or "Shipment" universally mean
+</code></pre>
+<p>That boundary is essential.</p>
+<hr>
+<h1 id="2-minimal-semantic-protocol-definition">2. Minimal semantic protocol definition</h1>
+<p>The research prompt proposes many operations:</p>
+<pre><code class="language-text">get_state
+get_capabilities
+get_obligations
+explain_blocked
+find_paths
+request_transition
+get_evidence
+get_policy_context
+observe_effect
+reconcile_effect
+</code></pre>
+<p>That is probably too large for the core.</p>
+<p>A better v0-level decomposition is:</p>
+<h2 id="core-read-operation">Core read operation</h2>
+<pre><code class="language-text">inspect(subject, fields?)
+</code></pre>
+<p>Returns an authorized projection of:</p>
+<ul>
+<li>current semantic state;</li>
+<li>current state version;</li>
+<li>current capabilities;</li>
+<li>unresolved obligations;</li>
+<li>optionally relevant claims.</li>
+</ul>
+<h2 id="core-write-operation">Core write operation</h2>
+<pre><code class="language-text">request_transition(
+    subject,
+    capability,
+    inputs,
+    expectedStateVersion,
+    semanticOperationId?
+)
+</code></pre>
+<h2 id="core-work-discovery-operation">Core work-discovery operation</h2>
+<pre><code class="language-text">get_obligations(scope, filters?)
+</code></pre>
+<p>This is needed because work queues may cross subjects.</p>
+<h2 id="optional-explanation-operation">Optional explanation operation</h2>
+<pre><code class="language-text">explain(actionOrGoal, subject)
+</code></pre>
+<p>Could cover:</p>
+<ul>
+<li>why unavailable;</li>
+<li>missing prerequisites;</li>
+<li>relevant producer transitions;</li>
+<li>redacted policy explanation.</li>
+</ul>
+<p>Everything else can initially be represented as:</p>
+<ul>
+<li>fields within inspection;</li>
+<li>transition results;</li>
+<li>optional extensions.</li>
+</ul>
+<h3 id="recommended-minimal-v01">Recommended minimal v0.1</h3>
+<pre><code class="language-text">inspect
+get_obligations
+request_transition
+explain
+</code></pre>
+<p>The absolute minimum could be:</p>
+<pre><code class="language-text">inspect
+act
+</code></pre>
+<p>but that is probably too opaque for diagnostics and distributed work discovery.</p>
+<hr>
+<h1 id="3-tool-api-vs-semantic-protocol">3. Tool API vs semantic protocol</h1>
+<p>The central distinction is not simply:</p>
+<pre><code class="language-text">many tools vs few tools
+</code></pre>
+<p>It is:</p>
+<pre><code class="language-text">static application-specific action inventory
+</code></pre>
+<p>versus:</p>
+<pre><code class="language-text">stable interaction grammar + dynamically derived legal action frontier
+</code></pre>
+<h2 id="static-tool-api">Static tool API</h2>
+<p>The model sees:</p>
+<pre><code class="language-text">refund_payment
+capture_payment
+void_payment
+ship_order
+cancel_order
+approve_order
+reopen_claim
+...
+</code></pre>
+<p>Tool descriptions must explain:</p>
+<ul>
+<li>when each action is valid;</li>
+<li>what prerequisites exist;</li>
+<li>what should not be retried;</li>
+<li>which actor may use it.</li>
+</ul>
+<p>The model must reason over legality.</p>
+<h2 id="semantic-protocol">Semantic protocol</h2>
+<p>The system computes legality.</p>
+<p>The model asks:</p>
+<pre><code class="language-text">inspect(Order123)
+</code></pre>
+<p>and receives:</p>
+<pre><code class="language-text">State:
+    Approved
+
+Capabilities:
+    CapturePayment
+
+Obligations:
+    none
+</code></pre>
+<p>The action space has already been filtered.</p>
+<p>This is conceptually closer to <strong>action masking</strong> than ordinary tool routing.</p>
+<p>Current tool-use research supports the idea that pruning the available tool set improves reliability, especially for smaller models.</p>
+<p>A 2026 ACL Findings paper on dynamic tool-dependency retrieval reported that hard masking of the available tools achieved the strongest accuracy for smaller models in evaluated settings.</p>
+<hr>
+<h1 id="4-mcp-comparison">4. MCP comparison</h1>
+<h2 id="what-mcp-standardizes">What MCP standardizes</h2>
+<p>The official Model Context Protocol specification defines a standardized mechanism by which LLM applications interact with external context and capabilities.</p>
+<p>MCP servers can expose:</p>
+<ul>
+<li>tools;</li>
+<li>resources;</li>
+<li>prompts.</li>
+</ul>
+<p>Tools are named and include metadata describing input schemas.</p>
+<p>The 2026-07-28 MCP specification further evolves the protocol around a stateless core, extensions, tasks, authorization, and broader production scalability.</p>
+<h2 id="what-mcp-does-not-standardize">What MCP does not standardize</h2>
+<p>MCP itself does not define a universal domain model for:</p>
+<pre><code class="language-text">state
+legal transitions
+capabilities
+obligations
+evidence
+policy
+effect uncertainty
+semantic versions
+</code></pre>
+<p>An MCP server may choose to expose those concepts, but the meanings are application-defined.</p>
+<p>Therefore:</p>
+<blockquote>
+<p><strong>MCP solves connection and tool interoperability. It does not solve authoritative semantic interoperability.</strong></p>
+</blockquote>
+<h2 id="recommended-relationship">Recommended relationship</h2>
+<p>Expose the semantic protocol through MCP.</p>
+<p>For example an MCP server might expose:</p>
+<pre><code class="language-text">semantic.inspect
+semantic.get_obligations
+semantic.request_transition
+semantic.explain
+</code></pre>
+<p>or dynamically expose current capability tools backed by those operations.</p>
+<p>This avoids inventing a redundant transport ecosystem.</p>
+<hr>
+<h1 id="5-hateoas--hypermedia-comparison">5. HATEOAS / hypermedia comparison</h1>
+<p>This is the most important prior-art comparison.</p>
+<p>Roy Fielding's REST architecture treats hypermedia as the engine of application state.</p>
+<p>The server's representation contains controls that tell the client what interactions are available next.</p>
+<p>A client therefore does not need to possess a hard-coded complete navigation graph.</p>
+<p>Conceptually:</p>
+<pre><code class="language-text">resource representation
+    ->
+available hypermedia controls
+</code></pre>
+<p>maps closely to:</p>
+<pre><code class="language-text">semantic subject
+    ->
+available capabilities
+</code></pre>
+<h2 id="example">Example</h2>
+<p>A conventional hypermedia response might expose:</p>
+<pre><code class="language-text">capture-payment
+cancel-order
+</code></pre>
+<p>but omit:</p>
+<pre><code class="language-text">ship-order
+</code></pre>
+<p>when shipping is not currently allowed.</p>
+<p>That is almost exactly:</p>
+<pre><code class="language-text">get_capabilities(Order123)
+</code></pre>
+<h2 id="incremental-value-of-semantic-capability-model">Incremental value of semantic capability model</h2>
+<p>The proposed system goes further by asserting that capabilities are not merely navigation affordances.</p>
+<p>They can be:</p>
+<ul>
+<li>actor scoped;</li>
+<li>state-version bound;</li>
+<li>policy-version bound;</li>
+<li>evidence dependent;</li>
+<li>authority dependent;</li>
+<li>revocable;</li>
+<li>auditable;</li>
+<li>possibly represented by unforgeable tokens.</li>
+</ul>
+<p>Thus ordinary HATEOAS answers:</p>
+<pre><code class="language-text">what interactions does this representation advertise?
+</code></pre>
+<p>The proposed system answers:</p>
+<pre><code class="language-text">what consequential actions is this authenticated actor currently authorized and semantically allowed to request against this exact authoritative state?
+</code></pre>
+<p>That is a stronger claim.</p>
+<hr>
+<h1 id="6-affordance-comparison">6. Affordance comparison</h1>
+<p>Affordance theory broadly concerns actions made possible by an environment.</p>
+<p>For AI-agent architecture, a useful distinction is:</p>
+<h2 id="affordance">Affordance</h2>
+<pre><code class="language-text">action structurally possible from current state
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-text">Order is Captured
+=> Ship is a possible state transition
+</code></pre>
+<h2 id="capability">Capability</h2>
+<pre><code class="language-text">action currently permitted for this actor under state, authority, policy, and evidence
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-text">Ship structurally possible
+but autonomous support agent lacks shipping authority
+</code></pre>
+<p>Therefore:</p>
+<pre><code class="language-text">Affordance = state-conditioned possibility
+Capability = authorized semantic action
+</code></pre>
+<p>The protocol should probably retain the term <strong>capability</strong> for its stronger security meaning.</p>
+<hr>
+<h1 id="7-fipa--kqml-comparison">7. FIPA / KQML comparison</h1>
+<p>Historical multi-agent systems attempted standardized communication grammars.</p>
+<p>FIPA ACL defines communicative acts such as:</p>
+<ul>
+<li>request;</li>
+<li>inform;</li>
+<li>agree;</li>
+<li>refuse;</li>
+<li>propose.</li>
+</ul>
+<p>FIPA's specifications draw from speech-act theory and define formal semantics for communicative acts.</p>
+<p>KQML similarly attempted a standard interaction language around agent messaging.</p>
+<h2 id="lesson">Lesson</h2>
+<p>These systems standardized:</p>
+<pre><code class="language-text">what kind of communicative act is being performed
+</code></pre>
+<p>but still needed:</p>
+<ul>
+<li>shared content languages;</li>
+<li>ontologies;</li>
+<li>domain interpretation.</li>
+</ul>
+<p>That reveals a key risk for the proposed protocol:</p>
+<blockquote>
+<p>A generic interaction verb does not eliminate the ontology/domain problem.</p>
+</blockquote>
+<p>For example:</p>
+<pre><code class="language-text">request_transition
+</code></pre>
+<p>can be standardized.</p>
+<p>But:</p>
+<pre><code class="language-text">RefundPayment
+</code></pre>
+<p>remains domain-specific.</p>
+<p>That is acceptable if the protocol explicitly standardizes only the <strong>grammar</strong>, not universal domain meaning.</p>
+<h2 id="important-lesson-from-acl-systems">Important lesson from ACL systems</h2>
+<p>Do not attempt to standardize a rich universal semantic language for all business domains.</p>
+<p>That path becomes an ontology/governance problem.</p>
+<hr>
+<h1 id="8-bdi-comparison">8. BDI comparison</h1>
+<p>Belief-Desire-Intention architectures provide another close conceptual mapping.</p>
+<p>Possible correspondence:</p>
+<pre><code class="language-text">Beliefs
+    ~ verified semantic state / evidence
+
+Desires / Goals
+    ~ obligations or desired goal conditions
+
+Intentions
+    ~ chosen plans
+
+Actions
+    ~ capabilities / transitions
+</code></pre>
+<p>But the proposed system is intentionally narrower.</p>
+<p>BDI usually models internal agent cognition.</p>
+<p>The proposed semantic protocol models <strong>authoritative environment semantics</strong>.</p>
+<p>This is an important distinction:</p>
+<pre><code class="language-text">agent believes X
+</code></pre>
+<p>does not mean:</p>
+<pre><code class="language-text">authoritative system state = X
+</code></pre>
+<p>The protocol should expose external truth and legal action boundaries, leaving agent reasoning internal.</p>
+<hr>
+<h1 id="9-strips--pddl--planner-comparison">9. STRIPS / PDDL / planner comparison</h1>
+<p>PDDL separates:</p>
+<ul>
+<li>domain actions;</li>
+<li>predicates;</li>
+<li>preconditions;</li>
+<li>effects;</li>
+</ul>
+<p>from:</p>
+<ul>
+<li>current problem state;</li>
+<li>goal.</li>
+</ul>
+<p>This strongly resembles:</p>
+<pre><code class="language-text">semantic state
+transitions
+requirements
+goal / obligation
+</code></pre>
+<p>PDDL was explicitly developed as a standard representation for planning domains and competition/interchange.</p>
+<h2 id="what-pddl-provides-conceptually">What PDDL provides conceptually</h2>
+<p>An action:</p>
+<pre><code class="language-text">CapturePayment
+</code></pre>
+<p>has:</p>
+<pre><code class="language-text">preconditions
+effects
+</code></pre>
+<p>A planner can search for a sequence from current state to goal.</p>
+<h2 id="what-commercial-semantic-systems-additionally-require">What commercial semantic systems additionally require</h2>
+<p>PDDL-style planning does not by itself capture all of:</p>
+<ul>
+<li>authority;</li>
+<li>evidence provenance;</li>
+<li>policy version;</li>
+<li>state version;</li>
+<li>optimistic concurrency;</li>
+<li>external-effect uncertainty;</li>
+<li>irreversible effects;</li>
+<li>obligations;</li>
+<li>privacy/scoped disclosure;</li>
+<li>audit provenance.</li>
+</ul>
+<p>Therefore the proposed architecture can be viewed as:</p>
+<blockquote>
+<p><strong>an operational planning interface hardened for authoritative enterprise systems.</strong></p>
+</blockquote>
+<hr>
+<h1 id="10-workflow-engine-comparison">10. Workflow-engine comparison</h1>
+<p>Workflow engines often expose:</p>
+<pre><code class="language-text">current step
+next legal step
+task queue
+workflow state
+</code></pre>
+<p>This looks extremely similar.</p>
+<p>The distinction depends on whether the semantic model is tied to one procedural workflow.</p>
+<h2 id="workflow-step">Workflow step</h2>
+<p>Usually means:</p>
+<pre><code class="language-text">this procedure currently expects action X
+</code></pre>
+<h2 id="semantic-capability">Semantic capability</h2>
+<p>Means:</p>
+<pre><code class="language-text">given authoritative state, action X is currently legal
+</code></pre>
+<h2 id="obligation">Obligation</h2>
+<p>Means:</p>
+<pre><code class="language-text">this unresolved semantic condition must be dispositioned
+</code></pre>
+<p>An obligation may survive replacement of the workflow procedure.</p>
+<p>Therefore the semantic protocol is broader than one workflow instance.</p>
+<p>But if a system is already completely modeled through a workflow engine, much of the benefit may already exist.</p>
+<p>This is a genuine falsification boundary.</p>
+<hr>
+<h1 id="11-capability-security-comparison">11. Capability-security comparison</h1>
+<p>Capability-security systems provide strong prior art for the idea that authority can be represented by possession of an unforgeable reference/token granting specific rights.</p>
+<p>The crucial security principle is:</p>
+<blockquote>
+<p>Hiding unavailable actions is not security.</p>
+</blockquote>
+<p>A client can fabricate:</p>
+<pre><code class="language-text">transitionId = RefundPayment
+</code></pre>
+<p>unless runtime enforcement rejects it.</p>
+<p>Therefore a capability instance should be server-authoritative.</p>
+<p>Possible representation:</p>
+<pre><code class="language-text">CapabilityInstance {
+    id: opaque or signed
+    type: CAP-PAYMENT-REFUND
+    subject: Payment42
+    actor: Agent17
+    stateVersion: 18
+    policyVersion: 7
+    expiresAt: ...
+}
+</code></pre>
+<p>The server validates it at execution.</p>
+<p>This is much closer to actual capability security than simply listing tool names.</p>
+<hr>
+<h1 id="12-cqrs--command-query-comparison">12. CQRS / command-query comparison</h1>
+<p>The proposed protocol naturally divides into queries and commands.</p>
+<h2 id="query-side">Query side</h2>
+<pre><code class="language-text">inspect
+get_obligations
+explain
+</code></pre>
+<p>These observe without committing consequential change.</p>
+<h2 id="command-side">Command side</h2>
+<pre><code class="language-text">request_transition
+</code></pre>
+<p>This is analogous to CQRS's command/query separation.</p>
+<p>The separation is useful because it reinforces:</p>
+<pre><code class="language-text">probabilistic observation/planning
+</code></pre>
+<p>versus:</p>
+<pre><code class="language-text">deterministically validated commitment
+</code></pre>
+<p>The agent may explore freely through read-side operations while all authoritative mutation goes through one commitment boundary.</p>
+<hr>
+<h1 id="13-generic-transition-vs-typed-tool-comparison">13. Generic transition vs typed tool comparison</h1>
+<p>This is one of the most important unresolved design choices.</p>
+<h2 id="generic">Generic</h2>
+<pre><code class="language-text">request_transition(
+    subject="P42",
+    transition="TRANS-PAYMENT-REFUND",
+    inputs={"amount": 50}
+)
+</code></pre>
+<h3 id="advantages">Advantages</h3>
+<ul>
+<li>tiny fixed protocol;</li>
+<li>easy cross-domain reuse;</li>
+<li>stable operation vocabulary;</li>
+<li>runtime implementation simple.</li>
+</ul>
+<h3 id="disadvantages">Disadvantages</h3>
+<ul>
+<li>stringly typed semantic IDs;</li>
+<li>parameter errors occur later;</li>
+<li>harder model discoverability;</li>
+<li>schema lookup required;</li>
+<li>poorer debugging.</li>
+</ul>
+<h2 id="typed-domain-tool">Typed domain tool</h2>
+<pre><code class="language-text">refund_payment(
+    payment_id="P42",
+    amount=50
+)
+</code></pre>
+<h3 id="advantages-1">Advantages</h3>
+<ul>
+<li>better parameter schema;</li>
+<li>natural tool description;</li>
+<li>strong model/tool affordance;</li>
+<li>easier debugging.</li>
+</ul>
+<h3 id="disadvantages-1">Disadvantages</h3>
+<ul>
+<li>large static tool inventory;</li>
+<li>potentially high schema token cost;</li>
+<li>may expose illegal tools.</li>
+</ul>
+<h2 id="best-solution">Best solution</h2>
+<p>Generate typed tools dynamically from current semantic capabilities.</p>
+<p>The backend still uses a generic semantic transition ABI.</p>
+<p>This separates:</p>
+<pre><code class="language-text">agent ergonomics
+</code></pre>
+<p>from:</p>
+<pre><code class="language-text">runtime semantic standardization
+</code></pre>
+<hr>
+<h1 id="14-raw-protocol-vs-dynamic-typed-tool-projection">14. Raw protocol vs dynamic typed-tool projection</h1>
+<p>Recommended architecture:</p>
+<pre><code class="language-text">Agent
+    |
+    | sees only:
+    v
+Dynamic typed capability tools
+    |
+    v
+Semantic adapter
+    |
+    v
+Stable semantic ABI
+    |
+    v
+Authoritative runtime
+</code></pre>
+<p>Example internal capability:</p>
+<pre><code class="language-text">CAP-PAYMENT-REFUND
+</code></pre>
+<p>becomes temporary agent tool:</p>
+<pre><code class="language-text">refund_payment(
+    amount: Money,
+    reason: RefundReason
+)
+</code></pre>
+<p>When state changes and refund becomes illegal, that tool disappears.</p>
+<p>This provides:</p>
+<ul>
+<li>state-conditioned action masking;</li>
+<li>typed schema;</li>
+<li>semantic stability;</li>
+<li>reduced tool frontier.</li>
+</ul>
+<p>Recent tool-use research strongly supports dynamic tool narrowing.</p>
+<p>HyperAgent models tool dependencies as a schema graph and dynamically constructs state-conditioned support graphs. It reports improved task completion while reducing redundant calls, LLM interactions, and token usage on AppWorld.</p>
+<p>SING similarly demonstrates large reductions in exposed tool schema through active tool discovery.</p>
+<p>These are not identical to semantic legality filtering, but they validate the economics of not exposing every tool all the time.</p>
+<hr>
+<h1 id="15-state-inspection-model">15. State-inspection model</h1>
+<p><code>inspect(subject)</code> should not return the raw application object.</p>
+<p>Recommended compact response:</p>
+<pre><code class="language-text">subject:
+    id
+    semanticType
+
+version:
+    stateVersion
+    semanticSpecVersion
+    policyVersion
+
+state:
+    relevant state families / current cases
+
+capabilities:
+    current capability instances
+
+obligations:
+    unresolved obligations
+
+claims:
+    optional relevant verified claims
+</code></pre>
+<h2 id="principle">Principle</h2>
+<p>Return:</p>
+<pre><code class="language-text">minimum sufficient semantic view
+</code></pre>
+<p>not:</p>
+<pre><code class="language-text">everything known about object
+</code></pre>
+<p>This is important for:</p>
+<ul>
+<li>token cost;</li>
+<li>privacy;</li>
+<li>security;</li>
+<li>agent reasoning.</li>
+</ul>
+<hr>
+<h1 id="16-capability-model">16. Capability model</h1>
+<p>Distinguish:</p>
+<h2 id="capability-type">Capability type</h2>
+<pre><code class="language-text">RefundPayment
+</code></pre>
+<p>Static semantic definition.</p>
+<h2 id="capability-instance">Capability instance</h2>
+<pre><code class="language-text">RefundPayment
+for Payment P42
+for actor Agent17
+against StateVersion 18
+under PolicyVersion 7
+</code></pre>
+<p>The protocol must expose instances.</p>
+<p>Suggested compact shape:</p>
+<pre><code class="language-text">Capability {
+    token
+    semanticId
+    label
+    inputSchemaRef
+    consequenceClass
+    expiresAt?
+}
+</code></pre>
+<p>Schemas should be lazy-loadable where possible.</p>
+<hr>
+<h1 id="17-obligation-model">17. Obligation model</h1>
+<p>Obligations provide agent work discovery.</p>
+<p>Suggested representation:</p>
+<pre><code class="language-text">Obligation {
+    id
+    semanticType
+    subject
+    reasonCode
+    satisfactionCondition
+    priority/urgency
+    deadline?
+    availableCapabilities
+    blockedBy?
+}
+</code></pre>
+<p>The protocol should avoid:</p>
+<pre><code class="language-text">agent manually marks obligation done
+</code></pre>
+<p>where semantic state can resolve it automatically.</p>
+<p>The preferred flow is:</p>
+<pre><code class="language-text">agent performs transitions
+    ->
+semantic state changes
+    ->
+satisfaction condition becomes true
+    ->
+obligation resolves automatically
+</code></pre>
+<hr>
+<h1 id="18-block-explanation-model">18. Block-explanation model</h1>
+<p>A useful structured result:</p>
+<pre><code class="language-text">BlockedAction {
+    action
+    subject
+
+    missing:
+        PaymentState = Captured
+
+    producerCapabilities:
+        CapturePayment
+
+    otherConstraints:
+        FraudEvidenceExpired
+
+    disclosure:
+        scoped/redacted
+}
+</code></pre>
+<p>The agent can plan without loading entire policy source.</p>
+<h2 id="security-caveat">Security caveat</h2>
+<p>Explanations can leak sensitive policy.</p>
+<p>For example:</p>
+<pre><code class="language-text">blocked because fraud score >= 82
+</code></pre>
+<p>might expose fraud-defense thresholds.</p>
+<p>Therefore explanations require authorization/redaction policy.</p>
+<hr>
+<h1 id="19-planning--path-model">19. Planning / path model</h1>
+<p><code>find_paths(goal)</code> is plausible but should <strong>not</strong> be core v0.1.</p>
+<p>Why?</p>
+<p>Planning may involve:</p>
+<ul>
+<li>optimization;</li>
+<li>preferences;</li>
+<li>uncertainty;</li>
+<li>cross-service state;</li>
+<li>human judgment.</li>
+</ul>
+<p>If the semantic runtime already has transitions and prerequisites, deterministic path search can be useful.</p>
+<p>But making it core risks turning the protocol into a planner platform.</p>
+<p>Better initial design:</p>
+<pre><code class="language-text">inspect + explain
+</code></pre>
+<p>can expose:</p>
+<ul>
+<li>missing conditions;</li>
+<li>producer capabilities.</li>
+</ul>
+<p>A separate planner service can be added later.</p>
+<hr>
+<h1 id="20-transition-request-model">20. Transition-request model</h1>
+<p>Recommended internal ABI:</p>
+<pre><code class="language-text">request_transition {
+    subject
+    capabilityToken
+    transitionSemanticId
+    inputs
+    expectedStateVersion
+    semanticOperationId?
+}
+</code></pre>
+<p>Runtime revalidates:</p>
+<ul>
+<li>actor identity;</li>
+<li>capability validity;</li>
+<li>current state;</li>
+<li>state version;</li>
+<li>policy;</li>
+<li>authority;</li>
+<li>evidence;</li>
+<li>freshness;</li>
+<li>concurrency;</li>
+<li>external-effect policy.</li>
+</ul>
+<p>The capability token is not sufficient by itself if runtime state changed.</p>
+<hr>
+<h1 id="21-effectoutcome-model">21. Effect/outcome model</h1>
+<p>Transition results should not use generic success/error alone.</p>
+<p>Possible result family:</p>
+<pre><code class="language-text">Completed
+Rejected
+Conflict
+Pending
+OutcomeUnknown
+</code></pre>
+<p>For consequential effects:</p>
+<pre><code class="language-text">OutcomeUnknown
+</code></pre>
+<p>should trigger reconciliation semantics rather than ordinary retry.</p>
+<p>The protocol may represent effect observation through:</p>
+<pre><code class="language-text">inspect(effectId)
+</code></pre>
+<p>rather than a dedicated <code>observe_effect</code> operation.</p>
+<p>This suggests <code>observe_effect</code> is redundant in the minimum protocol.</p>
+<p>Likewise, reconciliation may simply be another capability/transition:</p>
+<pre><code class="language-text">ReconcileRefundOutcome
+</code></pre>
+<p>rather than a universal <code>reconcile_effect</code> operation.</p>
+<p>Thus:</p>
+<blockquote>
+<p><strong><code>reconcile_effect</code> is one of the most redundant proposed core operations.</strong></p>
+</blockquote>
+<p>Reconciliation is domain-specific semantic work and can usually be represented as capability + obligation.</p>
+<hr>
+<h1 id="22-evidence--policy-model">22. Evidence / policy model</h1>
+<p>Evidence should be retrieved lazily.</p>
+<p><code>inspect</code> might expose:</p>
+<pre><code class="language-text">Claim:
+    FraudVerified
+    evidenceRef = E22
+</code></pre>
+<p>The agent requests evidence detail only when needed.</p>
+<p>Policy should similarly expose:</p>
+<pre><code class="language-text">policyVersion
+reasonCode
+compact explanation
+</code></pre>
+<p>not necessarily the entire policy language.</p>
+<p>Dedicated:</p>
+<pre><code class="language-text">get_evidence
+get_policy_context
+</code></pre>
+<p>can be optional extension calls or resource retrieval.</p>
+<hr>
+<h1 id="23-versioning--concurrency-model">23. Versioning / concurrency model</h1>
+<p>Stateful agent interactions require explicit concurrency handling.</p>
+<p>Inspection response:</p>
+<pre><code class="language-text">stateVersion = 18
+semanticSpecVersion = 12
+policyVersion = 7
+</code></pre>
+<p>Transition request binds to:</p>
+<pre><code class="language-text">expectedStateVersion = 18
+</code></pre>
+<p>If state is now 19:</p>
+<pre><code class="language-text">StaleState {
+    currentVersion = 19
+    refreshRequired = true
+}
+</code></pre>
+<p>The agent refreshes.</p>
+<p>This prevents acting on stale reasoning.</p>
+<p>Policy changes can similarly produce:</p>
+<pre><code class="language-text">PolicyChanged
+</code></pre>
+<p>rather than silently applying assumptions from the earlier plan.</p>
+<hr>
+<h1 id="24-security-model">24. Security model</h1>
+<p>Core requirements:</p>
+<h2 id="authenticated-actor">Authenticated actor</h2>
+<p>The runtime, not the model, determines actor identity.</p>
+<h2 id="complete-mediation">Complete mediation</h2>
+<p>Every consequential mutation crosses the semantic transition boundary.</p>
+<h2 id="unforgeable-or-server-validated-capability-instances">Unforgeable or server-validated capability instances</h2>
+<p>Do not trust semantic IDs alone.</p>
+<h2 id="runtime-revalidation">Runtime revalidation</h2>
+<p>Never assume a capability remains valid because it was returned previously.</p>
+<h2 id="tool-isolation">Tool isolation</h2>
+<p>If the agent simultaneously has:</p>
+<ul>
+<li>SQL admin;</li>
+<li>shell;</li>
+<li>cloud console;</li>
+</ul>
+<p>the semantic protocol can be bypassed.</p>
+<p>Therefore infrastructure permissions must match protocol authority.</p>
+<h2 id="idempotent-semantic-operation-identity">Idempotent semantic operation identity</h2>
+<p>Retries must distinguish:</p>
+<pre><code class="language-text">same semantic operation
+</code></pre>
+<p>from:</p>
+<pre><code class="language-text">new consequential operation
+</code></pre>
+<hr>
+<h1 id="25-privacy--disclosure-model">25. Privacy / disclosure model</h1>
+<p>Read-side access must also be authorized.</p>
+<p>An agent may not be entitled to inspect:</p>
+<ul>
+<li>full clinical evidence;</li>
+<li>fraud thresholds;</li>
+<li>internal HR policy;</li>
+<li>unrelated customer records.</li>
+</ul>
+<p>Therefore <code>inspect</code> returns an actor-scoped projection.</p>
+<h2 id="partial-observability">Partial observability</h2>
+<p>This creates a planning tradeoff.</p>
+<p>The agent may know:</p>
+<pre><code class="language-text">Refund unavailable
+</code></pre>
+<p>but not all reasons.</p>
+<p>The runtime can expose safe next actions without revealing sensitive rules.</p>
+<p>This favors:</p>
+<pre><code class="language-text">capability projection
+</code></pre>
+<p>over:</p>
+<pre><code class="language-text">full policy disclosure
+</code></pre>
+<hr>
+<h1 id="26-cross-domain-portability-analysis">26. Cross-domain portability analysis</h1>
+<p>The interaction grammar appears portable across domains.</p>
+<h2 id="payments">Payments</h2>
+<pre><code class="language-text">inspect payment
+capabilities: refund
+obligation: reconcile refund
+</code></pre>
+<h2 id="deployment">Deployment</h2>
+<pre><code class="language-text">inspect release
+capabilities: deploy staging
+obligation: resolve failed verification
+</code></pre>
+<h2 id="healthcare">Healthcare</h2>
+<pre><code class="language-text">inspect case
+capabilities: request review
+obligation: resolve missing evidence
+</code></pre>
+<h2 id="compliance">Compliance</h2>
+<pre><code class="language-text">inspect control
+capabilities: submit evidence
+obligation: remediate deficiency
+</code></pre>
+<h2 id="travel">Travel</h2>
+<pre><code class="language-text">inspect booking
+capabilities: rebook
+obligation: obtain traveler approval
+</code></pre>
+<p>The domain vocabulary remains different.</p>
+<p>The grammar remains similar:</p>
+<pre><code class="language-text">what is true?
+what may I do?
+what must be resolved?
+what is blocking the desired action?
+request legal change
+</code></pre>
+<p>That is the strongest argument for generalization.</p>
+<hr>
+<h1 id="27-token--context-analysis">27. Token / context analysis</h1>
+<p>Large static tool catalogs can consume significant context.</p>
+<p>Current research increasingly investigates:</p>
+<ul>
+<li>tool retrieval;</li>
+<li>lazy schema loading;</li>
+<li>schema graph planning;</li>
+<li>hard masking.</li>
+</ul>
+<p>HyperAgent reports lower redundant API calls, LLM interactions, and token usage through structured tool dependency reasoning.</p>
+<p>SING reports dramatically reducing full-corpus schema exposure while improving retrieval and downstream success.</p>
+<p>A separate 2026 Tool Attention paper reports large simulated schema-token reductions through dynamic gating and lazy schema loading, though several end-to-end benefits in that paper are projections rather than directly measured live-agent results. This limitation matters.</p>
+<h2 id="semantic-protocol-mechanism">Semantic protocol mechanism</h2>
+<p>Static:</p>
+<pre><code class="language-text">protocol grammar
+semantic schema
+</code></pre>
+<p>can be cached.</p>
+<p>Dynamic per-task context becomes:</p>
+<pre><code class="language-text">state
+3 capabilities
+2 obligations
+</code></pre>
+<p>rather than:</p>
+<pre><code class="language-text">100 tool schemas
+</code></pre>
+<p>This is a plausible form of context compression.</p>
+<hr>
+<h1 id="28-caching--cold-start-analysis">28. Caching / cold-start analysis</h1>
+<h2 id="cold-start">Cold start</h2>
+<p>The agent must learn:</p>
+<ul>
+<li>protocol grammar;</li>
+<li>semantic state vocabulary;</li>
+<li>relevant transition schemas.</li>
+</ul>
+<p>This cost may be comparable to loading some bespoke tools.</p>
+<h2 id="warm-start">Warm start</h2>
+<p>Protocol grammar is unchanged.</p>
+<p>Static semantic schema can be cached.</p>
+<p>Only dynamic frontier changes.</p>
+<p>This is where the strongest economic advantage should appear.</p>
+<p>A fair benchmark must therefore measure separately:</p>
+<pre><code class="language-text">cold-start context cost
+warm-task context cost
+</code></pre>
+<p>If only first-task cost is measured, benefits may be underestimated.</p>
+<p>If schemas must be rediscovered constantly, benefits may disappear.</p>
+<hr>
+<h1 id="29-smaller-model-hypothesis">29. Smaller-model hypothesis</h1>
+<p>The hypothesis is plausible:</p>
+<pre><code class="language-text">smaller model + tiny legal frontier
+</code></pre>
+<p>may compete with:</p>
+<pre><code class="language-text">larger model + large arbitrary tool catalog
+</code></pre>
+<p>The 2026 dynamic tool-dependency work supports this direction: hard masking performed particularly well for smaller models.</p>
+<p>But domain reasoning still matters.</p>
+<p>A smaller model may know:</p>
+<pre><code class="language-text">CapturePayment is available
+</code></pre>
+<p>without understanding whether doing so satisfies the user's intent.</p>
+<p>Therefore capability restriction reduces action-selection complexity but does not eliminate goal understanding.</p>
+<p>Evidence level:</p>
+<p><strong>Moderate for action selection; weak for full cross-domain autonomy.</strong></p>
+<hr>
+<h1 id="30-multi-agent-implications">30. Multi-agent implications</h1>
+<p>A shared semantic protocol can become a coordination layer.</p>
+<p>Different agents can inspect:</p>
+<ul>
+<li>same authoritative state;</li>
+<li>same obligation set;</li>
+<li>actor-specific capabilities.</li>
+</ul>
+<p>This reduces disagreements caused by private reconstructed state.</p>
+<p>Potential work-queue extensions:</p>
+<pre><code class="language-text">claim_obligation
+release_claim
+</code></pre>
+<p>But those should probably belong to an orchestration profile rather than the minimal semantic core.</p>
+<p>Semantic obligation identity is still useful because agents coordinate over unresolved outcomes rather than arbitrary task strings.</p>
+<hr>
+<h1 id="31-federated-system-implications">31. Federated-system implications</h1>
+<p>Federation is a major complexity boundary.</p>
+<p>Suppose:</p>
+<pre><code class="language-text">Order service
+Payment service
+Shipping service
+</code></pre>
+<p>each exposes a semantic runtime.</p>
+<p>A global goal:</p>
+<pre><code class="language-text">Order ready to ship
+</code></pre>
+<p>may require transitions across all three.</p>
+<p>Options:</p>
+<h2 id="central-semantic-router">Central semantic router</h2>
+<p>Aggregates state and capabilities.</p>
+<p>Advantages:</p>
+<ul>
+<li>simple agent view.</li>
+</ul>
+<p>Risks:</p>
+<ul>
+<li>centralized authority;</li>
+<li>security coupling;</li>
+<li>synchronization complexity.</li>
+</ul>
+<h2 id="module-local-protocols">Module-local protocols</h2>
+<p>Agent or planner composes across runtimes.</p>
+<p>Advantages:</p>
+<ul>
+<li>preserves ownership boundaries.</li>
+</ul>
+<p>Risks:</p>
+<ul>
+<li>more calls;</li>
+<li>harder planning;</li>
+<li>version coordination.</li>
+</ul>
+<p>Recommended starting point:</p>
+<blockquote>
+<p>Keep semantic authority module-local. Add federation only after a real cross-runtime requirement exists.</p>
+</blockquote>
+<hr>
+<h1 id="32-runtime-vs-development-profiles">32. Runtime vs development profiles</h1>
+<p>A useful separation:</p>
+<h2 id="runtime-profile">Runtime profile</h2>
+<pre><code class="language-text">inspect
+get_obligations
+request_transition
+explain
+</code></pre>
+<h2 id="development-profile">Development profile</h2>
+<p>Possible operations:</p>
+<pre><code class="language-text">semantic_diff
+impact_report
+validate_migration
+get_dependencies
+</code></pre>
+<p>Coding agents benefit from the development profile.</p>
+<p>Operational agents should not need repository or compiler information.</p>
+<p>This keeps the runtime protocol small.</p>
+<hr>
+<h1 id="33-protocol-versioning-strategy">33. Protocol versioning strategy</h1>
+<p>Two versions must remain distinct:</p>
+<pre><code class="language-text">protocolVersion
+semanticSpecVersion
+</code></pre>
+<p>The protocol grammar may remain stable while domain semantics evolve rapidly.</p>
+<p>Example:</p>
+<pre><code class="language-text">protocolVersion = 0.1
+semanticSpecVersion = payments/42
+</code></pre>
+<p>Client caches semantic schemas keyed by:</p>
+<pre><code class="language-text">semanticSpecVersion
+</code></pre>
+<p>State responses carry version.</p>
+<p>When version changes:</p>
+<pre><code class="language-text">cached schema invalidated
+</code></pre>
+<p>Transition IDs should use stable semantic identifiers and explicit deprecation/migration maps where needed.</p>
+<hr>
+<h1 id="34-minimal-v01-recommendation">34. Minimal v0.1 recommendation</h1>
+<h2 id="operation-1">Operation 1</h2>
+<pre><code class="language-text">inspect(subject, fields?)
+</code></pre>
+<p>Default response:</p>
+<ul>
+<li>state summary;</li>
+<li>version;</li>
+<li>current capabilities;</li>
+<li>subject obligations.</li>
+</ul>
+<h2 id="operation-2">Operation 2</h2>
+<pre><code class="language-text">get_obligations(scope, filters?)
+</code></pre>
+<p>Needed for work discovery independent of a known subject.</p>
+<h2 id="operation-3">Operation 3</h2>
+<pre><code class="language-text">request_transition(capabilityToken, inputs, expectedStateVersion, operationId?)
+</code></pre>
+<p>Primary commitment boundary.</p>
+<h2 id="operation-4">Operation 4</h2>
+<pre><code class="language-text">explain(subject, actionOrGoal)
+</code></pre>
+<p>Optional but high-value diagnostic/planning primitive.</p>
+<h3 id="do-not-initially-include">Do not initially include</h3>
+<ul>
+<li><code>find_paths</code></li>
+<li><code>get_policy_context</code></li>
+<li><code>get_evidence</code></li>
+<li><code>observe_effect</code></li>
+<li><code>reconcile_effect</code></li>
+<li>obligation progress APIs.</li>
+</ul>
+<p>These can be represented by lazy resources, capabilities, or later profiles.</p>
+<hr>
+<h1 id="35-counterarguments">35. Counterarguments</h1>
+<h2 id="1-mcp--normal-tools-already-solves-this">1. "MCP + normal tools already solves this."</h2>
+<p>MCP solves interoperability but leaves domain legality application-specific.</p>
+<p>It is necessary infrastructure, not equivalent semantics.</p>
+<h2 id="2-this-is-just-hateoas">2. "This is just HATEOAS."</h2>
+<p>HATEOAS is the closest ancestor.</p>
+<p>The proposed design adds:</p>
+<ul>
+<li>actor authority;</li>
+<li>capability security;</li>
+<li>obligations;</li>
+<li>versioning;</li>
+<li>evidence;</li>
+<li>effects;</li>
+<li>explicit semantic compiler/runtime.</li>
+</ul>
+<p>The correct conclusion is not to deny the lineage but to build on it.</p>
+<h2 id="3-generic-transition-calls-are-less-type-safe">3. "Generic transition calls are less type safe."</h2>
+<p>Correct.</p>
+<p>This is why raw generic calls should be internal ABI, not necessarily the model-facing tool layer.</p>
+<h2 id="4-discovery-adds-calls">4. "Discovery adds calls."</h2>
+<p>Correct.</p>
+<p>Batch inspection and lazy schema caching are needed.</p>
+<h2 id="5-natural-language-tools-are-already-good-enough">5. "Natural-language tools are already good enough."</h2>
+<p>For small toolsets, probably.</p>
+<p>The value proposition grows with tool count, dynamic legality, and consequence.</p>
+<h2 id="6-bespoke-apis-are-easier-to-debug">6. "Bespoke APIs are easier to debug."</h2>
+<p>Often true for humans.</p>
+<p>Generated typed projections retain that benefit.</p>
+<h2 id="7-universal-protocols-become-lowest-common-denominator-abstractions">7. "Universal protocols become lowest-common-denominator abstractions."</h2>
+<p>Avoid universal domain vocabulary.</p>
+<p>Standardize grammar only.</p>
+<h2 id="8-domain-semantics-cannot-be-standardized">8. "Domain semantics cannot be standardized."</h2>
+<p>Agreed.</p>
+<p>They should not be.</p>
+<h2 id="9-generic-ids-become-stringly-typed">9. "Generic IDs become stringly typed."</h2>
+<p>Use schemas, stable IDs, and dynamic typed projections.</p>
+<h2 id="10-planning-should-remain-agent-side">10. "Planning should remain agent-side."</h2>
+<p>Often yes.</p>
+<p><code>find_paths</code> should not be core initially.</p>
+<h2 id="11-find_paths-may-hide-bad-semantics">11. "<code>find_paths</code> may hide bad semantics."</h2>
+<p>Correct.</p>
+<p>Keep planner optional and inspectable.</p>
+<h2 id="12-capability-tokens-complicate-development">12. "Capability tokens complicate development."</h2>
+<p>They do, but high-consequence operations may justify them.</p>
+<p>Local development SDKs can hide token mechanics.</p>
+<h2 id="13-cross-service-semantics-explode-complexity">13. "Cross-service semantics explode complexity."</h2>
+<p>Correct.</p>
+<p>Keep authority local initially.</p>
+<h2 id="14-blocked-explanations-leak-secrets">14. "Blocked explanations leak secrets."</h2>
+<p>Correct.</p>
+<p>Explanations must be scoped/redacted.</p>
+<h2 id="15-standardization-is-premature">15. "Standardization is premature."</h2>
+<p>Strongly agree.</p>
+<p>This should begin as internal ABI.</p>
+<h2 id="16-dynamic-typed-tools-solve-most-of-it">16. "Dynamic typed tools solve most of it."</h2>
+<p>This may be true—and supports the hybrid architecture.</p>
+<p>Dynamic tools still require a semantic source for legality and schema generation.</p>
+<h2 id="17-workflow-engines-already-expose-next-steps">17. "Workflow engines already expose next steps."</h2>
+<p>In fully workflow-modeled domains, much of the value may already exist.</p>
+<p>The semantic protocol is most useful where authoritative state exceeds one workflow.</p>
+<h2 id="18-bdiplanners-already-expose-similar-structures">18. "BDI/planners already expose similar structures."</h2>
+<p>Conceptually yes.</p>
+<p>The contribution is operational hardening around authority, evidence, policy, concurrency, and effects.</p>
+<h2 id="19-tool-schema-cost-may-be-negligible-with-caching">19. "Tool schema cost may be negligible with caching."</h2>
+<p>Possible.</p>
+<p>Must be measured in target platform.</p>
+<h2 id="20-smaller-models-still-need-domain-knowledge">20. "Smaller models still need domain knowledge."</h2>
+<p>Correct.</p>
+<p>The protocol reduces action/legal inference, not business comprehension.</p>
+<hr>
+<h1 id="36-proposed-experiments">36. Proposed experiments</h1>
+<h2 id="experiment-a--100-actions-3-legal">Experiment A — 100 actions, 3 legal</h2>
+<p>Compare:</p>
+<p>A. 100 static typed tools<br>
+B. raw semantic protocol<br>
+C. semantic ABI + 3 dynamic typed tools</p>
+<p>Measure:</p>
+<ul>
+<li>success;</li>
+<li>illegal attempts;</li>
+<li>token cost;</li>
+<li>schema exposure;</li>
+<li>tool-selection errors.</li>
+</ul>
+<h2 id="experiment-b--new-domain-cold-start">Experiment B — new-domain cold start</h2>
+<p>Give agent unfamiliar domain.</p>
+<p>Compare bespoke tools vs semantic protocol.</p>
+<p>Measure:</p>
+<ul>
+<li>first-task success;</li>
+<li>prompt additions;</li>
+<li>schema/tool calls;</li>
+<li>tokens.</li>
+</ul>
+<h2 id="experiment-c--cross-domain-transfer">Experiment C — cross-domain transfer</h2>
+<p>Use same agent on payments first, then deployment.</p>
+<p>Test whether protocol familiarity improves second-domain adaptation.</p>
+<h2 id="experiment-d--blocked-action">Experiment D — blocked action</h2>
+<p>Goal:</p>
+<pre><code class="language-text">Ship order
+</code></pre>
+<p>but payment not captured.</p>
+<p>Compare:</p>
+<ul>
+<li>generic tool failure;</li>
+<li>specialized error;</li>
+<li>structured explain response.</li>
+</ul>
+<h2 id="experiment-e--stale-state">Experiment E — stale state</h2>
+<p>Agent inspects v18.</p>
+<p>State changes to v19.</p>
+<p>Attempt transition.</p>
+<p>Measure stale-action recovery.</p>
+<h2 id="experiment-f--outcomeunknown">Experiment F — OutcomeUnknown</h2>
+<p>Refund effect becomes uncertain.</p>
+<p>Protocol should:</p>
+<ul>
+<li>remove new-refund capability;</li>
+<li>expose reconciliation obligation/capability.</li>
+</ul>
+<p>Measure duplicate effects.</p>
+<h2 id="experiment-g--work-discovery">Experiment G — work discovery</h2>
+<p>Prompt:</p>
+<pre><code class="language-text">Handle outstanding work.
+</code></pre>
+<p>Compare search over many tools vs <code>get_obligations</code>.</p>
+<h2 id="experiment-h--forged-capability">Experiment H — forged capability</h2>
+<p>Agent manually supplies an unavailable transition ID.</p>
+<p>Runtime must reject.</p>
+<h2 id="experiment-i--generic-vs-typed-parameters">Experiment I — generic vs typed parameters</h2>
+<p>Compare parameter error rate for:</p>
+<pre><code class="language-text">request_transition(...)
+</code></pre>
+<p>against generated typed tool.</p>
+<h2 id="experiment-j--caching">Experiment J — caching</h2>
+<p>Measure cold and warm token/tool cost separately.</p>
+<hr>
+<h1 id="37-metrics">37. Metrics</h1>
+<h2 id="tokens-per-correct-completion">Tokens per Correct Completion</h2>
+<h2 id="tool-calls-per-correct-completion">Tool Calls per Correct Completion</h2>
+<h2 id="model-calls-per-correct-completion">Model Calls per Correct Completion</h2>
+<h2 id="cost-per-correct-completion">Cost per Correct Completion</h2>
+<h2 id="illegal-transition-request-rate">Illegal Transition Request Rate</h2>
+<pre><code class="language-text">illegal transition requests
+---------------------------
+total transition attempts
+</code></pre>
+<h2 id="stale-capability-attempt-rate">Stale Capability Attempt Rate</h2>
+<h2 id="parameter-error-rate">Parameter Error Rate</h2>
+<h2 id="obligation-resolution-rate">Obligation Resolution Rate</h2>
+<h2 id="average-legal-frontier-size">Average Legal Frontier Size</h2>
+<h2 id="tool-schema-exposure-tokens">Tool Schema Exposure Tokens</h2>
+<h2 id="cold-start-context-cost">Cold-Start Context Cost</h2>
+<h2 id="warm-task-context-cost">Warm-Task Context Cost</h2>
+<h2 id="protocol-reuse-ratio">Protocol Reuse Ratio</h2>
+<p>Possible definition:</p>
+<pre><code class="language-text">shared protocol instructions
+----------------------------
+total operational instructions
+</code></pre>
+<h2 id="cross-domain-adaptation-cost">Cross-Domain Adaptation Cost</h2>
+<p>Prompt/tool/schema additions needed for new application.</p>
+<h2 id="round-trip-latency">Round-Trip Latency</h2>
+<p>Protocol savings must not hide latency increases.</p>
+<hr>
+<h1 id="38-economic-model">38. Economic model</h1>
+<p>Conventional tool architecture:</p>
+<pre><code class="language-text">Cost =
+    static schema context
+  + tool-selection reasoning
+  + illegal action attempts
+  + per-app prompt engineering
+  + integration maintenance
+  + drift repair
+</code></pre>
+<p>Semantic ABI:</p>
+<pre><code class="language-text">Cost =
+    semantic runtime implementation
+  + capability derivation
+  + inspection calls
+  + schema discovery
+  + protocol infrastructure
+  + dynamic tool projection
+</code></pre>
+<p>Potential savings compound when:</p>
+<ul>
+<li>many applications use same grammar;</li>
+<li>action sets are large;</li>
+<li>legal frontier is small;</li>
+<li>semantic schema is cacheable;</li>
+<li>agents work repeatedly over same runtime;</li>
+<li>consequences of invalid action are high.</li>
+</ul>
+<p>The largest economic opportunity is not necessarily raw token reduction.</p>
+<p>It is:</p>
+<blockquote>
+<p><strong>reusing one agent interaction model across many systems while pushing legality and work discovery into deterministic software.</strong></p>
+</blockquote>
+<hr>
+<h1 id="39-what-is-already-established-prior-art">39. What is already established prior art</h1>
+<h2 id="strongly-established">Strongly established</h2>
+<ul>
+<li>REST/HATEOAS supports dynamic server-provided next interactions.</li>
+<li>Planning languages separate state, preconditions, actions, effects, and goals.</li>
+<li>Workflow engines expose procedural current/next work.</li>
+<li>Capability systems represent authority through protected/unforgeable references or tokens.</li>
+<li>FIPA ACL standardizes generic agent communicative acts independent of domain payload.</li>
+<li>MCP standardizes LLM/tool/context interoperability.</li>
+<li>Dynamic tool retrieval/masking can reduce the number of tools exposed to LLMs and improve some tool-use outcomes.</li>
+<li>State/version concurrency controls are standard distributed-system practice.</li>
+</ul>
+<h2 id="important-2026-evidence">Important 2026 evidence</h2>
+<p>An IETF Internet-Draft on agentic operation of constrained RESTful environments explicitly applies HATEOAS to LLM-based agents so they can discover device capabilities in-band without prior device-specific knowledge.</p>
+<p>This is extremely close prior art for the core discovery concept, although it is focused on REST/IoT and remains an Internet-Draft rather than a final standard.</p>
+<hr>
+<h1 id="40-what-appears-genuinely-usefulnew">40. What appears genuinely useful/new</h1>
+<p>The novelty is not:</p>
+<pre><code class="language-text">servers should advertise actions
+</code></pre>
+<p>HATEOAS already established that.</p>
+<p>Nor:</p>
+<pre><code class="language-text">agents should use generic communication verbs
+</code></pre>
+<p>FIPA/KQML already explored that.</p>
+<p>Nor:</p>
+<pre><code class="language-text">planning actions have preconditions/effects
+</code></pre>
+<p>STRIPS/PDDL already established that.</p>
+<p>The potentially distinctive synthesis is:</p>
+<pre><code class="language-text">authoritative state
++
+actor-scoped legal capabilities
++
+unresolved obligations
++
+evidence/policy/version context
++
+uncertain external effects
++
+generic transition commitment
+</code></pre>
+<p>presented specifically as an <strong>AI-agent operating interface</strong>.</p>
+<p>Especially useful is the combination:</p>
+<pre><code class="language-text">HATEOAS-style dynamic affordance discovery
++
+capability security
++
+deontic obligations
++
+planner-compatible state/transition metadata
++
+runtime reference-monitor enforcement
+</code></pre>
+<p>That combination appears meaningfully useful even though its components have deep prior art.</p>
+<hr>
+<h1 id="41-public-standard-or-internal-abi">41. Public standard or internal ABI?</h1>
+<h2 id="recommendation">Recommendation</h2>
+<p><strong>Internal semantic ABI first.</strong></p>
+<p>Do not attempt a public standard yet.</p>
+<p>Reasons:</p>
+<ol>
+<li>the minimal operation set is not experimentally validated;</li>
+<li>raw generic vs dynamic typed tools is unresolved;</li>
+<li>federation semantics are immature;</li>
+<li>obligation/effect representations need testing;</li>
+<li>premature standardization risks locking in weak abstractions;</li>
+<li>existing MCP transport can carry the protocol without a new ecosystem.</li>
+</ol>
+<p>The correct evolution path is:</p>
+<pre><code class="language-text">internal ABI
+    ->
+multiple internal domains
+    ->
+cross-domain benchmark
+    ->
+external adapters
+    ->
+only then consider public specification
+</code></pre>
+<p>If the architecture proves itself, the public standardization target would likely be the <strong>semantic ABI</strong>, not the internal DSL or compiler implementation.</p>
+<hr>
+<h1 id="42-architecture-changes-recommended">42. Architecture changes recommended</h1>
+<h2 id="1-reframe-protocol-as-semantic-abi">1. Reframe protocol as semantic ABI</h2>
+<p>Not universal public API.</p>
+<h2 id="2-use-mcp-as-one-transport-option">2. Use MCP as one transport option</h2>
+<p>Do not reinvent tool transport/discovery.</p>
+<h2 id="3-make-hateoas-lineage-explicit">3. Make HATEOAS lineage explicit</h2>
+<p>Capability exposure is AI-oriented hypermedia with stronger authority semantics.</p>
+<h2 id="4-separate-affordance-from-capability">4. Separate affordance from capability</h2>
+<pre><code class="language-text">affordance = possible
+capability = currently authorized/legal
+</code></pre>
+<h2 id="5-prefer-four-operation-v01">5. Prefer four-operation v0.1</h2>
+<pre><code class="language-text">inspect
+get_obligations
+request_transition
+explain
+</code></pre>
+<h2 id="6-make-dynamic-typed-tools-the-default-model-facing-projection">6. Make dynamic typed tools the default model-facing projection</h2>
+<p>Raw generic transition remains internal.</p>
+<h2 id="7-keep-schemas-lazy">7. Keep schemas lazy</h2>
+<p>Load input details only for current/relevant capabilities.</p>
+<h2 id="8-include-explicit-versioning">8. Include explicit versioning</h2>
+<p>State, policy, semantic spec, and protocol.</p>
+<h2 id="9-use-server-authoritative-capability-instances">9. Use server-authoritative capability instances</h2>
+<p>Do not trust IDs alone.</p>
+<h2 id="10-treat-reconciliation-as-a-semantic-capability">10. Treat reconciliation as a semantic capability</h2>
+<p>Do not add a universal <code>reconcile_effect</code> primitive yet.</p>
+<h2 id="11-keep-planning-optional">11. Keep planning optional</h2>
+<p>Do not make <code>find_paths</code> core until measured.</p>
+<h2 id="12-support-compact-authorized-projections">12. Support compact authorized projections</h2>
+<p>For privacy and tokens.</p>
+<h2 id="13-separate-runtime-and-development-profiles">13. Separate runtime and development profiles</h2>
+<p>Operational agents need smaller grammar.</p>
+<h2 id="14-instrument-protocol-behavior">14. Instrument protocol behavior</h2>
+<p>Measure:</p>
+<ul>
+<li>frontier size;</li>
+<li>illegal attempts;</li>
+<li>schema tokens;</li>
+<li>stale requests;</li>
+<li>obligation resolution.</li>
+</ul>
+<h2 id="15-benchmark-three-architectures">15. Benchmark three architectures</h2>
+<p>Static tools vs raw protocol vs dynamic typed projections.</p>
+<p>That comparison is essential.</p>
+<hr>
+<h1 id="43-final-verdict">43. Final verdict</h1>
+<h2 id="can-a-small-semantic-interaction-grammar-generalize-across-domains">Can a small semantic interaction grammar generalize across domains?</h2>
+<p><strong>Moderate evidence</strong></p>
+<p>Strong prior art supports generic interaction structures across domains, especially HATEOAS, planning languages, workflow systems, and agent communication protocols. Direct LLM evidence for the complete proposed grammar remains limited.</p>
+<h2 id="does-it-reduce-application-specific-tool-complexity">Does it reduce application-specific tool complexity?</h2>
+<p><strong>Moderate</strong></p>
+<p>It clearly reduces static tool-name/schema count at the protocol layer, but domain-specific transition schemas remain.</p>
+<p>Dynamic typed projection is likely necessary to realize the benefit without sacrificing usability.</p>
+<h2 id="does-it-reduce-agent-contexttoken-cost">Does it reduce agent context/token cost?</h2>
+<p><strong>Moderate</strong></p>
+<p>Current dynamic tool-retrieval and schema-graph research supports the mechanism. Exact savings for the proposed semantic ABI remain unmeasured.</p>
+<h2 id="does-it-improve-action-correctness">Does it improve action correctness?</h2>
+<p><strong>Moderate-to-strong conceptually</strong></p>
+<p>Dynamic legality filtering and runtime revalidation strongly reduce illegal action opportunities.</p>
+<p>Current tool-masking work also supports smaller legal/relevant action sets.</p>
+<h2 id="does-it-enable-model-portability-across-applications">Does it enable model portability across applications?</h2>
+<p><strong>Plausible / Moderate</strong></p>
+<p>The grammar is reusable, but domain vocabulary and goal interpretation remain application-specific.</p>
+<p>Cross-domain transfer needs direct measurement.</p>
+<h2 id="is-the-closest-prior-art-primarily">Is the closest prior art primarily?</h2>
+<p><strong>HATEOAS</strong>, with major contributions from:</p>
+<ul>
+<li>planner interfaces;</li>
+<li>capability security;</li>
+<li>workflow systems;</li>
+<li>MCP;</li>
+<li>FIPA/agent communication languages.</li>
+</ul>
+<h2 id="best-protocol-architecture">Best protocol architecture</h2>
+<p><strong>Dynamic typed tools over a semantic ABI</strong></p>
+<p>not raw generic protocol.</p>
+<h2 id="minimum-core-operations">Minimum core operations</h2>
+<pre><code class="language-text">inspect
+get_obligations
+request_transition
+explain
+</code></pre>
+<p>Potential future reduction:</p>
+<pre><code class="language-text">inspect
+act
+</code></pre>
+<p>but only if diagnostics/work discovery remain adequate.</p>
+<h2 id="most-important-operation">Most important operation</h2>
+<p><strong>inspect</strong></p>
+<p>because it provides the compact current semantic frontier:</p>
+<ul>
+<li>what is true;</li>
+<li>what is legal;</li>
+<li>what remains unresolved.</li>
+</ul>
+<p>Without a good inspection primitive, agents fall back to broad discovery.</p>
+<h2 id="most-redundant-proposed-operation">Most redundant proposed operation</h2>
+<p><strong>reconcile_effect</strong></p>
+<p>Reconciliation should generally be represented as a domain capability/obligation rather than a universal protocol verb.</p>
+<p><code>observe_effect</code> may also be folded into inspection.</p>
+<h2 id="strongest-existing-analogue">Strongest existing analogue</h2>
+<p><strong>HATEOAS / hypermedia controls</strong></p>
+<p>The current 2026 IETF work applying hypermedia capability discovery to LLM agents further strengthens this comparison.</p>
+<h2 id="most-important-lesson-from-hateoas">Most important lesson from HATEOAS</h2>
+<blockquote>
+<p><strong>Dynamic discoverability is powerful only when clients and tooling actually benefit from it.</strong></p>
+</blockquote>
+<p>Historically, many human developers preferred explicit/static client APIs and documentation.</p>
+<p>AI agents may change that economic tradeoff because they can consume dynamic affordances directly—but this must be proven, not assumed.</p>
+<h2 id="most-important-lesson-from-agent-communication-languages">Most important lesson from agent communication languages</h2>
+<blockquote>
+<p><strong>Standardize interaction grammar, not universal domain ontology.</strong></p>
+</blockquote>
+<p>A protocol that tries to define the meaning of every business concept will repeat the ontology problem encountered by broad agent-communication systems.</p>
+<h2 id="most-important-security-requirement">Most important security requirement</h2>
+<blockquote>
+<p><strong>Runtime must reject forged, stale, unauthorized, or semantically illegal transition requests even if the agent manually supplies a valid-looking semantic ID.</strong></p>
+</blockquote>
+<p>Capability hiding is not security.</p>
+<h2 id="biggest-economic-opportunity">Biggest economic opportunity</h2>
+<p><strong>Cross-application reuse of the same agent operating grammar plus dramatic reduction of the dynamically exposed action frontier.</strong></p>
+<p>If successful, the agent learns:</p>
+<pre><code class="language-text">inspect
+understand capabilities
+work obligations
+request transitions
+</code></pre>
+<p>once.</p>
+<p>Applications supply their domain semantics as data.</p>
+<h2 id="biggest-abstraction-risk">Biggest abstraction risk</h2>
+<p><strong>The protocol merely moves complexity into dynamic schemas and IDs, creating more tool calls and runtime errors than typed bespoke APIs.</strong></p>
+<p>This is why raw generic protocol must be benchmarked against dynamic typed projection.</p>
+<h2 id="best-first-experiment">Best first experiment</h2>
+<p>Build one domain with approximately:</p>
+<pre><code class="language-text">50-100 possible semantic transitions
+3-5 legal at any moment
+</code></pre>
+<p>Compare:</p>
+<ol>
+<li>static bespoke typed tools;</li>
+<li>raw generic semantic protocol;</li>
+<li>semantic ABI + dynamically generated typed legal tools.</li>
+</ol>
+<p>Measure:</p>
+<ul>
+<li>success rate;</li>
+<li>illegal attempts;</li>
+<li>parameter errors;</li>
+<li>tokens;</li>
+<li>tool calls;</li>
+<li>latency;</li>
+<li>schema context;</li>
+<li>cost per correct completion.</li>
+</ul>
+<p>Then repeat the same agent design in a second unrelated domain to test portability.</p>
+<h2 id="should-this-initially-be">Should this initially be?</h2>
+<p><strong>Internal semantic ABI</strong></p>
+<p>with a generated agent adapter.</p>
+<p>Public standardization would be premature.</p>
+<hr>
+<h1 id="research-synthesis">Research synthesis</h1>
+<p>The core idea survives, but the research changes its framing.</p>
+<p>The initial intuition is:</p>
+<blockquote>
+<p>Maybe agents should have a universal set of semantic tools.</p>
+</blockquote>
+<p>The stronger architecture is:</p>
+<blockquote>
+<p><strong>Software should expose a universal pattern of semantic interaction, but the model-facing tool set should be dynamically compiled from the current legal frontier.</strong></p>
+</blockquote>
+<p>This distinction resolves several tensions.</p>
+<h3 id="standardization-vs-type-safety">Standardization vs type safety</h3>
+<p>Internal ABI is generic.</p>
+<p>Agent tools can remain typed.</p>
+<h3 id="small-protocol-vs-domain-expressiveness">Small protocol vs domain expressiveness</h3>
+<p>Protocol verbs are generic.</p>
+<p>Domain transition schemas remain application-specific.</p>
+<h3 id="hateoas-vs-capability-security">HATEOAS vs capability security</h3>
+<p>The system advertises legal next actions like hypermedia.</p>
+<p>But runtime capability instances add authority and version validation.</p>
+<h3 id="planner-vs-model-reasoning">Planner vs model reasoning</h3>
+<p>The runtime exposes preconditions and legal producer actions.</p>
+<p>The agent can still perform preference/goal reasoning.</p>
+<h3 id="mcp-vs-semantic-control">MCP vs semantic control</h3>
+<p>MCP transports the interaction.</p>
+<p>The semantic layer defines what the interaction means and what may legally happen.</p>
+<p>The most useful mental model is therefore:</p>
+<pre><code class="language-text">MCP / HTTP / RPC
+    =
+transport/interoperability
+
+Semantic ABI
+    =
+authoritative interaction grammar
+
+Semantic compiler/runtime
+    =
+domain legality and state
+
+Dynamic typed tools
+    =
+agent-facing projection
+</code></pre>
+<p>This is not a new replacement for MCP.</p>
+<p>It is a layer above it.</p>
+<p>And it is not a replacement for domain-specific APIs.</p>
+<p>Humans and conventional applications can retain typed REST/GraphQL/SDK APIs.</p>
+<p>The semantic ABI can exist specifically as the control plane for AI agents and other generic automation.</p>
+<p>That may be the most important strategic conclusion from this research mission.</p>
+<hr>
+<h1 id="key-sources">Key sources</h1>
+<h2 id="model-context-protocol">Model Context Protocol</h2>
+<ol>
+<li>
+<p>Model Context Protocol, <strong>Specification</strong>.<br>
+<a href="https://modelcontextprotocol.io/specification/2025-11-25">https://modelcontextprotocol.io/specification/2025-11-25</a></p>
+</li>
+<li>
+<p>Model Context Protocol, <strong>Tools specification</strong>.<br>
+<a href="https://modelcontextprotocol.io/specification/2025-06-18/server/tools">https://modelcontextprotocol.io/specification/2025-06-18/server/tools</a></p>
+</li>
+<li>
+<p>Model Context Protocol Blog, <strong>The 2026-07-28 Specification</strong>.<br>
+<a href="https://blog.modelcontextprotocol.io/posts/2026-07-28/">https://blog.modelcontextprotocol.io/posts/2026-07-28/</a></p>
+</li>
+<li>
+<p>Model Context Protocol, <strong>Specification Enhancement Proposals</strong>.<br>
+<a href="https://modelcontextprotocol.io/seps">https://modelcontextprotocol.io/seps</a></p>
+</li>
+</ol>
+<h2 id="rest--hateoas">REST / HATEOAS</h2>
+<ol start="5">
+<li>
+<p>Roy T. Fielding, <strong>Architectural Styles and the Design of Network-based Software Architectures</strong>, doctoral dissertation, 2000.<br>
+<a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm</a></p>
+</li>
+<li>
+<p>IETF / IRTF T2TRG, <strong>Guidance on RESTful Design for Internet of Things Systems</strong>, 2026 draft material.<br>
+<a href="https://datatracker.ietf.org/doc/draft-irtf-t2trg-rest-iot/">https://datatracker.ietf.org/doc/draft-irtf-t2trg-rest-iot/</a></p>
+</li>
+<li>
+<p>IETF Internet-Draft, <strong>Agentic AI Operation of Constrained RESTful Environments</strong>, 2026.<br>
+<a href="https://datatracker.ietf.org/doc/html/draft-jimenez-t2trg-iot-agent-00">https://datatracker.ietf.org/doc/html/draft-jimenez-t2trg-iot-agent-00</a></p>
+</li>
+</ol>
+<p>Important limitation: Internet-Drafts are works in progress and not final IETF standards.</p>
+<h2 id="fipa-agent-communication">FIPA agent communication</h2>
+<ol start="8">
+<li>
+<p>FIPA, <strong>Agent Communication Language Specifications</strong>.<br>
+<a href="https://www.fipa.org/repository/aclspecs.html">https://www.fipa.org/repository/aclspecs.html</a></p>
+</li>
+<li>
+<p>FIPA, <strong>Communicative Act Library Specification</strong>.<br>
+<a href="https://www.fipa.org/specs/fipa00037/SC00037J.html">https://www.fipa.org/specs/fipa00037/SC00037J.html</a></p>
+</li>
+<li>
+<p>FIPA, <strong>Interaction Protocol Library Specification</strong>.<br>
+<a href="https://www.fipa.org/specs/fipa00025/XC00025E.pdf">https://www.fipa.org/specs/fipa00025/XC00025E.pdf</a></p>
+</li>
+</ol>
+<h2 id="planning">Planning</h2>
+<ol start="11">
+<li>
+<p>Fox &#x26; Long, <strong>PDDL2.1: An Extension to PDDL for Expressing Temporal Planning Domains</strong>, 2003.<br>
+Accessible through planning.wiki archive:<br>
+<a href="https://planning.wiki/_citedpapers/pddl212003.pdf">https://planning.wiki/_citedpapers/pddl212003.pdf</a></p>
+</li>
+<li>
+<p>Planning Wiki, <strong>What is PDDL?</strong><br>
+<a href="https://planning.wiki/guide/whatis/pddl">https://planning.wiki/guide/whatis/pddl</a></p>
+</li>
+</ol>
+<h2 id="current-llm-tool-use-research">Current LLM tool-use research</h2>
+<ol start="13">
+<li>
+<p>Zhai et al., <strong>HyperAgent: Planning and Acting over Tool-Schema Hypergraphs for Tool-Use LLM Agents</strong>, 2026.<br>
+<a href="https://arxiv.org/abs/2608.02650">https://arxiv.org/abs/2608.02650</a></p>
+</li>
+<li>
+<p>Xiao et al., <strong>SING: Synthetic Intention Graph for Scalable Active Tool Discovery in LLM Agents</strong>, 2026.<br>
+<a href="https://arxiv.org/abs/2606.16591">https://arxiv.org/abs/2606.16591</a></p>
+</li>
+<li>
+<p>Patel et al., <strong>Dynamic Tool Dependency Retrieval for Lightweight LLM Agentic Systems</strong>, Findings of ACL 2026.<br>
+<a href="https://aclanthology.org/2026.findings-acl.1680.pdf">https://aclanthology.org/2026.findings-acl.1680.pdf</a></p>
+</li>
+<li>
+<p>Sadani &#x26; Kumar, <strong>Tool Attention Is All You Need: Dynamic Tool Gating and Lazy Schema Loading for Eliminating the MCP/Tools Tax in Scalable Agentic Workflows</strong>, 2026.<br>
+<a href="https://arxiv.org/abs/2604.21816">https://arxiv.org/abs/2604.21816</a></p>
+</li>
+</ol>
+<p>Important limitation: the Tool Attention paper directly measures schema-token reduction in its simulation but reports several end-to-end outcomes as projections rather than live-agent measurements. Those projections should not be treated as direct empirical proof.</p>
+<h2 id="capability-security">Capability security</h2>
+<ol start="17">
+<li>Koppmann, <strong>Utilizing Object Capabilities to Improve Web Application Security</strong>, 2022.<br>
+<a href="https://www.acigjournal.com/Utilizing-Object-Capabilities-to-Improve-Web-Application-Security%2C184282%2C0%2C2.html">https://www.acigjournal.com/Utilizing-Object-Capabilities-to-Improve-Web-Application-Security%2C184282%2C0%2C2.html</a></li>
+</ol>
+<hr>
+<h1 id="final-research-judgment">Final research judgment</h1>
+<p>The research does not support immediately proposing a new public "AI semantic protocol" standard.</p>
+<p>It does support building and experimentally testing a <strong>small internal semantic ABI</strong>.</p>
+<p>The design should borrow explicitly from:</p>
+<pre><code class="language-text">HATEOAS
+    for dynamic legal-action discovery
+
+Capability security
+    for actor-bound authority
+
+PDDL / planning
+    for state/precondition/effect structure
+
+Workflow systems
+    for durable work
+
+FIPA
+    for stable interaction grammar
+
+MCP
+    for modern AI transport/tool interoperability
+</code></pre>
+<p>The likely innovation is in their combination around one principle:</p>
+<blockquote>
+<p><strong>The authoritative software system, not the probabilistic model, should tell the agent what state is true, what actions are currently legal, what unresolved work exists, and whether a requested consequential transition may commit.</strong></p>
+</blockquote>
+<p>The agent remains responsible for:</p>
+<ul>
+<li>understanding goals;</li>
+<li>choosing among legal alternatives;</li>
+<li>optimizing;</li>
+<li>communicating;</li>
+<li>gathering non-authoritative information.</li>
+</ul>
+<p>The runtime remains responsible for:</p>
+<ul>
+<li>truth;</li>
+<li>legality;</li>
+<li>authority;</li>
+<li>versions;</li>
+<li>evidence;</li>
+<li>commitments.</li>
+</ul>
+<p>That boundary is likely more important than whether the final wire operation is literally named <code>request_transition</code>.</p></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

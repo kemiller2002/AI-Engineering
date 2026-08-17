@@ -1,9 +1,9 @@
 {
   "generatedAt": "2026-07-22",
   "summary": {
-    "publishable source": 113,
+    "publishable source": 189,
     "generated output": 1,
-    "ambiguous": 372,
+    "ambiguous": 379,
     "ignored": 3
   },
   "records": [
@@ -29,6 +29,10 @@
     },
     {
       "path": "ai-prompts/Research-Execution-Package-Specification-v2.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "BOOTSTRAP.md",
       "classification": "publishable source"
     },
     {
@@ -104,7 +108,39 @@
       "classification": "publishable source"
     },
     {
+      "path": "content/projects/time-entry/architecture/time-entry-large-view-architecture-v0.1.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "content/projects/time-entry/domain/time-entry-state-model-v0.1.md",
+      "classification": "publishable source"
+    },
+    {
       "path": "content/projects/time-entry/README.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "content/projects/time-entry/requirements/time-entry-system-ai-requirements.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "context/ARCHITECTURE.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "context/CURRENT-STATE.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "context/DECISIONS.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "context/KNOWN-RISKS.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "context/RESEARCH-QUEUE.md",
       "classification": "publishable source"
     },
     {
@@ -112,7 +148,51 @@
       "classification": "publishable source"
     },
     {
+      "path": "docs/00-governance/Agent-Operating-Manual.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/00-governance/AI-Repository-Operating-System.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/00-governance/Engineering-Standards.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/00-governance/Governance-Decision-Log.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/00-governance/README.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/00-governance/Research-Execution-Package-Specification.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/architecture/README.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/architecture/semantic-control/dependency-minimal-browser-kernel-architecture-policy.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/architecture/semantic-control/minimal-typescript-browser-kernel-responsibility-spec.md",
+      "classification": "publishable source"
+    },
+    {
       "path": "docs/architecture/semantic-control/README.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/architecture/semantic-control/zero-authoritative-javascript-web-architecture-spec-v0.1.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/decisions/README.md",
       "classification": "publishable source"
     },
     {
@@ -137,6 +217,10 @@
     },
     {
       "path": "docs/mobile/ios/workflows/mobile-research-cycle.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/PILOT-MEASUREMENT-PLAN.md",
       "classification": "publishable source"
     },
     {
@@ -209,6 +293,62 @@
     },
     {
       "path": "docs/repository/imports/2026-08-15-state-machine-documents-organization/VALIDATION.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/work-adapter-contract.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/work-protocol.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "framework/policies/EVIDENCE-POLICY.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "framework/policies/OUTPUT-POLICY.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "framework/policies/RESEARCH-POLICY.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "framework/protocols/ARTIFACT-LIFECYCLE.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "framework/protocols/SUPERSESSION.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "framework/REP-SPECIFICATION.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "framework/standards/ARTIFACT-TIERS.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "framework/standards/CONFIDENCE.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "framework/standards/IDENTIFIERS.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "framework/standards/NAMING-STANDARD.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "framework/standards/TAXONOMY.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "HANDOFF.md",
       "classification": "publishable source"
     },
     {
@@ -1648,6 +1788,10 @@
       "classification": "ambiguous"
     },
     {
+      "path": "PROJECT-CHARTER.md",
+      "classification": "publishable source"
+    },
+    {
       "path": "prompts/AI-Research-Mission.md",
       "classification": "ignored"
     },
@@ -1864,6 +2008,10 @@
       "classification": "publishable source"
     },
     {
+      "path": "research/frontier/README.md",
+      "classification": "publishable source"
+    },
+    {
       "path": "research/frontier/records/RFR-001.md",
       "classification": "publishable source"
     },
@@ -1912,7 +2060,79 @@
       "classification": "publishable source"
     },
     {
+      "path": "research/state-constrained-architecture/experiments/semantic-evolution-cascade/experiment-plan.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/experiments/startup-pivot-resilience-benchmark-specification.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/experiments/startup-pivot-resilience-scenario.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/prompts/01-existing-work-prior-art-novelty-research-prompt.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/prompts/02-capability-action-space-reduction-research-prompt.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/prompts/03-deterministic-environment-vs-model-intelligence-research-prompt.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/prompts/04-obligations-as-agent-work-queues-research-prompt.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/prompts/05-epistemic-state-evidence-agent-truth-control-research-prompt.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/prompts/06-outcome-unknown-external-effects-agent-safety-research-prompt.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/prompts/07-longitudinal-semantic-drift-ai-maintained-software-research-prompt.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/prompts/08-semantic-compilation-specification-drift-research-prompt.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/prompts/09-probabilistic-vs-deterministic-responsibility-boundaries-research-prompt.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/prompts/10-semantic-modularity-vs-ordinary-modularity-ai-agents-research-prompt.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/prompts/11-semantic-compilation-weaker-host-languages-research-prompt.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/prompts/12-standard-semantic-agent-protocol-research-prompt.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/prompts/minimal-browser-abi-research-prompt.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/prompts/state-modularity-agent-context-token-cost-research-prompt.md",
+      "classification": "publishable source"
+    },
+    {
       "path": "research/state-constrained-architecture/README.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/references/state-systems-learning-recommendations.md",
       "classification": "publishable source"
     },
     {
@@ -1920,11 +2140,95 @@
       "classification": "publishable source"
     },
     {
+      "path": "research/state-constrained-architecture/reports/02-capability-action-space-reduction-research-report.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/reports/03-deterministic-environment-vs-model-intelligence-research-report.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/reports/04-obligations-as-agent-work-queues-research-report.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/reports/05-epistemic-state-evidence-agent-truth-control-research-report.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/reports/06-outcome-unknown-external-effects-agent-safety-research-report.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/reports/07-longitudinal-semantic-drift-ai-maintained-software-research-report.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/reports/08-semantic-compilation-specification-drift-research-report.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/reports/09-probabilistic-vs-deterministic-responsibility-boundaries-research-report.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/reports/10-semantic-modularity-vs-ordinary-modularity-ai-agents-research-report.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/reports/11-semantic-compilation-weaker-host-languages-research-report.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/reports/12-standard-semantic-agent-protocol-research-report.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/reports/RP-AI-STATE-COST-2026-A002.md",
+      "classification": "publishable source"
+    },
+    {
       "path": "research/state-constrained-architecture/reports/state-constrained-language-comparison-research-report.md",
       "classification": "publishable source"
     },
     {
+      "path": "research/state-constrained-architecture/reports/state-modularity-agent-cost-research-report-2026-08-14.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/reports/state-modularity-literature-review-2026-08-14.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/reports/state-modularity-rework-economics-research-addendum-2026-08-14.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/synthesis/01-12-semantic-control-architecture-research-synthesis.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/working-notes/ai-code-semantic-risk-assessment.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/working-notes/multi-state-data-and-type-explosion.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/working-notes/state-constrained-architecture-continuation-02.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/working-notes/state-constrained-architecture-continuation-03.md",
+      "classification": "publishable source"
+    },
+    {
       "path": "research/state-constrained-architecture/working-notes/state-constrained-architecture-research-outline.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/working-notes/state-constrained-semantic-closure-exhaustiveness.md",
       "classification": "publishable source"
     },
     {
@@ -1952,7 +2256,35 @@
       "classification": "ambiguous"
     },
     {
+      "path": "templates/missions/MISSION-TEMPLATE.md",
+      "classification": "ambiguous"
+    },
+    {
       "path": "templates/RESEARCH-QUESTION.template.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "templates/research/EVIDENCE-TEMPLATE.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "templates/research/EXPERIMENT-TEMPLATE.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "templates/research/HYPOTHESIS-TEMPLATE.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "templates/research/JOURNAL-TEMPLATE.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "templates/research/REP-TEMPLATE.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "templates/research/THEORY-TEMPLATE.md",
       "classification": "ambiguous"
     },
     {

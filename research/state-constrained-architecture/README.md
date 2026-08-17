@@ -7,7 +7,7 @@ semantic-control architecture. It is independent of any one application.
 
 - `prompts/`: questions and missions posed to researchers. Prompts are not findings.
 - `reports/`: evidence and analysis, including the complete numbered 01–12 series.
-- `synthesis/01-12-semantic-control-architecture-research-synthesis.txt`: the
+- `synthesis/01-12-semantic-control-architecture-research-synthesis.md`: the
   cross-mission interpretation of the numbered series.
 - `experiments/`: proposed benchmarks and experiment inputs. These are plans or
   fixtures, not completed empirical evidence unless a file explicitly says otherwise.

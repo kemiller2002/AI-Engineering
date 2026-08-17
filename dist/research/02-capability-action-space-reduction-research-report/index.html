@@ -1,0 +1,1484 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>02 capability action space reduction research report | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">02 capability action space reduction research report</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/reports/02-capability-action-space-reduction-research-report.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#-executive-verdict">================================================================================
+EXECUTIVE VERDICT</a></li><li><a href="#-2-tool-selection-literature">================================================================================
+2. TOOL-SELECTION LITERATURE</a></li><li><a href="#-3-action-masking-safe-rl-literature">================================================================================
+3. ACTION MASKING / SAFE RL LITERATURE</a></li><li><a href="#-4-planning-branching-factor-theory">================================================================================
+4. PLANNING BRANCHING-FACTOR THEORY</a></li><li><a href="#-5-llm-specific-empirical-evidence">================================================================================
+5. LLM-SPECIFIC EMPIRICAL EVIDENCE</a></li><li><a href="#-6-static-vs-task-based-vs-state-based-tool-restriction">================================================================================
+6. STATIC VS TASK-BASED VS STATE-BASED TOOL RESTRICTION</a></li><li><a href="#-7-capability-semantics-comparison">================================================================================
+7. CAPABILITY SEMANTICS COMPARISON</a></li><li><a href="#-8-tool-schema-token-cost-analysis">================================================================================
+8. TOOL-SCHEMA TOKEN-COST ANALYSIS</a></li><li><a href="#-9-prompt-instruction-replacement-analysis">================================================================================
+9. PROMPT-INSTRUCTION REPLACEMENT ANALYSIS</a></li><li><a href="#-10-prerequisite-directed-planning">================================================================================
+10. PREREQUISITE-DIRECTED PLANNING</a></li><li><a href="#-11-obligations-capabilities-analysis">================================================================================
+11. OBLIGATIONS + CAPABILITIES ANALYSIS</a></li><li><a href="#-12-stale-capability-freshness-analysis">================================================================================
+12. STALE CAPABILITY / FRESHNESS ANALYSIS</a></li><li><a href="#-13-concurrent-action-limitations">================================================================================
+13. CONCURRENT-ACTION LIMITATIONS</a></li><li><a href="#-14-external-effect-uncertainty-implications">================================================================================
+14. EXTERNAL-EFFECT UNCERTAINTY IMPLICATIONS</a></li><li><a href="#-15-smaller-model-hypothesis">================================================================================
+15. SMALLER-MODEL HYPOTHESIS</a></li><li><a href="#-16-model-scale-interaction">================================================================================
+16. MODEL-SCALE INTERACTION</a></li><li><a href="#-17-caching-implications">================================================================================
+17. CACHING IMPLICATIONS</a></li><li><a href="#-18-dynamic-tool-refresh-overhead">================================================================================
+18. DYNAMIC-TOOL-REFRESH OVERHEAD</a></li><li><a href="#-19-counterarguments">================================================================================
+19. COUNTERARGUMENTS</a></li><li><a href="#-20-failure-modes">================================================================================
+20. FAILURE MODES</a></li><li><a href="#-21-proposed-experiments">================================================================================
+21. PROPOSED EXPERIMENTS</a></li><li><a href="#-22-recommended-metrics">================================================================================
+22. RECOMMENDED METRICS</a></li><li><a href="#-23-economic-model">================================================================================
+23. ECONOMIC MODEL</a></li><li><a href="#-24-what-is-already-empirically-supported">================================================================================
+24. WHAT IS ALREADY EMPIRICALLY SUPPORTED</a></li><li><a href="#-25-what-remains-speculative">================================================================================
+25. WHAT REMAINS SPECULATIVE</a></li><li><a href="#-26-architecture-changes-suggested-by-prior-research">================================================================================
+26. ARCHITECTURE CHANGES SUGGESTED BY PRIOR RESEARCH</a></li><li><a href="#-27-final-verdict">================================================================================
+27. FINAL VERDICT</a></li><li><a href="#-research-conclusion">================================================================================
+RESEARCH CONCLUSION</a></li><li><a href="#-selected-primary-high-value-sources">================================================================================
+SELECTED PRIMARY / HIGH-VALUE SOURCES</a></li><li><a href="#-evidence-labels-used-in-this-report">================================================================================
+EVIDENCE LABELS USED IN THIS REPORT</a></li> </ol> </aside> <section class="document-body"><p>AI RESEARCH MISSION 02 — CAPABILITY-BASED ACTION-SPACE REDUCTION FOR AI AGENTS
+Research Report
+Date: 2026-08-14</p>
+<h1 id="executive-verdict">================================================================================
+EXECUTIVE VERDICT</h1>
+<p>The central hypothesis is plausible and partially supported, but it needs to be
+split into three claims because the evidence strength differs sharply:</p>
+<ol>
+<li>
+<p>Deterministically preventing illegal actions improves correctness.
+VERDICT: STRONG EVIDENCE.</p>
+</li>
+<li>
+<p>Showing an LLM fewer candidate tools/actions can improve tool selection and
+reduce prompt size.
+VERDICT: MODERATE-TO-STRONG EVIDENCE.</p>
+</li>
+<li>
+<p>State-conditioned capability exposure reduces total end-to-end agent cost
+enough to matter economically, including enough to substitute smaller models
+for larger ones.
+VERDICT: MODERATE EVIDENCE for the mechanism, WEAK DIRECT EVIDENCE for the
+complete economic claim.</p>
+</li>
+</ol>
+<p>The strongest conclusion is not "fewer tools are always better." It is:</p>
+<pre><code>Deterministic computation should decide which actions are admissible;
+probabilistic reasoning should decide which admissible action best serves
+the goal.
+</code></pre>
+<p>That separation is supported by several mature research traditions:
+invalid-action masking, shielded reinforcement learning, reference monitors,
+formal policy enforcement, classical planning preconditions, typed state
+representations, optimistic concurrency, and object-capability security.</p>
+<p>Recent LLM-agent research increasingly points in the same direction. Large-scale
+tool retrieval is demonstrably difficult; stateful dependencies remain difficult
+even for capable models; explicit structured state improves policy-adherent tool
+use; and runtime enforcement can eliminate policy violations that prompting does
+not reliably prevent.</p>
+<p>However, the specific architecture proposed here is stronger than most existing
+systems. It proposes PRE-COMPUTING the currently legal action frontier and
+exposing only that frontier to the model, rather than:</p>
+<ul>
+<li>exposing everything and prompting the model to obey rules,</li>
+<li>retrieving tools based only on semantic task relevance,</li>
+<li>or allowing the model to propose an illegal action and blocking it afterward.</li>
+</ul>
+<p>That distinction matters economically. Post-hoc enforcement can improve safety
+while increasing cost because the model still spends tokens selecting and
+attempting illegal actions, then must repair. Pre-filtering may remove that work
+before inference. The literature does not yet adequately measure this.</p>
+<p>The most important missing experiment is therefore a controlled comparison of:</p>
+<pre><code>Full tools + natural-language policy
+vs task-retrieved tools
+vs full tools + post-hoc policy gate
+vs state-derived legal capabilities
+vs state-derived legal capabilities + obligations/prerequisite guidance
+</code></pre>
+<p>while holding model, tasks, state, and success criteria constant and measuring:</p>
+<pre><code>success
+policy violations
+invalid action attempts
+model calls
+tool calls
+input/output tokens
+cached/uncached tokens
+latency
+repair loops
+human intervention
+total cost per correct completion
+</code></pre>
+<p>The proposed research program should proceed.</p>
+<p>================================================================================</p>
+<ol>
+<li>EXISTING RESEARCH ON ACTION-SPACE RESTRICTION
+================================================================================</li>
+</ol>
+<p>The proposed architecture has no single exact predecessor, but its core ideas
+appear independently in multiple fields.</p>
+<p>A. INVALID-ACTION MASKING IN REINFORCEMENT LEARNING</p>
+<p>Huang and Ontañón, "A Closer Look at Invalid Action Masking in Policy Gradient
+Algorithms" (2020/2022), formally analyzes masking actions that are invalid under
+game rules. The work provides theoretical justification and empirically shows
+that masking becomes increasingly important as the invalid-action space grows.</p>
+<p>This is one of the closest conceptual analogues to the present hypothesis.</p>
+<p>The analogy is:</p>
+<pre><code>RL environment state
+    -> valid action mask
+    -> policy chooses only among valid actions
+</code></pre>
+<p>versus:</p>
+<pre><code>authoritative software state + policy + evidence + authority
+    -> valid capability frontier
+    -> LLM chooses only among valid actions
+</code></pre>
+<p>Transfer limitation:
+An LLM tool agent is not simply a policy-gradient network choosing from a fixed
+categorical output head. Its tool schemas consume input context; its reasoning
+may involve language generation; it may perform tool retrieval; and it can
+change plans through multi-turn interaction. Therefore RL masking cannot by
+itself establish token or API cost reductions for LLMs.</p>
+<p>What it does establish is the more basic principle: if invalid actions are known
+deterministically, forcing a learned policy to model and sample them is often
+unnecessary and can become increasingly harmful as the invalid portion grows.</p>
+<p>B. SHIELDED / SAFE RL</p>
+<p>Alshiekh et al., "Safe Reinforcement Learning via Shielding" (2017), introduced
+a reactive shield synthesized from temporal-logic safety specifications. A
+shield can either present a list of safe actions before the agent chooses or
+intervene after the agent proposes an unsafe action.</p>
+<p>This distinction maps almost exactly onto two architecture choices:</p>
+<pre><code>PRE-SHIELD:
+    expose only legal capabilities
+
+POST-SHIELD:
+    expose everything, block illegal execution
+</code></pre>
+<p>The literature suggests both can enforce safety, but their agent-level economics
+are different. A pre-shield can eliminate illegal candidates from the decision
+problem. A post-shield permits wasted reasoning and recovery cycles.</p>
+<p>This is a central design lesson.</p>
+<p>C. FORMAL RUNTIME POLICY ENFORCEMENT FOR LLM AGENTS</p>
+<p>FORGE (2026), "Formal Policy Enforcement for Real-World Agentic Systems,"
+provides especially strong recent evidence. It instruments agent actions with a
+formal reference monitor using Datalog policies and runtime state. In selected
+tau^2-bench customer-service scenarios, reported compliance increased from 58%
+to 98% across three frontier models. The paper reports that policy violations
+are prevented by construction under its environment assumptions.</p>
+<p>Crucially, FORGE also reports overhead. Mean latency increased and token/API
+cost increased in the tau^2-bench case because agents sometimes proposed
+illegal actions, received structured denial feedback, and had to recover.</p>
+<p>That finding strengthens the case for PRE-FILTERED capabilities:
+runtime enforcement works for correctness, but post-hoc denial can be
+economically worse than never offering the illegal action to the model.</p>
+<p>D. STRUCTURED STATE + POLICY GATING</p>
+<p>LedgerAgent (2026) makes observed state explicit in a schema-anchored typed
+ledger and checks environment-changing calls against state-dependent policy
+constraints. It reports better policy-adherent task performance and consistency
+across multiple customer-service domains and models.</p>
+<p>This is unusually close to the proposed state-system-first architecture. It
+supports several premises:</p>
+<ul>
+<li>state buried in conversation history is unreliable,</li>
+<li>current state should be explicit,</li>
+<li>state-dependent policy should be enforced outside unconstrained model
+reasoning,</li>
+<li>typed structured state can improve consistency without changing model
+weights.</li>
+</ul>
+<p>LedgerAgent still generally allows the model to propose an action and then gates
+it. The proposed capability architecture can be seen as moving the same
+deterministic legality computation earlier in the pipeline.</p>
+<h1 id="2-tool-selection-literature">================================================================================
+2. TOOL-SELECTION LITERATURE</h1>
+<p>The evidence that large tool inventories create a real selection problem is now
+substantial.</p>
+<p>ToolLLM / ToolBench (2023) assembled more than 16,000 real-world APIs and used a
+neural API retriever to recommend candidate APIs. The mere existence of the
+retrieval layer is architecturally significant: large toolsets are already too
+large to naïvely place in every prompt, and pre-selection improves tractability.</p>
+<p>Gorilla / APIBench (2023) also showed that retrieval over API documentation can
+improve tool usage and reduce hallucinated API calls, especially when tools or
+documentation change.</p>
+<p>ToolRet (2025) is more decisive. It benchmarks retrieval over roughly 43,000
+tools and 7,600 retrieval tasks. Strong conventional information-retrieval
+models perform poorly on tool retrieval, and retrieval quality affects
+end-to-end agent task success. Training specifically for tool retrieval improves
+downstream pass rates.</p>
+<p>A 2026 paper, "How Many Tools Should an LLM Agent See? A Chance-Corrected
+Answer," directly treats candidate depth as a variable. It evaluates registry
+sizes from 20 to 3,251 tools and reports that adaptive policies can often obtain
+similar retrieval coverage at much smaller candidate depths. In one BFCL
+condition, roughly 90% coverage was achieved with an average shortlist around 7
+tools compared with a fixed shortlist of 50. The paper also notes that extra
+candidates can actively hurt downstream LLM tool-choice accuracy.</p>
+<p>The paper estimates roughly 200 tokens per tool description, implying that 100
+candidate tools can consume around 20,000 tokens before the user query is
+processed. That number should not be generalized to every tool schema, but it
+demonstrates that schema inventory can be a first-order context cost.</p>
+<p>Important limitation:
+Almost all tool-retrieval research asks:</p>
+<pre><code>Which tools are relevant to the task?
+</code></pre>
+<p>The present research asks a different question:</p>
+<pre><code>Which relevant actions are legal NOW?
+</code></pre>
+<p>Those are not equivalent.</p>
+<p>A refund tool can be highly relevant and still be illegal because:</p>
+<ul>
+<li>no captured payment exists,</li>
+<li>a refund is already pending,</li>
+<li>outcome is unknown,</li>
+<li>the actor lacks authority,</li>
+<li>required evidence is stale,</li>
+<li>policy changed,</li>
+<li>or another transition has consumed the precondition.</li>
+</ul>
+<p>Task retrieval should therefore be considered an upstream or complementary
+filter, not a substitute for legal-capability derivation.</p>
+<h1 id="3-action-masking--safe-rl-literature">================================================================================
+3. ACTION MASKING / SAFE RL LITERATURE</h1>
+<p>The safe-RL literature gives the strongest theoretical analogue for capability
+exposure.</p>
+<p>Key results and lessons:</p>
+<ol>
+<li>
+<p>Mask invalid actions when validity is externally knowable.
+This prevents probability mass and exploration from being wasted on actions
+the environment will reject.</p>
+</li>
+<li>
+<p>The benefit increases as invalid actions dominate the nominal action space.
+This predicts a strong interaction with the Capability Reduction Ratio (CRR).</p>
+</li>
+<li>
+<p>A shield can operate before or after policy selection.
+For LLM agents, pre-choice shielding is more likely to reduce inference work;
+post-choice shielding mainly improves safety.</p>
+</li>
+<li>
+<p>Safety guarantees depend on the correctness of the shield/specification.
+Masking the wrong action can create liveness failures or make valid goals
+unreachable.</p>
+</li>
+<li>
+<p>Runtime computation is not free.
+Online shielding trades precomputation/storage against runtime evaluation.</p>
+</li>
+</ol>
+<p>The closest conceptual formula is:</p>
+<pre><code>SafeActions(s) = { a in A | SafetySpecification(s, a) = true }
+</code></pre>
+<p>The proposed capability architecture generalizes this:</p>
+<pre><code>Capabilities(s,p,e,u,v) =
+    { a in A |
+        state_preconditions(a,s)
+        AND policy_allows(a,p)
+        AND evidence_sufficient(a,e)
+        AND authority_allows(a,u)
+        AND versions_current(a,v) }
+</code></pre>
+<p>This is not merely safety masking. It is admissibility masking across semantic,
+policy, evidentiary, authorization, and freshness constraints.</p>
+<h1 id="4-planning-branching-factor-theory">================================================================================
+4. PLANNING BRANCHING-FACTOR THEORY</h1>
+<p>Classical planning strongly supports reducing irrelevant or inapplicable
+operators, but care is required when translating this into LLM claims.</p>
+<p>If a search algorithm explores a tree of branching factor b to depth d, the
+number of potential nodes grows approximately with b^d in the worst case. A
+change from b=30 to b=3 can therefore be enormous for explicit combinatorial
+search.</p>
+<p>STRIPS/PDDL planners already distinguish operator definitions from applicable
+actions: an action whose preconditions are false is not applicable in the
+current state. Planning systems also use pruning, helpful actions, landmarks,
+partial-order methods, abstractions, and heuristics specifically because
+branching factor dominates search complexity.</p>
+<p>This supports the architectural logic:</p>
+<pre><code>action definition != current applicability
+</code></pre>
+<p>However:</p>
+<p>An autoregressive LLM is not performing BFS, DFS, or A* over a fully materialized
+tree. Therefore "30 tools vs 3 tools means a 10x branching factor and thus 10^d
+less LLM compute" would be an unjustified claim.</p>
+<p>The defensible inference is narrower:</p>
+<ul>
+<li>explicit planners benefit greatly from smaller applicable action sets;</li>
+<li>LLM tool-selection studies show extra candidates can hurt accuracy and add
+context;</li>
+<li>therefore smaller legal candidate sets have a plausible mechanism for
+reducing LLM planning burden;</li>
+<li>the magnitude must be measured empirically.</li>
+</ul>
+<h1 id="5-llm-specific-empirical-evidence">================================================================================
+5. LLM-SPECIFIC EMPIRICAL EVIDENCE</h1>
+<p>The following points are directly supported by existing LLM-agent research:</p>
+<p>A. Large-scale tool selection is difficult.
+ToolRet, ToolBench, Gorilla, LiveMCPBench, ComplexMCP, and related systems all
+treat tool retrieval or large inventories as a substantive problem.</p>
+<p>B. More candidates can reduce tool-choice accuracy.
+Recent depth-selection research explicitly reports this downstream effect.</p>
+<p>C. Stateful dependencies remain difficult.
+ToolSandbox includes state dependencies between tools and reports that these
+tasks challenge even strong models.</p>
+<p>D. Interdependent real-world toolsets remain unsolved.
+ComplexMCP (2026) uses more than 300 tools across seven stateful sandboxes and
+reports a substantial human/model gap, identifying tool-retrieval saturation and
+environment-verification failures as important bottlenecks.</p>
+<p>E. Explicit state helps.
+LedgerAgent reports gains from a typed state ledger and deterministic gating.</p>
+<p>F. Runtime policy enforcement helps correctness.
+FORGE reports large compliance gains and elimination of policy-violating
+executions under its enforcement assumptions.</p>
+<p>What is NOT yet strongly established:</p>
+<ul>
+<li>exact token savings from state-conditioned legality masking,</li>
+<li>exact reduction in reasoning tokens,</li>
+<li>exact reduction in model calls,</li>
+<li>exact crossover point where capability discovery is cheaper than full
+inventory exposure,</li>
+<li>robust evidence that capability masking enables a smaller model to match a
+larger model at lower total cost,</li>
+<li>the interaction with provider prompt caching over long-running production
+sessions.</li>
+</ul>
+<h1 id="6-static-vs-task-based-vs-state-based-tool-restriction">================================================================================
+6. STATIC VS TASK-BASED VS STATE-BASED TOOL RESTRICTION</h1>
+<p>These mechanisms must remain separate in both architecture and experiments.</p>
+<p>A. STATIC TOOL REDUCTION</p>
+<p>Definition:
+A permanently smaller tool inventory.</p>
+<p>Strength:
+Simple. Easy to cache. Low runtime overhead.</p>
+<p>Weakness:
+Cannot adapt to changing state, authority, evidence, or policy.</p>
+<p>Best use:
+Bounded agents with narrow responsibility.</p>
+<p>B. TASK-RELEVANT RETRIEVAL</p>
+<p>Definition:
+Select tools likely to help with the user goal.</p>
+<p>Strength:
+Strong evidence for reducing large registries to manageable candidate sets.</p>
+<p>Weakness:
+Relevance is semantic, not normative.
+A retrieved action can be highly relevant but illegal.</p>
+<p>Failure example:
+User asks for refund -> retriever correctly retrieves RefundPayment ->
+RefundPayment is currently unsafe because external outcome is unknown.</p>
+<p>C. STATE-CONDITIONED CAPABILITY EXPOSURE</p>
+<p>Definition:
+Derive actions that are admissible against authoritative state and policy.</p>
+<p>Strength:
+Can eliminate entire classes of invalid calls by construction.
+Potentially reduces planning and prompt burden.</p>
+<p>Weakness:
+Requires accurate state model, policy model, evidence provenance, authority
+model, concurrency/freshness semantics, and complete capability derivation.</p>
+<p>D. TASK + STATE FILTERING</p>
+<p>Likely production optimum:</p>
+<pre><code>Task retrieval narrows global tool universe
+    ->
+state/policy/evidence derivation removes illegal actions
+    ->
+obligations/prerequisites rank remaining legal frontier
+</code></pre>
+<p>This separates three questions cleanly:</p>
+<pre><code>Could this tool matter?
+May it happen now?
+Should it happen next?
+</code></pre>
+<h1 id="7-capability-semantics-comparison">================================================================================
+7. CAPABILITY SEMANTICS COMPARISON</h1>
+<p>The proposed capability object has strong analogues but is a novel composition.</p>
+<p>OBJECT-CAPABILITY SYSTEMS
+A capability reference both designates an object and conveys authority to invoke
+it. This supports the idea that "having the action" can itself embody permission.</p>
+<p>LEASES
+Capabilities can expire or require renewal, analogous to time/freshness-bound
+rights.</p>
+<p>OPTIMISTIC CONCURRENCY
+Version tokens ensure that an action authorized against state version N is
+rejected if the authoritative record changes before execution. This is a direct
+analogue to binding CanShip to observed versions.</p>
+<p>PROOF OBJECTS / REFINEMENT TYPES
+A value can encode evidence that required predicates were established before
+construction. This suggests capability constructors should be private and
+capabilities should only be minted by a trusted derivation layer.</p>
+<p>LINEAR / AFFINE RESOURCES
+Some permissions should be consumed once. A one-use CapturePayment or ShipOrder
+capability resembles an affine resource: use at most once, preventing accidental
+replay.</p>
+<p>ACTION MASKS
+The capability set is the model-visible projection of admissible actions.</p>
+<p>PLANNER PRECONDITIONS
+The state system computes action applicability from preconditions.</p>
+<p>REFERENCE MONITORS
+Even if the model sees a capability, final execution should still pass through a
+trusted monitor because state may have changed.</p>
+<p>Recommended semantics:</p>
+<pre><code>Capability = opaque, runtime-authoritative, version-bound, optionally
+single-use permission to attempt one semantic transition.
+</code></pre>
+<p>Do NOT represent capabilities as ordinary forgeable JSON whose possession alone
+authorizes effects.</p>
+<h1 id="8-tool-schema-token-cost-analysis">================================================================================
+8. TOOL-SCHEMA TOKEN-COST ANALYSIS</h1>
+<p>Tool schemas can consume substantial context because each tool may include:</p>
+<ul>
+<li>function name,</li>
+<li>description,</li>
+<li>parameter names,</li>
+<li>parameter descriptions,</li>
+<li>JSON schema,</li>
+<li>enums,</li>
+<li>constraints,</li>
+<li>return description,</li>
+<li>examples.</li>
+</ul>
+<p>A recent 2026 tool-depth study uses an approximate figure of 200 tokens per tool
+description and notes that 100 tools can therefore consume about 20,000 tokens.</p>
+<p>Illustrative—not universal—schema arithmetic:</p>
+<pre><code>5 tools   x 200 tokens ~= 1,000 tokens
+20 tools  x 200 tokens ~= 4,000 tokens
+50 tools  x 200 tokens ~= 10,000 tokens
+100 tools x 200 tokens ~= 20,000 tokens
+500 tools x 200 tokens ~= 100,000 tokens
+</code></pre>
+<p>Real schemas may be much smaller or much larger.</p>
+<p>Capability metadata introduces a counter-cost. If every visible capability
+contains verbose provenance such as:</p>
+<pre><code>state versions
+policy IDs
+evidence IDs
+authority metadata
+derivation traces
+</code></pre>
+<p>then a 3-capability frontier may still be expensive.</p>
+<p>Recommended architecture:</p>
+<p>INTERNAL CAPABILITY
+rich, authoritative, fully versioned</p>
+<p>MODEL PROJECTION
+compact:
+CapturePayment
+RefreshFraudEvidence</p>
+<p>LAZY INSPECTION
+capability_details("CapturePayment")
+explain_blocked("ShipOrder")</p>
+<p>The agent should not routinely receive security metadata it does not need for
+choice.</p>
+<h1 id="9-prompt-instruction-replacement-analysis">================================================================================
+9. PROMPT-INSTRUCTION REPLACEMENT ANALYSIS</h1>
+<p>Natural-language policy instructions have several costs:</p>
+<ol>
+<li>Tokens are paid repeatedly unless cached.</li>
+<li>The model must retrieve the correct rule from context.</li>
+<li>The model must map the rule to current state.</li>
+<li>The model must resist user instructions that conflict with policy.</li>
+<li>The model may interpret ambiguous policy differently across runs.</li>
+<li>The model may call a syntactically valid tool that is semantically illegal.</li>
+</ol>
+<p>LedgerAgent and FORGE provide direct evidence that prompt-only policy adherence
+is imperfect and that deterministic enforcement improves outcomes.</p>
+<p>The ideal replacement is not necessarily "remove all policy text."</p>
+<p>Use two layers:</p>
+<pre><code>MACHINE ENFORCEMENT
+    Determines what may execute.
+
+MODEL-FACING EXPLANATION
+    Provides enough rationale to choose intelligently and communicate with
+    the user.
+</code></pre>
+<p>This avoids using the LLM as the primary policy interpreter while preserving
+transparency.</p>
+<p>Potential token savings can be significant if long policy sections can be
+removed from repeated prompts. But prompt caching can reduce their monetary cost
+substantially. Therefore experiments must report:</p>
+<pre><code>raw input tokens
+cache-write tokens
+cache-read tokens
+uncached tokens
+effective provider cost
+</code></pre>
+<h1 id="10-prerequisite-directed-planning">================================================================================
+10. PREREQUISITE-DIRECTED PLANNING</h1>
+<p>The proposed planning loop:</p>
+<pre><code>goal
+  -> satisfaction condition
+  -> missing prerequisite
+  -> transition producing prerequisite
+  -> prerequisites of that transition
+  -> repeat
+</code></pre>
+<p>is classical goal regression / backward chaining.</p>
+<p>Example:</p>
+<pre><code>Goal: ShipOrder
+Requires: PaymentCaptured AND FraudVerified
+Missing: PaymentCaptured
+Producer: CapturePayment
+CapturePayment requires: PaymentAuthorized
+Current: PaymentAuthorized
+Therefore current action: CapturePayment
+</code></pre>
+<p>This can transform planning from open-ended tool search into dependency
+resolution over a state-transition graph.</p>
+<p>The strongest architectural opportunity is not simply action masking. It is:</p>
+<pre><code>capabilities = what can happen now
+obligations  = what must eventually become true
+producers    = what transitions can establish missing prerequisites
+</code></pre>
+<p>Together they expose a constrained proof/search problem.</p>
+<p>This resembles:</p>
+<ul>
+<li>STRIPS regression,</li>
+<li>HTN decomposition,</li>
+<li>build systems,</li>
+<li>package dependency resolution,</li>
+<li>workflow engines,</li>
+<li>BDI intention management.</li>
+</ul>
+<p>Potential agent interface:</p>
+<pre><code>Goal:
+    ShipOrder
+
+Unsatisfied:
+    PaymentCaptured
+
+Available producer:
+    CapturePayment
+
+Available actions:
+    CapturePayment
+</code></pre>
+<p>This may drastically reduce the amount of world reconstruction the model must
+perform.</p>
+<h1 id="11-obligations--capabilities-analysis">================================================================================
+11. OBLIGATIONS + CAPABILITIES ANALYSIS</h1>
+<p>Capabilities alone answer:</p>
+<pre><code>What may I do?
+</code></pre>
+<p>Obligations answer:</p>
+<pre><code>What still needs to become true?
+</code></pre>
+<p>The pair is more powerful than either alone.</p>
+<p>Without obligations, a small capability set can still leave the model unsure
+which action advances the goal.</p>
+<p>Without capabilities, obligations may tell the model what is missing while
+leaving it to sift through dozens of illegal producers.</p>
+<p>Combined:</p>
+<pre><code>obligation
+    -> missing condition
+    -> currently legal producer capability
+</code></pre>
+<p>This suggests a three-frontier runtime:</p>
+<ol>
+<li>
+<p>LEGAL FRONTIER
+All currently executable transitions.</p>
+</li>
+<li>
+<p>REQUIRED FRONTIER
+Outstanding obligations / unsatisfied goals.</p>
+</li>
+<li>
+<p>EXPLANATION FRONTIER
+Why a desired action is blocked and which prerequisite can unlock it.</p>
+</li>
+</ol>
+<p>A model may need only a small projection of all three.</p>
+<h1 id="12-stale-capability--freshness-analysis">================================================================================
+12. STALE CAPABILITY / FRESHNESS ANALYSIS</h1>
+<p>Version-bound capabilities map directly onto optimistic concurrency and TOCTOU
+(time-of-check/time-of-use) control.</p>
+<p>Example:</p>
+<pre><code>CanShip:
+    CustomerVersion=42
+    PaymentVersion=8
+    FraudEvidenceVersion=11
+    Policy=ShippingPolicy@7
+</code></pre>
+<p>Then:</p>
+<pre><code>CustomerVersion -> 43
+</code></pre>
+<p>must invalidate CanShip.</p>
+<p>This changes the role of the LLM. The model does not need to reason:
+"Did anything change since I looked?"</p>
+<p>Instead, execution establishes freshness mechanically.</p>
+<p>Correctness benefit:
+STRONG.</p>
+<p>Reasoning/token benefit:
+Plausible but not established.</p>
+<p>Recommended execution rule:</p>
+<pre><code>execute(capability, args):
+    authenticate capability
+    re-read or atomically verify required versions
+    re-check non-versionable time constraints
+    consume capability if single-use
+    execute transition
+    record outcome
+    emit new state/version
+    invalidate affected capabilities
+</code></pre>
+<p>Capabilities should not be long-lived bearer permissions unless the domain
+specifically allows that.</p>
+<h1 id="13-concurrent-action-limitations">================================================================================
+13. CONCURRENT-ACTION LIMITATIONS</h1>
+<p>A subtle but serious limitation:</p>
+<pre><code>individually legal != jointly safe
+</code></pre>
+<p>At snapshot S:</p>
+<pre><code>ShipOrder is legal
+RefundPayment is legal
+</code></pre>
+<p>but executing both may violate business invariants.</p>
+<p>Therefore capability filtering cannot be defined purely as independent action
+predicates. The system needs conflict semantics.</p>
+<p>Possible mechanisms:</p>
+<ul>
+<li>aggregate-level serialization,</li>
+<li>compare-and-swap on shared version tokens,</li>
+<li>reservation tokens,</li>
+<li>actor/mailbox serialization,</li>
+<li>transactional transitions,</li>
+<li>process managers/sagas,</li>
+<li>mutually exclusive capability groups,</li>
+<li>capability consumption.</li>
+</ul>
+<p>A useful model:</p>
+<pre><code>CanShip and CanRefund can both be derivable at version V.
+</code></pre>
+<p>Whichever is executed first changes/consumes V.</p>
+<p>The second then fails freshness validation.</p>
+<p>For higher-consequence effects, explicit decision serialization may be safer:</p>
+<pre><code>DecideFulfillmentDisposition
+    -> produces either CanShip OR CanRefund
+</code></pre>
+<p>rather than exposing both effects simultaneously.</p>
+<h1 id="14-external-effect-uncertainty-implications">================================================================================
+14. EXTERNAL-EFFECT UNCERTAINTY IMPLICATIONS</h1>
+<p>This is one of the strongest application areas.</p>
+<p>Suppose:</p>
+<pre><code>RefundPayment
+    -> external provider timeout
+</code></pre>
+<p>The system must not infer failure.</p>
+<p>The semantic state should become:</p>
+<pre><code>RefundExecution = OutcomeUnknown
+</code></pre>
+<p>Then:</p>
+<pre><code>RefundPayment capability = absent
+ReconcileRefund capability = present
+</code></pre>
+<p>This mechanically prevents duplicate external effects.</p>
+<p>Prompt instruction:</p>
+<pre><code>"Do not retry if the refund times out"
+</code></pre>
+<p>is weaker because:</p>
+<ul>
+<li>the instruction can be forgotten,</li>
+<li>the agent may classify the timeout incorrectly,</li>
+<li>another agent may not have the same context,</li>
+<li>retries may occur after conversation truncation,</li>
+<li>a new process may lack the instruction history.</li>
+</ul>
+<p>State-conditioned capability exposure persists the uncertainty as domain state.</p>
+<p>This is likely one of the largest correctness wins.</p>
+<h1 id="15-smaller-model-hypothesis">================================================================================
+15. SMALLER-MODEL HYPOTHESIS</h1>
+<p>This is economically important and currently under-tested.</p>
+<p>Reasoning:</p>
+<p>A broad-tool agent must perform some combination of:</p>
+<pre><code>understand task
+identify relevant tools
+reject irrelevant tools
+infer legal tools
+remember policy
+check state
+choose action
+form arguments
+</code></pre>
+<p>A capability-filtered agent may need only:</p>
+<pre><code>understand goal
+choose among 1-3 legal actions
+form arguments
+</code></pre>
+<p>If deterministic infrastructure removes enough classification and policy burden,
+a smaller model may become viable.</p>
+<p>Evidence supporting plausibility:</p>
+<ul>
+<li>smaller candidate sets improve tool-selection tractability,</li>
+<li>constrained decoding can allow generalist models to perform better on
+structured tool invocation,</li>
+<li>SLM function-calling research shows smaller models can perform useful tool
+selection when tasks/interfaces are constrained,</li>
+<li>deterministic state/policy systems reduce work the model must do.</li>
+</ul>
+<p>Evidence missing:
+No robust body of work yet demonstrates:</p>
+<pre><code>small model + state-conditioned legal capability frontier
+    >=
+frontier model + broad toolset
+</code></pre>
+<p>on realistic stateful business workflows at lower total cost.</p>
+<p>This should be treated as a high-value experimental hypothesis, not a current
+fact.</p>
+<p>Prediction:
+The effect will probably be strongest when:</p>
+<ul>
+<li>nominal tool inventory is large,</li>
+<li>legal fraction is small,</li>
+<li>policy/state rules are complex,</li>
+<li>actions are structured,</li>
+<li>choice among legal options is comparatively simple.</li>
+</ul>
+<p>It will be weaker where:</p>
+<ul>
+<li>most difficulty is semantic interpretation,</li>
+<li>the environment is unstructured,</li>
+<li>legal action count remains large,</li>
+<li>tools require complex argument generation,</li>
+<li>success depends on broad world knowledge.</li>
+</ul>
+<h1 id="16-model-scale-interaction">================================================================================
+16. MODEL-SCALE INTERACTION</h1>
+<p>Likely pattern:</p>
+<p>SMALL MODELS
+Benefit most from reduction because distractors, long policies, and large
+schemas consume proportionally more capability.</p>
+<p>FRONTIER MODELS
+Still benefit in correctness because deterministic boundaries remove
+failure classes, but marginal tool-selection gains may be smaller at low
+tool counts.</p>
+<p>VERY LARGE TOOL REGISTRIES
+Even frontier models generally require retrieval or hierarchy because raw
+schema context becomes impractical.</p>
+<p>The right experiment is factorial:</p>
+<pre><code>model size x total tools x legal tools x task complexity
+</code></pre>
+<p>For example:</p>
+<pre><code>Models:
+    small / medium / frontier
+
+Total tools:
+    20 / 100 / 500
+
+Legal tools:
+    1 / 3 / 10 / all
+</code></pre>
+<p>This allows measurement of interaction effects rather than only average gains.</p>
+<h1 id="17-caching-implications">================================================================================
+17. CACHING IMPLICATIONS</h1>
+<p>Prompt caching is the strongest economic counterargument to raw input-token
+savings.</p>
+<p>Modern model APIs can cache repeated prefixes including tool definitions or
+system prompts. Anthropic documentation explicitly supports caching tool
+definitions. Other providers also implement forms of prompt caching.</p>
+<p>Therefore:</p>
+<pre><code>20,000 repeated tool-schema tokens
+    !=
+20,000 full-price input tokens on every turn
+</code></pre>
+<p>But caching does not eliminate every cost:</p>
+<ul>
+<li>cache reads generally still have nonzero cost,</li>
+<li>cached prefixes still occupy effective context,</li>
+<li>attention/latency effects may remain provider-dependent,</li>
+<li>dynamic tool sets can invalidate or fragment caches,</li>
+<li>legality rules/state may be uncached,</li>
+<li>more candidate tools can still reduce selection accuracy even when their
+monetary input cost is discounted.</li>
+</ul>
+<p>Capability filtering may therefore have two independent economic mechanisms:</p>
+<ol>
+<li>CONTEXT COST REDUCTION</li>
+<li>ERROR/REPAIR REDUCTION</li>
+</ol>
+<p>Caching weakens mechanism 1 but does much less to weaken mechanism 2.</p>
+<p>Experiments must compare effective billable cost, not only token count.</p>
+<h1 id="18-dynamic-tool-refresh-overhead">================================================================================
+18. DYNAMIC-TOOL-REFRESH OVERHEAD</h1>
+<p>The architecture may require:</p>
+<pre><code>get_state
+derive_capabilities
+call model
+execute action
+update state
+derive_capabilities again
+</code></pre>
+<p>Naïvely implemented, this can create substantial protocol churn.</p>
+<p>Avoid making capability refresh an LLM-visible tool call when the runtime can do
+it deterministically.</p>
+<p>BAD:
+LLM -> get_capabilities()
+LLM -> choose
+LLM -> refresh_capabilities()
+LLM -> choose</p>
+<p>BETTER:
+runtime computes capabilities as part of each state transition
+next model invocation automatically receives current projection</p>
+<p>The system should treat capability calculation as infrastructure, not as agent
+work.</p>
+<p>The cost then becomes:</p>
+<ul>
+<li>CPU/database/policy-evaluation overhead,</li>
+<li>changed schema serialization,
+rather than additional model reasoning calls.</li>
+</ul>
+<p>FORGE's results are instructive: policy evaluation itself can be cheap, while
+agent recovery after a blocked action dominates overhead. That suggests
+pre-filtering may have favorable economics if it prevents those denied attempts.</p>
+<h1 id="19-counterarguments">================================================================================
+19. COUNTERARGUMENTS</h1>
+<ol>
+<li>
+<p>"Modern models already select tools well."
+True for small, well-described sets in many tasks. Much weaker at large scale
+or with overlapping tools. Capability filtering may have small value at 5 tools
+and large value at 500.</p>
+</li>
+<li>
+<p>"Prompt caching makes large inventories cheap."
+Partially true. It reduces repeated input cost but not necessarily selection
+errors, context dilution, or reasoning burden.</p>
+</li>
+<li>
+<p>"Dynamic refresh costs more than it saves."
+Possible. This is an empirical crossover-point question. Runtime-derived
+capabilities should therefore be refreshed outside the LLM loop.</p>
+</li>
+<li>
+<p>"Agents need blocked actions to plan."
+Sometimes true. This argues for lazy blocked-action explanation, not universal
+exposure.</p>
+</li>
+<li>
+<p>"Removing tools harms exploration."
+True in open-ended discovery tasks. Less relevant in governed business
+transitions where illegal exploration is not acceptable.</p>
+</li>
+<li>
+<p>"Capability derivation is expensive."
+Possible in highly relational policies. But deterministic computation can often
+be cheaper and more auditable than repeated LLM interpretation.</p>
+</li>
+<li>
+<p>"Masking hides specification errors."
+Correct. A missing capability can make a valid outcome unreachable.</p>
+</li>
+<li>
+<p>"Wrong capability logic is more dangerous than model error."
+Potentially. Deterministic code concentrates responsibility: it can produce
+systematic failures instead of probabilistic ones. This requires stronger
+verification/testing.</p>
+</li>
+<li>
+<p>"Task retrieval gives most of the benefit."
+Maybe for token cost, not for legality. Retrieval cannot reliably encode state,
+authority, concurrency, or outcome uncertainty unless it becomes a capability
+system in disguise.</p>
+</li>
+<li>
+<p>"Tool descriptions are a small fraction of context."
+Sometimes. Measure the actual system. The benefit depends on schema size and
+conversation length.</p>
+</li>
+<li>
+<p>"Reasoning cost dominates input size."
+Possible for reasoning models. But error/repair savings may still dominate.</p>
+</li>
+<li>
+<p>"Small sets cause premature commitment."
+True if the derivation layer filters preference rather than legality. The system
+must preserve ALL legal actions, not only predicted-good actions.</p>
+</li>
+<li>
+<p>"Illegal actions can be useful hypotheticals."
+Yes. Separate discussion vocabulary from executable capability. The model may be
+allowed to discuss RefundPayment without possessing CanRefund.</p>
+</li>
+<li>
+<p>"Dynamic schemas hurt caching."
+True. Compact capability lists and stable tool families may mitigate this.</p>
+</li>
+<li>
+<p>"Capabilities become too granular."
+A serious design risk. Capability boundaries should follow semantic transitions,
+not every field mutation.</p>
+</li>
+</ol>
+<h1 id="20-failure-modes">================================================================================
+20. FAILURE MODES</h1>
+<p>A. FALSE NEGATIVE CAPABILITY
+A legal action is omitted.
+Consequence: liveness failure, inability to complete valid goal.</p>
+<p>B. FALSE POSITIVE CAPABILITY
+An illegal action is exposed.
+Consequence: safety failure unless execution revalidates.</p>
+<p>C. STALE CAPABILITY
+State changes after issuance.
+Mitigation: version-bound validation.</p>
+<p>D. FORGED CAPABILITY
+Agent fabricates a capability token.
+Mitigation: opaque references/signatures/runtime lookup/private constructors.</p>
+<p>E. REPLAY
+One-use effect capability invoked twice.
+Mitigation: consumption/idempotency keys/version transition.</p>
+<p>F. PARTIAL STATE
+Capability derivation occurs without required authoritative information.
+Mitigation: Unknown must be a first-class state, not false/true guessed value.</p>
+<p>G. POLICY VERSION SKEW
+Model/runtime use different policies.
+Mitigation: bind capability to policy version.</p>
+<p>H. EVIDENCE STALENESS
+Old fraud/identity/approval evidence remains accepted.
+Mitigation: freshness predicates and evidence versioning.</p>
+<p>I. CONCURRENT LEGAL ACTIONS
+Two individually valid actions conflict.
+Mitigation: serialization/version consumption/reservation.</p>
+<p>J. EXTERNAL OUTCOME UNCERTAINTY
+Timeout misclassified as failure and action repeated.
+Mitigation: explicit OutcomeUnknown transition and reconciliation capability.</p>
+<p>K. UNREACHABLE OBLIGATION
+Required outcome exists but no capability path can satisfy it.
+Mitigation: obligation reachability checks and alarms.</p>
+<p>L. CAPABILITY EXPLOSION
+Combinatorial type/state combinations create too many capabilities.
+Mitigation: derive semantic capabilities from predicates; do not create a unique
+type for every Cartesian combination of state.</p>
+<p>M. TOOL CHURN
+Tool list changes every step and hurts caching/interfaces.
+Mitigation: stable semantic tool families plus dynamic availability metadata, or
+provider-level tool toggling where supported.</p>
+<h1 id="21-proposed-experiments">================================================================================
+21. PROPOSED EXPERIMENTS</h1>
+<p>EXPERIMENT A — TOOL COUNT</p>
+<p>Hold legal frontier constant at 3.</p>
+<p>Nominal tools:
+5, 20, 50, 100, 500</p>
+<p>Conditions:
+full inventory
+task retrieval
+state capabilities</p>
+<p>Measure:
+success
+tool-selection accuracy
+input/output tokens
+latency
+invalid attempts
+repairs
+total cost</p>
+<p>Primary question:
+Does performance degrade with nominal inventory when legal frontier is fixed?</p>
+<p>EXPERIMENT B — LEGAL FRACTION</p>
+<p>Total tools = 100.</p>
+<p>Legal:
+1, 3, 10, 30, 100</p>
+<p>Define:</p>
+<pre><code>CRR = exposed legal actions / nominal actions
+</code></pre>
+<p>Test correlation of CRR with:
+accuracy
+tokens
+action errors
+cost</p>
+<p>EXPERIMENT C — PREREQUISITE CHAIN</p>
+<p>Goal:
+ShipOrder</p>
+<p>Chain:
+CapturePayment
+-> RefreshFraudEvidence
+-> ShipOrder</p>
+<p>Compare:
+full inventory
+state-filtered only
+state-filtered + missing prerequisite
+state-filtered + obligation + producer guidance</p>
+<p>EXPERIMENT D — ILLEGAL REQUEST</p>
+<p>User:
+"Refund this now."</p>
+<p>State:
+RefundExecution = OutcomeUnknown</p>
+<p>Compare:
+prompt rule only
+post-hoc policy gate
+pre-filtered capability frontier</p>
+<p>Expected distinction:
+Both gate and capability system may prevent harm, but pre-filtering should
+generate fewer illegal attempts and repair loops.</p>
+<p>EXPERIMENT E — STALE STATE</p>
+<p>Issue CanShip at version N.
+Mutate relevant state to N+1 before execution.</p>
+<p>Measure:
+unauthorized effect rate
+recovery behavior
+tokens
+retries</p>
+<p>EXPERIMENT F — SMALLER MODEL SUBSTITUTION</p>
+<p>Compare:
+frontier model + full 100 tools
+frontier model + legal 3
+medium model + legal 3
+small model + legal 3</p>
+<p>Use total cost per correct completion as primary metric.</p>
+<p>EXPERIMENT G — CACHING</p>
+<p>Run identical benchmark with:
+cache cold
+cache warm</p>
+<p>Measure:
+provider-billed input cost
+latency
+selection accuracy</p>
+<p>EXPERIMENT H — BLOCKED ACTION VISIBILITY</p>
+<p>Conditions:
+all blocked actions visible
+none visible
+lazy explain_blocked
+prerequisites only</p>
+<p>Question:
+Can lazy blocked explanations preserve planning while minimizing context?</p>
+<p>EXPERIMENT I — CONCURRENCY</p>
+<p>Expose Ship and Refund at same state version.
+Race two agents.</p>
+<p>Test:
+no concurrency guard
+version guard
+reservation/serialization</p>
+<p>EXPERIMENT J — SPECIFICATION COMPLETENESS</p>
+<p>Inject capability-derivation bugs that omit valid transitions.</p>
+<p>Test whether:
+obligations detect no legal path
+reachability analysis detects dead end
+agent can distinguish "goal impossible" from "capability model incomplete"</p>
+<h1 id="22-recommended-metrics">================================================================================
+22. RECOMMENDED METRICS</h1>
+<p>PRIMARY</p>
+<ol>
+<li>Correct Completion Rate</li>
+<li>Cost per Correct Completion</li>
+<li>Policy/Safety Violation Rate</li>
+<li>Invalid Action Attempt Rate</li>
+<li>External Harm / Duplicate Effect Rate</li>
+</ol>
+<p>ACTION-SPACE</p>
+<ol start="6">
+<li>
+<p>Nominal Action Count</p>
+</li>
+<li>
+<p>Exposed Action Count</p>
+</li>
+<li>
+<p>Capability Reduction Ratio (CRR)</p>
+<pre><code> CRR = exposed actions / total defined actions
+</code></pre>
+</li>
+<li>
+<p>Legal Fraction</p>
+</li>
+<li>
+<p>Action-selection entropy where estimable</p>
+</li>
+</ol>
+<p>EFFICIENCY</p>
+<ol start="11">
+<li>Input tokens</li>
+<li>Output tokens</li>
+<li>Reasoning tokens where provider exposes them</li>
+<li>Cached input tokens</li>
+<li>Uncached input tokens</li>
+<li>Model calls</li>
+<li>Tool calls</li>
+<li>Rejected tool calls</li>
+<li>Repair loops</li>
+<li>Wall-clock latency</li>
+</ol>
+<p>PLANNING</p>
+<ol start="21">
+<li>Actions attempted per successful semantic transition</li>
+<li>Steps above shortest legal plan</li>
+<li>Prerequisite-discovery calls</li>
+<li>Blocked-action explanation calls</li>
+</ol>
+<p>CORRECTNESS OF THE CAPABILITY SYSTEM ITSELF</p>
+<ol start="25">
+<li>Capability false-positive rate</li>
+<li>Capability false-negative rate</li>
+<li>Obligation reachability</li>
+<li>Stale-capability rejection rate</li>
+<li>Capability replay rejection rate</li>
+<li>Policy-version mismatch detection rate</li>
+</ol>
+<p>Recommended composite:</p>
+<pre><code>                  total model + tool + human cost
+CostCorrect = -----------------------------------------
+                number of correct completed tasks
+</code></pre>
+<p>A failed but cheap execution should not appear economically superior.</p>
+<h1 id="23-economic-model">================================================================================
+23. ECONOMIC MODEL</h1>
+<p>Let:</p>
+<pre><code>C_model_input
+C_model_output
+C_reasoning
+C_tool
+C_latency
+C_repair
+C_human
+C_capability_compute
+</code></pre>
+<p>Then expected task cost:</p>
+<pre><code>C_task =
+    C_model_input
+  + C_model_output
+  + C_reasoning
+  + C_tool
+  + C_latency
+  + C_repair
+  + C_human
+  + C_capability_compute
+</code></pre>
+<p>And:</p>
+<pre><code>CostCorrect = sum(C_task) / successful_correct_tasks
+</code></pre>
+<p>Capability filtering can create value through four channels.</p>
+<p>CHANNEL 1 — FEWER SCHEMA TOKENS
+Potentially significant for large toolsets.
+Reduced by prompt caching.</p>
+<p>CHANNEL 2 — FEWER WRONG TOOL ATTEMPTS
+Likely important as tool inventory grows.</p>
+<p>CHANNEL 3 — FEWER POLICY REPAIR LOOPS
+Potentially larger than token savings.
+FORGE demonstrates that post-hoc enforcement can add recovery overhead;
+pre-filtering specifically targets this cost.</p>
+<p>CHANNEL 4 — MODEL SUBSTITUTION
+Potentially the largest economic effect if a smaller model can perform
+constrained choice as reliably as a frontier model performs unconstrained choice.</p>
+<p>The economic thesis should therefore not be framed primarily as:
+"we save tool-schema tokens."</p>
+<p>A stronger thesis is:</p>
+<pre><code>deterministic architecture purchases reliable decision structure with cheap
+conventional computation so expensive probabilistic inference is used only
+for decisions that genuinely require judgment.
+</code></pre>
+<p>That is the hypothesis worth testing.</p>
+<h1 id="24-what-is-already-empirically-supported">================================================================================
+24. WHAT IS ALREADY EMPIRICALLY SUPPORTED</h1>
+<p>SUPPORTED STRONGLY</p>
+<ul>
+<li>Learned agents benefit when known-invalid actions are masked in large discrete
+action spaces.</li>
+<li>Formal/runtime shields can prevent specified classes of unsafe actions.</li>
+<li>Prompt-only policy enforcement is not reliable enough for consequential
+agentic action.</li>
+<li>Explicit structured state can improve policy-adherent stateful tool use.</li>
+<li>Tool retrieval becomes difficult at large scale.</li>
+<li>Tool retrieval quality affects end-to-end task success.</li>
+<li>Large candidate tool sets can consume substantial context.</li>
+<li>Extra candidates can hurt downstream LLM tool choice.</li>
+<li>Stateful tool dependencies remain challenging.</li>
+<li>Version/concurrency checks are mature techniques for rejecting operations made
+against stale state.</li>
+</ul>
+<p>SUPPORTED MODERATELY</p>
+<ul>
+<li>Smaller candidate sets reduce LLM decision burden.</li>
+<li>Structured prerequisite information should improve multi-step tool planning.</li>
+<li>Externalizing state reconstruction from prompts improves consistency.</li>
+</ul>
+<h1 id="25-what-remains-speculative">================================================================================
+25. WHAT REMAINS SPECULATIVE</h1>
+<ul>
+<li>The exact token reduction caused specifically by legal-action filtering rather
+than generic tool retrieval.</li>
+<li>Whether reasoning-token savings are large for frontier reasoning models.</li>
+<li>Whether state-filtered capability refresh is cheaper than stable cached
+inventories in all regimes.</li>
+<li>The inventory-size threshold where dynamic exposure wins economically.</li>
+<li>Whether capability filtering can routinely substitute a small model for a
+frontier model.</li>
+<li>Whether obligation-guided capability planning scales across highly ambiguous
+domains.</li>
+<li>Whether compact capability projections preserve enough information for
+optimal planning.</li>
+<li>Whether capability false negatives become a major production failure mode.</li>
+<li>Whether users/agents need awareness of illegal alternatives for explanation or
+negotiation often enough to offset context savings.</li>
+</ul>
+<h1 id="26-architecture-changes-suggested-by-prior-research">================================================================================
+26. ARCHITECTURE CHANGES SUGGESTED BY PRIOR RESEARCH</h1>
+<p>The research suggests the proposed architecture should be refined as follows.</p>
+<ol>
+<li>
+<p>KEEP THE REFERENCE MONITOR EVEN WHEN TOOLS ARE FILTERED
+Never assume model-visible capability filtering is the final security boundary.
+Revalidate at execution.</p>
+</li>
+<li>
+<p>SEPARATE INTERNAL CAPABILITY FROM MODEL PROJECTION
+Internal:
+versions, policy, evidence, authority, provenance, expiration, uniqueness</p>
+</li>
+</ol>
+<p>Model-facing:
+action name, short semantic description, essential parameters</p>
+<ol start="3">
+<li>
+<p>TREAT UNKNOWN AS EXPLICIT STATE
+Do not infer false from missing evidence.</p>
+</li>
+<li>
+<p>BIND CAPABILITIES TO SEMANTIC VERSIONS
+Not merely object IDs.</p>
+</li>
+<li>
+<p>SUPPORT SINGLE-USE / CONSUMABLE CAPABILITIES
+For irreversible external effects.</p>
+</li>
+<li>
+<p>COMPUTE CAPABILITIES OUTSIDE THE LLM LOOP
+Do not force the agent to repeatedly ask what it may do.</p>
+</li>
+<li>
+<p>ADD OBLIGATIONS
+Capabilities prevent bad transitions; obligations help prevent dead-end or
+incomplete behavior.</p>
+</li>
+<li>
+<p>ADD REACHABILITY / COMPLETENESS CHECKS
+If an obligation exists and no legal path can satisfy it, surface a system
+error rather than merely telling the model "no actions available."</p>
+</li>
+<li>
+<p>PROVIDE LAZY BLOCKED-ACTION EXPLANATION
+Agents often need to know how to unlock a desired transition, but need not carry
+every blocked action every turn.</p>
+</li>
+<li>
+<p>DISTINGUISH DISCUSSION FROM EXECUTION
+An agent may discuss an unavailable action without possessing executable
+authority for it.</p>
+</li>
+<li>
+<p>MODEL CONFLICT SETS
+Two capabilities can be individually legal but mutually exclusive.</p>
+</li>
+<li>
+<p>MODEL EXTERNAL EFFECTS AS OUTCOMES, NOT CALL RETURNS
+Success / Failure / OutcomeUnknown should be semantic states.</p>
+</li>
+<li>
+<p>TEST CAPABILITY DERIVATION LIKE A SAFETY-CRITICAL COMPONENT
+Property tests:
+every exposed capability satisfies invariants</p>
+</li>
+</ol>
+<p>Completeness tests:
+required valid transitions are derivable</p>
+<p>Mutation tests:
+deliberately alter guards and verify test failure</p>
+<p>Reachability tests:
+obligations have legal satisfaction paths</p>
+<ol start="14">
+<li>
+<p>USE TASK RETRIEVAL AND STATE FILTERING TOGETHER AT VERY LARGE SCALE
+Global registry
+-> semantic retrieval
+-> deterministic legality
+-> obligation/prerequisite prioritization</p>
+</li>
+<li>
+<p>BENCHMARK AGAINST POST-HOC GATING
+This is vital. Otherwise an observed correctness gain may be attributable to
+enforcement generally, not action-space reduction specifically.</p>
+</li>
+</ol>
+<h1 id="27-final-verdict">================================================================================
+27. FINAL VERDICT</h1>
+<p>Does reducing legal action space improve correctness?
+STRONG EVIDENCE</p>
+<p>Reason:
+Invalid-action masking, shielding, reference-monitor literature, FORGE, and
+LedgerAgent all support moving legality outside unconstrained probabilistic
+choice. Direct LLM evidence for PRE-FILTERING is still thinner than the general
+correctness evidence, but the mechanism is well supported.</p>
+<p>Does it reduce LLM token usage?
+MODERATE EVIDENCE</p>
+<p>Reason:
+Smaller tool inventories directly reduce schema context, and recent tool-depth
+research quantifies potentially large schema costs. However prompt caching,
+dynamic metadata, and refresh messages can offset savings. Direct studies of
+state-conditioned legal filtering are still missing.</p>
+<p>Does it reduce total agent execution cost?
+MODERATE EVIDENCE</p>
+<p>Reason:
+There are credible savings from fewer tool-selection errors and fewer repair
+loops, but deterministic enforcement can itself create overhead. FORGE is an
+important warning: post-hoc enforcement improved compliance while increasing
+latency/cost because blocked actions required recovery. Pre-filtering may reverse
+that cost pattern, but the experiment has not yet been run cleanly.</p>
+<p>Does it enable smaller models?
+WEAK-TO-MODERATE EVIDENCE</p>
+<p>Reason:
+The hypothesis is mechanistically plausible and adjacent work shows smaller
+models can benefit from constrained tool-use settings. There is not yet enough
+direct evidence that state-derived capability filtering consistently lets a
+smaller model match a larger broad-tool model on realistic workflows.</p>
+<p>Does state-conditioned filtering provide more value than task-only tool retrieval?
+PROBABLY YES</p>
+<p>Reason:
+Task retrieval answers relevance. State-conditioned filtering answers legality.
+For consequential stateful systems, legality depends on facts semantic retrieval
+does not inherently encode: current state, policy, authority, evidence,
+freshness, concurrent transitions, and uncertain external outcomes.</p>
+<p>Most important mechanism:
+Removing deterministic legality decisions from probabilistic inference,
+leaving the model to choose preferences among admissible actions.</p>
+<p>Strongest existing evidence:
+The combination of invalid-action masking/shielded-RL results, large-tool
+retrieval results, LedgerAgent's structured-state gains, and FORGE's formal
+runtime enforcement results.</p>
+<p>Biggest counterargument:
+Dynamic capability computation and schema refresh may add enough churn,
+cache loss, and completeness risk that task retrieval plus a post-hoc
+reference monitor could deliver most of the practical value more simply.</p>
+<p>Most important missing experiment:
+A controlled, stateful benchmark comparing full inventory, task retrieval,
+post-hoc policy gating, and pre-filtered state capabilities while measuring
+total cost per correct completion across small, medium, and frontier models.</p>
+<p>Most likely economic benefit:
+Not raw token savings alone. The largest upside is likely elimination of
+selection/repair work and possible model substitution: using inexpensive
+deterministic state computation to avoid paying an expensive model to
+repeatedly rediscover rules and reject impossible actions.</p>
+<p>Most likely correctness benefit:
+Entire classes of illegal, stale, duplicate, unauthorized, and
+outcome-uncertain actions become unrepresentable or uninvokable at the
+agent boundary.</p>
+<h1 id="research-conclusion">================================================================================
+RESEARCH CONCLUSION</h1>
+<p>The hypothesis survives skeptical review.</p>
+<p>It should be narrowed from:</p>
+<pre><code>"Fewer actions make AI agents cheaper and more correct."
+</code></pre>
+<p>to:</p>
+<pre><code>"When action legality is deterministically knowable from authoritative
+state, policy, evidence, authority, and freshness, computing that legality
+outside the model and exposing only the admissible frontier should reduce
+preventable agent errors. Existing research strongly supports the
+correctness mechanism and moderately supports candidate-set reduction as an
+inference aid. Whether the architecture materially lowers end-to-end cost,
+especially enough to enable smaller models, is a high-value but still
+experimentally unresolved question."
+</code></pre>
+<p>This is a stronger research position because it identifies exactly what prior
+work supports and exactly what remains novel.</p>
+<p>The most promising novelty is not action masking by itself. Action masking is
+old.</p>
+<p>The novel research opportunity is the composition:</p>
+<pre><code>explicit semantic state
++ legal transitions
++ evidence/authority/policy/freshness guards
++ version-bound capabilities
++ obligations
++ prerequisite-directed planning
++ compact model-visible action frontier
++ authoritative execution-time revalidation
+</code></pre>
+<p>applied to LLM software agents and evaluated simultaneously for:</p>
+<pre><code>correctness
+token economics
+repair economics
+model substitution
+long-term scaling as system action inventories grow
+</code></pre>
+<p>That complete combination is not yet established by the literature reviewed
+here.</p>
+<h1 id="selected-primary--high-value-sources">================================================================================
+SELECTED PRIMARY / HIGH-VALUE SOURCES</h1>
+<ol>
+<li>
+<p>Huang, Shengyi; Ontañón, Santiago.
+"A Closer Look at Invalid Action Masking in Policy Gradient Algorithms."
+arXiv:2006.14171
+<a href="https://arxiv.org/abs/2006.14171">https://arxiv.org/abs/2006.14171</a></p>
+</li>
+<li>
+<p>Alshiekh, Mohammed et al.
+"Safe Reinforcement Learning via Shielding."
+arXiv:1708.08611
+<a href="https://arxiv.org/abs/1708.08611">https://arxiv.org/abs/1708.08611</a></p>
+</li>
+<li>
+<p>Qin, Yujia et al.
+"ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs."
+arXiv:2307.16789
+<a href="https://arxiv.org/abs/2307.16789">https://arxiv.org/abs/2307.16789</a></p>
+</li>
+<li>
+<p>Patil, Shishir G. et al.
+"Gorilla: Large Language Model Connected with Massive APIs."
+arXiv:2305.15334
+<a href="https://arxiv.org/abs/2305.15334">https://arxiv.org/abs/2305.15334</a></p>
+</li>
+<li>
+<p>Shi, Zhengliang et al.
+"Retrieval Models Aren't Tool-Savvy: Benchmarking Tool Retrieval for Large
+Language Models."
+arXiv:2503.01763
+<a href="https://arxiv.org/abs/2503.01763">https://arxiv.org/abs/2503.01763</a></p>
+</li>
+<li>
+<p>"How Many Tools Should an LLM Agent See? A Chance-Corrected Answer."
+arXiv:2605.24660
+<a href="https://arxiv.org/abs/2605.24660">https://arxiv.org/abs/2605.24660</a></p>
+</li>
+<li>
+<p>Lu, Jiarui et al.
+"ToolSandbox: A Stateful, Conversational, Interactive Evaluation Benchmark
+for LLM Tool Use Capabilities."
+arXiv:2408.04682
+<a href="https://arxiv.org/abs/2408.04682">https://arxiv.org/abs/2408.04682</a></p>
+</li>
+<li>
+<p>Uddin, Md Nayem et al.
+"LedgerAgent: Structured State for Policy-Adherent Tool-Calling Agents."
+arXiv:2606.20529
+<a href="https://arxiv.org/abs/2606.20529">https://arxiv.org/abs/2606.20529</a></p>
+</li>
+<li>
+<p>"Formal Policy Enforcement for Real-World Agentic Systems" (FORGE).
+arXiv:2602.16708
+<a href="https://arxiv.org/abs/2602.16708">https://arxiv.org/abs/2602.16708</a></p>
+</li>
+<li>
+<p>Li, Yuanyang et al.
+"ComplexMCP: Evaluation of LLM Agents in Dynamic, Interdependent, and
+Large-Scale Tool Sandbox."
+arXiv:2605.10787
+<a href="https://arxiv.org/abs/2605.10787">https://arxiv.org/abs/2605.10787</a></p>
+</li>
+<li>
+<p>Younes, Håkan L. S.; Simmons, Reid G.
+"VHPOP: Versatile Heuristic Partial Order Planner."
+Journal of Artificial Intelligence Research, 2003.
+(Classical planning source on search/planning operator structure.)</p>
+</li>
+<li>
+<p>Microsoft Learn.
+"Handling Concurrency Conflicts — EF Core."
+<a href="https://learn.microsoft.com/en-us/ef/core/saving/concurrency">https://learn.microsoft.com/en-us/ef/core/saving/concurrency</a></p>
+</li>
+<li>
+<p>Cap'n Proto RPC Protocol.
+Object-capability semantics.
+<a href="https://capnproto.org/rpc.html">https://capnproto.org/rpc.html</a></p>
+</li>
+<li>
+<p>Anthropic Claude Platform Documentation.
+"Prompt caching."
+<a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching">https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching</a></p>
+</li>
+</ol>
+<h1 id="evidence-labels-used-in-this-report">================================================================================
+EVIDENCE LABELS USED IN THIS REPORT</h1>
+<p>STRONG EVIDENCE
+Multiple directly relevant empirical/formal sources support the mechanism.</p>
+<p>MODERATE EVIDENCE
+Adjacent empirical evidence and theory support the claim, but the exact
+proposed architecture has not been directly and comprehensively tested.</p>
+<p>WEAK EVIDENCE
+Plausible mechanism or narrow evidence exists, but important direct tests
+are missing.</p>
+<p>SPECULATIVE
+Reasonable hypothesis requiring targeted experiments before it should be
+treated as an architectural or economic fact.</p></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>

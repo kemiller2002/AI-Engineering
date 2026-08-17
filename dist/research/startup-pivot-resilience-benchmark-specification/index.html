@@ -1,0 +1,1150 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>startup pivot resilience benchmark specification | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">startup pivot resilience benchmark specification</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/experiments/startup-pivot-resilience-benchmark-specification.md</dd></div> </dl> </header> <div class="document-reading-grid"> <aside class="toc-panel"> <h2>On this page</h2> <ol> <li><a href="#startup-pivot-resilience-benchmark-specification">STARTUP PIVOT RESILIENCE BENCHMARK SPECIFICATION</a></li><li><a href="#3-benchmark-principles">3. BENCHMARK PRINCIPLES</a></li><li><a href="#5-required-v1-business-capabilities">5. REQUIRED V1 BUSINESS CAPABILITIES</a></li><li><a href="#identity">Identity</a></li><li><a href="#accessibility">Accessibility</a></li><li><a href="#trip-request">Trip Request</a></li><li><a href="#inventory">Inventory</a></li><li><a href="#itinerary">Itinerary</a></li><li><a href="#reservation">Reservation</a></li><li><a href="#payment">Payment</a></li><li><a href="#notification">Notification</a></li><li><a href="#audit-provenance">Audit / Provenance</a></li><li><a href="#8-architecture-b-state-constrained-semantic-modular">8. ARCHITECTURE B — STATE-CONSTRAINED SEMANTIC MODULAR</a></li><li><a href="#10-semantic-stability-classification">10. SEMANTIC STABILITY CLASSIFICATION</a></li><li><a href="#11-v1-implementation-freeze">11. V1 IMPLEMENTATION FREEZE</a></li><li><a href="#13-blind-pivot-sequence">13. BLIND PIVOT SEQUENCE</a></li><li><a href="#15-pivot-b-accessibility-verification-for-travel-agencies">15. PIVOT B — ACCESSIBILITY VERIFICATION FOR TRAVEL AGENCIES</a></li><li><a href="#16-pivot-c-hotel-accessibility-certification">16. PIVOT C — HOTEL ACCESSIBILITY CERTIFICATION</a></li><li><a href="#17-pivot-d-accessibility-inventory-api">17. PIVOT D — ACCESSIBILITY INVENTORY API</a></li><li><a href="#18-pivot-e-corporate-accessible-travel-management">18. PIVOT E — CORPORATE ACCESSIBLE TRAVEL MANAGEMENT</a></li><li><a href="#19-optional-pivot-f-deliberately-hostile-pivot">19. OPTIONAL PIVOT F — DELIBERATELY HOSTILE PIVOT</a></li><li><a href="#25-context-metrics">25. CONTEXT METRICS</a></li><li><a href="#26-module-escape-rate">26. MODULE ESCAPE RATE</a></li><li><a href="#28-code-retention">28. CODE RETENTION</a></li><li><a href="#30-hypothesis-disposal-ratio">30. HYPOTHESIS DISPOSAL RATIO</a></li><li><a href="#32-correctness-evaluation">32. CORRECTNESS EVALUATION</a></li><li><a href="#34-agent-behavior-metrics">34. AGENT BEHAVIOR METRICS</a></li><li><a href="#36-human-intervention">36. HUMAN INTERVENTION</a></li><li><a href="#37-cost-per-correct-pivot">37. COST PER CORRECT PIVOT</a></li><li><a href="#38-upfront-architecture-cost">38. UPFRONT ARCHITECTURE COST</a></li><li><a href="#40-single-pivot-experiment">40. SINGLE-PIVOT EXPERIMENT</a></li><li><a href="#41-longitudinal-experiment">41. LONGITUDINAL EXPERIMENT</a></li><li><a href="#42-architectural-erosion-metrics">42. ARCHITECTURAL EROSION METRICS</a></li><li><a href="#43-smaller-model-experiment">43. SMALLER MODEL EXPERIMENT</a></li><li><a href="#46-required-run-count">46. REQUIRED RUN COUNT</a></li><li><a href="#49-strong-success-conditions">49. STRONG SUCCESS CONDITIONS</a></li><li><a href="#50-reporting-table-per-pivot">50. REPORTING TABLE — PER PIVOT</a></li><li><a href="#metric-architecture-a-architecture-b">Metric                          Architecture A   Architecture B</a></li><li><a href="#metric-v1-pivot-a-pivot-b-pivot-c-">Metric                          V1   Pivot A   Pivot B   Pivot C ...</a></li><li><a href="#category-preserved-modified-removed-added">Category                         Preserved   Modified   Removed   Added</a></li><li><a href="#54-benchmark-anti-patterns">54. BENCHMARK ANTI-PATTERNS</a></li><li><a href="#55-expected-research-output">55. EXPECTED RESEARCH OUTPUT</a></li> </ol> </aside> <section class="document-body"><h1 id="startup-pivot-resilience-benchmark-specification">STARTUP PIVOT RESILIENCE BENCHMARK SPECIFICATION</h1>
+<p>Benchmark ID:
+SPRB-001</p>
+<p>Title:
+Startup Pivot Resilience Benchmark for AI-Maintained Software</p>
+<p>Purpose:
+Evaluate whether state-constrained semantic modularity improves a startup's
+ability to pivot while preserving validated capability, reducing change
+blast radius, reducing AI-agent context requirements, and lowering total
+cost per correct pivot.</p>
+<p>This benchmark is intentionally designed to test strategic flexibility rather
+than architectural elegance.</p>
+<p>The benchmark compares two equivalently competent implementations of the same
+startup product:</p>
+<pre><code>A. Conventional modular architecture
+
+B. State-constrained semantic modular architecture
+</code></pre>
+<p>The benchmark must not be designed around knowledge of the future pivots.</p>
+<p>The pivot sequence must remain hidden from the teams or agents building V1.</p>
+<ol>
+<li>PRIMARY RESEARCH QUESTIONS
+=============================</li>
+</ol>
+<p>The benchmark should answer:</p>
+<ol>
+<li>
+<p>Does state-constrained semantic modularity preserve more validated
+capabilities during a startup pivot?</p>
+</li>
+<li>
+<p>Does it reduce the number of modules and files that must be changed?</p>
+</li>
+<li>
+<p>Does it reduce the amount of repository context an AI agent must inspect?</p>
+</li>
+<li>
+<p>Does it reduce input tokens, output tokens, model calls, tool calls,
+repair loops, and wall-clock execution cost?</p>
+</li>
+<li>
+<p>Does it improve semantic correctness, regression resistance,
+state-transition correctness, and integration correctness?</p>
+</li>
+<li>
+<p>Does it reduce cost per correct pivot?</p>
+</li>
+<li>
+<p>Does it remain advantageous as pivots become more severe?</p>
+</li>
+<li>
+<p>Does it remain advantageous across sequential pivots?</p>
+</li>
+<li>
+<p>Does semantic modularity create excessive upfront cost that eliminates
+downstream savings?</p>
+</li>
+<li>
+<p>Does the architecture remain useful when the pivot changes the customer,
+workflow, business model, or product boundary?</p>
+</li>
+<li>
+<p>CORE HYPOTHESIS
+==================</p>
+</li>
+</ol>
+<p>Primary hypothesis:</p>
+<pre><code>Software organized around explicit ownership of consequential state,
+machine-visible semantic dependencies, explicit transitions, and replaceable
+orchestration will preserve more validated capability and require less
+AI-agent context during startup pivots than equivalently competent
+conventional software.
+</code></pre>
+<p>Economic hypothesis:</p>
+<pre><code>Lower repository exploration, smaller context slices, fewer semantic errors,
+and fewer repair loops will reduce the total AI execution cost required to
+complete a pivot correctly.
+</code></pre>
+<p>Null hypothesis:</p>
+<pre><code>State-constrained semantic modularity provides no material improvement in
+semantic retention, context consumption, correctness-adjusted token cost,
+or total pivot cost after accounting for additional modeling and tooling.
+</code></pre>
+<h1 id="3-benchmark-principles">3. BENCHMARK PRINCIPLES</h1>
+<p>The benchmark must follow these principles:</p>
+<pre><code>Blind future pivots
+Equivalent business functionality
+Competent conventional architecture
+Identical task descriptions
+Identical test requirements
+Identical external integrations
+Identical AI model where possible
+Identical tooling where possible
+Multiple repeated runs
+Fresh agent sessions
+Full token accounting
+Semantic correctness evaluation
+Longitudinal testing
+</code></pre>
+<p>Do not intentionally weaken the conventional implementation.
+Do not intentionally optimize the semantic implementation for known pivots.
+Do not reveal pivot scenarios during V1 implementation.</p>
+<ol start="4">
+<li>INITIAL STARTUP
+==================</li>
+</ol>
+<p>Startup concept:</p>
+<pre><code>Accessible travel planning and booking platform.
+</code></pre>
+<p>Initial customer:</p>
+<pre><code>Individual traveler with accessibility needs.
+</code></pre>
+<p>Initial product promise:</p>
+<pre><code>Help a traveler describe accessibility requirements, identify viable
+properties, construct a trip, reserve inventory, and pay.
+</code></pre>
+<p>Initial user journey:</p>
+<pre><code>Create Account
+    ->
+Create Accessibility Profile
+    ->
+Create Trip Request
+    ->
+Search Accessible Inventory
+    ->
+Evaluate Options
+    ->
+Construct Itinerary
+    ->
+Reserve
+    ->
+Pay
+    ->
+Receive Confirmation
+</code></pre>
+<h1 id="5-required-v1-business-capabilities">5. REQUIRED V1 BUSINESS CAPABILITIES</h1>
+<p>Both implementations must support equivalent V1 functionality.</p>
+<h2 id="identity">Identity</h2>
+<pre><code>create account
+authenticate
+update traveler profile
+</code></pre>
+<h2 id="accessibility">Accessibility</h2>
+<pre><code>capture accessibility requirements
+record evidence/source where appropriate
+represent verified and unverified accessibility facts
+</code></pre>
+<h2 id="trip-request">Trip Request</h2>
+<p>Suggested lifecycle:
+Draft
+Submitted
+Evaluating
+Viable
+Unfulfillable
+Accepted
+Cancelled</p>
+<h2 id="inventory">Inventory</h2>
+<pre><code>hotel/property inventory
+accessibility attributes
+availability
+pricing
+inventory source
+</code></pre>
+<h2 id="itinerary">Itinerary</h2>
+<pre><code>proposed itinerary
+selected property
+travel dates
+relevant accessibility match information
+</code></pre>
+<h2 id="reservation">Reservation</h2>
+<p>Suggested lifecycle:
+Proposed
+Held
+Confirmed
+Cancelled</p>
+<h2 id="payment">Payment</h2>
+<p>Suggested lifecycle:
+None
+Authorized
+Captured
+Refunded</p>
+<h2 id="notification">Notification</h2>
+<pre><code>reservation confirmation
+cancellation notice
+key status updates
+</code></pre>
+<h2 id="audit--provenance">Audit / Provenance</h2>
+<p>At minimum:
+who initiated important actions
+when important actions occurred</p>
+<ol start="6">
+<li>EXTERNAL ADAPTERS
+====================</li>
+</ol>
+<p>Use test doubles or reproducible mock services for:</p>
+<pre><code>payment processor
+hotel inventory source
+email/notification provider
+identity provider if needed
+</code></pre>
+<p>The adapters must behave identically in both architectures.</p>
+<ol start="7">
+<li>ARCHITECTURE A — CONVENTIONAL
+================================</li>
+</ol>
+<p>Architecture A should represent competent modern commercial development.</p>
+<p>Recommended characteristics:</p>
+<pre><code>modular monolith
+domain/services/repositories
+typed models where normal for chosen language
+enums/status types where appropriate
+ordinary service-layer validation
+dependency injection
+good unit/integration tests
+reasonable package boundaries
+documented APIs
+</code></pre>
+<p>Avoid intentionally poor practices such as:</p>
+<pre><code>giant god classes
+untyped JSON everywhere
+direct SQL scattered across the project
+no tests
+intentionally tangled dependencies
+</code></pre>
+<p>The benchmark is not good architecture vs bad architecture.</p>
+<p>It is:</p>
+<pre><code>conventional competent architecture
+    vs
+state-constrained semantic modular architecture.
+</code></pre>
+<h1 id="8-architecture-b--state-constrained-semantic-modular">8. ARCHITECTURE B — STATE-CONSTRAINED SEMANTIC MODULAR</h1>
+<p>Architecture B must use explicit semantic ownership.</p>
+<p>Each consequential domain state has one semantic owner.</p>
+<p>Modules may:</p>
+<pre><code>expose state
+expose claims
+expose events
+expose capabilities
+expose obligations
+accept transition requests
+</code></pre>
+<p>Modules may not:</p>
+<pre><code>mutate another module's authoritative state directly.
+</code></pre>
+<p>Required semantic concepts:</p>
+<pre><code>Subject
+StateFamily
+StateCase
+Transition
+Requirement
+Capability
+Obligation
+Event
+Effect
+Authority where applicable
+Policy where applicable
+SemanticDependency
+</code></pre>
+<p>State interpretation must be exhaustive for consequential state families.</p>
+<p>Implicit future-state handling should be prohibited unless semantic equivalence
+is explicitly declared.</p>
+<ol start="9">
+<li>ARCHITECTURE B — MODULES
+===========================</li>
+</ol>
+<p>Recommended semantic modules:</p>
+<pre><code>identity
+accessibility
+trip-request
+inventory
+itinerary
+reservation
+payment
+notification
+</code></pre>
+<p>Product journey/orchestration should remain separate from durable semantic
+modules.</p>
+<p>Example:</p>
+<pre><code>journeys/
+    consumer-self-service/
+</code></pre>
+<h1 id="10-semantic-stability-classification">10. SEMANTIC STABILITY CLASSIFICATION</h1>
+<p>Architecture B should classify important concepts using:</p>
+<pre><code>durable
+provisional
+experimental
+</code></pre>
+<p>Examples:</p>
+<pre><code>Payment.Captured
+    durable
+
+Reservation.Confirmed
+    durable
+
+TripRequest.Viable
+    provisional or durable depending on design
+
+CurrentCheckoutStep
+    experimental / not semantic domain state
+</code></pre>
+<p>Benchmark rule:</p>
+<pre><code>Product-experiment state must not be promoted into durable semantic state
+without justification.
+</code></pre>
+<h1 id="11-v1-implementation-freeze">11. V1 IMPLEMENTATION FREEZE</h1>
+<p>When V1 passes acceptance tests:</p>
+<pre><code>tag repository
+freeze architecture
+freeze test baseline
+record code metrics
+record semantic metrics
+record build/runtime environment
+</code></pre>
+<p>No pivot information may have been disclosed before this point.</p>
+<ol start="12">
+<li>BASELINE METRICS BEFORE PIVOT
+=================================</li>
+</ol>
+<p>Record for each architecture:</p>
+<pre><code>LOC
+files
+modules
+test count
+build duration
+semantic modules
+state families
+transitions
+explicit dependencies
+module dependency graph
+average module size
+test coverage if available
+static dependency fan-out
+semantic dependency fan-out
+</code></pre>
+<p>Architecture B additionally records:</p>
+<pre><code>semantic IR token size
+generated agent-context token size
+semantic dependency graph size
+</code></pre>
+<h1 id="13-blind-pivot-sequence">13. BLIND PIVOT SEQUENCE</h1>
+<p>Pivots should be applied from V1 independently first.</p>
+<p>Then optionally as a longitudinal sequence.</p>
+<p>This avoids conflating individual pivot difficulty with accumulated drift.</p>
+<ol start="14">
+<li>PIVOT A — ADVISOR-ASSISTED PLANNING
+=======================================</li>
+</ol>
+<p>Business discovery:</p>
+<pre><code>Travelers do not want to construct accessible trips themselves.
+</code></pre>
+<p>New product:</p>
+<pre><code>Traveler submits accessibility needs and trip goals.
+A travel advisor creates the itinerary.
+Traveler reviews and accepts the proposal.
+</code></pre>
+<p>Required changes may include:</p>
+<pre><code>new advisor role
+advisor work queue
+itinerary proposal workflow
+traveler approval
+removal/reduction of self-service trip construction
+</code></pre>
+<p>Expected durable capabilities:</p>
+<pre><code>identity
+accessibility profile
+inventory
+reservation
+payment
+notification
+</code></pre>
+<p>Research question:</p>
+<pre><code>Can orchestration change while durable semantic modules remain intact?
+</code></pre>
+<h1 id="15-pivot-b--accessibility-verification-for-travel-agencies">15. PIVOT B — ACCESSIBILITY VERIFICATION FOR TRAVEL AGENCIES</h1>
+<p>Business discovery:</p>
+<pre><code>Travel agencies care more about trustworthy accessibility data than
+end-to-end booking.
+</code></pre>
+<p>New customer:</p>
+<pre><code>travel agency
+</code></pre>
+<p>New product:</p>
+<pre><code>accessibility verification and evidence service
+</code></pre>
+<p>Remove:</p>
+<pre><code>consumer trip purchase as the product's central value proposition
+</code></pre>
+<p>Retain where useful:</p>
+<pre><code>accessibility evidence
+property data
+inventory identity
+provenance
+confidence/verification status
+</code></pre>
+<p>New requirements:</p>
+<pre><code>agency accounts
+property accessibility reports
+verification status
+data provenance
+API or portal access
+</code></pre>
+<p>Research question:</p>
+<pre><code>How much validated accessibility capability survives when booking becomes
+secondary?
+</code></pre>
+<h1 id="16-pivot-c--hotel-accessibility-certification">16. PIVOT C — HOTEL ACCESSIBILITY CERTIFICATION</h1>
+<p>Business discovery:</p>
+<pre><code>Hotels will pay to verify and publish accessibility characteristics.
+</code></pre>
+<p>New customer:</p>
+<pre><code>hotels / property operators
+</code></pre>
+<p>New product:</p>
+<pre><code>accessibility certification and evidence management
+</code></pre>
+<p>Potential retained capabilities:</p>
+<pre><code>accessibility evidence
+verification
+provenance
+property identity
+reporting
+</code></pre>
+<p>Potentially obsolete:</p>
+<pre><code>consumer itinerary construction
+booking workflow
+traveler payment
+</code></pre>
+<p>New concepts:</p>
+<pre><code>certification application
+evidence review
+certification status
+renewal
+reviewer authority
+</code></pre>
+<p>Research question:</p>
+<pre><code>Does the architecture retain domain knowledge even when the customer side
+of the market flips?
+</code></pre>
+<h1 id="17-pivot-d--accessibility-inventory-api">17. PIVOT D — ACCESSIBILITY INVENTORY API</h1>
+<p>Business discovery:</p>
+<pre><code>The strongest opportunity is infrastructure, not the end-user product.
+</code></pre>
+<p>New product:</p>
+<pre><code>API that exposes normalized accessibility inventory and evidence.
+</code></pre>
+<p>Remove:</p>
+<pre><code>consumer UI as primary product
+direct booking
+itinerary planning
+</code></pre>
+<p>Retain:</p>
+<pre><code>property identity
+accessibility attributes
+evidence
+verification
+data ingestion
+provenance
+</code></pre>
+<p>New requirements:</p>
+<pre><code>API authentication
+customer accounts
+usage limits
+versioned schemas
+data freshness
+</code></pre>
+<p>Research question:</p>
+<pre><code>Can durable semantic capability survive a product-layer collapse?
+</code></pre>
+<h1 id="18-pivot-e--corporate-accessible-travel-management">18. PIVOT E — CORPORATE ACCESSIBLE TRAVEL MANAGEMENT</h1>
+<p>New customer:</p>
+<pre><code>corporate travel departments
+</code></pre>
+<p>New product:</p>
+<pre><code>accessible employee travel management
+</code></pre>
+<p>New requirements:</p>
+<pre><code>company accounts
+employees
+travel policy
+approvals
+advisor assistance
+booking
+payment/invoicing
+auditability
+</code></pre>
+<p>Potential reuse:</p>
+<pre><code>accessibility profile
+inventory
+reservation
+payment
+evidence
+notification
+</code></pre>
+<p>New semantic complexity:</p>
+<pre><code>organization policy
+authority
+approvals
+obligations
+</code></pre>
+<p>Research question:</p>
+<pre><code>How well does the architecture adapt to a more complex B2B domain?
+</code></pre>
+<h1 id="19-optional-pivot-f--deliberately-hostile-pivot">19. OPTIONAL PIVOT F — DELIBERATELY HOSTILE PIVOT</h1>
+<p>Use one pivot designed to invalidate most of V1.</p>
+<p>Example:</p>
+<pre><code>Stop working in travel.
+
+Use the accessibility evidence platform to certify accessibility of
+restaurants and public venues.
+</code></pre>
+<p>Purpose:</p>
+<pre><code>identify the point at which architectural reuse legitimately collapses.
+</code></pre>
+<p>A good architecture should not be rewarded for preserving irrelevant code.</p>
+<ol start="20">
+<li>AGENT EXECUTION PROTOCOL
+============================</li>
+</ol>
+<p>For each pivot:</p>
+<pre><code>start from frozen V1
+create fresh repository copy
+create fresh agent session
+provide only the pivot request and standard repository instructions
+do not provide architecture-specific hints beyond those normally available
+in the repository
+</code></pre>
+<p>Allow normal tools:</p>
+<pre><code>repository search
+file read
+edit
+shell
+compiler
+tests
+</code></pre>
+<p>Architecture B may expose semantic tools that are part of the architecture:</p>
+<pre><code>get_semantic_modules
+get_module_contract
+get_dependencies
+get_impact_report
+get_available_transitions
+validate_semantic_migration
+</code></pre>
+<p>Their token/tool cost must be counted.</p>
+<ol start="21">
+<li>CONTEXT STRATEGIES
+======================</li>
+</ol>
+<p>Run multiple retrieval/context conditions if possible.</p>
+<p>Condition 1 — Natural Agent
+Allow the agent to explore normally.</p>
+<p>Condition 2 — Broad Repository Context
+Provide broad conventional context.</p>
+<p>Condition 3 — Dependency-Aware Retrieval
+Use language/static dependency information.</p>
+<p>Condition 4 — Semantic Context
+Architecture B receives:
+semantic impact
+affected modules
+direct dependency contracts
+relevant implementation</p>
+<p>Condition 5 — Semantic Lazy Expansion
+Start with minimal semantic slice.
+Fetch additional module context only when semantic dependency, compiler
+error, test failure, or explicit agent request requires expansion.</p>
+<ol start="22">
+<li>TOKEN ACCOUNTING
+====================</li>
+</ol>
+<p>Record per run:</p>
+<pre><code>system tokens if measurable
+task prompt tokens
+repository/context tokens
+semantic contract tokens
+tool schema tokens
+cached input tokens
+uncached input tokens
+output tokens
+reasoning tokens if available
+total tokens
+</code></pre>
+<p>Do not omit semantic metadata from Architecture B's accounting.</p>
+<ol start="23">
+<li>MODEL COST ACCOUNTING
+=========================</li>
+</ol>
+<p>Record:</p>
+<pre><code>provider
+model
+pricing date
+input token price
+cached token price
+output token price
+</code></pre>
+<p>Calculate:</p>
+<pre><code>inference cost per attempt
+inference cost per correct pivot
+</code></pre>
+<p>Prices must be current at experiment execution time.</p>
+<ol start="24">
+<li>TOOL ACTIVITY METRICS
+=========================</li>
+</ol>
+<p>Record:</p>
+<pre><code>search calls
+file reads
+files opened
+files edited
+shell calls
+compile calls
+test calls
+semantic-tool calls
+failed tool calls
+total tool calls
+</code></pre>
+<h1 id="25-context-metrics">25. CONTEXT METRICS</h1>
+<p>Record:</p>
+<pre><code>unique files read
+implementation tokens read
+contract tokens read
+modules inspected
+modules modified
+</code></pre>
+<p>Calculate Context Size Ratio:</p>
+<pre><code>    state-constrained task context
+</code></pre>
+<p>CSR = --------------------------------
+conventional task context</p>
+<p>Calculate Context Reduction:</p>
+<pre><code>1 - CSR
+</code></pre>
+<h1 id="26-module-escape-rate">26. MODULE ESCAPE RATE</h1>
+<p>Definition:</p>
+<pre><code>percentage of tasks initially classified as local that require
+unexpected context outside the predicted semantic module set.
+</code></pre>
+<p>Measure:</p>
+<pre><code>initial predicted modules
+actual modules inspected
+actual modules modified
+</code></pre>
+<p>High escape rate weakens the semantic-context hypothesis.</p>
+<ol start="27">
+<li>SEMANTIC RETENTION RATIO
+============================</li>
+</ol>
+<p>Define:</p>
+<pre><code>    validated semantic capabilities preserved
+</code></pre>
+<p>SRR = ---------------------------------------------
+validated semantic capabilities before pivot</p>
+<p>Do not use LOC as the only reuse measure.</p>
+<p>Possible preserved-capability units:</p>
+<pre><code>semantic module
+state machine
+transition family
+invariant set
+evidence model
+effect contract
+authority model
+test suite for durable semantics
+</code></pre>
+<h1 id="28-code-retention">28. CODE RETENTION</h1>
+<p>Still record conventional reuse measures:</p>
+<pre><code>lines preserved
+files preserved
+modules preserved
+tests preserved
+</code></pre>
+<p>But report separately from semantic retention.</p>
+<ol start="29">
+<li>PIVOT BLAST RADIUS
+======================</li>
+</ol>
+<p>Define:</p>
+<pre><code>    semantic modules requiring modification
+</code></pre>
+<p>PBR = --------------------------------------------
+total semantic modules</p>
+<p>Also record:</p>
+<pre><code>files modified
+modules modified
+contracts modified
+tests modified
+</code></pre>
+<h1 id="30-hypothesis-disposal-ratio">30. HYPOTHESIS DISPOSAL RATIO</h1>
+<p>Measure how much experimental/product code can be discarded without changing
+durable semantic modules.</p>
+<p>A high value can be good if semantic retention and correctness remain high.</p>
+<ol start="31">
+<li>SEMANTIC CHANGE COVERAGE
+============================</li>
+</ol>
+<p>Use:</p>
+<pre><code>    consequential interpretations mechanically surfaced
+</code></pre>
+<p>SCC = -------------------------------------------------------
+consequential interpretations actually affected</p>
+<p>Use especially for:</p>
+<pre><code>state addition
+state split
+contract evolution
+policy changes
+</code></pre>
+<h1 id="32-correctness-evaluation">32. CORRECTNESS EVALUATION</h1>
+<p>Every pivot must have hidden acceptance tests.</p>
+<p>Evaluate:</p>
+<pre><code>functional correctness
+semantic state correctness
+illegal transition prevention
+authority correctness
+effect handling
+regression failures
+data migration correctness
+integration behavior
+</code></pre>
+<p>Do not count "code compiles" as "correct pivot."</p>
+<ol start="33">
+<li>SEMANTIC DEFECT CLASSIFICATION
+=================================</li>
+</ol>
+<p>Classify defects such as:</p>
+<pre><code>invalid state representation
+illegal transition
+missing transition case
+stale policy assumption
+cross-module mutation
+missing authorization
+incorrect external retry
+fabricated trusted state
+hidden wildcard/default behavior
+unresolved semantic dependency
+wrong migration of old meaning
+accidental loss of preserved capability
+</code></pre>
+<h1 id="34-agent-behavior-metrics">34. AGENT BEHAVIOR METRICS</h1>
+<p>Record attempts to:</p>
+<pre><code>add broad defaults
+use wildcard cases
+weaken tests
+bypass type checks
+suppress warnings
+directly mutate authoritative state
+duplicate business rules
+cross module boundaries improperly
+fabricate capability/evidence/event objects
+</code></pre>
+<p>These may indicate whether the architecture resists shortcut behavior.</p>
+<ol start="35">
+<li>RETRY / REWORK METRICS
+==========================</li>
+</ol>
+<p>Record:</p>
+<pre><code>failed compile cycles
+failed test cycles
+semantic validator failures
+rollback attempts
+repair loops
+duplicated edits
+regression repairs
+</code></pre>
+<h1 id="36-human-intervention">36. HUMAN INTERVENTION</h1>
+<p>If a human must intervene, record:</p>
+<pre><code>intervention count
+intervention duration
+reason
+</code></pre>
+<p>Examples:</p>
+<pre><code>ambiguous business decision
+broken architecture
+agent dead end
+semantic migration decision
+infrastructure issue
+</code></pre>
+<h1 id="37-cost-per-correct-pivot">37. COST PER CORRECT PIVOT</h1>
+<p>Primary economic metric:</p>
+<pre><code>                total cost across all attempts
+</code></pre>
+<p>CostCorrectPivot = --------------------------------
+correct completed pivots</p>
+<p>Include where measurable:</p>
+<pre><code>inference
+CI/runtime/tooling
+human intervention
+</code></pre>
+<h1 id="38-upfront-architecture-cost">38. UPFRONT ARCHITECTURE COST</h1>
+<p>Measure initial V1 cost separately.</p>
+<p>Record:</p>
+<pre><code>implementation effort
+semantic modeling effort
+code-generation/tooling effort
+test effort
+infrastructure effort
+</code></pre>
+<p>Architecture B should not be allowed to hide its additional upfront cost.</p>
+<ol start="39">
+<li>BREAK-EVEN
+==============</li>
+</ol>
+<p>Calculate cumulative architecture cost across:</p>
+<pre><code>V1
+pivot 1
+pivot 2
+pivot 3
+...
+</code></pre>
+<p>Determine the point where:</p>
+<pre><code>cumulative cost of Architecture B
+    &#x3C;
+cumulative cost of Architecture A
+</code></pre>
+<p>Report both:</p>
+<pre><code>number of pivots
+number of agent tasks
+elapsed operating period under assumed task volume
+</code></pre>
+<h1 id="40-single-pivot-experiment">40. SINGLE-PIVOT EXPERIMENT</h1>
+<p>Run each pivot independently from V1.</p>
+<p>Purpose:</p>
+<pre><code>compare architectural resilience by pivot type.
+</code></pre>
+<h1 id="41-longitudinal-experiment">41. LONGITUDINAL EXPERIMENT</h1>
+<p>Run a selected sequence:</p>
+<pre><code>V1
+    ->
+Pivot A
+    ->
+Pivot E
+    ->
+Pivot D
+</code></pre>
+<p>or another pre-registered sequence.</p>
+<p>Measure:</p>
+<pre><code>architectural erosion
+coupling growth
+semantic graph growth
+context growth
+token growth
+module fan-out
+repair cost
+</code></pre>
+<h1 id="42-architectural-erosion-metrics">42. ARCHITECTURAL EROSION METRICS</h1>
+<p>Track after each pivot:</p>
+<pre><code>number of cross-module dependencies
+number of direct cross-module writes
+semantic dependency fan-out
+average semantic module context size
+cycle count in module dependency graph
+module escape rate
+contract size
+agent context size
+</code></pre>
+<h1 id="43-smaller-model-experiment">43. SMALLER MODEL EXPERIMENT</h1>
+<p>After baseline runs compare:</p>
+<pre><code>larger model + conventional context
+</code></pre>
+<p>against:</p>
+<pre><code>smaller/cheaper model + semantic context
+</code></pre>
+<p>Measure:</p>
+<pre><code>correctness
+retries
+total tokens
+cost per correct pivot
+</code></pre>
+<p>This may reveal a larger economic benefit than token savings alone.</p>
+<ol start="44">
+<li>CACHING EXPERIMENT
+======================</li>
+</ol>
+<p>Measure:</p>
+<pre><code>stable semantic contract tokens
+stable repository prefix tokens
+cached context reuse
+</code></pre>
+<p>Determine whether Architecture B creates more reusable/cachable context.</p>
+<ol start="45">
+<li>PARALLEL AGENT EXPERIMENT
+=============================</li>
+</ol>
+<p>For pivots involving multiple modules:</p>
+<p>Architecture A:
+multiple agents work using normal repository boundaries.</p>
+<p>Architecture B:
+agents work within semantic modules and contracts.</p>
+<p>Measure:</p>
+<pre><code>duplicated context
+coordination messages
+merge conflicts
+semantic conflicts
+rework
+</code></pre>
+<h1 id="46-required-run-count">46. REQUIRED RUN COUNT</h1>
+<p>Pilot:</p>
+<pre><code>minimum 5 runs per architecture per pivot
+</code></pre>
+<p>Better:</p>
+<pre><code>20+ runs per architecture per pivot
+</code></pre>
+<p>Use the same model/settings.</p>
+<p>Randomize run ordering.</p>
+<ol start="47">
+<li>PRE-REGISTRATION
+====================</li>
+</ol>
+<p>Before execution, freeze:</p>
+<pre><code>pivot definitions
+acceptance tests
+metrics
+scoring rules
+stopping rules
+architecture constraints
+</code></pre>
+<p>Do not modify scoring because results are inconvenient.</p>
+<ol start="48">
+<li>FALSIFICATION CONDITIONS
+============================</li>
+</ol>
+<p>The semantic-modularity hypothesis should be weakened if:</p>
+<pre><code>semantic retention is not materially higher
+context size is not materially lower
+module escape is frequent
+semantic contracts offset context savings
+correctness is unchanged or worse
+cost per correct pivot is not lower
+upfront cost creates an impractical break-even period
+Architecture B requires significantly more human intervention
+semantic migrations become dominant overhead
+dependencies become as dense as Architecture A
+</code></pre>
+<h1 id="49-strong-success-conditions">49. STRONG SUCCESS CONDITIONS</h1>
+<p>A strong result would show across multiple pivot types:</p>
+<pre><code>higher semantic retention
+smaller pivot blast radius
+fewer implementation files inspected
+fewer context tokens
+equal or higher semantic correctness
+fewer repair loops
+lower cost per correct pivot
+</code></pre>
+<p>An especially strong result would show:</p>
+<pre><code>smaller models reach equivalent correctness with semantic context.
+</code></pre>
+<h1 id="50-reporting-table--per-pivot">50. REPORTING TABLE — PER PIVOT</h1>
+<h2 id="metric--------------------------architecture-a---architecture-b">Metric                          Architecture A   Architecture B</h2>
+<p>Correct completion rate
+Semantic retention ratio
+LOC retained
+Tests retained
+Modules modified
+Files modified
+Files read
+Modules inspected
+Input tokens
+Output tokens
+Total tokens
+Model calls
+Tool calls
+Compile cycles
+Test cycles
+Repair cycles
+Human interventions
+Semantic defects
+Regression defects
+Wall-clock duration
+Inference cost
+Cost per correct pivot</p>
+<ol start="51">
+<li>REPORTING TABLE — ARCHITECTURAL QUALITY
+===========================================</li>
+</ol>
+<h2 id="metric--------------------------v1---pivot-a---pivot-b---pivot-c-">Metric                          V1   Pivot A   Pivot B   Pivot C ...</h2>
+<p>Module count
+Dependency edges
+Dependency cycles
+Average fan-out
+Semantic fan-out
+Semantic contract tokens
+Average task context
+Module escape rate
+Cross-module mutation count
+Semantic migration count</p>
+<ol start="52">
+<li>REPORTING TABLE — REUSE
+===========================</li>
+</ol>
+<h2 id="category-------------------------preserved---modified---removed---added">Category                         Preserved   Modified   Removed   Added</h2>
+<p>Identity
+Accessibility
+Trip Request
+Inventory
+Itinerary
+Reservation
+Payment
+Notification
+Evidence
+Policies
+Orchestration
+External adapters
+Tests</p>
+<ol start="53">
+<li>INTERPRETING REMOVAL
+========================</li>
+</ol>
+<p>Do not penalize an architecture simply because code is deleted.</p>
+<p>Deleting speculative product code may be desirable.</p>
+<p>The benchmark should distinguish:</p>
+<pre><code>loss of useful validated capability
+</code></pre>
+<p>from:</p>
+<pre><code>intentional disposal of invalidated product assumptions.
+</code></pre>
+<h1 id="54-benchmark-anti-patterns">54. BENCHMARK ANTI-PATTERNS</h1>
+<p>Do not:</p>
+<pre><code>prebuild functionality required by future pivots
+expose future pivots to V1 agents
+make Architecture A intentionally tangled
+give Architecture B better documentation without counting it
+compare different business behavior
+count compile success as semantic success
+compare raw token count without correctness
+ignore semantic metadata token cost
+ignore upfront modeling cost
+use only one pivot
+use only one agent run
+</code></pre>
+<h1 id="55-expected-research-output">55. EXPECTED RESEARCH OUTPUT</h1>
+<p>The benchmark report should conclude:</p>
+<ol>
+<li>
+<p>Which pivot types benefited most from semantic modularity?</p>
+</li>
+<li>
+<p>Which pivot types benefited least?</p>
+</li>
+<li>
+<p>How much semantic capability was retained?</p>
+</li>
+<li>
+<p>How much code was retained?</p>
+</li>
+<li>
+<p>How much agent context was reduced?</p>
+</li>
+<li>
+<p>How much token usage changed?</p>
+</li>
+<li>
+<p>How much cost per correct pivot changed?</p>
+</li>
+<li>
+<p>How much additional V1 cost did semantic architecture impose?</p>
+</li>
+<li>
+<p>What was the estimated break-even point?</p>
+</li>
+<li>
+<p>Did module boundaries remain stable longitudinally?</p>
+</li>
+<li>
+<p>Did the semantic approach reduce architectural erosion?</p>
+</li>
+<li>
+<p>Did agents attempt fewer unsafe shortcuts?</p>
+</li>
+<li>
+<p>Did smaller models become viable?</p>
+</li>
+<li>
+<p>Where did the architecture fail?</p>
+</li>
+<li>
+<p>What should be changed before a larger benchmark?</p>
+</li>
+<li>
+<p>BENCHMARK VERDICT CLASSES
+=============================</p>
+</li>
+</ol>
+<p>REJECTED
+No meaningful improvement after total costs are included.</p>
+<p>CORRECTNESS-ONLY BENEFIT
+Semantic architecture improves correctness but does not materially reduce
+pivot cost or agent context.</p>
+<p>CONTEXT BENEFIT
+Semantic architecture materially reduces context but total economic benefit
+is unclear.</p>
+<p>ECONOMIC BENEFIT
+Architecture reduces cost per correct pivot enough to offset incremental
+operating overhead.</p>
+<p>STRATEGIC FLEXIBILITY BENEFIT
+Architecture preserves materially more validated capability across multiple
+blind pivots and lowers the cost/risk of changing business direction.</p>
+<p>STRONG AI-NATIVE ADVANTAGE
+Architecture simultaneously delivers:
+higher semantic correctness
+smaller agent context
+lower inference cost
+lower repair cost
+higher semantic retention
+viable smaller-model substitution</p>
+<ol start="57">
+<li>CORE BENCHMARK PRINCIPLE
+============================</li>
+</ol>
+<p>The benchmark is ultimately testing:</p>
+<pre><code>Can validated knowledge remain stable while product hypotheses change?
+</code></pre>
+<p>The state-constrained architecture should succeed not by preserving everything,
+but by preserving the right things.</p>
+<ol start="58">
+<li>
+<p>CONCISE BENCHMARK THESIS
+============================</p>
+<p>Preserve validated semantics.
+Dispose of hypotheses cheaply.
+Measure whether AI makes that economically valuable.</p>
+</li>
+<li>
+<p>RECOMMENDED FIRST PILOT
+===========================</p>
+</li>
+</ol>
+<p>For the first pilot, avoid building all pivots.</p>
+<p>Use:</p>
+<pre><code>V1
+Pivot A — Advisor-Assisted
+Pivot D — Accessibility Inventory API
+</code></pre>
+<p>Reason:</p>
+<p>Pivot A tests:
+workflow/orchestration volatility</p>
+<p>Pivot D tests:
+major product-layer removal</p>
+<p>Together they provide a useful early test of whether durable capability
+boundaries actually survive substantially different business directions.</p>
+<ol start="60">
+<li>PILOT SUCCESS SIGNAL
+========================</li>
+</ol>
+<p>Before scaling the benchmark, look for evidence that Architecture B:</p>
+<pre><code>preserves more durable modules
+requires fewer implementation files
+uses materially fewer input/context tokens
+does not lose semantic correctness
+does not require excessive migration work
+</code></pre>
+<p>If those signals do not appear in the pilot, challenge the architecture before
+investing in a larger experiment.</p></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T16:14:52.534Z">Aug 17, 2026, 4:14:52 PM UTC</time> </p> </footer> </body></html>
