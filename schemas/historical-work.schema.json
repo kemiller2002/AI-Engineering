@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai.echelonfoundry.com/schemas/historical-work.schema.json",
+  "title": "ROS Historical Work Attribution Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "migrationId",
+    "workItem",
+    "title",
+    "workType",
+    "semanticState",
+    "historical",
+    "reconstructionMethod",
+    "confidence",
+    "commits",
+    "paths",
+    "evidence",
+    "decisions",
+    "occurredAt",
+    "migratedAt",
+    "notes"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "migrationId": { "type": "string", "pattern": "^HWM-[0-9]{3}$" },
+    "workItem": { "type": "string", "minLength": 1 },
+    "originalWorkItem": { "type": ["string", "null"] },
+    "title": { "type": "string", "minLength": 1 },
+    "workType": { "type": "string", "minLength": 1 },
+    "semanticState": {
+      "enum": ["backlog", "ready", "active", "review", "blocked", "complete"]
+    },
+    "researchConclusion": { "type": ["string", "null"] },
+    "actor": { "type": ["string", "null"] },
+    "historical": { "const": true },
+    "reconstructionMethod": {
+      "enum": [
+        "directly-mapped",
+        "reconstructed-from-git",
+        "reconstructed-from-documents",
+        "grouped-historical-work",
+        "compatibility-preserved",
+        "unresolved"
+      ]
+    },
+    "confidence": { "enum": ["low", "medium", "high"] },
+    "commits": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[0-9a-f]{40}$" }
+    },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "paths": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "evidence": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "decisions": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "occurredAt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end", "timeConfidence"],
+      "properties": {
+        "start": { "type": ["string", "null"], "format": "date-time" },
+        "end": { "type": ["string", "null"], "format": "date-time" },
+        "timeConfidence": { "enum": ["exact", "approximate", "unknown"] }
+      }
+    },
+    "migratedAt": { "type": "string", "format": "date-time" },
+    "notes": { "type": "string" }
+  }
+}

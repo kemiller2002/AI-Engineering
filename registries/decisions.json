@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "confidence": "high",
+    "created": "2026-08-17",
+    "id": "DF-ROS-HISTORY-2026-0001",
+    "path": "research/decisions/DF-ROS-HISTORY-2026-0001--historical-attribution-policy.md",
+    "related_documents": [
+      "docs/repository/ros-migration/HISTORICAL-WORK-INDEX.md",
+      "schemas/historical-work.schema.json"
+    ],
+    "status": "accepted",
+    "superseded_by": [],
+    "supersedes": [],
+    "tags": [
+      "ros",
+      "migration",
+      "provenance",
+      "compatibility"
+    ],
+    "title": "Historical ROS Attribution and Compatibility Policy",
+    "updated": "2026-08-17"
+  }
+]

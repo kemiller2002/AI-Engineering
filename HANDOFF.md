@@ -1,34 +1,61 @@
-# AI Engineering handoff
+# AI Engineering Handoff
 
 ## Objective
 
-Bootstrap AI Engineering as a greenfield Repository Operating System pilot.
+Continue evidence-traceable evaluation of long-horizon repository agents while
+preserving the repository's pre-ROS history and compatibility boundaries.
 
 ## Current state
 
-- ROS 1.1.0 greenfield profile installed on 2026-08-17.
-- Project charter is a draft.
-- No first vertical slice, evidence record, hypothesis, or experiment has been
-  accepted.
-- The operating system is under evaluation.
+- Root `CURRENT-STATE.md` is authoritative; `context/CURRENT-STATE.md` is a
+  derived ROS entry point.
+- Evaluation Cycles 001–003 and the repository-wide non-human comparative review
+  are complete. No agent capability trial or independent replication is claimed.
+- The 20 commits before ROS installation are reconstructed as eight explicitly
+  historical records in `.ros/history/historical-work.jsonl`.
+- Historical records never enter the live `.ros/events/events.jsonl` stream and
+  cannot authorize transitions.
+- The state-constrained research corpus is publishable as Markdown.
+
+## Historical migration completed
+
+- Human index:
+  `docs/repository/ros-migration/HISTORICAL-WORK-INDEX.md`
+- Policy decision:
+  `research/decisions/DF-ROS-HISTORY-2026-0001--historical-attribution-policy.md`
+- Schema: `schemas/historical-work.schema.json`
+- Validation implementation and tests:
+  `tools/ros_cli.mjs`, `tools/test_ros_history.mjs`
+
+The backfill is reconstructed from Git and repository documents. It does not
+claim that historical work originally followed ROS. Original external work-item
+IDs, approvals, and tests remain unknown when no repository evidence exists.
 
 ## Validation
 
 Run:
 
 ```bash
+npm test
+npm run research:validate
 ./ros registry check
 ./ros validate
+./ros status
 ```
 
-## Unresolved questions
+## Unresolved questions and risks
 
-1. What concrete communication problem and user should the first slice serve?
-2. What baseline workflow will be used for comparison?
-3. What data, privacy, safety, and accessibility constraints apply?
-4. Which outcome would distinguish useful engineering from additional process?
+1. Independent reviewers have not yet validated ET-004-P01 or ET-014-P01.
+2. Frozen graders have not been challenged with independently authored unseen
+   outcomes.
+3. No successful GitHub Pages deployment receipt is recorded.
+4. The historical state-constrained corpus lacks a single execution journal
+   covering authorship and evidence collection across all 12 missions.
+5. Metadata coverage remains diagnostic and incomplete outside strict ROS
+   artifact directories.
 
 ## Next action
 
-Complete `PROJECT-CHARTER.md`, choose the first bounded outcome, and record its
-baseline and acceptance criteria in `context/CURRENT-STATE.md`.
+Start with `prompts/Non-Human-Experimental-Research-Next-Mission.md`: obtain
+independent pilot reviews and challenge frozen graders with unseen outcomes
+before running any contained exploratory capability baseline.

@@ -55,6 +55,7 @@ Containment, telemetry, and rollback now run in parallel with evaluation rather 
 
 ### Repository Fitness
 
+- [x] Backfill material pre-ROS work into validated historical attribution
 - [x] Remove case-only collisions for root README, current state, and roadmap
 - [x] Add a repeatable Git case-collision audit
 - [x] Add initial reference-integrity and stable-identifier fitness checks

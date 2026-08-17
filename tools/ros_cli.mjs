@@ -57,6 +57,31 @@ const KIND_CONFIG = {
 };
 
 const SEMANTIC_STATES = new Set(["backlog", "ready", "active", "review", "blocked", "complete"]);
+const HISTORICAL_SCHEMA_VERSION = "1.0.0";
+const HISTORICAL_CONFIDENCE = new Set(["low", "medium", "high"]);
+const HISTORICAL_RECONSTRUCTION_METHODS = new Set([
+  "directly-mapped",
+  "reconstructed-from-git",
+  "reconstructed-from-documents",
+  "grouped-historical-work",
+  "compatibility-preserved",
+  "unresolved"
+]);
+const HISTORICAL_LIVE_FIELDS = new Set([
+  "eventId",
+  "eventType",
+  "liveTransitionAuthority",
+  "publication",
+  "targetState",
+  "transition",
+  "type"
+]);
+const HISTORICAL_ALLOWED_FIELDS = new Set([
+  "schemaVersion", "migrationId", "workItem", "originalWorkItem", "title", "workType",
+  "semanticState", "researchConclusion", "actor", "historical", "reconstructionMethod",
+  "confidence", "commits", "tags", "paths", "evidence", "decisions", "occurredAt",
+  "migratedAt", "notes"
+]);
 const TRANSITIONS = {
   ready: new Set(["begin", "block"]),
   active: new Set(["complete", "block"]),
@@ -122,6 +147,116 @@ function meaningfulPaths(root, paths) {
 
 function contextPath(root) { return path.join(root, ".ros", "context", "current.json"); }
 function eventsPath(root) { return path.join(root, ".ros", "events", "events.jsonl"); }
+function historyPath(root) { return path.join(root, ".ros", "history"); }
+
+function gitHistoryAvailable(root) {
+  try {
+    return execFileSync("git", ["-C", root, "rev-parse", "--is-inside-work-tree"], { encoding: "utf8" }).trim() === "true";
+  } catch {
+    return false;
+  }
+}
+
+function historicalRecordFiles(root) {
+  const directory = historyPath(root);
+  if (!fs.existsSync(directory)) return [];
+  return fs.readdirSync(directory, { withFileTypes: true })
+    .filter((entry) => entry.isFile() && entry.name.endsWith(".jsonl"))
+    .map((entry) => path.join(directory, entry.name))
+    .sort();
+}
+
+export function validateHistoricalRecords(root) {
+  const records = [];
+  const findings = [];
+  const ids = new Map();
+  const checkCommits = gitHistoryAvailable(root);
+  for (const file of historicalRecordFiles(root)) {
+    const relative = path.relative(root, file).split(path.sep).join("/");
+    const lines = fs.readFileSync(file, "utf8").split(/\r?\n/);
+    for (let index = 0; index < lines.length; index += 1) {
+      if (!lines[index].trim()) continue;
+      const location = `${relative}:${index + 1}`;
+      let record;
+      try {
+        record = JSON.parse(lines[index]);
+      } catch (error) {
+        findings.push({ path: location, field: "json", message: `invalid JSON: ${error.message}` });
+        continue;
+      }
+      const recordFindingStart = findings.length;
+      const required = [
+        "schemaVersion", "migrationId", "workItem", "title", "workType", "semanticState",
+        "historical", "reconstructionMethod", "confidence", "commits", "paths", "evidence",
+        "decisions", "occurredAt", "migratedAt", "notes"
+      ];
+      for (const field of required) if (!(field in record)) {
+        findings.push({ path: location, field, message: "required field is missing" });
+      }
+      if (record.schemaVersion !== HISTORICAL_SCHEMA_VERSION) {
+        findings.push({ path: location, field: "schemaVersion", message: `expected '${HISTORICAL_SCHEMA_VERSION}'` });
+      }
+      if (record.historical !== true) {
+        findings.push({ path: location, field: "historical", message: "historical records must set historical to true" });
+      }
+      for (const field of HISTORICAL_LIVE_FIELDS) if (field in record) {
+        findings.push({ path: location, field, message: "historical records cannot claim live transition authority" });
+      }
+      for (const field of Object.keys(record)) if (!HISTORICAL_ALLOWED_FIELDS.has(field)) {
+        findings.push({ path: location, field, message: "field is not allowed by historical schema 1.0.0" });
+      }
+      if (!SEMANTIC_STATES.has(record.semanticState)) {
+        findings.push({ path: location, field: "semanticState", message: `invalid semantic state '${record.semanticState}'` });
+      }
+      if (!HISTORICAL_CONFIDENCE.has(record.confidence)) {
+        findings.push({ path: location, field: "confidence", message: `invalid reconstruction confidence '${record.confidence}'` });
+      }
+      if (!HISTORICAL_RECONSTRUCTION_METHODS.has(record.reconstructionMethod)) {
+        findings.push({ path: location, field: "reconstructionMethod", message: `invalid reconstruction method '${record.reconstructionMethod}'` });
+      }
+      if (typeof record.migrationId !== "string" || !/^HWM-[0-9]{3}$/.test(record.migrationId)) {
+        findings.push({ path: location, field: "migrationId", message: "expected HWM-NNN" });
+      } else if (ids.has(record.migrationId)) {
+        findings.push({ path: location, field: "migrationId", message: `duplicate '${record.migrationId}' also in ${ids.get(record.migrationId)}` });
+      } else {
+        ids.set(record.migrationId, location);
+      }
+      for (const field of ["commits", "paths", "evidence", "decisions"]) if (!Array.isArray(record[field])) {
+        findings.push({ path: location, field, message: "must be an array" });
+      }
+      for (const field of ["workItem", "title", "workType", "notes"]) if (typeof record[field] !== "string" || !record[field]) {
+        findings.push({ path: location, field, message: "must be a non-empty string" });
+      }
+      for (const field of ["paths", "evidence", "decisions"]) for (const value of Array.isArray(record[field]) ? record[field] : []) {
+        if (typeof value !== "string" || !value) findings.push({ path: location, field, message: "array values must be non-empty strings" });
+      }
+      for (const commit of Array.isArray(record.commits) ? record.commits : []) {
+        if (typeof commit !== "string" || !/^[0-9a-f]{40}$/.test(commit)) {
+          findings.push({ path: location, field: "commits", message: `malformed commit hash '${commit}'` });
+          continue;
+        }
+        if (checkCommits) try {
+          execFileSync("git", ["-C", root, "cat-file", "-e", `${commit}^{commit}`], { stdio: "ignore" });
+        } catch {
+          findings.push({ path: location, field: "commits", message: `unknown commit '${commit}'` });
+        }
+      }
+      const occurredAt = record.occurredAt;
+      if (!occurredAt || typeof occurredAt !== "object" || !("start" in occurredAt) || !("end" in occurredAt) ||
+          !["exact", "approximate", "unknown"].includes(occurredAt.timeConfidence)) {
+        findings.push({ path: location, field: "occurredAt", message: "must include start, end, and timeConfidence exact|approximate|unknown" });
+      }
+      for (const field of ["start", "end"]) if (occurredAt && occurredAt[field] !== null && Number.isNaN(Date.parse(occurredAt[field]))) {
+        findings.push({ path: location, field: `occurredAt.${field}`, message: "must be an ISO-compatible date-time or null" });
+      }
+      if (typeof record.migratedAt !== "string" || Number.isNaN(Date.parse(record.migratedAt))) {
+        findings.push({ path: location, field: "migratedAt", message: "must be an ISO-compatible date-time" });
+      }
+      if (findings.length === recordFindingStart) records.push(record);
+    }
+  }
+  return { records, findings };
+}
 
 function loadContext(root) {
   return readJson(contextPath(root), { schemaVersion: "1.0.0", repository: workConfig(root).repository, workItems: [] });
@@ -285,7 +420,7 @@ function transition(root, action, ids, options = {}) {
   return { context, events };
 }
 
-function workFindings(root) {
+function workFindings(root, historicalRecords = []) {
   const config = workConfig(root);
   if (!config.enforce) return [];
   const context = loadContext(root);
@@ -293,6 +428,7 @@ function workFindings(root) {
   if (!changed.length) return [];
   const events = fs.existsSync(eventsPath(root)) ? fs.readFileSync(eventsPath(root), "utf8").split(/\r?\n/).filter(Boolean).map(JSON.parse) : [];
   const attributed = new Set(events.flatMap((event) => event.paths ?? []));
+  for (const record of historicalRecords) for (const historicalPath of record.paths ?? []) attributed.add(historicalPath);
   const active = context.workItems.some((item) => item.semanticState === "active" || item.semanticState === "blocked");
   return changed.filter((item) => !attributed.has(item) && !active).map((item) => ({ path: item, field: "work_items", message: "meaningful change has no active or completed work-item attribution" }));
 }
@@ -438,7 +574,8 @@ function registryFindings(root, artifacts) {
 
 export function validate(root, { checkRegistries = true } = {}) {
   const loaded = loadArtifacts(root);
-  const findings = [...loaded.findings];
+  const history = validateHistoricalRecords(root);
+  const findings = [...loaded.findings, ...history.findings];
   const byId = new Map();
   for (const artifact of loaded.artifacts) {
     if (!artifact.id) {
@@ -510,7 +647,7 @@ export function validate(root, { checkRegistries = true } = {}) {
     }
   }
   if (checkRegistries) findings.push(...registryFindings(root, loaded.artifacts));
-  findings.push(...workFindings(root));
+  findings.push(...workFindings(root, history.records));
   return findings.sort((a, b) =>
     [a.path, a.field, a.message].join("\0").localeCompare([b.path, b.field, b.message].join("\0"))
   );

@@ -2,6 +2,8 @@
   "name": "ai-engineering-research",
   "private": true,
   "scripts": {
+    "test": "npm run test:ros && python3 -m unittest tools.repository.test_validate_research_integrity",
+    "test:ros": "node --test tools/test_ros_history.mjs",
     "research:build": "research-publisher build --config ./research-publisher.config.mjs",
     "research:inventory": "research-publisher inventory --config ./research-publisher.config.mjs",
     "research:validate": "research-publisher validate --config ./research-publisher.config.mjs"

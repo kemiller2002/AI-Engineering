@@ -162,14 +162,6 @@
       "sourcePath": "content/projects/ai-engineering-course/governance/course-constitution.md"
     },
     {
-      "id": "ai-engineering-current-state",
-      "title": "AI Engineering current state",
-      "artifactType": "research-document",
-      "url": "/research/ai-engineering-current-state/",
-      "researchArea": "General Research",
-      "sourcePath": "context/CURRENT-STATE.md"
-    },
-    {
       "id": "ai-engineering-decision-navigation",
       "title": "AI Engineering decision navigation",
       "artifactType": "research-document",
@@ -195,7 +187,7 @@
     },
     {
       "id": "ai-engineering-handoff",
-      "title": "AI Engineering handoff",
+      "title": "AI Engineering Handoff",
       "artifactType": "research-document",
       "url": "/research/ai-engineering-handoff/",
       "researchArea": "General Research",
@@ -488,6 +480,14 @@
       "url": "/research/df-2026-0001-minimum-sufficient-agent-evaluation/",
       "researchArea": "General Research",
       "sourcePath": "research/evaluation/08-decision-framework.md"
+    },
+    {
+      "id": "DF-ROS-HISTORY-2026-0001",
+      "title": "Historical ROS Attribution and Compatibility Policy",
+      "artifactType": "decision-framework",
+      "url": "/research/df-ros-history-2026-0001-historical-ros-attribution-and-compatibility-policy/",
+      "researchArea": "General Research",
+      "sourcePath": "research/decisions/DF-ROS-HISTORY-2026-0001--historical-attribution-policy.md"
     },
     {
       "id": "DF-ZAJWA-2026-A001",
@@ -1026,6 +1026,30 @@
       "sourcePath": "BOOTSTRAP.md"
     },
     {
+      "id": "ros-current-state-entry-point",
+      "title": "ROS Current-State Entry Point",
+      "artifactType": "research-document",
+      "url": "/research/ros-current-state-entry-point/",
+      "researchArea": "General Research",
+      "sourcePath": "context/CURRENT-STATE.md"
+    },
+    {
+      "id": "ros-historical-migration-validation",
+      "title": "ROS Historical Migration Validation",
+      "artifactType": "research-document",
+      "url": "/research/ros-historical-migration-validation/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/repository/ros-migration/VALIDATION.md"
+    },
+    {
+      "id": "ros-historical-work-index",
+      "title": "ROS Historical Work Index",
+      "artifactType": "research-document",
+      "url": "/research/ros-historical-work-index/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/repository/ros-migration/HISTORICAL-WORK-INDEX.md"
+    },
+    {
       "id": "ros-work-protocol-1-0",
       "title": "ROS Work Protocol 1.0",
       "artifactType": "research-document",
@@ -1536,7 +1560,6 @@
     "ai-engineering-architecture-records": [],
     "ai-engineering-architecture": [],
     "ai-engineering-course-constitution": [],
-    "ai-engineering-current-state": [],
     "ai-engineering-decision-navigation": [],
     "ai-engineering-decisions": [],
     "ai-engineering-handbook": [],
@@ -1577,6 +1600,7 @@
     "deep-research-addendum-rework-economics-without-explicit-semantic-constraints": [],
     "dependency-minimal-browser-kernel-architecture-policy": [],
     "DF-2026-0001": [],
+    "DF-ROS-HISTORY-2026-0001": [],
     "DF-ZAJWA-2026-A001": [],
     "EC-000": [],
     "evaluation-architecture-and-threat-model-document-frontier": [],
@@ -1644,6 +1668,9 @@
     "roadmap": [],
     "root-case-collision-canonicalization": [],
     "ros-agent-bootstrap": [],
+    "ros-current-state-entry-point": [],
+    "ros-historical-migration-validation": [],
+    "ros-historical-work-index": [],
     "ros-work-protocol-1-0": [],
     "RP-2026-07-23-001": [],
     "RP-2026-07-23-002": [],

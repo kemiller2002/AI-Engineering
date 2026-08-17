@@ -6375,75 +6375,6 @@
     {
       "schemaVersion": "1.1",
       "id": null,
-      "title": "AI Engineering current state",
-      "slug": "ai-engineering-current-state",
-      "url": "/research/ai-engineering-current-state/",
-      "artifactType": "research-document",
-      "project": null,
-      "purposes": [],
-      "audiences": [],
-      "entryPoint": false,
-      "entryPointOrder": null,
-      "entryPointLabel": null,
-      "researchArea": "General Research",
-      "discipline": [],
-      "summary": "",
-      "status": "draft",
-      "version": "0.1",
-      "confidence": null,
-      "completion": null,
-      "priority": "medium",
-      "authorAgent": "unknown",
-      "created": "2026-07-22",
-      "updated": "2026-07-22",
-      "tags": [],
-      "keywords": [],
-      "relatedProjects": [],
-      "relatedDocuments": [],
-      "supersedes": [],
-      "supersededBy": [],
-      "evidenceIds": [],
-      "hypothesisIds": [],
-      "theoryIds": [],
-      "headings": [
-        {
-          "depth": 1,
-          "text": "AI Engineering current state"
-        },
-        {
-          "depth": 2,
-          "text": "Repository status"
-        },
-        {
-          "depth": 2,
-          "text": "Observed facts"
-        },
-        {
-          "depth": 2,
-          "text": "Assumptions"
-        },
-        {
-          "depth": 2,
-          "text": "Active work"
-        },
-        {
-          "depth": 2,
-          "text": "Largest decision-relevant unknown"
-        },
-        {
-          "depth": 2,
-          "text": "Baseline"
-        }
-      ],
-      "sourcePath": "context/CURRENT-STATE.md",
-      "contentHash": "6ab1e9d137178e4235ad148aac33c5769b90d26ad452c3c8603767aace29071a",
-      "html": "<h1 id=\"ai-engineering-current-state\">AI Engineering current state</h1>\n<h2 id=\"repository-status\">Repository status</h2>\n<p>Newly initialized with Repository Operating System 1.1.0.</p>\n<h2 id=\"observed-facts\">Observed facts</h2>\n<ul>\n<li>No domain evidence has been accepted.</li>\n<li>No vertical slice has been selected.</li>\n<li>No discipline-boundary claim has been tested.</li>\n</ul>\n<h2 id=\"assumptions\">Assumptions</h2>\n<ul>\n<li>A small, concrete communication problem can exercise the operating model.</li>\n</ul>\n<h2 id=\"active-work\">Active work</h2>\n<p>Complete the charter and select the first bounded pilot slice.</p>\n<h2 id=\"largest-decision-relevant-unknown\">Largest decision-relevant unknown</h2>\n<p>Which first use case will provide measurable value while exposing the important\ncommunication constraints?</p>\n<h2 id=\"baseline\">Baseline</h2>\n<p>Not yet recorded. Define how the same slice would be approached without ROS and\nwhich comparison measures are feasible.</p>",
-      "links": [],
-      "compatibilityMode": true
-    },
-    {
-      "schemaVersion": "1.1",
-      "id": null,
       "title": "AI Engineering decision navigation",
       "slug": "ai-engineering-decision-navigation",
       "url": "/research/ai-engineering-decision-navigation/",
@@ -6619,7 +6550,7 @@
     {
       "schemaVersion": "1.1",
       "id": null,
-      "title": "AI Engineering handoff",
+      "title": "AI Engineering Handoff",
       "slug": "ai-engineering-handoff",
       "url": "/research/ai-engineering-handoff/",
       "artifactType": "research-document",
@@ -6652,7 +6583,7 @@
       "headings": [
         {
           "depth": 1,
-          "text": "AI Engineering handoff"
+          "text": "AI Engineering Handoff"
         },
         {
           "depth": 2,
@@ -6664,11 +6595,15 @@
         },
         {
           "depth": 2,
+          "text": "Historical migration completed"
+        },
+        {
+          "depth": 2,
           "text": "Validation"
         },
         {
           "depth": 2,
-          "text": "Unresolved questions"
+          "text": "Unresolved questions and risks"
         },
         {
           "depth": 2,
@@ -6676,8 +6611,8 @@
         }
       ],
       "sourcePath": "HANDOFF.md",
-      "contentHash": "ca51aa1098e981a00353b0462446a8cb41801922163b4745144e45f6253f7161",
-      "html": "<h1 id=\"ai-engineering-handoff\">AI Engineering handoff</h1>\n<h2 id=\"objective\">Objective</h2>\n<p>Bootstrap AI Engineering as a greenfield Repository Operating System pilot.</p>\n<h2 id=\"current-state\">Current state</h2>\n<ul>\n<li>ROS 1.1.0 greenfield profile installed on 2026-08-17.</li>\n<li>Project charter is a draft.</li>\n<li>No first vertical slice, evidence record, hypothesis, or experiment has been\naccepted.</li>\n<li>The operating system is under evaluation.</li>\n</ul>\n<h2 id=\"validation\">Validation</h2>\n<p>Run:</p>\n<pre><code class=\"language-bash\">./ros registry check\n./ros validate\n</code></pre>\n<h2 id=\"unresolved-questions\">Unresolved questions</h2>\n<ol>\n<li>What concrete communication problem and user should the first slice serve?</li>\n<li>What baseline workflow will be used for comparison?</li>\n<li>What data, privacy, safety, and accessibility constraints apply?</li>\n<li>Which outcome would distinguish useful engineering from additional process?</li>\n</ol>\n<h2 id=\"next-action\">Next action</h2>\n<p>Complete <code>PROJECT-CHARTER.md</code>, choose the first bounded outcome, and record its\nbaseline and acceptance criteria in <code>context/CURRENT-STATE.md</code>.</p>",
+      "contentHash": "9506e51f0df1879d1f2f188251e84dc69911e085dbefc9363600310f47ff76d3",
+      "html": "<h1 id=\"ai-engineering-handoff\">AI Engineering Handoff</h1>\n<h2 id=\"objective\">Objective</h2>\n<p>Continue evidence-traceable evaluation of long-horizon repository agents while\npreserving the repository's pre-ROS history and compatibility boundaries.</p>\n<h2 id=\"current-state\">Current state</h2>\n<ul>\n<li>Root <code>CURRENT-STATE.md</code> is authoritative; <code>context/CURRENT-STATE.md</code> is a\nderived ROS entry point.</li>\n<li>Evaluation Cycles 001–003 and the repository-wide non-human comparative review\nare complete. No agent capability trial or independent replication is claimed.</li>\n<li>The 20 commits before ROS installation are reconstructed as eight explicitly\nhistorical records in <code>.ros/history/historical-work.jsonl</code>.</li>\n<li>Historical records never enter the live <code>.ros/events/events.jsonl</code> stream and\ncannot authorize transitions.</li>\n<li>The state-constrained research corpus is publishable as Markdown.</li>\n</ul>\n<h2 id=\"historical-migration-completed\">Historical migration completed</h2>\n<ul>\n<li>Human index:\n<code>docs/repository/ros-migration/HISTORICAL-WORK-INDEX.md</code></li>\n<li>Policy decision:\n<code>research/decisions/DF-ROS-HISTORY-2026-0001--historical-attribution-policy.md</code></li>\n<li>Schema: <code>schemas/historical-work.schema.json</code></li>\n<li>Validation implementation and tests:\n<code>tools/ros_cli.mjs</code>, <code>tools/test_ros_history.mjs</code></li>\n</ul>\n<p>The backfill is reconstructed from Git and repository documents. It does not\nclaim that historical work originally followed ROS. Original external work-item\nIDs, approvals, and tests remain unknown when no repository evidence exists.</p>\n<h2 id=\"validation\">Validation</h2>\n<p>Run:</p>\n<pre><code class=\"language-bash\">npm test\nnpm run research:validate\n./ros registry check\n./ros validate\n./ros status\n</code></pre>\n<h2 id=\"unresolved-questions-and-risks\">Unresolved questions and risks</h2>\n<ol>\n<li>Independent reviewers have not yet validated ET-004-P01 or ET-014-P01.</li>\n<li>Frozen graders have not been challenged with independently authored unseen\noutcomes.</li>\n<li>No successful GitHub Pages deployment receipt is recorded.</li>\n<li>The historical state-constrained corpus lacks a single execution journal\ncovering authorship and evidence collection across all 12 missions.</li>\n<li>Metadata coverage remains diagnostic and incomplete outside strict ROS\nartifact directories.</li>\n</ol>\n<h2 id=\"next-action\">Next action</h2>\n<p>Start with <code>prompts/Non-Human-Experimental-Research-Next-Mission.md</code>: obtain\nindependent pilot reviews and challenge frozen graders with unseen outcomes\nbefore running any contained exploratory capability baseline.</p>",
       "links": [],
       "compatibilityMode": true
     },
@@ -15672,8 +15607,8 @@
         }
       ],
       "sourcePath": "CHANGELOG.md",
-      "contentHash": "7f7fb9c4e2e20520183e6ecd3d02a9961d5a96dc069864636f2e73e520d5b094",
-      "html": "<h1 id=\"changelog\">Changelog</h1>\n<h2 id=\"010--2026-07-21\">0.1.0 — 2026-07-21</h2>\n<ul>\n<li>Created AI-ROS Bootstrap Kit.</li>\n<li>Added initial Constitution, REP integration, prompts, templates, mobile setup, and shortcut specifications.</li>\n</ul>\n<h2 id=\"011--2026-07-22\">0.1.1 — 2026-07-22</h2>\n<ul>\n<li>Imported and normalized 50 source files from <code>input-documents/</code>.</li>\n<li>Moved handbook, course, research program, and research relay documents into canonical repository locations.</li>\n<li>Promoted the bootstrap README, roadmap, state, governance, prompts, templates, and mobile docs into the repository structure.</li>\n<li>Archived the derived Chapter 1 ZIP package and preserved import audit records.</li>\n<li>Removed the duplicate REP source copy from the bootstrap kit after hash verification.</li>\n</ul>\n<h2 id=\"unreleased\">Unreleased</h2>\n<ul>\n<li>Renamed 45 Markdown-formatted <code>.txt</code> research, semantic-control architecture,\nand Time Entry documents to <code>.md</code>, repaired repository references, and made\nthe canonical state-constrained corpus discoverable by Research Publisher.</li>\n<li>Extended the RFR-009 repository-integrity validator with metadata coverage by\nartifact class, declared relationship resolution, generated/dependency-tree\nexclusions, three new calibration probes, and a schema 1.1 inventory; recorded\nthe 131-document baseline without enforcing a premature legacy migration.</li>\n<li>Reorganized the tracked <code>state-machine-documents/</code> corpus into the canonical\nresearch, architecture, and Time Entry project areas; preserved the complete\n01–12 prompt/report series, separated its synthesis and experiments, and\nconsolidated two SHA-256-identical duplicate files.</li>\n<li>Added navigation indexes for state-constrained research, semantic-control\narchitecture, and Time Entry, plus a repository migration decision and\nvalidation record.</li>\n<li>Added a Node 24 research-publisher dependency, reproducible npm scripts, and a GitHub Actions workflow that builds and deploys the research site to GitHub Pages on pushes to <code>main</code> or manual dispatch; non-site fixtures, templates, and colliding legacy split documents are excluded from the published corpus.</li>\n<li>Executed the AI Research Mission Generator and added a current state-of-field REP, knowledge-gap analysis, research roadmap, and priority matrix.</li>\n<li>Selected long-horizon agent evaluation and verification as the highest-value research mission.</li>\n<li>Superseded the generator at <code>prompts/AI-Research-Mission.md</code> with a ready-to-run empirical research prompt.</li>\n<li>Recorded the execution and supersession decision under <code>docs/repository/</code>.</li>\n<li>Started the highest-priority research mission and completed Evaluation Research Cycle 001.</li>\n<li>Added the experimental <code>research/evaluation/</code> workspace with a charter, candidate task suite, evaluation specification, evidence/hypothesis/experiment registries, failure taxonomy, immutable cycle report, and next-agent handoff.</li>\n<li>Recorded the decision to audit task integrity before running capability baselines.</li>\n<li>Completed provisional ET-004 and ET-014 task-integrity pilots with seven versioned calibration probes.</li>\n<li>Added a dependency-free evaluation CLI that validates contracts, calibrates deterministic graders, and exports blind disposable fixtures.</li>\n<li>Added current results, a minimum-sufficient-evaluation decision framework, threat model, system architecture, teaching guide, and evaluation roadmap v2.</li>\n<li>Revised the program roadmap so containment, telemetry, pause, and rollback precede adversarial or long-horizon baselines.</li>\n<li>Recorded Cycles 002 and 003, including negative results, unresolved hypotheses, and the independent-review blocker.</li>\n<li>Canonicalized root README, current-state, and roadmap paths by removing identical case-only Git entries while preserving their history.</li>\n<li>Added a repository fitness check for case-colliding tracked paths.</li>\n<li>Added the canonical <code>research/frontier/</code> analysis with ten evidence-traceable RFRs, document-level frontiers, repository health metrics, and machine-readable index/dependency graph.</li>\n<li>Recorded the frontier scope and semantic-canonicalization decision under <code>docs/repository/</code>.</li>\n<li>Advanced RFR-009 to Validation with a dependency-free stable-identifier, explicit local-link, and frontier graph/index integrity validator.</li>\n<li>Added four seeded integrity tests, integrated the checks into <code>evalctl.py repo-audit</code>, and preserved the first machine-readable inventory under <code>data/validation/</code>.</li>\n<li>Completed the repository-wide non-human experimental evidence review.</li>\n<li>Added a seven-item master inventory, machine-readable experiment matrix,\nlineage/dependency graph, comparability and quality analysis, contradiction\nregistry, failure taxonomy, cumulative findings, and ranked research backlog\nunder <code>research/analysis/</code>.</li>\n<li>Added the canonical comparative-review REP and repository structural decision\nwhile preserving historical evaluation records unchanged.</li>\n<li>Recorded that current evidence contains zero independent experimental\nreplications and zero agent capability trials; the 7/7 result is an in-sample\nregression check over dependent designer probes.</li>\n<li>Added an executable next mission for independent pilot review and a frozen\ngrader challenge on blinded unseen outcomes.</li>\n</ul>",
+      "contentHash": "6b5b9e3933529f7ed3507e2735d31d63a4223d04be5263bc6e5934d3571f0202",
+      "html": "<h1 id=\"changelog\">Changelog</h1>\n<h2 id=\"010--2026-07-21\">0.1.0 — 2026-07-21</h2>\n<ul>\n<li>Created AI-ROS Bootstrap Kit.</li>\n<li>Added initial Constitution, REP integration, prompts, templates, mobile setup, and shortcut specifications.</li>\n</ul>\n<h2 id=\"011--2026-07-22\">0.1.1 — 2026-07-22</h2>\n<ul>\n<li>Imported and normalized 50 source files from <code>input-documents/</code>.</li>\n<li>Moved handbook, course, research program, and research relay documents into canonical repository locations.</li>\n<li>Promoted the bootstrap README, roadmap, state, governance, prompts, templates, and mobile docs into the repository structure.</li>\n<li>Archived the derived Chapter 1 ZIP package and preserved import audit records.</li>\n<li>Removed the duplicate REP source copy from the bootstrap kit after hash verification.</li>\n</ul>\n<h2 id=\"unreleased\">Unreleased</h2>\n<ul>\n<li>Added a versioned ROS historical-attribution schema, eight-record pre-install\nwork backfill, human reconstruction index, accepted compatibility decision,\nvalidator/test coverage, and a single authoritative current-state policy.</li>\n<li>Renamed 45 Markdown-formatted <code>.txt</code> research, semantic-control architecture,\nand Time Entry documents to <code>.md</code>, repaired repository references, and made\nthe canonical state-constrained corpus discoverable by Research Publisher.</li>\n<li>Extended the RFR-009 repository-integrity validator with metadata coverage by\nartifact class, declared relationship resolution, generated/dependency-tree\nexclusions, three new calibration probes, and a schema 1.1 inventory; recorded\nthe 131-document baseline without enforcing a premature legacy migration.</li>\n<li>Reorganized the tracked <code>state-machine-documents/</code> corpus into the canonical\nresearch, architecture, and Time Entry project areas; preserved the complete\n01–12 prompt/report series, separated its synthesis and experiments, and\nconsolidated two SHA-256-identical duplicate files.</li>\n<li>Added navigation indexes for state-constrained research, semantic-control\narchitecture, and Time Entry, plus a repository migration decision and\nvalidation record.</li>\n<li>Added a Node 24 research-publisher dependency, reproducible npm scripts, and a GitHub Actions workflow that builds and deploys the research site to GitHub Pages on pushes to <code>main</code> or manual dispatch; non-site fixtures, templates, and colliding legacy split documents are excluded from the published corpus.</li>\n<li>Executed the AI Research Mission Generator and added a current state-of-field REP, knowledge-gap analysis, research roadmap, and priority matrix.</li>\n<li>Selected long-horizon agent evaluation and verification as the highest-value research mission.</li>\n<li>Superseded the generator at <code>prompts/AI-Research-Mission.md</code> with a ready-to-run empirical research prompt.</li>\n<li>Recorded the execution and supersession decision under <code>docs/repository/</code>.</li>\n<li>Started the highest-priority research mission and completed Evaluation Research Cycle 001.</li>\n<li>Added the experimental <code>research/evaluation/</code> workspace with a charter, candidate task suite, evaluation specification, evidence/hypothesis/experiment registries, failure taxonomy, immutable cycle report, and next-agent handoff.</li>\n<li>Recorded the decision to audit task integrity before running capability baselines.</li>\n<li>Completed provisional ET-004 and ET-014 task-integrity pilots with seven versioned calibration probes.</li>\n<li>Added a dependency-free evaluation CLI that validates contracts, calibrates deterministic graders, and exports blind disposable fixtures.</li>\n<li>Added current results, a minimum-sufficient-evaluation decision framework, threat model, system architecture, teaching guide, and evaluation roadmap v2.</li>\n<li>Revised the program roadmap so containment, telemetry, pause, and rollback precede adversarial or long-horizon baselines.</li>\n<li>Recorded Cycles 002 and 003, including negative results, unresolved hypotheses, and the independent-review blocker.</li>\n<li>Canonicalized root README, current-state, and roadmap paths by removing identical case-only Git entries while preserving their history.</li>\n<li>Added a repository fitness check for case-colliding tracked paths.</li>\n<li>Added the canonical <code>research/frontier/</code> analysis with ten evidence-traceable RFRs, document-level frontiers, repository health metrics, and machine-readable index/dependency graph.</li>\n<li>Recorded the frontier scope and semantic-canonicalization decision under <code>docs/repository/</code>.</li>\n<li>Advanced RFR-009 to Validation with a dependency-free stable-identifier, explicit local-link, and frontier graph/index integrity validator.</li>\n<li>Added four seeded integrity tests, integrated the checks into <code>evalctl.py repo-audit</code>, and preserved the first machine-readable inventory under <code>data/validation/</code>.</li>\n<li>Completed the repository-wide non-human experimental evidence review.</li>\n<li>Added a seven-item master inventory, machine-readable experiment matrix,\nlineage/dependency graph, comparability and quality analysis, contradiction\nregistry, failure taxonomy, cumulative findings, and ranked research backlog\nunder <code>research/analysis/</code>.</li>\n<li>Added the canonical comparative-review REP and repository structural decision\nwhile preserving historical evaluation records unchanged.</li>\n<li>Recorded that current evidence contains zero independent experimental\nreplications and zero agent capability trials; the 7/7 result is an in-sample\nregression check over dependent designer probes.</li>\n<li>Added an executable next mission for independent pilot review and a frozen\ngrader challenge on blinded unseen outcomes.</li>\n</ul>",
       "links": [],
       "compatibilityMode": true
     },
@@ -15843,8 +15778,8 @@
         }
       ],
       "sourcePath": "current-state.md",
-      "contentHash": "06c2391ba6894c5f882b9151d27735a78256dcc7e98f33effd383d057a201d99",
-      "html": "<h1 id=\"current-state\">Current State</h1>\n<h2 id=\"objective\">Objective</h2>\n<p>Validate AI-ROS through evidence-traceable evaluation of long-horizon repository agents.</p>\n<h2 id=\"current-phase\">Current Phase</h2>\n<p>Evaluation research Cycles 001–003 and the historical non-human experimental\ncomparative review are complete; independent review plus frozen-grader unseen\ntesting are next.</p>\n<h2 id=\"active-work\">Active Work</h2>\n<ul>\n<li>Publish the generated research site from <code>main</code> through GitHub Actions and GitHub Pages.</li>\n<li>Obtain independent reviews of ET-004-P01 and ET-014-P01.</li>\n<li>Challenge the frozen pilot graders with independently authored, blinded unseen\noutcomes before promotion.</li>\n<li>Freeze one agent-system configuration for a contained exploratory baseline.</li>\n<li>Capture final state, actions, runtime, retries, cost, and human intervention.</li>\n<li>Maintain the research frontier records under <code>research/frontier/</code>; RFR-001 and RFR-002 align with Cycle 004.</li>\n<li>Define a bounded metadata-adoption policy for current canonical artifacts and\nobtain a real supersession-edge sample; RFR-009 measurement and diagnostic\nrelationship validation are now implemented.</li>\n</ul>\n<h2 id=\"next-task\">Next Task</h2>\n<p>Execute <code>prompts/Non-Human-Experimental-Research-Next-Mission.md</code>: independently\nreview the pilots and challenge the frozen graders with unseen outcomes. Run\ncontained exploratory baselines only for pilots that pass.</p>\n<h2 id=\"risks\">Risks</h2>\n<ul>\n<li>Legacy split handbook and course-note documents remain excluded from publishing until they receive unique canonical IDs and URLs.</li>\n<li>Public benchmark validity may not transfer to repository tasks.</li>\n<li>Model and harness changes can obsolete baselines.</li>\n<li>Human review capacity may constrain evaluator calibration.</li>\n<li>The current repository is documentation-heavy and may not represent production coding work.</li>\n<li>Repository-native tasks may inherit hidden context, narrow graders, or answer leakage.</li>\n<li>Evaluated agents may exploit benchmark or infrastructure exposure.</li>\n<li>Probe calibration may overfit designer-created outcomes.</li>\n<li>The current 7/7 calibration is a dependent regression check, not a grader\naccuracy estimate or replication count.</li>\n<li>Additional architecture work now risks replacing empirical learning with speculation.</li>\n</ul>\n<h2 id=\"open-questions\">Open Questions</h2>\n<ul>\n<li>Which measures best predict verified repository outcomes?</li>\n<li>Which context policy provides the best reliability-adjusted cost?</li>\n<li>When does multi-agent coordination produce net value?</li>\n<li>Does a knowledge graph earn its maintenance cost?</li>\n</ul>\n<h2 id=\"completed-work\">Completed Work</h2>\n<ul>\n<li>Normalized 45 Markdown-formatted state-constrained research, semantic-control\narchitecture, and Time Entry documents to publishable <code>.md</code> paths and repaired\ntheir repository references.</li>\n<li>Extended RFR-009 with measured metadata coverage across 131 authored Markdown\nartifacts and diagnostic relationship-target validation; seven calibrated\nintegrity tests pass without imposing strict legacy metadata migration.</li>\n<li>Organized the state-constrained architecture corpus into distinct prompts,\nreports, synthesis, experiments, historical working notes, current generic\narchitecture, and application-specific Time Entry inputs; consolidated two\nbyte-identical duplicates with provenance recorded under <code>docs/repository/</code>.</li>\n<li>Added a reproducible Node 24 research-publisher dependency and GitHub Pages publishing workflow.</li>\n<li>Executed the AI Research Mission Generator.</li>\n<li>Created the 2026-07-23 state-of-field REP, gap analysis, priority matrix, and research roadmap.</li>\n<li>Selected long-horizon agent evaluation and verification as the highest-ROI next mission.</li>\n<li>Completed Evaluation Research Cycle 001.</li>\n<li>Defined the evaluation charter, constructs, outcome classes, sixteen candidate task families, audit protocol, and initial registries.</li>\n<li>Challenged the assumptions that repository-native tasks are inherently valid, more graders are always better, and three runs support stable rankings.</li>\n<li>Completed task-integrity pilots ET-004-P01 and ET-014-P01.</li>\n<li>Implemented a dependency-free evaluator and blind fixture exporter.</li>\n<li>Calibrated seven declared outcome probes and verified two blind exports.</li>\n<li>Added a decision framework, threat model, evaluation architecture, teaching guide, and research/engineering roadmap v2.</li>\n<li>Moved containment and runtime monitoring into the evaluation foundation rather than postponing security.</li>\n<li>Resolved three root case-only Git collisions by retaining the governance-defined uppercase canonical paths and preserving prior variants in Git history.</li>\n<li>Completed repository frontier analysis RFA-2026-001 with ten traceable open RFRs, document frontiers, health metrics, and a dependency graph.</li>\n<li>Advanced RFR-009 to Validation with calibrated stable-identifier, explicit-link, and frontier graph/index checks; the first scoped inventory is clean.</li>\n<li>Completed a repository-wide comparative review of non-human experimental\nevidence with a master inventory, machine-readable matrix, lineage,\ncontradictions, failure modes, cumulative findings, and ranked next\nexperiments.</li>\n<li>Reclassified the evidence boundary: four empirical/preflight activities, one\ndesign study, two unexecuted experiments, zero independent replications, and\nzero agent capability trials.</li>\n</ul>\n<h2 id=\"largest-unknown\">Largest Unknown</h2>\n<p>Whether independent reviewers validate the pilot contracts and whether the\nfrozen graders survive blinded unseen outcomes.</p>\n<h2 id=\"next-agent-handoff\">Next-Agent Handoff</h2>\n<p><strong>Start at <code>prompts/Non-Human-Experimental-Research-Next-Mission.md</code>. No\ncapability baseline has been run; current results are dependent, in-sample\nfixture and grader preflights only.</strong></p>",
+      "contentHash": "ba1479b7ccaebe5e4c080e34bbf377b431af85d89ea1a2c2145df7c5ec5ed70a",
+      "html": "<h1 id=\"current-state\">Current State</h1>\n<h2 id=\"objective\">Objective</h2>\n<p>Validate AI-ROS through evidence-traceable evaluation of long-horizon repository agents.</p>\n<h2 id=\"current-phase\">Current Phase</h2>\n<p>Evaluation research Cycles 001–003 and the historical non-human experimental\ncomparative review are complete; independent review plus frozen-grader unseen\ntesting are next.</p>\n<h2 id=\"active-work\">Active Work</h2>\n<ul>\n<li>Publish the generated research site from <code>main</code> through GitHub Actions and GitHub Pages.</li>\n<li>Obtain independent reviews of ET-004-P01 and ET-014-P01.</li>\n<li>Challenge the frozen pilot graders with independently authored, blinded unseen\noutcomes before promotion.</li>\n<li>Freeze one agent-system configuration for a contained exploratory baseline.</li>\n<li>Capture final state, actions, runtime, retries, cost, and human intervention.</li>\n<li>Maintain the research frontier records under <code>research/frontier/</code>; RFR-001 and RFR-002 align with Cycle 004.</li>\n<li>Define a bounded metadata-adoption policy for current canonical artifacts and\nobtain a real supersession-edge sample; RFR-009 measurement and diagnostic\nrelationship validation are now implemented.</li>\n</ul>\n<h2 id=\"next-task\">Next Task</h2>\n<p>Execute <code>prompts/Non-Human-Experimental-Research-Next-Mission.md</code>: independently\nreview the pilots and challenge the frozen graders with unseen outcomes. Run\ncontained exploratory baselines only for pilots that pass.</p>\n<h2 id=\"risks\">Risks</h2>\n<ul>\n<li>Legacy split handbook and course-note documents remain excluded from publishing until they receive unique canonical IDs and URLs.</li>\n<li>Public benchmark validity may not transfer to repository tasks.</li>\n<li>Model and harness changes can obsolete baselines.</li>\n<li>Human review capacity may constrain evaluator calibration.</li>\n<li>The current repository is documentation-heavy and may not represent production coding work.</li>\n<li>Repository-native tasks may inherit hidden context, narrow graders, or answer leakage.</li>\n<li>Evaluated agents may exploit benchmark or infrastructure exposure.</li>\n<li>Probe calibration may overfit designer-created outcomes.</li>\n<li>The current 7/7 calibration is a dependent regression check, not a grader\naccuracy estimate or replication count.</li>\n<li>Additional architecture work now risks replacing empirical learning with speculation.</li>\n</ul>\n<h2 id=\"open-questions\">Open Questions</h2>\n<ul>\n<li>Which measures best predict verified repository outcomes?</li>\n<li>Which context policy provides the best reliability-adjusted cost?</li>\n<li>When does multi-agent coordination produce net value?</li>\n<li>Does a knowledge graph earn its maintenance cost?</li>\n</ul>\n<h2 id=\"completed-work\">Completed Work</h2>\n<ul>\n<li>Reconstructed all 20 pre-ROS commits into eight explicitly historical work\nrecords with validated commit attribution, confidence, evidence boundaries,\ncompatibility policy, and a fresh-agent history index.</li>\n<li>Normalized 45 Markdown-formatted state-constrained research, semantic-control\narchitecture, and Time Entry documents to publishable <code>.md</code> paths and repaired\ntheir repository references.</li>\n<li>Extended RFR-009 with measured metadata coverage across 131 authored Markdown\nartifacts and diagnostic relationship-target validation; seven calibrated\nintegrity tests pass without imposing strict legacy metadata migration.</li>\n<li>Organized the state-constrained architecture corpus into distinct prompts,\nreports, synthesis, experiments, historical working notes, current generic\narchitecture, and application-specific Time Entry inputs; consolidated two\nbyte-identical duplicates with provenance recorded under <code>docs/repository/</code>.</li>\n<li>Added a reproducible Node 24 research-publisher dependency and GitHub Pages publishing workflow.</li>\n<li>Executed the AI Research Mission Generator.</li>\n<li>Created the 2026-07-23 state-of-field REP, gap analysis, priority matrix, and research roadmap.</li>\n<li>Selected long-horizon agent evaluation and verification as the highest-ROI next mission.</li>\n<li>Completed Evaluation Research Cycle 001.</li>\n<li>Defined the evaluation charter, constructs, outcome classes, sixteen candidate task families, audit protocol, and initial registries.</li>\n<li>Challenged the assumptions that repository-native tasks are inherently valid, more graders are always better, and three runs support stable rankings.</li>\n<li>Completed task-integrity pilots ET-004-P01 and ET-014-P01.</li>\n<li>Implemented a dependency-free evaluator and blind fixture exporter.</li>\n<li>Calibrated seven declared outcome probes and verified two blind exports.</li>\n<li>Added a decision framework, threat model, evaluation architecture, teaching guide, and research/engineering roadmap v2.</li>\n<li>Moved containment and runtime monitoring into the evaluation foundation rather than postponing security.</li>\n<li>Resolved three root case-only Git collisions by retaining the governance-defined uppercase canonical paths and preserving prior variants in Git history.</li>\n<li>Completed repository frontier analysis RFA-2026-001 with ten traceable open RFRs, document frontiers, health metrics, and a dependency graph.</li>\n<li>Advanced RFR-009 to Validation with calibrated stable-identifier, explicit-link, and frontier graph/index checks; the first scoped inventory is clean.</li>\n<li>Completed a repository-wide comparative review of non-human experimental\nevidence with a master inventory, machine-readable matrix, lineage,\ncontradictions, failure modes, cumulative findings, and ranked next\nexperiments.</li>\n<li>Reclassified the evidence boundary: four empirical/preflight activities, one\ndesign study, two unexecuted experiments, zero independent replications, and\nzero agent capability trials.</li>\n</ul>\n<h2 id=\"largest-unknown\">Largest Unknown</h2>\n<p>Whether independent reviewers validate the pilot contracts and whether the\nfrozen graders survive blinded unseen outcomes.</p>\n<h2 id=\"next-agent-handoff\">Next-Agent Handoff</h2>\n<p><strong>Start at <code>prompts/Non-Human-Experimental-Research-Next-Mission.md</code>. No\ncapability baseline has been run; current results are dependent, in-sample\nfixture and grader preflights only.</strong></p>",
       "links": [],
       "compatibilityMode": true
     },
@@ -16300,6 +16235,76 @@
       "sourcePath": "research/evaluation/08-decision-framework.md",
       "contentHash": "f44b7687a0e04f36f27032a27fe78d08f250715758d335975ae64e22e62deac2",
       "html": "<h1 id=\"minimum-sufficient-agent-evaluation\">Minimum Sufficient Agent Evaluation</h1>\n<h2 id=\"decision-rule\">Decision Rule</h2>\n<p>Choose graders from the consequence and ambiguity of the task, not from a desire to maximize instrumentation.</p>\n<table>\n<thead>\n<tr>\n<th>Task property</th>\n<th>Required evidence</th>\n<th>Add only when</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Fully executable state</td>\n<td>Deterministic outcome + regression checks</td>\n<td>Human review if semantics remain ambiguous</td>\n</tr>\n<tr>\n<td>Evidence-backed prose</td>\n<td>Provenance checks + calibrated semantic rubric</td>\n<td>Expert review for consequential interpretation</td>\n</tr>\n<tr>\n<td>Permission or safety boundary</td>\n<td>Final state + trajectory/action audit</td>\n<td>Runtime monitor for long or external actions</td>\n</tr>\n<tr>\n<td>Recovery/continuation</td>\n<td>Final state + continuation attempt</td>\n<td>Human review when “correct next action” is value-laden</td>\n</tr>\n<tr>\n<td>High consequence</td>\n<td>All relevant layers + independent expert review</td>\n<td>Do not automate final authority without explicit policy</td>\n</tr>\n<tr>\n<td>Task-defect audit</td>\n<td>Independent contract/test review + probe outcomes</td>\n<td>Quarantine on unresolved disagreement</td>\n</tr>\n</tbody>\n</table>\n<h2 id=\"outcome-policy\">Outcome Policy</h2>\n<ol>\n<li>Report hard failures separately.</li>\n<li>Exclude task defects and infrastructure failures from capability denominators.</li>\n<li>Publish per-task outcomes before aggregates.</li>\n<li>Do not score an agent when gold material, grader internals, or expected outcomes were exposed unless the experiment measures exposure.</li>\n<li>Treat a successful outcome with prohibited behavior as unsafe, not complete.</li>\n<li>Use human review as a calibration and escalation layer, not decorative confirmation.</li>\n</ol>\n<h2 id=\"readiness-gates\">Readiness Gates</h2>\n<h3 id=\"gate-a--task-ready\">Gate A — Task Ready</h3>\n<ul>\n<li>reproducible fixture;</li>\n<li>observable hard requirements;</li>\n<li>alternative-correct probe passes;</li>\n<li>incomplete probe fails;</li>\n<li>task-integrity audit resolved;</li>\n<li>contamination controls documented.</li>\n</ul>\n<h3 id=\"gate-b--grader-ready\">Gate B — Grader Ready</h3>\n<ul>\n<li>grader version frozen;</li>\n<li>probe calibration passes;</li>\n<li>false acceptance/rejection estimated against blinded labels;</li>\n<li>grader cannot be modified by the evaluated agent;</li>\n<li>grader output is inspectable.</li>\n</ul>\n<h3 id=\"gate-c--baseline-ready\">Gate C — Baseline Ready</h3>\n<ul>\n<li>blind fixture export;</li>\n<li>system configuration frozen;</li>\n<li>containment controls tested;</li>\n<li>raw state and resource telemetry captured;</li>\n<li>repeated-run plan justified.</li>\n</ul>\n<h3 id=\"gate-d--comparative-claim-ready\">Gate D — Comparative Claim Ready</h3>\n<ul>\n<li>paired configurations;</li>\n<li>sufficient trials based on observed variance;</li>\n<li>independent task sample;</li>\n<li>uncertainty and task mix reported;</li>\n<li>cost per verified outcome included;</li>\n<li>no unresolved task/evaluator defect capable of reversing the claim.</li>\n</ul>\n<h2 id=\"promotion-rule\">Promotion Rule</h2>\n<p>No task, grader, or conclusion moves from experimental to accepted because one cycle passes. Promotion requires independent review plus replication on unseen outcomes.</p>",
+      "links": [],
+      "compatibilityMode": false
+    },
+    {
+      "schemaVersion": "1.1",
+      "id": "DF-ROS-HISTORY-2026-0001",
+      "title": "Historical ROS Attribution and Compatibility Policy",
+      "slug": "df-ros-history-2026-0001-historical-ros-attribution-and-compatibility-policy",
+      "url": "/research/df-ros-history-2026-0001-historical-ros-attribution-and-compatibility-policy/",
+      "artifactType": "decision-framework",
+      "project": null,
+      "purposes": [],
+      "audiences": [],
+      "entryPoint": false,
+      "entryPointOrder": null,
+      "entryPointLabel": null,
+      "researchArea": "General Research",
+      "discipline": [],
+      "summary": "",
+      "status": "accepted",
+      "version": "0.1",
+      "confidence": 0.9,
+      "completion": null,
+      "priority": "medium",
+      "authorAgent": "unknown",
+      "created": "2026-08-17",
+      "updated": "2026-08-17",
+      "tags": [
+        "ros",
+        "migration",
+        "provenance",
+        "compatibility"
+      ],
+      "keywords": [],
+      "relatedProjects": [],
+      "relatedDocuments": [],
+      "supersedes": [],
+      "supersededBy": [],
+      "evidenceIds": [],
+      "hypothesisIds": [],
+      "theoryIds": [],
+      "headings": [
+        {
+          "depth": 1,
+          "text": "Historical ROS Attribution and Compatibility Policy"
+        },
+        {
+          "depth": 2,
+          "text": "Context"
+        },
+        {
+          "depth": 2,
+          "text": "Decision"
+        },
+        {
+          "depth": 2,
+          "text": "Alternatives Considered"
+        },
+        {
+          "depth": 2,
+          "text": "Consequences"
+        },
+        {
+          "depth": 2,
+          "text": "Reversal Conditions"
+        }
+      ],
+      "sourcePath": "research/decisions/DF-ROS-HISTORY-2026-0001--historical-attribution-policy.md",
+      "contentHash": "ad1353a60cda28f55b174f84e4085c0d32c2537347911919cbf9e3680be957d1",
+      "html": "<h1 id=\"historical-ros-attribution-and-compatibility-policy\">Historical ROS Attribution and Compatibility Policy</h1>\n<h2 id=\"context\">Context</h2>\n<p>The repository contains material work completed before ROS installation on\n2026-08-17. Treating that work as if it had emitted live ROS transitions would\nfabricate process history. Ignoring it would leave future attribution and\nhandoff incomplete.</p>\n<p>The repository also contains two current-state documents and legacy artifact\nidentifiers and filenames. A historical migration needs one authority rule and\nnon-destructive compatibility behavior.</p>\n<h2 id=\"decision\">Decision</h2>\n<ol>\n<li>Historical work is reconstructed into <code>.ros/history/historical-work.jsonl</code>\nunder schema version <code>1.0.0</code>. Every record sets <code>historical: true</code>, records\nits reconstruction method and confidence, and remains separate from the live\nappend-only <code>.ros/events/events.jsonl</code> stream.</li>\n<li>Historical records may satisfy path-attribution validation only after their\nschema, migration ID, semantic state, and referenced commits validate. They\ncannot carry live transition fields or authorize state transitions.</li>\n<li>Coherent objectives are grouped when commit-level separation would create\ntrivial or misleading work items. Distinct decisions, evidence limitations,\nand original identifiers remain visible in the human index and record data.</li>\n<li>Root <code>CURRENT-STATE.md</code> is the authoritative repository state. The\n<code>context/CURRENT-STATE.md</code> file is a compact ROS entry point derived from and\nlinking to the root record; it must not assert competing project state.</li>\n<li>Existing accepted or widely referenced artifact identifiers and filenames\nremain valid. Historical records use current canonical paths while notes and\nsource audits preserve legacy path provenance. Renames require an explicit\nmigration map only when a future change actually alters an identifier.</li>\n<li>Generated publisher output, registries, inventories, and build reports are\nderivative evidence. They may demonstrate a generator run or aid discovery,\nbut they are not independent evidence for the underlying research claim.</li>\n</ol>\n<h2 id=\"alternatives-considered\">Alternatives Considered</h2>\n<ul>\n<li>Insert synthetic events into <code>.ros/events/events.jsonl</code>: rejected because it\nwould impersonate original live ROS transitions and timestamps.</li>\n<li>Create one record per commit: rejected because merge commits, cleanup commits,\nand publisher follow-ups would obscure coherent objectives.</li>\n<li>Rename legacy artifacts to the current identifier convention: rejected\nbecause it would create avoidable compatibility churn and weaken provenance.</li>\n<li>Keep both current-state files canonical: rejected because their present claims\nconflict and agents need a single authoritative continuation record.</li>\n</ul>\n<h2 id=\"consequences\">Consequences</h2>\n<ul>\n<li>Historical attribution is queryable and validation-aware without rewriting\nGit history.</li>\n<li>Reconstruction confidence and missing evidence stay explicit.</li>\n<li>Live ROS transitions retain exclusive authority over current workflow state.</li>\n<li>Future agents start with root <code>CURRENT-STATE.md</code> and use the context file only\nas a concise ROS-oriented pointer.</li>\n</ul>\n<h2 id=\"reversal-conditions\">Reversal Conditions</h2>\n<p>Supersede this decision if ROS adopts a first-class signed historical-event\nprotocol with an equally strict separation from live transitions, or if the\nrepository adopts a different canonical state location through an accepted\ngovernance change and migration plan.</p>",
       "links": [],
       "compatibilityMode": false
     },
@@ -21449,8 +21454,8 @@
         }
       ],
       "sourcePath": "roadmap.md",
-      "contentHash": "0e4baf0b81ebee77c383c1237b7474c440cbebb4c3ebab2e9c2074b9b17b2221",
-      "html": "<h1 id=\"roadmap\">Roadmap</h1>\n<ul>\n<li>Repository bootstrap</li>\n<li>Constitution</li>\n<li>Specifications</li>\n<li>Knowledge model</li>\n<li>Repository generator</li>\n<li>Website</li>\n<li>Validation</li>\n<li>AI agents</li>\n</ul>\n<h2 id=\"publishing\">Publishing</h2>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Add a reproducible research-publisher build and GitHub Pages deployment workflow</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Normalize Markdown-formatted research and architecture documents to <code>.md</code>\nso the canonical state-constrained corpus is included in publisher discovery</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Confirm the first successful deployment from the <code>main</code> branch</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Assign unique canonical IDs and URLs to the excluded legacy split handbook and course-note documents</li>\n</ul>\n<h2 id=\"research-validation-sequence\">Research Validation Sequence</h2>\n<ol>\n<li>Long-horizon agent evaluation and verification</li>\n<li>Context compilation, state, and memory</li>\n<li>Permissions, security, and recovery</li>\n<li>Agent orchestration and human escalation</li>\n<li>Retrieval and knowledge-platform validation</li>\n<li>Model routing and interface-agent evaluation</li>\n</ol>\n<p>See <code>research/AI-Research-Roadmap.md</code> for decision gates and deliverables.</p>\n<h3 id=\"evaluation-mission-status\">Evaluation Mission Status</h3>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Cycle 001: charter, constructs, task taxonomy, audit protocol, and registries</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Cycle 002: integrity pilots for ET-004 and ET-014 (provisional pending independent review)</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Cycle 003: in-sample deterministic grader calibration and blind export</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Historical non-human experimental inventory, lineage, contradiction, and confidence synthesis</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Cycle 004a: independent review plus frozen-grader unseen-outcome challenge</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Cycle 004b: contained repeated baseline and exploratory variance estimate</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Cycle 005: context or system comparison</li>\n</ul>\n<p>Detailed critical path: <code>research/evaluation/12-research-and-engineering-roadmap.md</code>.</p>\n<p>Comparative evidence boundary and ranked experiments:\n<code>research/analysis/non-human-experimental-comparative-analysis.md</code> and\n<code>research/analysis/non-human-next-experiments.md</code>.</p>\n<p>Containment, telemetry, and rollback now run in parallel with evaluation rather than waiting for a later security phase.</p>\n<h2 id=\"state-constrained-architecture-and-time-entry\">State-Constrained Architecture and Time Entry</h2>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Separate the 01–12 research prompts, reports, and synthesis.</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Separate generic semantic-control architecture from Time Entry inputs.</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Group current Time Entry requirements, state model, and architecture by authority.</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Author and approve any still-needed numbered Time Entry contracts; none were present during repository organization.</li>\n</ul>\n<h3 id=\"repository-fitness\">Repository Fitness</h3>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Remove case-only collisions for root README, current state, and roadmap</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Add a repeatable Git case-collision audit</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Add initial reference-integrity and stable-identifier fitness checks</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Measure metadata coverage and validate adopted relationship targets</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Define bounded canonical metadata adoption and calibrate reciprocal\nsupersession checks on real edges</li>\n</ul>\n<h3 id=\"research-frontier\">Research Frontier</h3>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Establish the canonical repository frontier and health assessment</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> RFR-001: obtain independent pilot integrity reviews</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> RFR-002: run a contained repeated exploratory baseline</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> RFR-003: validate graders on natural outcomes</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> RFR-009 (Validation): coverage and relationship diagnostics calibrated;\nbounded metadata adoption and real supersession-edge validation remain</li>\n</ul>\n<p>See <code>research/frontier/FRONTIER-MASTER.md</code> for the ranked backlog and dependency graph.</p>",
+      "contentHash": "b823ef8ef87f6da17c49f28dc383859016bbad8459271daf2eaf9ef4b0f6e158",
+      "html": "<h1 id=\"roadmap\">Roadmap</h1>\n<ul>\n<li>Repository bootstrap</li>\n<li>Constitution</li>\n<li>Specifications</li>\n<li>Knowledge model</li>\n<li>Repository generator</li>\n<li>Website</li>\n<li>Validation</li>\n<li>AI agents</li>\n</ul>\n<h2 id=\"publishing\">Publishing</h2>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Add a reproducible research-publisher build and GitHub Pages deployment workflow</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Normalize Markdown-formatted research and architecture documents to <code>.md</code>\nso the canonical state-constrained corpus is included in publisher discovery</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Confirm the first successful deployment from the <code>main</code> branch</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Assign unique canonical IDs and URLs to the excluded legacy split handbook and course-note documents</li>\n</ul>\n<h2 id=\"research-validation-sequence\">Research Validation Sequence</h2>\n<ol>\n<li>Long-horizon agent evaluation and verification</li>\n<li>Context compilation, state, and memory</li>\n<li>Permissions, security, and recovery</li>\n<li>Agent orchestration and human escalation</li>\n<li>Retrieval and knowledge-platform validation</li>\n<li>Model routing and interface-agent evaluation</li>\n</ol>\n<p>See <code>research/AI-Research-Roadmap.md</code> for decision gates and deliverables.</p>\n<h3 id=\"evaluation-mission-status\">Evaluation Mission Status</h3>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Cycle 001: charter, constructs, task taxonomy, audit protocol, and registries</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Cycle 002: integrity pilots for ET-004 and ET-014 (provisional pending independent review)</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Cycle 003: in-sample deterministic grader calibration and blind export</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Historical non-human experimental inventory, lineage, contradiction, and confidence synthesis</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Cycle 004a: independent review plus frozen-grader unseen-outcome challenge</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Cycle 004b: contained repeated baseline and exploratory variance estimate</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Cycle 005: context or system comparison</li>\n</ul>\n<p>Detailed critical path: <code>research/evaluation/12-research-and-engineering-roadmap.md</code>.</p>\n<p>Comparative evidence boundary and ranked experiments:\n<code>research/analysis/non-human-experimental-comparative-analysis.md</code> and\n<code>research/analysis/non-human-next-experiments.md</code>.</p>\n<p>Containment, telemetry, and rollback now run in parallel with evaluation rather than waiting for a later security phase.</p>\n<h2 id=\"state-constrained-architecture-and-time-entry\">State-Constrained Architecture and Time Entry</h2>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Separate the 01–12 research prompts, reports, and synthesis.</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Separate generic semantic-control architecture from Time Entry inputs.</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Group current Time Entry requirements, state model, and architecture by authority.</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Author and approve any still-needed numbered Time Entry contracts; none were present during repository organization.</li>\n</ul>\n<h3 id=\"repository-fitness\">Repository Fitness</h3>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Backfill material pre-ROS work into validated historical attribution</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Remove case-only collisions for root README, current state, and roadmap</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Add a repeatable Git case-collision audit</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Add initial reference-integrity and stable-identifier fitness checks</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Measure metadata coverage and validate adopted relationship targets</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Define bounded canonical metadata adoption and calibrate reciprocal\nsupersession checks on real edges</li>\n</ul>\n<h3 id=\"research-frontier\">Research Frontier</h3>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Establish the canonical repository frontier and health assessment</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> RFR-001: obtain independent pilot integrity reviews</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> RFR-002: run a contained repeated exploratory baseline</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> RFR-003: validate graders on natural outcomes</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> RFR-009 (Validation): coverage and relationship diagnostics calibrated;\nbounded metadata adoption and real supersession-edge validation remain</li>\n</ul>\n<p>See <code>research/frontier/FRONTIER-MASTER.md</code> for the ranked backlog and dependency graph.</p>",
       "links": [],
       "compatibilityMode": true
     },
@@ -21591,6 +21596,256 @@
     {
       "schemaVersion": "1.1",
       "id": null,
+      "title": "ROS Current-State Entry Point",
+      "slug": "ros-current-state-entry-point",
+      "url": "/research/ros-current-state-entry-point/",
+      "artifactType": "research-document",
+      "project": null,
+      "purposes": [],
+      "audiences": [],
+      "entryPoint": false,
+      "entryPointOrder": null,
+      "entryPointLabel": null,
+      "researchArea": "General Research",
+      "discipline": [],
+      "summary": "",
+      "status": "draft",
+      "version": "0.1",
+      "confidence": null,
+      "completion": null,
+      "priority": "medium",
+      "authorAgent": "unknown",
+      "created": "2026-07-22",
+      "updated": "2026-07-22",
+      "tags": [],
+      "keywords": [],
+      "relatedProjects": [],
+      "relatedDocuments": [],
+      "supersedes": [],
+      "supersededBy": [],
+      "evidenceIds": [],
+      "hypothesisIds": [],
+      "theoryIds": [],
+      "headings": [
+        {
+          "depth": 1,
+          "text": "ROS Current-State Entry Point"
+        },
+        {
+          "depth": 2,
+          "text": "Current summary"
+        },
+        {
+          "depth": 2,
+          "text": "Resume"
+        }
+      ],
+      "sourcePath": "context/CURRENT-STATE.md",
+      "contentHash": "b47892ced54f140756c1c81379329c28abb278bf69ea1b50ef018686e853aaef",
+      "html": "<h1 id=\"ros-current-state-entry-point\">ROS Current-State Entry Point</h1>\n<p>The authoritative repository state is <a href=\"../CURRENT-STATE.md\"><code>../CURRENT-STATE.md</code></a>.\nThis file is a compact ROS-oriented entry point and must not be maintained as a\nsecond canonical project-state record.</p>\n<h2 id=\"current-summary\">Current summary</h2>\n<ul>\n<li>The repository is evaluating long-horizon repository agents through\nevidence-traceable pilots and grader validation.</li>\n<li>Evaluation Cycles 001–003 and the non-human comparative review are complete;\nindependent review and frozen-grader unseen testing are next.</li>\n<li>Pre-ROS material history is reconstructed in\n<a href=\"/research/ros-historical-work-index/\"><code>../docs/repository/ros-migration/HISTORICAL-WORK-INDEX.md</code></a>.</li>\n<li>Live ROS workflow state is stored in <code>.ros/context/current.json</code>; live events\nand explicit historical attribution remain separate.</li>\n</ul>\n<h2 id=\"resume\">Resume</h2>\n<p>Read root <code>CURRENT-STATE.md</code>, then run:</p>\n<pre><code class=\"language-bash\">./ros status\n./ros work context\n</code></pre>",
+      "links": [
+        "../CURRENT-STATE.md",
+        "../docs/repository/ros-migration/HISTORICAL-WORK-INDEX.md"
+      ],
+      "compatibilityMode": true
+    },
+    {
+      "schemaVersion": "1.1",
+      "id": null,
+      "title": "ROS Historical Migration Validation",
+      "slug": "ros-historical-migration-validation",
+      "url": "/research/ros-historical-migration-validation/",
+      "artifactType": "research-document",
+      "project": null,
+      "purposes": [],
+      "audiences": [],
+      "entryPoint": false,
+      "entryPointOrder": null,
+      "entryPointLabel": null,
+      "researchArea": "General Research",
+      "discipline": [],
+      "summary": "",
+      "status": "draft",
+      "version": "0.1",
+      "confidence": null,
+      "completion": null,
+      "priority": "medium",
+      "authorAgent": "unknown",
+      "created": "2026-07-22",
+      "updated": "2026-07-22",
+      "tags": [],
+      "keywords": [],
+      "relatedProjects": [],
+      "relatedDocuments": [],
+      "supersedes": [],
+      "supersededBy": [],
+      "evidenceIds": [],
+      "hypothesisIds": [],
+      "theoryIds": [],
+      "headings": [
+        {
+          "depth": 1,
+          "text": "ROS Historical Migration Validation"
+        },
+        {
+          "depth": 2,
+          "text": "Scope"
+        },
+        {
+          "depth": 2,
+          "text": "Inventory reconciliation"
+        },
+        {
+          "depth": 2,
+          "text": "Commands and results"
+        },
+        {
+          "depth": 3,
+          "text": "Historical validator tests"
+        },
+        {
+          "depth": 3,
+          "text": "Existing repository-integrity tests"
+        },
+        {
+          "depth": 3,
+          "text": "Combined project test command"
+        },
+        {
+          "depth": 3,
+          "text": "Research Publisher validation"
+        },
+        {
+          "depth": 3,
+          "text": "Repository audit"
+        },
+        {
+          "depth": 3,
+          "text": "ROS registries and validation"
+        },
+        {
+          "depth": 3,
+          "text": "Diff and coverage checks"
+        },
+        {
+          "depth": 2,
+          "text": "Fresh-agent reconstruction check"
+        },
+        {
+          "depth": 2,
+          "text": "Preserved limitations"
+        }
+      ],
+      "sourcePath": "docs/repository/ros-migration/VALIDATION.md",
+      "contentHash": "cd9a43e5178f7c407650d08bdbe3b984b7ff16e46afb4e78183db7b1e31d7e6c",
+      "html": "<h1 id=\"ros-historical-migration-validation\">ROS Historical Migration Validation</h1>\n<p>Date: 2026-08-17</p>\n<h2 id=\"scope\">Scope</h2>\n<p>This validates the historical attribution schema, the eight reconstructed\nrecords covering the pre-install interval, registry determinism, compatibility,\nand the live/historical transition boundary. It does not retroactively validate\nthe substantive historical research or prove missing approvals and tests.</p>\n<h2 id=\"inventory-reconciliation\">Inventory reconciliation</h2>\n<ul>\n<li>Historical cutoff: <code>b2877f1cdc87f9ab0df732947b78354b789ba986</code>.</li>\n<li>ROS installation commit: <code>4f8b816480d1c27780e6f594d846ba33ebe325d3</code>.</li>\n<li>Pre-install commits: 20.</li>\n<li>Historical records: 8.</li>\n<li>Unique commits referenced by records: 20.</li>\n<li><code>comm</code> comparison between <code>git rev-list b2877f1</code> and JSONL commit references:\nno differences.</li>\n<li>Unique attributed path groups: 35.</li>\n<li>Reconstruction confidence: 7 high, 1 medium.</li>\n<li>Tags found: 0.</li>\n<li>Side branch tips found: 0; only <code>main</code> and its remote-tracking references were\npresent.</li>\n</ul>\n<h2 id=\"commands-and-results\">Commands and results</h2>\n<h3 id=\"historical-validator-tests\">Historical validator tests</h3>\n<pre><code class=\"language-bash\">npm run test:ros\n</code></pre>\n<p>Passed 6/6 tests:</p>\n<ol>\n<li>valid records parse and preserve legacy compatibility metadata;</li>\n<li>duplicate migration IDs fail;</li>\n<li>malformed and unknown commit hashes fail with Git history available;</li>\n<li>invalid semantic states fail; and</li>\n<li>historical records cannot contain live transition authority fields; and</li>\n<li>valid history can satisfy dirty-path attribution while invalid history cannot.</li>\n</ol>\n<h3 id=\"existing-repository-integrity-tests\">Existing repository-integrity tests</h3>\n<pre><code class=\"language-bash\">python3 -m unittest tools.repository.test_validate_research_integrity\n</code></pre>\n<p>Passed 7/7 tests.</p>\n<h3 id=\"combined-project-test-command\">Combined project test command</h3>\n<pre><code class=\"language-bash\">npm test\n</code></pre>\n<p>Passed: 6 ROS history tests plus 7 repository-integrity tests.</p>\n<h3 id=\"research-publisher-validation\">Research Publisher validation</h3>\n<pre><code class=\"language-bash\">npm run research:validate\n</code></pre>\n<p>Passed. Compatibility-mode metadata diagnostics remain warnings rather than\nstrict failures.</p>\n<h3 id=\"repository-audit\">Repository audit</h3>\n<pre><code class=\"language-bash\">python3 tools/evaluation/evalctl.py repo-audit\n</code></pre>\n<p>Passed. It reported no case collisions, duplicate identifiers, broken explicit\nlocal Markdown links, or frontier structure errors. Relationship and metadata\ncoverage diagnostics remain non-blocking and include known legacy gaps.</p>\n<h3 id=\"ros-registries-and-validation\">ROS registries and validation</h3>\n<pre><code class=\"language-bash\">./ros registry build\n./ros registry check\n./ros validate\n./ros registry build --dry-run\n</code></pre>\n<p>Results:</p>\n<ul>\n<li><code>registries/decisions.json</code> was rebuilt by ROS to include\n<code>DF-ROS-HISTORY-2026-0001</code>.</li>\n<li>Registry check passed.</li>\n<li>ROS validation passed.</li>\n<li>The subsequent dry run reported <code>0 registry file(s) would change</code>, confirming\ndeterministic regeneration for the current tree.</li>\n</ul>\n<p>An intermediate <code>./ros validate --json</code> correctly failed only because the new\nDecision Record made <code>registries/decisions.json</code> stale before the required\nregistry rebuild. The rebuild resolved that expected finding.</p>\n<h3 id=\"diff-and-coverage-checks\">Diff and coverage checks</h3>\n<pre><code class=\"language-bash\">git diff --check\ncomm -3 &#x3C;(git rev-list --reverse b2877f1 | sort) \\\n  &#x3C;(jq -r '.commits[]' .ros/history/historical-work.jsonl | sort -u)\n</code></pre>\n<p>Both completed without output. No historical commit was omitted or added, and\nno whitespace error was found in tracked diffs.</p>\n<h2 id=\"fresh-agent-reconstruction-check\">Fresh-agent reconstruction check</h2>\n<p>The repository now provides a conversation-independent path:</p>\n<ol>\n<li>root <code>CURRENT-STATE.md</code> for present authority;</li>\n<li><code>docs/repository/ros-migration/HISTORICAL-WORK-INDEX.md</code> for the human\nreconstruction and grouping rationale;</li>\n<li><code>.ros/history/historical-work.jsonl</code> for machine attribution;</li>\n<li>record-level decision and evidence paths for supporting artifacts; and</li>\n<li><code>.ros/events/events.jsonl</code> for live ROS-era transitions only.</li>\n</ol>\n<p>The index states all known gaps and distinguishes commit observation from\ninferred work boundaries.</p>\n<h2 id=\"preserved-limitations\">Preserved limitations</h2>\n<ul>\n<li>No external issues, pull requests, approvals, or work-item export were found.</li>\n<li>Missing historical test results remain “not found,” never “passed.”</li>\n<li>Generated output is not counted as independent research evidence.</li>\n<li>Git author timestamps do not prove the full duration of human work.</li>\n<li>The state-constrained research sequence remains medium-confidence as a grouped\nreconstruction because its commits do not expose a complete authoring journal.</li>\n</ul>",
+      "links": [],
+      "compatibilityMode": true
+    },
+    {
+      "schemaVersion": "1.1",
+      "id": null,
+      "title": "ROS Historical Work Index",
+      "slug": "ros-historical-work-index",
+      "url": "/research/ros-historical-work-index/",
+      "artifactType": "research-document",
+      "project": null,
+      "purposes": [],
+      "audiences": [],
+      "entryPoint": false,
+      "entryPointOrder": null,
+      "entryPointLabel": null,
+      "researchArea": "General Research",
+      "discipline": [],
+      "summary": "",
+      "status": "draft",
+      "version": "0.1",
+      "confidence": null,
+      "completion": null,
+      "priority": "medium",
+      "authorAgent": "unknown",
+      "created": "2026-07-22",
+      "updated": "2026-07-22",
+      "tags": [],
+      "keywords": [],
+      "relatedProjects": [],
+      "relatedDocuments": [],
+      "supersedes": [],
+      "supersededBy": [],
+      "evidenceIds": [],
+      "hypothesisIds": [],
+      "theoryIds": [],
+      "headings": [
+        {
+          "depth": 1,
+          "text": "ROS Historical Work Index"
+        },
+        {
+          "depth": 2,
+          "text": "Purpose and boundary"
+        },
+        {
+          "depth": 2,
+          "text": "Authority and interpretation"
+        },
+        {
+          "depth": 2,
+          "text": "Reconstructed work"
+        },
+        {
+          "depth": 3,
+          "text": "HWM-001 — Repository bootstrap"
+        },
+        {
+          "depth": 3,
+          "text": "HWM-002 — Input corpus import and normalization"
+        },
+        {
+          "depth": 3,
+          "text": "HWM-003 — AI research mission and evaluation Cycle 001"
+        },
+        {
+          "depth": 3,
+          "text": "HWM-004 — Evaluation Cycles 002–003 and repository frontier"
+        },
+        {
+          "depth": 3,
+          "text": "HWM-005 — Research-integrity validation"
+        },
+        {
+          "depth": 3,
+          "text": "HWM-006 — Research Publisher and Pages workflow"
+        },
+        {
+          "depth": 3,
+          "text": "HWM-007 — State-constrained architecture research"
+        },
+        {
+          "depth": 3,
+          "text": "HWM-008 — Corpus organization and metadata diagnostics"
+        },
+        {
+          "depth": 2,
+          "text": "Grouping and compatibility rules"
+        },
+        {
+          "depth": 2,
+          "text": "Remaining gaps"
+        },
+        {
+          "depth": 2,
+          "text": "Fresh-agent reconstruction path"
+        }
+      ],
+      "sourcePath": "docs/repository/ros-migration/HISTORICAL-WORK-INDEX.md",
+      "contentHash": "4f24e13ab0613f9497765f4af4e679636dac80126028ba7255d607e2937b0629",
+      "html": "<h1 id=\"ros-historical-work-index\">ROS Historical Work Index</h1>\n<h2 id=\"purpose-and-boundary\">Purpose and boundary</h2>\n<p>This index reconstructs material repository work completed before ROS was\ninstalled. It does <strong>not</strong> claim that the work originally followed ROS.\nMachine-readable attribution lives in\n<code>.ros/history/historical-work.jsonl</code>; live transitions remain in\n<code>.ros/events/events.jsonl</code>.</p>\n<p>The inspected historical interval is the initial commit on 2026-07-20 through\ncommit <code>b2877f1cdc87f9ab0df732947b78354b789ba986</code> on 2026-08-17. ROS was installed\nby the next commit, <code>4f8b816480d1c27780e6f594d846ba33ebe325d3</code>.\nThe interval contains 20 commits and 521 tracked paths at its endpoint. Git\nshowed no tags and no branch tips beyond <code>main</code>/<code>origin/main</code> at migration time.</p>\n<p>The post-install publishing normalization in commit\n<code>7892bbead6d447e620ae870c60a38ad59274b4d6</code> is excluded from historical\nbackfill because live ROS events already attribute it.</p>\n<h2 id=\"authority-and-interpretation\">Authority and interpretation</h2>\n<ul>\n<li>Root <code>CURRENT-STATE.md</code> is the authoritative current-state record.</li>\n<li><code>context/CURRENT-STATE.md</code> is a compact derived ROS entry point.</li>\n<li>Git commits prove repository snapshots, commit metadata, and recorded author;\nthey do not prove the full duration of human effort or independent approval.</li>\n<li>Existing validation reports are evidence of what was recorded at the time.\nA reported historical pass is not represented as a migration-time rerun.</li>\n<li>Generated registries, publisher output, inventories, and build reports are\nsecondary discovery aids or generator-run evidence, not independent evidence\nfor research conclusions.</li>\n<li>Current canonical paths are used where later compatibility-preserving moves\nretained content. Import and organization audits preserve legacy paths.</li>\n</ul>\n<p>The governing decision is\n<code>DF-ROS-HISTORY-2026-0001</code> in\n<code>research/decisions/DF-ROS-HISTORY-2026-0001--historical-attribution-policy.md</code>.</p>\n<h2 id=\"reconstructed-work\">Reconstructed work</h2>\n<table>\n<thead>\n<tr>\n<th>Migration ID</th>\n<th>Reconstructed work item</th>\n<th>Type</th>\n<th>State</th>\n<th>Observed dates</th>\n<th align=\"right\">Commits</th>\n<th>Confidence</th>\n<th>Disposition</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>HWM-001</td>\n<td>HIST-REPOSITORY-BOOTSTRAP</td>\n<td>maintenance</td>\n<td>complete</td>\n<td>2026-07-20–2026-07-21</td>\n<td align=\"right\">2</td>\n<td>high</td>\n<td>grouped-historical-work</td>\n</tr>\n<tr>\n<td>HWM-002</td>\n<td>HIST-INPUT-DOCUMENTS-IMPORT</td>\n<td>maintenance</td>\n<td>complete</td>\n<td>2026-07-22</td>\n<td align=\"right\">3</td>\n<td>high</td>\n<td>reconstructed-from-documents</td>\n</tr>\n<tr>\n<td>HWM-003</td>\n<td>HIST-AI-RESEARCH-MISSION-CYCLE-001</td>\n<td>research</td>\n<td>complete</td>\n<td>2026-07-23–2026-07-26</td>\n<td align=\"right\">3</td>\n<td>high</td>\n<td>reconstructed-from-documents</td>\n</tr>\n<tr>\n<td>HWM-004</td>\n<td>HIST-EVALUATION-CYCLES-002-003-AND-FRONTIER</td>\n<td>research</td>\n<td>complete</td>\n<td>2026-07-28</td>\n<td align=\"right\">1</td>\n<td>high</td>\n<td>grouped-historical-work</td>\n</tr>\n<tr>\n<td>HWM-005</td>\n<td>HIST-RESEARCH-INTEGRITY-VALIDATION</td>\n<td>engineering</td>\n<td>complete</td>\n<td>2026-07-30</td>\n<td align=\"right\">1</td>\n<td>high</td>\n<td>directly-mapped</td>\n</tr>\n<tr>\n<td>HWM-006</td>\n<td>HIST-RESEARCH-PUBLISHER</td>\n<td>engineering</td>\n<td>complete</td>\n<td>2026-08-04</td>\n<td align=\"right\">3</td>\n<td>high</td>\n<td>grouped-historical-work</td>\n</tr>\n<tr>\n<td>HWM-007</td>\n<td>HIST-STATE-CONSTRAINED-ARCHITECTURE-RESEARCH</td>\n<td>research</td>\n<td>complete</td>\n<td>2026-08-13–2026-08-15</td>\n<td align=\"right\">5</td>\n<td>medium</td>\n<td>grouped-historical-work</td>\n</tr>\n<tr>\n<td>HWM-008</td>\n<td>HIST-STATE-CORPUS-ORGANIZATION</td>\n<td>maintenance</td>\n<td>complete</td>\n<td>2026-08-17</td>\n<td align=\"right\">2</td>\n<td>high</td>\n<td>compatibility-preserved</td>\n</tr>\n</tbody>\n</table>\n<h3 id=\"hwm-001--repository-bootstrap\">HWM-001 — Repository bootstrap</h3>\n<ul>\n<li><strong>Observed work:</strong> initialized Git and added the first repository orientation,\nstate, and roadmap documents.</li>\n<li><strong>Actor:</strong> Kevin Miller is the observed Git author.</li>\n<li><strong>Evidence/tests:</strong> commit trees only; no original tests or approval record\nwere found.</li>\n<li><strong>Grouping:</strong> the placeholder initial commit and root-document bootstrap are\none coherent initialization objective.</li>\n<li><strong>Gap:</strong> the actual start of the human work and any external work item are\nunknown.</li>\n</ul>\n<h3 id=\"hwm-002--input-corpus-import-and-normalization\">HWM-002 — Input corpus import and normalization</h3>\n<ul>\n<li><strong>Observed work:</strong> imported the bootstrap kit, handbook, course, mobile,\nprompt, template, and knowledge-platform sources; normalized canonical paths;\narchived the Chapter 1 derivative; and removed the nested intake tree.</li>\n<li><strong>Decisions:</strong> seven recorded import decisions cover destination authority,\nduplicate REP handling, root controls, placeholders, archive treatment,\nlesson-draft status, and empty research directories.</li>\n<li><strong>Evidence:</strong> the 50-row file manifest, SHA-256 observations, and validation\nreport under <code>docs/repository/imports/2026-07-22-input-documents-import/</code>.</li>\n<li><strong>Limitation:</strong> the historical validation explicitly says no repository\nvalidator or build existed; no stronger test claim is inferred.</li>\n</ul>\n<h3 id=\"hwm-003--ai-research-mission-and-evaluation-cycle-001\">HWM-003 — AI research mission and evaluation Cycle 001</h3>\n<ul>\n<li><strong>Observed work:</strong> created the state-of-field REP, gap analysis, priority\nmatrix, research roadmap, evaluation charter, task suite, registries, failure\ntaxonomy, journal, and Cycle 001 record.</li>\n<li><strong>Conclusion:</strong> long-horizon repository-agent evaluation was selected as the\nhighest-value mission; the cycle established an audit-first design and did not\nclaim capability evidence.</li>\n<li><strong>Decisions:</strong> mission execution and evaluation-infrastructure records under\n<code>docs/repository/</code>.</li>\n<li><strong>Gap:</strong> no independent review, capability baseline, or stochastic estimate\nexisted at this point.</li>\n</ul>\n<h3 id=\"hwm-004--evaluation-cycles-002003-and-repository-frontier\">HWM-004 — Evaluation Cycles 002–003 and repository frontier</h3>\n<ul>\n<li><strong>Observed work:</strong> ran task-integrity pilots, calibrated declared probes,\nexported blind fixtures, added evaluation architecture and threat modeling,\ncanonicalized root case collisions, and established the ten-item frontier.</li>\n<li><strong>Original identifier:</strong> <code>RP-RFA-2026-001</code> is recorded for the frontier subset.</li>\n<li><strong>Conclusion:</strong> the 7/7 calibration was dependent and in-sample; pilots\nremained provisional pending independent review and unseen-outcome challenge.</li>\n<li><strong>Grouping:</strong> one large commit captured the related evaluation-roadmap update.\nSeparate decision files preserve its evaluation, collision, and frontier\noutcomes.</li>\n</ul>\n<h3 id=\"hwm-005--research-integrity-validation\">HWM-005 — Research-integrity validation</h3>\n<ul>\n<li><strong>Original identifier:</strong> <code>RFR-009</code>.</li>\n<li><strong>Observed work:</strong> added identifier, explicit-link, and frontier consistency\nvalidation plus four seeded tests and a machine-readable inventory.</li>\n<li><strong>Recorded historical evidence:</strong> the 2026-07-30 decision reports four tests,\n38 identifier-bearing artifacts, no unexplained collisions, no broken explicit\nMarkdown links, and a consistent 10-node/12-edge frontier.</li>\n<li><strong>Gap:</strong> full metadata coverage and semantic provenance were explicitly outside\nscope; those limits remain preserved.</li>\n</ul>\n<h3 id=\"hwm-006--research-publisher-and-pages-workflow\">HWM-006 — Research Publisher and Pages workflow</h3>\n<ul>\n<li><strong>Observed work:</strong> generated the initial site, added the npm dependency and\nscripts, configured broad Markdown discovery, and added GitHub Pages CI.</li>\n<li><strong>Evidence:</strong> configuration, lockfile, workflow, and generated build reports.</li>\n<li><strong>Evidence boundary:</strong> generated <code>dist/</code> and publisher data are derivatives.</li>\n<li><strong>Gap:</strong> no repository record confirms the first successful remote deployment.</li>\n</ul>\n<h3 id=\"hwm-007--state-constrained-architecture-research\">HWM-007 — State-constrained architecture research</h3>\n<ul>\n<li><strong>Observed work:</strong> developed predecessor notes, a benchmark prompt bundle, a\n12-prompt/12-report series, synthesis, architecture proposals, proposed\nexperiments, and Time Entry application inputs.</li>\n<li><strong>Conclusion:</strong> the corpus is primarily literature synthesis, design work, and\nproposed experiments; it does not establish independent replication.</li>\n<li><strong>Confidence:</strong> medium because terse commits and a single large import-like\nresearch commit do not identify the authoring sequence or external approvals.</li>\n<li><strong>Compatibility:</strong> current paths under <code>research/state-constrained-architecture/</code>,\n<code>docs/architecture/semantic-control/</code>, and <code>content/projects/time-entry/</code> map\nback to the original <code>state-machine-documents/</code> paths through the later audit.</li>\n</ul>\n<h3 id=\"hwm-008--corpus-organization-and-metadata-diagnostics\">HWM-008 — Corpus organization and metadata diagnostics</h3>\n<ul>\n<li><strong>Original identifier:</strong> <code>RFR-009</code> applies to the metadata-diagnostic subset.</li>\n<li><strong>Observed work:</strong> separated research, generic architecture, and Time Entry;\nretained 52 unique artifacts from 54 source paths; consolidated two verified\nbyte-identical duplicates; extended metadata/relationship diagnostics; and\nrebuilt publisher output.</li>\n<li><strong>Decisions/evidence:</strong> the 2026-08-15 organization decision and validation\nrecords plus the RFR-009 investigation.</li>\n<li><strong>Compatibility:</strong> accepted identifiers and substantive content were retained;\nthe move changed location and navigation, not research authority.</li>\n</ul>\n<h2 id=\"grouping-and-compatibility-rules\">Grouping and compatibility rules</h2>\n<ol>\n<li>Merge commits are included in lineage where they fall inside a coherent\ninterval, but they are not independent evidence.</li>\n<li>Trivial cleanup, visualization-label, and generated-output follow-ups are\ngrouped with the objective they complete.</li>\n<li>A large commit may remain one historical unit when splitting it would require\ninvented authorship, timing, or transition boundaries. Separate artifacts\nand decisions remain enumerated.</li>\n<li>Legacy artifact IDs remain valid. This migration introduces no identifier\nrename and therefore no identifier migration map.</li>\n<li>Historical semantic state <code>complete</code> means the reconstructed repository\nchange was committed, not that every research claim was proven or every\nfollow-up was completed. Research conclusions and gaps qualify that state.</li>\n</ol>\n<h2 id=\"remaining-gaps\">Remaining gaps</h2>\n<ul>\n<li>No external issue tracker, pull-request review, approval, or work-item export\nwas present in the inspected repository, so original work-item identity is\nusually unknown.</li>\n<li>Git author timestamps are exact repository observations but may not equal the\nactual start and completion of human effort.</li>\n<li>Commit authorship does not establish the authorship of every imported or\ngenerated document.</li>\n<li>Historical test outcomes exist only where reports record them. Missing results\nremain “not found,” not passed.</li>\n<li>No successful GitHub Pages deployment receipt was found.</li>\n<li>The state-constrained corpus lacks one execution journal that reconstructs the\nauthorship and evidence-gathering sequence for all 12 missions.</li>\n<li>Several legacy metadata and identifier formats remain intentionally compatible\nrather than migrated; current validators still report diagnostic coverage\ngaps outside the strict ROS artifact directories.</li>\n</ul>\n<h2 id=\"fresh-agent-reconstruction-path\">Fresh-agent reconstruction path</h2>\n<ol>\n<li>Read root <code>CURRENT-STATE.md</code> for present authority and next work.</li>\n<li>Read this index for the pre-ROS history and confidence boundaries.</li>\n<li>Inspect <code>.ros/history/historical-work.jsonl</code> for machine attribution.</li>\n<li>Follow each record's <code>decisions</code> and <code>evidence</code> paths for primary repository\nsupport.</li>\n<li>Read <code>.ros/events/events.jsonl</code> only for live ROS-era transitions.</li>\n<li>Run <code>./ros validate</code> before relying on historical attribution.</li>\n</ol>",
+      "links": [],
+      "compatibilityMode": true
+    },
+    {
+      "schemaVersion": "1.1",
+      "id": null,
       "title": "ROS Work Protocol 1.0",
       "slug": "ros-work-protocol-1-0",
       "url": "/research/ros-work-protocol-1-0/",
@@ -21640,8 +21895,8 @@
         }
       ],
       "sourcePath": "docs/work-protocol.md",
-      "contentHash": "f5a4290cb3038f2c830570926d7a145d6f92d86eae54582a11e26782b3bb96d8",
-      "html": "<h1 id=\"ros-work-protocol-10\">ROS Work Protocol 1.0</h1>\n<p>ROS owns the versioned protocol, legal transitions, repository validation, and adapter contract. A consuming repository owns code and evidence. An external project-management service owns work-item truth, prioritization, and portfolio state. Disagreement is reported; no layer silently overwrites another.</p>\n<h2 id=\"local-protocol\">Local protocol</h2>\n<pre><code class=\"language-bash\">./ros work begin FEAT-142 --type feature\n./ros work context FEAT-142\n./ros work block FEAT-142 --reason \"waiting for fixture\"\n./ros work resume FEAT-142\n./ros work complete FEAT-142 \\\n  --evidence implementation=src/feature.js \\\n  --evidence tests=tests/feature.test.js\n./ros validate\n./ros validate --json\n./ros status\n</code></pre>\n<p>The legal semantic core is <code>ready -> active -> blocked -> active</code> and <code>active -> complete</code>. Local states may be supplied with <code>--local-state</code>; <code>ros.json</code> maps repository states to the shared semantic vocabulary. Research completion accepts an independent <code>--conclusion</code>, including <code>inconclusive</code>.</p>\n<p><code>work context</code> is the normal agent entry point. It reports current state, legal next actions, and evidence required for completion. <code>status</code> combines compact work state with repository validation and recommended next actions. Validation errors include deterministic repair guidance; <code>validate --json</code> provides a stable structured result for agents and CI consumers.</p>\n<p><code>.ros/context/current.json</code> is local work context. <code>.ros/events/events.jsonl</code> contains small immutable, idempotently identified semantic events and durable file attribution. These files do not replace the external work item.</p>\n<p>Completion validates configured evidence types and paths before changing state. <code>./ros validate</code> rejects meaningful dirty paths when enforcement is enabled and neither active context nor a completed event attributes them. CI is the authoritative enforcement boundary; hooks are optional convenience.</p>\n<p>Deterministic housekeeping may use the configured <code>mechanical</code> work type. It still requires an explicit work-item identity and event, but the default profile does not require implementation/test evidence for that type.</p>\n<h2 id=\"adapter-contract\">Adapter contract</h2>\n<p>The stable executable interface is <code>getWorkItem</code>, <code>transitionWorkItem</code>, and <code>publishRepositoryEvent</code>. Protocol 1.0 implements a file-backed adapter for conformance tests:</p>\n<p>The normalized, testable contract is defined in <a href=\"/research/external-work-system-adapter-contract-1-0/\"><code>work-adapter-contract.md</code></a>. Its initial executable operations are <code>getWorkItem</code>, <code>transitionWorkItem</code>, and <code>publishRepositoryEvent</code>; broad listing is deferred.</p>\n<pre><code class=\"language-bash\">./ros adapter publish --target .ros/mock-project-store/events.jsonl\n</code></pre>\n<p>Event IDs make retries idempotent. Successful local publication creates <code>.ros/publications.json</code> receipts without mutating immutable events. A write error returns failure and creates no success receipt; ROS never treats failure or an unknown remote outcome as success. Production adapters must add authentication, authorization, repository identity checks, version negotiation, retry policy, and explicit <code>success|failure|unknown</code> outcomes.</p>\n<h2 id=\"adoption-and-versioning\">Adoption and versioning</h2>\n<p>Initialize a repository with <code>ros-bootstrap init</code>, configure <code>repository</code> and <code>workProtocol</code> in <code>ros.json</code>, and call <code>./ros validate</code> in CI. Repositories pin a package/protocol version. Breaking semantic or event-schema changes require a new major protocol version; additive evidence types and local mappings are compatible minor changes.</p>\n<p>Deferred: remote reads and transitions, signed events, review/approval transitions, commit graph indexing, global aggregation, and UI. These belong behind the adapter or in the external project-management system—not in ROS core.</p>",
+      "contentHash": "311a093c9fcf4dae735c280961aade290f1cbe9e83f8d7ce0d987d98fec038a5",
+      "html": "<h1 id=\"ros-work-protocol-10\">ROS Work Protocol 1.0</h1>\n<p>ROS owns the versioned protocol, legal transitions, repository validation, and adapter contract. A consuming repository owns code and evidence. An external project-management service owns work-item truth, prioritization, and portfolio state. Disagreement is reported; no layer silently overwrites another.</p>\n<h2 id=\"local-protocol\">Local protocol</h2>\n<pre><code class=\"language-bash\">./ros work begin FEAT-142 --type feature\n./ros work context FEAT-142\n./ros work block FEAT-142 --reason \"waiting for fixture\"\n./ros work resume FEAT-142\n./ros work complete FEAT-142 \\\n  --evidence implementation=src/feature.js \\\n  --evidence tests=tests/feature.test.js\n./ros validate\n./ros validate --json\n./ros status\n</code></pre>\n<p>The legal semantic core is <code>ready -> active -> blocked -> active</code> and <code>active -> complete</code>. Local states may be supplied with <code>--local-state</code>; <code>ros.json</code> maps repository states to the shared semantic vocabulary. Research completion accepts an independent <code>--conclusion</code>, including <code>inconclusive</code>.</p>\n<p><code>work context</code> is the normal agent entry point. It reports current state, legal next actions, and evidence required for completion. <code>status</code> combines compact work state with repository validation and recommended next actions. Validation errors include deterministic repair guidance; <code>validate --json</code> provides a stable structured result for agents and CI consumers.</p>\n<p><code>.ros/context/current.json</code> is local work context. <code>.ros/events/events.jsonl</code> contains small immutable, idempotently identified semantic events and durable file attribution. These files do not replace the external work item.</p>\n<p>Pre-installation work is reconstructed separately under <code>.ros/history/</code> using\n<code>schemas/historical-work.schema.json</code>. Historical records must set\n<code>historical: true</code>, identify their reconstruction method and confidence, and\nreference only commits that exist when Git history is available. They may\nsatisfy path attribution after validation, but they cannot contain live event or\ntransition fields and never enter <code>.ros/events/events.jsonl</code> retroactively. See\n<code>docs/repository/ros-migration/HISTORICAL-WORK-INDEX.md</code> for the initial backfill.</p>\n<p>Completion validates configured evidence types and paths before changing state. <code>./ros validate</code> rejects meaningful dirty paths when enforcement is enabled and neither active context nor a completed event attributes them. CI is the authoritative enforcement boundary; hooks are optional convenience.</p>\n<p>Deterministic housekeeping may use the configured <code>mechanical</code> work type. It still requires an explicit work-item identity and event, but the default profile does not require implementation/test evidence for that type.</p>\n<h2 id=\"adapter-contract\">Adapter contract</h2>\n<p>The stable executable interface is <code>getWorkItem</code>, <code>transitionWorkItem</code>, and <code>publishRepositoryEvent</code>. Protocol 1.0 implements a file-backed adapter for conformance tests:</p>\n<p>The normalized, testable contract is defined in <a href=\"/research/external-work-system-adapter-contract-1-0/\"><code>work-adapter-contract.md</code></a>. Its initial executable operations are <code>getWorkItem</code>, <code>transitionWorkItem</code>, and <code>publishRepositoryEvent</code>; broad listing is deferred.</p>\n<pre><code class=\"language-bash\">./ros adapter publish --target .ros/mock-project-store/events.jsonl\n</code></pre>\n<p>Event IDs make retries idempotent. Successful local publication creates <code>.ros/publications.json</code> receipts without mutating immutable events. A write error returns failure and creates no success receipt; ROS never treats failure or an unknown remote outcome as success. Production adapters must add authentication, authorization, repository identity checks, version negotiation, retry policy, and explicit <code>success|failure|unknown</code> outcomes.</p>\n<h2 id=\"adoption-and-versioning\">Adoption and versioning</h2>\n<p>Initialize a repository with <code>ros-bootstrap init</code>, configure <code>repository</code> and <code>workProtocol</code> in <code>ros.json</code>, and call <code>./ros validate</code> in CI. Repositories pin a package/protocol version. Breaking semantic or event-schema changes require a new major protocol version; additive evidence types and local mappings are compatible minor changes.</p>\n<p>Deferred: remote reads and transitions, signed events, review/approval transitions, commit graph indexing, global aggregation, and UI. These belong behind the adapter or in the external project-management system—not in ROS core.</p>",
       "links": [
         "work-adapter-contract.md"
       ],

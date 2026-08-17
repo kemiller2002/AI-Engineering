@@ -2,7 +2,7 @@
 
 ## Summary
 
-- publishable source: 189
+- publishable source: 192
 - generated output: 1
 - ambiguous: 379
 - ignored: 3
@@ -81,6 +81,8 @@
 - publishable source: `docs/repository/imports/2026-07-22-input-documents-import/VALIDATION.md`
 - publishable source: `docs/repository/imports/2026-08-15-state-machine-documents-organization/DECISIONS.md`
 - publishable source: `docs/repository/imports/2026-08-15-state-machine-documents-organization/VALIDATION.md`
+- publishable source: `docs/repository/ros-migration/HISTORICAL-WORK-INDEX.md`
+- publishable source: `docs/repository/ros-migration/VALIDATION.md`
 - publishable source: `docs/work-adapter-contract.md`
 - publishable source: `docs/work-protocol.md`
 - publishable source: `framework/policies/EVIDENCE-POLICY.md`
@@ -470,6 +472,7 @@
 - publishable source: `research/analysis/non-human-experimental-inventory.md`
 - publishable source: `research/analysis/non-human-experimental-lineage.md`
 - publishable source: `research/analysis/non-human-next-experiments.md`
+- publishable source: `research/decisions/DF-ROS-HISTORY-2026-0001--historical-attribution-policy.md`
 - publishable source: `research/evaluation/00-charter.md`
 - publishable source: `research/evaluation/01-task-suite-manifest.md`
 - publishable source: `research/evaluation/02-evaluation-specification.md`

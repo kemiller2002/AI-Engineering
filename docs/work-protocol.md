@@ -23,6 +23,14 @@ The legal semantic core is `ready -> active -> blocked -> active` and `active ->
 
 `.ros/context/current.json` is local work context. `.ros/events/events.jsonl` contains small immutable, idempotently identified semantic events and durable file attribution. These files do not replace the external work item.
 
+Pre-installation work is reconstructed separately under `.ros/history/` using
+`schemas/historical-work.schema.json`. Historical records must set
+`historical: true`, identify their reconstruction method and confidence, and
+reference only commits that exist when Git history is available. They may
+satisfy path attribution after validation, but they cannot contain live event or
+transition fields and never enter `.ros/events/events.jsonl` retroactively. See
+`docs/repository/ros-migration/HISTORICAL-WORK-INDEX.md` for the initial backfill.
+
 Completion validates configured evidence types and paths before changing state. `./ros validate` rejects meaningful dirty paths when enforcement is enabled and neither active context nor a completed event attributes them. CI is the authoritative enforcement boundary; hooks are optional convenience.
 
 Deterministic housekeeping may use the configured `mechanical` work type. It still requires an explicit work-item identity and event, but the default profile does not require implementation/test evidence for that type.

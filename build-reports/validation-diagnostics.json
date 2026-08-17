@@ -122,12 +122,6 @@
   {
     "severity": "warning",
     "code": "missing-id",
-    "sourcePath": "context/CURRENT-STATE.md",
-    "message": "Compatibility mode inferred metadata because no canonical identifier was present."
-  },
-  {
-    "severity": "warning",
-    "code": "missing-id",
     "sourcePath": "docs/decisions/README.md",
     "message": "Compatibility mode inferred metadata because no canonical identifier was present."
   },
@@ -614,6 +608,24 @@
   {
     "severity": "warning",
     "code": "missing-id",
+    "sourcePath": "context/CURRENT-STATE.md",
+    "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+  },
+  {
+    "severity": "warning",
+    "code": "missing-id",
+    "sourcePath": "docs/repository/ros-migration/VALIDATION.md",
+    "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+  },
+  {
+    "severity": "warning",
+    "code": "missing-id",
+    "sourcePath": "docs/repository/ros-migration/HISTORICAL-WORK-INDEX.md",
+    "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+  },
+  {
+    "severity": "warning",
+    "code": "missing-id",
     "sourcePath": "docs/work-protocol.md",
     "message": "Compatibility mode inferred metadata because no canonical identifier was present."
   },
@@ -808,5 +820,11 @@
     "code": "missing-id",
     "sourcePath": "docs/mobile/ios/setup/working-copy-setup.md",
     "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+  },
+  {
+    "severity": "warning",
+    "code": "unresolved-markdown-link",
+    "sourcePath": "context/CURRENT-STATE.md",
+    "message": "Markdown link ../CURRENT-STATE.md does not match a published source document."
   }
 ]

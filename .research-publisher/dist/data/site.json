@@ -9,7 +9,7 @@
       "logo": null,
       "cssVariables": {}
     },
-    "buildGeneratedAt": "2026-08-17T16:14:52.534Z"
+    "buildGeneratedAt": "2026-08-17T16:26:39.979Z"
   },
   "repository": {
     "name": "AI Engineering",
@@ -25,14 +25,14 @@
     "graphData": true
   },
   "summary": {
-    "totalDocuments": 189,
+    "totalDocuments": 192,
     "byArtifactType": {
-      "research-document": 159,
-      "decision-framework": 2,
+      "research-document": 161,
+      "decision-framework": 3,
       "research-package": 28
     },
     "byResearchArea": {
-      "General Research": 185,
+      "General Research": 188,
       "state-constrained-web-architecture": 1,
       "AI engineering": 1,
       "AI research systems": 1,

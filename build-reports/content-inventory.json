@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-07-22",
   "summary": {
-    "publishable source": 189,
+    "publishable source": 192,
     "generated output": 1,
     "ambiguous": 379,
     "ignored": 3
@@ -293,6 +293,14 @@
     },
     {
       "path": "docs/repository/imports/2026-08-15-state-machine-documents-organization/VALIDATION.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/repository/ros-migration/HISTORICAL-WORK-INDEX.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/repository/ros-migration/VALIDATION.md",
       "classification": "publishable source"
     },
     {
@@ -1849,6 +1857,10 @@
     },
     {
       "path": "research/analysis/non-human-next-experiments.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/decisions/DF-ROS-HISTORY-2026-0001--historical-attribution-policy.md",
       "classification": "publishable source"
     },
     {

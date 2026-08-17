@@ -52,6 +52,9 @@ contained exploratory baselines only for pilots that pass.
 
 ## Completed Work
 
+- Reconstructed all 20 pre-ROS commits into eight explicitly historical work
+  records with validated commit attribution, confidence, evidence boundaries,
+  compatibility policy, and a fresh-agent history index.
 - Normalized 45 Markdown-formatted state-constrained research, semantic-control
   architecture, and Time Entry documents to publishable `.md` paths and repaired
   their repository references.

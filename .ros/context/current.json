@@ -19,11 +19,29 @@
       "evidence": [],
       "updatedAt": "2026-08-17T16:15:06.705Z",
       "completedAt": "2026-08-17T16:15:06.705Z"
+    },
+    {
+      "id": "ROS-HISTORICAL-MIGRATION",
+      "type": "maintenance",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "docs/repository/ros-migration/HISTORICAL-WORK-INDEX.md"
+        },
+        {
+          "type": "tests",
+          "path": "docs/repository/ros-migration/VALIDATION.md"
+        }
+      ],
+      "updatedAt": "2026-08-17T16:26:53.191Z",
+      "completedAt": "2026-08-17T16:26:53.191Z"
     }
   ],
   "protocolVersion": "1.0.0",
   "actor": "codex",
-  "updatedAt": "2026-08-17T16:15:06.705Z",
+  "updatedAt": "2026-08-17T16:26:53.191Z",
   "startedAt": "2026-08-17T14:50:39.081Z",
   "baselineDirtyPaths": []
 }

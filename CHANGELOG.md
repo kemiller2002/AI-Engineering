@@ -15,6 +15,9 @@
 
 ## Unreleased
 
+- Added a versioned ROS historical-attribution schema, eight-record pre-install
+  work backfill, human reconstruction index, accepted compatibility decision,
+  validator/test coverage, and a single authoritative current-state policy.
 - Renamed 45 Markdown-formatted `.txt` research, semantic-control architecture,
   and Time Entry documents to `.md`, repaired repository references, and made
   the canonical state-constrained corpus discoverable by Research Publisher.
