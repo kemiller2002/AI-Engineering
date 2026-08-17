@@ -15,6 +15,17 @@
 
 ## Unreleased
 
+- Extended the RFR-009 repository-integrity validator with metadata coverage by
+  artifact class, declared relationship resolution, generated/dependency-tree
+  exclusions, three new calibration probes, and a schema 1.1 inventory; recorded
+  the 131-document baseline without enforcing a premature legacy migration.
+- Reorganized the tracked `state-machine-documents/` corpus into the canonical
+  research, architecture, and Time Entry project areas; preserved the complete
+  01–12 prompt/report series, separated its synthesis and experiments, and
+  consolidated two SHA-256-identical duplicate files.
+- Added navigation indexes for state-constrained research, semantic-control
+  architecture, and Time Entry, plus a repository migration decision and
+  validation record.
 - Added a Node 24 research-publisher dependency, reproducible npm scripts, and a GitHub Actions workflow that builds and deploys the research site to GitHub Pages on pushes to `main` or manual dispatch; non-site fixtures, templates, and colliding legacy split documents are excluded from the published corpus.
 - Executed the AI Research Mission Generator and added a current state-of-field REP, knowledge-gap analysis, research roadmap, and priority matrix.
 - Selected long-horizon agent evaluation and verification as the highest-value research mission.

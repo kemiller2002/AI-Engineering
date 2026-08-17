@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate stable identifiers, local links, and the research frontier graph."""
+"""Validate repository research integrity and measure metadata adoption."""
 
 from __future__ import annotations
 
@@ -17,9 +17,35 @@ FRONT_MATTER_ID = re.compile(r"^(?:id|identifier):\s*([^\s#]+)\s*$", re.MULTILIN
 MARKDOWN_LINK = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 EXCLUDED_PARTS = {
     ".git",
+    ".research-publisher",
     "archive",
+    "build-reports",
+    "dist",
     "input-documents",
+    "node_modules",
 }
+REQUIRED_METADATA_FIELDS = (
+    "id",
+    "title",
+    "abstract",
+    "author",
+    "date",
+    "discipline",
+    "project",
+    "research_area",
+    "document_type",
+    "status",
+    "confidence",
+    "evidence_level",
+    "canonical",
+    "tags",
+    "keywords",
+    "related",
+    "supersedes",
+    "superseded_by",
+    "reading_time_minutes",
+)
+RELATIONSHIP_FIELDS = ("related", "related_documents", "supersedes", "superseded_by")
 
 
 def is_authored_markdown(path: Path, root: Path) -> bool:
@@ -40,12 +66,137 @@ def front_matter(text: str) -> str:
     return text[4:end] if end >= 0 else ""
 
 
+def parse_front_matter(text: str) -> dict[str, object]:
+    """Parse the simple top-level YAML forms used by repository metadata."""
+    parsed: dict[str, object] = {}
+    current_list: str | None = None
+    for raw_line in front_matter(text).splitlines():
+        if raw_line.startswith("  - ") and current_list:
+            value = raw_line[4:].strip().strip("'\"")
+            cast = parsed.setdefault(current_list, [])
+            if isinstance(cast, list) and value:
+                cast.append(value)
+            continue
+        match = re.match(r"^([A-Za-z_][A-Za-z0-9_]*):(?:\s*(.*))?$", raw_line)
+        if not match:
+            current_list = None
+            continue
+        key, raw_value = match.group(1), (match.group(2) or "").strip()
+        current_list = key if not raw_value else None
+        if not raw_value:
+            parsed[key] = []
+        elif raw_value in {"null", "~"}:
+            parsed[key] = None
+        elif raw_value.startswith("[") and raw_value.endswith("]"):
+            body = raw_value[1:-1].strip()
+            parsed[key] = (
+                [item.strip().strip("'\"") for item in body.split(",") if item.strip()]
+                if body
+                else []
+            )
+        else:
+            parsed[key] = raw_value.strip("'\"")
+    if "identifier" in parsed and "id" not in parsed:
+        parsed["id"] = parsed["identifier"]
+    return parsed
+
+
+def authored_markdown_paths(root: Path) -> list[Path]:
+    return [
+        path
+        for path in sorted(root.rglob("*.md"))
+        if is_authored_markdown(path, root)
+    ]
+
+
+def artifact_class(path: Path, root: Path) -> str:
+    relative = path.relative_to(root)
+    return relative.parts[0] if len(relative.parts) > 1 else "repository-root"
+
+
+def metadata_coverage(root: Path) -> dict[str, object]:
+    paths = authored_markdown_paths(root)
+    grouped: dict[str, list[dict[str, object]]] = defaultdict(list)
+    all_documents: list[dict[str, object]] = []
+    for path in paths:
+        metadata = parse_front_matter(path.read_text(encoding="utf-8"))
+        item = {
+            "path": path.relative_to(root).as_posix(),
+            "has_front_matter": bool(front_matter(path.read_text(encoding="utf-8"))),
+            "fields": sorted(metadata),
+        }
+        grouped[artifact_class(path, root)].append(item)
+        all_documents.append(item)
+
+    def summarize(documents: list[dict[str, object]]) -> dict[str, object]:
+        total = len(documents)
+        counts = {
+            field: sum(field in document["fields"] for document in documents)
+            for field in REQUIRED_METADATA_FIELDS
+        }
+        return {
+            "documents": total,
+            "with_front_matter": sum(bool(document["has_front_matter"]) for document in documents),
+            "with_identifier": counts["id"],
+            "field_counts": counts,
+            "field_percentages": {
+                field: round((count / total * 100), 1) if total else 0.0
+                for field, count in counts.items()
+            },
+        }
+
+    return {
+        "policy": "measurement-only; missing metadata does not fail validation",
+        "required_fields": list(REQUIRED_METADATA_FIELDS),
+        "overall": summarize(all_documents),
+        "by_artifact_class": {
+            name: summarize(documents) for name, documents in sorted(grouped.items())
+        },
+    }
+
+
+def declared_relationships(root: Path, identifiers: dict[str, list[str]]) -> dict[str, object]:
+    relationships: list[dict[str, object]] = []
+    unresolved: list[dict[str, str]] = []
+    known_ids = set(identifiers)
+    for path in authored_markdown_paths(root):
+        relative = path.relative_to(root).as_posix()
+        metadata = parse_front_matter(path.read_text(encoding="utf-8"))
+        for field in RELATIONSHIP_FIELDS:
+            raw_values = metadata.get(field)
+            if raw_values in (None, "", []):
+                continue
+            values = raw_values if isinstance(raw_values, list) else [raw_values]
+            for value in values:
+                target = str(value)
+                by_id = target in known_ids
+                candidate = root / target.lstrip("/")
+                by_path = candidate.exists()
+                resolved = by_id or by_path
+                item = {
+                    "source": relative,
+                    "field": field,
+                    "target": target,
+                    "resolved": resolved,
+                    "resolution": "id" if by_id else ("path" if by_path else None),
+                }
+                relationships.append(item)
+                if not resolved:
+                    unresolved.append({"source": relative, "field": field, "target": target})
+    return {
+        "policy": "diagnostic-only until identifier adoption and migration policy are approved",
+        "declared_count": len(relationships),
+        "resolved_count": len(relationships) - len(unresolved),
+        "unresolved_count": len(unresolved),
+        "relationships": relationships,
+        "unresolved": unresolved,
+    }
+
+
 def collect_identifiers(root: Path) -> tuple[dict[str, list[str]], list[dict[str, str]]]:
     identifiers: dict[str, list[str]] = defaultdict(list)
     documents: list[dict[str, str]] = []
-    for path in sorted(root.rglob("*.md")):
-        if not is_authored_markdown(path, root):
-            continue
+    for path in authored_markdown_paths(root):
         relative = path.relative_to(root).as_posix()
         match = FRONT_MATTER_ID.search(front_matter(path.read_text(encoding="utf-8")))
         if match:
@@ -67,9 +218,7 @@ def local_link_target(raw_target: str) -> str | None:
 
 def broken_local_links(root: Path) -> list[dict[str, str]]:
     broken: list[dict[str, str]] = []
-    for path in sorted(root.rglob("*.md")):
-        if not is_authored_markdown(path, root):
-            continue
+    for path in authored_markdown_paths(root):
         text = path.read_text(encoding="utf-8")
         for match in MARKDOWN_LINK.finditer(text):
             target = local_link_target(match.group(1))
@@ -137,6 +286,8 @@ def validate(root: Path) -> dict[str, object]:
     }
     frontier = frontier_integrity(root)
     broken_links = broken_local_links(root)
+    coverage = metadata_coverage(root)
+    relationships = declared_relationships(root, identifiers)
     passed = not (
         duplicate_ids
         or broken_links
@@ -146,10 +297,12 @@ def validate(root: Path) -> dict[str, object]:
         or frontier["invalid_edges"]
     )
     return {
-        "schema_version": "1.0",
+        "schema_version": "1.1",
         "documents_with_identifiers": documents,
         "duplicate_identifiers": duplicate_ids,
         "broken_local_markdown_links": broken_links,
+        "metadata_coverage": coverage,
+        "relationship_integrity": relationships,
         "frontier": frontier,
         "passed": passed,
     }

@@ -44,12 +44,21 @@ Comparative evidence boundary and ranked experiments:
 
 Containment, telemetry, and rollback now run in parallel with evaluation rather than waiting for a later security phase.
 
+## State-Constrained Architecture and Time Entry
+
+- [x] Separate the 01–12 research prompts, reports, and synthesis.
+- [x] Separate generic semantic-control architecture from Time Entry inputs.
+- [x] Group current Time Entry requirements, state model, and architecture by authority.
+- [ ] Author and approve any still-needed numbered Time Entry contracts; none were present during repository organization.
+
 ### Repository Fitness
 
 - [x] Remove case-only collisions for root README, current state, and roadmap
 - [x] Add a repeatable Git case-collision audit
 - [x] Add initial reference-integrity and stable-identifier fitness checks
-- [ ] Measure metadata coverage and validate adopted supersession/relationship targets
+- [x] Measure metadata coverage and validate adopted relationship targets
+- [ ] Define bounded canonical metadata adoption and calibrate reciprocal
+  supersession checks on real edges
 
 ### Research Frontier
 
@@ -57,6 +66,7 @@ Containment, telemetry, and rollback now run in parallel with evaluation rather 
 - [ ] RFR-001: obtain independent pilot integrity reviews
 - [ ] RFR-002: run a contained repeated exploratory baseline
 - [ ] RFR-003: validate graders on natural outcomes
-- [ ] RFR-009 (Validation): initial validator calibrated; metadata and semantic provenance coverage remain
+- [ ] RFR-009 (Validation): coverage and relationship diagnostics calibrated;
+  bounded metadata adoption and real supersession-edge validation remain
 
 See `research/frontier/FRONTIER-MASTER.md` for the ranked backlog and dependency graph.

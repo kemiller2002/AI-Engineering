@@ -19,7 +19,9 @@ testing are next.
 - Freeze one agent-system configuration for a contained exploratory baseline.
 - Capture final state, actions, runtime, retries, cost, and human intervention.
 - Maintain the research frontier records under `research/frontier/`; RFR-001 and RFR-002 align with Cycle 004.
-- Extend RFR-009 from structural validation to measured metadata and provenance coverage without imposing premature strict migration.
+- Define a bounded metadata-adoption policy for current canonical artifacts and
+  obtain a real supersession-edge sample; RFR-009 measurement and diagnostic
+  relationship validation are now implemented.
 
 ## Next Task
 
@@ -50,6 +52,13 @@ contained exploratory baselines only for pilots that pass.
 
 ## Completed Work
 
+- Extended RFR-009 with measured metadata coverage across 131 authored Markdown
+  artifacts and diagnostic relationship-target validation; seven calibrated
+  integrity tests pass without imposing strict legacy metadata migration.
+- Organized the state-constrained architecture corpus into distinct prompts,
+  reports, synthesis, experiments, historical working notes, current generic
+  architecture, and application-specific Time Entry inputs; consolidated two
+  byte-identical duplicates with provenance recorded under `docs/repository/`.
 - Added a reproducible Node 24 research-publisher dependency and GitHub Pages publishing workflow.
 - Executed the AI Research Mission Generator.
 - Created the 2026-07-23 state-of-field REP, gap analysis, priority matrix, and research roadmap.

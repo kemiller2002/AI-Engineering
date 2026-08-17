@@ -19,7 +19,7 @@ python3 tools/evaluation/evalctl.py repo-audit
 - `calibrate` compares grader classifications with predeclared expected classes.
 - `grade` evaluates one outcome and returns a nonzero status when it is not complete/valid.
 - `prepare` exports blind agent-readable fixtures without expected outcomes or grader code. It refuses to overwrite an existing task directory.
-- `repo-audit` fails when Git tracks paths that differ only by letter case, when authored artifacts reuse a stable identifier, when an explicit local Markdown link is broken, or when frontier record/index/graph identifiers disagree.
+- `repo-audit` fails when Git tracks paths that differ only by letter case, when authored artifacts reuse a stable identifier, when an explicit local Markdown link is broken, or when frontier record/index/graph identifiers disagree. It also reports metadata adoption by artifact class and diagnoses unresolved declared relationship targets without enforcing full legacy migration.
 - `all` runs task validation, probe calibration, and the repository case-collision audit.
 
 The research-integrity validator can also write its machine-readable inventory:

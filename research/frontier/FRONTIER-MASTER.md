@@ -12,9 +12,11 @@ confidence: medium-high
 
 AI-ROS has a coherent evaluation theory, candidate task taxonomy, two provisional pilot contracts, seven correctly classified designer probes, blind fixture export, and an explicit containment architecture. It does **not** yet have independently validated tasks, agent capability observations, variance estimates, external-validity evidence, or comparative evidence. The current boundary is therefore measurement readiness, not agent performance.
 
-RFR-009 has advanced to Validation: stable-ID, explicit-link, and frontier
-structure checks are implemented and calibrated, but metadata and semantic
-provenance coverage remain incomplete.
+RFR-009 is in Validation: stable-ID, explicit-link, frontier-structure,
+metadata-coverage, and declared-relationship checks are implemented and
+calibrated. Only 47 of 131 authored Markdown artifacts have identifiers, and no
+active canonical supersession edges exist, so semantic provenance remains
+incomplete.
 
 ## Method and scope
 
@@ -81,8 +83,9 @@ Statistics is underrepresented in power analysis, uncertainty intervals, and ran
 `RFR-008 → RFR-002` and `RFR-009 → RFR-004 → RFR-010`.
 
 The tooling prerequisite represented by RFR-009 now exists. Its edges remain
-active because metadata adoption and semantic relationship validation are not
-yet sufficient to call the provenance substrate complete.
+active because metadata adoption is only 35.9% by identifier coverage and the
+repository has no real supersession-edge sample on which to calibrate semantic
+and reciprocal validation.
 
 The machine-readable graph is in `frontier-graph.json`.
 

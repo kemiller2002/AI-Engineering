@@ -39,3 +39,17 @@ validation. Replace or extend the parser if Markdown constructs, relationship
 metadata, or scale make the dependency-free implementation materially
 inaccurate. Do not enforce the complete metadata schema until a measured
 migration policy exists.
+
+## 2026-08-15 extension
+
+The inventory now measures all required metadata fields overall and by authored
+artifact class and resolves declared `related`, legacy `related_documents`,
+`supersedes`, and `superseded_by` targets by identifier or path. The measured
+baseline is 131 authored Markdown artifacts, 48 with front matter, and 47 with
+stable identifiers. All five non-empty declared relationships resolve; no active
+canonical related or supersession edges exist.
+
+Missing metadata and unresolved declared relationships remain diagnostic rather
+than blocking. Seven seeded/control tests now calibrate the validator. Generated
+output and dependency trees are explicitly excluded from authored-document and
+link checks.
