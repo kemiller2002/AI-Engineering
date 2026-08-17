@@ -1,1 +1,270 @@
-[]
+[
+  {
+    "artifact_tier": "research-cycle",
+    "created": "2026-08-17",
+    "depends_on": [],
+    "discipline": [
+      "measurement",
+      "research-methods"
+    ],
+    "id": "MS-AIRES-2026-0001",
+    "outputs": [
+      "research/packages/RP-AIRES-2026-0001--independent-pilot-integrity-review.md"
+    ],
+    "owner_agent": "unassigned",
+    "path": "missions/backlog/MS-AIRES-2026-0001--independent-pilot-integrity-review.md",
+    "priority": "critical",
+    "related_projects": [
+      "RFR-001",
+      "NX-001"
+    ],
+    "research_area": "agent-evaluation",
+    "status": "proposed",
+    "title": "Independent pilot integrity review"
+  },
+  {
+    "artifact_tier": "research-cycle",
+    "created": "2026-08-17",
+    "depends_on": [
+      "MS-AIRES-2026-0001",
+      "MS-AIRES-2026-0008"
+    ],
+    "discipline": [
+      "experimental-methods",
+      "agent-systems"
+    ],
+    "id": "MS-AIRES-2026-0002",
+    "outputs": [
+      "research/packages/RP-AIRES-2026-0002--contained-repeated-exploratory-baseline.md"
+    ],
+    "owner_agent": "unassigned",
+    "path": "missions/backlog/MS-AIRES-2026-0002--contained-repeated-exploratory-baseline.md",
+    "priority": "critical",
+    "related_projects": [
+      "RFR-002",
+      "NX-002"
+    ],
+    "research_area": "agent-evaluation",
+    "status": "proposed",
+    "title": "Contained repeated exploratory baseline"
+  },
+  {
+    "artifact_tier": "research-cycle",
+    "created": "2026-08-17",
+    "depends_on": [
+      "MS-AIRES-2026-0002"
+    ],
+    "discipline": [
+      "measurement",
+      "statistics"
+    ],
+    "id": "MS-AIRES-2026-0003",
+    "outputs": [
+      "research/packages/RP-AIRES-2026-0003--grader-external-validity-study.md"
+    ],
+    "owner_agent": "unassigned",
+    "path": "missions/backlog/MS-AIRES-2026-0003--grader-external-validity-study.md",
+    "priority": "high",
+    "related_projects": [
+      "RFR-003",
+      "NX-001"
+    ],
+    "research_area": "agent-evaluation",
+    "status": "proposed",
+    "title": "Grader external-validity study"
+  },
+  {
+    "artifact_tier": "full-rep",
+    "created": "2026-08-17",
+    "depends_on": [
+      "MS-AIRES-2026-0003",
+      "MS-AIRES-2026-0009"
+    ],
+    "discipline": [
+      "dataset-design",
+      "software-maintenance"
+    ],
+    "id": "MS-AIRES-2026-0004",
+    "outputs": [
+      "research/packages/RP-AIRES-2026-0004--representative-repository-task-corpus.md"
+    ],
+    "owner_agent": "unassigned",
+    "path": "missions/backlog/MS-AIRES-2026-0004--representative-repository-task-corpus.md",
+    "priority": "high",
+    "related_projects": [
+      "RFR-004",
+      "NX-004"
+    ],
+    "research_area": "agent-evaluation",
+    "status": "proposed",
+    "title": "Representative repository task corpus"
+  },
+  {
+    "artifact_tier": "full-rep",
+    "created": "2026-08-17",
+    "depends_on": [
+      "MS-AIRES-2026-0004"
+    ],
+    "discipline": [
+      "experimental-methods",
+      "context-engineering"
+    ],
+    "id": "MS-AIRES-2026-0005",
+    "outputs": [
+      "research/packages/RP-AIRES-2026-0005--context-policy-causal-comparison.md"
+    ],
+    "owner_agent": "unassigned",
+    "path": "missions/backlog/MS-AIRES-2026-0005--context-policy-causal-comparison.md",
+    "priority": "medium",
+    "related_projects": [
+      "RFR-005"
+    ],
+    "research_area": "context-engineering",
+    "status": "proposed",
+    "title": "Context-policy causal comparison"
+  },
+  {
+    "artifact_tier": "research-cycle",
+    "created": "2026-08-17",
+    "depends_on": [
+      "MS-AIRES-2026-0002",
+      "MS-AIRES-2026-0004"
+    ],
+    "discipline": [
+      "operations-research",
+      "economics"
+    ],
+    "id": "MS-AIRES-2026-0006",
+    "outputs": [
+      "research/packages/RP-AIRES-2026-0006--total-verified-cost-measurement.md"
+    ],
+    "owner_agent": "unassigned",
+    "path": "missions/backlog/MS-AIRES-2026-0006--total-verified-cost-measurement.md",
+    "priority": "medium",
+    "related_projects": [
+      "RFR-006"
+    ],
+    "research_area": "evaluation-economics",
+    "status": "proposed",
+    "title": "Total verified-cost measurement"
+  },
+  {
+    "artifact_tier": "full-rep",
+    "created": "2026-08-17",
+    "depends_on": [
+      "MS-AIRES-2026-0004",
+      "MS-AIRES-2026-0008"
+    ],
+    "discipline": [
+      "human-factors",
+      "safety"
+    ],
+    "id": "MS-AIRES-2026-0007",
+    "outputs": [
+      "research/packages/RP-AIRES-2026-0007--risk-triggered-human-escalation-study.md"
+    ],
+    "owner_agent": "unassigned",
+    "path": "missions/backlog/MS-AIRES-2026-0007--risk-triggered-human-escalation-study.md",
+    "priority": "medium",
+    "related_projects": [
+      "RFR-007"
+    ],
+    "research_area": "human-agent-systems",
+    "status": "proposed",
+    "title": "Risk-triggered human escalation study"
+  },
+  {
+    "artifact_tier": "research-cycle",
+    "created": "2026-08-17",
+    "depends_on": [],
+    "discipline": [
+      "security-engineering",
+      "resilience"
+    ],
+    "id": "MS-AIRES-2026-0008",
+    "outputs": [
+      "research/packages/RP-AIRES-2026-0008--evaluation-containment-validation.md"
+    ],
+    "owner_agent": "unassigned",
+    "path": "missions/backlog/MS-AIRES-2026-0008--evaluation-containment-validation.md",
+    "priority": "critical",
+    "related_projects": [
+      "RFR-008",
+      "NX-003"
+    ],
+    "research_area": "agent-safety",
+    "status": "proposed",
+    "title": "Evaluation containment validation"
+  },
+  {
+    "artifact_tier": "research-cycle",
+    "created": "2026-08-17",
+    "depends_on": [],
+    "discipline": [
+      "knowledge-management",
+      "repository-tooling"
+    ],
+    "id": "MS-AIRES-2026-0009",
+    "outputs": [
+      "research/packages/RP-AIRES-2026-0009--metadata-and-provenance-completion.md"
+    ],
+    "owner_agent": "unassigned",
+    "path": "missions/backlog/MS-AIRES-2026-0009--metadata-and-provenance-completion.md",
+    "priority": "high",
+    "related_projects": [
+      "RFR-009"
+    ],
+    "research_area": "repository-integrity",
+    "status": "proposed",
+    "title": "Metadata adoption and provenance-edge validation"
+  },
+  {
+    "artifact_tier": "full-rep",
+    "created": "2026-08-17",
+    "depends_on": [
+      "MS-AIRES-2026-0004",
+      "MS-AIRES-2026-0009"
+    ],
+    "discipline": [
+      "knowledge-engineering",
+      "information-retrieval"
+    ],
+    "id": "MS-AIRES-2026-0010",
+    "outputs": [
+      "research/packages/RP-AIRES-2026-0010--knowledge-graph-value-experiment.md"
+    ],
+    "owner_agent": "unassigned",
+    "path": "missions/backlog/MS-AIRES-2026-0010--knowledge-graph-value-experiment.md",
+    "priority": "low",
+    "related_projects": [
+      "RFR-010"
+    ],
+    "research_area": "knowledge-platform",
+    "status": "proposed",
+    "title": "Knowledge-graph value experiment"
+  },
+  {
+    "artifact_tier": "full-rep",
+    "created": "2026-08-17",
+    "depends_on": [
+      "MS-AIRES-2026-0004"
+    ],
+    "discipline": [
+      "causal-inference",
+      "research-methods"
+    ],
+    "id": "MS-AIRES-2026-0011",
+    "outputs": [
+      "research/packages/RP-AIRES-2026-0011--audit-decision-counterfactual.md"
+    ],
+    "owner_agent": "unassigned",
+    "path": "missions/backlog/MS-AIRES-2026-0011--audit-decision-counterfactual.md",
+    "priority": "medium",
+    "related_projects": [
+      "NX-005"
+    ],
+    "research_area": "evaluation-governance",
+    "status": "proposed",
+    "title": "Audit versus no-audit decision counterfactual"
+  }
+]

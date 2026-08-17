@@ -15,6 +15,9 @@
 
 ## Unreleased
 
+- Added eleven proposed ROS backlog missions covering RFR-001 through RFR-010
+  plus the NX-005 audit/no-audit counterfactual, with dependencies, evidence,
+  success criteria, stop conditions, and generated registry entries.
 - Added a versioned ROS historical-attribution schema, eight-record pre-install
   work backfill, human reconstruction index, accepted compatibility decision,
   validator/test coverage, and a single authoritative current-state policy.

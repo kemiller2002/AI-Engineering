@@ -754,6 +754,94 @@
       "sourcePath": "docs/mobile/ios/workflows/mobile-research-cycle.md"
     },
     {
+      "id": "MS-AIRES-2026-0001",
+      "title": "Independent pilot integrity review",
+      "artifactType": "research-document",
+      "url": "/research/ms-aires-2026-0001-independent-pilot-integrity-review/",
+      "researchArea": "agent-evaluation",
+      "sourcePath": "missions/backlog/MS-AIRES-2026-0001--independent-pilot-integrity-review.md"
+    },
+    {
+      "id": "MS-AIRES-2026-0002",
+      "title": "Contained repeated exploratory baseline",
+      "artifactType": "research-document",
+      "url": "/research/ms-aires-2026-0002-contained-repeated-exploratory-baseline/",
+      "researchArea": "agent-evaluation",
+      "sourcePath": "missions/backlog/MS-AIRES-2026-0002--contained-repeated-exploratory-baseline.md"
+    },
+    {
+      "id": "MS-AIRES-2026-0003",
+      "title": "Grader external-validity study",
+      "artifactType": "research-document",
+      "url": "/research/ms-aires-2026-0003-grader-external-validity-study/",
+      "researchArea": "agent-evaluation",
+      "sourcePath": "missions/backlog/MS-AIRES-2026-0003--grader-external-validity-study.md"
+    },
+    {
+      "id": "MS-AIRES-2026-0004",
+      "title": "Representative repository task corpus",
+      "artifactType": "research-document",
+      "url": "/research/ms-aires-2026-0004-representative-repository-task-corpus/",
+      "researchArea": "agent-evaluation",
+      "sourcePath": "missions/backlog/MS-AIRES-2026-0004--representative-repository-task-corpus.md"
+    },
+    {
+      "id": "MS-AIRES-2026-0005",
+      "title": "Context-policy causal comparison",
+      "artifactType": "research-document",
+      "url": "/research/ms-aires-2026-0005-context-policy-causal-comparison/",
+      "researchArea": "context-engineering",
+      "sourcePath": "missions/backlog/MS-AIRES-2026-0005--context-policy-causal-comparison.md"
+    },
+    {
+      "id": "MS-AIRES-2026-0006",
+      "title": "Total verified-cost measurement",
+      "artifactType": "research-document",
+      "url": "/research/ms-aires-2026-0006-total-verified-cost-measurement/",
+      "researchArea": "evaluation-economics",
+      "sourcePath": "missions/backlog/MS-AIRES-2026-0006--total-verified-cost-measurement.md"
+    },
+    {
+      "id": "MS-AIRES-2026-0007",
+      "title": "Risk-triggered human escalation study",
+      "artifactType": "research-document",
+      "url": "/research/ms-aires-2026-0007-risk-triggered-human-escalation-study/",
+      "researchArea": "human-agent-systems",
+      "sourcePath": "missions/backlog/MS-AIRES-2026-0007--risk-triggered-human-escalation-study.md"
+    },
+    {
+      "id": "MS-AIRES-2026-0008",
+      "title": "Evaluation containment validation",
+      "artifactType": "research-document",
+      "url": "/research/ms-aires-2026-0008-evaluation-containment-validation/",
+      "researchArea": "agent-safety",
+      "sourcePath": "missions/backlog/MS-AIRES-2026-0008--evaluation-containment-validation.md"
+    },
+    {
+      "id": "MS-AIRES-2026-0009",
+      "title": "Metadata adoption and provenance-edge validation",
+      "artifactType": "research-document",
+      "url": "/research/ms-aires-2026-0009-metadata-adoption-and-provenance-edge-validation/",
+      "researchArea": "repository-integrity",
+      "sourcePath": "missions/backlog/MS-AIRES-2026-0009--metadata-and-provenance-completion.md"
+    },
+    {
+      "id": "MS-AIRES-2026-0010",
+      "title": "Knowledge-graph value experiment",
+      "artifactType": "research-document",
+      "url": "/research/ms-aires-2026-0010-knowledge-graph-value-experiment/",
+      "researchArea": "knowledge-platform",
+      "sourcePath": "missions/backlog/MS-AIRES-2026-0010--knowledge-graph-value-experiment.md"
+    },
+    {
+      "id": "MS-AIRES-2026-0011",
+      "title": "Audit versus no-audit decision counterfactual",
+      "artifactType": "research-document",
+      "url": "/research/ms-aires-2026-0011-audit-versus-no-audit-decision-counterfactual/",
+      "researchArea": "evaluation-governance",
+      "sourcePath": "missions/backlog/MS-AIRES-2026-0011--audit-decision-counterfactual.md"
+    },
+    {
       "id": "multi-state-data-and-type-explosion",
       "title": "multi state data and type explosion",
       "artifactType": "research-document",
@@ -888,6 +976,14 @@
       "url": "/research/research-report-state-constrained-modularity-context-reduction-and-agent-execution-cost/",
       "researchArea": "General Research",
       "sourcePath": "research/state-constrained-architecture/reports/state-modularity-agent-cost-research-report-2026-08-14.md"
+    },
+    {
+      "id": "research-todo-backfill",
+      "title": "Research TODO Backfill",
+      "artifactType": "research-document",
+      "url": "/research/research-todo-backfill/",
+      "researchArea": "General Research",
+      "sourcePath": "docs/repository/2026-08-17-research-todo-backfill.md"
     },
     {
       "id": "RFA-2026-001",
@@ -1634,6 +1730,17 @@
     "migration-plan": [],
     "minimal-typescript-browser-kernel-responsibility-specification": [],
     "mobile-research-cycle": [],
+    "MS-AIRES-2026-0001": [],
+    "MS-AIRES-2026-0002": [],
+    "MS-AIRES-2026-0003": [],
+    "MS-AIRES-2026-0004": [],
+    "MS-AIRES-2026-0005": [],
+    "MS-AIRES-2026-0006": [],
+    "MS-AIRES-2026-0007": [],
+    "MS-AIRES-2026-0008": [],
+    "MS-AIRES-2026-0009": [],
+    "MS-AIRES-2026-0010": [],
+    "MS-AIRES-2026-0011": [],
     "multi-state-data-and-type-explosion": [],
     "naming-and-identifier-standard": [],
     "next-agent-start-here": [],
@@ -1651,6 +1758,7 @@
     "research-package-001": [],
     "research-policy": [],
     "research-report-state-constrained-modularity-context-reduction-and-agent-execution-cost": [],
+    "research-todo-backfill": [],
     "RFA-2026-001": [],
     "RFI-2026-001": [],
     "RFI-2026-002": [],

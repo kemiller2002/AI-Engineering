@@ -37,11 +37,29 @@
       ],
       "updatedAt": "2026-08-17T16:26:53.191Z",
       "completedAt": "2026-08-17T16:26:53.191Z"
+    },
+    {
+      "id": "RESEARCH-TODO-BACKFILL",
+      "type": "maintenance",
+      "state": "complete",
+      "semanticState": "complete",
+      "evidence": [
+        {
+          "type": "implementation",
+          "path": "docs/repository/2026-08-17-research-todo-backfill.md"
+        },
+        {
+          "type": "tests",
+          "path": "docs/repository/2026-08-17-research-todo-backfill-validation.md"
+        }
+      ],
+      "updatedAt": "2026-08-17T20:30:59.872Z",
+      "completedAt": "2026-08-17T20:30:59.872Z"
     }
   ],
   "protocolVersion": "1.0.0",
   "actor": "codex",
-  "updatedAt": "2026-08-17T16:26:53.191Z",
+  "updatedAt": "2026-08-17T20:30:59.872Z",
   "startedAt": "2026-08-17T14:50:39.081Z",
   "baselineDirtyPaths": []
 }

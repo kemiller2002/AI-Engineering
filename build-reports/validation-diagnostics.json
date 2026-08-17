@@ -590,6 +590,12 @@
   {
     "severity": "warning",
     "code": "missing-id",
+    "sourcePath": "docs/repository/2026-08-17-research-todo-backfill.md",
+    "message": "Compatibility mode inferred metadata because no canonical identifier was present."
+  },
+  {
+    "severity": "warning",
+    "code": "missing-id",
     "sourcePath": "roadmap.md",
     "message": "Compatibility mode inferred metadata because no canonical identifier was present."
   },

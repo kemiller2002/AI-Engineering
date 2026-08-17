@@ -6611,8 +6611,8 @@
         }
       ],
       "sourcePath": "HANDOFF.md",
-      "contentHash": "9506e51f0df1879d1f2f188251e84dc69911e085dbefc9363600310f47ff76d3",
-      "html": "<h1 id=\"ai-engineering-handoff\">AI Engineering Handoff</h1>\n<h2 id=\"objective\">Objective</h2>\n<p>Continue evidence-traceable evaluation of long-horizon repository agents while\npreserving the repository's pre-ROS history and compatibility boundaries.</p>\n<h2 id=\"current-state\">Current state</h2>\n<ul>\n<li>Root <code>CURRENT-STATE.md</code> is authoritative; <code>context/CURRENT-STATE.md</code> is a\nderived ROS entry point.</li>\n<li>Evaluation Cycles 001–003 and the repository-wide non-human comparative review\nare complete. No agent capability trial or independent replication is claimed.</li>\n<li>The 20 commits before ROS installation are reconstructed as eight explicitly\nhistorical records in <code>.ros/history/historical-work.jsonl</code>.</li>\n<li>Historical records never enter the live <code>.ros/events/events.jsonl</code> stream and\ncannot authorize transitions.</li>\n<li>The state-constrained research corpus is publishable as Markdown.</li>\n</ul>\n<h2 id=\"historical-migration-completed\">Historical migration completed</h2>\n<ul>\n<li>Human index:\n<code>docs/repository/ros-migration/HISTORICAL-WORK-INDEX.md</code></li>\n<li>Policy decision:\n<code>research/decisions/DF-ROS-HISTORY-2026-0001--historical-attribution-policy.md</code></li>\n<li>Schema: <code>schemas/historical-work.schema.json</code></li>\n<li>Validation implementation and tests:\n<code>tools/ros_cli.mjs</code>, <code>tools/test_ros_history.mjs</code></li>\n</ul>\n<p>The backfill is reconstructed from Git and repository documents. It does not\nclaim that historical work originally followed ROS. Original external work-item\nIDs, approvals, and tests remain unknown when no repository evidence exists.</p>\n<h2 id=\"validation\">Validation</h2>\n<p>Run:</p>\n<pre><code class=\"language-bash\">npm test\nnpm run research:validate\n./ros registry check\n./ros validate\n./ros status\n</code></pre>\n<h2 id=\"unresolved-questions-and-risks\">Unresolved questions and risks</h2>\n<ol>\n<li>Independent reviewers have not yet validated ET-004-P01 or ET-014-P01.</li>\n<li>Frozen graders have not been challenged with independently authored unseen\noutcomes.</li>\n<li>No successful GitHub Pages deployment receipt is recorded.</li>\n<li>The historical state-constrained corpus lacks a single execution journal\ncovering authorship and evidence collection across all 12 missions.</li>\n<li>Metadata coverage remains diagnostic and incomplete outside strict ROS\nartifact directories.</li>\n</ol>\n<h2 id=\"next-action\">Next action</h2>\n<p>Start with <code>prompts/Non-Human-Experimental-Research-Next-Mission.md</code>: obtain\nindependent pilot reviews and challenge frozen graders with unseen outcomes\nbefore running any contained exploratory capability baseline.</p>",
+      "contentHash": "11ad576ba82e97004212ef775b30952053c2368c5855e85b2705f6404ec4d40c",
+      "html": "<h1 id=\"ai-engineering-handoff\">AI Engineering Handoff</h1>\n<h2 id=\"objective\">Objective</h2>\n<p>Continue evidence-traceable evaluation of long-horizon repository agents while\npreserving the repository's pre-ROS history and compatibility boundaries.</p>\n<h2 id=\"current-state\">Current state</h2>\n<ul>\n<li>Root <code>CURRENT-STATE.md</code> is authoritative; <code>context/CURRENT-STATE.md</code> is a\nderived ROS entry point.</li>\n<li>Evaluation Cycles 001–003 and the repository-wide non-human comparative review\nare complete. No agent capability trial or independent replication is claimed.</li>\n<li>The 20 commits before ROS installation are reconstructed as eight explicitly\nhistorical records in <code>.ros/history/historical-work.jsonl</code>.</li>\n<li>Historical records never enter the live <code>.ros/events/events.jsonl</code> stream and\ncannot authorize transitions.</li>\n<li>The state-constrained research corpus is publishable as Markdown.</li>\n<li>Eleven proposed research missions in <code>missions/backlog/</code> now represent the\ndeduplicated RFR-001–RFR-010 and NX-005 research TODO set.</li>\n</ul>\n<h2 id=\"historical-migration-completed\">Historical migration completed</h2>\n<ul>\n<li>Human index:\n<code>docs/repository/ros-migration/HISTORICAL-WORK-INDEX.md</code></li>\n<li>Policy decision:\n<code>research/decisions/DF-ROS-HISTORY-2026-0001--historical-attribution-policy.md</code></li>\n<li>Schema: <code>schemas/historical-work.schema.json</code></li>\n<li>Validation implementation and tests:\n<code>tools/ros_cli.mjs</code>, <code>tools/test_ros_history.mjs</code></li>\n</ul>\n<p>The backfill is reconstructed from Git and repository documents. It does not\nclaim that historical work originally followed ROS. Original external work-item\nIDs, approvals, and tests remain unknown when no repository evidence exists.</p>\n<h2 id=\"validation\">Validation</h2>\n<p>Run:</p>\n<pre><code class=\"language-bash\">npm test\nnpm run research:validate\n./ros registry check\n./ros validate\n./ros status\n</code></pre>\n<h2 id=\"unresolved-questions-and-risks\">Unresolved questions and risks</h2>\n<ol>\n<li>Independent reviewers have not yet validated ET-004-P01 or ET-014-P01.</li>\n<li>Frozen graders have not been challenged with independently authored unseen\noutcomes.</li>\n<li>No successful GitHub Pages deployment receipt is recorded.</li>\n<li>The historical state-constrained corpus lacks a single execution journal\ncovering authorship and evidence collection across all 12 missions.</li>\n<li>Metadata coverage remains diagnostic and incomplete outside strict ROS\nartifact directories.</li>\n</ol>\n<h2 id=\"next-action\">Next action</h2>\n<p>Start with <code>prompts/Non-Human-Experimental-Research-Next-Mission.md</code>: obtain\nindependent pilot reviews and challenge frozen graders with unseen outcomes\nbefore running any contained exploratory capability baseline.</p>",
       "links": [],
       "compatibilityMode": true
     },
@@ -15607,8 +15607,8 @@
         }
       ],
       "sourcePath": "CHANGELOG.md",
-      "contentHash": "6b5b9e3933529f7ed3507e2735d31d63a4223d04be5263bc6e5934d3571f0202",
-      "html": "<h1 id=\"changelog\">Changelog</h1>\n<h2 id=\"010--2026-07-21\">0.1.0 — 2026-07-21</h2>\n<ul>\n<li>Created AI-ROS Bootstrap Kit.</li>\n<li>Added initial Constitution, REP integration, prompts, templates, mobile setup, and shortcut specifications.</li>\n</ul>\n<h2 id=\"011--2026-07-22\">0.1.1 — 2026-07-22</h2>\n<ul>\n<li>Imported and normalized 50 source files from <code>input-documents/</code>.</li>\n<li>Moved handbook, course, research program, and research relay documents into canonical repository locations.</li>\n<li>Promoted the bootstrap README, roadmap, state, governance, prompts, templates, and mobile docs into the repository structure.</li>\n<li>Archived the derived Chapter 1 ZIP package and preserved import audit records.</li>\n<li>Removed the duplicate REP source copy from the bootstrap kit after hash verification.</li>\n</ul>\n<h2 id=\"unreleased\">Unreleased</h2>\n<ul>\n<li>Added a versioned ROS historical-attribution schema, eight-record pre-install\nwork backfill, human reconstruction index, accepted compatibility decision,\nvalidator/test coverage, and a single authoritative current-state policy.</li>\n<li>Renamed 45 Markdown-formatted <code>.txt</code> research, semantic-control architecture,\nand Time Entry documents to <code>.md</code>, repaired repository references, and made\nthe canonical state-constrained corpus discoverable by Research Publisher.</li>\n<li>Extended the RFR-009 repository-integrity validator with metadata coverage by\nartifact class, declared relationship resolution, generated/dependency-tree\nexclusions, three new calibration probes, and a schema 1.1 inventory; recorded\nthe 131-document baseline without enforcing a premature legacy migration.</li>\n<li>Reorganized the tracked <code>state-machine-documents/</code> corpus into the canonical\nresearch, architecture, and Time Entry project areas; preserved the complete\n01–12 prompt/report series, separated its synthesis and experiments, and\nconsolidated two SHA-256-identical duplicate files.</li>\n<li>Added navigation indexes for state-constrained research, semantic-control\narchitecture, and Time Entry, plus a repository migration decision and\nvalidation record.</li>\n<li>Added a Node 24 research-publisher dependency, reproducible npm scripts, and a GitHub Actions workflow that builds and deploys the research site to GitHub Pages on pushes to <code>main</code> or manual dispatch; non-site fixtures, templates, and colliding legacy split documents are excluded from the published corpus.</li>\n<li>Executed the AI Research Mission Generator and added a current state-of-field REP, knowledge-gap analysis, research roadmap, and priority matrix.</li>\n<li>Selected long-horizon agent evaluation and verification as the highest-value research mission.</li>\n<li>Superseded the generator at <code>prompts/AI-Research-Mission.md</code> with a ready-to-run empirical research prompt.</li>\n<li>Recorded the execution and supersession decision under <code>docs/repository/</code>.</li>\n<li>Started the highest-priority research mission and completed Evaluation Research Cycle 001.</li>\n<li>Added the experimental <code>research/evaluation/</code> workspace with a charter, candidate task suite, evaluation specification, evidence/hypothesis/experiment registries, failure taxonomy, immutable cycle report, and next-agent handoff.</li>\n<li>Recorded the decision to audit task integrity before running capability baselines.</li>\n<li>Completed provisional ET-004 and ET-014 task-integrity pilots with seven versioned calibration probes.</li>\n<li>Added a dependency-free evaluation CLI that validates contracts, calibrates deterministic graders, and exports blind disposable fixtures.</li>\n<li>Added current results, a minimum-sufficient-evaluation decision framework, threat model, system architecture, teaching guide, and evaluation roadmap v2.</li>\n<li>Revised the program roadmap so containment, telemetry, pause, and rollback precede adversarial or long-horizon baselines.</li>\n<li>Recorded Cycles 002 and 003, including negative results, unresolved hypotheses, and the independent-review blocker.</li>\n<li>Canonicalized root README, current-state, and roadmap paths by removing identical case-only Git entries while preserving their history.</li>\n<li>Added a repository fitness check for case-colliding tracked paths.</li>\n<li>Added the canonical <code>research/frontier/</code> analysis with ten evidence-traceable RFRs, document-level frontiers, repository health metrics, and machine-readable index/dependency graph.</li>\n<li>Recorded the frontier scope and semantic-canonicalization decision under <code>docs/repository/</code>.</li>\n<li>Advanced RFR-009 to Validation with a dependency-free stable-identifier, explicit local-link, and frontier graph/index integrity validator.</li>\n<li>Added four seeded integrity tests, integrated the checks into <code>evalctl.py repo-audit</code>, and preserved the first machine-readable inventory under <code>data/validation/</code>.</li>\n<li>Completed the repository-wide non-human experimental evidence review.</li>\n<li>Added a seven-item master inventory, machine-readable experiment matrix,\nlineage/dependency graph, comparability and quality analysis, contradiction\nregistry, failure taxonomy, cumulative findings, and ranked research backlog\nunder <code>research/analysis/</code>.</li>\n<li>Added the canonical comparative-review REP and repository structural decision\nwhile preserving historical evaluation records unchanged.</li>\n<li>Recorded that current evidence contains zero independent experimental\nreplications and zero agent capability trials; the 7/7 result is an in-sample\nregression check over dependent designer probes.</li>\n<li>Added an executable next mission for independent pilot review and a frozen\ngrader challenge on blinded unseen outcomes.</li>\n</ul>",
+      "contentHash": "df2784e6efcdba241172e2ddc5ec332f5fa7bfeaa625933b00dfc323e5f46acf",
+      "html": "<h1 id=\"changelog\">Changelog</h1>\n<h2 id=\"010--2026-07-21\">0.1.0 — 2026-07-21</h2>\n<ul>\n<li>Created AI-ROS Bootstrap Kit.</li>\n<li>Added initial Constitution, REP integration, prompts, templates, mobile setup, and shortcut specifications.</li>\n</ul>\n<h2 id=\"011--2026-07-22\">0.1.1 — 2026-07-22</h2>\n<ul>\n<li>Imported and normalized 50 source files from <code>input-documents/</code>.</li>\n<li>Moved handbook, course, research program, and research relay documents into canonical repository locations.</li>\n<li>Promoted the bootstrap README, roadmap, state, governance, prompts, templates, and mobile docs into the repository structure.</li>\n<li>Archived the derived Chapter 1 ZIP package and preserved import audit records.</li>\n<li>Removed the duplicate REP source copy from the bootstrap kit after hash verification.</li>\n</ul>\n<h2 id=\"unreleased\">Unreleased</h2>\n<ul>\n<li>Added eleven proposed ROS backlog missions covering RFR-001 through RFR-010\nplus the NX-005 audit/no-audit counterfactual, with dependencies, evidence,\nsuccess criteria, stop conditions, and generated registry entries.</li>\n<li>Added a versioned ROS historical-attribution schema, eight-record pre-install\nwork backfill, human reconstruction index, accepted compatibility decision,\nvalidator/test coverage, and a single authoritative current-state policy.</li>\n<li>Renamed 45 Markdown-formatted <code>.txt</code> research, semantic-control architecture,\nand Time Entry documents to <code>.md</code>, repaired repository references, and made\nthe canonical state-constrained corpus discoverable by Research Publisher.</li>\n<li>Extended the RFR-009 repository-integrity validator with metadata coverage by\nartifact class, declared relationship resolution, generated/dependency-tree\nexclusions, three new calibration probes, and a schema 1.1 inventory; recorded\nthe 131-document baseline without enforcing a premature legacy migration.</li>\n<li>Reorganized the tracked <code>state-machine-documents/</code> corpus into the canonical\nresearch, architecture, and Time Entry project areas; preserved the complete\n01–12 prompt/report series, separated its synthesis and experiments, and\nconsolidated two SHA-256-identical duplicate files.</li>\n<li>Added navigation indexes for state-constrained research, semantic-control\narchitecture, and Time Entry, plus a repository migration decision and\nvalidation record.</li>\n<li>Added a Node 24 research-publisher dependency, reproducible npm scripts, and a GitHub Actions workflow that builds and deploys the research site to GitHub Pages on pushes to <code>main</code> or manual dispatch; non-site fixtures, templates, and colliding legacy split documents are excluded from the published corpus.</li>\n<li>Executed the AI Research Mission Generator and added a current state-of-field REP, knowledge-gap analysis, research roadmap, and priority matrix.</li>\n<li>Selected long-horizon agent evaluation and verification as the highest-value research mission.</li>\n<li>Superseded the generator at <code>prompts/AI-Research-Mission.md</code> with a ready-to-run empirical research prompt.</li>\n<li>Recorded the execution and supersession decision under <code>docs/repository/</code>.</li>\n<li>Started the highest-priority research mission and completed Evaluation Research Cycle 001.</li>\n<li>Added the experimental <code>research/evaluation/</code> workspace with a charter, candidate task suite, evaluation specification, evidence/hypothesis/experiment registries, failure taxonomy, immutable cycle report, and next-agent handoff.</li>\n<li>Recorded the decision to audit task integrity before running capability baselines.</li>\n<li>Completed provisional ET-004 and ET-014 task-integrity pilots with seven versioned calibration probes.</li>\n<li>Added a dependency-free evaluation CLI that validates contracts, calibrates deterministic graders, and exports blind disposable fixtures.</li>\n<li>Added current results, a minimum-sufficient-evaluation decision framework, threat model, system architecture, teaching guide, and evaluation roadmap v2.</li>\n<li>Revised the program roadmap so containment, telemetry, pause, and rollback precede adversarial or long-horizon baselines.</li>\n<li>Recorded Cycles 002 and 003, including negative results, unresolved hypotheses, and the independent-review blocker.</li>\n<li>Canonicalized root README, current-state, and roadmap paths by removing identical case-only Git entries while preserving their history.</li>\n<li>Added a repository fitness check for case-colliding tracked paths.</li>\n<li>Added the canonical <code>research/frontier/</code> analysis with ten evidence-traceable RFRs, document-level frontiers, repository health metrics, and machine-readable index/dependency graph.</li>\n<li>Recorded the frontier scope and semantic-canonicalization decision under <code>docs/repository/</code>.</li>\n<li>Advanced RFR-009 to Validation with a dependency-free stable-identifier, explicit local-link, and frontier graph/index integrity validator.</li>\n<li>Added four seeded integrity tests, integrated the checks into <code>evalctl.py repo-audit</code>, and preserved the first machine-readable inventory under <code>data/validation/</code>.</li>\n<li>Completed the repository-wide non-human experimental evidence review.</li>\n<li>Added a seven-item master inventory, machine-readable experiment matrix,\nlineage/dependency graph, comparability and quality analysis, contradiction\nregistry, failure taxonomy, cumulative findings, and ranked research backlog\nunder <code>research/analysis/</code>.</li>\n<li>Added the canonical comparative-review REP and repository structural decision\nwhile preserving historical evaluation records unchanged.</li>\n<li>Recorded that current evidence contains zero independent experimental\nreplications and zero agent capability trials; the 7/7 result is an in-sample\nregression check over dependent designer probes.</li>\n<li>Added an executable next mission for independent pilot review and a frozen\ngrader challenge on blinded unseen outcomes.</li>\n</ul>",
       "links": [],
       "compatibilityMode": true
     },
@@ -15778,8 +15778,8 @@
         }
       ],
       "sourcePath": "current-state.md",
-      "contentHash": "ba1479b7ccaebe5e4c080e34bbf377b431af85d89ea1a2c2145df7c5ec5ed70a",
-      "html": "<h1 id=\"current-state\">Current State</h1>\n<h2 id=\"objective\">Objective</h2>\n<p>Validate AI-ROS through evidence-traceable evaluation of long-horizon repository agents.</p>\n<h2 id=\"current-phase\">Current Phase</h2>\n<p>Evaluation research Cycles 001–003 and the historical non-human experimental\ncomparative review are complete; independent review plus frozen-grader unseen\ntesting are next.</p>\n<h2 id=\"active-work\">Active Work</h2>\n<ul>\n<li>Publish the generated research site from <code>main</code> through GitHub Actions and GitHub Pages.</li>\n<li>Obtain independent reviews of ET-004-P01 and ET-014-P01.</li>\n<li>Challenge the frozen pilot graders with independently authored, blinded unseen\noutcomes before promotion.</li>\n<li>Freeze one agent-system configuration for a contained exploratory baseline.</li>\n<li>Capture final state, actions, runtime, retries, cost, and human intervention.</li>\n<li>Maintain the research frontier records under <code>research/frontier/</code>; RFR-001 and RFR-002 align with Cycle 004.</li>\n<li>Define a bounded metadata-adoption policy for current canonical artifacts and\nobtain a real supersession-edge sample; RFR-009 measurement and diagnostic\nrelationship validation are now implemented.</li>\n</ul>\n<h2 id=\"next-task\">Next Task</h2>\n<p>Execute <code>prompts/Non-Human-Experimental-Research-Next-Mission.md</code>: independently\nreview the pilots and challenge the frozen graders with unseen outcomes. Run\ncontained exploratory baselines only for pilots that pass.</p>\n<h2 id=\"risks\">Risks</h2>\n<ul>\n<li>Legacy split handbook and course-note documents remain excluded from publishing until they receive unique canonical IDs and URLs.</li>\n<li>Public benchmark validity may not transfer to repository tasks.</li>\n<li>Model and harness changes can obsolete baselines.</li>\n<li>Human review capacity may constrain evaluator calibration.</li>\n<li>The current repository is documentation-heavy and may not represent production coding work.</li>\n<li>Repository-native tasks may inherit hidden context, narrow graders, or answer leakage.</li>\n<li>Evaluated agents may exploit benchmark or infrastructure exposure.</li>\n<li>Probe calibration may overfit designer-created outcomes.</li>\n<li>The current 7/7 calibration is a dependent regression check, not a grader\naccuracy estimate or replication count.</li>\n<li>Additional architecture work now risks replacing empirical learning with speculation.</li>\n</ul>\n<h2 id=\"open-questions\">Open Questions</h2>\n<ul>\n<li>Which measures best predict verified repository outcomes?</li>\n<li>Which context policy provides the best reliability-adjusted cost?</li>\n<li>When does multi-agent coordination produce net value?</li>\n<li>Does a knowledge graph earn its maintenance cost?</li>\n</ul>\n<h2 id=\"completed-work\">Completed Work</h2>\n<ul>\n<li>Reconstructed all 20 pre-ROS commits into eight explicitly historical work\nrecords with validated commit attribution, confidence, evidence boundaries,\ncompatibility policy, and a fresh-agent history index.</li>\n<li>Normalized 45 Markdown-formatted state-constrained research, semantic-control\narchitecture, and Time Entry documents to publishable <code>.md</code> paths and repaired\ntheir repository references.</li>\n<li>Extended RFR-009 with measured metadata coverage across 131 authored Markdown\nartifacts and diagnostic relationship-target validation; seven calibrated\nintegrity tests pass without imposing strict legacy metadata migration.</li>\n<li>Organized the state-constrained architecture corpus into distinct prompts,\nreports, synthesis, experiments, historical working notes, current generic\narchitecture, and application-specific Time Entry inputs; consolidated two\nbyte-identical duplicates with provenance recorded under <code>docs/repository/</code>.</li>\n<li>Added a reproducible Node 24 research-publisher dependency and GitHub Pages publishing workflow.</li>\n<li>Executed the AI Research Mission Generator.</li>\n<li>Created the 2026-07-23 state-of-field REP, gap analysis, priority matrix, and research roadmap.</li>\n<li>Selected long-horizon agent evaluation and verification as the highest-ROI next mission.</li>\n<li>Completed Evaluation Research Cycle 001.</li>\n<li>Defined the evaluation charter, constructs, outcome classes, sixteen candidate task families, audit protocol, and initial registries.</li>\n<li>Challenged the assumptions that repository-native tasks are inherently valid, more graders are always better, and three runs support stable rankings.</li>\n<li>Completed task-integrity pilots ET-004-P01 and ET-014-P01.</li>\n<li>Implemented a dependency-free evaluator and blind fixture exporter.</li>\n<li>Calibrated seven declared outcome probes and verified two blind exports.</li>\n<li>Added a decision framework, threat model, evaluation architecture, teaching guide, and research/engineering roadmap v2.</li>\n<li>Moved containment and runtime monitoring into the evaluation foundation rather than postponing security.</li>\n<li>Resolved three root case-only Git collisions by retaining the governance-defined uppercase canonical paths and preserving prior variants in Git history.</li>\n<li>Completed repository frontier analysis RFA-2026-001 with ten traceable open RFRs, document frontiers, health metrics, and a dependency graph.</li>\n<li>Advanced RFR-009 to Validation with calibrated stable-identifier, explicit-link, and frontier graph/index checks; the first scoped inventory is clean.</li>\n<li>Completed a repository-wide comparative review of non-human experimental\nevidence with a master inventory, machine-readable matrix, lineage,\ncontradictions, failure modes, cumulative findings, and ranked next\nexperiments.</li>\n<li>Reclassified the evidence boundary: four empirical/preflight activities, one\ndesign study, two unexecuted experiments, zero independent replications, and\nzero agent capability trials.</li>\n</ul>\n<h2 id=\"largest-unknown\">Largest Unknown</h2>\n<p>Whether independent reviewers validate the pilot contracts and whether the\nfrozen graders survive blinded unseen outcomes.</p>\n<h2 id=\"next-agent-handoff\">Next-Agent Handoff</h2>\n<p><strong>Start at <code>prompts/Non-Human-Experimental-Research-Next-Mission.md</code>. No\ncapability baseline has been run; current results are dependent, in-sample\nfixture and grader preflights only.</strong></p>",
+      "contentHash": "0d107d438ac804ffc3ea9d812ca96cd185ced6b99565ab5ddc5d2717fec395fe",
+      "html": "<h1 id=\"current-state\">Current State</h1>\n<h2 id=\"objective\">Objective</h2>\n<p>Validate AI-ROS through evidence-traceable evaluation of long-horizon repository agents.</p>\n<h2 id=\"current-phase\">Current Phase</h2>\n<p>Evaluation research Cycles 001–003 and the historical non-human experimental\ncomparative review are complete; independent review plus frozen-grader unseen\ntesting are next.</p>\n<h2 id=\"active-work\">Active Work</h2>\n<ul>\n<li>Publish the generated research site from <code>main</code> through GitHub Actions and GitHub Pages.</li>\n<li>Obtain independent reviews of ET-004-P01 and ET-014-P01.</li>\n<li>Challenge the frozen pilot graders with independently authored, blinded unseen\noutcomes before promotion.</li>\n<li>Freeze one agent-system configuration for a contained exploratory baseline.</li>\n<li>Capture final state, actions, runtime, retries, cost, and human intervention.</li>\n<li>Maintain the research frontier records under <code>research/frontier/</code>; RFR-001 and RFR-002 align with Cycle 004.</li>\n<li>Define a bounded metadata-adoption policy for current canonical artifacts and\nobtain a real supersession-edge sample; RFR-009 measurement and diagnostic\nrelationship validation are now implemented.</li>\n</ul>\n<h2 id=\"next-task\">Next Task</h2>\n<p>Execute <code>prompts/Non-Human-Experimental-Research-Next-Mission.md</code>: independently\nreview the pilots and challenge the frozen graders with unseen outcomes. Run\ncontained exploratory baselines only for pilots that pass.</p>\n<h2 id=\"risks\">Risks</h2>\n<ul>\n<li>Legacy split handbook and course-note documents remain excluded from publishing until they receive unique canonical IDs and URLs.</li>\n<li>Public benchmark validity may not transfer to repository tasks.</li>\n<li>Model and harness changes can obsolete baselines.</li>\n<li>Human review capacity may constrain evaluator calibration.</li>\n<li>The current repository is documentation-heavy and may not represent production coding work.</li>\n<li>Repository-native tasks may inherit hidden context, narrow graders, or answer leakage.</li>\n<li>Evaluated agents may exploit benchmark or infrastructure exposure.</li>\n<li>Probe calibration may overfit designer-created outcomes.</li>\n<li>The current 7/7 calibration is a dependent regression check, not a grader\naccuracy estimate or replication count.</li>\n<li>Additional architecture work now risks replacing empirical learning with speculation.</li>\n</ul>\n<h2 id=\"open-questions\">Open Questions</h2>\n<ul>\n<li>Which measures best predict verified repository outcomes?</li>\n<li>Which context policy provides the best reliability-adjusted cost?</li>\n<li>When does multi-agent coordination produce net value?</li>\n<li>Does a knowledge graph earn its maintenance cost?</li>\n</ul>\n<h2 id=\"completed-work\">Completed Work</h2>\n<ul>\n<li>Converted the canonical research frontier and non-human experiment backlog\ninto eleven dependency-aware proposed ROS missions under <code>missions/backlog/</code>.</li>\n<li>Reconstructed all 20 pre-ROS commits into eight explicitly historical work\nrecords with validated commit attribution, confidence, evidence boundaries,\ncompatibility policy, and a fresh-agent history index.</li>\n<li>Normalized 45 Markdown-formatted state-constrained research, semantic-control\narchitecture, and Time Entry documents to publishable <code>.md</code> paths and repaired\ntheir repository references.</li>\n<li>Extended RFR-009 with measured metadata coverage across 131 authored Markdown\nartifacts and diagnostic relationship-target validation; seven calibrated\nintegrity tests pass without imposing strict legacy metadata migration.</li>\n<li>Organized the state-constrained architecture corpus into distinct prompts,\nreports, synthesis, experiments, historical working notes, current generic\narchitecture, and application-specific Time Entry inputs; consolidated two\nbyte-identical duplicates with provenance recorded under <code>docs/repository/</code>.</li>\n<li>Added a reproducible Node 24 research-publisher dependency and GitHub Pages publishing workflow.</li>\n<li>Executed the AI Research Mission Generator.</li>\n<li>Created the 2026-07-23 state-of-field REP, gap analysis, priority matrix, and research roadmap.</li>\n<li>Selected long-horizon agent evaluation and verification as the highest-ROI next mission.</li>\n<li>Completed Evaluation Research Cycle 001.</li>\n<li>Defined the evaluation charter, constructs, outcome classes, sixteen candidate task families, audit protocol, and initial registries.</li>\n<li>Challenged the assumptions that repository-native tasks are inherently valid, more graders are always better, and three runs support stable rankings.</li>\n<li>Completed task-integrity pilots ET-004-P01 and ET-014-P01.</li>\n<li>Implemented a dependency-free evaluator and blind fixture exporter.</li>\n<li>Calibrated seven declared outcome probes and verified two blind exports.</li>\n<li>Added a decision framework, threat model, evaluation architecture, teaching guide, and research/engineering roadmap v2.</li>\n<li>Moved containment and runtime monitoring into the evaluation foundation rather than postponing security.</li>\n<li>Resolved three root case-only Git collisions by retaining the governance-defined uppercase canonical paths and preserving prior variants in Git history.</li>\n<li>Completed repository frontier analysis RFA-2026-001 with ten traceable open RFRs, document frontiers, health metrics, and a dependency graph.</li>\n<li>Advanced RFR-009 to Validation with calibrated stable-identifier, explicit-link, and frontier graph/index checks; the first scoped inventory is clean.</li>\n<li>Completed a repository-wide comparative review of non-human experimental\nevidence with a master inventory, machine-readable matrix, lineage,\ncontradictions, failure modes, cumulative findings, and ranked next\nexperiments.</li>\n<li>Reclassified the evidence boundary: four empirical/preflight activities, one\ndesign study, two unexecuted experiments, zero independent replications, and\nzero agent capability trials.</li>\n</ul>\n<h2 id=\"largest-unknown\">Largest Unknown</h2>\n<p>Whether independent reviewers validate the pilot contracts and whether the\nfrozen graders survive blinded unseen outcomes.</p>\n<h2 id=\"next-agent-handoff\">Next-Agent Handoff</h2>\n<p><strong>Start at <code>prompts/Non-Human-Experimental-Research-Next-Mission.md</code>. No\ncapability baseline has been run; current results are dependent, in-sample\nfixture and grader preflights only.</strong></p>",
       "links": [],
       "compatibilityMode": true
     },
@@ -19113,6 +19113,1062 @@
     },
     {
       "schemaVersion": "1.1",
+      "id": "MS-AIRES-2026-0001",
+      "title": "Independent pilot integrity review",
+      "slug": "ms-aires-2026-0001-independent-pilot-integrity-review",
+      "url": "/research/ms-aires-2026-0001-independent-pilot-integrity-review/",
+      "artifactType": "research-document",
+      "project": null,
+      "purposes": [],
+      "audiences": [],
+      "entryPoint": false,
+      "entryPointOrder": null,
+      "entryPointLabel": null,
+      "researchArea": "agent-evaluation",
+      "discipline": [
+        "measurement",
+        "research-methods"
+      ],
+      "summary": "",
+      "status": "proposed",
+      "version": "0.1",
+      "confidence": null,
+      "completion": null,
+      "priority": "critical",
+      "authorAgent": "unknown",
+      "created": "2026-08-17",
+      "updated": "2026-07-22",
+      "tags": [],
+      "keywords": [],
+      "relatedProjects": [],
+      "relatedDocuments": [],
+      "supersedes": [],
+      "supersededBy": [],
+      "evidenceIds": [],
+      "hypothesisIds": [],
+      "theoryIds": [],
+      "headings": [
+        {
+          "depth": 1,
+          "text": "Mission"
+        },
+        {
+          "depth": 2,
+          "text": "Objective"
+        },
+        {
+          "depth": 2,
+          "text": "Why this matters"
+        },
+        {
+          "depth": 2,
+          "text": "Scope"
+        },
+        {
+          "depth": 2,
+          "text": "Existing context"
+        },
+        {
+          "depth": 2,
+          "text": "Initial hypotheses"
+        },
+        {
+          "depth": 2,
+          "text": "Required evidence"
+        },
+        {
+          "depth": 2,
+          "text": "Constraints"
+        },
+        {
+          "depth": 2,
+          "text": "Execution instructions"
+        },
+        {
+          "depth": 2,
+          "text": "Deliverables"
+        },
+        {
+          "depth": 2,
+          "text": "Success criteria"
+        },
+        {
+          "depth": 2,
+          "text": "Stop conditions"
+        },
+        {
+          "depth": 2,
+          "text": "Handoff requirements"
+        }
+      ],
+      "sourcePath": "missions/backlog/MS-AIRES-2026-0001--independent-pilot-integrity-review.md",
+      "contentHash": "1a9ba4fb9ec61bce08ff9c68b55b4ddfcb07695f171c5fb018bff91de42b4117",
+      "html": "<h1 id=\"mission\">Mission</h1>\n<h2 id=\"objective\">Objective</h2>\n<p>Obtain two blinded, independent construct and probe reviews for ET-004-P01 and\nET-014-P01, then validate, revise, or quarantine each pilot.</p>\n<h2 id=\"why-this-matters\">Why this matters</h2>\n<p>Designer calibration cannot establish construct validity. This is the current\ngate for all capability baselines.</p>\n<h2 id=\"scope\">Scope</h2>\n<p>Included: reviewer recruitment, preregistered materials, independent labels,\nagreement analysis, post-capture adjudication, immutable dispositions. Excluded:\nagent capability runs and model comparisons.</p>\n<h2 id=\"existing-context\">Existing context</h2>\n<p><code>research/frontier/records/RFR-001.md</code>,\n<code>research/evaluation/13-independent-review-protocol.md</code>, and NX-001 in\n<code>research/analysis/non-human-next-experiments.md</code>.</p>\n<h2 id=\"initial-hypotheses\">Initial hypotheses</h2>\n<p>Independent reviewers will find both pilots valid after bounded revisions and\nwill agree on material probe labels. A quarantine or unresolved disagreement\nfalsifies promotion readiness.</p>\n<h2 id=\"required-evidence\">Required evidence</h2>\n<p>Original independent reviews, blinded labels, agreement table, adjudication,\ntask/grader hashes, and final pilot disposition.</p>\n<h2 id=\"constraints\">Constraints</h2>\n<p>Reviewers must not have designed the tasks or graders. Preserve reviews before\ndiscussion and do not simulate independence with repository agents.</p>\n<h2 id=\"execution-instructions\">Execution instructions</h2>\n<p>Follow the independent-review protocol and the frozen unseen-outcome portion of\nNX-001. Record revisions without overwriting prior versions.</p>\n<h2 id=\"deliverables\">Deliverables</h2>\n<p>Cycle report, immutable review records, agreement analysis, and updated\nevaluation registries.</p>\n<h2 id=\"success-criteria\">Success criteria</h2>\n<p>Two independent reviews per pilot, no concealed disagreement, and an explicit\nvalidate/revise/quarantine decision for each pilot.</p>\n<h2 id=\"stop-conditions\">Stop conditions</h2>\n<p>Stop when both pilots have a defensible disposition or reviewer independence\ncannot be obtained.</p>\n<h2 id=\"handoff-requirements\">Handoff requirements</h2>\n<p>State which pilots, if any, unlock MS-AIRES-2026-0002 and list every unresolved\nvalidity concern.</p>",
+      "links": [],
+      "compatibilityMode": false
+    },
+    {
+      "schemaVersion": "1.1",
+      "id": "MS-AIRES-2026-0002",
+      "title": "Contained repeated exploratory baseline",
+      "slug": "ms-aires-2026-0002-contained-repeated-exploratory-baseline",
+      "url": "/research/ms-aires-2026-0002-contained-repeated-exploratory-baseline/",
+      "artifactType": "research-document",
+      "project": null,
+      "purposes": [],
+      "audiences": [],
+      "entryPoint": false,
+      "entryPointOrder": null,
+      "entryPointLabel": null,
+      "researchArea": "agent-evaluation",
+      "discipline": [
+        "experimental-methods",
+        "agent-systems"
+      ],
+      "summary": "",
+      "status": "proposed",
+      "version": "0.1",
+      "confidence": null,
+      "completion": null,
+      "priority": "critical",
+      "authorAgent": "unknown",
+      "created": "2026-08-17",
+      "updated": "2026-07-22",
+      "tags": [],
+      "keywords": [],
+      "relatedProjects": [],
+      "relatedDocuments": [],
+      "supersedes": [],
+      "supersededBy": [],
+      "evidenceIds": [],
+      "hypothesisIds": [],
+      "theoryIds": [],
+      "headings": [
+        {
+          "depth": 1,
+          "text": "Mission"
+        },
+        {
+          "depth": 2,
+          "text": "Objective"
+        },
+        {
+          "depth": 2,
+          "text": "Why this matters"
+        },
+        {
+          "depth": 2,
+          "text": "Scope"
+        },
+        {
+          "depth": 2,
+          "text": "Existing context"
+        },
+        {
+          "depth": 2,
+          "text": "Initial hypotheses"
+        },
+        {
+          "depth": 2,
+          "text": "Required evidence"
+        },
+        {
+          "depth": 2,
+          "text": "Constraints"
+        },
+        {
+          "depth": 2,
+          "text": "Execution instructions"
+        },
+        {
+          "depth": 2,
+          "text": "Deliverables"
+        },
+        {
+          "depth": 2,
+          "text": "Success criteria"
+        },
+        {
+          "depth": 2,
+          "text": "Stop conditions"
+        },
+        {
+          "depth": 2,
+          "text": "Handoff requirements"
+        }
+      ],
+      "sourcePath": "missions/backlog/MS-AIRES-2026-0002--contained-repeated-exploratory-baseline.md",
+      "contentHash": "90a8fda9ba73748373d8d9309af28ac500b476a4fe7916413e8eb620c20f2754",
+      "html": "<h1 id=\"mission\">Mission</h1>\n<h2 id=\"objective\">Objective</h2>\n<p>Run each validated pilot at least three times with one frozen agent-system\nconfiguration in disposable blind fixtures.</p>\n<h2 id=\"why-this-matters\">Why this matters</h2>\n<p>The repository has no direct agent capability observations, variance estimate,\nor complete run-cost record.</p>\n<h2 id=\"scope\">Scope</h2>\n<p>Included: validated pilots, frozen configuration, random run order, trajectories,\nfinal state, retries, runtime, cost, interventions, and failures. Excluded:\ncomparative rankings and stable success-rate claims.</p>\n<h2 id=\"existing-context\">Existing context</h2>\n<p><code>research/frontier/records/RFR-002.md</code>, NX-002, and Workstream A2 in the\nevaluation roadmap.</p>\n<h2 id=\"initial-hypotheses\">Initial hypotheses</h2>\n<p>Contained repeated runs will produce reconstructable task-level outcomes and\nvariance useful for the next sample design. Infrastructure or task defects may\ninstead invalidate the observations.</p>\n<h2 id=\"required-evidence\">Required evidence</h2>\n<p>Frozen configuration, fixture hashes, run records, action telemetry, final-state\ndiffs, grader results, cost/intervention logs, and invalid-run reasons.</p>\n<h2 id=\"constraints\">Constraints</h2>\n<p>Only pilots promoted by MS-AIRES-2026-0001 may run. No production credentials,\ngold access, or network access unless separately authorized and contained.</p>\n<h2 id=\"execution-instructions\">Execution instructions</h2>\n<p>Predeclare stop rules and run order. Preserve every valid and invalid attempt.</p>\n<h2 id=\"deliverables\">Deliverables</h2>\n<p>Immutable run dataset, exploratory variance summary, failure updates, and a\nbaseline decision.</p>\n<h2 id=\"success-criteria\">Success criteria</h2>\n<p>At least three valid repetitions per promoted pilot with complete metadata and\nreconstructable outcomes.</p>\n<h2 id=\"stop-conditions\">Stop conditions</h2>\n<p>Stop at six valid trials or immediately on containment, telemetry, task, or\ngrader failure that invalidates further runs.</p>\n<h2 id=\"handoff-requirements\">Handoff requirements</h2>\n<p>Provide the natural outcomes needed by MS-AIRES-2026-0003 and the observed\nvariance needed for later sampling.</p>",
+      "links": [],
+      "compatibilityMode": false
+    },
+    {
+      "schemaVersion": "1.1",
+      "id": "MS-AIRES-2026-0003",
+      "title": "Grader external-validity study",
+      "slug": "ms-aires-2026-0003-grader-external-validity-study",
+      "url": "/research/ms-aires-2026-0003-grader-external-validity-study/",
+      "artifactType": "research-document",
+      "project": null,
+      "purposes": [],
+      "audiences": [],
+      "entryPoint": false,
+      "entryPointOrder": null,
+      "entryPointLabel": null,
+      "researchArea": "agent-evaluation",
+      "discipline": [
+        "measurement",
+        "statistics"
+      ],
+      "summary": "",
+      "status": "proposed",
+      "version": "0.1",
+      "confidence": null,
+      "completion": null,
+      "priority": "high",
+      "authorAgent": "unknown",
+      "created": "2026-08-17",
+      "updated": "2026-07-22",
+      "tags": [],
+      "keywords": [],
+      "relatedProjects": [],
+      "relatedDocuments": [],
+      "supersedes": [],
+      "supersededBy": [],
+      "evidenceIds": [],
+      "hypothesisIds": [],
+      "theoryIds": [],
+      "headings": [
+        {
+          "depth": 1,
+          "text": "Mission"
+        },
+        {
+          "depth": 2,
+          "text": "Objective"
+        },
+        {
+          "depth": 2,
+          "text": "Why this matters"
+        },
+        {
+          "depth": 2,
+          "text": "Scope"
+        },
+        {
+          "depth": 2,
+          "text": "Existing context"
+        },
+        {
+          "depth": 2,
+          "text": "Initial hypotheses"
+        },
+        {
+          "depth": 2,
+          "text": "Required evidence"
+        },
+        {
+          "depth": 2,
+          "text": "Constraints"
+        },
+        {
+          "depth": 2,
+          "text": "Execution instructions"
+        },
+        {
+          "depth": 2,
+          "text": "Deliverables"
+        },
+        {
+          "depth": 2,
+          "text": "Success criteria"
+        },
+        {
+          "depth": 2,
+          "text": "Stop conditions"
+        },
+        {
+          "depth": 2,
+          "text": "Handoff requirements"
+        }
+      ],
+      "sourcePath": "missions/backlog/MS-AIRES-2026-0003--grader-external-validity-study.md",
+      "contentHash": "dcf29e18912ff2cf9d13762bffce36d02e98374ca258a893636e61bd7d7d4d17",
+      "html": "<h1 id=\"mission\">Mission</h1>\n<h2 id=\"objective\">Objective</h2>\n<p>Compare frozen deterministic and optional layered grader decisions with blinded\nexpert labels on unseen and naturally produced outcomes.</p>\n<h2 id=\"why-this-matters\">Why this matters</h2>\n<p>All later comparisons depend on knowing the grader's false-accept and\nfalse-reject behavior outside designer-created probes.</p>\n<h2 id=\"scope\">Scope</h2>\n<p>Included: stratified blinded outcomes, expert reference labels, confusion tables,\ndisagreement analysis, reviewer burden, and incremental grader value. Excluded:\ngrader promotion based only on known probes.</p>\n<h2 id=\"existing-context\">Existing context</h2>\n<p><code>research/frontier/records/RFR-003.md</code>, NX-001, and evaluation Gate B.</p>\n<h2 id=\"initial-hypotheses\">Initial hypotheses</h2>\n<p>The frozen grader will agree with expert consensus within declared bounds; an\nunexplained material false acceptance falsifies promotion.</p>\n<h2 id=\"required-evidence\">Required evidence</h2>\n<p>Outcome corpus, blind labels, adjudication, grader hashes and outputs, error\ntables, uncertainty statement, and cost measurements.</p>\n<h2 id=\"constraints\">Constraints</h2>\n<p>Outcome authors and labelers must not see grader internals. Preserve task-level\nresults and avoid unsupported population estimates.</p>\n<h2 id=\"execution-instructions\">Execution instructions</h2>\n<p>Predeclare sampling and adjudication, then run graders without modification.</p>\n<h2 id=\"deliverables\">Deliverables</h2>\n<p>Validation dataset, error analysis, and grader promote/revise/quarantine record.</p>\n<h2 id=\"success-criteria\">Success criteria</h2>\n<p>Declared error bounds and evidence that every additional grader changes enough\ndecisions to justify its cost.</p>\n<h2 id=\"stop-conditions\">Stop conditions</h2>\n<p>Stop on leakage, invalid blinding, or insufficient independent labels.</p>\n<h2 id=\"handoff-requirements\">Handoff requirements</h2>\n<p>Document which grader stack is permitted for MS-AIRES-2026-0004.</p>",
+      "links": [],
+      "compatibilityMode": false
+    },
+    {
+      "schemaVersion": "1.1",
+      "id": "MS-AIRES-2026-0004",
+      "title": "Representative repository task corpus",
+      "slug": "ms-aires-2026-0004-representative-repository-task-corpus",
+      "url": "/research/ms-aires-2026-0004-representative-repository-task-corpus/",
+      "artifactType": "research-document",
+      "project": null,
+      "purposes": [],
+      "audiences": [],
+      "entryPoint": false,
+      "entryPointOrder": null,
+      "entryPointLabel": null,
+      "researchArea": "agent-evaluation",
+      "discipline": [
+        "dataset-design",
+        "software-maintenance"
+      ],
+      "summary": "",
+      "status": "proposed",
+      "version": "0.1",
+      "confidence": null,
+      "completion": null,
+      "priority": "high",
+      "authorAgent": "unknown",
+      "created": "2026-08-17",
+      "updated": "2026-07-22",
+      "tags": [],
+      "keywords": [],
+      "relatedProjects": [],
+      "relatedDocuments": [],
+      "supersedes": [],
+      "supersededBy": [],
+      "evidenceIds": [],
+      "hypothesisIds": [],
+      "theoryIds": [],
+      "headings": [
+        {
+          "depth": 1,
+          "text": "Mission"
+        },
+        {
+          "depth": 2,
+          "text": "Objective"
+        },
+        {
+          "depth": 2,
+          "text": "Why this matters"
+        },
+        {
+          "depth": 2,
+          "text": "Scope"
+        },
+        {
+          "depth": 2,
+          "text": "Existing context"
+        },
+        {
+          "depth": 2,
+          "text": "Initial hypotheses"
+        },
+        {
+          "depth": 2,
+          "text": "Required evidence"
+        },
+        {
+          "depth": 2,
+          "text": "Constraints"
+        },
+        {
+          "depth": 2,
+          "text": "Execution instructions"
+        },
+        {
+          "depth": 2,
+          "text": "Deliverables"
+        },
+        {
+          "depth": 2,
+          "text": "Success criteria"
+        },
+        {
+          "depth": 2,
+          "text": "Stop conditions"
+        },
+        {
+          "depth": 2,
+          "text": "Handoff requirements"
+        }
+      ],
+      "sourcePath": "missions/backlog/MS-AIRES-2026-0004--representative-repository-task-corpus.md",
+      "contentHash": "ebea16bb3b1ff678a1ffe419b531052326805e5d7151a87ab6418c00d65b044e",
+      "html": "<h1 id=\"mission\">Mission</h1>\n<h2 id=\"objective\">Objective</h2>\n<p>Build and independently audit a minimum versioned suite spanning real coding,\ndocumentation, recovery, provenance, security, and cross-file work.</p>\n<h2 id=\"why-this-matters\">Why this matters</h2>\n<p>The current documentation-heavy pilots cannot support broad repository-agent or\ncoding-agent claims.</p>\n<h2 id=\"scope\">Scope</h2>\n<p>Included: target population, sampling frame, held-out history, audited synthetic\ncases, leakage/provenance records, and task-level reporting. Excluded: expanding\nthe suite before each added family changes a decision.</p>\n<h2 id=\"existing-context\">Existing context</h2>\n<p><code>research/frontier/records/RFR-004.md</code>, NX-004, and evaluation Workstream A4.</p>\n<h2 id=\"initial-hypotheses\">Initial hypotheses</h2>\n<p>A small audited suite can expose materially different failures across task\nfamilies. Failure to source genuine coding work falsifies coding-agent scope.</p>\n<h2 id=\"required-evidence\">Required evidence</h2>\n<p>Sampling report, source provenance, task contracts, independent audits, held-out\nfixtures, coverage rationale, and leakage assessment.</p>\n<h2 id=\"constraints\">Constraints</h2>\n<p>Add one family at a time; preserve licensing, privacy, and repository history;\nreport sampling limits before aggregate metrics.</p>\n<h2 id=\"execution-instructions\">Execution instructions</h2>\n<p>Start with one independently authored code/automation task, then add only\ndecision-relevant families.</p>\n<h2 id=\"deliverables\">Deliverables</h2>\n<p>Versioned corpus, task manifest, audit labels, held-out fixtures, and scope\ndecision.</p>\n<h2 id=\"success-criteria\">Success criteria</h2>\n<p>Explicit coverage targets and demonstrated inclusion of genuine coding work.</p>\n<h2 id=\"stop-conditions\">Stop conditions</h2>\n<p>Stop when additional families no longer change the intended claim boundary or\nwhen provenance/leakage cannot be controlled.</p>\n<h2 id=\"handoff-requirements\">Handoff requirements</h2>\n<p>Publish the allowed inference scope and stable task versions for downstream\ncomparisons.</p>",
+      "links": [],
+      "compatibilityMode": false
+    },
+    {
+      "schemaVersion": "1.1",
+      "id": "MS-AIRES-2026-0005",
+      "title": "Context-policy causal comparison",
+      "slug": "ms-aires-2026-0005-context-policy-causal-comparison",
+      "url": "/research/ms-aires-2026-0005-context-policy-causal-comparison/",
+      "artifactType": "research-document",
+      "project": null,
+      "purposes": [],
+      "audiences": [],
+      "entryPoint": false,
+      "entryPointOrder": null,
+      "entryPointLabel": null,
+      "researchArea": "context-engineering",
+      "discipline": [
+        "experimental-methods",
+        "context-engineering"
+      ],
+      "summary": "",
+      "status": "proposed",
+      "version": "0.1",
+      "confidence": null,
+      "completion": null,
+      "priority": "medium",
+      "authorAgent": "unknown",
+      "created": "2026-08-17",
+      "updated": "2026-07-22",
+      "tags": [],
+      "keywords": [],
+      "relatedProjects": [],
+      "relatedDocuments": [],
+      "supersedes": [],
+      "supersededBy": [],
+      "evidenceIds": [],
+      "hypothesisIds": [],
+      "theoryIds": [],
+      "headings": [
+        {
+          "depth": 1,
+          "text": "Mission"
+        },
+        {
+          "depth": 2,
+          "text": "Objective"
+        },
+        {
+          "depth": 2,
+          "text": "Why this matters"
+        },
+        {
+          "depth": 2,
+          "text": "Scope"
+        },
+        {
+          "depth": 2,
+          "text": "Existing context"
+        },
+        {
+          "depth": 2,
+          "text": "Initial hypotheses"
+        },
+        {
+          "depth": 2,
+          "text": "Required evidence"
+        },
+        {
+          "depth": 2,
+          "text": "Constraints"
+        },
+        {
+          "depth": 2,
+          "text": "Execution instructions"
+        },
+        {
+          "depth": 2,
+          "text": "Deliverables"
+        },
+        {
+          "depth": 2,
+          "text": "Success criteria"
+        },
+        {
+          "depth": 2,
+          "text": "Stop conditions"
+        },
+        {
+          "depth": 2,
+          "text": "Handoff requirements"
+        }
+      ],
+      "sourcePath": "missions/backlog/MS-AIRES-2026-0005--context-policy-causal-comparison.md",
+      "contentHash": "7752eba692824a1de412a2c89fcbda922c53bae5bde12716ab4224c8f645935e",
+      "html": "<h1 id=\"mission\">Mission</h1>\n<h2 id=\"objective\">Objective</h2>\n<p>Compare full-history, recent-window, artifact-first, selective retrieval,\nstructured-summary, and compiled-context policies on the same audited suite.</p>\n<h2 id=\"why-this-matters\">Why this matters</h2>\n<p>The repository does not know which context policy maximizes verified outcomes\nper total cost or how context loss and contamination interact with task horizon.</p>\n<h2 id=\"scope\">Scope</h2>\n<p>Included: randomized paired runs, stale/conflicting-state injection, reliability,\nlatency, retries, context volume, recovery, and cost. Excluded: changing models\nor harnesses during the comparison.</p>\n<h2 id=\"existing-context\">Existing context</h2>\n<p><code>research/frontier/records/RFR-005.md</code> and Roadmap Phase 3.</p>\n<h2 id=\"initial-hypotheses\">Initial hypotheses</h2>\n<p>Selective or compiled context will preserve reliability at lower total cost than\nfull history. Context omissions or contamination may reverse that result.</p>\n<h2 id=\"required-evidence\">Required evidence</h2>\n<p>Frozen suite/configuration, randomization, run records, policy payloads, verified\noutcomes, recovery traces, and cost data.</p>\n<h2 id=\"constraints\">Constraints</h2>\n<p>Hold model, harness, task version, and grading fixed. Report task-policy\ninteractions rather than only aggregate effects.</p>\n<h2 id=\"execution-instructions\">Execution instructions</h2>\n<p>Predeclare policies and paired-run analysis before execution.</p>\n<h2 id=\"deliverables\">Deliverables</h2>\n<p>Context-policy decision table, cost/reliability frontier, and failure analysis.</p>\n<h2 id=\"success-criteria\">Success criteria</h2>\n<p>Repeatable effect estimates sufficient to choose or reject a default context\npolicy.</p>\n<h2 id=\"stop-conditions\">Stop conditions</h2>\n<p>Stop if task drift, grader drift, or incomplete telemetry breaks causal\ncomparability.</p>\n<h2 id=\"handoff-requirements\">Handoff requirements</h2>\n<p>Record the selected policy, exceptions, and revalidation triggers.</p>",
+      "links": [],
+      "compatibilityMode": false
+    },
+    {
+      "schemaVersion": "1.1",
+      "id": "MS-AIRES-2026-0006",
+      "title": "Total verified-cost measurement",
+      "slug": "ms-aires-2026-0006-total-verified-cost-measurement",
+      "url": "/research/ms-aires-2026-0006-total-verified-cost-measurement/",
+      "artifactType": "research-document",
+      "project": null,
+      "purposes": [],
+      "audiences": [],
+      "entryPoint": false,
+      "entryPointOrder": null,
+      "entryPointLabel": null,
+      "researchArea": "evaluation-economics",
+      "discipline": [
+        "operations-research",
+        "economics"
+      ],
+      "summary": "",
+      "status": "proposed",
+      "version": "0.1",
+      "confidence": null,
+      "completion": null,
+      "priority": "medium",
+      "authorAgent": "unknown",
+      "created": "2026-08-17",
+      "updated": "2026-07-22",
+      "tags": [],
+      "keywords": [],
+      "relatedProjects": [],
+      "relatedDocuments": [],
+      "supersedes": [],
+      "supersededBy": [],
+      "evidenceIds": [],
+      "hypothesisIds": [],
+      "theoryIds": [],
+      "headings": [
+        {
+          "depth": 1,
+          "text": "Mission"
+        },
+        {
+          "depth": 2,
+          "text": "Objective"
+        },
+        {
+          "depth": 2,
+          "text": "Why this matters"
+        },
+        {
+          "depth": 2,
+          "text": "Scope"
+        },
+        {
+          "depth": 2,
+          "text": "Existing context"
+        },
+        {
+          "depth": 2,
+          "text": "Initial hypotheses"
+        },
+        {
+          "depth": 2,
+          "text": "Required evidence"
+        },
+        {
+          "depth": 2,
+          "text": "Constraints"
+        },
+        {
+          "depth": 2,
+          "text": "Execution instructions"
+        },
+        {
+          "depth": 2,
+          "text": "Deliverables"
+        },
+        {
+          "depth": 2,
+          "text": "Success criteria"
+        },
+        {
+          "depth": 2,
+          "text": "Stop conditions"
+        },
+        {
+          "depth": 2,
+          "text": "Handoff requirements"
+        }
+      ],
+      "sourcePath": "missions/backlog/MS-AIRES-2026-0006--total-verified-cost-measurement.md",
+      "contentHash": "8dce09749efa03209515ff102d7c459d24e1cfacb8058b104af7f6bb38a24d63",
+      "html": "<h1 id=\"mission\">Mission</h1>\n<h2 id=\"objective\">Objective</h2>\n<p>Operationalize total cost per verified useful outcome across compute, retries,\nlatency, review, incidents, intervention, and recovery.</p>\n<h2 id=\"why-this-matters\">Why this matters</h2>\n<p>Token cost alone can reverse deployment decisions when human and failure costs\nare material.</p>\n<h2 id=\"scope\">Scope</h2>\n<p>Included: prospective resource accounting, failed-attempt costs, task-level\ndistributions, and sensitivity analysis. Excluded: universal monetary weights\nunsupported by observed use cases.</p>\n<h2 id=\"existing-context\">Existing context</h2>\n<p><code>research/frontier/records/RFR-006.md</code> and evaluation Workstream D.</p>\n<h2 id=\"initial-hypotheses\">Initial hypotheses</h2>\n<p>All-in cost changes at least some system or policy rankings relative to token\ncost. The competing result is ranking stability across plausible weights.</p>\n<h2 id=\"required-evidence\">Required evidence</h2>\n<p>Versioned cost schema, complete run/intervention logs, valuation assumptions,\nsensitivity ranges, and reconciliation records.</p>\n<h2 id=\"constraints\">Constraints</h2>\n<p>Separate observations from assigned weights and preserve failed runs.</p>\n<h2 id=\"execution-instructions\">Execution instructions</h2>\n<p>Instrument costs before collecting the target runs and reconcile every run.</p>\n<h2 id=\"deliverables\">Deliverables</h2>\n<p>Cost schema, observed dataset, sensitivity report, and decision guidance.</p>\n<h2 id=\"success-criteria\">Success criteria</h2>\n<p>Every included run reconciles and conclusions remain explicit across plausible\ncost weights.</p>\n<h2 id=\"stop-conditions\">Stop conditions</h2>\n<p>Stop if missing telemetry prevents all-in reconciliation.</p>\n<h2 id=\"handoff-requirements\">Handoff requirements</h2>\n<p>Provide reusable cost fields and identify the weights that materially change\ndecisions.</p>",
+      "links": [],
+      "compatibilityMode": false
+    },
+    {
+      "schemaVersion": "1.1",
+      "id": "MS-AIRES-2026-0007",
+      "title": "Risk-triggered human escalation study",
+      "slug": "ms-aires-2026-0007-risk-triggered-human-escalation-study",
+      "url": "/research/ms-aires-2026-0007-risk-triggered-human-escalation-study/",
+      "artifactType": "research-document",
+      "project": null,
+      "purposes": [],
+      "audiences": [],
+      "entryPoint": false,
+      "entryPointOrder": null,
+      "entryPointLabel": null,
+      "researchArea": "human-agent-systems",
+      "discipline": [
+        "human-factors",
+        "safety"
+      ],
+      "summary": "",
+      "status": "proposed",
+      "version": "0.1",
+      "confidence": null,
+      "completion": null,
+      "priority": "medium",
+      "authorAgent": "unknown",
+      "created": "2026-08-17",
+      "updated": "2026-07-22",
+      "tags": [],
+      "keywords": [],
+      "relatedProjects": [],
+      "relatedDocuments": [],
+      "supersedes": [],
+      "supersededBy": [],
+      "evidenceIds": [],
+      "hypothesisIds": [],
+      "theoryIds": [],
+      "headings": [
+        {
+          "depth": 1,
+          "text": "Mission"
+        },
+        {
+          "depth": 2,
+          "text": "Objective"
+        },
+        {
+          "depth": 2,
+          "text": "Why this matters"
+        },
+        {
+          "depth": 2,
+          "text": "Scope"
+        },
+        {
+          "depth": 2,
+          "text": "Existing context"
+        },
+        {
+          "depth": 2,
+          "text": "Initial hypotheses"
+        },
+        {
+          "depth": 2,
+          "text": "Required evidence"
+        },
+        {
+          "depth": 2,
+          "text": "Constraints"
+        },
+        {
+          "depth": 2,
+          "text": "Execution instructions"
+        },
+        {
+          "depth": 2,
+          "text": "Deliverables"
+        },
+        {
+          "depth": 2,
+          "text": "Success criteria"
+        },
+        {
+          "depth": 2,
+          "text": "Stop conditions"
+        },
+        {
+          "depth": 2,
+          "text": "Handoff requirements"
+        }
+      ],
+      "sourcePath": "missions/backlog/MS-AIRES-2026-0007--risk-triggered-human-escalation-study.md",
+      "contentHash": "71decf0c623d57fda258427fa47803a575c77c85fc5669a5b0996d2552a298b2",
+      "html": "<h1 id=\"mission\">Mission</h1>\n<h2 id=\"objective\">Objective</h2>\n<p>Compare fixed approval gates, risk-triggered escalation, and end-only review on\nethically bounded tasks.</p>\n<h2 id=\"why-this-matters\">Why this matters</h2>\n<p>The repository lacks evidence about intervention timing, reviewer burden,\nmissed-risk rate, autonomy loss, and trust calibration.</p>\n<h2 id=\"scope\">Scope</h2>\n<p>Included: explicit risk strata, within-task policy comparison, preventions,\nfalse alarms, review time, recovery, and verified outcomes. Excluded: production\nexternal writes.</p>\n<h2 id=\"existing-context\">Existing context</h2>\n<p><code>research/frontier/records/RFR-007.md</code>, Roadmap Phase 5, and the threat model.</p>\n<h2 id=\"initial-hypotheses\">Initial hypotheses</h2>\n<p>Risk-triggered escalation will reduce consequential exposure with lower burden\nthan fixed gates. Missed risks or unacceptable outcome loss falsify that policy.</p>\n<h2 id=\"required-evidence\">Required evidence</h2>\n<p>Risk labels, intervention logs, reviewer actions and time, outcomes, false alarms,\nmissed risks, and recovery records.</p>\n<h2 id=\"constraints\">Constraints</h2>\n<p>Use trained reviewers and synthetic or low-risk tasks with working containment.</p>\n<h2 id=\"execution-instructions\">Execution instructions</h2>\n<p>Predeclare triggers and adjudication, randomize policy where safe, and preserve\nall interventions.</p>\n<h2 id=\"deliverables\">Deliverables</h2>\n<p>Escalation policy, burden/risk frontier, and failure analysis.</p>\n<h2 id=\"success-criteria\">Success criteria</h2>\n<p>Lower consequential-risk exposure without unacceptable verified-outcome loss.</p>\n<h2 id=\"stop-conditions\">Stop conditions</h2>\n<p>Stop on containment failure, unsafe exposure, or unreliable risk labels.</p>\n<h2 id=\"handoff-requirements\">Handoff requirements</h2>\n<p>Document allowed autonomy tiers, triggers, and unresolved human-factors risks.</p>",
+      "links": [],
+      "compatibilityMode": false
+    },
+    {
+      "schemaVersion": "1.1",
+      "id": "MS-AIRES-2026-0008",
+      "title": "Evaluation containment validation",
+      "slug": "ms-aires-2026-0008-evaluation-containment-validation",
+      "url": "/research/ms-aires-2026-0008-evaluation-containment-validation/",
+      "artifactType": "research-document",
+      "project": null,
+      "purposes": [],
+      "audiences": [],
+      "entryPoint": false,
+      "entryPointOrder": null,
+      "entryPointLabel": null,
+      "researchArea": "agent-safety",
+      "discipline": [
+        "security-engineering",
+        "resilience"
+      ],
+      "summary": "",
+      "status": "proposed",
+      "version": "0.1",
+      "confidence": null,
+      "completion": null,
+      "priority": "critical",
+      "authorAgent": "unknown",
+      "created": "2026-08-17",
+      "updated": "2026-07-22",
+      "tags": [],
+      "keywords": [],
+      "relatedProjects": [],
+      "relatedDocuments": [],
+      "supersedes": [],
+      "supersededBy": [],
+      "evidenceIds": [],
+      "hypothesisIds": [],
+      "theoryIds": [],
+      "headings": [
+        {
+          "depth": 1,
+          "text": "Mission"
+        },
+        {
+          "depth": 2,
+          "text": "Objective"
+        },
+        {
+          "depth": 2,
+          "text": "Why this matters"
+        },
+        {
+          "depth": 2,
+          "text": "Scope"
+        },
+        {
+          "depth": 2,
+          "text": "Existing context"
+        },
+        {
+          "depth": 2,
+          "text": "Initial hypotheses"
+        },
+        {
+          "depth": 2,
+          "text": "Required evidence"
+        },
+        {
+          "depth": 2,
+          "text": "Constraints"
+        },
+        {
+          "depth": 2,
+          "text": "Execution instructions"
+        },
+        {
+          "depth": 2,
+          "text": "Deliverables"
+        },
+        {
+          "depth": 2,
+          "text": "Success criteria"
+        },
+        {
+          "depth": 2,
+          "text": "Stop conditions"
+        },
+        {
+          "depth": 2,
+          "text": "Handoff requirements"
+        }
+      ],
+      "sourcePath": "missions/backlog/MS-AIRES-2026-0008--evaluation-containment-validation.md",
+      "contentHash": "59f33cbbb1960eb5b893db6bdfbc2a6c240758a949543decadb6036b64d27cd1",
+      "html": "<h1 id=\"mission\">Mission</h1>\n<h2 id=\"objective\">Objective</h2>\n<p>Test containment, gold separation, monitoring, pause, and rollback controls while\nmeasuring construct distortion.</p>\n<h2 id=\"why-this-matters\">Why this matters</h2>\n<p>Safe baseline execution depends on controls that currently have architectural\nsupport but limited control-effectiveness evidence.</p>\n<h2 id=\"scope\">Scope</h2>\n<p>Included: benign fault injection, adversarial gold-separation cases, denied\nactions, telemetry, pause/kill, rollback, incident response, and task impact.\nExcluded: production credentials and uncontrolled adversarial execution.</p>\n<h2 id=\"existing-context\">Existing context</h2>\n<p><code>research/frontier/records/RFR-008.md</code>, NX-003, the threat model, and evaluation\nWorkstream B.</p>\n<h2 id=\"initial-hypotheses\">Initial hypotheses</h2>\n<p>Critical controls will fail safely and preserve sufficient task validity. Any\nsecret/gold leak or unrecoverable action falsifies readiness.</p>\n<h2 id=\"required-evidence\">Required evidence</h2>\n<p>Control matrix, planted-secret manifest, fault scenarios, telemetry, alerts,\nrollback proofs, incident records, and distortion measurements.</p>\n<h2 id=\"constraints\">Constraints</h2>\n<p>Use disposable synthetic environments. Start with benign faults before more\nadversarial scenarios.</p>\n<h2 id=\"execution-instructions\">Execution instructions</h2>\n<p>Test each control independently, then test composed failure paths.</p>\n<h2 id=\"deliverables\">Deliverables</h2>\n<p>Control test suite, gold-separation audit, incident records, and residual-risk\ndecision.</p>\n<h2 id=\"success-criteria\">Success criteria</h2>\n<p>All critical controls fail safely with complete evidence, measured recovery, and\nacceptable task distortion.</p>\n<h2 id=\"stop-conditions\">Stop conditions</h2>\n<p>Stop immediately on uncontrolled escape, secret exposure, or missing telemetry.</p>\n<h2 id=\"handoff-requirements\">Handoff requirements</h2>\n<p>State whether MS-AIRES-2026-0002 is safe to run and list residual controls.</p>",
+      "links": [],
+      "compatibilityMode": false
+    },
+    {
+      "schemaVersion": "1.1",
+      "id": "MS-AIRES-2026-0009",
+      "title": "Metadata adoption and provenance-edge validation",
+      "slug": "ms-aires-2026-0009-metadata-adoption-and-provenance-edge-validation",
+      "url": "/research/ms-aires-2026-0009-metadata-adoption-and-provenance-edge-validation/",
+      "artifactType": "research-document",
+      "project": null,
+      "purposes": [],
+      "audiences": [],
+      "entryPoint": false,
+      "entryPointOrder": null,
+      "entryPointLabel": null,
+      "researchArea": "repository-integrity",
+      "discipline": [
+        "knowledge-management",
+        "repository-tooling"
+      ],
+      "summary": "",
+      "status": "proposed",
+      "version": "0.1",
+      "confidence": null,
+      "completion": null,
+      "priority": "high",
+      "authorAgent": "unknown",
+      "created": "2026-08-17",
+      "updated": "2026-07-22",
+      "tags": [],
+      "keywords": [],
+      "relatedProjects": [],
+      "relatedDocuments": [],
+      "supersedes": [],
+      "supersededBy": [],
+      "evidenceIds": [],
+      "hypothesisIds": [],
+      "theoryIds": [],
+      "headings": [
+        {
+          "depth": 1,
+          "text": "Mission"
+        },
+        {
+          "depth": 2,
+          "text": "Objective"
+        },
+        {
+          "depth": 2,
+          "text": "Why this matters"
+        },
+        {
+          "depth": 2,
+          "text": "Scope"
+        },
+        {
+          "depth": 2,
+          "text": "Existing context"
+        },
+        {
+          "depth": 2,
+          "text": "Initial hypotheses"
+        },
+        {
+          "depth": 2,
+          "text": "Required evidence"
+        },
+        {
+          "depth": 2,
+          "text": "Constraints"
+        },
+        {
+          "depth": 2,
+          "text": "Execution instructions"
+        },
+        {
+          "depth": 2,
+          "text": "Deliverables"
+        },
+        {
+          "depth": 2,
+          "text": "Success criteria"
+        },
+        {
+          "depth": 2,
+          "text": "Stop conditions"
+        },
+        {
+          "depth": 2,
+          "text": "Handoff requirements"
+        }
+      ],
+      "sourcePath": "missions/backlog/MS-AIRES-2026-0009--metadata-and-provenance-completion.md",
+      "contentHash": "14c80ca93b2d7119fc1b07d452e5eda2373dc7483c0e0cb68529a1de40d883d4",
+      "html": "<h1 id=\"mission\">Mission</h1>\n<h2 id=\"objective\">Objective</h2>\n<p>Define bounded canonical metadata adoption, obtain a real supersession-edge\nsample, and validate reciprocal and semantic provenance checks.</p>\n<h2 id=\"why-this-matters\">Why this matters</h2>\n<p>RFR-009 tooling exists, but low metadata coverage and no real supersession edge\nprevent reliable repository-wide provenance traversal.</p>\n<h2 id=\"scope\">Scope</h2>\n<p>Included: adoption policy, a bounded current-artifact migration, real edge\nsample, heading/bare-path/registry-reference decisions, seeded tests, and\nretrieval impact measurement. Excluded: indiscriminate legacy migration.</p>\n<h2 id=\"existing-context\">Existing context</h2>\n<p><code>research/frontier/records/RFR-009.md</code> and both RFR-009 investigation records.</p>\n<h2 id=\"initial-hypotheses\">Initial hypotheses</h2>\n<p>Targeted metadata on current canonical artifacts will improve traversal enough\nto justify its maintenance cost. The competing result is negligible retrieval\nbenefit or excessive migration burden.</p>\n<h2 id=\"required-evidence\">Required evidence</h2>\n<p>Before/after inventory, policy decision, migrated sample, real supersession\nrecords, seeded defects, validator results, and retrieval/handoff observations.</p>\n<h2 id=\"constraints\">Constraints</h2>\n<p>Preserve legacy IDs and provenance; do not enforce fields before policy approval;\ndo not invent supersession relationships.</p>\n<h2 id=\"execution-instructions\">Execution instructions</h2>\n<p>Select the smallest decision-relevant artifact class, measure baseline, migrate,\nvalidate, and compare retrieval/handoff behavior.</p>\n<h2 id=\"deliverables\">Deliverables</h2>\n<p>Adoption decision, migration map if needed, calibrated checks, updated inventory,\nand RFR-009 disposition.</p>\n<h2 id=\"success-criteria\">Success criteria</h2>\n<p>Zero unexplained canonical reference failures, all seeded defects detected, and\na defensible adopt/limit/reject decision for metadata expansion.</p>\n<h2 id=\"stop-conditions\">Stop conditions</h2>\n<p>Stop if no real provenance edge exists or measured value cannot justify broader\nmigration.</p>\n<h2 id=\"handoff-requirements\">Handoff requirements</h2>\n<p>State whether RFR-009 can close and which artifact classes remain diagnostic.</p>",
+      "links": [],
+      "compatibilityMode": false
+    },
+    {
+      "schemaVersion": "1.1",
+      "id": "MS-AIRES-2026-0010",
+      "title": "Knowledge-graph value experiment",
+      "slug": "ms-aires-2026-0010-knowledge-graph-value-experiment",
+      "url": "/research/ms-aires-2026-0010-knowledge-graph-value-experiment/",
+      "artifactType": "research-document",
+      "project": null,
+      "purposes": [],
+      "audiences": [],
+      "entryPoint": false,
+      "entryPointOrder": null,
+      "entryPointLabel": null,
+      "researchArea": "knowledge-platform",
+      "discipline": [
+        "knowledge-engineering",
+        "information-retrieval"
+      ],
+      "summary": "",
+      "status": "proposed",
+      "version": "0.1",
+      "confidence": null,
+      "completion": null,
+      "priority": "low",
+      "authorAgent": "unknown",
+      "created": "2026-08-17",
+      "updated": "2026-07-22",
+      "tags": [],
+      "keywords": [],
+      "relatedProjects": [],
+      "relatedDocuments": [],
+      "supersedes": [],
+      "supersededBy": [],
+      "evidenceIds": [],
+      "hypothesisIds": [],
+      "theoryIds": [],
+      "headings": [
+        {
+          "depth": 1,
+          "text": "Mission"
+        },
+        {
+          "depth": 2,
+          "text": "Objective"
+        },
+        {
+          "depth": 2,
+          "text": "Why this matters"
+        },
+        {
+          "depth": 2,
+          "text": "Scope"
+        },
+        {
+          "depth": 2,
+          "text": "Existing context"
+        },
+        {
+          "depth": 2,
+          "text": "Initial hypotheses"
+        },
+        {
+          "depth": 2,
+          "text": "Required evidence"
+        },
+        {
+          "depth": 2,
+          "text": "Constraints"
+        },
+        {
+          "depth": 2,
+          "text": "Execution instructions"
+        },
+        {
+          "depth": 2,
+          "text": "Deliverables"
+        },
+        {
+          "depth": 2,
+          "text": "Success criteria"
+        },
+        {
+          "depth": 2,
+          "text": "Stop conditions"
+        },
+        {
+          "depth": 2,
+          "text": "Handoff requirements"
+        }
+      ],
+      "sourcePath": "missions/backlog/MS-AIRES-2026-0010--knowledge-graph-value-experiment.md",
+      "contentHash": "c593594b2f95c6a848e2fe3d02f0b06f886e333e8a90c2c57448f8942b440056",
+      "html": "<h1 id=\"mission\">Mission</h1>\n<h2 id=\"objective\">Objective</h2>\n<p>Test whether a maintained research graph improves retrieval, handoff accuracy,\nduplicate detection, and research selection enough to justify maintenance.</p>\n<h2 id=\"why-this-matters\">Why this matters</h2>\n<p>A graph may compound repository learning or create expensive ontology debt.</p>\n<h2 id=\"scope\">Scope</h2>\n<p>Included: representative navigation/synthesis tasks, file/search baseline,\nminimal graph workflow, correctness, time, missed provenance, duplicates, and\nmaintenance effort. Excluded: production graph infrastructure before value is\ndemonstrated.</p>\n<h2 id=\"existing-context\">Existing context</h2>\n<p><code>research/frontier/records/RFR-010.md</code> and knowledge-platform architecture.</p>\n<h2 id=\"initial-hypotheses\">Initial hypotheses</h2>\n<p>Graph assistance will produce replicated material gains on relationship-heavy\ntasks exceeding maintenance cost. Search parity falsifies adoption.</p>\n<h2 id=\"required-evidence\">Required evidence</h2>\n<p>Benchmark tasks, relevance/answer judgments, baseline results, graph results,\nmaintenance logs, and replication.</p>\n<h2 id=\"constraints\">Constraints</h2>\n<p>Use stable corpus and identifiers; keep the prototype minimal and reversible.</p>\n<h2 id=\"execution-instructions\">Execution instructions</h2>\n<p>Predefine tasks and go/no-go threshold before building the graph slice.</p>\n<h2 id=\"deliverables\">Deliverables</h2>\n<p>Minimal prototype, benchmark results, cost-benefit analysis, and go/no-go\ndecision.</p>\n<h2 id=\"success-criteria\">Success criteria</h2>\n<p>Replicated material gains that exceed ongoing maintenance cost.</p>\n<h2 id=\"stop-conditions\">Stop conditions</h2>\n<p>Stop when search matches graph performance or ontology instability dominates.</p>\n<h2 id=\"handoff-requirements\">Handoff requirements</h2>\n<p>Record adopt/reject scope and delete-or-preserve disposition for the prototype.</p>",
+      "links": [],
+      "compatibilityMode": false
+    },
+    {
+      "schemaVersion": "1.1",
+      "id": "MS-AIRES-2026-0011",
+      "title": "Audit versus no-audit decision counterfactual",
+      "slug": "ms-aires-2026-0011-audit-versus-no-audit-decision-counterfactual",
+      "url": "/research/ms-aires-2026-0011-audit-versus-no-audit-decision-counterfactual/",
+      "artifactType": "research-document",
+      "project": null,
+      "purposes": [],
+      "audiences": [],
+      "entryPoint": false,
+      "entryPointOrder": null,
+      "entryPointLabel": null,
+      "researchArea": "evaluation-governance",
+      "discipline": [
+        "causal-inference",
+        "research-methods"
+      ],
+      "summary": "",
+      "status": "proposed",
+      "version": "0.1",
+      "confidence": null,
+      "completion": null,
+      "priority": "medium",
+      "authorAgent": "unknown",
+      "created": "2026-08-17",
+      "updated": "2026-07-22",
+      "tags": [],
+      "keywords": [],
+      "relatedProjects": [],
+      "relatedDocuments": [],
+      "supersedes": [],
+      "supersededBy": [],
+      "evidenceIds": [],
+      "hypothesisIds": [],
+      "theoryIds": [],
+      "headings": [
+        {
+          "depth": 1,
+          "text": "Mission"
+        },
+        {
+          "depth": 2,
+          "text": "Objective"
+        },
+        {
+          "depth": 2,
+          "text": "Why this matters"
+        },
+        {
+          "depth": 2,
+          "text": "Scope"
+        },
+        {
+          "depth": 2,
+          "text": "Existing context"
+        },
+        {
+          "depth": 2,
+          "text": "Initial hypotheses"
+        },
+        {
+          "depth": 2,
+          "text": "Required evidence"
+        },
+        {
+          "depth": 2,
+          "text": "Constraints"
+        },
+        {
+          "depth": 2,
+          "text": "Execution instructions"
+        },
+        {
+          "depth": 2,
+          "text": "Deliverables"
+        },
+        {
+          "depth": 2,
+          "text": "Success criteria"
+        },
+        {
+          "depth": 2,
+          "text": "Stop conditions"
+        },
+        {
+          "depth": 2,
+          "text": "Handoff requirements"
+        }
+      ],
+      "sourcePath": "missions/backlog/MS-AIRES-2026-0011--audit-decision-counterfactual.md",
+      "contentHash": "e8f78bf5b5c85588027431200318f0e27d4cdc15a3424440c8aadabb5ca868c4",
+      "html": "<h1 id=\"mission\">Mission</h1>\n<h2 id=\"objective\">Objective</h2>\n<p>Measure whether independent task audit changes material capability decisions\ncompared with the frozen unaudited contracts.</p>\n<h2 id=\"why-this-matters\">Why this matters</h2>\n<p>The repository assumes audit prevents false conclusions, but current evidence\nshows document improvement rather than a causal decision effect.</p>\n<h2 id=\"scope\">Scope</h2>\n<p>Included: varied task sample, frozen pre-audit contracts, independent audits,\npaired decision reconstruction, changed statuses/conclusions, burden, and error\nanalysis. Excluded: rewriting pre-audit artifacts after results are known.</p>\n<h2 id=\"existing-context\">Existing context</h2>\n<p>NX-005 in <code>research/analysis/non-human-next-experiments.md</code> and the audit-first\nevaluation decision framework.</p>\n<h2 id=\"initial-hypotheses\">Initial hypotheses</h2>\n<p>Audit will prevent or materially change at least some false capability\nconclusions. No decision changes despite document edits weakens mandatory audit.</p>\n<h2 id=\"required-evidence\">Required evidence</h2>\n<p>Frozen before/after contracts, independent audit records, paired capability\ndecisions, adjudication, time/cost, and changed-decision rationale.</p>\n<h2 id=\"constraints\">Constraints</h2>\n<p>Preserve both versions and blind decision reconstruction where possible.</p>\n<h2 id=\"execution-instructions\">Execution instructions</h2>\n<p>Predeclare material decision changes and analyze the paired counterfactual.</p>\n<h2 id=\"deliverables\">Deliverables</h2>\n<p>Counterfactual dataset, causal-limitations analysis, and audit-policy decision.</p>\n<h2 id=\"success-criteria\">Success criteria</h2>\n<p>A defensible estimate of which material conclusions audit changes and at what\ncost.</p>\n<h2 id=\"stop-conditions\">Stop conditions</h2>\n<p>Stop if the sample lacks varied tasks or before/after decisions cannot be\nreconstructed independently.</p>\n<h2 id=\"handoff-requirements\">Handoff requirements</h2>\n<p>Recommend mandatory, risk-triggered, optional, or rejected audit policy with\nexplicit evidence limits.</p>",
+      "links": [],
+      "compatibilityMode": false
+    },
+    {
+      "schemaVersion": "1.1",
       "id": null,
       "title": "multi state data and type explosion",
       "slug": "multi-state-data-and-type-explosion",
@@ -20646,6 +21702,71 @@
     },
     {
       "schemaVersion": "1.1",
+      "id": null,
+      "title": "Research TODO Backfill",
+      "slug": "research-todo-backfill",
+      "url": "/research/research-todo-backfill/",
+      "artifactType": "research-document",
+      "project": null,
+      "purposes": [],
+      "audiences": [],
+      "entryPoint": false,
+      "entryPointOrder": null,
+      "entryPointLabel": null,
+      "researchArea": "General Research",
+      "discipline": [],
+      "summary": "",
+      "status": "draft",
+      "version": "0.1",
+      "confidence": null,
+      "completion": null,
+      "priority": "medium",
+      "authorAgent": "unknown",
+      "created": "2026-07-22",
+      "updated": "2026-07-22",
+      "tags": [],
+      "keywords": [],
+      "relatedProjects": [],
+      "relatedDocuments": [],
+      "supersedes": [],
+      "supersededBy": [],
+      "evidenceIds": [],
+      "hypothesisIds": [],
+      "theoryIds": [],
+      "headings": [
+        {
+          "depth": 1,
+          "text": "Research TODO Backfill"
+        },
+        {
+          "depth": 2,
+          "text": "Decision"
+        },
+        {
+          "depth": 2,
+          "text": "Mapping"
+        },
+        {
+          "depth": 2,
+          "text": "Grouping rules"
+        },
+        {
+          "depth": 2,
+          "text": "Deferred broad themes"
+        },
+        {
+          "depth": 2,
+          "text": "Validation"
+        }
+      ],
+      "sourcePath": "docs/repository/2026-08-17-research-todo-backfill.md",
+      "contentHash": "f2a474079cfd5d1d74a3d6af5554c61b25b6e73ef58ed18f67493aa36c729789",
+      "html": "<h1 id=\"research-todo-backfill\">Research TODO Backfill</h1>\n<h2 id=\"decision\">Decision</h2>\n<p>Represent the repository's actionable research backlog as proposed ROS mission\nartifacts under <code>missions/backlog/</code>. Do not create active ROS transitions for\nwork that has not started.</p>\n<p>The canonical <code>research/frontier/</code> already deduplicates most roadmap checkboxes,\nopen questions, and workstream language into ten RFRs. Each RFR therefore maps\nto one backlog mission. NX-005 remains separate because its audit/no-audit\ncounterfactual is not represented by a dedicated frontier record.</p>\n<h2 id=\"mapping\">Mapping</h2>\n<table>\n<thead>\n<tr>\n<th>Mission</th>\n<th>Canonical source</th>\n<th>Consolidated TODOs</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>MS-AIRES-2026-0001</td>\n<td>RFR-001 / NX-001</td>\n<td>independent pilot reviews and blinded review-label comparison</td>\n</tr>\n<tr>\n<td>MS-AIRES-2026-0002</td>\n<td>RFR-002 / NX-002</td>\n<td>contained repeated baseline and exploratory variance</td>\n</tr>\n<tr>\n<td>MS-AIRES-2026-0003</td>\n<td>RFR-003 / NX-001</td>\n<td>unseen-outcome and natural-outcome grader validation</td>\n</tr>\n<tr>\n<td>MS-AIRES-2026-0004</td>\n<td>RFR-004 / NX-004</td>\n<td>representative suite and independent code/automation replication</td>\n</tr>\n<tr>\n<td>MS-AIRES-2026-0005</td>\n<td>RFR-005</td>\n<td>context, state, memory, and retrieval-compiled policy comparison</td>\n</tr>\n<tr>\n<td>MS-AIRES-2026-0006</td>\n<td>RFR-006</td>\n<td>total verified-cost and reviewer-burden measurement</td>\n</tr>\n<tr>\n<td>MS-AIRES-2026-0007</td>\n<td>RFR-007</td>\n<td>fixed versus risk-triggered human escalation</td>\n</tr>\n<tr>\n<td>MS-AIRES-2026-0008</td>\n<td>RFR-008 / NX-003</td>\n<td>containment, gold separation, monitoring, pause, and rollback validation</td>\n</tr>\n<tr>\n<td>MS-AIRES-2026-0009</td>\n<td>RFR-009</td>\n<td>bounded metadata adoption and real supersession-edge calibration</td>\n</tr>\n<tr>\n<td>MS-AIRES-2026-0010</td>\n<td>RFR-010</td>\n<td>knowledge-graph value experiment</td>\n</tr>\n<tr>\n<td>MS-AIRES-2026-0011</td>\n<td>NX-005</td>\n<td>audit/no-audit decision counterfactual</td>\n</tr>\n</tbody>\n</table>\n<h2 id=\"grouping-rules\">Grouping rules</h2>\n<ul>\n<li>Duplicate checklist language is consolidated under the matching RFR mission.</li>\n<li>A mission may cover multiple experiment aliases when they share one decision\ngate, but its body preserves the component evidence and success requirements.</li>\n<li>Dependency order follows the frontier graph and evaluation critical path.</li>\n<li>All new missions are <code>proposed</code>; beginning one requires a future authorized\nROS work transition and prerequisite check.</li>\n<li>Publishing deployment confirmation and Time Entry contract authoring remain\nengineering/product work and are not mislabeled as research missions.</li>\n<li>Governance template checkboxes are completion criteria, not repository TODOs.</li>\n<li>Illustrative uses of “TODO” inside research prompts and reports are examples,\nnot actionable repository work.</li>\n</ul>\n<h2 id=\"deferred-broad-themes\">Deferred broad themes</h2>\n<p>Model routing, interface-agent testing, orchestration variants, and general\nretrieval benchmarking remain roadmap themes rather than separately actionable\nmissions because the current frontier makes them dependent on RFR-004 and later\nevidence. They should receive new RFRs and missions only when their prerequisites\nare met and a bounded decision question is defined.</p>\n<h2 id=\"validation\">Validation</h2>\n<p>The ROS mission registry must be generated with <code>./ros registry build</code>. The\nbacklog is valid only when <code>./ros registry check</code>, <code>./ros validate</code>, and the\nproject test suite pass.</p>",
+      "links": [],
+      "compatibilityMode": true
+    },
+    {
+      "schemaVersion": "1.1",
       "id": "RFA-2026-001",
       "title": "Repository Research Frontier",
       "slug": "rfa-2026-001-repository-research-frontier",
@@ -21454,8 +22575,8 @@
         }
       ],
       "sourcePath": "roadmap.md",
-      "contentHash": "b823ef8ef87f6da17c49f28dc383859016bbad8459271daf2eaf9ef4b0f6e158",
-      "html": "<h1 id=\"roadmap\">Roadmap</h1>\n<ul>\n<li>Repository bootstrap</li>\n<li>Constitution</li>\n<li>Specifications</li>\n<li>Knowledge model</li>\n<li>Repository generator</li>\n<li>Website</li>\n<li>Validation</li>\n<li>AI agents</li>\n</ul>\n<h2 id=\"publishing\">Publishing</h2>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Add a reproducible research-publisher build and GitHub Pages deployment workflow</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Normalize Markdown-formatted research and architecture documents to <code>.md</code>\nso the canonical state-constrained corpus is included in publisher discovery</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Confirm the first successful deployment from the <code>main</code> branch</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Assign unique canonical IDs and URLs to the excluded legacy split handbook and course-note documents</li>\n</ul>\n<h2 id=\"research-validation-sequence\">Research Validation Sequence</h2>\n<ol>\n<li>Long-horizon agent evaluation and verification</li>\n<li>Context compilation, state, and memory</li>\n<li>Permissions, security, and recovery</li>\n<li>Agent orchestration and human escalation</li>\n<li>Retrieval and knowledge-platform validation</li>\n<li>Model routing and interface-agent evaluation</li>\n</ol>\n<p>See <code>research/AI-Research-Roadmap.md</code> for decision gates and deliverables.</p>\n<h3 id=\"evaluation-mission-status\">Evaluation Mission Status</h3>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Cycle 001: charter, constructs, task taxonomy, audit protocol, and registries</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Cycle 002: integrity pilots for ET-004 and ET-014 (provisional pending independent review)</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Cycle 003: in-sample deterministic grader calibration and blind export</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Historical non-human experimental inventory, lineage, contradiction, and confidence synthesis</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Cycle 004a: independent review plus frozen-grader unseen-outcome challenge</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Cycle 004b: contained repeated baseline and exploratory variance estimate</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Cycle 005: context or system comparison</li>\n</ul>\n<p>Detailed critical path: <code>research/evaluation/12-research-and-engineering-roadmap.md</code>.</p>\n<p>Comparative evidence boundary and ranked experiments:\n<code>research/analysis/non-human-experimental-comparative-analysis.md</code> and\n<code>research/analysis/non-human-next-experiments.md</code>.</p>\n<p>Containment, telemetry, and rollback now run in parallel with evaluation rather than waiting for a later security phase.</p>\n<h2 id=\"state-constrained-architecture-and-time-entry\">State-Constrained Architecture and Time Entry</h2>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Separate the 01–12 research prompts, reports, and synthesis.</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Separate generic semantic-control architecture from Time Entry inputs.</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Group current Time Entry requirements, state model, and architecture by authority.</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Author and approve any still-needed numbered Time Entry contracts; none were present during repository organization.</li>\n</ul>\n<h3 id=\"repository-fitness\">Repository Fitness</h3>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Backfill material pre-ROS work into validated historical attribution</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Remove case-only collisions for root README, current state, and roadmap</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Add a repeatable Git case-collision audit</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Add initial reference-integrity and stable-identifier fitness checks</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Measure metadata coverage and validate adopted relationship targets</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Define bounded canonical metadata adoption and calibrate reciprocal\nsupersession checks on real edges</li>\n</ul>\n<h3 id=\"research-frontier\">Research Frontier</h3>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Establish the canonical repository frontier and health assessment</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> RFR-001: obtain independent pilot integrity reviews</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> RFR-002: run a contained repeated exploratory baseline</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> RFR-003: validate graders on natural outcomes</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> RFR-009 (Validation): coverage and relationship diagnostics calibrated;\nbounded metadata adoption and real supersession-edge validation remain</li>\n</ul>\n<p>See <code>research/frontier/FRONTIER-MASTER.md</code> for the ranked backlog and dependency graph.</p>",
+      "contentHash": "4c6a0871eb74952a8c373e4dbf21afdb4690aec3b414491084aab84bca717da5",
+      "html": "<h1 id=\"roadmap\">Roadmap</h1>\n<ul>\n<li>Repository bootstrap</li>\n<li>Constitution</li>\n<li>Specifications</li>\n<li>Knowledge model</li>\n<li>Repository generator</li>\n<li>Website</li>\n<li>Validation</li>\n<li>AI agents</li>\n</ul>\n<h2 id=\"publishing\">Publishing</h2>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Add a reproducible research-publisher build and GitHub Pages deployment workflow</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Normalize Markdown-formatted research and architecture documents to <code>.md</code>\nso the canonical state-constrained corpus is included in publisher discovery</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Confirm the first successful deployment from the <code>main</code> branch</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Assign unique canonical IDs and URLs to the excluded legacy split handbook and course-note documents</li>\n</ul>\n<h2 id=\"research-validation-sequence\">Research Validation Sequence</h2>\n<ol>\n<li>Long-horizon agent evaluation and verification</li>\n<li>Context compilation, state, and memory</li>\n<li>Permissions, security, and recovery</li>\n<li>Agent orchestration and human escalation</li>\n<li>Retrieval and knowledge-platform validation</li>\n<li>Model routing and interface-agent evaluation</li>\n</ol>\n<p>See <code>research/AI-Research-Roadmap.md</code> for decision gates and deliverables.</p>\n<h3 id=\"evaluation-mission-status\">Evaluation Mission Status</h3>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Cycle 001: charter, constructs, task taxonomy, audit protocol, and registries</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Cycle 002: integrity pilots for ET-004 and ET-014 (provisional pending independent review)</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Cycle 003: in-sample deterministic grader calibration and blind export</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Historical non-human experimental inventory, lineage, contradiction, and confidence synthesis</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Cycle 004a: independent review plus frozen-grader unseen-outcome challenge</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Cycle 004b: contained repeated baseline and exploratory variance estimate</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Cycle 005: context or system comparison</li>\n</ul>\n<p>Detailed critical path: <code>research/evaluation/12-research-and-engineering-roadmap.md</code>.</p>\n<p>Comparative evidence boundary and ranked experiments:\n<code>research/analysis/non-human-experimental-comparative-analysis.md</code> and\n<code>research/analysis/non-human-next-experiments.md</code>.</p>\n<p>Containment, telemetry, and rollback now run in parallel with evaluation rather than waiting for a later security phase.</p>\n<h2 id=\"state-constrained-architecture-and-time-entry\">State-Constrained Architecture and Time Entry</h2>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Separate the 01–12 research prompts, reports, and synthesis.</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Separate generic semantic-control architecture from Time Entry inputs.</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Group current Time Entry requirements, state model, and architecture by authority.</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Author and approve any still-needed numbered Time Entry contracts; none were present during repository organization.</li>\n</ul>\n<h3 id=\"repository-fitness\">Repository Fitness</h3>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Backfill material pre-ROS work into validated historical attribution</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Remove case-only collisions for root README, current state, and roadmap</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Add a repeatable Git case-collision audit</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Add initial reference-integrity and stable-identifier fitness checks</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Measure metadata coverage and validate adopted relationship targets</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> Define bounded canonical metadata adoption and calibrate reciprocal\nsupersession checks on real edges</li>\n</ul>\n<h3 id=\"research-frontier\">Research Frontier</h3>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Enter the canonical research TODOs as proposed ROS backlog missions</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" checked disabled> Establish the canonical repository frontier and health assessment</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> RFR-001: obtain independent pilot integrity reviews</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> RFR-002: run a contained repeated exploratory baseline</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> RFR-003: validate graders on natural outcomes</li>\n<li class=\"task-list-item\"><input type=\"checkbox\" disabled> RFR-009 (Validation): coverage and relationship diagnostics calibrated;\nbounded metadata adoption and real supersession-edge validation remain</li>\n</ul>\n<p>See <code>research/frontier/FRONTIER-MASTER.md</code> for the ranked backlog and dependency graph.</p>",
       "links": [],
       "compatibilityMode": true
     },

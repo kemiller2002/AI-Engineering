@@ -16,6 +16,8 @@ preserving the repository's pre-ROS history and compatibility boundaries.
 - Historical records never enter the live `.ros/events/events.jsonl` stream and
   cannot authorize transitions.
 - The state-constrained research corpus is publishable as Markdown.
+- Eleven proposed research missions in `missions/backlog/` now represent the
+  deduplicated RFR-001–RFR-010 and NX-005 research TODO set.
 
 ## Historical migration completed
 

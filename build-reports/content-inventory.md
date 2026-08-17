@@ -2,10 +2,10 @@
 
 ## Summary
 
-- publishable source: 192
+- publishable source: 204
 - generated output: 1
 - ambiguous: 379
-- ignored: 3
+- ignored: 4
 
 ## Records
 
@@ -70,6 +70,7 @@
 - publishable source: `docs/repository/2026-07-28-research-frontier-analysis.md`
 - publishable source: `docs/repository/2026-07-30-non-human-experimental-comparative-review.md`
 - publishable source: `docs/repository/2026-07-30-research-integrity-validation.md`
+- publishable source: `docs/repository/2026-08-17-research-todo-backfill.md`
 - publishable source: `docs/repository/bootstrap-ci-placeholder.md`
 - publishable source: `docs/repository/bootstrap-manifest.md`
 - publishable source: `docs/repository/bootstrap-tests-placeholder.md`
@@ -104,6 +105,17 @@
 - publishable source: `knowledge-platform/Repository-Architecture.md`
 - publishable source: `knowledge-platform/Search-Architecture.md`
 - publishable source: `knowledge-platform/Website-Architecture.md`
+- publishable source: `missions/backlog/MS-AIRES-2026-0001--independent-pilot-integrity-review.md`
+- publishable source: `missions/backlog/MS-AIRES-2026-0002--contained-repeated-exploratory-baseline.md`
+- publishable source: `missions/backlog/MS-AIRES-2026-0003--grader-external-validity-study.md`
+- publishable source: `missions/backlog/MS-AIRES-2026-0004--representative-repository-task-corpus.md`
+- publishable source: `missions/backlog/MS-AIRES-2026-0005--context-policy-causal-comparison.md`
+- publishable source: `missions/backlog/MS-AIRES-2026-0006--total-verified-cost-measurement.md`
+- publishable source: `missions/backlog/MS-AIRES-2026-0007--risk-triggered-human-escalation-study.md`
+- publishable source: `missions/backlog/MS-AIRES-2026-0008--evaluation-containment-validation.md`
+- publishable source: `missions/backlog/MS-AIRES-2026-0009--metadata-and-provenance-completion.md`
+- publishable source: `missions/backlog/MS-AIRES-2026-0010--knowledge-graph-value-experiment.md`
+- publishable source: `missions/backlog/MS-AIRES-2026-0011--audit-decision-counterfactual.md`
 - ambiguous: `node_modules/@astrojs/compiler/README.md`
 - ambiguous: `node_modules/@astrojs/internal-helpers/readme.md`
 - ambiguous: `node_modules/@astrojs/prism/README.md`
@@ -460,6 +472,7 @@
 - ignored: `prompts/AI-Research-Mission.md`
 - ignored: `prompts/CODEX-Import-Organize-Input-Documents.md`
 - ignored: `prompts/Non-Human-Experimental-Research-Next-Mission.md`
+- ignored: `prompts/research-publisher-mark-documents.md`
 - publishable source: `Readme.md`
 - publishable source: `research/AI-Knowledge-Gap-Analysis.md`
 - publishable source: `research/AI-Research-Priority-Matrix.md`

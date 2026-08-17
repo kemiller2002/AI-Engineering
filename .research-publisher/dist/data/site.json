@@ -9,7 +9,7 @@
       "logo": null,
       "cssVariables": {}
     },
-    "buildGeneratedAt": "2026-08-17T16:26:39.979Z"
+    "buildGeneratedAt": "2026-08-17T20:30:43.629Z"
   },
   "repository": {
     "name": "AI Engineering",
@@ -25,15 +25,23 @@
     "graphData": true
   },
   "summary": {
-    "totalDocuments": 192,
+    "totalDocuments": 204,
     "byArtifactType": {
-      "research-document": 161,
+      "research-document": 173,
       "decision-framework": 3,
       "research-package": 28
     },
     "byResearchArea": {
-      "General Research": 188,
+      "General Research": 189,
       "state-constrained-web-architecture": 1,
+      "agent-evaluation": 4,
+      "context-engineering": 1,
+      "evaluation-economics": 1,
+      "human-agent-systems": 1,
+      "agent-safety": 1,
+      "repository-integrity": 1,
+      "knowledge-platform": 1,
+      "evaluation-governance": 1,
       "AI engineering": 1,
       "AI research systems": 1,
       "state-constrained-ai-software": 1

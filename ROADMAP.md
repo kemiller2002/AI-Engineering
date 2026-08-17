@@ -65,6 +65,7 @@ Containment, telemetry, and rollback now run in parallel with evaluation rather 
 
 ### Research Frontier
 
+- [x] Enter the canonical research TODOs as proposed ROS backlog missions
 - [x] Establish the canonical repository frontier and health assessment
 - [ ] RFR-001: obtain independent pilot integrity reviews
 - [ ] RFR-002: run a contained repeated exploratory baseline

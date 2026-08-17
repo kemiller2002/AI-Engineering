@@ -52,6 +52,8 @@ contained exploratory baselines only for pilots that pass.
 
 ## Completed Work
 
+- Converted the canonical research frontier and non-human experiment backlog
+  into eleven dependency-aware proposed ROS missions under `missions/backlog/`.
 - Reconstructed all 20 pre-ROS commits into eight explicitly historical work
   records with validated commit attribution, confidence, evidence boundaries,
   compatibility policy, and a fresh-agent history index.

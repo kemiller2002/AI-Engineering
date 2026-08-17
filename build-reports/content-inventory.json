@@ -1,10 +1,10 @@
 {
   "generatedAt": "2026-07-22",
   "summary": {
-    "publishable source": 192,
+    "publishable source": 204,
     "generated output": 1,
     "ambiguous": 379,
-    "ignored": 3
+    "ignored": 4
   },
   "records": [
     {
@@ -252,6 +252,10 @@
       "classification": "publishable source"
     },
     {
+      "path": "docs/repository/2026-08-17-research-todo-backfill.md",
+      "classification": "publishable source"
+    },
+    {
       "path": "docs/repository/bootstrap-ci-placeholder.md",
       "classification": "publishable source"
     },
@@ -385,6 +389,50 @@
     },
     {
       "path": "knowledge-platform/Website-Architecture.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "missions/backlog/MS-AIRES-2026-0001--independent-pilot-integrity-review.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "missions/backlog/MS-AIRES-2026-0002--contained-repeated-exploratory-baseline.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "missions/backlog/MS-AIRES-2026-0003--grader-external-validity-study.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "missions/backlog/MS-AIRES-2026-0004--representative-repository-task-corpus.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "missions/backlog/MS-AIRES-2026-0005--context-policy-causal-comparison.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "missions/backlog/MS-AIRES-2026-0006--total-verified-cost-measurement.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "missions/backlog/MS-AIRES-2026-0007--risk-triggered-human-escalation-study.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "missions/backlog/MS-AIRES-2026-0008--evaluation-containment-validation.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "missions/backlog/MS-AIRES-2026-0009--metadata-and-provenance-completion.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "missions/backlog/MS-AIRES-2026-0010--knowledge-graph-value-experiment.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "missions/backlog/MS-AIRES-2026-0011--audit-decision-counterfactual.md",
       "classification": "publishable source"
     },
     {
@@ -1809,6 +1857,10 @@
     },
     {
       "path": "prompts/Non-Human-Experimental-Research-Next-Mission.md",
+      "classification": "ignored"
+    },
+    {
+      "path": "prompts/research-publisher-mark-documents.md",
       "classification": "ignored"
     },
     {
