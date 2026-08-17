@@ -2,7 +2,9 @@
 
 ## Summary
 
-- publishable source: 123
+- publishable source: 113
+- generated output: 1
+- ambiguous: 372
 - ignored: 3
 
 ## Records
@@ -13,12 +15,13 @@
 - publishable source: `ai-prompts/autonomous-research-agent-repo-archi-and-knowledge.md`
 - publishable source: `ai-prompts/bootstrap/AI-ROS-Bootstrap-Agent.md`
 - publishable source: `ai-prompts/Research-Execution-Package-Specification-v2.md`
+- generated output: `build-reports/content-inventory.md`
 - publishable source: `CHANGELOG.md`
 - publishable source: `content/disciplines/ai-engineering/handbook/agent-architecture-and-coordination.md`
-- publishable source: `content/disciplines/ai-engineering/handbook/engineering-workflows.md`
-- publishable source: `content/disciplines/ai-engineering/handbook/foundations.md`
-- publishable source: `content/disciplines/ai-engineering/handbook/research-engineering.md`
-- publishable source: `content/disciplines/ai-engineering/handbook/token-economics-and-context-engineering.md`
+- ambiguous: `content/disciplines/ai-engineering/handbook/engineering-workflows.md`
+- ambiguous: `content/disciplines/ai-engineering/handbook/foundations.md`
+- ambiguous: `content/disciplines/ai-engineering/handbook/research-engineering.md`
+- ambiguous: `content/disciplines/ai-engineering/handbook/token-economics-and-context-engineering.md`
 - publishable source: `content/disciplines/ai-engineering/research-program.md`
 - publishable source: `content/disciplines/ai-engineering/research-relay-system.md`
 - publishable source: `content/projects/ai-engineering-course/chapter-01/derived/lesson-01-cheat-sheet.md`
@@ -27,10 +30,12 @@
 - publishable source: `content/projects/ai-engineering-course/chapter-01/drafts/lesson-01-working-draft.md`
 - publishable source: `content/projects/ai-engineering-course/chapter-01/lesson-01-why-ai-sometimes-feels-like-magic-and-sometimes-feels-completely-useless.md`
 - publishable source: `content/projects/ai-engineering-course/chapter-01/research/research-package-001-brief.md`
-- publishable source: `content/projects/ai-engineering-course/chapter-01/research/research-package-001-notes.md`
+- ambiguous: `content/projects/ai-engineering-course/chapter-01/research/research-package-001-notes.md`
 - publishable source: `content/projects/ai-engineering-course/governance/course-constitution.md`
 - publishable source: `content/projects/ai-engineering-course/roadmaps/course-roadmap.md`
+- publishable source: `content/projects/time-entry/README.md`
 - publishable source: `current-state.md`
+- publishable source: `docs/architecture/semantic-control/README.md`
 - publishable source: `docs/governance/000-engineering-constitution.md`
 - publishable source: `docs/mobile/ios/setup/apple-shortcuts-setup.md`
 - publishable source: `docs/mobile/ios/setup/working-copy-setup.md`
@@ -53,6 +58,8 @@
 - publishable source: `docs/repository/imports/2026-07-22-input-documents-import/DECISIONS.md`
 - publishable source: `docs/repository/imports/2026-07-22-input-documents-import/INVENTORY.md`
 - publishable source: `docs/repository/imports/2026-07-22-input-documents-import/VALIDATION.md`
+- publishable source: `docs/repository/imports/2026-08-15-state-machine-documents-organization/DECISIONS.md`
+- publishable source: `docs/repository/imports/2026-08-15-state-machine-documents-organization/VALIDATION.md`
 - publishable source: `knowledge-platform/Build-Pipeline.md`
 - publishable source: `knowledge-platform/Metadata-Standard.md`
 - publishable source: `knowledge-platform/Migration-Plan.md`
@@ -60,6 +67,358 @@
 - publishable source: `knowledge-platform/Repository-Architecture.md`
 - publishable source: `knowledge-platform/Search-Architecture.md`
 - publishable source: `knowledge-platform/Website-Architecture.md`
+- ambiguous: `node_modules/@astrojs/compiler/README.md`
+- ambiguous: `node_modules/@astrojs/internal-helpers/readme.md`
+- ambiguous: `node_modules/@astrojs/prism/README.md`
+- ambiguous: `node_modules/@astrojs/telemetry/README.md`
+- ambiguous: `node_modules/@babel/helper-string-parser/README.md`
+- ambiguous: `node_modules/@babel/helper-validator-identifier/README.md`
+- ambiguous: `node_modules/@babel/parser/CHANGELOG.md`
+- ambiguous: `node_modules/@babel/parser/README.md`
+- ambiguous: `node_modules/@babel/types/README.md`
+- ambiguous: `node_modules/@capsizecss/unpack/README.md`
+- ambiguous: `node_modules/@echelon-foundry/research-publisher/docs/document-purpose-taxonomy.md`
+- ambiguous: `node_modules/@echelon-foundry/research-publisher/docs/research-metadata-schema.md`
+- ambiguous: `node_modules/@echelon-foundry/research-publisher/prompts/mark-research-documents.md`
+- ambiguous: `node_modules/@echelon-foundry/research-publisher/README.md`
+- ambiguous: `node_modules/@esbuild/darwin-arm64/README.md`
+- ambiguous: `node_modules/@img/colour/LICENSE.md`
+- ambiguous: `node_modules/@img/colour/README.md`
+- ambiguous: `node_modules/@img/sharp-darwin-arm64/README.md`
+- ambiguous: `node_modules/@img/sharp-libvips-darwin-arm64/README.md`
+- ambiguous: `node_modules/@jridgewell/sourcemap-codec/README.md`
+- ambiguous: `node_modules/@nodelib/fs.scandir/README.md`
+- ambiguous: `node_modules/@nodelib/fs.stat/README.md`
+- ambiguous: `node_modules/@nodelib/fs.walk/README.md`
+- ambiguous: `node_modules/@oslojs/encoding/README.md`
+- ambiguous: `node_modules/@pagefind/darwin-arm64/README.md`
+- ambiguous: `node_modules/@rollup/pluginutils/node_modules/estree-walker/CHANGELOG.md`
+- ambiguous: `node_modules/@rollup/pluginutils/node_modules/estree-walker/README.md`
+- ambiguous: `node_modules/@rollup/pluginutils/README.md`
+- ambiguous: `node_modules/@rollup/rollup-darwin-arm64/README.md`
+- ambiguous: `node_modules/@shikijs/core/README.md`
+- ambiguous: `node_modules/@shikijs/engine-javascript/README.md`
+- ambiguous: `node_modules/@shikijs/engine-oniguruma/README.md`
+- ambiguous: `node_modules/@shikijs/langs/README.md`
+- ambiguous: `node_modules/@shikijs/themes/README.md`
+- ambiguous: `node_modules/@shikijs/types/README.md`
+- ambiguous: `node_modules/@shikijs/vscode-textmate/LICENSE.md`
+- ambiguous: `node_modules/@shikijs/vscode-textmate/README.md`
+- ambiguous: `node_modules/@types/debug/README.md`
+- ambiguous: `node_modules/@types/estree/README.md`
+- ambiguous: `node_modules/@types/hast/README.md`
+- ambiguous: `node_modules/@types/mdast/README.md`
+- ambiguous: `node_modules/@types/ms/README.md`
+- ambiguous: `node_modules/@types/nlcst/README.md`
+- ambiguous: `node_modules/@types/unist/README.md`
+- ambiguous: `node_modules/@ungap/structured-clone/README.md`
+- ambiguous: `node_modules/acorn/CHANGELOG.md`
+- ambiguous: `node_modules/acorn/README.md`
+- ambiguous: `node_modules/ansi-align/CHANGELOG.md`
+- ambiguous: `node_modules/ansi-align/node_modules/ansi-regex/readme.md`
+- ambiguous: `node_modules/ansi-align/node_modules/emoji-regex/README.md`
+- ambiguous: `node_modules/ansi-align/node_modules/string-width/readme.md`
+- ambiguous: `node_modules/ansi-align/node_modules/strip-ansi/readme.md`
+- ambiguous: `node_modules/ansi-align/README.md`
+- ambiguous: `node_modules/ansi-regex/readme.md`
+- ambiguous: `node_modules/ansi-styles/readme.md`
+- ambiguous: `node_modules/anymatch/node_modules/picomatch/README.md`
+- ambiguous: `node_modules/anymatch/README.md`
+- ambiguous: `node_modules/argparse/CHANGELOG.md`
+- ambiguous: `node_modules/argparse/README.md`
+- ambiguous: `node_modules/aria-query/README.md`
+- ambiguous: `node_modules/array-iterate/readme.md`
+- ambiguous: `node_modules/astro/node_modules/zod-to-ts/README.md`
+- ambiguous: `node_modules/astro/node_modules/zod/README.md`
+- ambiguous: `node_modules/astro/README.md`
+- ambiguous: `node_modules/axobject-query/README.md`
+- ambiguous: `node_modules/bail/readme.md`
+- ambiguous: `node_modules/base-64/README.md`
+- ambiguous: `node_modules/boolbase/README.md`
+- ambiguous: `node_modules/boxen/readme.md`
+- ambiguous: `node_modules/braces/README.md`
+- ambiguous: `node_modules/camelcase/readme.md`
+- ambiguous: `node_modules/ccount/readme.md`
+- ambiguous: `node_modules/chalk/readme.md`
+- ambiguous: `node_modules/character-entities-html4/readme.md`
+- ambiguous: `node_modules/character-entities-legacy/readme.md`
+- ambiguous: `node_modules/character-entities/readme.md`
+- ambiguous: `node_modules/chokidar/README.md`
+- ambiguous: `node_modules/ci-info/CHANGELOG.md`
+- ambiguous: `node_modules/ci-info/README.md`
+- ambiguous: `node_modules/cli-boxes/readme.md`
+- ambiguous: `node_modules/clsx/readme.md`
+- ambiguous: `node_modules/comma-separated-tokens/readme.md`
+- ambiguous: `node_modules/commander/Readme.md`
+- ambiguous: `node_modules/common-ancestor-path/README.md`
+- ambiguous: `node_modules/cookie-es/README.md`
+- ambiguous: `node_modules/cookie/README.md`
+- ambiguous: `node_modules/crossws/README.md`
+- ambiguous: `node_modules/css-select/README.md`
+- ambiguous: `node_modules/css-tree/README.md`
+- ambiguous: `node_modules/css-what/readme.md`
+- ambiguous: `node_modules/cssesc/README.md`
+- ambiguous: `node_modules/csso/node_modules/css-tree/README.md`
+- ambiguous: `node_modules/csso/node_modules/mdn-data/CHANGELOG.md`
+- ambiguous: `node_modules/csso/node_modules/mdn-data/css/readme.md`
+- ambiguous: `node_modules/csso/node_modules/mdn-data/README.md`
+- ambiguous: `node_modules/csso/README.md`
+- ambiguous: `node_modules/debug/README.md`
+- ambiguous: `node_modules/decode-named-character-reference/readme.md`
+- ambiguous: `node_modules/defu/README.md`
+- ambiguous: `node_modules/dequal/readme.md`
+- ambiguous: `node_modules/destr/README.md`
+- ambiguous: `node_modules/detect-libc/README.md`
+- ambiguous: `node_modules/deterministic-object-hash/README.md`
+- ambiguous: `node_modules/devalue/README.md`
+- ambiguous: `node_modules/devlop/readme.md`
+- ambiguous: `node_modules/diff/CONTRIBUTING.md`
+- ambiguous: `node_modules/diff/README.md`
+- ambiguous: `node_modules/diff/release-notes.md`
+- ambiguous: `node_modules/dlv/README.md`
+- ambiguous: `node_modules/dom-serializer/node_modules/entities/readme.md`
+- ambiguous: `node_modules/dom-serializer/README.md`
+- ambiguous: `node_modules/domelementtype/readme.md`
+- ambiguous: `node_modules/domhandler/readme.md`
+- ambiguous: `node_modules/domutils/readme.md`
+- ambiguous: `node_modules/dset/readme.md`
+- ambiguous: `node_modules/emoji-regex/README.md`
+- ambiguous: `node_modules/entities/readme.md`
+- ambiguous: `node_modules/es-module-lexer/README.md`
+- ambiguous: `node_modules/esbuild/LICENSE.md`
+- ambiguous: `node_modules/esbuild/README.md`
+- ambiguous: `node_modules/escape-string-regexp/readme.md`
+- ambiguous: `node_modules/esprima/README.md`
+- ambiguous: `node_modules/estree-walker/README.md`
+- ambiguous: `node_modules/eventemitter3/README.md`
+- ambiguous: `node_modules/extend-shallow/README.md`
+- ambiguous: `node_modules/extend/CHANGELOG.md`
+- ambiguous: `node_modules/extend/README.md`
+- ambiguous: `node_modules/fast-glob/README.md`
+- ambiguous: `node_modules/fastq/README.md`
+- ambiguous: `node_modules/fastq/SECURITY.md`
+- ambiguous: `node_modules/fdir/README.md`
+- ambiguous: `node_modules/fill-range/README.md`
+- ambiguous: `node_modules/flattie/readme.md`
+- ambiguous: `node_modules/fontace/README.md`
+- ambiguous: `node_modules/fontkitten/README.md`
+- ambiguous: `node_modules/fsevents/README.md`
+- ambiguous: `node_modules/get-east-asian-width/readme.md`
+- ambiguous: `node_modules/github-slugger/README.md`
+- ambiguous: `node_modules/glob-parent/CHANGELOG.md`
+- ambiguous: `node_modules/glob-parent/README.md`
+- ambiguous: `node_modules/gray-matter/CHANGELOG.md`
+- ambiguous: `node_modules/gray-matter/node_modules/argparse/CHANGELOG.md`
+- ambiguous: `node_modules/gray-matter/node_modules/argparse/README.md`
+- ambiguous: `node_modules/gray-matter/node_modules/js-yaml/README.md`
+- ambiguous: `node_modules/gray-matter/README.md`
+- ambiguous: `node_modules/h3/README.md`
+- ambiguous: `node_modules/hast-util-from-html/readme.md`
+- ambiguous: `node_modules/hast-util-from-parse5/readme.md`
+- ambiguous: `node_modules/hast-util-heading-rank/readme.md`
+- ambiguous: `node_modules/hast-util-is-element/readme.md`
+- ambiguous: `node_modules/hast-util-parse-selector/readme.md`
+- ambiguous: `node_modules/hast-util-raw/readme.md`
+- ambiguous: `node_modules/hast-util-sanitize/readme.md`
+- ambiguous: `node_modules/hast-util-to-html/readme.md`
+- ambiguous: `node_modules/hast-util-to-parse5/readme.md`
+- ambiguous: `node_modules/hast-util-to-string/readme.md`
+- ambiguous: `node_modules/hast-util-to-text/readme.md`
+- ambiguous: `node_modules/hast-util-whitespace/readme.md`
+- ambiguous: `node_modules/hastscript/readme.md`
+- ambiguous: `node_modules/html-escaper/README.md`
+- ambiguous: `node_modules/html-void-elements/readme.md`
+- ambiguous: `node_modules/http-cache-semantics/README.md`
+- ambiguous: `node_modules/import-meta-resolve/readme.md`
+- ambiguous: `node_modules/iron-webcrypto/LICENSE.md`
+- ambiguous: `node_modules/iron-webcrypto/README.md`
+- ambiguous: `node_modules/is-docker/readme.md`
+- ambiguous: `node_modules/is-extendable/README.md`
+- ambiguous: `node_modules/is-extglob/README.md`
+- ambiguous: `node_modules/is-fullwidth-code-point/readme.md`
+- ambiguous: `node_modules/is-glob/README.md`
+- ambiguous: `node_modules/is-inside-container/readme.md`
+- ambiguous: `node_modules/is-number/README.md`
+- ambiguous: `node_modules/is-plain-obj/readme.md`
+- ambiguous: `node_modules/is-wsl/readme.md`
+- ambiguous: `node_modules/js-yaml/README.md`
+- ambiguous: `node_modules/kind-of/CHANGELOG.md`
+- ambiguous: `node_modules/kind-of/README.md`
+- ambiguous: `node_modules/kleur/readme.md`
+- ambiguous: `node_modules/longest-streak/readme.md`
+- ambiguous: `node_modules/lru-cache/LICENSE.md`
+- ambiguous: `node_modules/lru-cache/README.md`
+- ambiguous: `node_modules/magic-string/README.md`
+- ambiguous: `node_modules/magicast/README.md`
+- ambiguous: `node_modules/markdown-table/readme.md`
+- ambiguous: `node_modules/mdast-util-definitions/readme.md`
+- ambiguous: `node_modules/mdast-util-find-and-replace/readme.md`
+- ambiguous: `node_modules/mdast-util-from-markdown/readme.md`
+- ambiguous: `node_modules/mdast-util-gfm-autolink-literal/readme.md`
+- ambiguous: `node_modules/mdast-util-gfm-footnote/readme.md`
+- ambiguous: `node_modules/mdast-util-gfm-strikethrough/readme.md`
+- ambiguous: `node_modules/mdast-util-gfm-table/readme.md`
+- ambiguous: `node_modules/mdast-util-gfm-task-list-item/readme.md`
+- ambiguous: `node_modules/mdast-util-gfm/readme.md`
+- ambiguous: `node_modules/mdast-util-phrasing/readme.md`
+- ambiguous: `node_modules/mdast-util-to-hast/readme.md`
+- ambiguous: `node_modules/mdast-util-to-markdown/readme.md`
+- ambiguous: `node_modules/mdast-util-to-string/readme.md`
+- ambiguous: `node_modules/mdn-data/README.md`
+- ambiguous: `node_modules/merge2/README.md`
+- ambiguous: `node_modules/micromark-core-commonmark/readme.md`
+- ambiguous: `node_modules/micromark-extension-gfm-autolink-literal/readme.md`
+- ambiguous: `node_modules/micromark-extension-gfm-footnote/readme.md`
+- ambiguous: `node_modules/micromark-extension-gfm-strikethrough/readme.md`
+- ambiguous: `node_modules/micromark-extension-gfm-table/readme.md`
+- ambiguous: `node_modules/micromark-extension-gfm-tagfilter/readme.md`
+- ambiguous: `node_modules/micromark-extension-gfm-task-list-item/readme.md`
+- ambiguous: `node_modules/micromark-extension-gfm/readme.md`
+- ambiguous: `node_modules/micromark-factory-destination/readme.md`
+- ambiguous: `node_modules/micromark-factory-label/readme.md`
+- ambiguous: `node_modules/micromark-factory-space/readme.md`
+- ambiguous: `node_modules/micromark-factory-title/readme.md`
+- ambiguous: `node_modules/micromark-factory-whitespace/readme.md`
+- ambiguous: `node_modules/micromark-util-character/readme.md`
+- ambiguous: `node_modules/micromark-util-chunked/readme.md`
+- ambiguous: `node_modules/micromark-util-classify-character/readme.md`
+- ambiguous: `node_modules/micromark-util-combine-extensions/readme.md`
+- ambiguous: `node_modules/micromark-util-decode-numeric-character-reference/readme.md`
+- ambiguous: `node_modules/micromark-util-decode-string/readme.md`
+- ambiguous: `node_modules/micromark-util-encode/readme.md`
+- ambiguous: `node_modules/micromark-util-html-tag-name/readme.md`
+- ambiguous: `node_modules/micromark-util-normalize-identifier/readme.md`
+- ambiguous: `node_modules/micromark-util-resolve-all/readme.md`
+- ambiguous: `node_modules/micromark-util-sanitize-uri/readme.md`
+- ambiguous: `node_modules/micromark-util-subtokenize/readme.md`
+- ambiguous: `node_modules/micromark-util-symbol/readme.md`
+- ambiguous: `node_modules/micromark-util-types/readme.md`
+- ambiguous: `node_modules/micromark/readme.md`
+- ambiguous: `node_modules/micromatch/node_modules/picomatch/README.md`
+- ambiguous: `node_modules/micromatch/README.md`
+- ambiguous: `node_modules/mrmime/readme.md`
+- ambiguous: `node_modules/ms/license.md`
+- ambiguous: `node_modules/ms/readme.md`
+- ambiguous: `node_modules/nanoid/README.md`
+- ambiguous: `node_modules/neotraverse/README.md`
+- ambiguous: `node_modules/nlcst-to-string/readme.md`
+- ambiguous: `node_modules/node-fetch-native/README.md`
+- ambiguous: `node_modules/node-mock-http/README.md`
+- ambiguous: `node_modules/normalize-path/README.md`
+- ambiguous: `node_modules/nth-check/README.md`
+- ambiguous: `node_modules/ofetch/README.md`
+- ambiguous: `node_modules/ohash/README.md`
+- ambiguous: `node_modules/oniguruma-parser/README.md`
+- ambiguous: `node_modules/oniguruma-to-es/README.md`
+- ambiguous: `node_modules/p-limit/readme.md`
+- ambiguous: `node_modules/p-queue/readme.md`
+- ambiguous: `node_modules/p-timeout/readme.md`
+- ambiguous: `node_modules/package-manager-detector/README.md`
+- ambiguous: `node_modules/pagefind/README.md`
+- ambiguous: `node_modules/parse-latin/readme.md`
+- ambiguous: `node_modules/parse5/README.md`
+- ambiguous: `node_modules/piccolore/README.md`
+- ambiguous: `node_modules/picocolors/README.md`
+- ambiguous: `node_modules/picomatch/README.md`
+- ambiguous: `node_modules/postcss/README.md`
+- ambiguous: `node_modules/prismjs/CHANGELOG.md`
+- ambiguous: `node_modules/prismjs/README.md`
+- ambiguous: `node_modules/prompts/readme.md`
+- ambiguous: `node_modules/property-information/readme.md`
+- ambiguous: `node_modules/queue-microtask/README.md`
+- ambiguous: `node_modules/radix3/README.md`
+- ambiguous: `node_modules/readdirp/README.md`
+- ambiguous: `node_modules/regex-recursion/README.md`
+- ambiguous: `node_modules/regex-utilities/README.md`
+- ambiguous: `node_modules/regex/README.md`
+- ambiguous: `node_modules/rehype-parse/readme.md`
+- ambiguous: `node_modules/rehype-raw/readme.md`
+- ambiguous: `node_modules/rehype-sanitize/readme.md`
+- ambiguous: `node_modules/rehype-slug/readme.md`
+- ambiguous: `node_modules/rehype-stringify/readme.md`
+- ambiguous: `node_modules/rehype/readme.md`
+- ambiguous: `node_modules/remark-gfm/readme.md`
+- ambiguous: `node_modules/remark-parse/readme.md`
+- ambiguous: `node_modules/remark-rehype/readme.md`
+- ambiguous: `node_modules/remark-smartypants/readme.md`
+- ambiguous: `node_modules/remark-stringify/readme.md`
+- ambiguous: `node_modules/retext-latin/readme.md`
+- ambiguous: `node_modules/retext-smartypants/readme.md`
+- ambiguous: `node_modules/retext-stringify/readme.md`
+- ambiguous: `node_modules/retext/readme.md`
+- ambiguous: `node_modules/reusify/README.md`
+- ambiguous: `node_modules/reusify/SECURITY.md`
+- ambiguous: `node_modules/rollup/LICENSE.md`
+- ambiguous: `node_modules/rollup/README.md`
+- ambiguous: `node_modules/run-parallel/README.md`
+- ambiguous: `node_modules/sax/LICENSE.md`
+- ambiguous: `node_modules/sax/README.md`
+- ambiguous: `node_modules/section-matter/README.md`
+- ambiguous: `node_modules/semver/README.md`
+- ambiguous: `node_modules/sharp/README.md`
+- ambiguous: `node_modules/shiki/README.md`
+- ambiguous: `node_modules/sisteransi/readme.md`
+- ambiguous: `node_modules/smol-toml/README.md`
+- ambiguous: `node_modules/source-map-js/README.md`
+- ambiguous: `node_modules/space-separated-tokens/readme.md`
+- ambiguous: `node_modules/sprintf-js/README.md`
+- ambiguous: `node_modules/string-width/readme.md`
+- ambiguous: `node_modules/stringify-entities/readme.md`
+- ambiguous: `node_modules/strip-ansi/readme.md`
+- ambiguous: `node_modules/strip-bom-string/README.md`
+- ambiguous: `node_modules/svgo/README.md`
+- ambiguous: `node_modules/tiny-inflate/readme.md`
+- ambiguous: `node_modules/tinyexec/README.md`
+- ambiguous: `node_modules/tinyglobby/README.md`
+- ambiguous: `node_modules/to-regex-range/README.md`
+- ambiguous: `node_modules/trim-lines/readme.md`
+- ambiguous: `node_modules/trough/readme.md`
+- ambiguous: `node_modules/tsconfck/README.md`
+- ambiguous: `node_modules/type-fest/readme.md`
+- ambiguous: `node_modules/typescript/README.md`
+- ambiguous: `node_modules/typescript/SECURITY.md`
+- ambiguous: `node_modules/ufo/README.md`
+- ambiguous: `node_modules/ultrahtml/CHANGELOG.md`
+- ambiguous: `node_modules/ultrahtml/README.md`
+- ambiguous: `node_modules/uncrypto/README.md`
+- ambiguous: `node_modules/unified/readme.md`
+- ambiguous: `node_modules/unifont/README.md`
+- ambiguous: `node_modules/unist-util-find-after/readme.md`
+- ambiguous: `node_modules/unist-util-is/readme.md`
+- ambiguous: `node_modules/unist-util-modify-children/readme.md`
+- ambiguous: `node_modules/unist-util-position/readme.md`
+- ambiguous: `node_modules/unist-util-remove-position/readme.md`
+- ambiguous: `node_modules/unist-util-stringify-position/readme.md`
+- ambiguous: `node_modules/unist-util-visit-children/readme.md`
+- ambiguous: `node_modules/unist-util-visit-parents/readme.md`
+- ambiguous: `node_modules/unist-util-visit/readme.md`
+- ambiguous: `node_modules/unstorage/README.md`
+- ambiguous: `node_modules/vfile-location/readme.md`
+- ambiguous: `node_modules/vfile-message/readme.md`
+- ambiguous: `node_modules/vfile/readme.md`
+- ambiguous: `node_modules/vite/LICENSE.md`
+- ambiguous: `node_modules/vite/node_modules/@esbuild/darwin-arm64/README.md`
+- ambiguous: `node_modules/vite/node_modules/esbuild/LICENSE.md`
+- ambiguous: `node_modules/vite/node_modules/esbuild/README.md`
+- ambiguous: `node_modules/vite/README.md`
+- ambiguous: `node_modules/vitefu/README.md`
+- ambiguous: `node_modules/web-namespaces/readme.md`
+- ambiguous: `node_modules/which-pm-runs/README.md`
+- ambiguous: `node_modules/widest-line/readme.md`
+- ambiguous: `node_modules/wrap-ansi/readme.md`
+- ambiguous: `node_modules/xxhash-wasm/LICENSE.md`
+- ambiguous: `node_modules/xxhash-wasm/README.md`
+- ambiguous: `node_modules/yaml/README.md`
+- ambiguous: `node_modules/yargs-parser/CHANGELOG.md`
+- ambiguous: `node_modules/yargs-parser/README.md`
+- ambiguous: `node_modules/yocto-queue/readme.md`
+- ambiguous: `node_modules/yocto-spinner/readme.md`
+- ambiguous: `node_modules/yoctocolors/readme.md`
+- ambiguous: `node_modules/zod-to-json-schema/changelog.md`
+- ambiguous: `node_modules/zod-to-json-schema/contributing.md`
+- ambiguous: `node_modules/zod-to-json-schema/README.md`
+- ambiguous: `node_modules/zod/README.md`
+- ambiguous: `node_modules/zwitch/readme.md`
 - ignored: `prompts/AI-Research-Mission.md`
 - ignored: `prompts/CODEX-Import-Organize-Input-Documents.md`
 - ignored: `prompts/Non-Human-Experimental-Research-Next-Mission.md`
@@ -92,15 +451,15 @@
 - publishable source: `research/evaluation/cycles/2026-07-23-cycle-001.md`
 - publishable source: `research/evaluation/cycles/2026-07-28-cycle-002.md`
 - publishable source: `research/evaluation/cycles/2026-07-28-cycle-003.md`
-- publishable source: `research/evaluation/fixtures/et-004-p01/base/review-policy.md`
-- publishable source: `research/evaluation/fixtures/et-004-p01/integrity-audit.md`
-- publishable source: `research/evaluation/fixtures/et-004-p01/outcomes/alternative-correct/review-policy.md`
-- publishable source: `research/evaluation/fixtures/et-004-p01/outcomes/complete/review-policy.md`
-- publishable source: `research/evaluation/fixtures/et-004-p01/outcomes/incomplete-polished/review-policy.md`
-- publishable source: `research/evaluation/fixtures/et-004-p01/outcomes/regressive/review-policy.md`
-- publishable source: `research/evaluation/fixtures/et-014-p01/integrity-audit.md`
-- publishable source: `research/evaluation/fixtures/et-014-p01/task-materials/expected-behavior.md`
-- publishable source: `research/evaluation/fixtures/et-014-p01/task-materials/prompt.md`
+- ambiguous: `research/evaluation/fixtures/et-004-p01/base/review-policy.md`
+- ambiguous: `research/evaluation/fixtures/et-004-p01/integrity-audit.md`
+- ambiguous: `research/evaluation/fixtures/et-004-p01/outcomes/alternative-correct/review-policy.md`
+- ambiguous: `research/evaluation/fixtures/et-004-p01/outcomes/complete/review-policy.md`
+- ambiguous: `research/evaluation/fixtures/et-004-p01/outcomes/incomplete-polished/review-policy.md`
+- ambiguous: `research/evaluation/fixtures/et-004-p01/outcomes/regressive/review-policy.md`
+- ambiguous: `research/evaluation/fixtures/et-014-p01/integrity-audit.md`
+- ambiguous: `research/evaluation/fixtures/et-014-p01/task-materials/expected-behavior.md`
+- ambiguous: `research/evaluation/fixtures/et-014-p01/task-materials/prompt.md`
 - publishable source: `research/evaluation/NEXT-AGENT-START-HERE.md`
 - publishable source: `research/evaluation/README.md`
 - publishable source: `research/frontier/document-frontiers/AI-Knowledge-Gap-Analysis-frontier.md`
@@ -113,6 +472,7 @@
 - publishable source: `research/frontier/document-frontiers/knowledge-platform-frontier.md`
 - publishable source: `research/frontier/FRONTIER-MASTER.md`
 - publishable source: `research/frontier/investigations/2026-07-30-rfr-009-validation.md`
+- publishable source: `research/frontier/investigations/2026-08-15-rfr-009-metadata-provenance-coverage.md`
 - publishable source: `research/frontier/records/RFR-001.md`
 - publishable source: `research/frontier/records/RFR-002.md`
 - publishable source: `research/frontier/records/RFR-003.md`
@@ -125,11 +485,16 @@
 - publishable source: `research/frontier/records/RFR-010.md`
 - publishable source: `research/frontier/repository-health.md`
 - publishable source: `research/packages/RP-2026-07-30-NHE-COMPARATIVE-REVIEW.md`
+- publishable source: `research/state-constrained-architecture/README.md`
+- publishable source: `research/state-constrained-architecture/reports/01-existing-work-prior-art-novelty-research-report.md`
+- publishable source: `research/state-constrained-architecture/reports/state-constrained-language-comparison-research-report.md`
+- publishable source: `research/state-constrained-architecture/working-notes/state-constrained-architecture-research-outline.md`
+- publishable source: `research/state-constrained-architecture/working-notes/state-machine-research.md`
 - publishable source: `roadmap.md`
-- publishable source: `templates/AGENT-HANDOFF.template.md`
-- publishable source: `templates/CURRENT-STATE.template.md`
-- publishable source: `templates/DECISION.template.md`
-- publishable source: `templates/EVIDENCE.template.md`
-- publishable source: `templates/RESEARCH-QUESTION.template.md`
-- publishable source: `templates/THEORY.template.md`
+- ambiguous: `templates/AGENT-HANDOFF.template.md`
+- ambiguous: `templates/CURRENT-STATE.template.md`
+- ambiguous: `templates/DECISION.template.md`
+- ambiguous: `templates/EVIDENCE.template.md`
+- ambiguous: `templates/RESEARCH-QUESTION.template.md`
+- ambiguous: `templates/THEORY.template.md`
 - publishable source: `tools/evaluation/README.md`

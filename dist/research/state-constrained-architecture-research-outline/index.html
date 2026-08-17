@@ -1,0 +1,1362 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>state constrained architecture research outline | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">state constrained architecture research outline</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/working-notes/state-constrained-architecture-research-outline.md</dd></div> </dl> </header> <div class="document-reading-grid">  <section class="document-body"><p>Research Outline: State-Constrained Architecture for AI-Native Software</p>
+<p>Purpose</p>
+<p>This document maps the major areas to explore around the hypothesis that AI agents should operate inside explicitly modeled state systems rather than directly mutating loosely constrained software.</p>
+<blockquote>
+<p><strong>Core hypothesis:</strong> Probabilistic agents become safer, cheaper, and more reliable when consequential behavior is expressed through explicit state, typed transitions, evidence, provenance, capabilities, guards, and invariants that can be checked independently of the agent.</p>
+</blockquote>
+<blockquote>
+<p><strong>Broader question:</strong> How should software architecture change when primary implementers and operators may increasingly be probabilistic AI agents rather than humans?</p>
+</blockquote>
+<p>────────</p>
+<ol>
+<li>Foundational Theory</li>
+</ol>
+<p>1.1 Define the Core Problem</p>
+<p>Explore:</p>
+<p>• Why existing commercial software is difficult for agents to reason about.
+• How implicit business semantics create agent cost.
+• How assumptions become embedded in code.
+• How later agents inherit prior assumptions as apparent truth.
+• How semantic drift differs from ordinary technical debt.
+• Whether agent productivity can increase architectural entropy.
+• Whether explicit constraints reduce cumulative semantic drift.</p>
+<p>Questions:</p>
+<p>• What exactly is the failure mode we are trying to prevent?
+• Is the primary problem incorrect generation, incorrect interpretation, or assumption accumulation?
+• How much of current agent cost comes from reconstructing implicit semantics?
+• How does agent reasoning differ from human maintenance of legacy systems?</p>
+<p>1.2 Define State Precisely</p>
+<p>Explore:</p>
+<p>• State as authoritative system representation.
+• State versus ordinary data.
+• State versus derived values.
+• State versus truth about the external world.
+• Observable versus hidden state.
+• Persistent versus transient state.
+• Local versus distributed state.</p>
+<p>Candidate rule:</p>
+<blockquote>
+<p>A value is meaningful state when its current value changes what behavior is legally possible next.</p>
+</blockquote>
+<p>1.3 Define Transition Precisely</p>
+<p>Explore:</p>
+<p>• State mutation versus explicit transition.
+• Transition as the only legal mechanism for changing authoritative state.
+• Inputs and outputs.
+• Transition failure.
+• Atomicity.
+• Idempotency.
+• Reversible, compensatable, and irreversible transitions.
+• Transition versioning.</p>
+<p>Core principle:</p>
+<blockquote>
+<p><strong>Authoritative state should not be set directly. It should be transitioned.</strong></p>
+</blockquote>
+<p>1.4 Define Guards</p>
+<p>Explore:</p>
+<p>• Preconditions.
+• Pure guard evaluation.
+• Guard composition.
+• Guard failure reasons.
+• Dynamic and temporal guards.
+• Evidence-dependent guards.
+• Capability-dependent guards.</p>
+<p>Questions:</p>
+<p>• Which checks belong in guards versus types?
+• Which guards can be static?
+• Which must remain runtime checks?</p>
+<p>1.5 Define Invariants</p>
+<p>Explore:</p>
+<p>• Local and global invariants.
+• Cross-aggregate invariants.
+• Temporal invariants.
+• Safety and liveness properties.
+• Structural and business invariants.</p>
+<p>Questions:</p>
+<p>• Which invariants belong in types?
+• Which require property testing?
+• Which require model checking?
+• Which require external verification?</p>
+<p>────────</p>
+<ol start="2">
+<li>Canonical Primitives</li>
+</ol>
+<p>Determine whether the following are sufficient as the smallest useful model.</p>
+<ol>
+<li>State — what the system currently represents as true.</li>
+<li>Transition — a legal state change.</li>
+<li>Guard — a condition controlling whether a transition may occur.</li>
+<li>Invariant — a property that must remain true.</li>
+<li>Claim — a proposition the system may reason about.</li>
+<li>Evidence — information supporting, contradicting, or invalidating a claim.</li>
+<li>Capability — authority to request, authorize, or perform a transition.</li>
+<li>Effect — an interaction with the external world.</li>
+<li>Event — an immutable record that something happened.</li>
+</ol>
+<p>Cross-cutting concepts:</p>
+<p>• Actor.
+• Provenance.</p>
+<p>Questions:</p>
+<p>• Are any of these redundant?
+• Are any primitives missing?
+• Which concepts should instead be compositions of others?</p>
+<p>────────</p>
+<ol start="3">
+<li>Cross-Cutting Concepts</li>
+</ol>
+<p>3.1 Actors</p>
+<p>Explore:</p>
+<p>• Humans.
+• AI agents.
+• Services.
+• Organizations.
+• External systems.
+• Identity versus authority.
+• Delegation.
+• Temporary authority.
+• Revocation.</p>
+<p>Principle:</p>
+<blockquote>
+<p><strong>Actor identity should not imply capability.</strong></p>
+</blockquote>
+<p>3.2 Provenance</p>
+<p>Explore:</p>
+<p>• Source.
+• Actor.
+• Timestamp.
+• Evidence.
+• Derivation.
+• Version.
+• Rationale.
+• Confidence.
+• Validity period.
+• Reassessment triggers.</p>
+<p>Questions:</p>
+<p>• What provenance must always be retained?
+• What can be compressed?
+• How should provenance survive migrations?
+• How should agents query provenance?</p>
+<p>────────</p>
+<ol start="4">
+<li>Multiple Kinds of State</li>
+</ol>
+<p>4.1 Domain State</p>
+<p>Examples:</p>
+<pre><code class="language-text">Draft
+Submitted
+UnderReview
+Approved
+Funded
+</code></pre>
+<p>Explore:</p>
+<p>• Domain lifecycle.
+• Aggregate state.
+• Terminal states.
+• Reopened states.
+• Composite state.</p>
+<p>4.2 Epistemic State</p>
+<p>Possible states:</p>
+<pre><code class="language-text">Unknown
+Reported
+Assumed
+Inferred
+Verified
+Contradicted
+Invalidated
+</code></pre>
+<p>Explore:</p>
+<p>• What does the system know?
+• How strongly does it know it?
+• Who established that knowledge?
+• What evidence supports it?
+• What invalidates it?
+• Can knowledge degrade?
+• Can verification expire?</p>
+<p>Principle:</p>
+<blockquote>
+<p><strong>Time and repetition do not increase epistemic authority. Evidence does.</strong></p>
+</blockquote>
+<p>4.3 Execution State</p>
+<p>Possible states:</p>
+<pre><code class="language-text">Planned
+Requested
+InProgress
+Succeeded
+Failed
+OutcomeUnknown
+</code></pre>
+<p>Explore:</p>
+<p>• Retries.
+• Idempotency.
+• Uncertain outcomes.
+• Partial failure.
+• Timeouts.
+• Compensation.
+• Reconciliation.</p>
+<p>Principle:</p>
+<blockquote>
+<p><strong>Unknown outcome must not be collapsed into failure.</strong></p>
+</blockquote>
+<p>────────</p>
+<ol start="5">
+<li>Claims and Evidence</li>
+</ol>
+<p>5.1 Claim Model</p>
+<p>Explore:</p>
+<p>• Identity and scope.
+• Ownership.
+• Versioning.
+• Dependencies.
+• Validity period.
+• Contradiction.
+• Supersession.</p>
+<p>5.2 Evidence Model</p>
+<p>Explore:</p>
+<p>• Supporting evidence.
+• Contradictory evidence.
+• Invalidated evidence.
+• Expired evidence.
+• Derived evidence.
+• Human evidence.
+• Machine-generated evidence.
+• External evidence.</p>
+<p>5.3 Evidence Dependency Graph</p>
+<p>Model:</p>
+<pre><code class="language-text">Evidence
+   ↓
+Claim
+   ↓
+Decision
+   ↓
+Transition
+</code></pre>
+<p>Questions:</p>
+<p>• What happens when evidence is invalidated?
+• Which claims require reassessment?
+• Which transitions become illegal?
+• Which decisions should reopen?
+• Can dependency propagation be automated?</p>
+<p>────────</p>
+<ol start="6">
+<li>Capability Systems</li>
+</ol>
+<p>6.1 Capability as Authority</p>
+<p>Explore:</p>
+<p>• Typed capabilities.
+• Scoped capabilities.
+• Time-limited capabilities.
+• Delegated capabilities.
+• Revocable capabilities.
+• Human-only capabilities.
+• Agent-limited capabilities.</p>
+<p>6.2 Capability Creation</p>
+<p>Explore:</p>
+<p>• Trusted constructors.
+• Private constructors.
+• Service-generated capabilities.
+• Human approval.
+• External verification.
+• Cryptographic proof.
+• Attested evidence.</p>
+<p>Question:</p>
+<blockquote>
+<p>How do we prevent an agent from manufacturing the value needed to satisfy a constraint?</p>
+</blockquote>
+<p>6.3 Capability Composition</p>
+<p>Explore:</p>
+<p>• Multiple required capabilities.
+• Separation of duties.
+• Two-person rules.
+• Human + machine approval.
+• Escalation.
+• Emergency authority.
+• Temporary exceptions.</p>
+<p>────────</p>
+<ol start="7">
+<li>Effects and the Outside World</li>
+</ol>
+<p>7.1 Effect Separation</p>
+<p>Preserve the distinction:</p>
+<pre><code class="language-text">Domain transition
+!=
+External effect
+</code></pre>
+<p>Examples:</p>
+<p>• Charge payment.
+• Send message.
+• Deploy software.
+• Call API.
+• Modify an external record.</p>
+<p>7.2 Effect State</p>
+<p>Explore:</p>
+<pre><code class="language-text">NotStarted
+Requested
+InProgress
+Succeeded
+Failed
+OutcomeUnknown
+</code></pre>
+<p>Questions:</p>
+<p>• When should domain state transition?
+• Before or after effect verification?
+• How are uncertain effects reconciled?
+• How are duplicate effects prevented?</p>
+<p>7.3 Compensation</p>
+<p>Explore:</p>
+<p>• Undoable changes.
+• Compensatable changes.
+• Irreversible changes.
+• Sagas.
+• Reconciliation workflows.
+• Human escalation.</p>
+<p>────────</p>
+<ol start="8">
+<li>Event Systems</li>
+</ol>
+<p>8.1 Event Versus Transition</p>
+<pre><code class="language-text">Transition = permitted operation
+Event = immutable fact that occurred
+</code></pre>
+<p>8.2 Event History</p>
+<p>Explore:</p>
+<p>• Auditability.
+• Ordering.
+• Replay.
+• Versioning.
+• Historical reconstruction.
+• Causation.
+• Correlation.
+• Provenance.</p>
+<p>8.3 Event Sourcing</p>
+<p>Questions:</p>
+<p>• Should state be stored or derived?
+• Where is event sourcing valuable?
+• Where is it unnecessary complexity?
+• Does event history improve agent reasoning?
+• Does it reduce assumption inheritance?</p>
+<p>────────</p>
+<ol start="9">
+<li>Types as State Constraints</li>
+</ol>
+<p>9.1 State as Value</p>
+<p>Example:</p>
+<pre><code class="language-fsharp">type OrderState =
+    | Draft
+    | Submitted
+    | Paid
+</code></pre>
+<p>Explore strengths and limitations.</p>
+<p>9.2 State as Type</p>
+<p>Example:</p>
+<pre><code class="language-text">DraftOrder
+SubmittedOrder
+PaidOrder
+</code></pre>
+<p>Explore:</p>
+<p>• Legal transitions as functions.
+• Private constructors.
+• Impossible states.
+• Compiler enforcement.
+• Exhaustive matching.</p>
+<p>9.3 Typestate and Advanced Techniques</p>
+<p>Explore:</p>
+<p>• Typestate.
+• Phantom types.
+• Generic state parameters.
+• Session types.
+• Linear types.
+• Ownership types.
+• Affine types.</p>
+<p>Questions:</p>
+<p>• Which techniques are commercially practical?
+• Which are too difficult for typical teams?
+• Which are disproportionately useful for agents?</p>
+<p>────────</p>
+<ol start="10">
+<li>Language Comparison</li>
+</ol>
+<p>Explore how the canonical model maps into:</p>
+<p>F#</p>
+<p>• Discriminated unions.
+• Pattern matching.
+• Private constructors.
+• Result.
+• Option.
+• Units of measure.
+• Immutability.
+• .NET interoperability.</p>
+<p>C#</p>
+<p>• Records.
+• Sealed hierarchies.
+• Pattern matching.
+• Nullable references.
+• Private/internal constructors.
+• Result libraries.
+• Roslyn analyzers.
+• Source generators.</p>
+<p>TypeScript</p>
+<p>• Tagged unions.
+• never exhaustive checks.
+• Zod.
+• Runtime schema validation.
+• Readonly data.
+• Branded types.
+• State-machine libraries.
+• JavaScript-runtime limitations.</p>
+<p>Python</p>
+<p>• Pydantic.
+• dataclasses.
+• Enum.
+• Literal.
+• Protocol.
+• mypy.
+• pyright.
+• frozen models.
+• Runtime-validation limits.</p>
+<p>Rust</p>
+<p>• Enums.
+• Ownership.
+• Borrowing.
+• Newtypes.
+• Typestate.
+• Traits.
+• Result.
+• Capability-like ownership.</p>
+<p>Haskell</p>
+<p>• Algebraic data types.
+• Purity.
+• Explicit effects.
+• Typeclasses.
+• GADTs.
+• State/effect modeling.
+• Complexity tradeoffs.</p>
+<p>Additional Languages</p>
+<p>• Java.
+• Kotlin.
+• Scala.
+• OCaml.</p>
+<p>────────</p>
+<ol start="11">
+<li>Retrofitting Existing Commercial Systems</li>
+</ol>
+<p>11.1 Minimal-Change Retrofit</p>
+<p>Explore progression:</p>
+<p>• Strings to enums.
+• Enums to tagged unions.
+• Centralized transitions.
+• Eliminate direct mutation.
+• Add guards.
+• Add provenance.
+• Add capabilities around high-risk operations.</p>
+<p>11.2 Constraint Maturity Model</p>
+<p>Candidate levels:</p>
+<pre><code class="language-text">Level 0 — Implicit
+Level 1 — Enumerated
+Level 2 — Explicit transitions
+Level 3 — State-aware types
+Level 4 — Guarded capabilities
+Level 5 — Verified
+</code></pre>
+<p>Explore:</p>
+<p>• Cost per level.
+• Risk reduction per level.
+• Organizational readiness.
+• Language-specific ceilings.
+• Legacy compatibility.</p>
+<p>11.3 Assessment Dimensions</p>
+<p>Possible dimensions:</p>
+<p>• State explicitness.
+• Transition explicitness.
+• Invalid-state resistance.
+• Mutation control.
+• Evidence modeling.
+• Provenance.
+• Capability enforcement.
+• Invariant coverage.
+• Agent-boundary safety.
+• Formal verification.</p>
+<p>────────</p>
+<ol start="12">
+<li>Semantic Constraint Density</li>
+</ol>
+<p>Develop the idea:</p>
+<blockquote>
+<p><strong>Semantic Constraint Density = the proportion of important domain semantics that are mechanically enforced rather than left implicit.</strong></p>
+</blockquote>
+<p>Spectrum:</p>
+<pre><code class="language-text">Low constraint
+- comments
+- prompts
+- tribal knowledge
+- conventions
+
+Medium constraint
+- tests
+- schemas
+- validators
+- enums
+- centralized transitions
+
+High constraint
+- state-specific types
+- private constructors
+- capabilities
+- invariants
+- property tests
+- model checking
+</code></pre>
+<p>Questions:</p>
+<p>• Can this be measured?
+• Is it predictive of agent performance?
+• Can it become a consulting diagnostic?</p>
+<p>────────</p>
+<ol start="13">
+<li>Agent Failure Taxonomy</li>
+</ol>
+<p>Define precise failure classes.</p>
+<p>Assumption Introduction</p>
+<p>Agent invents behavior not required by the specification.</p>
+<p>Assumption Inheritance</p>
+<p>Later agent treats a previous assumption as authoritative.</p>
+<p>Semantic Drift</p>
+<p>Implementation progressively diverges from intended domain semantics.</p>
+<p>Invalid Transition</p>
+<p>Agent creates a path that should not exist.</p>
+<p>Constraint Weakening</p>
+<p>Agent loosens a type, guard, invariant, capability, or test.</p>
+<p>Capability Fabrication</p>
+<p>Agent manufactures authorization or evidence.</p>
+<p>Epistemic Collapse</p>
+<p>Agent treats unknown, inferred, or assumed information as verified.</p>
+<p>Effect Misclassification</p>
+<p>Agent treats uncertain execution as success or failure without evidence.</p>
+<p>Provenance Loss</p>
+<p>Agent destroys the explanation for why a state exists.</p>
+<p>State Explosion</p>
+<p>Architecture becomes unusably complex through combinatorial state modeling.</p>
+<p>────────</p>
+<ol start="14">
+<li>Assumption Debt</li>
+</ol>
+<p>Define:</p>
+<blockquote>
+<p><strong>Assumption debt = implementation behavior whose semantic authority exceeds the evidence that originally justified it.</strong></p>
+</blockquote>
+<p>Explore:</p>
+<p>• How assumptions enter code.
+• How they spread.
+• How they become tests.
+• How they become APIs.
+• How they become domain types.
+• How they become architecture.</p>
+<p>Candidate metric:</p>
+<pre><code class="language-text">Assumption Propagation Depth
+
+0 — isolated
+1 — reused once
+2 — multiple downstream dependencies
+3 — encoded in tests or APIs
+4 — embedded in domain model
+5 — broadly institutionalized
+</code></pre>
+<p>────────</p>
+<ol start="15">
+<li>Agent Interfaces</li>
+</ol>
+<p>15.1 Tool Exposure</p>
+<p>Compare:</p>
+<pre><code class="language-text">Agent receives all tools
+</code></pre>
+<p>versus:</p>
+<pre><code class="language-text">Agent receives only legal transitions
+</code></pre>
+<p>15.2 Dynamic Transition Exposure</p>
+<p>Model:</p>
+<pre><code class="language-text">Current state
+    ↓
+Runtime computes legal transitions
+    ↓
+Only those operations are exposed
+</code></pre>
+<p>Questions:</p>
+<p>• Does this reduce hallucinated actions?
+• Does it reduce prompt complexity?
+• Does it reduce tool-selection cost?
+• Does it improve planning?</p>
+<p>15.3 Transition Rejection</p>
+<p>Design machine-readable reasons:</p>
+<p>• Invalid source state.
+• Missing evidence.
+• Missing capability.
+• Failed guard.
+• Invariant violation.
+• Stale state.
+• Conflicting transition.
+• Outcome unknown.</p>
+<p>────────</p>
+<ol start="16">
+<li>Agent Planning</li>
+</ol>
+<p>Explore the shift from:</p>
+<pre><code class="language-text">Unconstrained tool selection
+</code></pre>
+<p>to:</p>
+<pre><code class="language-text">Planning over a state-transition graph
+</code></pre>
+<p>Questions:</p>
+<p>• Can planning become graph search?
+• Can legal paths be generated deterministically?
+• Can costs be attached to transitions?
+• Can risk be attached?
+• Can reversible paths be preferred?
+• Can planning be separated from execution?</p>
+<p>────────</p>
+<ol start="17">
+<li>Risk and Reversibility</li>
+</ol>
+<p>Transition Risk Classes</p>
+<p>Explore:</p>
+<p>• Low consequence.
+• Medium consequence.
+• High consequence.
+• Irreversible.</p>
+<p>Reversibility</p>
+<p>Possible categories:</p>
+<pre><code class="language-text">Reversible
+Compensatable
+Irreversible
+</code></pre>
+<p>Questions:</p>
+<p>• Should evidence requirements scale with irreversibility?
+• Should capability requirements scale with consequence?
+• Should uncertain state block irreversible transitions?</p>
+<p>────────</p>
+<ol start="18">
+<li>State-System Composition</li>
+</ol>
+<p>Multiple Machines</p>
+<p>Possible interacting machines:</p>
+<p>• Domain state.
+• Evidence state.
+• Execution state.
+• Approval state.
+• Agent-task state.
+• External-service state.</p>
+<p>Composition Patterns</p>
+<p>Explore:</p>
+<p>• Events between machines.
+• Shared claims.
+• Capabilities.
+• Hierarchical states.
+• Orthogonal states.
+• Parent/child relationships.</p>
+<p>State Explosion</p>
+<p>Explore mitigation:</p>
+<p>• Orthogonal regions.
+• Hierarchical statecharts.
+• Independent aggregates.
+• Product types.
+• Derived state.
+• Event-driven coupling.</p>
+<p>────────</p>
+<ol start="19">
+<li>Distributed State</li>
+</ol>
+<p>Explore:</p>
+<p>• Authoritative state.
+• Observed state.
+• Replicated state.
+• Cached state.
+• Pending state.
+• Conflicting state.
+• Eventually consistent state.
+• Reconciliation state.</p>
+<p>Questions:</p>
+<p>• What does current state mean in a distributed system?
+• Can an agent act on stale state?
+• How should stale assumptions be detected?
+• How should conflicting state be resolved?</p>
+<p>────────</p>
+<ol start="20">
+<li>State Versioning and Evolution</li>
+</ol>
+<p>Explore:</p>
+<p>• Adding states.
+• Removing states.
+• Renaming states.
+• Splitting states.
+• Merging states.
+• Changing guards.
+• Changing invariants.
+• Changing capability requirements.
+• Historical interpretation.
+• Persisted-state migration.</p>
+<p>Questions:</p>
+<p>• How do old events remain meaningful?
+• How does old provenance remain interpretable?
+• How should agents reason across schema versions?</p>
+<p>────────</p>
+<ol start="21">
+<li>Formal Methods</li>
+</ol>
+<p>Property-Based Testing</p>
+<p>Explore:</p>
+<p>• Generated transition sequences.
+• Invariant checking.
+• Shrinking failing paths.
+• Impossible-state testing.</p>
+<p>Model Checking</p>
+<p>Explore:</p>
+<p>• TLA+.
+• Alloy.
+• PlusCal.
+• Statechart verification.
+• Reachability.
+• Deadlocks.
+• Safety.
+• Liveness.</p>
+<p>Proof and Types</p>
+<p>Explore:</p>
+<p>• Refinement types.
+• Dependent types.
+• Proof-carrying code.
+• Proof-carrying transitions.
+• Session types.</p>
+<p>────────</p>
+<ol start="22">
+<li>Proof-Carrying Transitions</li>
+</ol>
+<p>Explore transition requests containing justification:</p>
+<pre><code class="language-text">TransitionRequest
+    state
+    desired transition
+    evidence
+    capability
+    proof / attestation
+</code></pre>
+<p>Questions:</p>
+<p>• What counts as proof?
+• Can proofs be generated automatically?
+• Can AI propose proof objects?
+• Can external services sign evidence?</p>
+<p>────────</p>
+<ol start="23">
+<li>Trusted Specification Boundary</li>
+</ol>
+<p>Critical questions:</p>
+<p>• Which artifacts define authoritative behavior?
+• Can agents modify them?
+• Can agents propose changes but not apply them?
+• Who approves invariant changes?
+• Who approves capability changes?
+• How are tests prevented from becoming the only source of truth?</p>
+<p>Possible hierarchy:</p>
+<pre><code class="language-text">Agent-generated implementation
+        ↓
+State model
+        ↓
+Invariants
+        ↓
+Capability policy
+        ↓
+Trusted specification boundary
+</code></pre>
+<p>Core question:</p>
+<blockquote>
+<p>Who is allowed to change the rules that constrain the agent?</p>
+</blockquote>
+<p>────────</p>
+<ol start="24">
+<li>Repository Architecture</li>
+</ol>
+<p>Explore explicit separation:</p>
+<pre><code class="language-text">/domain
+    states
+    transitions
+    claims
+    evidence
+    invariants
+    capabilities
+
+/application
+    orchestration
+    use-cases
+
+/infrastructure
+    databases
+    APIs
+    external systems
+
+/tests
+    transition tests
+    property tests
+    model checks
+</code></pre>
+<p>Questions:</p>
+<p>• Should agents have different write permissions by directory?
+• Should domain constraints require separate review?
+• Should generated implementation be separated from authoritative specification?</p>
+<p>────────</p>
+<ol start="25">
+<li>State-System DSL</li>
+</ol>
+<p>Explore a compact specification language.</p>
+<p>Example:</p>
+<pre><code class="language-text">state Submitted
+state UnderReview
+state Approved
+
+transition Review:
+    Submitted -> UnderReview
+
+transition Approve:
+    UnderReview -> Approved
+    requires VerifiedIdentity
+    requires AssignedReviewer
+</code></pre>
+<p>Potential generated artifacts:</p>
+<p>• F# types.
+• C# records.
+• TypeScript tagged unions.
+• Python models.
+• Transition APIs.
+• Guards.
+• Agent tools.
+• Diagrams.
+• Documentation.
+• Property tests.
+• Model-checker specifications.</p>
+<p>Key question:</p>
+<blockquote>
+<p>Can domain semantics be defined once and projected into multiple implementation languages?</p>
+</blockquote>
+<p>────────</p>
+<ol start="26">
+<li>Generated Agent Interfaces</li>
+</ol>
+<p>If state specification is authoritative, explore generation of:</p>
+<p>• Agent tool schemas.
+• Allowed-transition lists.
+• Transition descriptions.
+• Required evidence.
+• Rejection reasons.
+• Capability requirements.
+• Planning graphs.</p>
+<p>Goal:</p>
+<blockquote>
+<p>Make the state model the source of truth for both humans and agents.</p>
+</blockquote>
+<p>────────</p>
+<ol start="27">
+<li>Compiler and Analyzer Integration</li>
+</ol>
+<p>Explore:</p>
+<p>• Roslyn analyzers.
+• TypeScript ESLint rules.
+• mypy plugins.
+• Rust lints.
+• F# analyzers.
+• Static checks for direct mutation.
+• Static checks for transition bypass.
+• Static checks for provenance loss.
+• Generated constraint checks.</p>
+<p>────────</p>
+<ol start="28">
+<li>Human Developer Ergonomics</li>
+</ol>
+<p>Explore:</p>
+<p>• Acceptable extra code.
+• Understandable patterns.
+• Abstraction resistance.
+• Code generation.
+• Debugging.
+• Visualization.
+• Migration pain.
+• Training burden.</p>
+<p>────────</p>
+<ol start="29">
+<li>AI Developer Ergonomics</li>
+</ol>
+<p>Explore:</p>
+<p>• Compiler-feedback quality.
+• Context requirements.
+• Type-signature usefulness.
+• Transition discoverability.
+• Repair loops.
+• Generated documentation.
+• Machine-readable errors.
+• Naming stability.
+• Code locality.</p>
+<p>Central question:</p>
+<blockquote>
+<p>What makes architecture easy for agents to reason about without making it unpleasant for humans?</p>
+</blockquote>
+<p>────────</p>
+<ol start="30">
+<li>Economics</li>
+</ol>
+<p>Explore:</p>
+<p>• Upfront modeling cost.
+• Boilerplate cost.
+• Token savings.
+• Reduced repair cycles.
+• Reduced human review.
+• Reduced production incidents.
+• Reduced context retrieval.
+• Reduced semantic drift.
+• Migration cost.</p>
+<p>Potential economic thesis:</p>
+<blockquote>
+<p><strong>Move semantic reasoning from expensive probabilistic inference into cheap deterministic verification.</strong></p>
+</blockquote>
+<p>────────</p>
+<ol start="31">
+<li>Consulting and Training</li>
+</ol>
+<p>Assessment Offering</p>
+<p>Possible flow:</p>
+<pre><code class="language-text">Current architecture
+    ↓
+State / transition inventory
+    ↓
+Constraint maturity score
+    ↓
+Agent-risk analysis
+    ↓
+Target retrofit level
+    ↓
+Implementation roadmap
+</code></pre>
+<p>Language-Specific Training</p>
+<p>C#</p>
+<p>• Records.
+• State-specific models.
+• Result types.
+• Pattern matching.
+• Analyzers.
+• Transition APIs.</p>
+<p>TypeScript</p>
+<p>• Tagged unions.
+• never.
+• Zod.
+• Readonly models.
+• Transition services.
+• Runtime boundary validation.</p>
+<p>Python</p>
+<p>• Pydantic.
+• Enum/Literal.
+• mypy/pyright.
+• Frozen models.
+• Transition services.
+• Architectural compensation for weak runtime enforcement.</p>
+<p>F#</p>
+<p>• Discriminated unions.
+• Private constructors.
+• Result.
+• Pattern matching.
+• State-specific types.
+• Domain modeling.</p>
+<p>Migration Playbooks</p>
+<p>Explore:</p>
+<p>• Greenfield.
+• Legacy monolith.
+• Microservices.
+• AI-enabled existing systems.
+• Regulated systems.
+• High-risk workflows.</p>
+<p>────────</p>
+<ol start="32">
+<li>Clarity Application</li>
+</ol>
+<p>Explore Clarity as:</p>
+<blockquote>
+<p><strong>A stateful decision system where decisions progress through governed transitions backed by evidence.</strong></p>
+</blockquote>
+<p>Areas:</p>
+<p>• Decision state.
+• Evidence state.
+• Ownership state.
+• Commitment state.
+• Reassessment state.
+• Learning state.
+• Decision posture as transition policy.
+• Reassessment triggers.
+• Decision provenance.
+• Agent-supported decision analysis.</p>
+<p>────────</p>
+<ol start="33">
+<li>HelixNote Application</li>
+</ol>
+<p>Explore HelixNote as:</p>
+<blockquote>
+<p><strong>A system for tracking the state of medical knowledge rather than flattening medical information into static facts.</strong></p>
+</blockquote>
+<p>Areas:</p>
+<p>• Symptom state.
+• Treatment state.
+• Lab state.
+• Diagnostic-hypothesis state.
+• Clinical-claim state.
+• Evidence state.
+• Contradictory evidence.
+• Provenance.
+• Temporal relationships.
+• AI inference versus clinician-established state.</p>
+<p>────────</p>
+<ol start="34">
+<li>Research Operating System Application</li>
+</ol>
+<p>Explore:</p>
+<p>• Research-question state.
+• Evidence-collection state.
+• Claim state.
+• Hypothesis state.
+• Verification state.
+• Contradiction state.
+• Reassessment.
+• Research completion.
+• Source provenance.</p>
+<p>────────</p>
+<ol start="35">
+<li>Organizational Governance</li>
+</ol>
+<p>Explore state-based governance patterns such as:</p>
+<pre><code class="language-text">Proposal
+→ Evaluating
+→ EvidenceSufficient
+→ Authorized
+→ Committed
+→ Executing
+→ Verified
+</code></pre>
+<p>Areas:</p>
+<p>• Approval.
+• Authority.
+• Escalation.
+• Stop-work.
+• Reassessment.
+• Investigations.
+• Policy exceptions.
+• Postmortems.
+• Learning records.</p>
+<p>────────</p>
+<ol start="36">
+<li>Security Implications</li>
+</ol>
+<p>Explore:</p>
+<p>• Least privilege.
+• Capability-based security.
+• Agent sandboxing.
+• Dynamic tool exposure.
+• Privilege escalation.
+• Constraint tampering.
+• Evidence spoofing.
+• Replay.
+• State forgery.
+• Event forgery.</p>
+<p>────────</p>
+<ol start="37">
+<li>Safety Implications</li>
+</ol>
+<p>Explore:</p>
+<p>• High-consequence transitions.
+• Human approval boundaries.
+• Reversibility.
+• Uncertain evidence.
+• Stale information.
+• Conflicting evidence.
+• Safe failure states.
+• Escalation.</p>
+<p>────────</p>
+<ol start="38">
+<li>Observability</li>
+</ol>
+<p>Explore:</p>
+<p>• Transition logs.
+• Rejected transitions.
+• Failed guards.
+• Capability denials.
+• Evidence changes.
+• Epistemic downgrades.
+• Agent proposals.
+• Effect outcomes.
+• Reconciliation.</p>
+<p>Questions:</p>
+<p>• What should operations see?
+• What should agents see?
+• What should auditors see?</p>
+<p>────────</p>
+<ol start="39">
+<li>Explainability</li>
+</ol>
+<p>Example:</p>
+<pre><code class="language-text">Current state:
+UnderReview
+
+Requested transition:
+Approve
+
+Rejected because:
+- identity verification missing
+- reviewer capability expired
+</code></pre>
+<p>Questions:</p>
+<p>• Can explanations be deterministic?
+• Can agents use rejection reasons to repair plans?
+• Can users understand why transitions are blocked?</p>
+<p>────────</p>
+<ol start="40">
+<li>What Should Not Be State</li>
+</ol>
+<p>Important counterbalance.</p>
+<p>Candidate rule:</p>
+<p>Do not model a value as state unless at least one is true:</p>
+<p>• It changes what operations are legal.
+• It changes required evidence.
+• It changes required authority.
+• It changes invariant interpretation.
+• It changes future lifecycle behavior.</p>
+<p>Goal:</p>
+<blockquote>
+<p>Avoid state-system overengineering.</p>
+</blockquote>
+<p>────────</p>
+<ol start="41">
+<li>Failure Modes of the Approach</li>
+</ol>
+<p>Explore:</p>
+<p>• Excessive type complexity.
+• State explosion.
+• Difficult migrations.
+• Rigid models.
+• Over-formalization.
+• Excessive boilerplate.
+• Poor developer adoption.
+• False confidence from type safety.
+• Type-correct semantic errors.
+• Agent constraint weakening.
+• Stale specifications.</p>
+<p>────────</p>
+<ol start="42">
+<li>Competing and Related Architectural Approaches</li>
+</ol>
+<p>Compare with:</p>
+<p>• Traditional object-oriented domain models.
+• Event sourcing.
+• Actor systems.
+• Workflow engines.
+• BPMN.
+• Statecharts.
+• Domain-Driven Design.
+• Functional core / imperative shell.
+• Capability-based security.
+• Formal specification.
+• Policy engines.
+• Rule engines.</p>
+<p>Question:</p>
+<blockquote>
+<p>Which parts are genuinely new, and which are a synthesis of existing ideas specifically adapted for AI agents?</p>
+</blockquote>
+<p>────────</p>
+<ol start="43">
+<li>Terminology to Develop</li>
+</ol>
+<p>Possible terms:</p>
+<p>• State-constrained architecture.
+• Agent-safe architecture.
+• Semantic constraint density.
+• Assumption debt.
+• Assumption inheritance.
+• Semantic drift.
+• Epistemic state.
+• Transition authority.
+• Constraint boundary.
+• Proof-carrying transition.
+• Agent inheritance.
+• Semantic stability under autonomous accumulation.</p>
+<p>────────</p>
+<ol start="44">
+<li>
+<p>Core Research Questions</p>
+</li>
+<li>
+<p>Does explicit state modeling reduce agent semantic errors?</p>
+</li>
+<li>
+<p>Do typed transitions reduce invalid behavior?</p>
+</li>
+<li>
+<p>Does provenance reduce assumption inheritance?</p>
+</li>
+<li>
+<p>Does epistemic state reduce false certainty?</p>
+</li>
+<li>
+<p>Do capability boundaries reduce unauthorized effects?</p>
+</li>
+<li>
+<p>Does constrained architecture reduce agent context requirements?</p>
+</li>
+<li>
+<p>Does constrained architecture reduce repair loops?</p>
+</li>
+<li>
+<p>Does constrained architecture degrade more slowly under repeated AI modification?</p>
+</li>
+<li>
+<p>Which language features matter most?</p>
+</li>
+<li>
+<p>Which retrofit patterns create the most value for existing systems?</p>
+</li>
+<li>
+<p>How much constraint is enough?</p>
+</li>
+<li>
+<p>When does additional constraint become counterproductive?</p>
+</li>
+<li>
+<p>How should agents interact with state systems?</p>
+</li>
+<li>
+<p>How should constraint systems themselves be governed?</p>
+</li>
+<li>
+<p>Can a common state DSL generate both implementation and agent interfaces?</p>
+</li>
+</ol>
+<p>────────</p>
+<ol start="45">
+<li>Preliminary Principles</li>
+</ol>
+<p>These remain hypotheses until refined.</p>
+<ol>
+<li>Authoritative state should be transitioned, not directly assigned.</li>
+<li>Agents should propose consequential transitions rather than mutate the world directly.</li>
+<li>Legality, authority, evidence, and verification should be evaluated independently of the probabilistic agent.</li>
+<li>Unknown, assumed, inferred, and verified information should not be interchangeable.</li>
+<li>Time and repetition do not increase epistemic authority; evidence does.</li>
+<li>Important capabilities and verified values should not be freely constructible.</li>
+<li>External effects need explicit execution state, including unknown outcomes.</li>
+<li>Important state changes should preserve provenance.</li>
+<li>Constraints should progressively move from prose and convention into mechanically enforceable structures.</li>
+<li>The agent being constrained should not be able to silently weaken the constraint system.</li>
+</ol>
+<p>────────</p>
+<ol start="46">
+<li>Suggested Exploration Order</li>
+</ol>
+<p>Phase 1 — Canonical Theory</p>
+<p>Focus:</p>
+<p>• State.
+• Transition.
+• Guard.
+• Invariant.
+• Claim.
+• Evidence.
+• Capability.
+• Effect.
+• Event.
+• Actor.
+• Provenance.</p>
+<p>Goal:
+Create stable definitions and relationships.</p>
+<p>Phase 2 — Composition</p>
+<p>Focus:</p>
+<p>• Domain state.
+• Epistemic state.
+• Execution state.
+• Multi-machine composition.
+• Hierarchy.
+• Orthogonal states.
+• State explosion.
+• Distributed state.</p>
+<p>Goal:
+Understand how the primitives behave in realistic systems.</p>
+<p>Phase 3 — Language Expression</p>
+<p>Focus:</p>
+<p>• F#.
+• C#.
+• TypeScript.
+• Python.
+• Rust.
+• Haskell.</p>
+<p>Goal:
+Determine minimum practical patterns for each ecosystem.</p>
+<p>Phase 4 — Agent Runtime</p>
+<p>Focus:</p>
+<p>• Dynamic transition exposure.
+• Capability enforcement.
+• Transition rejection.
+• Agent planning.
+• Effect execution.
+• Verification.
+• Provenance.</p>
+<p>Goal:
+Define an agent-oriented runtime architecture.</p>
+<p>Phase 5 — Formalization</p>
+<p>Focus:</p>
+<p>• Property testing.
+• Model checking.
+• TLA+.
+• Statecharts.
+• Proof-carrying transitions.
+• Trusted specification boundary.</p>
+<p>Goal:
+Determine how far correctness can be mechanically checked.</p>
+<p>Phase 6 — Retrofit and Consulting</p>
+<p>Focus:</p>
+<p>• Constraint maturity model.
+• Semantic constraint density.
+• Language-specific playbooks.
+• Migration strategy.
+• Training.
+• Assessment.</p>
+<p>Goal:
+Turn the research into practical adoption paths.</p>
+<p>Phase 7 — Product Applications</p>
+<p>Focus:</p>
+<p>• Clarity.
+• HelixNote.
+• Research Operating System.
+• Governance.
+• Agent-native workflow infrastructure.</p>
+<p>Goal:
+Use real products to pressure-test the conceptual model.</p>
+<p>────────</p>
+<ol start="47">
+<li>Long-Term Architectural Possibility</li>
+</ol>
+<pre><code class="language-text">Human intent
+    ↓
+Domain state specification
+    ↓
+States + transitions + invariants
+    ↓
+Evidence + capability model
+    ↓
+Generated typed interfaces
+    ↓
+Agent-visible legal transitions
+    ↓
+Agent proposes action
+    ↓
+Deterministic runtime validates
+    ↓
+Effect executor
+    ↓
+Independent verification
+    ↓
+Immutable event + provenance
+    ↓
+New authoritative state
+</code></pre>
+<p>At that point, the programming language is no longer merely a medium for implementation.</p>
+<p>It becomes one layer of a broader control system designed to keep probabilistic agents inside mechanically understandable boundaries.</p>
+<p>────────</p>
+<p>Central Research Goal</p>
+<blockquote>
+<p><strong>Determine how much semantic responsibility can be moved out of probabilistic agent reasoning and into deterministic, machine-verifiable software structure without making commercial software prohibitively difficult to build or evolve.</strong></p>
+</blockquote></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T14:11:49.320Z">Aug 17, 2026, 2:11:49 PM UTC</time> </p> </footer> </body></html>

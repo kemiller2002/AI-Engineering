@@ -1,7 +1,9 @@
 {
   "generatedAt": "2026-07-22",
   "summary": {
-    "publishable source": 123,
+    "publishable source": 113,
+    "generated output": 1,
+    "ambiguous": 372,
     "ignored": 3
   },
   "records": [
@@ -30,6 +32,10 @@
       "classification": "publishable source"
     },
     {
+      "path": "build-reports/content-inventory.md",
+      "classification": "generated output"
+    },
+    {
       "path": "CHANGELOG.md",
       "classification": "publishable source"
     },
@@ -39,19 +45,19 @@
     },
     {
       "path": "content/disciplines/ai-engineering/handbook/engineering-workflows.md",
-      "classification": "publishable source"
+      "classification": "ambiguous"
     },
     {
       "path": "content/disciplines/ai-engineering/handbook/foundations.md",
-      "classification": "publishable source"
+      "classification": "ambiguous"
     },
     {
       "path": "content/disciplines/ai-engineering/handbook/research-engineering.md",
-      "classification": "publishable source"
+      "classification": "ambiguous"
     },
     {
       "path": "content/disciplines/ai-engineering/handbook/token-economics-and-context-engineering.md",
-      "classification": "publishable source"
+      "classification": "ambiguous"
     },
     {
       "path": "content/disciplines/ai-engineering/research-program.md",
@@ -87,7 +93,7 @@
     },
     {
       "path": "content/projects/ai-engineering-course/chapter-01/research/research-package-001-notes.md",
-      "classification": "publishable source"
+      "classification": "ambiguous"
     },
     {
       "path": "content/projects/ai-engineering-course/governance/course-constitution.md",
@@ -98,7 +104,15 @@
       "classification": "publishable source"
     },
     {
+      "path": "content/projects/time-entry/README.md",
+      "classification": "publishable source"
+    },
+    {
       "path": "current-state.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/architecture/semantic-control/README.md",
       "classification": "publishable source"
     },
     {
@@ -190,6 +204,14 @@
       "classification": "publishable source"
     },
     {
+      "path": "docs/repository/imports/2026-08-15-state-machine-documents-organization/DECISIONS.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "docs/repository/imports/2026-08-15-state-machine-documents-organization/VALIDATION.md",
+      "classification": "publishable source"
+    },
+    {
       "path": "knowledge-platform/Build-Pipeline.md",
       "classification": "publishable source"
     },
@@ -216,6 +238,1414 @@
     {
       "path": "knowledge-platform/Website-Architecture.md",
       "classification": "publishable source"
+    },
+    {
+      "path": "node_modules/@astrojs/compiler/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@astrojs/internal-helpers/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@astrojs/prism/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@astrojs/telemetry/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@babel/helper-string-parser/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@babel/helper-validator-identifier/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@babel/parser/CHANGELOG.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@babel/parser/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@babel/types/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@capsizecss/unpack/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@echelon-foundry/research-publisher/docs/document-purpose-taxonomy.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@echelon-foundry/research-publisher/docs/research-metadata-schema.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@echelon-foundry/research-publisher/prompts/mark-research-documents.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@echelon-foundry/research-publisher/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@esbuild/darwin-arm64/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@img/colour/LICENSE.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@img/colour/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@img/sharp-darwin-arm64/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@img/sharp-libvips-darwin-arm64/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@jridgewell/sourcemap-codec/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@nodelib/fs.scandir/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@nodelib/fs.stat/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@nodelib/fs.walk/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@oslojs/encoding/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@pagefind/darwin-arm64/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@rollup/pluginutils/node_modules/estree-walker/CHANGELOG.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@rollup/pluginutils/node_modules/estree-walker/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@rollup/pluginutils/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@rollup/rollup-darwin-arm64/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@shikijs/core/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@shikijs/engine-javascript/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@shikijs/engine-oniguruma/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@shikijs/langs/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@shikijs/themes/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@shikijs/types/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@shikijs/vscode-textmate/LICENSE.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@shikijs/vscode-textmate/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@types/debug/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@types/estree/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@types/hast/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@types/mdast/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@types/ms/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@types/nlcst/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@types/unist/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/@ungap/structured-clone/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/acorn/CHANGELOG.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/acorn/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/ansi-align/CHANGELOG.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/ansi-align/node_modules/ansi-regex/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/ansi-align/node_modules/emoji-regex/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/ansi-align/node_modules/string-width/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/ansi-align/node_modules/strip-ansi/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/ansi-align/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/ansi-regex/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/ansi-styles/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/anymatch/node_modules/picomatch/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/anymatch/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/argparse/CHANGELOG.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/argparse/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/aria-query/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/array-iterate/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/astro/node_modules/zod-to-ts/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/astro/node_modules/zod/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/astro/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/axobject-query/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/bail/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/base-64/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/boolbase/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/boxen/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/braces/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/camelcase/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/ccount/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/chalk/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/character-entities-html4/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/character-entities-legacy/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/character-entities/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/chokidar/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/ci-info/CHANGELOG.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/ci-info/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/cli-boxes/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/clsx/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/comma-separated-tokens/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/commander/Readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/common-ancestor-path/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/cookie-es/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/cookie/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/crossws/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/css-select/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/css-tree/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/css-what/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/cssesc/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/csso/node_modules/css-tree/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/csso/node_modules/mdn-data/CHANGELOG.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/csso/node_modules/mdn-data/css/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/csso/node_modules/mdn-data/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/csso/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/debug/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/decode-named-character-reference/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/defu/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/dequal/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/destr/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/detect-libc/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/deterministic-object-hash/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/devalue/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/devlop/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/diff/CONTRIBUTING.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/diff/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/diff/release-notes.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/dlv/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/dom-serializer/node_modules/entities/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/dom-serializer/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/domelementtype/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/domhandler/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/domutils/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/dset/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/emoji-regex/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/entities/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/es-module-lexer/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/esbuild/LICENSE.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/esbuild/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/escape-string-regexp/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/esprima/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/estree-walker/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/eventemitter3/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/extend-shallow/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/extend/CHANGELOG.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/extend/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/fast-glob/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/fastq/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/fastq/SECURITY.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/fdir/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/fill-range/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/flattie/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/fontace/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/fontkitten/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/fsevents/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/get-east-asian-width/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/github-slugger/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/glob-parent/CHANGELOG.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/glob-parent/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/gray-matter/CHANGELOG.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/gray-matter/node_modules/argparse/CHANGELOG.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/gray-matter/node_modules/argparse/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/gray-matter/node_modules/js-yaml/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/gray-matter/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/h3/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/hast-util-from-html/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/hast-util-from-parse5/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/hast-util-heading-rank/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/hast-util-is-element/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/hast-util-parse-selector/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/hast-util-raw/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/hast-util-sanitize/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/hast-util-to-html/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/hast-util-to-parse5/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/hast-util-to-string/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/hast-util-to-text/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/hast-util-whitespace/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/hastscript/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/html-escaper/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/html-void-elements/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/http-cache-semantics/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/import-meta-resolve/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/iron-webcrypto/LICENSE.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/iron-webcrypto/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/is-docker/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/is-extendable/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/is-extglob/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/is-fullwidth-code-point/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/is-glob/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/is-inside-container/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/is-number/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/is-plain-obj/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/is-wsl/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/js-yaml/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/kind-of/CHANGELOG.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/kind-of/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/kleur/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/longest-streak/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/lru-cache/LICENSE.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/lru-cache/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/magic-string/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/magicast/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/markdown-table/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/mdast-util-definitions/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/mdast-util-find-and-replace/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/mdast-util-from-markdown/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/mdast-util-gfm-autolink-literal/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/mdast-util-gfm-footnote/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/mdast-util-gfm-strikethrough/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/mdast-util-gfm-table/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/mdast-util-gfm-task-list-item/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/mdast-util-gfm/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/mdast-util-phrasing/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/mdast-util-to-hast/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/mdast-util-to-markdown/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/mdast-util-to-string/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/mdn-data/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/merge2/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-core-commonmark/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-extension-gfm-autolink-literal/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-extension-gfm-footnote/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-extension-gfm-strikethrough/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-extension-gfm-table/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-extension-gfm-tagfilter/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-extension-gfm-task-list-item/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-extension-gfm/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-factory-destination/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-factory-label/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-factory-space/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-factory-title/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-factory-whitespace/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-util-character/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-util-chunked/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-util-classify-character/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-util-combine-extensions/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-util-decode-numeric-character-reference/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-util-decode-string/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-util-encode/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-util-html-tag-name/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-util-normalize-identifier/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-util-resolve-all/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-util-sanitize-uri/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-util-subtokenize/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-util-symbol/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark-util-types/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromark/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromatch/node_modules/picomatch/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/micromatch/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/mrmime/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/ms/license.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/ms/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/nanoid/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/neotraverse/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/nlcst-to-string/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/node-fetch-native/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/node-mock-http/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/normalize-path/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/nth-check/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/ofetch/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/ohash/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/oniguruma-parser/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/oniguruma-to-es/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/p-limit/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/p-queue/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/p-timeout/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/package-manager-detector/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/pagefind/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/parse-latin/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/parse5/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/piccolore/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/picocolors/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/picomatch/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/postcss/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/prismjs/CHANGELOG.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/prismjs/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/prompts/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/property-information/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/queue-microtask/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/radix3/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/readdirp/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/regex-recursion/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/regex-utilities/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/regex/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/rehype-parse/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/rehype-raw/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/rehype-sanitize/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/rehype-slug/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/rehype-stringify/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/rehype/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/remark-gfm/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/remark-parse/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/remark-rehype/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/remark-smartypants/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/remark-stringify/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/retext-latin/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/retext-smartypants/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/retext-stringify/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/retext/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/reusify/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/reusify/SECURITY.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/rollup/LICENSE.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/rollup/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/run-parallel/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/sax/LICENSE.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/sax/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/section-matter/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/semver/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/sharp/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/shiki/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/sisteransi/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/smol-toml/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/source-map-js/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/space-separated-tokens/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/sprintf-js/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/string-width/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/stringify-entities/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/strip-ansi/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/strip-bom-string/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/svgo/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/tiny-inflate/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/tinyexec/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/tinyglobby/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/to-regex-range/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/trim-lines/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/trough/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/tsconfck/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/type-fest/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/typescript/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/typescript/SECURITY.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/ufo/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/ultrahtml/CHANGELOG.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/ultrahtml/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/uncrypto/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/unified/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/unifont/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/unist-util-find-after/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/unist-util-is/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/unist-util-modify-children/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/unist-util-position/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/unist-util-remove-position/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/unist-util-stringify-position/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/unist-util-visit-children/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/unist-util-visit-parents/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/unist-util-visit/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/unstorage/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/vfile-location/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/vfile-message/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/vfile/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/vite/LICENSE.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/vite/node_modules/@esbuild/darwin-arm64/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/vite/node_modules/esbuild/LICENSE.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/vite/node_modules/esbuild/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/vite/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/vitefu/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/web-namespaces/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/which-pm-runs/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/widest-line/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/wrap-ansi/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/xxhash-wasm/LICENSE.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/xxhash-wasm/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/yaml/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/yargs-parser/CHANGELOG.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/yargs-parser/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/yocto-queue/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/yocto-spinner/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/yoctocolors/readme.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/zod-to-json-schema/changelog.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/zod-to-json-schema/contributing.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/zod-to-json-schema/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/zod/README.md",
+      "classification": "ambiguous"
+    },
+    {
+      "path": "node_modules/zwitch/readme.md",
+      "classification": "ambiguous"
     },
     {
       "path": "prompts/AI-Research-Mission.md",
@@ -347,39 +1777,39 @@
     },
     {
       "path": "research/evaluation/fixtures/et-004-p01/base/review-policy.md",
-      "classification": "publishable source"
+      "classification": "ambiguous"
     },
     {
       "path": "research/evaluation/fixtures/et-004-p01/integrity-audit.md",
-      "classification": "publishable source"
+      "classification": "ambiguous"
     },
     {
       "path": "research/evaluation/fixtures/et-004-p01/outcomes/alternative-correct/review-policy.md",
-      "classification": "publishable source"
+      "classification": "ambiguous"
     },
     {
       "path": "research/evaluation/fixtures/et-004-p01/outcomes/complete/review-policy.md",
-      "classification": "publishable source"
+      "classification": "ambiguous"
     },
     {
       "path": "research/evaluation/fixtures/et-004-p01/outcomes/incomplete-polished/review-policy.md",
-      "classification": "publishable source"
+      "classification": "ambiguous"
     },
     {
       "path": "research/evaluation/fixtures/et-004-p01/outcomes/regressive/review-policy.md",
-      "classification": "publishable source"
+      "classification": "ambiguous"
     },
     {
       "path": "research/evaluation/fixtures/et-014-p01/integrity-audit.md",
-      "classification": "publishable source"
+      "classification": "ambiguous"
     },
     {
       "path": "research/evaluation/fixtures/et-014-p01/task-materials/expected-behavior.md",
-      "classification": "publishable source"
+      "classification": "ambiguous"
     },
     {
       "path": "research/evaluation/fixtures/et-014-p01/task-materials/prompt.md",
-      "classification": "publishable source"
+      "classification": "ambiguous"
     },
     {
       "path": "research/evaluation/NEXT-AGENT-START-HERE.md",
@@ -427,6 +1857,10 @@
     },
     {
       "path": "research/frontier/investigations/2026-07-30-rfr-009-validation.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/frontier/investigations/2026-08-15-rfr-009-metadata-provenance-coverage.md",
       "classification": "publishable source"
     },
     {
@@ -478,32 +1912,52 @@
       "classification": "publishable source"
     },
     {
+      "path": "research/state-constrained-architecture/README.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/reports/01-existing-work-prior-art-novelty-research-report.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/reports/state-constrained-language-comparison-research-report.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/working-notes/state-constrained-architecture-research-outline.md",
+      "classification": "publishable source"
+    },
+    {
+      "path": "research/state-constrained-architecture/working-notes/state-machine-research.md",
+      "classification": "publishable source"
+    },
+    {
       "path": "roadmap.md",
       "classification": "publishable source"
     },
     {
       "path": "templates/AGENT-HANDOFF.template.md",
-      "classification": "publishable source"
+      "classification": "ambiguous"
     },
     {
       "path": "templates/CURRENT-STATE.template.md",
-      "classification": "publishable source"
+      "classification": "ambiguous"
     },
     {
       "path": "templates/DECISION.template.md",
-      "classification": "publishable source"
+      "classification": "ambiguous"
     },
     {
       "path": "templates/EVIDENCE.template.md",
-      "classification": "publishable source"
+      "classification": "ambiguous"
     },
     {
       "path": "templates/RESEARCH-QUESTION.template.md",
-      "classification": "publishable source"
+      "classification": "ambiguous"
     },
     {
       "path": "templates/THEORY.template.md",
-      "classification": "publishable source"
+      "classification": "ambiguous"
     },
     {
       "path": "tools/evaluation/README.md",

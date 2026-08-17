@@ -1,0 +1,905 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>state machine research | AI Engineering Research</title><meta name="description" content="Searchable AI engineering research repository"><style></style><style>:root{--color-bg: #f3f1ea;--color-surface: #faf9f5;--color-ink: #18201d;--color-accent: #b7471a;--color-accent-strong: #84300f;--color-accent-soft: #f2d6c8;--color-border: #cbc8bc;--color-border-strong: #999b91;--color-muted: #59615d;--color-dark: #18201d;--font-display: "Fraunces", Georgia, serif;--font-body: "Source Sans 3", system-ui, sans-serif;--space-2: .5rem;--space-3: .75rem;--space-4: 1rem;--space-6: 1.5rem;--space-8: 2rem;--space-12: 3rem;--space-16: 4rem;--space-20: 5rem;--radius: .25rem;--shadow: 0 18px 50px rgba(24, 32, 29, .07);--content-width: 76rem;--reading-width: 68ch}*,*:before,*:after{box-sizing:border-box}body,h1,h2,h3,p,ul,ol,dl{margin:0}img{max-width:100%}html{color-scheme:light;scroll-behavior:smooth}body{background:var(--color-bg);color:var(--color-ink);font-family:var(--font-body);line-height:1.6}a{color:var(--color-accent);text-underline-offset:.18em;text-decoration-thickness:.08em}main,.site-header__inner,.site-footer{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.skip-link{position:absolute;left:-999px}.skip-link:focus{left:1rem;top:1rem;z-index:100;background:var(--color-surface);padding:var(--space-3)}::selection{background:var(--color-accent-soft);color:var(--color-ink)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}h1,h2,h3,.site-title{font-family:var(--font-display);line-height:1.1;letter-spacing:-.025em}h1{font-size:clamp(2.6rem,7vw,5.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.35rem}.lede{max-width:60ch;font-size:clamp(1.08rem,2vw,1.28rem);color:var(--color-muted);line-height:1.55}.eyebrow,.site-kicker{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--color-muted);font-weight:700}.site-header{border-bottom:1px solid var(--color-border)}.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);min-height:5.5rem}.site-nav{display:flex;flex-wrap:wrap;gap:var(--space-4);list-style:none;padding:0}.hero,.feature-grid,.card-grid,.document-shell,.page-intro,.search-shell{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto}.hero{display:grid;gap:var(--space-8);padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--color-border)}.feature-grid,.relationship-grid{display:grid;gap:0}.feature-grid{padding:var(--space-20) 0;border-bottom:1px solid var(--color-border)}.card-grid{display:grid;gap:0;padding-bottom:var(--space-20)}.document-shell{display:grid;gap:var(--space-8);padding-bottom:var(--space-12)}.document-body{max-width:var(--reading-width)}.document-body>*+*{margin-top:var(--space-4)}.page-intro,.search-shell{padding:var(--space-16) 0}.site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border)}.site-build-stamp{opacity:.8}@media(min-width:48rem){.hero{grid-template-columns:minmax(0,1.8fr) minmax(16rem,.7fr);align-items:end}.feature-grid,.relationship-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.feature-grid .section-heading{grid-column:1 / -1}.document-reading-grid{display:grid;grid-template-columns:14rem minmax(0,var(--reading-width));gap:clamp(3rem,7vw,7rem);align-items:start}}@media(max-width:40rem){.site-header__inner,.page-intro--split{align-items:flex-start;flex-direction:column}}.button,button{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.1rem;gap:var(--space-3);border-radius:var(--radius);border:1px solid var(--color-accent);background:var(--color-accent);color:#fff;text-decoration:none;font-weight:700}.button--secondary{background:transparent;color:var(--color-accent)}.hero-actions{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-6);align-items:center}.text-link{color:var(--color-ink);font-weight:700;text-decoration-color:var(--color-accent)}.site-identity{display:flex;align-items:center;gap:var(--space-3)}.site-mark{display:grid;width:2.4rem;height:2.4rem;place-items:center;background:var(--color-dark);color:var(--color-surface);font-family:var(--font-display);font-weight:700}.site-title{color:var(--color-ink);font-size:1.05rem;font-weight:700;text-decoration:none}.site-description{color:var(--color-muted);font-size:.8rem}.site-nav a{display:block;padding:.6rem 0;color:var(--color-muted);font-size:.92rem;font-weight:700;text-decoration:none;border-bottom:2px solid transparent}.site-nav a:hover,.site-nav a[aria-current=page]{color:var(--color-ink);border-color:var(--color-accent)}.stats-panel,.metadata-panel,.toc-panel,.search-form{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow)}.stats-panel,.metadata-panel{display:grid;gap:var(--space-4);padding:var(--space-6)}.toc-panel{padding:var(--space-6)}.stats-panel{box-shadow:none;border-top:3px solid var(--color-accent)}.stats-panel div+div{padding-top:var(--space-4);border-top:1px solid var(--color-border)}.stats-panel dd{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1}.stats-panel dt{margin-top:var(--space-2)}.section-heading{max-width:42rem;margin-bottom:var(--space-12)}.feature-grid article{padding:var(--space-8) var(--space-8) var(--space-8) 0;border-top:1px solid var(--color-border-strong)}.feature-grid article+article{padding-left:var(--space-8);border-left:1px solid var(--color-border)}.feature-grid article p{margin-top:var(--space-3);color:var(--color-muted)}.feature-grid article a{display:inline-block;margin-top:var(--space-6);font-weight:700}.feature-number{font-family:var(--font-display);font-size:.85rem;color:var(--color-accent)!important}.page-intro--split{display:flex;align-items:end;justify-content:space-between;gap:var(--space-6)}.document-card{position:relative;display:grid;gap:var(--space-6);padding:var(--space-8) 3.5rem var(--space-8) 0;border-top:1px solid var(--color-border)}.document-card:last-child{border-bottom:1px solid var(--color-border)}.document-card h3 a{color:var(--color-ink);text-decoration:none}.document-card h3 a:after{position:absolute;inset:0;content:""}.document-card__main>p:last-child{max-width:62ch;margin-top:var(--space-3);color:var(--color-muted)}.document-card__arrow{position:absolute;top:var(--space-8);right:var(--space-2);color:var(--color-accent);font-size:1.3rem}.document-card:has(a:hover) h3{color:var(--color-accent)}.inline-meta,.metadata-panel{display:grid;gap:var(--space-3)}.document-card .inline-meta{align-content:start}.inline-meta div,.metadata-panel div,.stats-panel div{display:grid;gap:.15rem}.inline-meta dt,.metadata-panel dt,.stats-panel dt{font-size:.8rem;text-transform:uppercase;color:var(--color-muted)}.inline-meta dd{overflow-wrap:anywhere}.document-header{max-width:66rem;padding-top:var(--space-12)}.document-header .lede{margin-top:var(--space-6)}.document-header .metadata-panel{margin-top:var(--space-8);box-shadow:none}.toc-panel{box-shadow:none;border:0;border-top:2px solid var(--color-ink);background:transparent;padding:var(--space-4) 0}.toc-panel h2{font-family:var(--font-body);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.toc-panel ol{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-left:1.2rem;color:var(--color-muted);font-size:.9rem}.toc-panel a{color:inherit}.document-body h2,.document-body h3{scroll-margin-top:var(--space-6);margin-top:var(--space-12)}.document-body p,.document-body li{color:#303936}.document-body blockquote{margin-inline:0;padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-accent);background:var(--color-surface)}.document-body pre{overflow-x:auto;padding:var(--space-6);background:var(--color-dark);color:#f7f5ee}.search-form{display:grid;gap:var(--space-4);padding:var(--space-6)}.search-form button{align-self:end}.search-form label{display:grid;gap:var(--space-2)}.search-form input,.search-form select{min-height:2.75rem;padding:.7rem .9rem;border-radius:.75rem;border:1px solid var(--color-border)}.search-results{display:grid;gap:var(--space-4);margin-top:var(--space-6)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--color-accent) 60%,white);outline-offset:2px}@media(min-width:48rem){.document-card{grid-template-columns:minmax(0,1.8fr) minmax(18rem,.8fr)}.document-card .inline-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.metadata-panel{grid-template-columns:repeat(3,minmax(0,1fr))}.search-form{grid-template-columns:minmax(15rem,2fr) repeat(3,minmax(9rem,1fr)) auto;align-items:end}}@media(max-width:47.99rem){.feature-grid article+article{padding-left:0;border-left:0}.site-description{display:none}}@media(forced-colors:active){.site-mark,.button,button{border:1px solid ButtonText}.site-nav a[aria-current=page]{border-color:LinkText}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media print{.site-header,.site-footer,.search-shell,.hero-actions{display:none}body{background:#fff}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site-header"> <div class="site-header__inner"> <div class="site-identity"> <span class="site-mark" aria-hidden="true">AE</span> <div> <a class="site-title" href="/">AI Engineering Research</a> <p class="site-description">An open index of evidence, theory, and practice</p> </div> </div> <nav aria-label="Primary"> <ul class="site-nav"> <li><a href="/">Overview</a></li><li><a href="/search/">Search</a></li><li><a href="/collections/artifact-type/">Collections</a></li> </ul> </nav> </div> </header> <main id="main">  <article class="document-shell" data-pagefind-body> <header class="document-header"> <p class="eyebrow"> <span data-pagefind-meta="artifactType">research-document</span>  </p> <h1 data-pagefind-meta="title">state machine research</h1>  <dl class="metadata-panel">  <div><dt>Research Area</dt><dd data-pagefind-meta="researchArea">General Research</dd></div>     <div><dt>Status</dt><dd data-pagefind-meta="status">draft</dd></div> <div><dt>Version</dt><dd>0.1</dd></div>   <div><dt>Priority</dt><dd>medium</dd></div>  <div><dt>Updated</dt><dd>2026-07-22</dd></div> <div><dt>Source</dt><dd>research/state-constrained-architecture/working-notes/state-machine-research.md</dd></div> </dl> </header> <div class="document-reading-grid">  <section class="document-body"><p>State-Constrained Architecture for AI-Native Software</p>
+<p>Core Thesis</p>
+<p>Most commercial software was designed for human developers working inside systems that tolerate ambiguity.</p>
+<p>Developers are expected to understand unwritten conventions, infer business rules from surrounding code, remember which states are valid, know which transitions are legal, and exercise judgment when the software itself does not enforce those constraints.</p>
+<p>That model works imperfectly for humans.</p>
+<p>It may work much worse for autonomous AI agents.</p>
+<p>AI agents are probabilistic systems. They generate plausible interpretations and plausible code. When they operate inside loosely constrained software, they must repeatedly infer the hidden semantic model of the system.</p>
+<p>The problem is therefore not simply that AI agents sometimes generate incorrect code.</p>
+<p>The deeper problem is that traditional software gives incorrect assumptions too many places to survive.</p>
+<p>A different architectural approach is needed:</p>
+<p>AI agents should operate inside explicitly modeled state systems where legal behavior, transitions, evidence requirements, and capabilities are mechanically constrained.</p>
+<p>The AI proposes intent.</p>
+<p>The surrounding system determines whether that intent is legal.</p>
+<p>⸻</p>
+<ol>
+<li>Why Existing Commercial Software Is Expensive for Agents</li>
+</ol>
+<p>A conventional commercial codebase frequently represents domain concepts loosely.</p>
+<p>For example:</p>
+<p>order.Status = OrderStatus.Paid;</p>
+<p>This is easy for a human developer to write.</p>
+<p>But the code itself may not answer:</p>
+<ul>
+<li>Was the order previously submitted?</li>
+<li>Was payment actually captured?</li>
+<li>Can an order be paid twice?</li>
+<li>Who authorized the payment?</li>
+<li>What evidence proves payment occurred?</li>
+<li>Is payment allowed in the current state?</li>
+<li>Does changing this field trigger any required effects?</li>
+<li>Can this state subsequently be cancelled?</li>
+<li>What transitions are valid from here?</li>
+</ul>
+<p>The answers often exist elsewhere:</p>
+<ul>
+<li>tests</li>
+<li>documentation</li>
+<li>database constraints</li>
+<li>comments</li>
+<li>business logic</li>
+<li>tribal knowledge</li>
+<li>API behavior</li>
+<li>code-review conventions</li>
+</ul>
+<p>An AI agent therefore has to reconstruct the actual domain model from scattered evidence.</p>
+<p>That costs:</p>
+<ul>
+<li>context tokens</li>
+<li>repository searches</li>
+<li>tool calls</li>
+<li>test runs</li>
+<li>repair cycles</li>
+<li>human review</li>
+<li>execution time</li>
+</ul>
+<p>The apparent problem may look like model inefficiency.</p>
+<p>The underlying problem is frequently semantic ambiguity in the software environment.</p>
+<p>⸻</p>
+<ol start="2">
+<li>The Historical Tradeoff</li>
+</ol>
+<p>Commercial software has traditionally optimized for developer throughput.</p>
+<p>Instead of writing:</p>
+<p>type DraftOrder = ...
+type SubmittedOrder = ...
+type PaidOrder = ...
+type ShippedOrder = ...</p>
+<p>with transitions such as:</p>
+<p>submit : DraftOrder -> SubmittedOrder
+pay :
+SubmittedOrder ->
+Payment ->
+Result&#x3C;PaidOrder, PaymentError>
+ship :
+PaidOrder ->
+Shipment ->
+ShippedOrder</p>
+<p>developers frequently use:</p>
+<p>order.Status = OrderStatus.Paid;</p>
+<p>The second approach is faster to write.</p>
+<p>Historically, the additional correctness provided by richer state modeling often did not justify the perceived ceremony.</p>
+<p>The bargain was approximately:</p>
+<p>Keep the model flexible and rely on developers, testing, reviews, documentation, and discipline to maintain correctness.</p>
+<p>AI changes the economics.</p>
+<p>For humans:</p>
+<p>more explicit types
+↓
+more code
+↓
+more friction</p>
+<p>For agents:</p>
+<p>more explicit types
+↓
+more constraints
+↓
+smaller search space
+↓
+more deterministic feedback
+↓
+less ambiguity</p>
+<p>AI also removes much of the historical cost of boilerplate because agents can generate repetitive type definitions, transition functions, validation structures, and tests cheaply.</p>
+<p>This creates an important inversion:</p>
+<p>Techniques previously considered too verbose for human development may become economically attractive for machine-generated software.</p>
+<p>⸻</p>
+<ol start="3">
+<li>The Central Role of State</li>
+</ol>
+<p>The architecture should be designed around state systems.</p>
+<p>A state system answers:</p>
+<ol>
+<li>What states are valid?</li>
+<li>What transitions are possible?</li>
+<li>Under what conditions is each transition legal?</li>
+<li>What evidence is required?</li>
+<li>Who or what is allowed to request the transition?</li>
+<li>What effects occur because of the transition?</li>
+<li>What invariants must remain true afterward?</li>
+</ol>
+<p>Instead of:</p>
+<p>Requirements
+↓
+Classes
+↓
+Methods
+↓
+Mutable data
+↓
+Tests try to catch mistakes</p>
+<p>use:</p>
+<p>Domain
+↓
+States
+↓
+Legal transitions
+↓
+Guards and invariants
+↓
+Capabilities
+↓
+Effects
+↓
+Implementation</p>
+<p>The state model becomes part of the specification.</p>
+<p>⸻</p>
+<ol start="4">
+<li>State and Types Are Related but Different</li>
+</ol>
+<p>A state is something that is true about the system.</p>
+<p>A type describes which values can legally exist and what operations are available for them.</p>
+<p>A simple state representation might be:</p>
+<p>type OrderState =
+| Draft
+| Submitted
+| Paid
+| Shipped</p>
+<p>Here:</p>
+<p>Draft
+Paid
+Shipped</p>
+<p>are values.</p>
+<p>Their type is:</p>
+<p>OrderState</p>
+<p>This is already stronger than:</p>
+<p>let status : string = “paid”</p>
+<p>because invalid values cannot be constructed accidentally.</p>
+<p>But the type system can go further.</p>
+<p>⸻</p>
+<ol start="5">
+<li>Encoding State Into Types</li>
+</ol>
+<p>Instead of one type containing a state field, important states can become different types:</p>
+<p>type DraftOrder = private {
+Items : Item list
+}
+type SubmittedOrder = private {
+Items : Item list
+SubmittedAt : DateTime
+}
+type PaidOrder = private {
+Items : Item list
+SubmittedAt : DateTime
+PaymentId : PaymentId
+}</p>
+<p>Transitions then become functions between types:</p>
+<p>submit :
+DraftOrder ->
+SubmittedOrder
+pay :
+SubmittedOrder ->
+Payment ->
+Result&#x3C;PaidOrder, PaymentError>
+ship :
+PaidOrder ->
+Shipment ->
+ShippedOrder</p>
+<p>Now:</p>
+<p>DraftOrder
+↓ submit
+SubmittedOrder
+↓ pay
+PaidOrder
+↓ ship
+ShippedOrder</p>
+<p>is both a state machine and a type-level encoding.</p>
+<p>The compiler can reject:</p>
+<p>ship SubmittedOrder</p>
+<p>because ship requires PaidOrder.</p>
+<p>The agent does not have to remember the rule.</p>
+<p>The program structure enforces it.</p>
+<p>⸻</p>
+<ol start="6">
+<li>Three Levels of State Modeling</li>
+</ol>
+<p>Level 1 — State as Unconstrained Data</p>
+<p>type Order = {
+Status : string
+}</p>
+<p>Possible invalid values include:</p>
+<p>“banana”
+“paidd”
+“whatever”</p>
+<p>Correctness depends heavily on convention.</p>
+<p>⸻</p>
+<p>Level 2 — State as a Closed Set</p>
+<p>type OrderState =
+| Draft
+| Submitted
+| Paid
+| Shipped</p>
+<p>Now impossible state names cannot be represented.</p>
+<p>⸻</p>
+<p>Level 3 — State Encoded Into the Type System</p>
+<p>DraftOrder
+SubmittedOrder
+PaidOrder
+ShippedOrder</p>
+<p>Now operations can state exactly which state they accept.</p>
+<p>This begins to make illegal transitions unrepresentable.</p>
+<p>⸻</p>
+<ol start="7">
+<li>The Fundamental Agent Architecture</li>
+</ol>
+<p>Current agent architectures often look like:</p>
+<p>Agent
+|
++— shell
++— database
++— GitHub
++— deploy
++— email</p>
+<p>The agent receives broad capabilities and a prompt telling it to behave correctly.</p>
+<p>That is fundamentally permissive.</p>
+<p>A state-constrained architecture looks different:</p>
+<p>Current State
+↓
+Legal Transitions
+↓
+Agent selects or proposes one
+↓
+Guards
+↓
+Evidence requirements
+↓
+Capability check
+↓
+Executor performs action
+↓
+Verification
+↓
+New State</p>
+<p>The agent no longer directly mutates the world.</p>
+<p>It requests a transition.</p>
+<p>This leads to a foundational rule:</p>
+<p>Agents should not mutate important state directly. They should request typed state transitions.</p>
+<p>⸻</p>
+<ol start="8">
+<li>Separation of Responsibilities</li>
+</ol>
+<p>A reliable autonomous architecture should separate these roles.</p>
+<p>AI Agent</p>
+<p>Determines what it believes should happen.</p>
+<p>It proposes intent.</p>
+<p>State Machine</p>
+<p>Determines whether the requested transition exists and is legal from the current state.</p>
+<p>Guard / Invariant Engine</p>
+<p>Determines whether required conditions hold.</p>
+<p>Capability System</p>
+<p>Determines whether the requesting actor has authority.</p>
+<p>Executor</p>
+<p>Performs the actual effect.</p>
+<p>Verifier</p>
+<p>Determines whether the intended effect occurred.</p>
+<p>Evidence System</p>
+<p>Records the basis for the resulting state.</p>
+<p>The AI should not simultaneously be:</p>
+<ul>
+<li>proposer</li>
+<li>judge</li>
+<li>executor</li>
+<li>verifier</li>
+<li>source of truth</li>
+</ul>
+<p>That creates circular trust.</p>
+<p>⸻</p>
+<ol start="9">
+<li>Three Important Kinds of State</li>
+</ol>
+<p>Domain State</p>
+<p>What is true in the business domain.</p>
+<p>Example:</p>
+<p>Draft
+→ Submitted
+→ UnderReview
+→ Approved
+↘ Rejected</p>
+<p>⸻</p>
+<p>Execution State</p>
+<p>What stage an operation or agent task occupies.</p>
+<p>Example:</p>
+<p>Planned
+→ Validated
+→ Authorized
+→ Executing
+→ Verified
+→ Completed</p>
+<p>A system could make:</p>
+<p>Planned → Completed</p>
+<p>illegal.</p>
+<p>⸻</p>
+<p>Knowledge or Epistemic State</p>
+<p>What the system actually knows.</p>
+<p>This may be especially important for AI.</p>
+<p>Possible states:</p>
+<p>Unknown
+Assumed
+Inferred
+Verified</p>
+<p>An assumption should not silently become a fact merely because it survived in the system.</p>
+<p>A richer representation might be:</p>
+<p>type Knowledge&#x3C;‘a> =
+| Unknown
+| Assumed of value:’a * rationale:Rationale
+| Inferred of value:’a * evidence:Evidence list
+| Verified of value:’a * evidence:Evidence list</p>
+<p>Operations can then require different levels of evidence.</p>
+<p>For example:</p>
+<p>Display suggestion
+accepts Assumed
+Forecast
+requires Inferred
+Execute payment
+requires Verified</p>
+<p>⸻</p>
+<ol start="10">
+<li>Assumption Drift</li>
+</ol>
+<p>One of the most serious long-term risks in agent-generated software is cumulative assumption drift.</p>
+<p>The sequence can look like:</p>
+<p>Original requirement
+↓
+Agent makes assumption A
+↓
+A survives compilation and tests
+↓
+A becomes code
+↓
+Agent #2 reads the code
+↓
+Agent #2 interprets A as intended architecture
+↓
+Agent #2 creates assumption B based on A
+↓
+Agent #3 builds on A + B
+↓
+Emergent architecture</p>
+<p>No individual change necessarily appears obviously wrong.</p>
+<p>Each agent may behave locally rationally.</p>
+<p>The problem is cumulative semantic drift.</p>
+<p>This already occurs with human-built legacy systems.</p>
+<p>Agents accelerate it because they can generate and propagate internally consistent changes much faster.</p>
+<p>⸻</p>
+<ol start="11">
+<li>Why Agent Productivity Can Increase Architectural Entropy</li>
+</ol>
+<p>Human development contains natural friction:</p>
+<ul>
+<li>meetings</li>
+<li>code review</li>
+<li>limited coding throughput</li>
+<li>disagreements</li>
+<li>institutional memory</li>
+<li>developers asking why something works a certain way</li>
+</ul>
+<p>Those mechanisms are imperfect, but they slow propagation.</p>
+<p>Agents remove much of that friction.</p>
+<p>An agent can generate hundreds of coherent changes from one incorrect premise.</p>
+<p>Therefore:</p>
+<p>AI does not merely increase the rate of code generation. It can increase the rate at which assumptions become institutionalized.</p>
+<p>Higher development velocity can therefore produce lower system trustworthiness unless constraints increase at the same time.</p>
+<p>⸻</p>
+<ol start="12">
+<li>Types Interrupt the Assumption Chain</li>
+</ol>
+<p>Suppose a domain says:</p>
+<p>type Application =
+| Submitted of SubmittedApplication
+| UnderReview of ReviewedApplication
+| Approved of ApprovedApplication
+| Rejected of RejectedApplication</p>
+<p>and approval requires:</p>
+<p>approve :
+ReviewedApplication ->
+VerifiedApproval ->
+ApprovedApplication</p>
+<p>An agent may believe that a submitted application can immediately become approved.</p>
+<p>But there is no legal transition:</p>
+<p>SubmittedApplication
+↓
+ApprovedApplication</p>
+<p>The incorrect assumption has nowhere to go unless the agent deliberately changes the domain model itself.</p>
+<p>That is a much stronger failure boundary.</p>
+<p>Instead of relying on the agent to understand the architecture:</p>
+<p>The architecture refuses to absorb certain misunderstandings.</p>
+<p>⸻</p>
+<ol start="13">
+<li>Types Alone Are Not Enough</li>
+</ol>
+<p>An agent could potentially satisfy a type constraint by manufacturing the required value.</p>
+<p>For example:</p>
+<p>VerifiedApproval(...)</p>
+<p>Therefore important state types should often use private constructors or capability-based creation.</p>
+<p>The only path to:</p>
+<p>VerifiedApproval</p>
+<p>might be:</p>
+<p>Approval Service
+↓
+Authenticated human action
+↓
+Evidence recorded
+↓
+VerifiedApproval</p>
+<p>Now the chain becomes:</p>
+<p>Evidence
+↓
+Verification
+↓
+Typed capability
+↓
+Legal transition
+↓
+New state</p>
+<p>The AI operates inside this chain instead of bypassing it.</p>
+<p>⸻</p>
+<ol start="14">
+<li>Provenance Must Be First-Class</li>
+</ol>
+<p>Important state should not merely store its current value.</p>
+<p>It should retain why the system believes it.</p>
+<p>For example:</p>
+<p>CustomerEligible
+Knowledge State:
+Inferred
+Derived From:
+Rule R17
+Evidence E92
+Evidence E107
+Created By:
+Agent A41
+Confidence:
+0.82
+Valid As Of:
+2026-08-13
+Reassessment Trigger:
+Eligibility rules change</p>
+<p>Future agents then encounter more than:</p>
+<p>eligible = true</p>
+<p>They encounter the epistemic history of the state.</p>
+<p>This dramatically improves machine reasoning.</p>
+<p>⸻</p>
+<ol start="15">
+<li>Time Does Not Increase Authority</li>
+</ol>
+<p>A critical principle follows:</p>
+<p>Time and repetition do not increase epistemic authority. Evidence does.</p>
+<p>An assumption should remain an assumption until evidence changes its classification.</p>
+<p>This prevents:</p>
+<p>Assumed
+↓
+Repeated
+↓
+Copied
+↓
+Treated as fact</p>
+<p>The system should require explicit transitions such as:</p>
+<p>Assumed
+↓ evidence added
+Inferred
+↓ verification
+Verified</p>
+<p>⸻</p>
+<ol start="16">
+<li>State, Provenance, and Evidence Together</li>
+</ol>
+<p>The complete model therefore has at least five important dimensions:</p>
+<p>STATE
+What is true?
+TRANSITIONS
+What may legally change?
+CAPABILITIES
+Who may request the change?
+PROVENANCE
+Why is the current state believed?
+EPISTEMIC STATE
+How strongly is it known?</p>
+<p>These interact:</p>
+<pre><code>         Evidence
+            │
+            ▼
+      Knowledge State
+            │
+            ▼
+</code></pre>
+<p>Current State ───────→ Legal Transitions
+│
+Capability Check
+│
+▼
+Agent Proposal
+│
+▼
+Executor
+│
+▼
+Verification
+│
+▼
+New Evidence
+│
+▼
+New State</p>
+<p>⸻</p>
+<ol start="17">
+<li>Clarity as a State System</li>
+</ol>
+<p>Clarity is naturally compatible with this architecture.</p>
+<p>A decision can move through states such as:</p>
+<p>SignalDetected
+↓
+DecisionDefined
+↓
+PostureAssigned
+↓
+EvidenceEvaluated
+↓
+ReadyToCommit
+↓
+Committed
+↓
+Executing
+↓
+OutcomeObserved
+↓
+LearningCaptured</p>
+<p>With additional transitions such as:</p>
+<p>Committed
+↓
+ReassessmentRequired</p>
+<p>or:</p>
+<p>Validated
+↓
+New Contradictory Evidence
+↓
+Reopened</p>
+<p>⸻</p>
+<ol start="18">
+<li>Decision Posture as Transition Policy</li>
+</ol>
+<p>Decision posture should not merely be a label.</p>
+<p>It should alter transition requirements.</p>
+<p>For example:</p>
+<p>FAST
+Defined
+→ Postured
+→ Committed
+→ Acting</p>
+<p>A strategic decision may require:</p>
+<p>STRATEGIC
+Defined
+→ Postured
+→ EvidenceThresholdMet
+→ OwnerConfirmed
+→ FailureConditionsDefined
+→ ReassessmentTriggersDefined
+→ ReadyToCommit
+→ Committed</p>
+<p>This turns Clarity from advisory guidance into executable governance.</p>
+<p>⸻</p>
+<ol start="19">
+<li>Clarity as a Platform</li>
+</ol>
+<p>The Clarity platform can be built around a state engine.</p>
+<p>Core components:</p>
+<p>State Engine</p>
+<p>Tracks current decision state and legal next transitions.</p>
+<p>Decision Record</p>
+<p>Stores:</p>
+<ul>
+<li>posture</li>
+<li>owner</li>
+<li>evidence</li>
+<li>assumptions</li>
+<li>rationale</li>
+<li>commitments</li>
+<li>failure conditions</li>
+<li>reassessment triggers</li>
+<li>outcomes</li>
+</ul>
+<p>Transition Log</p>
+<p>Records every significant state change.</p>
+<p>Guard Engine</p>
+<p>Determines whether transition prerequisites are satisfied.</p>
+<p>UI</p>
+<p>Shows:</p>
+<ul>
+<li>current decision state</li>
+<li>missing prerequisites</li>
+<li>unresolved evidence</li>
+<li>permitted next transitions</li>
+<li>transition history</li>
+<li>reason for blocked transitions</li>
+</ul>
+<p>⸻</p>
+<ol start="20">
+<li>Transition-Oriented APIs</li>
+</ol>
+<p>The API should not allow arbitrary state mutation.</p>
+<p>Avoid:</p>
+<p>PATCH /decision/123
+{
+“status”: “committed”
+}</p>
+<p>Prefer:</p>
+<p>POST /decisions/123/transitions/commit</p>
+<p>The engine determines whether the transition is legal.</p>
+<p>This lets humans, AI agents, integrations, and automation all interact through the same model.</p>
+<p>Human ─────┐
+Agent ─────┼──→ Transition Request
+API ───────┤
+Automation ┘
+↓
+Clarity State Engine
+↓
+Guards + Evidence + Authority
+↓
+Accept / Reject</p>
+<p>The durable asset becomes the decision-state model rather than merely the UI.</p>
+<p>⸻</p>
+<ol start="21">
+<li>HelixNote as a State System</li>
+</ol>
+<p>HelixNote fits the architecture particularly well because medical information contains uncertainty, provenance, temporal change, and conflicting evidence.</p>
+<p>HelixNote should not merely store static medical facts.</p>
+<p>It should track the state of:</p>
+<ul>
+<li>symptoms</li>
+<li>observations</li>
+<li>labs</li>
+<li>diagnostic hypotheses</li>
+<li>diagnoses</li>
+<li>medications</li>
+<li>treatments</li>
+<li>clinical questions</li>
+<li>medical claims</li>
+</ul>
+<p>⸻</p>
+<ol start="22">
+<li>Clinical Knowledge State</li>
+</ol>
+<p>A medical hypothesis should not simply be:</p>
+<p>Sjogren’s = negative</p>
+<p>It might instead have a lifecycle:</p>
+<p>Suspected
+→ Tested
+→ EvidenceConflict
+→ NotEstablished</p>
+<p>Evidence can accompany each transition.</p>
+<p>This preserves ambiguity instead of flattening it.</p>
+<p>⸻</p>
+<ol start="23">
+<li>Separate Evidence From Interpretation</li>
+</ol>
+<p>A lab result such as:</p>
+<p>Cortisol: 8.2</p>
+<p>is evidence.</p>
+<p>A statement such as:</p>
+<p>Possible adrenal insufficiency</p>
+<p>is an interpretation.</p>
+<p>They should not be represented as the same kind of object.</p>
+<p>Likewise:</p>
+<p>Patient reports symptom</p>
+<p>is different from:</p>
+<p>Clinician observes symptom</p>
+<p>which is different from:</p>
+<p>Test supports condition</p>
+<p>which is different from:</p>
+<p>Clinician diagnoses condition</p>
+<p>which is different from:</p>
+<p>AI infers condition</p>
+<p>The architecture should preserve those distinctions.</p>
+<p>⸻</p>
+<ol start="24">
+<li>Clinical State Examples</li>
+</ol>
+<p>Symptom</p>
+<p>Reported
+→ Observed
+→ Persistent
+→ Improving
+→ Resolved
+→ Recurred</p>
+<p>Medication</p>
+<p>Proposed
+→ Prescribed
+→ Started
+→ DoseChanged
+→ Effective
+→ Ineffective
+→ AdverseEffect
+→ Discontinued</p>
+<p>Lab</p>
+<p>Ordered
+→ Collected
+→ Resulted
+→ Reviewed
+→ Interpreted</p>
+<p>Diagnostic Hypothesis</p>
+<p>Unknown
+→ Suspected
+→ Supported
+→ Conflicted
+→ Established
+or
+→ Refuted</p>
+<p>⸻</p>
+<ol start="25">
+<li>AI Should Propose Clinical Transitions</li>
+</ol>
+<p>The AI should not directly rewrite medical truth.</p>
+<p>Instead:</p>
+<p>AI interprets evidence
+↓
+AI proposes state transition
+↓
+Clinical rules + provenance + evidence requirements
+↓
+Accepted or rejected</p>
+<p>For example:</p>
+<p>Requested:
+Suspected → Established
+Rejected:
+No clinician diagnosis
+Conflicting evidence remains
+Required diagnostic criteria incomplete</p>
+<p>Or:</p>
+<p>Suggested:
+Suspected → Supported
+Basis:
+Three supporting observations
+One contradictory lab
+No documented clinician diagnosis</p>
+<p>That creates a safer clinical reasoning system.</p>
+<p>⸻</p>
+<ol start="26">
+<li>Temporal State Matters</li>
+</ol>
+<p>Medicine is inherently longitudinal.</p>
+<p>Instead of:</p>
+<p>fatigue = true</p>
+<p>HelixNote should preserve change:</p>
+<p>Severe
+→ Persistent
+→ Improved
+→ Recurred</p>
+<p>along with timestamps and evidence.</p>
+<p>Similarly:</p>
+<p>Medication dose increased
+↓
+Symptom improvement observed four days later</p>
+<p>The system can record temporal association without converting it automatically into:</p>
+<p>Medication caused improvement</p>
+<p>That remains an inference until supported.</p>
+<p>⸻</p>
+<ol start="27">
+<li>Shared Architecture Across Products</li>
+</ol>
+<p>Clarity and HelixNote appear different on the surface.</p>
+<p>But underneath:</p>
+<p>Clarity tracks the state of decisions.</p>
+<p>HelixNote tracks the state of medical knowledge.</p>
+<p>Both need to preserve:</p>
+<ul>
+<li>what is currently believed</li>
+<li>what is unresolved</li>
+<li>what evidence exists</li>
+<li>what changed</li>
+<li>why it changed</li>
+<li>who changed it</li>
+<li>what transitions are legal next</li>
+<li>what events should cause reassessment</li>
+</ul>
+<p>This suggests a common architectural substrate.</p>
+<p>⸻</p>
+<ol start="28">
+<li>An Agent-Native Runtime</li>
+</ol>
+<p>The broader architecture may eventually look like:</p>
+<pre><code>             DOMAIN MODEL
+                  │
+                  ▼
+            STATE SYSTEM
+                  │
+    ┌─────────────┼─────────────┐
+    ▼             ▼             ▼
+ Guards       Evidence      Capabilities
+    │             │             │
+    └─────────────┼─────────────┘
+                  ▼
+          Legal Transitions
+                  │
+                  ▼
+               Agent
+          proposes transition
+                  │
+                  ▼
+              Executor
+                  │
+                  ▼
+             Verifier
+                  │
+                  ▼
+               Event
+                  │
+                  ▼
+          New State + Evidence
+</code></pre>
+<p>This could become the foundation for multiple products rather than a pattern implemented independently each time.</p>
+<p>⸻</p>
+<ol start="29">
+<li>Design Principle for New Systems</li>
+</ol>
+<p>For new software, particularly software expected to use autonomous agents, begin with:</p>
+<ol>
+<li>What are the meaningful domain states?</li>
+<li>Which transitions between them are legal?</li>
+<li>What guards control those transitions?</li>
+<li>What invariants must always remain true?</li>
+<li>What evidence establishes the current state?</li>
+<li>What level of knowledge certainty is required?</li>
+<li>What capability is required to request each transition?</li>
+<li>What executor is allowed to cause the real-world effect?</li>
+<li>How is the result independently verified?</li>
+<li>What evidence or event should trigger reassessment?</li>
+</ol>
+<p>Only after those questions are answered should implementation structure become the focus.</p>
+<p>⸻</p>
+<ol start="30">
+<li>What This Changes About AI Development</li>
+</ol>
+<p>The goal is not:</p>
+<p>Make the model intelligent enough that it never makes a mistake.</p>
+<p>That is probably unrealistic.</p>
+<p>The goal is:</p>
+<p>Construct an environment in which mistakes have fewer places to survive.</p>
+<p>The AI becomes a powerful search and reasoning mechanism.</p>
+<p>Deterministic systems become the constraints and judges.</p>
+<p>AI
+= proposes
+Types
+= constrain representation
+State system
+= constrains behavior
+Capabilities
+= constrain authority
+Compiler
+= rejects structural violations
+Formal model
+= rejects invalid state paths
+Tests
+= validate examples and behavior
+Verifier
+= confirms real-world outcomes
+Evidence
+= preserves why the state is believed</p>
+<p>That is a much more robust division of labor.</p>
+<p>⸻</p>
+<ol start="31">
+<li>Central Principle</li>
+</ol>
+<p>The central architectural idea can be stated simply:</p>
+<p>Do not ask probabilistic agents to preserve correctness through discipline when deterministic systems can make correctness structural.</p>
+<p>And the corresponding implementation principle is:</p>
+<p>Agents propose typed transitions over explicitly modeled state. They do not arbitrarily mutate the system.</p>
+<p>That may provide a foundation not only for agent-safe code generation, but for decision systems, medical knowledge systems, workflow engines, autonomous research, governance, and any other domain where assumptions can compound over time.</p></section> </div>  </article>  </main> <footer class="site-footer"> <p><strong>AI Engineering Research</strong></p> <p>Research made navigable, verifiable, and reusable.</p> <p class="site-build-stamp">
+Build: <time datetime="2026-08-17T14:11:49.320Z">Aug 17, 2026, 2:11:49 PM UTC</time> </p> </footer> </body></html>

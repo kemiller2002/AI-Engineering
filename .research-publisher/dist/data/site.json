@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "Visual Engineering Research",
+    "title": "AI Engineering Research",
     "description": "Searchable AI engineering research repository",
     "baseUrl": "/",
     "language": "en",
@@ -9,11 +9,11 @@
       "logo": null,
       "cssVariables": {}
     },
-    "buildGeneratedAt": "2026-08-04T13:30:12.034Z"
+    "buildGeneratedAt": "2026-08-17T14:11:49.320Z"
   },
   "repository": {
     "name": "AI Engineering",
-    "sourceUrl": "https://github.com/kemiller2002/Visual-Engineering"
+    "sourceUrl": "https://github.com/kemiller2002/AI Engineering"
   },
   "features": {
     "search": true,
@@ -25,16 +25,14 @@
     "graphData": true
   },
   "summary": {
-    "totalDocuments": 123,
+    "totalDocuments": 113,
     "byArtifactType": {
-      "research-document": 87,
-      "decision-framework": 2,
-      "evidence": 1,
-      "research-package": 32,
-      "theory": 1
+      "research-document": 85,
+      "decision-framework": 1,
+      "research-package": 27
     },
     "byResearchArea": {
-      "General Research": 121,
+      "General Research": 111,
       "AI engineering": 1,
       "AI research systems": 1
     },

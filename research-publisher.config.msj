@@ -1,0 +1,27 @@
+export default {
+  // Existing configuration...
+
+  branding: {
+    cssVariables: {
+      "--color-bg": "#f4f7fb",
+      "--color-surface": "#ffffff",
+      "--color-ink": "#172033",
+
+      "--color-accent": "#2457a6",
+      "--color-accent-strong": "#173b73",
+      "--color-accent-soft": "#dce8fa",
+      "--color-on-accent": "#ffffff",
+
+      "--color-border": "#ccd5e3",
+      "--color-border-strong": "#8b98aa",
+      "--color-muted": "#536174",
+
+      "--color-dark": "#172033",
+      "--color-on-dark": "#f7f5ee",
+      "--color-code-ink": "#303936",
+
+      "--color-focus-ring": "#5b8bd9",
+      "--color-print-bg": "#ffffff"
+    }
+  }
+};
