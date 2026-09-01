@@ -1,0 +1,998 @@
+# HelixNote Boundary-Cost Baseline and Measurement Mission
+
+## Mission
+
+Establish a reproducible **pre-optimization baseline** for the current HelixNote Four-Tier / State Programming implementation.
+
+Do **not** redesign or materially refactor the application during this mission.
+
+The purpose of this work is to measure the current architecture before boundary-consolidation experiments begin, preserve the exact repository state being measured, and create the instrumentation and reporting structure needed to compare future implementations objectively.
+
+At the end of this mission:
+
+1. the current branch and commit must be recorded;
+2. the current commit must be tagged with a meaningful immutable Git tag;
+3. the Four-Tier semantic architecture must remain unchanged;
+4. the current boundary surface must be mapped;
+5. baseline metrics must be recorded;
+6. known architectural gaps must be documented;
+7. all measurement scripts must be committed where appropriate;
+8. the final report must clearly distinguish measured facts from inference.
+
+---
+
+# Research Question
+
+We already have evidence that the Four-Tier architecture reduces reasoning effort inside the semantic core.
+
+The unresolved question is:
+
+> Does the reduction in semantic reasoning and defect propagation outweigh the cost of maintaining explicit boundaries?
+
+This mission establishes the baseline needed to answer that experimentally.
+
+Do not try to prove that State Programming is better.
+
+Measure the current system.
+
+---
+
+# Core Hypothesis Being Tested Later
+
+The current working hypothesis is:
+
+> Explicit semantic boundaries reduce inference inside the protected system but may increase integration surface area. The architecture succeeds only if the reduction in semantic reasoning and defect propagation outweighs the cost of maintaining those boundaries.
+
+This mission does not test the hypothesis directly.
+
+It establishes the **before state**.
+
+---
+
+# Critical Constraint
+
+## Do not optimize before measuring.
+
+Do not:
+
+- consolidate DTOs;
+- introduce shared contracts;
+- generate clients;
+- introduce JSON Schema unless already present;
+- introduce OpenAPI generation;
+- change serializers globally;
+- restructure tiers;
+- eliminate mappings;
+- change route architecture;
+- change the WASM/browser kernel architecture;
+- add a framework;
+- introduce a custom State Programming DSL;
+- move semantic types across boundaries.
+
+Measurement tooling and documentation may be added.
+
+Fix a defect only if it prevents accurate measurement. If that happens, stop and document the blocker before making the smallest possible correction.
+
+---
+
+# Phase 1 — Establish Repository Identity
+
+Before modifying anything, record:
+
+- repository name;
+- current branch;
+- current commit SHA;
+- current commit date;
+- working-tree status;
+- remote tracking branch;
+- F#/.NET SDK version;
+- relevant package versions;
+- operating system/runtime if useful;
+- current test counts;
+- current semantic architecture-check result.
+
+Run the existing architecture verification, including:
+
+`check-semantic-architecture.sh`
+
+Record the exact output.
+
+Run the existing test suites relevant to:
+
+- semantic core;
+- application/engine;
+- API;
+- persistence/Postgres;
+- WASM;
+- browser/kernel;
+- integration tests;
+- contract tests if present.
+
+Do not merely report “green.”
+
+Record actual counts where possible.
+
+Example:
+
+```text
+Semantic tests: 149 passed / 0 failed
+API tests: 42 passed / 0 failed
+...
+```
+
+If test counts cannot be obtained cleanly, state why.
+
+---
+
+# Phase 2 — Create the Baseline Tag
+
+After confirming the current repository state is the state being measured, create an annotated Git tag representing the **pre-boundary-optimization HelixNote baseline**.
+
+Preferred tag:
+
+```text
+state-programming-boundary-baseline-v1
+```
+
+If that tag already exists, do not overwrite or move it.
+
+Instead use:
+
+```text
+state-programming-boundary-baseline-v2
+```
+
+or the next available integer.
+
+Use an **annotated tag**, not a lightweight tag.
+
+Suggested annotation:
+
+```text
+HelixNote Four-Tier / State Programming boundary-cost baseline before boundary consolidation and contract-authority experiments.
+```
+
+Example:
+
+```bash
+git tag -a state-programming-boundary-baseline-v1 \
+  -m "HelixNote Four-Tier / State Programming boundary-cost baseline before boundary consolidation and contract-authority experiments."
+```
+
+Verify:
+
+```bash
+git show state-programming-boundary-baseline-v1 --no-patch
+```
+
+Record:
+
+- tag name;
+- commit SHA;
+- branch;
+- annotation.
+
+Do not force-replace an existing tag.
+
+If pushing tags is permitted by the repository workflow, push the tag after the measurement commit/state is confirmed.
+
+If remote mutation is outside this agent's authority, leave the tag locally and report the exact push command rather than silently pushing.
+
+---
+
+# Phase 3 — Build the Boundary Surface Map
+
+Map every meaningful boundary crossing in the current HelixNote architecture.
+
+Start with known areas, but audit the repository rather than assuming this list is complete.
+
+Likely crossings include:
+
+```text
+Semantic Model
+    ↓
+Application / Projection
+    ↓
+Host representation
+    ↓
+WASM host contract
+    ↓
+Browser kernel
+    ↓
+HTTP
+    ↓
+API request/response contract
+    ↓
+API host mapping
+    ↓
+Persistence / Postgres
+    ↓
+Semantic representation
+```
+
+Also inspect:
+
+- correction workflows;
+- extraction workflows;
+- review workflows;
+- vocabulary workflows;
+- effects;
+- routes;
+- API DTOs;
+- browser messages;
+- WASM messages;
+- persistence records;
+- JSON parsing/rendering;
+- external effects.
+
+For every boundary crossing, record:
+
+1. source representation;
+2. destination representation;
+3. file(s);
+4. mapping function(s);
+5. DTO/type(s);
+6. serializer/parser;
+7. validation mechanism;
+8. whether semantic closure is preserved;
+9. where weakening occurs;
+10. whether a semantic fact is duplicated;
+11. whether agreement is mechanically checked;
+12. whether the compiler can detect omissions;
+13. whether runtime validation exists;
+14. whether wildcard/default handling exists;
+15. whether the representation is public contract, host contract, or internal translation.
+
+Produce a table or machine-readable record.
+
+Suggested fields:
+
+```text
+BoundaryId
+SourceTier
+Destination
+SourceType
+DestinationType
+Files
+MappingFunction
+ContractLayer
+Serializer
+Parser
+Validation
+ClosedBefore
+ClosedAfter
+WeakeningPoint
+DuplicatedFact
+Authority
+MechanicalAgreementCheck
+WildcardPresent
+StringDiscriminator
+RiskNotes
+```
+
+Assign stable IDs such as:
+
+```text
+BND-001
+BND-002
+...
+```
+
+---
+
+# Phase 4 — Measure Boundary Surface Area
+
+Create baseline counts.
+
+At minimum measure:
+
+## Structural counts
+
+- number of semantic-to-host crossings;
+- number of host-to-semantic crossings;
+- number of API request DTOs;
+- number of API response DTOs;
+- number of WASM/browser message shapes;
+- number of persistence record shapes;
+- number of mapping functions;
+- number of route declarations;
+- number of client-side route representations;
+- number of server-side route representations;
+- number of independent representations of the same route;
+- number of serializers/parsers involved;
+- number of manually maintained boundary contracts.
+
+## Semantic weakening counts
+
+Count places where a constrained representation becomes weaker, including:
+
+- DU → string;
+- enum/closed case → string;
+- value object → primitive;
+- typed operation → generic method/body representation;
+- semantic field → `(kind:string, field:string)`;
+- typed identifier → unvalidated string;
+- semantic state → generic JSON object;
+- option/union → incidental serializer representation.
+
+Do not assume every weakening is wrong.
+
+Record it.
+
+## Duplication counts
+
+Identify semantic facts represented independently in more than one place.
+
+Examples:
+
+- routes;
+- field names;
+- entity-kind names;
+- correction fields;
+- operation names;
+- discriminator strings;
+- effect names;
+- DTO shapes.
+
+For each duplicated fact record:
+
+```text
+number of copies
+locations
+authority if one exists
+agreement mechanism
+```
+
+## Exhaustiveness / wildcard counts
+
+Count boundary-relevant matches containing:
+
+- `_ ->`;
+- default branches;
+- catch-all field handling;
+- generic fallback cases.
+
+Record whether each wildcard is semantically justified.
+
+Do not automatically classify all wildcard matches as defects.
+
+## F# wire-risk counts
+
+Audit boundary-facing DTOs for:
+
+- `option`;
+- raw discriminated unions;
+- FSharpList;
+- tuples;
+- union cases;
+- semantic-core types;
+- framework-specific wrappers;
+- nested combinations of these.
+
+Produce counts by category.
+
+This measurement is especially important because future work may attempt to mechanically prevent unsafe wire DTOs.
+
+---
+
+# Phase 5 — Measure Boundary Maintenance Cost Proxies
+
+Create baseline metrics that future experiments can compare against.
+
+## 1. Boundary Surface Area — BSA
+
+Do not pretend there is already a scientifically validated formula.
+
+Record the underlying counts first.
+
+Optionally calculate an experimental composite:
+
+```text
+BSA =
+    crossings
+  + manual mappings
+  + duplicated contract facts
+  + independent wire representations
+```
+
+If using a composite score, label it explicitly as an **experimental metric**, not an established standard.
+
+The raw values matter more than the combined number.
+
+## 2. Boundary Change Amplification — BCA
+
+For historical changes where Git history permits reliable reconstruction, estimate:
+
+```text
+BCA =
+boundary files changed
+per semantic decision
+```
+
+Do not invent semantic-decision counts.
+
+If historical reconstruction would require guessing, defer this metric until controlled mutation experiments.
+
+## 3. Decision Locality
+
+Where are domain decisions currently located?
+
+Count files containing:
+
+- genuine semantic decisions;
+- boundary decisions;
+- mechanical propagation;
+- presentation-only logic.
+
+Create an initial classification where reliable.
+
+## 4. Search-Space Reduction
+
+Measure how much of the repository can be excluded when investigating particular classes of boundary issues.
+
+Record:
+
+- total relevant source files;
+- semantic-core source files;
+- API/host/boundary source files;
+- percentage or count of repository excluded by architectural rules.
+
+Do not interpret this as token savings yet.
+
+It is a search-space proxy.
+
+## 5. Mechanical Enforcement Coverage
+
+Record which concerns are protected by:
+
+- compiler;
+- warnings-as-errors;
+- architecture script;
+- route agreement check;
+- contract test;
+- unit test;
+- integration test;
+- runtime validation;
+- manual convention only.
+
+This should produce a matrix.
+
+Example:
+
+```text
+Concern                         Enforcement
+-------------------------------------------------------
+Semantic dependency leak        architecture script
+Missing DU case                 FS0025 / compiler
+GET with body                   closed HttpEffect type
+Route mismatch                  route agreement script
+Unsafe option wire DTO          convention only
+Unknown external JSON           runtime parser
+```
+
+This is one of the most important baseline artifacts.
+
+---
+
+# Phase 6 — Measure Current Code Volume by Responsibility
+
+Record LOC and file counts for major architectural areas.
+
+At minimum:
+
+```text
+Semantic Model
+Transition / Domain Execution
+Application / Projection / Orchestration
+Host / External Effects
+API contracts / DTOs
+WASM host
+Browser kernel
+Persistence
+Tests
+Architecture / verification scripts
+```
+
+Use a simple reproducible method.
+
+Prefer a repository-native shell/Python script over adding a third-party dependency solely for LOC counting.
+
+Exclude:
+
+- generated build artifacts;
+- `bin`;
+- `obj`;
+- dependency/vendor directories;
+- minified files;
+- generated code unless generated code itself is part of the architecture being evaluated.
+
+Record the exact counting rules.
+
+---
+
+# Phase 7 — Baseline Defect Inventory
+
+Preserve the known boundary defects from the pilot and classify them using the current taxonomy.
+
+At minimum include:
+
+### GET with body
+
+Class:
+
+```text
+Representation Collapse
+```
+
+Detection before fix:
+
+```text
+browser runtime
+```
+
+Current protection:
+
+```text
+closed HttpEffect representation / compiler
+```
+
+Remediation strength:
+
+```text
+class prevented internally, subject to actual boundary rendering correctness
+```
+
+### Missing route
+
+Class:
+
+```text
+Uncoordinated Duplication
+```
+
+Detection before fix:
+
+```text
+live failure / 404
+```
+
+Current protection:
+
+```text
+route agreement check over currently discovered route surface
+```
+
+Remediation strength:
+
+```text
+pattern mechanically detected, incomplete discovery coverage
+```
+
+### Option / DU serialization problems
+
+Class:
+
+```text
+Representation Collapse / incidental wire representation
+```
+
+Correct current serializer finding:
+
+```text
+BindJsonAsync and json share Newtonsoft in the relevant path.
+The failure is not accurately described as separate serializers per direction.
+```
+
+Current protection:
+
+```text
+known DTOs hardened
+```
+
+Remediation strength:
+
+```text
+pattern hardened, class not prevented
+```
+
+### `fieldValueText` missing case
+
+Class:
+
+```text
+Representation Collapse
+```
+
+Current protection:
+
+```text
+closed ObservedValue match + FS0025
+```
+
+### `CorrectionReader.applyFieldPatch` lab_result replay bug
+
+Record separately.
+
+Important note:
+
+```text
+Discovered by searching for the defect shape, not merely the named original instance.
+```
+
+Include this as evidence for defect-shape auditing.
+
+---
+
+# Phase 8 — Track AI / Agent Work Metrics
+
+This mission should establish a measurement method for future controlled changes.
+
+Where the current execution environment exposes enough information, record:
+
+- number of files inspected;
+- number of repository searches;
+- number of build runs;
+- number of test runs;
+- number of failed build/test cycles;
+- number of compiler-directed repairs;
+- number of test-directed repairs;
+- number of runtime-directed repairs;
+- number of manual design decisions;
+- number of boundary decisions;
+- number of semantic decisions;
+- number of mechanical edits;
+- number of defect hypotheses tested;
+- number of hypotheses falsified;
+- number of independent probes used;
+- number of repair loops.
+
+If exact token/tool usage is available from the agent environment, record it.
+
+If it is not available, mark:
+
+```text
+NOT OBSERVABLE IN CURRENT ENVIRONMENT
+```
+
+Do not estimate or fabricate token counts.
+
+Create the structure now so later experiment agents use the same fields.
+
+---
+
+# Phase 9 — Establish Change Classification
+
+For all future HelixNote experiment work, use these four categories:
+
+## Semantic Change
+
+Changes:
+
+- legal meaning;
+- legal states;
+- transitions;
+- invariants;
+- capability;
+- evidence;
+- obligation;
+- uncertainty semantics;
+- effect semantics.
+
+## Boundary Change
+
+Changes:
+
+- representation;
+- serialization;
+- routes;
+- host contract;
+- persistence shape;
+- external protocol.
+
+## Mechanical Propagation
+
+No new semantic or boundary decision.
+
+Change is compiler-, schema-, generation-, or contract-directed.
+
+## Presentation Change
+
+Display/UI only, unless presentation itself carries domain meaning.
+
+Include these classifications in the baseline metrics format so future work can count them consistently.
+
+---
+
+# Phase 10 — Establish Remediation Strength Vocabulary
+
+Every future fix must be classified as one of:
+
+## Defect Fixed
+
+Known instance eliminated.
+
+## Pattern Hardened
+
+Known occurrences of the same structural pattern eliminated.
+
+## Class Prevented
+
+A mechanical mechanism prevents recurrence of the defect class.
+
+Never report these as equivalent.
+
+Also classify enforcement type:
+
+```text
+structural prevention
+mechanical detection
+runtime validation
+improved observation only
+```
+
+---
+
+# Phase 11 — Evidence Classification
+
+For each major claim in the final report, record evidence type.
+
+Use:
+
+```text
+Fresh Reproduction
+Current Automated Test
+Previous Reproduced Evidence
+Repository / Code Inference
+Architectural Expectation
+```
+
+Do not present old evidence as a fresh reproduction.
+
+Also preserve the diagnostic rule:
+
+> A known failure pattern is a hypothesis generator, not a diagnosis.
+
+If a failure resembles a known class, perform the smallest useful independent probe before assigning the classification where practical.
+
+---
+
+# Phase 12 — Create Reusable Measurement Artifacts
+
+Create a sensible location inside the repository for experiment measurements if one does not already exist.
+
+Prefer the existing repository/research structure.
+
+Do not invent a large new hierarchy if the repo already has conventions.
+
+Useful artifacts may include:
+
+```text
+boundary-baseline.md
+boundary-map.csv
+boundary-metrics.json
+measurement-method.md
+```
+
+or equivalent files consistent with repository conventions.
+
+At minimum preserve:
+
+- baseline commit SHA;
+- baseline Git tag;
+- test counts;
+- LOC counts;
+- boundary map;
+- raw boundary metrics;
+- known defect inventory;
+- enforcement matrix;
+- known measurement limitations.
+
+If machine-readable output is practical, prefer JSON or CSV **in addition to** the human-readable report.
+
+---
+
+# Phase 13 — Commit Measurement Infrastructure
+
+If measurement scripts or baseline documents are added to the repository, create a separate commit after the baseline tag.
+
+Important sequencing:
+
+```text
+CURRENT APPLICATION COMMIT
+        ↓
+TAG THIS EXACT COMMIT
+state-programming-boundary-baseline-v1
+        ↓
+add measurement infrastructure/docs
+        ↓
+new measurement commit
+```
+
+Do **not** accidentally tag the measurement-infrastructure commit as the pre-optimization application baseline unless the only changes are purely measurement files and the distinction is explicitly documented.
+
+Preferred baseline tag semantics:
+
+> This is the application state before boundary optimization experiments.
+
+Suggested measurement commit message:
+
+```text
+research: add HelixNote boundary baseline metrics
+```
+
+or:
+
+```text
+research: instrument boundary-cost baseline
+```
+
+Follow repository commit-message conventions if they already exist.
+
+---
+
+# Phase 14 — Required Final Report
+
+Produce a final report containing:
+
+## Repository Baseline
+
+- branch;
+- commit;
+- baseline tag;
+- dirty/clean state;
+- environment;
+- test results.
+
+## Architecture Baseline
+
+- tier structure;
+- architecture check result;
+- semantic-core test count;
+- semantic-core LOC/files.
+
+## Boundary Surface Map
+
+All identified crossings with stable IDs.
+
+## Raw Metrics
+
+All measured counts.
+
+Do not hide raw measurements behind a composite score.
+
+## Enforcement Matrix
+
+What is prevented, detected, validated at runtime, or convention-only.
+
+## Known Defects and Current Protection
+
+Include remediation strength.
+
+## Duplication Hotspots
+
+Rank the most repeated independently maintained boundary facts.
+
+Do not refactor them yet.
+
+## Weakening Hotspots
+
+Rank locations where closed semantics become open representations.
+
+Do not assume each is wrong.
+
+## Search-Space Findings
+
+Where tier constraints genuinely reduce investigation scope.
+
+## Architecture Costs
+
+Explicitly report:
+
+- DTO repetition;
+- manual mappings;
+- route duplication;
+- serializer boundaries;
+- host conversion work;
+- seam count.
+
+## Architecture Benefits
+
+Explicitly report:
+
+- compiler-directed change;
+- reduced semantic search surface;
+- mechanical dependency enforcement;
+- defect containment;
+- stable core.
+
+## Unknowns
+
+State what this baseline cannot establish.
+
+## Recommended Controlled Experiments
+
+Do not implement them yet.
+
+Likely next experiments include:
+
+1. add a new `ObservedValue` case;
+2. add a correction operation;
+3. deliberately change a wire field;
+4. introduce a route mismatch inside and outside current route-check coverage;
+5. introduce an unsafe F# boundary DTO;
+6. compare current architecture with a boundary-consolidated variant.
+
+---
+
+# Success Criteria
+
+This mission is complete only when:
+
+- [ ] Current application commit is identified.
+- [ ] Clean/dirty status is recorded.
+- [ ] Existing tests are executed and counts recorded.
+- [ ] Semantic architecture check passes or failure is documented.
+- [ ] The pre-optimization commit has an annotated immutable baseline tag.
+- [ ] Tag name and SHA are recorded.
+- [ ] Boundary crossings are inventoried.
+- [ ] Boundary DTOs are inventoried.
+- [ ] Manual mappings are counted.
+- [ ] Duplicate contract facts are identified.
+- [ ] Semantic weakening points are identified.
+- [ ] Route duplication is measured.
+- [ ] F# option/DU/tuple/etc. wire exposure is measured.
+- [ ] Wildcard/default boundary handling is audited.
+- [ ] LOC/file counts by architectural responsibility are recorded.
+- [ ] Enforcement mechanisms are mapped.
+- [ ] Known defects are classified.
+- [ ] Remediation strength is recorded.
+- [ ] Measurement limitations are explicit.
+- [ ] No architecture redesign has occurred.
+- [ ] No new framework or custom IDL has been introduced.
+- [ ] Measurement artifacts are reproducible.
+- [ ] Measurement-infrastructure changes, if any, are committed separately from the baseline tag.
+- [ ] Final report distinguishes facts, hypotheses, and recommendations.
+
+---
+
+# Interpretation Guardrails
+
+Do not conclude:
+
+> Four-Tier is more productive.
+
+Do not conclude:
+
+> Four-Tier creates too many boundaries.
+
+Do not conclude:
+
+> Boundary duplication proves the tiers should collapse.
+
+Do not conclude:
+
+> A green semantic core proves the system is correct.
+
+This mission establishes the evidence needed to test those questions later.
+
+The current evidence only supports a narrower observation:
+
+> HelixNote's Four-Tier architecture has made semantic modification and semantic isolation mechanically safer, while the cost and defect behavior of its explicit boundary surface remain an open research question.
+
+Measure that surface before changing it.
+
+---
+
+# Final Instruction
+
+Treat this repository state as an experimental specimen.
+
+Preserve it.
+
+Measure it.
+
+Tag it.
+
+Then stop.
+
+Do not begin the boundary optimization experiment until the baseline artifacts are complete and the exact pre-optimization commit can be reconstructed from the Git tag.

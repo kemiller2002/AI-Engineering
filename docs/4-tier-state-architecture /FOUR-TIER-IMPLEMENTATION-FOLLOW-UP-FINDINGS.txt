@@ -1,0 +1,652 @@
+# Four-Tier State Architecture — Implementation Follow-Up Findings
+
+Date: 2026-09-01
+
+## Purpose
+
+This document preserves the findings from the implementation pass following the Semantic Boundary Investigation. It records what was fixed, what was discovered, corrections to earlier research, remaining gaps, and the implications for the Four-Tier / State Programming architecture.
+
+## 1. Overall Result
+
+The implementation went well and produced more evidence than expected. Two results were especially important:
+
+1. Auditing for a defect shape rather than merely fixing the named instance exposed an additional, more serious latent correction-replay defect.
+2. Re-verifying serializer behavior corrected an earlier research conclusion rather than blindly implementing against an inaccurate causal explanation.
+
+The Four-Tier architecture itself survived the hardening work without requiring restructuring.
+
+Current model:
+
+    Four-Tier semantic architecture
+                +
+    Boundary preservation discipline
+                +
+    Boundary verification
+
+Boundary handling remains orthogonal to the Four-Tier architecture rather than becoming a fifth tier.
+
+## 2. WS4 — Defect-Shape Auditing Found a Worse Latent Bug
+
+WS4 was originally intended to close the already identified `fieldValueText` gap. Instead of stopping there, the implementation audited the repository for the same structural defect pattern.
+
+That audit discovered `CorrectionReader.applyFieldPatch`.
+
+The newly discovered problem was worse than the originally catalogued defect:
+
+- `lab_result` corrections could be silently dropped during replay;
+- this had apparently existed since the feature shipped;
+- there was no useful error surface exposing the failure.
+
+This demonstrates that searching for the *shape* of a defect rather than only the named instance produces real value.
+
+Canonical rule:
+
+> When a semantic defect is found, search for the representation pattern that made the defect possible—not merely other occurrences of the failing value.
+
+For example, if a bug is caused by converting a closed `ObservedValue` into `(kind: string, field: string)`, search for other places where:
+
+    closed semantic representation
+                ↓
+       open string representation
+                ↓
+       wildcard/fallback handling
+
+occurs.
+
+The current defect taxonomy has therefore demonstrated useful defect-discovery power inside HelixNote. Cross-project generality remains unproven.
+
+## 3. WS3 — Serializer Research Was Corrected
+
+The prior Semantic Boundary Investigation concluded that request and response paths used different serializers.
+
+The implementation re-verified that assumption against the live/current application.
+
+The new evidence showed that `BindJsonAsync` and `json` share the same Newtonsoft serializer in the relevant current path.
+
+Therefore the earlier causal explanation is superseded.
+
+OLD FINDING:
+
+    request and response paths use different serializers
+                    ↓
+              SUPERSEDED
+
+CURRENT VERIFIED FINDING:
+
+    BindJsonAsync and json share Newtonsoft
+                    ↓
+    option/DU boundary representation is incompatible
+                    ↓
+        request binding can crash
+
+The request-side failure was worse than the earlier characterization: it could crash rather than merely leak an undesirable representation.
+
+This does not weaken the broader boundary conclusion. It strengthens the requirement for explicit boundary contracts.
+
+The lesson is not merely:
+
+> Make both sides use the same serializer.
+
+The stronger lesson is:
+
+> Do not allow framework-default serialization behavior for host-language-specific semantic types to define the wire contract accidentally.
+
+Future canonical documentation must not repeat the now-falsified “two serializers, one per direction” explanation except when clearly marked historical/superseded.
+
+## 4. Explicit Wire Contracts Remain the Correct Principle
+
+Sharing an F# type can reduce implementation duplication between F#/.NET components, but it does not define a language-neutral wire representation.
+
+Canonical doctrine:
+
+> Wire representations MUST be explicitly specified and MUST NOT depend on incidental host-language or framework serialization behavior.
+
+“Explicit” does not mean “hand-written forever.”
+
+Valid implementations may include:
+
+- hand-written renderers/parsers;
+- generated serializers/parsers;
+- schema-driven generation;
+- other mechanically verified mechanisms.
+
+The requirement is deliberate representation, not manual labor.
+
+## 5. Instance Hardening Is Not Class Hardening
+
+WS3 expanded into a sweep covering roughly 15 fields across three files after the broader crash pattern became visible. This was justified by the evidence, but stretched beyond the originally envisioned smallest coherent change.
+
+The work exposed three distinct remediation levels.
+
+### Level 1 — Defect Fixed
+
+A known failing instance is eliminated.
+
+### Level 2 — Pattern Hardened
+
+Known occurrences of the same defect pattern are found and corrected.
+
+### Level 3 — Class Prevented
+
+Architecture, compiler enforcement, tooling, generation, validation, or another mechanical mechanism prevents the defect class from being reintroduced.
+
+These must not be reported as equivalent.
+
+Current WS3 status: **pattern hardened**, not **class prevented**.
+
+Known option-bearing boundary DTOs were hardened, but the architecture does not yet mechanically prevent a future unsafe boundary DTO.
+
+Accurate reporting:
+
+> Known option-bearing boundary DTOs were hardened; the architecture does not yet mechanically prevent introduction of another unsafe boundary DTO.
+
+## 6. Remaining Serializer Exposure
+
+The implementation deliberately did not globally replace Giraffe’s serializer. Known unsafe instances were fixed instead.
+
+That was reasonable for the mission’s risk budget, but residual exposure remains. The same class could reappear through:
+
+- F# `option`;
+- raw discriminated unions;
+- FSharpList or other host-specific structures;
+- semantic-domain types serialized directly;
+- representations whose wire shape depends on serializer behavior.
+
+Recommended next question:
+
+> Can we mechanically prevent an unsafe F# type from becoming a boundary DTO?
+
+A lightweight architecture check could potentially reject or flag:
+
+    FSharpOption
+    raw F# DU
+    FSharpList
+    semantic-domain types
+    framework-specific types
+
+unless explicitly approved.
+
+If cheap and reliable, this could move WS3 from pattern hardening to class prevention.
+
+## 7. WS2 — Route Agreement Improved, but Coverage Is Not Universal
+
+The route-agreement work improved detection of client/server route drift, but the current check has a known blind spot for routes defined outside `Program.fs`.
+
+Therefore:
+
+    routes visible to current check
+                ↓
+       mechanically compared
+                ↓
+             protected
+
+while:
+
+    routes outside discovery surface
+                ↓
+             unknown
+                ↓
+       potentially unprotected
+
+This is contract detection coverage, not complete route correctness by construction.
+
+Broader rule:
+
+> There must be one semantic authority or a mechanical proof that multiple representations agree.
+
+Possible implementations include:
+
+    Code → OpenAPI → verify consumer
+    OpenAPI → generate server + client
+    Server routes + client routes → mechanical comparison
+    Shared route description → derive both
+
+The standard should specify the agreement property, not mandate one tool.
+
+## 8. Two Boundary Failure Classes Remain Distinct
+
+### Representation Collapse
+
+A constrained or closed semantic representation becomes weaker/open during transformation.
+
+Examples:
+
+    DU → arbitrary/string representation
+    ObservedValue → kind:string + field:string
+    legal HTTP effect → method:string + optional body
+    constrained outcome → incidental serializer representation
+
+Response:
+
+> Preserve closure and delay weakening.
+
+### Uncoordinated Duplication
+
+The same semantic fact is independently represented in multiple places with no mechanism forcing agreement.
+
+Examples:
+
+    client route template vs server route template
+    multiple independently maintained field mappings
+
+Response:
+
+> Establish one authority or mechanically verify agreement.
+
+A defect may involve both. They compound but should not be collapsed into one vague “boundary problem.”
+
+## 9. Four Boundary Preservation Principles
+
+### 1. Preserve Closure
+
+Closed semantic alternatives should remain closed across transformations wherever practical.
+
+### 2. Delay Weakening
+
+Do not flatten rich semantic representations into primitives earlier than necessary.
+
+    DU → string                    as late as possible
+    value object → primitive      as late as possible
+    typed operation → HTTP values as late as possible
+    domain field → JSON property  as late as possible
+
+### 3. Establish Authority
+
+Facts duplicated across boundaries—routes, mappings, schemas, operations—must have one authoritative source or a mechanical agreement check.
+
+### 4. Validate Re-entry
+
+Untyped/external data must be validated before it becomes trusted semantic state.
+
+    closed semantic representation
+                ↓
+      explicit boundary contract
+                ↓
+       untyped external world
+                ↓
+         runtime validation
+                ↓
+    closed semantic representation again
+
+Tagged JSON, OpenAPI, JSON Schema, DUs, sealed classes, enums, generated clients, parsers, and contract tests are mechanisms beneath these principles, not the doctrine itself.
+
+## 10. The Compiler Can Only Protect Semantics It Can See
+
+Canonical lesson:
+
+> The compiler can only protect the semantics you allow it to see.
+
+`ObservedValue` lets the compiler reason about finite alternatives.
+
+`kind:string * field:string` does not.
+
+`CorrectionWriteOutcome` exposes semantic alternatives.
+
+Arbitrary JSON does not.
+
+A closed HTTP effect algebra exposes legal combinations.
+
+`method:string + body:string option` permits invalid combinations.
+
+A useful general description of State Programming is:
+
+> State Programming is the deliberate preservation of semantic information in representations so that illegal or incomplete behavior remains mechanically visible for as long as possible.
+
+## 11. Move Failures Earlier by Strengthening Representation
+
+The goal is not merely “more tests.” Move failures to the earliest practical enforcement point.
+
+GET + body:
+
+    live browser failure → compile-time failure
+
+Missing route:
+
+    live 404 → contract/CI failure
+
+Serializer incompatibility:
+
+    runtime crash/leak → explicit contract validation/test
+
+Missing projection case:
+
+    silent runtime omission → compile-time exhaustiveness failure
+
+Teaching phrase:
+
+> Move failures left by strengthening representation.
+
+Not every failure should become a compiler error. External data remains inherently runtime-validated.
+
+## 12. CORS Incident — A Taxonomy Is Not a Diagnosis
+
+During WS5, a CORS failure initially resembled the boundary defect class under investigation.
+
+Instead of immediately classifying it as a regression, the implementation used an independent minimal probe:
+
+    curl -X OPTIONS
+
+That established the actual failing layer before classification.
+
+Canonical diagnostic rule:
+
+> A known failure pattern is a hypothesis generator, not a diagnosis.
+
+Recommended process:
+
+    observed symptom
+          ↓
+    resembles known defect class
+          ↓
+    generate hypothesis
+          ↓
+    perform smallest independent probe
+          ↓
+    establish actual failing layer
+          ↓
+    classify after evidence
+
+This protects against confirmation bias as the architecture develops its own terminology.
+
+## 13. Evidence Freshness Matters
+
+WS5 produced fresh live proof for the POST/commit path. The GET/probe path relied partly on older evidence.
+
+That distinction was reported rather than papered over.
+
+Useful evidence hierarchy:
+
+    fresh reproduced execution
+              >
+    current automated test
+              >
+    previous reproduced evidence
+              >
+    repository/code inference
+              >
+    architectural expectation
+
+This is not an absolute mathematical ranking, but important claims should state what kind of evidence supports them.
+
+Historical evidence must not be presented as a fresh reproduction.
+
+## 14. Four-Tier Architecture Survived Boundary Hardening
+
+The implementation did not reveal a need for another tier.
+
+The Four-Tier architecture governs semantic responsibility and where decisions/capabilities live.
+
+Boundary Preservation governs what happens when semantic meaning moves across serialization, browser/transport infrastructure, persistence, cooperating components, and public APIs.
+
+These are orthogonal concerns.
+
+Do not create “Tier 5: Boundaries.”
+
+## 15. Three Contract Layers Remain Important
+
+### Semantic Contract
+
+Internal truth:
+
+- states;
+- legal transitions;
+- invariants;
+- evidence;
+- capabilities;
+- obligations;
+- effects;
+- uncertainty.
+
+### Host Contract
+
+Communication among cooperating application pieces such as F# WASM, browser kernel, host, and immediate backend interactions.
+
+Preserve semantic precision aggressively.
+
+### Public Integration Contract
+
+Stable external API for unrelated systems.
+
+Optimize for:
+
+- simplicity;
+- stability;
+- interoperability;
+- low coupling.
+
+External consumers should not need to understand F#, DUs, Four-Tier internals, WASM, State Programming terminology, or internal dispatch.
+
+Design goal:
+
+> Rich on the inside, boring on the outside.
+
+## 16. State Programming Must Remain Language Neutral
+
+F# is a strong reference implementation but must not define State Programming.
+
+Correct model:
+
+    State Programming semantics
+              ↓
+    independent implementations
+       /      |      |            F#     Rust   Java    TypeScript ...
+
+Distinguish:
+
+**Semantic conformance:** does the implementation preserve the same legal meaning?
+
+**Enforcement strength:** how strongly does the language/compiler/runtime prevent invalid representations?
+
+These are different dimensions.
+
+## 17. Public API Must Remain an Expansion Point
+
+External systems must be able to consume ordinary HTTP/JSON/OpenAPI without adopting State Programming.
+
+Prefer business intent:
+
+    POST /corrections/{id}/approve
+    POST /corrections/{id}/reject
+    POST /corrections/{id}/reconcile
+
+over generic mutation:
+
+    POST /transition
+    { "from": "...", "to": "..." }
+
+The public API can become the expansion point for web clients, mobile clients, external services, EHR integrations, AI agents, and future systems.
+
+## 18. Current Limits and Honest Gaps
+
+Known remaining gaps:
+
+- Serializer class prevention does not yet exist.
+- Route discovery may miss routes outside the current scanning surface.
+- `AddVocabularyRequest` tuple-array shape was flagged but deliberately not expanded into this mission.
+- GET/probe evidence is not as fresh as POST/commit evidence.
+- The pass hardened the boundaries examined; it did not prove every boundary in the repository follows the same rules.
+
+These are residual risks, not hidden failures.
+
+## 19. Research Reporting Requirements
+
+Future reports should distinguish:
+
+### Structural prevention
+The invalid condition cannot be represented or cannot pass a required mechanical gate.
+
+### Mechanical detection
+The condition remains representable but CI/contracts/tests detect it before live execution.
+
+### Runtime validation
+The condition is inherently external/untyped and is rejected when re-entering trusted code.
+
+### Improved observation only
+The failure still occurs but is easier to diagnose.
+
+Also report remediation level:
+
+    defect fixed
+    pattern hardened
+    class prevented
+
+Do not collapse these into “fixed.”
+
+## 20. Updated State of Boundary Research
+
+### Strongly supported in HelixNote
+
+- Closed semantic representations let the compiler catch omissions open strings cannot.
+- Illegal effect combinations can sometimes move from browser runtime to compile time.
+- Route duplication can be detected mechanically before live execution.
+- Framework-default serialization of host-language-specific types is unsafe as an implicit wire contract.
+- Explicit wire representations are preferable to incidental serializer representations.
+- Searching for defect shapes can uncover additional latent bugs.
+- Boundary failures can exist despite a green semantic/unit-test suite.
+- Four-Tier architecture and Boundary Preservation are orthogonal.
+- Public contracts need not expose State Programming internals.
+
+### Supported but not class-prevented
+
+- Option/DU boundary hardening.
+- Route agreement checking over the currently discovered route surface.
+
+### Plausible / needs more work
+
+- Mechanical architecture checking that prevents unsafe F# boundary DTOs.
+- Complete route authority/code generation.
+- Cross-project value of the defect taxonomy.
+- Cost/ergonomics at larger scale.
+- Whether schema/code generation can reduce manual contract work without excessive complexity.
+
+### Corrected / superseded
+
+- The explanation that the relevant Giraffe request/response behavior was caused by two different serializers is no longer current.
+
+## 21. Recommended Next Investigation
+
+Highest-value next boundary question:
+
+> Can we cheaply make unsafe boundary DTOs mechanically detectable?
+
+Investigate whether an architecture check can identify boundary-facing types containing:
+
+- FSharpOption;
+- raw DUs;
+- FSharpList;
+- semantic-domain types;
+- framework-specific wrappers;
+- other prohibited wire representations.
+
+The goal is not to ban F# features internally.
+
+The desired pattern is:
+
+    rich internal semantic type
+             ↓
+    explicit boundary projection
+             ↓
+    language-neutral wire contract
+
+Start with the smallest reliable mechanism. Do not build a large custom analyzer unless evidence justifies it.
+
+## 22. Canonical Lessons to Preserve
+
+> The compiler can only protect the semantics you allow it to see.
+
+> Preserve closure.
+
+> Delay semantic weakening.
+
+> Establish one authority or mechanically prove agreement.
+
+> Validate untyped data before allowing it back into trusted semantic state.
+
+> Same source-language type does not imply same wire contract.
+
+> Explicit wire contract does not necessarily mean hand-written forever.
+
+> A defect instance being fixed does not mean the defect class is prevented.
+
+> Search for the representation pattern that made a bug possible, not only repetitions of the failing value.
+
+> A known failure pattern is a hypothesis generator, not a diagnosis.
+
+> Move failures left by strengthening representation where practical.
+
+> Four-Tier architecture governs semantic responsibility; Boundary Preservation governs representation movement.
+
+> State Programming specifications must remain independent of host language, runtime, serializer, framework, and transport.
+
+> External consumers must not be required to adopt State Programming.
+
+> Rich on the inside, boring on the outside.
+
+## 23. Current Architectural Picture
+
+    ┌─────────────────────────────────────┐
+    │      FOUR-TIER ARCHITECTURE         │
+    │                                     │
+    │ explicit semantic responsibility    │
+    │ states / transitions / invariants   │
+    │ evidence / capability / obligation  │
+    │ uncertainty / effects               │
+    └─────────────────┬───────────────────┘
+                      │
+                      │ preserve semantics
+                      ▼
+    ┌─────────────────────────────────────┐
+    │      BOUNDARY PRESERVATION          │
+    │                                     │
+    │ preserve closure                    │
+    │ delay weakening                     │
+    │ establish authority                 │
+    │ validate re-entry                   │
+    └─────────────────┬───────────────────┘
+                      │
+                      ▼
+    ┌─────────────────────────────────────┐
+    │       EXPLICIT HOST CONTRACT        │
+    │                                     │
+    │ deliberate tagged JSON / effects    │
+    │ mechanically checked operations     │
+    │ runtime validation at re-entry      │
+    └─────────────────┬───────────────────┘
+                      │
+                      ▼
+    ┌─────────────────────────────────────┐
+    │      PUBLIC INTEGRATION CONTRACT    │
+    │                                     │
+    │ boring HTTP / JSON / OpenAPI        │
+    │ stable resources                    │
+    │ business-intent commands            │
+    │ language/framework neutral          │
+    └─────────────────────────────────────┘
+
+The architecture should continue evolving through evidence rather than by adding abstractions preemptively.
+
+## 24. Final Assessment
+
+The implementation pass strengthened the Four-Tier / State Programming work by:
+
+- discovering a worse latent correction-replay bug through defect-shape auditing;
+- correcting an inaccurate prior serializer explanation;
+- demonstrating why research conclusions must be re-verified against the current system;
+- clarifying defect fixing vs. pattern hardening vs. class prevention;
+- exposing honest remaining coverage gaps;
+- demonstrating disciplined diagnosis during a misleading CORS failure;
+- reinforcing evidence freshness;
+- and adding evidence that Boundary Preservation belongs beside, not inside, the Four-Tier architecture.
+
+The strongest current conclusion is not that the boundary problem is completely solved.
+
+It is that we now have a clearer model for:
+
+- what semantic information is lost;
+- why the compiler stops helping;
+- how duplicated authorities drift;
+- where failures can be moved earlier;
+- how to report remediation strength accurately;
+- and how to keep the architecture language-neutral and externally interoperable.
+
+The next stage should focus on turning selected pattern-level protections into class-level protections without adding unnecessary frameworks, dependencies, or proprietary abstractions.

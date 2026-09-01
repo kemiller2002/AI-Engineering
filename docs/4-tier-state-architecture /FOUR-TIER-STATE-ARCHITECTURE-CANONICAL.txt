@@ -1,0 +1,2528 @@
+# Four-Tier State Architecture — Canonical Engineering Reference
+
+**Status:** Current working doctrine / implementation reference  
+**Date:** 2026-09-01  
+**Primary implementation evidence:** HelixNote F# semantic architecture, Postgres host, WASM host, Bolero host, correction workflows, browser-kernel integration  
+**Purpose:** Preserve the current understanding of the Four-Tier State Architecture, the State Programming principles behind it, the implementation rules that have emerged from experiments, the boundary failures we have observed, and the unresolved research questions.  
+
+> This document is intentionally broader than an architecture diagram. It is meant to let a new engineer or autonomous agent reconstruct the design philosophy, understand why each boundary exists, implement the architecture without relying on oral history, and continue the research without re-learning already discovered lessons.
+
+---
+
+# 1. Executive Summary
+
+The Four-Tier State Architecture is an engineering pattern for systems where correctness depends not merely on data shape, but on **legal evolution of state over time**.
+
+The core idea is:
+
+> Important domain state should be explicit; legal transitions should be explicit; invalid transitions should be rejected; evidence, authority, obligations, uncertainty, and external effects should be represented directly rather than inferred from scattered code and conventions.
+
+The Four-Tier architecture organizes this discipline by separating:
+
+1. **Semantic Model** — what the system means and what states can exist.
+2. **State Transition / Domain Execution** — what legal changes may occur and under what conditions.
+3. **Application / Projection / Orchestration** — how semantic operations are coordinated and projected for use without owning domain truth.
+4. **Host / External Effects** — persistence, HTTP, browser, databases, frameworks, networks, clocks, files, and other inherently external interactions.
+
+A second, orthogonal discipline now accompanies the tiers:
+
+## Boundary Preservation
+
+The tiers answer:
+
+> Where is semantic responsibility allowed to live?
+
+Boundary Preservation answers:
+
+> What happens to semantic information when values move between those areas or outside the system?
+
+The boundary investigation identified four useful principles:
+
+1. **Preserve closure.** Closed semantic alternatives should remain closed wherever practical.
+2. **Delay weakening.** Do not turn semantic types into strings, primitives, generic objects, URLs, or other weaker representations earlier than necessary.
+3. **Establish authority.** A semantic fact duplicated across representations must have one authority or a mechanical agreement check.
+4. **Validate re-entry.** Untyped/external data must be validated before it becomes trusted semantic data again.
+
+The strongest implementation evidence so far is not that the architecture eliminates all bugs. It does not. Rather, it has shown a pattern of **moving semantic failures earlier and localizing remaining risk**:
+
+- New semantic union cases can become compile failures instead of runtime omissions.
+- Illegal state/effect combinations can often be made structurally unrepresentable.
+- Domain decisions have remained localized even while multiple hosts were added.
+- Several infrastructure changes required zero changes to the semantic core.
+- Remaining live failures clustered at typed/untyped boundaries rather than inside domain semantics.
+
+The strongest warning from the experiments is equally important:
+
+> A green compiler and a large green unit-test suite do not prove that a distributed application boundary is correct.
+
+HelixNote had 149 passing core tests while live browser execution still exposed GET-with-body, missing-route, serializer, and string-mapping failures.
+
+The architecture therefore must combine **semantic compile-time enforcement** with **explicit boundary contracts and boundary tests**.
+
+---
+
+# 2. Why This Architecture Exists
+
+Traditional software often distributes domain truth across:
+
+- entity fields;
+- status strings;
+- services;
+- validation functions;
+- controllers;
+- database constraints;
+- test cases;
+- documentation;
+- UI assumptions;
+- developer memory;
+- tribal knowledge.
+
+Human developers can sometimes reconstruct these rules through experience and context. AI coding agents are especially vulnerable because surviving code is easily mistaken for intentional design.
+
+A recurring failure pattern is:
+
+```text
+bad or ambiguous assumption
+        ↓
+plausible code
+        ↓
+survives review/tests
+        ↓
+later AI reads surviving code
+        ↓
+assumes it was intentional
+        ↓
+assumption becomes increasingly entrenched
+```
+
+The broader State Programming hypothesis is therefore:
+
+> Explicitly modeling legal system evolution reduces the amount of inference required to safely modify software.
+
+Proposed causal chain:
+
+```text
+less inference
+    ↓
+smaller legal action space
+    ↓
+fewer plausible-but-invalid modifications
+    ↓
+less context required to understand a change
+    ↓
+fewer repair loops
+    ↓
+lower tool/token cost
+    ↓
+less longitudinal semantic drift
+```
+
+This causal chain remains a research hypothesis. Some mechanisms have supporting implementation evidence; superiority over a competent conventional typed architecture has not yet been fully established.
+
+---
+
+# 3. Core State Programming Model
+
+The Four-Tier architecture sits inside a larger State Programming semantic model.
+
+A system may explicitly model:
+
+```text
+System
+├── State
+│   ├── identity
+│   ├── state-specific data
+│   └── epistemic status
+├── Transition
+│   ├── source state
+│   ├── destination state
+│   ├── command / intent
+│   ├── guards
+│   ├── required evidence
+│   ├── required capability / authority
+│   └── resulting obligations
+├── Invariant
+├── Capability
+├── Evidence
+├── Obligation
+└── Effect
+    ├── pending
+    ├── succeeded
+    ├── failed
+    └── outcome unknown
+```
+
+These concepts operate at different levels and should not be collapsed into one giant abstraction.
+
+## State
+
+A state is not merely a status string. It represents a meaningful semantic condition in which particular facts and operations may be valid.
+
+Bad:
+
+```fsharp
+{ Status : string
+  ApprovedAt : DateTime option
+  RejectionReason : string option
+  InvoiceId : Guid option }
+```
+
+This representation may allow contradictory combinations.
+
+Better conceptually:
+
+```fsharp
+type RecordState =
+    | Draft of DraftData
+    | Submitted of SubmittedData
+    | Approved of ApprovedData
+    | Rejected of RejectedData
+```
+
+Each case can contain only the information meaningful to that state.
+
+## Transition
+
+A transition represents a legal domain change, not arbitrary mutation.
+
+```text
+Draft --Submit--> Submitted
+Submitted --Approve--> Approved
+Submitted --Reject--> Rejected
+```
+
+The transition is allowed to enforce:
+
+- invariants;
+- guards;
+- evidence requirements;
+- authority/capabilities;
+- version/concurrency expectations;
+- obligations generated by the change.
+
+## Invariant
+
+An invariant is something that must remain true for a semantic state to be considered valid.
+
+## Capability
+
+A capability is explicit authority to perform an action. This is particularly important for AI agents: instead of granting arbitrary mutation ability, the system exposes only capabilities currently legal and authorized.
+
+## Evidence
+
+Evidence represents what justifies a belief or transition. It prevents the system from confusing “we were asked to do this” with “we have enough basis to assert this as true.”
+
+## Obligation
+
+An obligation represents work that must still be resolved. It can function as an explicit work queue for humans or agents.
+
+## Effect
+
+An effect represents interaction with something the semantic system does not control directly: persistence, network calls, browser APIs, external services, etc.
+
+External effects must distinguish:
+
+```text
+Succeeded
+Failed
+Outcome Unknown
+```
+
+because a timeout does not necessarily mean the remote operation failed.
+
+---
+
+# 4. State Programming Enforcement Levels
+
+A useful working maturity model is:
+
+## Level 1 — State Safety
+
+- explicit states;
+- explicit transitions;
+- illegal transitions rejected.
+
+## Level 2 — Domain Correctness
+
+- invariants;
+- guards;
+- typed transition results;
+- state-specific information.
+
+## Level 3 — Controlled Authority
+
+- explicit capabilities;
+- authorization;
+- evidence requirements.
+
+## Level 4 — Operational Truth
+
+- obligations;
+- explicit effects;
+- outcome unknown;
+- epistemic state / uncertainty.
+
+## Level 5 — Agent Execution
+
+- agent-visible legal capabilities;
+- constrained action space;
+- machine-readable transition descriptions;
+- semantic validation of agent actions;
+- escalation when evidence or authority is insufficient.
+
+This maturity model is distinct from the Four-Tier architecture. The levels describe **how much semantic discipline is being applied**. The tiers describe **where responsibilities live**.
+
+---
+
+# 5. The Four Tiers
+
+The current working structure is:
+
+```text
+┌──────────────────────────────────────────────┐
+│ Tier 1 — Semantic Model                     │
+│ What can be true?                           │
+└───────────────────────┬──────────────────────┘
+                        │
+                        ▼
+┌──────────────────────────────────────────────┐
+│ Tier 2 — State Transition / Domain Execution│
+│ What legal change may happen?               │
+└───────────────────────┬──────────────────────┘
+                        │
+                        ▼
+┌──────────────────────────────────────────────┐
+│ Tier 3 — Application / Projection /         │
+│          Orchestration                      │
+│ What should be requested/presented next?    │
+└───────────────────────┬──────────────────────┘
+                        │
+                        ▼
+┌──────────────────────────────────────────────┐
+│ Tier 4 — Host / External Effects            │
+│ What happened in the outside world?         │
+└──────────────────────────────────────────────┘
+```
+
+The important rule is not the exact labels. The important rule is the direction of dependency and ownership of decisions.
+
+---
+
+# 6. Tier 1 — Semantic Model
+
+## Purpose
+
+Tier 1 defines the vocabulary and legal semantic shapes of the domain.
+
+It answers:
+
+> What can be true?
+
+Typical contents:
+
+- domain identifiers;
+- value objects;
+- discriminated unions / sealed alternatives;
+- state-specific data;
+- evidence types;
+- capability types;
+- obligation types;
+- uncertainty representations;
+- semantic events where appropriate.
+
+Tier 1 must not know about:
+
+- Postgres;
+- HTTP;
+- JSON;
+- Giraffe;
+- ASP.NET;
+- browser APIs;
+- Bolero;
+- JavaScript;
+- filesystem paths;
+- framework services;
+- concrete persistence mechanisms.
+
+## HelixNote evidence
+
+The `HelixNote.Semantic` project has been kept free of host/framework package references. An architecture check (`check-semantic-architecture.sh`) reportedly remained green throughout multiple host integrations.
+
+That is a meaningful architectural invariant:
+
+> Infrastructure must depend on semantic meaning; semantic meaning must not depend on infrastructure.
+
+## Design rule
+
+Model a concept in Tier 1 when changing its representation would change what the business/system means.
+
+Examples:
+
+```text
+CorrectionWriteOutcome
+RecordCommitment
+ObservedValue
+Evidence
+Capability
+Obligation
+```
+
+## Anti-pattern
+
+Do not model a semantic closed set as arbitrary strings if the domain actually knows the complete set.
+
+Bad:
+
+```fsharp
+Kind : string
+Status : string
+```
+
+when the set is actually closed.
+
+---
+
+# 7. Tier 2 — State Transition / Domain Execution
+
+## Purpose
+
+Tier 2 owns legal semantic change.
+
+It answers:
+
+> Given the current semantic state and an intended action, what legal semantic result follows?
+
+Typical responsibilities:
+
+- commands/intents;
+- transition functions;
+- guards;
+- invariant enforcement;
+- capability checks;
+- evidence checks;
+- resulting semantic events/outcomes;
+- creation of obligations;
+- representation of uncertainty introduced by requested external work.
+
+A useful conceptual function shape is:
+
+```text
+Current State
++ Intent
++ Evidence
++ Capability
+        ↓
+Decision
+        ↓
+New Semantic State / Semantic Event / Requested Effect / Rejection
+```
+
+## Critical rule
+
+Tier 2 does not perform uncontrolled external effects itself.
+
+It may decide:
+
+> A write must be attempted.
+
+It does not assume:
+
+> The write succeeded because we attempted it.
+
+That distinction is necessary to represent `OutcomeUnknown` correctly.
+
+## Agent relevance
+
+This tier is a natural location for constrained agent action.
+
+Instead of:
+
+```text
+Agent may mutate arbitrary data
+```
+
+prefer:
+
+```text
+Agent receives currently available legal intents/capabilities
+Agent proposes one
+Tier 2 validates it
+```
+
+The model then reduces the agent's action space rather than relying entirely on prompting discipline.
+
+---
+
+# 8. Tier 3 — Application / Projection / Orchestration
+
+## Purpose
+
+Tier 3 coordinates semantic operations without becoming a second semantic authority.
+
+It answers questions such as:
+
+- what command should be issued based on user/application intent?
+- which projection should be shown?
+- what information must be gathered before a decision can be made?
+- what effect should the host execute?
+- how should an effect result be fed back into the semantic workflow?
+
+Typical contents:
+
+- application use cases;
+- projections/read models;
+- command dispatch;
+- orchestration;
+- translation from semantic values into boundary-facing contracts;
+- translation from validated host results back into semantic inputs.
+
+## Critical danger
+
+Tier 3 can accidentally become a second domain layer.
+
+Watch for:
+
+- business decisions appearing in projections;
+- string-based status branching duplicating semantic unions;
+- endpoint-specific logic redefining legal transitions;
+- “just one validation” in a handler that is actually a semantic invariant.
+
+## Mechanical propagation vs. semantic decisions
+
+One useful metric from the experiments is **decision locality**.
+
+Track:
+
+- files containing new domain decisions;
+- files changed mechanically because a type changed;
+- files changed only for projection/display.
+
+In one time-entry experiment, real domain-logic changes were localized to `Model.fs` and `Commands.fs`, while other files primarily accommodated compiler-directed propagation.
+
+This suggests a potentially useful distinction:
+
+```text
+semantic change
+vs.
+mechanical propagation
+```
+
+The compiler can make propagation noisy without making the architecture semantically scattered.
+
+---
+
+# 9. Tier 4 — Host / External Effects
+
+## Purpose
+
+Tier 4 owns interaction with systems whose behavior cannot be proved by the semantic model.
+
+Examples:
+
+- databases;
+- HTTP;
+- filesystem;
+- browser APIs;
+- clocks;
+- network services;
+- message queues;
+- device I/O;
+- framework hosting;
+- external EHR systems;
+- WASM/browser interop.
+
+Tier 4 answers:
+
+> What actually happened when the requested interaction met the outside world?
+
+## Host implementations observed
+
+HelixNote has exercised the semantic core through multiple hosts, including:
+
+- Postgres;
+- hand-rolled WASM/browser host;
+- Bolero;
+- multiple correction entity flows.
+
+Some later work items reportedly required **zero core changes**, which is meaningful evidence that host evolution was not automatically forcing semantic redesign.
+
+A proposed metric is:
+
+```text
+Core Change Rate =
+semantic-core changes / externally-driven work items
+```
+
+This metric must be paired with behavioral acceptance tests. A frozen but incomplete semantic core is not a success.
+
+## External uncertainty
+
+Tier 4 must not collapse external uncertainty into simple success/failure when reality does not support that claim.
+
+For example:
+
+```text
+Write requested
+     ↓
+request sent
+     ↓
+timeout
+```
+
+The correct result may be:
+
+```text
+Outcome Unknown
+```
+
+not:
+
+```text
+Failed
+```
+
+HelixNote has modeled concepts such as:
+
+```text
+CommitOutcomeUnknown
+ReconciliationInFlight
+```
+
+as actual states/outcomes rather than exceptions.
+
+---
+
+# 10. Dependency Rule
+
+The desired dependency direction is conceptually:
+
+```text
+Host / Infrastructure
+        ↓
+Application / Orchestration
+        ↓
+Transitions / Domain Execution
+        ↓
+Semantic Model
+```
+
+The semantic center should be the most stable and least infrastructure-aware part of the system.
+
+A useful architecture check is therefore not merely folder naming. It is mechanical enforcement that semantic projects do not acquire host dependencies.
+
+For F#/.NET, this can include:
+
+- project-reference checks;
+- package-reference checks;
+- scripts scanning semantic project files;
+- build rules.
+
+Equivalent enforcement should exist in other languages/toolchains.
+
+---
+
+# 11. Boundary Preservation Is Not a Fifth Tier
+
+Boundary research initially suggested that an additional layer might be needed. Current understanding is that this would confuse two independent concerns.
+
+The Four Tiers describe:
+
+> responsibility and authority.
+
+Boundary Preservation describes:
+
+> representation movement and semantic loss.
+
+Therefore:
+
+```text
+Four-Tier Architecture
+        +
+Boundary Preservation Rules
+```
+
+rather than:
+
+```text
+Five-Tier Architecture
+```
+
+---
+
+# 12. Boundary Principle 1 — Preserve Closure
+
+A semantic set is **closed** when the valid alternatives are deliberately finite and known.
+
+Example:
+
+```fsharp
+type CorrectionWriteOutcome =
+    | Committed
+    | Rejected of reason:string
+    | CommitOutcomeUnknown
+    | ReconciliationInFlight
+```
+
+If that becomes arbitrary JSON or a generic string, semantic information has been lost.
+
+A neutral wire representation should preserve the alternatives:
+
+```json
+{ "kind": "committed" }
+```
+
+```json
+{ "kind": "rejected", "reason": "..." }
+```
+
+```json
+{ "kind": "commit-outcome-unknown" }
+```
+
+```json
+{ "kind": "reconciliation-in-flight" }
+```
+
+Different languages can represent the same semantics differently:
+
+- F# — discriminated union;
+- Rust — enum;
+- Java — sealed interface / records;
+- Kotlin — sealed class/interface;
+- Swift — enum;
+- TypeScript — discriminated union;
+- C# — sealed records / union-like hierarchy;
+- Python — runtime-validated tagged structures.
+
+The requirement is **semantic equivalence**, not syntactic equivalence.
+
+---
+
+# 13. Boundary Principle 2 — Delay Weakening
+
+This may be one of the most important general rules discovered so far:
+
+> The compiler can only protect the semantics you allow it to see.
+
+Examples:
+
+```text
+ObservedValue
+    ↓ too early
+(kind:string, field:string)
+```
+
+The second representation prevents exhaustiveness analysis.
+
+Likewise:
+
+```text
+Typed route
+    ↓ too early
+string URL
+```
+
+```text
+HTTP effect case
+    ↓ too early
+method:string + optional body
+```
+
+```text
+Domain value object
+    ↓ too early
+primitive
+```
+
+Therefore:
+
+> Convert closed semantic structures into weaker primitives only at the last responsible boundary.
+
+A useful shorthand is:
+
+```text
+DU → string               as late as possible
+value object → primitive  as late as possible
+typed route → URL         as late as possible
+effect case → fetch init  as late as possible
+domain field → JSON key   as late as possible
+```
+
+This does not mean strings/primitives are bad. They are necessary at external interfaces. The principle is to avoid surrendering semantic information before the external boundary requires it.
+
+---
+
+# 14. Boundary Principle 3 — Establish Authority
+
+Some defects do not involve a closed representation collapsing. Instead, the same fact is authored independently in multiple places.
+
+Example from HelixNote:
+
+```text
+Client route:
+GET /extraction/links/{id}
+
+Server route:
+(no matching route)
+```
+
+The problem was not a type losing information. Both sides were open strings from the beginning.
+
+This is a distinct failure class:
+
+## Uncoordinated Duplication
+
+> Two independently maintained representations describe the same semantic fact without a mechanism forcing them to agree.
+
+Examples:
+
+- client URL template vs. server route;
+- multiple field-name mappings;
+- duplicated enums;
+- duplicated schema definitions;
+- manually repeated event names;
+- storage projection mappings repeated in API code.
+
+The rule is:
+
+> There must be one semantic authority or a mechanical proof that multiple representations agree.
+
+Valid strategies may include:
+
+```text
+OpenAPI → generated server/client
+Code → generated OpenAPI → verified client
+Shared neutral route description → both sides
+Independent definitions + contract test
+```
+
+The architecture should not mandate a particular tool. It should mandate agreement.
+
+---
+
+# 15. Boundary Principle 4 — Validate Re-entry
+
+Once information leaves the typed semantic world and travels through:
+
+- JSON;
+- HTTP;
+- JavaScript;
+- a database;
+- a message bus;
+- filesystem;
+- another language;
+- an external system;
+
+it must be treated as untrusted representation when it returns.
+
+Conceptually:
+
+```text
+closed semantic representation
+        ↓
+explicit boundary contract
+        ↓
+external/untyped representation
+        ↓
+runtime validation
+        ↓
+closed semantic representation again
+```
+
+The WASM `EngineProtocol.parse` pattern is a useful example: `JsonDocument` input is treated as untyped and properties are explicitly tested rather than assumed.
+
+Runtime boundary validation is not a failure of static typing. It is the appropriate mechanism once the data has traveled outside the compiler's authority.
+
+---
+
+# 16. Two Boundary Failure Classes
+
+The investigation initially proposed one umbrella concept, “Semantic Boundary Collapse.” Testing showed that this was too broad.
+
+Current classification:
+
+## Class A — Representation Collapse
+
+A constrained representation becomes weaker/open.
+
+Observed examples:
+
+- HTTP legal operation → `method:string + body:string option`;
+- F# option/DU → incidental framework JSON representation;
+- `ObservedValue` → `(kind:string, field:string)`.
+
+Remedy family:
+
+- preserve closed types;
+- delay weakening;
+- explicit wire representation;
+- exhaustive mapping;
+- runtime validation at re-entry.
+
+## Class B — Uncoordinated Duplication
+
+The same fact is maintained independently in multiple representations.
+
+Observed example:
+
+- client route string and server route string.
+
+Remedy family:
+
+- one authority;
+- generation;
+- schema-first/code-first synchronization;
+- contract comparison tests.
+
+Some defects combine both classes.
+
+---
+
+# 17. Boundary Investigation — Observed Failures
+
+## 17.1 GET With Body
+
+A WASM effect renderer historically emitted a body field for every HTTP operation, including GET, because body was represented as a normal string.
+
+The JavaScript kernel included the `body` property whenever it was defined. An empty string is still defined, so Fetch rejected the request before network transmission.
+
+Important lesson:
+
+> Conditional field legality often indicates that a flat record is a weaker representation than the underlying semantics.
+
+A more constrained effect algebra can make illegal combinations unavailable.
+
+Conceptually:
+
+```fsharp
+type HttpEffect =
+    | Get of Url
+    | Delete of Url
+    | Post of Url * Body
+    | Put of Url * Body
+    | Patch of Url * Body
+```
+
+This is **State Programming applied to effects**, not only domain entities.
+
+## 17.2 Missing Endpoint
+
+The WASM client targeted a route that did not exist on the API server.
+
+Both were independently maintained string templates.
+
+A small mechanical route-comparison script was able to detect the mismatch against historical commits and pass after the route was added.
+
+Important lesson:
+
+> Some boundary correctness comes from coordination rather than stronger domain typing.
+
+## 17.3 F# `option` / DU Serialization
+
+The investigation reproduced three different behaviors for the same F# type depending on serializer/call path.
+
+Core lesson:
+
+> Same source-language type ≠ same wire contract.
+
+Or:
+
+> Type agreement does not imply serialization agreement.
+
+The actual wire representation is defined by:
+
+- serializer implementation;
+- serializer configuration;
+- framework defaults;
+- call path;
+- naming/null/union policies.
+
+Therefore sharing an F# type between API and WASM can reduce code duplication, but it does not define the public or host wire contract by itself.
+
+## 17.4 Projection Whitelist Omission
+
+A correction mapping converted a closed `ObservedValue` into rendered string kind/field values and then used a wildcard match.
+
+A new/omitted lab-result case therefore compiled cleanly.
+
+When restructured to match directly on `ObservedValue` with FS0025 treated as an error, removing a case generated a compiler failure naming the omitted case.
+
+Important lesson:
+
+> Do not convert a closed semantic type into strings before the last point at which semantic reasoning is needed.
+
+---
+
+# 18. Explicit Wire Contracts
+
+The current principle is **explicit**, not necessarily permanently **hand-written**.
+
+The specification should say:
+
+> Wire representations MUST be deliberately specified and MUST NOT depend on incidental host-language or framework serialization behavior.
+
+Valid implementation mechanisms may include:
+
+- hand-written render/parse functions;
+- generated serializer/parser code;
+- schema-driven generation;
+- standard contract tooling.
+
+The requirement is deliberate representation.
+
+Not acceptable:
+
+```text
+internal semantic type
+        ↓
+framework serializer default
+        ↓
+"therefore this is our API"
+```
+
+---
+
+# 19. Three Different Contracts
+
+A major refinement is that “the boundary” is not one thing.
+
+## A. Semantic Contract
+
+Internal truth:
+
+- states;
+- transitions;
+- invariants;
+- evidence;
+- capabilities;
+- obligations;
+- uncertainty;
+- effects as semantic intentions.
+
+Optimizes for semantic precision.
+
+## B. Host Contract
+
+Communication among tightly cooperating pieces of the application:
+
+- semantic/application engine;
+- WASM;
+- browser kernel;
+- API when acting as application backend;
+- effect requests/results;
+- render/projection instructions.
+
+Optimizes for preserving semantic precision across implementation/runtime boundaries.
+
+## C. Public Integration Contract
+
+What unrelated systems consume.
+
+Optimizes for:
+
+- simplicity;
+- stability;
+- interoperability;
+- low coupling;
+- ordinary standards.
+
+Examples:
+
+```http
+GET /records/{id}
+POST /records/{id}/request-correction
+POST /corrections/{id}/approve
+POST /corrections/{id}/reject
+```
+
+The public API should expose business intent rather than generic internal state mutation.
+
+Bad public design:
+
+```http
+POST /transition
+{
+  "from": "pending",
+  "to": "approved"
+}
+```
+
+The rule is:
+
+> An external consumer must not need to adopt State Programming in order to integrate with a State Programming system.
+
+---
+
+# 20. Rich Inside, Boring Outside
+
+This is an important architectural target:
+
+```text
+                     INTERNAL
+        rich semantic representation
+ states / transitions / evidence / obligations
+                     │
+                     ▼
+              public API boundary
+         simple stable explicit contract
+                     │
+       ┌─────────────┼─────────────┐
+       ▼             ▼             ▼
+   web client     mobile      external system
+```
+
+An internal semantic state may contain richer concepts than the public API exposes.
+
+Example:
+
+```text
+Internal:
+CommitOutcomeUnknown of ReconciliationObligation
+
+Host contract:
+{
+  "kind": "commit-outcome-unknown",
+  "obligationId": "..."
+}
+
+Public API:
+{
+  "status": "processing",
+  "id": "cor_123"
+}
+```
+
+The public consumer receives the minimum stable semantics it needs, not the implementation model.
+
+---
+
+# 21. Language and Framework Neutrality
+
+A hard requirement is:
+
+> State Programming specifications MUST be defined independently of host language, runtime, serializer, framework, and transport.
+
+F# is an excellent reference implementation because its discriminated unions, pattern matching, immutability, and exhaustiveness checking make semantic constraints natural.
+
+But F# must not define the architecture.
+
+Equivalent implementations may use:
+
+```text
+F#          discriminated unions
+Rust        enums
+Java        sealed interfaces + records
+Kotlin      sealed classes/interfaces
+Swift       enums
+TypeScript  discriminated unions + validation
+C#          sealed records / union-like patterns
+Python      runtime-validated tagged models
+```
+
+## Semantic Conformance vs. Enforcement Strength
+
+These are separate dimensions.
+
+A language can implement the same semantics with weaker compiler enforcement.
+
+```text
+State Programming Conformance
+           │
+     same legal semantics
+           │
+           ▼
+Enforcement Strength
+ ├── hard static
+ ├── opt-in static
+ ├── warning-based
+ └── runtime validation
+```
+
+Experiments found roughly:
+
+- F# — strong exhaustiveness;
+- Rust — strong exhaustiveness;
+- modern Java sealed hierarchies — strong switch exhaustiveness;
+- TypeScript — useful but optional/structural escape hatches;
+- C# — warnings/attributes/patterns can help, often requires warnings-as-errors/convention;
+- dynamic languages — more runtime validation.
+
+A language with weaker enforcement is not automatically non-conforming. The difference should be measured and documented.
+
+---
+
+# 22. Do Not Invent a New Data Language Prematurely
+
+The architecture should prefer established interoperable standards.
+
+Potential building blocks:
+
+- explicit tagged JSON;
+- JSON Schema;
+- OpenAPI;
+- Protocol Buffers where appropriate;
+- standard language types;
+- contract tests.
+
+Current position:
+
+> Do not create a custom State Programming IDL, schema language, `.state` syntax, compiler, or protocol unless experiments demonstrate that existing standards cannot express an essential requirement.
+
+Preferred evolution:
+
+```text
+existing standards
+      ↓
+conventions / profiles
+      ↓
+machine-readable semantic metadata if needed
+      ↓
+optional tooling
+      ↓
+custom DSL only if evidence demands it
+```
+
+This is important for adoption. The discipline should not force organizations to adopt an ecosystem merely to receive its architectural benefits.
+
+---
+
+# 23. Standards and Where They Fit
+
+## Explicit Tagged JSON
+
+Good for:
+
+- small Host Contract alternatives;
+- language-neutral values;
+- human readability;
+- browser compatibility.
+
+## JSON Schema
+
+Good for:
+
+- structural validation;
+- required fields;
+- alternatives (`oneOf` etc.);
+- cross-language runtime validation.
+
+Not intended to become the semantic domain model.
+
+## OpenAPI
+
+Good for:
+
+- public HTTP APIs;
+- routes;
+- methods;
+- request/response shapes;
+- client/server documentation;
+- potentially generation/verification.
+
+OpenAPI is a Public Integration Contract tool, not the State Programming semantic language.
+
+## Protocol Buffers
+
+Potentially useful when:
+
+- binary/gRPC ecosystems are appropriate;
+- generated cross-language contracts are valuable;
+- `oneof` semantics fit.
+
+Not required for ordinary browser-facing HTTP/JSON systems.
+
+## Shared F# Contract Assembly
+
+May be useful as an implementation convenience when API and WASM are both F#/.NET.
+
+It is **not** the canonical cross-language contract because:
+
+- external languages cannot reference it;
+- shared source types do not guarantee serializer agreement;
+- it can encourage accidental leakage of F# representation details.
+
+---
+
+# 24. Effects as State-Constrained Values
+
+One important expansion of the original architecture is that State Programming should not stop at domain entities.
+
+Effects themselves can have invalid states.
+
+Bad generic shape:
+
+```text
+method : string
+url : string
+body : optional string
+```
+
+because conditional legality exists.
+
+Better semantic shape:
+
+```text
+Get(url)
+Delete(url)
+Post(url, body)
+Put(url, body)
+Patch(url, body)
+```
+
+General rule:
+
+> When one field changes which other fields are legal, consider representing the legal alternatives directly instead of modeling independent optional fields.
+
+Possible domains:
+
+- HTTP requests;
+- payments;
+- authentication operations;
+- filesystem operations;
+- database commands;
+- AI tool calls;
+- workflow commands;
+- message operations.
+
+---
+
+# 25. Epistemic State and Outcome Unknown
+
+A central State Programming idea is that the system must distinguish **truth** from **what it currently knows**.
+
+Example:
+
+```text
+External write requested
+        ↓
+timeout
+```
+
+Truth may be:
+
+```text
+write committed remotely
+```
+
+while the local system knows only:
+
+```text
+we do not know whether it committed
+```
+
+This requires an epistemic representation.
+
+HelixNote examples:
+
+```text
+RecordCommitment
+CorrectionWriteOutcome
+CommitOutcomeUnknown
+ReconciliationInFlight
+```
+
+The system can then create an obligation:
+
+```text
+Reconcile remote outcome
+```
+
+instead of lying to itself by treating uncertainty as failure.
+
+This is particularly important for agents because AI systems must not be allowed to convert missing evidence into confident state updates.
+
+---
+
+# 26. Obligations as Work Queues
+
+When a transition cannot complete because evidence, reconciliation, or external confirmation is pending, create an explicit obligation rather than relying on memory or incidental logs.
+
+Conceptually:
+
+```text
+Current state
+    +
+Attempted operation
+    ↓
+OutcomeUnknown
+    +
+ReconciliationObligation
+```
+
+Obligations provide:
+
+- visible unfinished work;
+- safe agent task queues;
+- explicit escalation paths;
+- auditable reason why a system remains unresolved.
+
+---
+
+# 27. Capabilities and Agent Action-Space Reduction
+
+A major AI-oriented hypothesis is that agents should not receive unrestricted mutation authority.
+
+Instead of:
+
+```text
+Here is the repository/database/API. Fix it.
+```
+
+prefer:
+
+```text
+Here is the current semantic state.
+Here are currently legal actions.
+Here is the evidence available.
+Here are your capabilities.
+Choose among legal actions or escalate.
+```
+
+The architecture can expose capabilities such as:
+
+```text
+ApproveCorrection
+RejectCorrection
+RequestEvidence
+ReconcileUnknownWrite
+```
+
+only when legal.
+
+This may reduce:
+
+- tool calls;
+- search space;
+- unsupported assumptions;
+- repair loops;
+- semantic drift.
+
+This remains an active research area and must be compared against competent conventional architectures.
+
+---
+
+# 28. Compiler-Directed Change Propagation
+
+A recurring observed benefit of strongly modeled F# code is that semantic changes can turn repository discovery into compiler output.
+
+An earlier experiment observed that changing a core type caused compile errors to enumerate affected code paths such as validation, construction, split/merge, restore, document validation, projections, dispatch, etc.
+
+Important interpretation:
+
+> The compiler can convert some semantic change propagation from a search problem into a constrained repair problem.
+
+This does **not** prove fewer total edits.
+
+It suggests measuring:
+
+## Change Discovery Mechanism
+
+For each required modification, record whether it was discovered by:
+
+- compiler error;
+- test failure;
+- contract failure;
+- runtime failure;
+- grep/search;
+- human/agent inference.
+
+## Decision Locality
+
+Record:
+
+- files containing new semantic decisions;
+- files changed mechanically;
+- files changed only for display/projection.
+
+These metrics may be more informative than raw file-change counts.
+
+---
+
+# 29. FS0025 / Exhaustiveness as Architecture Enforcement
+
+A high-value HelixNote observation involved incomplete pattern matching.
+
+When a new semantic union case was introduced, an unhandled path that might otherwise silently fall through was turned into a build failure by treating F# incomplete-pattern warning FS0025 as an error.
+
+This matches a target State Programming bug class:
+
+> Adding a new semantic alternative should mechanically expose places that falsely assume the old closed set is complete.
+
+Important caveat:
+
+The compiler can only do this while code still matches on the closed semantic type.
+
+Once the value becomes:
+
+```text
+string
+```
+
+or:
+
+```text
+object
+```
+
+exhaustiveness is no longer available.
+
+Therefore FS0025 and equivalent language features work together with **Delay Weakening**.
+
+---
+
+# 30. Testing Strategy
+
+The experiments demonstrated that semantic unit testing alone is insufficient.
+
+A State Programming application needs multiple verification layers.
+
+## Layer A — Semantic Unit Tests
+
+Prove:
+
+- transitions;
+- guards;
+- invariants;
+- capabilities;
+- evidence requirements;
+- obligations;
+- uncertainty semantics.
+
+## Layer B — Compiler Enforcement
+
+Use the language/toolchain to detect:
+
+- unhandled closed cases;
+- illegal constructor combinations;
+- dependency violations;
+- type mismatch propagation.
+
+## Layer C — Boundary Contract Tests
+
+Verify:
+
+- exact/structural JSON representation;
+- route agreement;
+- effect rendering;
+- optional/null behavior;
+- tagged alternatives;
+- unknown cases;
+- casing;
+- serializer configuration.
+
+## Layer D — Host Integration Tests
+
+Exercise:
+
+- database host;
+- HTTP host;
+- filesystem host;
+- browser kernel;
+- external systems.
+
+## Layer E — Narrow End-to-End Smoke Paths
+
+At least representative paths should cross:
+
+```text
+semantic/application request
+    ↓
+WASM/host effect
+    ↓
+browser kernel
+    ↓
+HTTP API
+    ↓
+external/persistence behavior
+    ↓
+response
+    ↓
+WASM parse
+    ↓
+semantic/application result
+```
+
+The lesson is:
+
+> Green semantic tests prove semantic behavior. They do not prove the integration contract carrying that behavior still means the same thing.
+
+---
+
+# 31. Moving Failures Earlier
+
+A useful teaching/engineering objective is:
+
+> Move failures left by strengthening representation and contracts.
+
+Observed examples:
+
+```text
+GET + body
+runtime browser failure
+        ↓
+compile-time invalid construction
+```
+
+```text
+missing semantic case
+runtime omission
+        ↓
+compile-time exhaustiveness failure
+```
+
+```text
+missing endpoint
+live 404
+        ↓
+contract/CI failure
+```
+
+```text
+serializer disagreement
+live 500 / wrong shape
+        ↓
+wire-contract test / runtime boundary rejection
+```
+
+Not every problem can become compile-time. That is fine.
+
+The target is the **earliest practical trustworthy detection point**, not type-theoretic purity.
+
+---
+
+# 32. Change Classification to Avoid Ceremony
+
+The architecture has shown a design-pass cost: every work item can become expensive if the team treats all changes as deep semantic redesigns.
+
+By later HelixNote work items, boundaries had stabilized and some review steps became ceremonial rather than discovery-producing.
+
+A proposed change classifier:
+
+## Semantic Change
+
+Changes what the domain means or what transitions are legal.
+
+Requires full semantic review.
+
+## Boundary Change
+
+Changes representation/transport/host contract without changing domain meaning.
+
+Requires boundary-contract review.
+
+## Mechanical Propagation
+
+Compiler- or schema-directed updates with no new semantic decision.
+
+Requires verification but not full architecture reconsideration.
+
+## Presentation Change
+
+Changes display only.
+
+Should not trigger semantic ceremony unless the display encodes domain meaning.
+
+The methodology must protect semantics without becoming bureaucracy.
+
+---
+
+# 33. UI / WASM Architecture Context
+
+The current direction for browser applications is intentionally minimal:
+
+```text
+Browser
+├── HTML/CSS rendering
+├── small JS/TS kernel
+│   ├── event dispatch
+│   ├── browser interop
+│   └── execute effects requested by WASM
+└── F# WASM
+    ├── application state
+    ├── domain/semantic logic
+    └── render/projection decisions
+```
+
+The goal is to keep JavaScript/TypeScript narrow and functional, avoiding libraries unless necessary.
+
+Observed generic bridge concepts include:
+
+- `data-event`;
+- `data-each`;
+- one generic `dispatch()`;
+- effect descriptions returned to a small kernel.
+
+This allowed the same core to drive multiple hosts without semantic-core modification.
+
+However, the pilot exposed manual UI labor:
+
+- hand-wired HTML;
+- projection keys;
+- button/event connections;
+- limited component reuse/diffing.
+
+This does **not yet prove** that a major UI framework is necessary. The correct next question is whether the minimal kernel needs a few better primitives or whether complexity crosses the threshold where a framework truly reduces total system complexity.
+
+Do not adopt a framework merely because manual wiring exists.
+
+---
+
+# 34. Public API Design Rules
+
+Public integrations should be simple even when internals are sophisticated.
+
+## Prefer Business Intent
+
+Good:
+
+```http
+POST /corrections/{id}/approve
+POST /corrections/{id}/reject
+POST /corrections/{id}/reconcile
+```
+
+Avoid:
+
+```http
+PATCH /corrections/{id}
+{ "status": "approved" }
+```
+
+when approval is a legal transition rather than ordinary mutable data.
+
+## Reads Can Be Resource-Oriented
+
+```http
+GET /patients/{id}
+GET /records/{id}
+GET /records/{id}/corrections
+```
+
+## Public API Must Not Leak
+
+- Four-Tier terminology;
+- F# union encodings;
+- WASM implementation details;
+- framework types;
+- internal command dispatch;
+- generic state-machine mutation semantics.
+
+## Stability Rule
+
+Internal semantic richness may change without forcing public consumers to change unless the public meaning itself changes.
+
+---
+
+# 35. Serialization Rules
+
+## Rule 1 — Shared Types Are Not Wire Contracts
+
+A shared F# type/assembly can reduce duplication, but does not prove serializer agreement.
+
+## Rule 2 — Explicitly Specify Wire Shape
+
+Do not allow framework defaults to accidentally become contract law.
+
+## Rule 3 — Avoid Host-Language Artifacts
+
+Do not expose incidental representations of:
+
+- FSharpOption;
+- FSharpList;
+- internal DU encoding;
+- exceptions;
+- framework wrappers;
+- reflection metadata.
+
+## Rule 4 — Choose Optional Representation Deliberately
+
+For example, deliberately choose between:
+
+```json
+{ "reason": null }
+```
+
+and omission:
+
+```json
+{}
+```
+
+Then test it.
+
+## Rule 5 — Test Casing
+
+Cross-language contract tests should explicitly verify casing conventions.
+
+A C# prototype organically rediscovered a casing failure where a lowercase JSON field did not populate a PascalCase property until the naming policy was configured.
+
+---
+
+# 36. Routes and Operation Contracts
+
+Routes are semantic integration facts even when represented as strings at runtime.
+
+At minimum verify:
+
+```text
+HTTP method + normalized path
+```
+
+Example:
+
+```text
+GET  /records/{id}
+POST /records/{id}
+```
+
+are separate contracts.
+
+Possible approaches:
+
+- OpenAPI;
+- generated route helpers;
+- code-first schema extraction;
+- contract comparison script;
+- shared neutral route definitions.
+
+The rule is agreement, not a specific generator.
+
+---
+
+# 37. Storage and Persistence Boundaries
+
+Persistence is not merely serialization.
+
+A storage host may need to preserve:
+
+- semantic identity;
+- state/version;
+- evidence references;
+- obligations;
+- uncertainty;
+- correction history;
+- audit history.
+
+Do not assume database schema = semantic model.
+
+Storage projections may flatten types for querying/performance, but semantic weakening should occur deliberately and as late as practical.
+
+When reconstructing semantic state from storage:
+
+> validate re-entry.
+
+The stored representation must not automatically be trusted as a valid semantic value merely because the database returned it.
+
+---
+
+# 38. Framework Boundary Rule
+
+Frameworks may host the application, but they must not own domain truth.
+
+Framework adapters can:
+
+- parse HTTP;
+- produce HTTP responses;
+- execute effects;
+- mount UI components;
+- manage transport details.
+
+They should not decide:
+
+- whether a correction is legal;
+- whether evidence is sufficient;
+- whether state transition is allowed;
+- what capability exists;
+- whether uncertainty may be resolved.
+
+This is one reason the architecture could support Postgres, WASM, Bolero, and future hosts while keeping semantic logic stable.
+
+---
+
+# 39. Error Handling and Railway-Oriented Programming
+
+Railway-oriented programming and the Four-Tier State Architecture operate at different levels.
+
+Railway-style `Result` composition can be useful for:
+
+- sequencing operations that may fail;
+- composing validation;
+- explicit error propagation.
+
+It is **not a replacement** for explicit semantic states/transitions.
+
+Example distinction:
+
+```text
+Railway question:
+Did this function succeed or fail?
+
+State Programming question:
+What legal semantic state is the system now in, what transitions are legal, what do we know, and what remains unresolved?
+```
+
+Use railway composition where it simplifies flow, but do not collapse semantic uncertainty into a generic `Error` merely because `Result` is convenient.
+
+---
+
+# 40. Relationship to Type-Driven Development
+
+Strong types are a major enforcement mechanism but not the whole architecture.
+
+Type-driven design can make invalid data shapes difficult to construct.
+
+State Programming adds explicit emphasis on:
+
+- evolution over time;
+- legal transitions;
+- authority/capabilities;
+- evidence;
+- obligations;
+- external effects;
+- outcome unknown;
+- machine/agent action constraints.
+
+The ongoing research question is:
+
+> Does explicit state-transition architecture add meaningful value over a competent strongly typed conventional design?
+
+This must be tested with a serious control, not a weak CRUD/string-status baseline.
+
+---
+
+# 41. Required Baseline for Research Comparisons
+
+Do not compare State Programming only against deliberately poor code.
+
+A valid conventional control should be built as a competent senior engineer might build it:
+
+- value objects where appropriate;
+- immutable data where appropriate;
+- normal encapsulation;
+- validation;
+- tests;
+- services;
+- strong typing;
+- ordinary clean architecture practices.
+
+Useful experimental variants:
+
+1. weak CRUD/string-status lower bound;
+2. competent conventional typed architecture;
+3. State Programming architecture.
+
+Measure differences in change behavior, inference requirements, defects, and maintenance cost.
+
+---
+
+# 42. Metrics Worth Tracking
+
+## Core Change Rate
+
+```text
+semantic-core changes / externally-driven work items
+```
+
+Pair with behavioral acceptance.
+
+## Decision Locality
+
+How many files required genuinely new domain decisions?
+
+## Mechanical Propagation
+
+How many changes were compiler/schema-directed with no new decision?
+
+## Change Discovery Mechanism
+
+- compiler;
+- schema/contract checker;
+- unit test;
+- integration test;
+- runtime;
+- search;
+- human/agent inference.
+
+## Defect Escape Type
+
+Classify:
+
+- semantic;
+- invariant;
+- transition;
+- integration;
+- serialization;
+- projection;
+- presentation.
+
+Hypothesis worth testing:
+
+> Strong semantic modeling may shift surviving bugs outward toward lower-semantic-risk boundaries.
+
+## Agent Cost
+
+Track:
+
+- tokens;
+- tool calls;
+- files inspected;
+- repair loops;
+- unsupported assumptions;
+- human escalations;
+- context needed.
+
+---
+
+# 43. Current HelixNote Evidence Snapshot
+
+The following observations have been reported during the pilot and should be preserved as evidence, not overgeneralized as universal proof.
+
+## Architecture Boundary
+
+- semantic architecture check repeatedly passed;
+- zero package references leaked into `HelixNote.Semantic`;
+- multiple hosts integrated without semantic project dependency contamination.
+
+## Host Evolution
+
+- Postgres host;
+- hand-rolled WASM demo;
+- Bolero host;
+- multiple correction entity types;
+- several later work items closed with zero core changes.
+
+## Semantic Exhaustiveness
+
+- FS0025-as-error transformed a newly unhandled semantic case into compile failure.
+
+## Explicit Uncertainty
+
+- `RecordCommitment`;
+- `CorrectionWriteOutcome`;
+- `CommitOutcomeUnknown`;
+- `ReconciliationInFlight`.
+
+## Boundary Weakness
+
+Live bugs clustered at typed/untyped seams:
+
+1. GET-with-body Fetch failure;
+2. missing `/extraction/links/{id}` endpoint;
+3. F# option/DU JSON leakage/binding;
+4. missing projection field mapping.
+
+## Testing Limitation
+
+- 149 core unit tests did not detect these live boundary failures;
+- build/test green was misleading about complete feature viability.
+
+## UI Kernel
+
+- no-framework kernel made browser behavior legible;
+- generic bridge supported multiple hosts;
+- manual screen wiring cost remains an open scaling concern.
+
+---
+
+# 44. What the Evidence Does NOT Yet Prove
+
+Do not claim:
+
+- State Programming universally reduces total lines of code;
+- State Programming always reduces initial development time;
+- F# is required;
+- a four-tier implementation always has fewer bugs;
+- all integration failures can become compile failures;
+- explicit state modeling is superior for every CRUD application;
+- the architecture beats a strong typed conventional control without further experiments;
+- frameworkless UI is always better;
+- open-string representations are always wrong;
+- code generation is always superior to contract testing.
+
+Current strongest claim is narrower:
+
+> The architecture can preserve important semantic constraints long enough for compilers and explicit validators to detect classes of errors that weaker representations permit, while isolating uncontrolled external behavior behind explicit boundaries.
+
+---
+
+# 45. Current Doctrine — Compact Form
+
+A concise statement of the architecture today:
+
+> Put domain decisions into a small typed semantic core. Make legal evolution explicit. Represent evidence, authority, obligations, effects, and uncertainty directly when they matter. Let the compiler reject incomplete semantic handling wherever possible. Keep orchestration and projections from becoming second sources of truth. Isolate uncontrolled infrastructure behind host boundaries. Preserve closed semantics across boundaries, delay conversion to weaker representations, mechanically coordinate duplicated contracts, and validate untyped data before trusting it again. Keep public APIs simple and language-neutral so external systems do not need to adopt the internal architecture.
+
+---
+
+# 46. Implementation Checklist — New Feature
+
+When adding a feature, ask in this order.
+
+## Semantic Question
+
+Does this change what the system means?
+
+If yes:
+
+- identify semantic state;
+- identify state-specific data;
+- identify legal transitions;
+- identify invariants;
+- identify evidence;
+- identify capabilities;
+- identify obligations;
+- identify uncertainty.
+
+## Transition Question
+
+What intent causes the change?
+
+- what source states allow it?
+- what guards apply?
+- what can reject it?
+- what semantic result follows?
+
+## Effect Question
+
+Does the change require something outside the semantic system?
+
+If yes:
+
+- describe the effect as a constrained value;
+- identify success/failure/outcome-unknown possibilities;
+- decide what obligation is created if unresolved.
+
+## Application Question
+
+What orchestration is necessary?
+
+- gather inputs;
+- invoke legal transition;
+- project result;
+- request effect;
+- feed validated effect result back.
+
+## Boundary Question
+
+When crossing a boundary:
+
+1. what values may cross?
+2. is the set closed or open?
+3. can illegal combinations be represented?
+4. is the wire/storage representation explicit?
+5. is there one authority or mechanical agreement check?
+6. how is re-entry validated?
+7. does changing the contract mechanically expose consumers?
+
+## Public API Question
+
+If external systems consume it:
+
+- can they understand the contract without internal architecture knowledge?
+- is the operation business-intent shaped?
+- is the JSON boring and language-neutral?
+- can internals evolve without unnecessarily breaking the public contract?
+
+---
+
+# 47. Implementation Checklist — Code Review
+
+Review for:
+
+- domain state represented as strings despite a known closed set;
+- wildcard matches hiding semantic omissions;
+- semantic decisions in controllers/hosts;
+- domain types serialized directly by framework defaults;
+- client/server routes authored independently with no check;
+- duplicate field/kind mappings;
+- conditional legality expressed as many optional fields;
+- external timeout mapped directly to failure;
+- missing obligation after uncertain outcomes;
+- AI or UI allowed arbitrary mutation instead of legal intents;
+- host dependency introduced into semantic project;
+- unvalidated JSON/storage data becoming semantic values;
+- public endpoints exposing generic state mutation.
+
+---
+
+# 48. Implementation Checklist — Boundary Review
+
+For every meaningful boundary, answer:
+
+```text
+What semantic information exists before the boundary?
+What representation crosses the boundary?
+What information was weakened or discarded?
+Was that weakening necessary?
+Is the representation explicit?
+Who is authoritative?
+What detects drift?
+What validates incoming data?
+What happens on unknown/unsupported cases?
+```
+
+If the team cannot answer these questions, the boundary is not yet engineered.
+
+---
+
+# 49. Suggested Repository Enforcement
+
+Where supported, add mechanical checks for:
+
+- semantic project package/reference purity;
+- incomplete semantic matches as errors;
+- route contract agreement;
+- explicit boundary JSON tests;
+- architecture dependency direction;
+- public API schema consistency;
+- representative end-to-end boundary smoke path.
+
+Do not add checks that merely create paperwork. Each check should correspond to a known failure class or high-value invariant.
+
+---
+
+# 50. Agent Instructions for Working in This Architecture
+
+An autonomous coding agent should be told:
+
+1. Do not mutate semantic state directly.
+2. Find the legal transition/intent that expresses the requested change.
+3. If no legal transition exists, do not invent one silently; determine whether the requirement changes the semantic model.
+4. Keep domain decisions out of host/framework code.
+5. Treat compiler errors after semantic type changes as a map of required propagation, not noise to suppress.
+6. Do not add wildcard cases merely to make exhaustiveness errors disappear.
+7. Preserve closed semantic types until the boundary requires weakening.
+8. Do not rely on framework serializer defaults for public/host contracts.
+9. Do not duplicate routes or semantic mapping tables without authority/agreement checks.
+10. Validate incoming external data before creating trusted semantic values.
+11. Represent external uncertainty explicitly.
+12. Create/maintain obligations for unresolved work.
+13. Keep public APIs simple and independent of internal State Programming terminology.
+14. Distinguish semantic work from mechanical propagation in completion reports.
+15. Report when a proposed change requires a semantic decision rather than guessing from surviving code.
+
+---
+
+# 51. Training Model
+
+The preferred way to teach the architecture is not an abstract lecture about state machines.
+
+Use a real application and let requirements create pressure.
+
+Example progression:
+
+1. create record/time entry;
+2. validate constrained values;
+3. submit;
+4. approve/reject;
+5. prevent illegal edits after approval;
+6. correct a historical value;
+7. split/merge while maintaining invariants;
+8. require capability for manager action;
+9. require evidence;
+10. persist externally;
+11. simulate timeout/outcome unknown;
+12. create reconciliation obligation;
+13. add AI modification task;
+14. cross a JSON/HTTP boundary;
+15. demonstrate serializer/route/string-collapse failure;
+16. strengthen boundary representation.
+
+The pedagogical principle is:
+
+> Do not teach State Programming and illustrate it with software. Teach people to engineer a real piece of software, and let the necessity of State Programming emerge from the problems they encounter.
+
+HelixNote's actual failures are useful training material because they show that even a strong semantic core does not eliminate boundary engineering.
+
+---
+
+# 52. Marketing Positioning
+
+Avoid leading with “state machine.” That phrase is narrower than the architecture and may cause experts to map it to familiar FSM patterns prematurely.
+
+Possible core proposition:
+
+> Make the legal evolution of software explicit instead of leaving developers and AI agents to infer it from code.
+
+Another strong emerging statement:
+
+> The compiler can only protect the semantics you allow it to see.
+
+And:
+
+> AI does not always need more context. It often needs fewer legal choices.
+
+Marketing claims should follow research evidence and clearly distinguish:
+
+- observed mechanism;
+- experimental result;
+- hypothesis;
+- commercial claim.
+
+---
+
+# 53. Open Specification vs. Proprietary Moat
+
+The core State Programming specification should likely remain open enough for broad implementation across languages/frameworks.
+
+Potential moat is more defensibly built around:
+
+- research corpus;
+- implementation expertise;
+- curriculum;
+- certification;
+- architecture assessment;
+- migration methodology;
+- agent tooling;
+- contract/semantic analysis tooling;
+- organizational adoption experience.
+
+If the core requires proprietary runtime files or an Echelon-only language, adoption risk rises substantially.
+
+---
+
+# 54. Open Research Questions
+
+## Architecture Efficacy
+
+- Does Four-Tier State Programming outperform a competent conventional typed architecture in maintenance tasks?
+- Does it reduce repair loops and context requirements for AI agents?
+- Which domains benefit enough to justify design-pass cost?
+- Where is ordinary type-driven development sufficient?
+
+## Boundaries
+
+- Should route agreement rely on OpenAPI generation, code extraction, or contract tests?
+- What is the smallest scalable explicit wire-contract mechanism?
+- Can serializer misuse be mechanically prohibited or linted without heavy tooling?
+- How much boundary code should be generated versus hand-written?
+
+## Language Portability
+
+- Replicate cross-language experiments in Kotlin and Swift.
+- Quantify enforcement-strength differences.
+- Define State Programming conformance independently of static enforcement.
+
+## UI / WASM
+
+- How far can the minimal kernel scale before a UI framework materially reduces total complexity?
+- Which primitives would eliminate most manual wiring without recreating a framework?
+
+## Persistence
+
+- How should schema evolution preserve semantic versioning and historical states?
+- How are obligations/reconciliation represented durably?
+
+## Agents
+
+- How should capabilities be exposed to agent tool interfaces?
+- Can action-space reduction measurably lower token/tool cost?
+- How should agents handle unknown external outcomes and obligations?
+
+## Methodology
+
+- What changes require full semantic review versus lightweight boundary review?
+- How should semantic decision locality be measured objectively?
+
+---
+
+# 55. Research Debt
+
+Known areas requiring stronger evidence:
+
+- controlled comparison against competent conventional typed baseline;
+- longitudinal maintenance experiments;
+- quantitative AI token/tool-call studies;
+- broader language replications;
+- larger UI scaling study;
+- route generation vs. contract-test comparison;
+- public OpenAPI implementation for HelixNote;
+- persistence/version migration experiments;
+- failure recovery under real external partial failure.
+
+---
+
+# 56. Proven / Supported / Unproven Snapshot
+
+## Supported by Current Implementation Evidence
+
+- Semantic core can remain infrastructure-independent across multiple host additions.
+- Exhaustive closed-type handling can convert omissions into compiler failures.
+- Matching a closed semantic type is materially stronger than matching equivalent open strings when exhaustiveness matters.
+- Illegal effect combinations such as GET+body can be moved from runtime to construction/compile time using constrained effect representations in languages that support strong closed alternatives.
+- Shared source-language types do not by themselves guarantee wire compatibility.
+- Mechanical route comparison can detect client/server drift before live execution.
+- Tagged JSON can preserve equivalent closed alternatives across several unrelated languages.
+- Semantic tests alone do not prove typed/untyped boundary correctness.
+
+## Plausible but Not Yet Fully Proven
+
+- Four-Tier architecture materially reduces AI context requirements.
+- Semantic locality lowers maintenance cost at scale.
+- Capability restriction materially reduces agent error rates.
+- Boundary hardening lowers long-term semantic drift.
+- Minimal frameworkless WASM UI remains advantageous at product scale.
+
+## Contradicted / Refined
+
+- “All boundary failures are Semantic Boundary Collapse.” Refined into Representation Collapse and Uncoordinated Duplication.
+- “Shared F# types are sufficient boundary contracts.” Contradicted.
+- “Boundary handling should become a fifth architecture tier.” Rejected; boundary preservation is orthogonal.
+- “Hand-written serialization must be permanent doctrine.” Refined to explicit deliberate wire contracts; generation is allowed.
+
+---
+
+# 57. Canonical Design Heuristics
+
+1. **Model meaning before mechanism.**
+2. **Make legal evolution explicit.**
+3. **Prefer legal constructors over invalid combinations plus validation.**
+4. **Use the compiler as a semantic search engine where possible.**
+5. **Never confuse an attempted external effect with a known outcome.**
+6. **Represent unresolved truth as uncertainty plus obligation, not guessed status.**
+7. **Keep semantic authority narrow and infrastructure-free.**
+8. **Do not let orchestration become a second domain model.**
+9. **Preserve closed semantics until weakening is unavoidable.**
+10. **Make wire representations deliberate.**
+11. **Coordinate duplicated facts mechanically.**
+12. **Validate untyped data before trusting it again.**
+13. **Keep public contracts simple, standard, and language-neutral.**
+14. **Use F# as an enforcement advantage, not as an ecosystem requirement.**
+15. **Distinguish architecture value from language value.**
+16. **Move failures to the earliest practical detection point.**
+17. **Measure semantic decisions separately from mechanical propagation.**
+18. **Avoid adding ceremony after boundaries have stabilized unless it catches a known risk.**
+19. **Prefer existing standards over inventing infrastructure.**
+20. **Do not claim experimental superiority before a competent control exists.**
+
+---
+
+# 58. Minimal Example — Complete Flow
+
+A simplified correction flow illustrates the architecture.
+
+```text
+User intent:
+"Correct this lab value"
+        │
+        ▼
+Tier 3 — Application
+constructs correction intent
+        │
+        ▼
+Tier 2 — Transition / Domain Execution
+checks current state
+checks capability
+checks evidence
+checks invariant
+        │
+        ├── illegal → semantic rejection
+        │
+        └── legal
+             │
+             ▼
+        semantic decision
+        + requested persistence effect
+             │
+             ▼
+Tier 4 — Postgres/API Host
+attempts external write
+             │
+      ┌──────┼─────────┐
+      ▼      ▼         ▼
+  success  failure   timeout/unknown
+      │      │         │
+      └──────┼─────────┘
+             ▼
+validated host result
+             │
+             ▼
+Tier 3/Tier 2 re-entry
+             │
+      ┌──────┼────────────────────┐
+      ▼      ▼                    ▼
+ committed rejected       commit outcome unknown
+                                │
+                                ▼
+                     reconciliation obligation
+```
+
+At the HTTP/JSON boundary:
+
+```text
+closed F# result
+      ↓
+explicit tagged JSON contract
+      ↓
+HTTP/browser/untyped world
+      ↓
+runtime validation
+      ↓
+closed host/application result
+```
+
+The public API can remain simple throughout.
+
+---
+
+# 59. Handoff Instructions for a New Agent
+
+Before modifying a Four-Tier application:
+
+1. Locate the semantic project/module and confirm dependency rules.
+2. Identify the semantic state and legal transition relevant to the request.
+3. Determine whether the request is a semantic change, boundary change, mechanical propagation, or presentation change.
+4. Do not start in the controller/host and work inward by mutation.
+5. If the semantic model changes, compile immediately and use compiler failures to enumerate propagation.
+6. Preserve exhaustive matching; do not hide errors with wildcards.
+7. Trace any external effect through its explicit outcome model, including outcome unknown.
+8. Trace every changed boundary representation end-to-end.
+9. Verify routes mechanically.
+10. Verify actual serialized JSON, not merely source types.
+11. Run architecture checks.
+12. Run semantic tests.
+13. Run boundary contract tests.
+14. Run at least one affected live/smoke path.
+15. Report semantic decisions separately from mechanical propagation.
+16. Document any new rule or unresolved ambiguity so later agents do not infer intent from surviving code.
+
+---
+
+# 60. Completion Checklist for Four-Tier Implementations
+
+A mature implementation should be able to answer yes to most of the following where applicable:
+
+- [ ] Important domain states are explicit.
+- [ ] Legal transitions are explicit.
+- [ ] State-specific data is not represented as unrelated optional fields where illegal combinations result.
+- [ ] Invariants/guards are localized in semantic/domain execution.
+- [ ] Capabilities/authority are explicit where meaningful.
+- [ ] Evidence requirements are explicit where truth claims depend on evidence.
+- [ ] Obligations exist for unresolved required work.
+- [ ] External effects distinguish success/failure/outcome unknown where necessary.
+- [ ] Semantic core has no host/framework dependencies.
+- [ ] Exhaustiveness checking is mechanically enforced where closed sets are intended.
+- [ ] Application/orchestration does not redefine domain truth.
+- [ ] Closed semantic values are not weakened earlier than necessary.
+- [ ] Wire representations are explicit and tested.
+- [ ] Host-language serializer internals do not leak publicly.
+- [ ] Duplicated route/schema/field authorities are generated or mechanically compared.
+- [ ] Untyped/external data is validated before semantic re-entry.
+- [ ] Public API is understandable without State Programming knowledge.
+- [ ] Public operations express business intent instead of arbitrary state mutation.
+- [ ] Boundary tests exist in addition to semantic unit tests.
+- [ ] At least representative end-to-end paths exercise real host boundaries.
+- [ ] Architecture checks run in CI.
+- [ ] Current implementation limits and unresolved research questions are documented.
+
+---
+
+# 61. Final Current-State Statement
+
+The current best understanding of the Four-Tier State Architecture is:
+
+> State Programming is not merely using finite state machines or discriminated unions. It is the deliberate preservation of semantic information about legal state, legal change, authority, evidence, uncertainty, obligations, and effects so that invalid or incomplete behavior remains mechanically visible for as long as practical. The Four-Tier architecture keeps semantic authority separate from orchestration and uncontrolled infrastructure. Boundary Preservation prevents that semantic discipline from evaporating when information is converted to JSON, strings, routes, storage shapes, browser objects, or other external representations. Public APIs remain intentionally simple and standards-based so the architecture can be implemented across languages and adopted without forcing external systems into the same internal model.
+
+The architecture has promising implementation evidence, especially around semantic locality, exhaustiveness, host independence, explicit uncertainty, and movement of failures from runtime toward compile/contract time. It also has clear limits: typed cores do not automatically make boundaries safe; serialization and route contracts require independent engineering; and superiority over competent conventional typed architectures remains an empirical question rather than an established fact.
+
+That distinction must remain part of the doctrine.
+
